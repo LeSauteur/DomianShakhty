@@ -76,9 +76,14 @@ test("Maria portrait is responsive, dimensioned and loads on trust pages", async
     await expect(portrait).toBeVisible();
     await expect(portrait).toHaveAttribute("width", "640");
     await expect(portrait).toHaveAttribute("height", "800");
-    const image = await portrait.evaluate((node) => ({ naturalWidth: node.naturalWidth, currentSrc: node.currentSrc }));
+    const image = await portrait.evaluate((node) => ({
+      naturalWidth: node.naturalWidth,
+      currentSrc: node.currentSrc,
+      filter: getComputedStyle(node).filter
+    }));
     expect(image.naturalWidth).toBeGreaterThan(0);
     expect(image.currentSrc).toMatch(/maria-voronina-(?:360|640|960)\.webp$/u);
+    expect(image.filter).toBe("none");
   }
 });
 
@@ -110,6 +115,21 @@ test("catalog exposes no unverified inventory", async ({ page }) => {
   await expect(page.locator("[data-catalog-count]")).toHaveText("0");
   await expect(page.locator("[data-catalog-card]")).toHaveCount(0);
   await expect(page.locator("[data-catalog-empty]")).toBeVisible();
+});
+
+test("desktop criteria copy stays below its heading without overlap", async ({ page }) => {
+  await page.setViewportSize({ width: 1904, height: 950 });
+  await page.goto("contacts.html");
+  const heading = page.locator(".criteria-copy h2");
+  const intro = page.locator(".criteria-copy .criteria-intro");
+  await heading.scrollIntoViewIfNeeded();
+  const headingBox = await heading.boundingBox();
+  const introBox = await intro.boundingBox();
+  expect(headingBox).not.toBeNull();
+  expect(introBox).not.toBeNull();
+  expect(headingBox.y + headingBox.height).toBeLessThanOrEqual(introBox.y);
+  const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
+  expect(dimensions.scroll).toBeLessThanOrEqual(dimensions.client + 1);
 });
 
 for (const viewport of [
