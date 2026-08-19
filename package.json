@@ -1,0 +1,21 @@
+{
+  "name": "domian-shakhty-static-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node tests/static-server.mjs",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "test:browser": "playwright test",
+    "seo:audit": "node _tools/seo-audit.mjs",
+    "donor:audit": "node _tools/donor-leak-audit.mjs",
+    "qa": "npm test && npm run seo:audit && npm run donor:audit && npm run test:browser",
+    "lighthouse": "node _tools/lighthouse.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "chrome-launcher": "1.2.1",
+    "lighthouse": "13.4.1"
+  }
+}

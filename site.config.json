@@ -1,0 +1,42 @@
+{
+  "mode": "prelaunch",
+  "productionOrigin": "",
+  "previewBasePath": "/DomianShakhty",
+  "brand": "Домиан",
+  "officeName": "Шахты на Маяковского",
+  "displayName": "Домиан · Шахты на Маяковского",
+  "owner": {
+    "name": "Мария Воронина",
+    "role": "Собственник офиса",
+    "initials": "МВ"
+  },
+  "legal": {
+    "name": "ИП Воронина Мария Петровна",
+    "inn": "262810552536",
+    "ogrnip": "324619600204770"
+  },
+  "bank": {
+    "account": "40802810352090442239",
+    "name": "Юго-Западный банк ПАО Сбербанк г. Ростов-на-Дону",
+    "correspondentAccount": "30101810600000000602",
+    "bic": "046015602"
+  },
+  "address": "г. Шахты, ул. Маяковского 18А",
+  "phone": "+7-918-507-10-00",
+  "phoneHref": "tel:+79185071000",
+  "email": "Babushkina_Mariya.10@mail.ru",
+  "serviceAreas": [
+    "Шахты",
+    "Аютинский",
+    "Новошахтинск",
+    "Красный Сулин",
+    "Каменоломни"
+  ],
+  "metrikaId": null,
+  "web3formsAccessKey": null,
+  "googleVerification": null,
+  "yandexVerification": null,
+  "requestTimeoutMs": 12000,
+  "publishedAt": "2026-08-19",
+  "updatedAt": "2026-08-19"
+}
