@@ -37,6 +37,16 @@ function resolveInternal(href, file) {
   return resolved;
 }
 
+function resolveAsset(src) {
+  const withoutHash = src.split("#")[0].split("?")[0];
+  if (!withoutHash || /^(?:data:|https?:)/iu.test(withoutHash)) return null;
+  const base = config.mode === "prelaunch" ? (config.previewBasePath || "") : "";
+  let relative = withoutHash;
+  if (base && relative.startsWith(`${base}/`)) relative = relative.slice(base.length);
+  relative = relative.replace(/^\/+/, "");
+  return path.resolve(root, relative);
+}
+
 if (!fs.existsSync(root)) throw new Error("dist is missing; run npm run build first");
 visit(root);
 const failures = [];
@@ -85,6 +95,23 @@ for (const file of htmlFiles) {
     const target = resolveInternal(href, file);
     if (target && !fs.existsSync(target)) failures.push(`${relative}: broken internal link ${href}`);
   }
+
+
+  for (const image of matches(html, /<img\b([^>]*)\ssrc="([^"]+)"([^>]*)>/giu)) {
+    const attributes = `${image[1]} ${image[3]}`;
+    const target = resolveAsset(image[2]);
+    if (target && !fs.existsSync(target)) failures.push(`${relative}: missing image ${image[2]}`);
+    if (!/\bwidth="\d+"/iu.test(attributes) || !/\bheight="\d+"/iu.test(attributes)) failures.push(`${relative}: image lacks width/height ${image[2]}`);
+    if (!/\balt="[^"]+"/iu.test(attributes)) failures.push(`${relative}: image lacks meaningful alt ${image[2]}`);
+  }
+
+  for (const source of matches(html, /<source\b[^>]*\ssrcset="([^"]+)"/giu)) {
+    for (const candidate of source[1].split(",")) {
+      const src = candidate.trim().split(/\s+/u)[0];
+      const target = resolveAsset(src);
+      if (target && !fs.existsSync(target)) failures.push(`${relative}: missing responsive image ${src}`);
+    }
+  }
 }
 
 const robotsText = fs.readFileSync(path.join(root, "robots.txt"), "utf8");
@@ -96,4 +123,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`SEO audit passed: ${htmlFiles.length} pages, unique metadata, valid links and ${config.mode} indexation rules.`);
+console.log(`SEO audit passed: ${htmlFiles.length} pages, unique metadata, valid links/media and ${config.mode} indexation rules.`);

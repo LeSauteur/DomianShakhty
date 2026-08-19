@@ -10,6 +10,17 @@
     "office": "Домиан · Шахты на Маяковского",
     "city": "Шахты",
     "verified": true,
-    "image": null
+    "image": {
+      "alt": "Мария Воронина, собственник офиса Домиан в Шахтах",
+      "original": "assets/images/maria-voronina-original.png",
+      "fallback": "assets/images/maria-voronina-640.webp",
+      "width": 640,
+      "height": 800,
+      "srcset": [
+        { "src": "assets/images/maria-voronina-360.webp", "width": 360 },
+        { "src": "assets/images/maria-voronina-640.webp", "width": 640 },
+        { "src": "assets/images/maria-voronina-960.webp", "width": 960 }
+      ]
+    }
   }
 ]

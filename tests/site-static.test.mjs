@@ -31,6 +31,27 @@ test("runtime config contains no configured outbound services", () => {
   assert.match(source, /"web3formsAccessKey":null/u);
 });
 
+test("confirmed social channels and Maria's responsive portrait are published from central data", () => {
+  assert.deepEqual(config.socials, {
+    whatsapp: "https://wa.me/message/YL42DCFCGMPQH1",
+    telegram: "https://t.me/MariyaVoronina87",
+    max: "https://max.ru/u/f9LHodD0cOIKT6pyYpEr_SpFY0ZcDT9BWF4LEwhkoft3td7dLbNOySNW-RA",
+    instagram: "https://www.instagram.com/domian_shakhty_mayakovskogo?utm_source=qr&igsi=dTFsYmg4Nm15Y3F0"
+  });
+  const home = read("index.html");
+  for (const [channel, href] of Object.entries(config.socials)) {
+    const htmlHref = href.replaceAll("&", "&amp;");
+    assert.match(home, new RegExp(`href="${htmlHref.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")}"[^>]+data-analytics="${channel}_click"`, "u"));
+  }
+  assert.match(home, /<picture><source type="image\/webp" srcset="[^"]+360w,[^"]+640w,[^"]+960w"/u);
+  assert.match(home, /<img[^>]+width="640" height="800"[^>]+alt="Мария Воронина/u);
+  for (const width of [360, 640, 960]) {
+    assert.ok(fs.existsSync(path.join(root, `assets/images/maria-voronina-${width}.webp`)));
+  }
+  assert.ok(fs.existsSync(path.join(root, "assets/images/maria-voronina-original.png")));
+  assert.doesNotMatch(home, /qr[-_ ]?code|mariyavoronina87/u);
+});
+
 test("legal details are confined to the details page", () => {
   const bankAccount = config.bank.account;
   const pages = [];
