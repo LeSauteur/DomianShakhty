@@ -3,6 +3,7 @@ dist/
 test-results/
 playwright-report/
 .lighthouseci/
+artifacts/
 *.log
 .DS_Store
 Thumbs.db

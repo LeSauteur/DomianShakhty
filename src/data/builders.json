@@ -1,0 +1,38 @@
+[
+  {
+    "id": "domlike-research",
+    "name": "ДомЛайк",
+    "website": "https://xn--80ahqecfn.xn--p1ai/",
+    "serviceArea": "Шахты",
+    "projectTypes": ["индивидуальные жилые дома"],
+    "verified": false,
+    "verifiedMarketPresence": true,
+    "officePartner": false,
+    "source": "https://xn--80ahqecfn.xn--p1ai/",
+    "checkedAt": "2026-08-19"
+  },
+  {
+    "id": "titanstroy-research",
+    "name": "ТитанСтрой",
+    "website": "https://shahty.titanstroj.ru/stroitelstvo-domov/",
+    "serviceArea": "страница услуги для Шахт",
+    "projectTypes": ["строительство частных домов"],
+    "verified": false,
+    "verifiedMarketPresence": false,
+    "officePartner": false,
+    "source": "https://shahty.titanstroj.ru/stroitelstvo-domov/",
+    "checkedAt": "2026-08-19"
+  },
+  {
+    "id": "stroyinvest-research",
+    "name": "СЗ «СТРОЙИНВЕСТ»",
+    "website": "https://szsinvest.ru/",
+    "serviceArea": "Шахты",
+    "projectTypes": ["многоквартирные дома"],
+    "verified": false,
+    "verifiedMarketPresence": true,
+    "officePartner": false,
+    "source": "https://szsinvest.ru/",
+    "checkedAt": "2026-08-19"
+  }
+]

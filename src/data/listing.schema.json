@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/domian-shakhty/listing.schema.json",
+  "title": "Verified real-estate listing",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "type", "verified", "title", "location", "status", "updatedAt"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "verified": { "const": true },
+    "title": { "type": "string", "minLength": 5 },
+    "type": { "enum": ["new-house", "resale-house", "apartment", "land", "project"] },
+    "format": { "enum": ["ready", "builder", "land"] },
+    "location": { "enum": ["shakhty", "ayutinskiy", "novoshakhtinsk", "krasnyy-sulin", "kamenolomni"] },
+    "address": { "type": "string" },
+    "price": { "type": "integer", "minimum": 1 },
+    "area": { "type": "number", "exclusiveMinimum": 0 },
+    "landArea": { "type": "number", "exclusiveMinimum": 0 },
+    "floors": { "type": "integer", "minimum": 1 },
+    "bedrooms": { "type": "integer", "minimum": 0 },
+    "bathrooms": { "type": "integer", "minimum": 0 },
+    "material": { "type": "string" },
+    "builder": { "type": "string" },
+    "status": { "enum": ["available", "reserved", "sold"] },
+    "description": { "type": "string" },
+    "features": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "source": { "type": "string", "format": "uri" },
+    "updatedAt": { "type": "string", "format": "date" },
+    "image": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["src", "alt", "width", "height"],
+      "properties": {
+        "src": { "type": "string" },
+        "alt": { "type": "string", "minLength": 5 },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "gallery": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["src", "alt", "width", "height"],
+        "properties": {
+          "src": { "type": "string" },
+          "alt": { "type": "string", "minLength": 5 },
+          "width": { "type": "integer", "minimum": 1 },
+          "height": { "type": "integer", "minimum": 1 }
+        }
+      }
+    }
+  }
+}

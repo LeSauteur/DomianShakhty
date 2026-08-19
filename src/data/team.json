@@ -1,0 +1,15 @@
+[
+  {
+    "id": "maria-voronina",
+    "name": "Мария Воронина",
+    "role": "Собственник офиса",
+    "initials": "МВ",
+    "phone": "+7-918-507-10-00",
+    "phoneHref": "tel:+79185071000",
+    "email": "Babushkina_Mariya.10@mail.ru",
+    "office": "Домиан · Шахты на Маяковского",
+    "city": "Шахты",
+    "verified": true,
+    "image": null
+  }
+]
