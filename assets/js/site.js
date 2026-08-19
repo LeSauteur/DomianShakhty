@@ -6,7 +6,8 @@
   var allowedEvents = [
     "catalog_filter_use", "property_card_open", "construction_interest", "project_open",
     "guide_to_catalog", "guide_to_lead", "location_to_construction", "map_click",
-    "phone_click", "email_click", "lead_form_view", "lead_form_open",
+    "phone_click", "email_click", "whatsapp_click", "telegram_click", "max_click", "instagram_click",
+    "lead_form_view", "lead_form_open",
     "lead_form_submit_attempt", "lead_form_success", "lead_form_error", "mortgage_interaction"
   ];
 
@@ -170,6 +171,23 @@
       });
     }, { threshold: 0.08, rootMargin: "0px 0px -6%" });
     targets.forEach(function (target) { observer.observe(target); });
+
+    var revealFrame = false;
+    function revealPassedTargets() {
+      if (revealFrame) return;
+      revealFrame = true;
+      window.requestAnimationFrame(function () {
+        targets.forEach(function (target) {
+          if (target.classList.contains("is-visible")) return;
+          if (target.getBoundingClientRect().top > window.innerHeight * 0.96) return;
+          target.classList.add("is-visible");
+          observer.unobserve(target);
+        });
+        revealFrame = false;
+      });
+    }
+    window.addEventListener("scroll", revealPassedTargets, { passive: true });
+    revealPassedTargets();
   }
 
   function initInteractionTracking() {

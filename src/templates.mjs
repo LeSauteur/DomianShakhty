@@ -14,6 +14,13 @@ const navItems = [
   ["contacts", "Контакты", "contacts.html"]
 ];
 
+const socialChannels = [
+  ["whatsapp", "WhatsApp", "whatsapp_click"],
+  ["telegram", "Telegram", "telegram_click"],
+  ["max", "MAX", "max_click"],
+  ["instagram", "Instagram", "instagram_click"]
+];
+
 export function createContext(site, data) {
   const base = site.mode === "prelaunch" ? (site.previewBasePath || "") : "";
   const cleanBase = base ? `/${base.replace(/^\/+|\/+$/g, "")}` : "";
@@ -44,6 +51,25 @@ function brand(ctx) {
   </a>`;
 }
 
+function socialLinks(ctx, className = "social-links") {
+  const links = socialChannels
+    .filter(([key]) => ctx.site.socials?.[key])
+    .map(([key, label, event]) => `<a href="${esc(ctx.site.socials[key])}" target="_blank" rel="noopener noreferrer" data-analytics="${event}"><span>${label}</span><span aria-hidden="true">↗</span></a>`)
+    .join("");
+  return links ? `<div class="${className}" aria-label="Мессенджеры и социальные сети">${links}</div>` : "";
+}
+
+function ownerPortrait(ctx, modifier = "") {
+  const person = ctx.team.find((item) => item.id === "maria-voronina");
+  const image = person?.image;
+  if (!image) return "";
+  const srcset = image.srcset.map((source) => `${ctx.href(source.src)} ${source.width}w`).join(", ");
+  return `<figure class="owner-portrait${modifier ? ` owner-portrait--${modifier}` : ""}">
+    <picture><source type="image/webp" srcset="${srcset}" sizes="${modifier === "compact" ? "(max-width: 700px) 44vw, 220px" : "(max-width: 760px) calc(100vw - 48px), 520px"}"><img src="${ctx.href(image.fallback)}" width="${image.width}" height="${image.height}" alt="${esc(image.alt)}" loading="lazy" decoding="async"></picture>
+    <figcaption><span>${esc(person.name)}</span><small>${esc(person.role)}</small></figcaption>
+  </figure>`;
+}
+
 function nav(ctx, active, mobile = false) {
   const links = navItems.map(([key, label, target]) => `<a href="${ctx.href(target)}"${active === key ? ' aria-current="page"' : ""}>${label}</a>`).join("");
   if (mobile) {
@@ -56,6 +82,7 @@ function nav(ctx, active, mobile = false) {
           <a class="button button--primary" href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a>
           <a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a>
           <span>${esc(ctx.site.address)}</span>
+          ${socialLinks(ctx, "social-links social-links--drawer")}
         </div>
       </div>
     </div>`;
@@ -81,7 +108,7 @@ function footer(ctx) {
       <div><h2>Недвижимость</h2><a href="${ctx.href("construction.html")}">Новые дома</a><a href="${ctx.href("houses.html")}">Вторичные дома</a><a href="${ctx.href("apartments.html")}">Квартиры</a><a href="${ctx.href("lands.html")}">Участки</a></div>
       <div><h2>Клиентам</h2><a href="${ctx.href("sell.html")}">Продать</a><a href="${ctx.href("valuation.html")}">Оценка</a><a href="${ctx.href("mortgage.html")}">Ипотечный сценарий</a><a href="${ctx.href("guides/index.html")}">Полезные материалы</a></div>
       <div><h2>Офис</h2><a href="${ctx.href("team/maria-voronina.html")}">Мария Воронина</a><a href="${ctx.href("contacts.html")}">Контакты</a><a href="${ctx.href("details.html")}">Реквизиты</a><a href="${ctx.href("privacy.html")}">Обработка данных</a></div>
-      <address><h2>Связаться</h2><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a><span>${esc(ctx.site.address)}</span></address>
+      <address><h2>Связаться</h2><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a><span>${esc(ctx.site.address)}</span>${socialLinks(ctx, "social-links social-links--footer")}</address>
     </div>
     <div class="container footer-bottom"><span>© ${new Date().getFullYear()} ${esc(ctx.site.displayName)}</span><span>${ctx.site.mode === "prelaunch" ? "PRELAUNCH · сайт закрыт от индексации" : "Информация не является публичной офертой"}</span></div>
   </footer>`;
@@ -162,7 +189,7 @@ function processSection(section) {
 }
 
 function splitSection(ctx, section) {
-  return `<section class="section"><div class="container">${sectionHeading(section)}<div class="split-cards"><article class="split-card split-card--copper"><h3>${esc(section.left.title)}</h3><p>${esc(section.left.text)}</p><a class="text-link" href="${ctx.href(section.left.href)}">${esc(section.left.label)} ↗</a></article><article class="split-card"><h3>${esc(section.right.title)}</h3><p>${esc(section.right.text)}</p><a class="text-link" href="${ctx.href(section.right.href)}">${esc(section.right.label)} ↗</a></article></div></div></section>`;
+  return `<section class="section"><div class="container">${sectionHeading(section)}<div class="split-cards"><article class="split-card split-card--plum"><h3>${esc(section.left.title)}</h3><p>${esc(section.left.text)}</p><a class="text-link" href="${ctx.href(section.left.href)}">${esc(section.left.label)} ↗</a></article><article class="split-card"><h3>${esc(section.right.title)}</h3><p>${esc(section.right.text)}</p><a class="text-link" href="${ctx.href(section.right.href)}">${esc(section.right.label)} ↗</a></article></div></div></section>`;
 }
 
 function mortgageSection() {
@@ -226,6 +253,7 @@ function schemaFor(ctx, page, breadcrumbsItems) {
     name: ctx.site.displayName,
     telephone: ctx.site.phone,
     email: ctx.site.email,
+    sameAs: Object.values(ctx.site.socials || {}),
     address: { "@type": "PostalAddress", addressLocality: "Шахты", streetAddress: "ул. Маяковского 18А", addressRegion: "Ростовская область", addressCountry: "RU" },
     areaServed: ctx.site.serviceAreas.map((name) => ({ "@type": "Place", name }))
   };
@@ -235,7 +263,7 @@ function schemaFor(ctx, page, breadcrumbsItems) {
   }
   const nodes = [organization];
   if (page.pageType === "person") {
-    const person = { "@type": "Person", name: ctx.site.owner.name, jobTitle: ctx.site.owner.role, telephone: ctx.site.phone, email: ctx.site.email, worksFor: ctx.site.mode === "production" ? { "@id": organization["@id"] } : { "@type": "RealEstateAgent", name: ctx.site.displayName } };
+    const person = { "@type": "Person", name: ctx.site.owner.name, jobTitle: ctx.site.owner.role, telephone: ctx.site.phone, email: ctx.site.email, sameAs: Object.values(ctx.site.socials || {}), worksFor: ctx.site.mode === "production" ? { "@id": organization["@id"] } : { "@type": "RealEstateAgent", name: ctx.site.displayName } };
     if (ctx.site.mode === "production") person["@id"] = `${ctx.absolute("team/maria-voronina.html")}#person`;
     nodes.push(person);
   } else if (page.pageType === "guide") {
@@ -260,7 +288,7 @@ function documentHead(ctx, page, breadcrumbsItems) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="${ctx.site.mode === "prelaunch" ? "noindex,nofollow" : "index,follow"}">
   <meta name="description" content="${esc(page.description)}">
-  <meta name="theme-color" content="#1c2427">
+  <meta name="theme-color" content="#29232b">
   <link rel="icon" href="data:,">
   <title>${esc(page.title)}</title>
   ${canonical ? `<link rel="canonical" href="${canonical}">` : ""}
@@ -273,7 +301,7 @@ function documentHead(ctx, page, breadcrumbsItems) {
   ${ogImage ? `<meta property="og:image" content="${ogImage}">
   <meta property="og:image:width" content="1536">
   <meta property="og:image:height" content="1024">
-  <meta property="og:image:alt" content="Архитектурная схема дома и участка в фирменной палитре офиса">` : ""}
+  <meta property="og:image:alt" content="Домиан Шахты — недвижимость в жемчужной, сливовой и шампанской палитре">` : ""}
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${esc(page.title)}">
   <meta name="twitter:description" content="${esc(page.description)}">
@@ -317,8 +345,8 @@ export function renderHome(ctx, guides) {
   ] };
   const secondary = { kind: "split", kicker: "Другие задачи", title: "Вторичный рынок и сценарий собственника", left: { title: "Дома, квартиры, участки", text: "Получите актуальную подборку без фиктивных карточек и устаревших цен.", href: "houses.html", label: "Вторичный рынок" }, right: { title: "Продать или оценить", text: "Подготовим объект и свяжем продажу со следующей покупкой.", href: "sell.html", label: "Сценарий продавца" } };
   const guideCards = { kind: "cards", kicker: "Полезные материалы", title: "Подготовьтесь к выбору за один вечер", intro: "Практические чек-листы без SEO-воды и неподтверждённых ставок.", items: guides.slice(0, 3).map((guide, index) => ({ index: String(index + 1).padStart(2, "0"), title: guide.title, text: guide.answer, href: `guides/${guide.slug}.html` })) };
-  const owner = `<section class="section owner-section"><div class="container owner-layout"><div class="owner-mark" aria-label="Портрет Марии будет добавлен после получения фотографии"><span>МВ</span><small>портрет будет добавлен</small></div><div><p class="eyebrow">Собственник офиса</p><h2>Мария Воронина</h2><p>Личная страница собрана только из подтверждённых данных: роль, офис, телефон, email и адрес. Стаж, цифры, награды и фотографии других людей не используются.</p><div class="owner-actions"><a class="button button--primary" href="${ctx.href("team/maria-voronina.html")}">Познакомиться с Марией</a><a class="text-link" href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)} ↗</a></div></div></div></section>`;
-  const office = `<section class="section section--stone"><div class="container office-layout"><div><p class="eyebrow">Офис в Шахтах</p><h2>Маяковского 18А</h2><p>Можно начать с короткого звонка или письма. Часы работы и мессенджеры появятся только после подтверждения владельца.</p></div><address><strong>${esc(ctx.site.displayName)}</strong><span>${esc(ctx.site.address)}</span><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a><a class="button button--ghost" href="${ctx.href("contacts.html")}">Все контакты</a></address></div></section>`;
+  const owner = `<section class="section owner-section"><div class="container owner-layout">${ownerPortrait(ctx)}<div class="owner-copy"><p class="eyebrow">Собственник офиса</p><h2>Мария Воронина</h2><p>Мария представляет офис «Домиан · Шахты на Маяковского». Связаться с ней можно напрямую по телефону или в удобном подтверждённом мессенджере.</p><div class="owner-actions"><a class="button button--primary" href="${ctx.href("team/maria-voronina.html")}">Познакомиться с Марией</a><a class="text-link" href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)} ↗</a></div>${socialLinks(ctx, "social-links social-links--owner")}</div></div></section>`;
+  const office = `<section class="section section--stone"><div class="container office-layout"><div><p class="eyebrow">Офис в Шахтах</p><h2>Маяковского 18А</h2><p>Можно начать с короткого звонка, письма или сообщения. Часы посещения лучше уточнить заранее.</p></div><address><strong>${esc(ctx.site.displayName)}</strong><span>${esc(ctx.site.address)}</span><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a>${socialLinks(ctx, "social-links social-links--office")}<a class="button button--ghost" href="${ctx.href("contacts.html")}">Все контакты</a></address></div></section>`;
   const body = `${hero(ctx, page)}${renderSection(ctx, construction)}${locationsSection(ctx, { kicker: "География работы", title: "Выберите конкретную территорию", intro: "Каждая страница объясняет отдельный сценарий выбора и использует корректное административное название." })}${renderSection(ctx, process)}${splitSection(ctx, { kicker: "Финансирование", title: "Рассчитать свой сценарий", left: { title: "Ипотечный калькулятор", text: "Ставку вводите самостоятельно; результат ориентировочный.", href: "mortgage.html", label: "Открыть расчёт" }, right: { title: "Участок под дом", text: "Проверить землю, ограничения, подъезд и коммуникации.", href: "lands.html", label: "Подбор участка" } })}${renderSection(ctx, secondary)}${renderSection(ctx, guideCards)}${owner}${office}${leadForm(ctx, { type: "construction", title: "Расскажите, какой дом ищете", text: "Территория, бюджет и примерная площадь — достаточно, чтобы начать разговор." })}`;
   return layout(ctx, page, body, { active: "" });
 }
@@ -359,8 +387,8 @@ export function renderGuide(ctx, guide) {
 }
 
 export function renderPerson(ctx) {
-  const page = { path: "team/maria-voronina.html", pageType: "person", title: "Мария Воронина — собственник офиса Домиан в Шахтах", description: "Мария Воронина, собственник офиса «Домиан · Шахты на Маяковского»: подтверждённые контакты и направления работы.", eyebrow: "Собственник офиса", h1: "Мария Воронина", lead: "Собственник офиса «Домиан · Шахты на Маяковского». На странице нет выдуманного стажа, рейтингов, наград или фотографии другого человека.", primaryCta: { label: "Позвонить Марии", href: ctx.site.phoneHref }, secondaryCta: { label: "Контакты офиса", href: "contacts.html" }, heroFacts: ["Шахты", "Маяковского 18А", "прямой контакт"] };
-  const profile = `<section class="section"><div class="container profile-layout"><div class="owner-mark owner-mark--large"><span>МВ</span><small>место для реального портрета</small></div><div><p class="eyebrow">Подтверждённые данные</p><h2>Собственник офиса в Шахтах</h2><p>Мария представляет офис по адресу ${esc(ctx.site.address)}. Через сайт можно обратиться по вопросам подбора новых домов, вторичной недвижимости, продажи, оценки и ипотечного сценария.</p><dl class="profile-facts"><div><dt>Офис</dt><dd>${esc(ctx.site.displayName)}</dd></div><div><dt>Телефон</dt><dd><a href="${ctx.site.phoneHref}">${esc(ctx.site.phone)}</a></dd></div><div><dt>Email</dt><dd><a href="mailto:${esc(ctx.site.email)}">${esc(ctx.site.email)}</a></dd></div><div><dt>Город</dt><dd>Шахты</dd></div></dl></div></div></section>`;
+  const page = { path: "team/maria-voronina.html", pageType: "person", title: "Мария Воронина — собственник офиса Домиан в Шахтах", description: "Мария Воронина, собственник офиса «Домиан · Шахты на Маяковского»: подтверждённые контакты и направления работы.", eyebrow: "Собственник офиса", h1: "Мария Воронина", lead: "Прямой контакт с собственником офиса «Домиан · Шахты на Маяковского» по вопросам подбора, продажи и оценки недвижимости.", primaryCta: { label: "Позвонить Марии", href: ctx.site.phoneHref, event: "phone_click" }, secondaryCta: { label: "Контакты офиса", href: "contacts.html" }, heroFacts: ["Шахты", "Маяковского 18А", "прямой контакт"] };
+  const profile = `<section class="section"><div class="container profile-layout">${ownerPortrait(ctx, "large")}<div><p class="eyebrow">Подтверждённые данные</p><h2>Собственник офиса в Шахтах</h2><p>Мария представляет офис по адресу ${esc(ctx.site.address)}. Через сайт можно обратиться по вопросам подбора новых домов, вторичной недвижимости, продажи, оценки и ипотечного сценария.</p><dl class="profile-facts"><div><dt>Офис</dt><dd>${esc(ctx.site.displayName)}</dd></div><div><dt>Телефон</dt><dd><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a></dd></div><div><dt>Email</dt><dd><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a></dd></div><div><dt>Город</dt><dd>Шахты</dd></div></dl>${socialLinks(ctx, "social-links social-links--profile")}</div></div></section>`;
   const roles = cardsSection(ctx, { kicker: "С чем обратиться", title: "Основные сценарии офиса", intro: "Конкретный состав работы уточняется после знакомства с задачей.", items: [
     { index: "01", title: "Новый частный дом", text: "Подбор и сравнение подтверждённых вариантов.", href: "construction.html" },
     { index: "02", title: "Продажа недвижимости", text: "Подготовка объекта и последовательности сделки.", href: "sell.html" },
@@ -370,8 +398,8 @@ export function renderPerson(ctx) {
 }
 
 export function renderContacts(ctx) {
-  const page = { path: "contacts.html", pageType: "contact", title: "Контакты — Домиан · Шахты на Маяковского", description: "Адрес, телефон и email офиса «Домиан · Шахты на Маяковского», собственник Мария Воронина.", eyebrow: "Связаться с офисом", h1: "Начните с короткого разговора", lead: "Позвоните или напишите на email. Часы работы, мессенджеры и карты не опубликованы, пока владелец их не подтвердил.", primaryCta: { label: `Позвонить ${ctx.site.phone}`, href: ctx.site.phoneHref }, secondaryCta: { label: "Написать письмо", href: `mailto:${ctx.site.email}` }, heroFacts: ["Мария Воронина", "Шахты", "ул. Маяковского 18А"] };
-  const contact = `<section class="section"><div class="container contact-grid"><article><span>01 · Телефон</span><h2><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a></h2><p>Самый прямой способ обсудить задачу.</p></article><article><span>02 · Email</span><h2><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a></h2><p>Подходит, если нужно отправить описание без чувствительных документов.</p></article><article><span>03 · Адрес</span><h2>${esc(ctx.site.address)}</h2><p>Часы посещения уточните по телефону.</p></article><article><span>04 · Собственник</span><h2><a href="${ctx.href("team/maria-voronina.html")}">Мария Воронина</a></h2><p>Собственник офиса в Шахтах.</p></article></div></section>`;
+  const page = { path: "contacts.html", pageType: "contact", title: "Контакты — Домиан · Шахты на Маяковского", description: "Адрес, телефон, email и подтверждённые мессенджеры офиса «Домиан · Шахты на Маяковского», собственник Мария Воронина.", eyebrow: "Связаться с офисом", h1: "Начните с короткого разговора", lead: "Позвоните, напишите на email или выберите удобный мессенджер. Часы посещения офиса лучше уточнить заранее.", primaryCta: { label: `Позвонить ${ctx.site.phone}`, href: ctx.site.phoneHref, event: "phone_click" }, secondaryCta: { label: "Написать письмо", href: `mailto:${ctx.site.email}` }, heroFacts: ["Мария Воронина", "Шахты", "ул. Маяковского 18А"] };
+  const contact = `<section class="section"><div class="container contact-layout"><div class="contact-grid"><article><span>01 · Телефон</span><h2><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a></h2><p>Самый прямой способ обсудить задачу.</p></article><article><span>02 · Email</span><h2><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a></h2><p>Подходит, если нужно отправить описание без чувствительных документов.</p></article><article><span>03 · Адрес</span><h2>${esc(ctx.site.address)}</h2><p>Часы посещения уточните по телефону.</p></article><article><span>04 · Мессенджеры</span><h2>Напишите Марии</h2><p>Подтверждённые каналы офиса — без QR-кодов и промежуточных страниц.</p>${socialLinks(ctx, "social-links social-links--contact")}</article></div><aside class="contact-owner">${ownerPortrait(ctx, "compact")}<p>Мария Воронина<br><span>собственник офиса</span></p></aside></div></section>`;
   const prepare = criteriaSection({ kicker: "Перед обращением", title: "Достаточно трёх вводных", intro: "Не отправляйте паспортные, банковские или иные чувствительные данные через форму.", items: ["что хотите купить, продать или оценить", "какая территория важна", "бюджет или желаемая последовательность"] });
   return layout(ctx, page, `${hero(ctx, page)}${contact}${prepare}${leadForm(ctx, { type: "service", title: "Оставить контакт для ответа", text: "В PRELAUNCH форма безопасно покажет прямые контакты вместо фиктивной отправки." })}`, { active: "contacts", breadcrumbs: [{ label: "Главная", href: "" }, { label: "Контакты", href: page.path }] });
 }

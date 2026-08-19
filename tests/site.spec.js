@@ -39,6 +39,49 @@ test("mobile drawer opens, traps focus and closes with Escape", async ({ page })
   await expect(toggle).toBeFocused();
 });
 
+test("confirmed social links emit allowlisted events without PII", async ({ page }) => {
+  const events = [];
+  await page.addInitScript(() => {
+    window.DOMIAN_ANALYTICS_TEST_HOOK = (name, params) => window.__domianEvents.push({ name, params });
+    window.__domianEvents = [];
+  });
+  await page.goto("contacts.html");
+  await page.evaluate(() => {
+    document.addEventListener("click", (event) => {
+      if (event.target.closest(".social-links--contact a")) event.preventDefault();
+    }, true);
+  });
+  const expected = {
+    whatsapp_click: "https://wa.me/message/YL42DCFCGMPQH1",
+    telegram_click: "https://t.me/MariyaVoronina87",
+    max_click: "https://max.ru/u/f9LHodD0cOIKT6pyYpEr_SpFY0ZcDT9BWF4LEwhkoft3td7dLbNOySNW-RA",
+    instagram_click: "https://www.instagram.com/domian_shakhty_mayakovskogo?utm_source=qr&igsi=dTFsYmg4Nm15Y3F0"
+  };
+  for (const [name, href] of Object.entries(expected)) {
+    const link = page.locator(`.social-links--contact a[data-analytics="${name}"]`);
+    await expect(link).toHaveAttribute("href", href);
+    await expect(link).toHaveAttribute("rel", "noopener noreferrer");
+    await link.click();
+  }
+  events.push(...await page.evaluate(() => window.__domianEvents));
+  expect(events.map((item) => item.name)).toEqual(Object.keys(expected));
+  expect(events.every((item) => JSON.stringify(item.params) === '{"page_type":"contact"}')).toBe(true);
+});
+
+test("Maria portrait is responsive, dimensioned and loads on trust pages", async ({ page }) => {
+  for (const pathname of ["", "team/maria-voronina.html", "contacts.html"]) {
+    await page.goto(pathname);
+    const portrait = page.locator('.owner-portrait img[alt*="Мария Воронина"]').first();
+    await portrait.scrollIntoViewIfNeeded();
+    await expect(portrait).toBeVisible();
+    await expect(portrait).toHaveAttribute("width", "640");
+    await expect(portrait).toHaveAttribute("height", "800");
+    const image = await portrait.evaluate((node) => ({ naturalWidth: node.naturalWidth, currentSrc: node.currentSrc }));
+    expect(image.naturalWidth).toBeGreaterThan(0);
+    expect(image.currentSrc).toMatch(/maria-voronina-(?:360|640|960)\.webp$/u);
+  }
+});
+
 test("lead form validates locally and does not fake success", async ({ page }) => {
   const outbound = [];
   page.on("request", (request) => {
