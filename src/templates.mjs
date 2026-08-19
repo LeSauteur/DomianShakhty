@@ -156,7 +156,7 @@ function cardsSection(ctx, section) {
 
 function criteriaSection(section) {
   return `<section class="section section--ink"><div class="container criteria-layout">
-    <div>${sectionHeading(section)}</div>
+    <div class="criteria-copy" data-reveal><p class="eyebrow">${esc(section.kicker || "")}</p><h2>${esc(section.title || "")}</h2>${section.intro ? `<p class="criteria-intro">${esc(section.intro)}</p>` : ""}</div>
     <ol class="criteria-list" data-reveal-group>${section.items.map((item, index) => `<li data-reveal><span>${String(index + 1).padStart(2, "0")}</span><strong>${esc(item)}</strong></li>`).join("")}</ol>
   </div></section>`;
 }
@@ -189,7 +189,7 @@ function processSection(section) {
 }
 
 function splitSection(ctx, section) {
-  return `<section class="section"><div class="container">${sectionHeading(section)}<div class="split-cards"><article class="split-card split-card--plum"><h3>${esc(section.left.title)}</h3><p>${esc(section.left.text)}</p><a class="text-link" href="${ctx.href(section.left.href)}">${esc(section.left.label)} ↗</a></article><article class="split-card"><h3>${esc(section.right.title)}</h3><p>${esc(section.right.text)}</p><a class="text-link" href="${ctx.href(section.right.href)}">${esc(section.right.label)} ↗</a></article></div></div></section>`;
+  return `<section class="section"><div class="container">${sectionHeading(section)}<div class="split-cards"><article class="split-card split-card--sage"><h3>${esc(section.left.title)}</h3><p>${esc(section.left.text)}</p><a class="text-link" href="${ctx.href(section.left.href)}">${esc(section.left.label)} ↗</a></article><article class="split-card"><h3>${esc(section.right.title)}</h3><p>${esc(section.right.text)}</p><a class="text-link" href="${ctx.href(section.right.href)}">${esc(section.right.label)} ↗</a></article></div></div></section>`;
 }
 
 function mortgageSection() {
@@ -288,7 +288,7 @@ function documentHead(ctx, page, breadcrumbsItems) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="${ctx.site.mode === "prelaunch" ? "noindex,nofollow" : "index,follow"}">
   <meta name="description" content="${esc(page.description)}">
-  <meta name="theme-color" content="#29232b">
+  <meta name="theme-color" content="#29383a">
   <link rel="icon" href="data:,">
   <title>${esc(page.title)}</title>
   ${canonical ? `<link rel="canonical" href="${canonical}">` : ""}
@@ -301,7 +301,7 @@ function documentHead(ctx, page, breadcrumbsItems) {
   ${ogImage ? `<meta property="og:image" content="${ogImage}">
   <meta property="og:image:width" content="1536">
   <meta property="og:image:height" content="1024">
-  <meta property="og:image:alt" content="Домиан Шахты — недвижимость в жемчужной, сливовой и шампанской палитре">` : ""}
+  <meta property="og:image:alt" content="Домиан Шахты — недвижимость в жемчужной, мятной, шалфейной и шампанской палитре">` : ""}
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${esc(page.title)}">
   <meta name="twitter:description" content="${esc(page.description)}">
