@@ -3266,7 +3266,23 @@ textarea {
   }
 
   .showcase-filter {
-    margin-inline: -2px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow-x: visible;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+
+  .showcase-filter button {
+    min-width: 0;
+    width: 100%;
+    padding-inline: 10px;
+  }
+
+  .showcase-filter button:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 4px);
   }
 
   .showcase-card__body > p:not(.showcase-card__category) {
