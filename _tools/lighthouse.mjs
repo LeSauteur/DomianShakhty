@@ -27,3 +27,6 @@ try {
     console.warn("Chrome stopped; Windows deferred temporary-profile cleanup.");
   }
 }
+
+// chrome-launcher can leave an idle Windows handle after a successful report.
+process.exit(0);

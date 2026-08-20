@@ -25,6 +25,31 @@ test("unverified inventory and builders never enter public feeds", () => {
   }
 });
 
+test("showcase stays separate from real inventory and contains no fabricated offer data", () => {
+  const showcase = JSON.parse(fs.readFileSync("src/data/showcase.json", "utf8"));
+  assert.ok(showcase.length >= 8 && showcase.length <= 12);
+  assert.deepEqual(new Set(showcase.map((item) => item.category)), new Set(["new-house", "builder-house", "secondary-house", "apartment", "land", "house-land"]));
+  for (const item of showcase) {
+    for (const forbidden of ["price", "address", "area", "rooms", "floors", "landArea", "verified"]) {
+      assert.equal(Object.hasOwn(item, forbidden), false, `${item.id} must not contain ${forbidden}`);
+    }
+    assert.match(item.status, /^(?:Витрина готовится|Актуальные варианты — по запросу)$/u);
+  }
+  assert.deepEqual(JSON.parse(read("assets/data/showcase.json")), showcase);
+  assert.doesNotMatch(read("index.html"), /"@type":"(?:Product|Offer)"/u);
+});
+
+test("territories use the owner-approved order everywhere", () => {
+  const expected = ["Шахты", "Каменоломни", "Новошахтинск", "Аюта", "Красный Сулин"];
+  const locations = JSON.parse(fs.readFileSync("src/data/locations.json", "utf8"));
+  assert.deepEqual(config.serviceAreas, expected);
+  assert.deepEqual(locations.map((item) => item.name), expected);
+  const home = read("index.html");
+  const positions = expected.map((name) => home.indexOf(`<h3>${name}</h3>`));
+  assert.ok(positions.every((position) => position >= 0));
+  assert.deepEqual(positions, positions.slice().sort((a, b) => a - b));
+});
+
 test("runtime config contains no configured outbound services", () => {
   const source = read("assets/js/site-config.js");
   assert.match(source, /"metrikaId":null/u);
@@ -97,7 +122,8 @@ test("production rendering drops the Pages base and adds canonical entity metada
     listings: readJson("src/data/listings.json"),
     projects: readJson("src/data/projects.json"),
     builders: readJson("src/data/builders.json"),
-    team: readJson("src/data/team.json")
+    team: readJson("src/data/team.json"),
+    showcase: readJson("src/data/showcase.json")
   };
   const html = renderHome(createContext(productionSite, data), data.guides);
   assert.match(html, /name="robots" content="index,follow"/u);

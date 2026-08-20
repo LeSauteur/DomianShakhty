@@ -53,7 +53,8 @@ const listings = readJson("src/data/listings.json");
 const projects = readJson("src/data/projects.json");
 const builders = readJson("src/data/builders.json");
 const team = readJson("src/data/team.json");
-const ctx = createContext(site, { locations, guides, pages, listings, projects, builders, team });
+const showcase = readJson("src/data/showcase.json");
+const ctx = createContext(site, { locations, guides, pages, listings, projects, builders, team, showcase });
 const outputs = [];
 
 function publish(relativePath, html) {
@@ -96,6 +97,7 @@ writeJson("assets/data/projects.json", projects.filter((item) => item.verified =
 writeJson("assets/data/builders.json", builders.filter((item) => item.verified === true));
 writeJson("assets/data/locations.json", locations);
 writeJson("assets/data/team.json", team.filter((item) => item.verified === true));
+writeJson("assets/data/showcase.json", showcase);
 
 write(".nojekyll", "");
 if (site.mode === "prelaunch") {

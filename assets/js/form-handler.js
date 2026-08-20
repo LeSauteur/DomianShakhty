@@ -125,6 +125,7 @@
     hidden(form, "referrer", document.referrer || "");
     hidden(form, "lead_type", form.elements.service.value);
     hidden(form, "source_cta", context.source_cta || form.getAttribute("data-source-cta") || "form");
+    if (context.criteria) hidden(form, "lead_context", context.criteria);
     utmKeys.forEach(function (key) { if (utm[key]) hidden(form, key, utm[key]); });
   }
 

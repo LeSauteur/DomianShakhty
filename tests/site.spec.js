@@ -110,6 +110,34 @@ test("mortgage calculator uses the visitor's rate", async ({ page }) => {
   await expect(page.locator("[data-mortgage-result]")).toContainText("₽ / мес.");
 });
 
+test("home request builder transfers criteria into the lead form", async ({ page }) => {
+  await page.goto("");
+  const builder = page.locator("[data-request-builder]").first();
+  await builder.locator('select[name="requestType"]').selectOption("construction");
+  await builder.locator('select[name="requestLocation"]').selectOption({ label: "Каменоломни" });
+  await builder.locator('select[name="requestBudget"]').selectOption({ label: "5–8 млн ₽" });
+  await builder.locator('select[name="requestRooms"]').selectOption("3");
+  await builder.getByRole("button", { name: "Передать критерии" }).click();
+  await expect(builder.locator("[data-request-builder-status]")).toContainText("Критерии перенесены");
+  await expect(page.locator('form[data-lead-form] select[name="service"]')).toHaveValue("construction");
+  await expect(page.locator('form[data-lead-form] textarea[name="message"]')).toHaveValue(/Каменоломни/u);
+  await expect(page.locator('form[data-lead-form] textarea[name="message"]')).toHaveValue(/5–8 млн ₽/u);
+});
+
+test("showcase filters ten honest placeholder cards", async ({ page }) => {
+  await page.goto("");
+  await expect(page.locator("[data-showcase-card]")).toHaveCount(10);
+  await page.getByRole("button", { name: "Квартиры", exact: true }).click();
+  await expect(page.locator('[data-showcase-filter="apartment"]')).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("[data-showcase-card]:visible")).toHaveCount(2);
+  await expect(page.locator("[data-showcase-card]:visible").first()).toHaveAttribute("data-category", "apartment");
+});
+
+test("territories keep the approved order and short Ayuta label", async ({ page }) => {
+  await page.goto("");
+  await expect(page.locator(".location-card h3")).toHaveText(["Шахты", "Каменоломни", "Новошахтинск", "Аюта", "Красный Сулин"]);
+});
+
 test("catalog exposes no unverified inventory", async ({ page }) => {
   await page.goto("construction.html");
   await expect(page.locator("[data-catalog-count]")).toHaveText("0");
