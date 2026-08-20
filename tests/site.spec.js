@@ -133,6 +133,28 @@ test("showcase filters ten honest placeholder cards", async ({ page }) => {
   await expect(page.locator("[data-showcase-card]:visible").first()).toHaveAttribute("data-category", "apartment");
 });
 
+test("mobile showcase filters form a complete grid without horizontal scrolling", async ({ page }) => {
+  await page.setViewportSize({ width: 400, height: 824 });
+  await page.goto("");
+  const filter = page.locator("[data-showcase-filters]");
+  await filter.scrollIntoViewIfNeeded();
+  const layout = await filter.evaluate((node) => {
+    const filterRect = node.getBoundingClientRect();
+    const buttons = [...node.querySelectorAll("button")].map((button) => button.getBoundingClientRect());
+    return {
+      display: getComputedStyle(node).display,
+      overflowX: getComputedStyle(node).overflowX,
+      scrollWidth: node.scrollWidth,
+      clientWidth: node.clientWidth,
+      buttonsInside: buttons.every((rect) => rect.left >= filterRect.left - 1 && rect.right <= filterRect.right + 1)
+    };
+  });
+  expect(layout.display).toBe("grid");
+  expect(layout.overflowX).toBe("visible");
+  expect(layout.scrollWidth).toBeLessThanOrEqual(layout.clientWidth + 1);
+  expect(layout.buttonsInside).toBe(true);
+});
+
 test("territories keep the approved order and short Ayuta label", async ({ page }) => {
   await page.goto("");
   await expect(page.locator(".location-card h3")).toHaveText(["Шахты", "Каменоломни", "Новошахтинск", "Аюта", "Красный Сулин"]);
