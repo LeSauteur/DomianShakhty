@@ -190,6 +190,107 @@
     revealPassedTargets();
   }
 
+  function readLeadContext() {
+    try {
+      var parsed = JSON.parse(window.sessionStorage.getItem("domian_lead_context") || "{}");
+      if (!parsed || typeof parsed !== "object") return {};
+      if (parsed.captured_at && Date.now() - Number(parsed.captured_at) > 30 * 60 * 1000) return {};
+      return parsed;
+    } catch (_error) {
+      return {};
+    }
+  }
+
+  function writeLeadContext(context) {
+    try { window.sessionStorage.setItem("domian_lead_context", JSON.stringify(context)); } catch (_error) { /* optional */ }
+  }
+
+  function serviceForCategory(category) {
+    var map = {
+      "new-house": "construction",
+      "builder-house": "builder",
+      "secondary-house": "house",
+      apartment: "apartment",
+      land: "land",
+      "house-land": "house-land"
+    };
+    return map[category] || category || "";
+  }
+
+  function applyLeadContext(context) {
+    if (!context || typeof context !== "object") return;
+    queryAll("form[data-lead-form]").forEach(function (form) {
+      var service = form.elements.service;
+      var message = form.elements.message;
+      if (service && context.service && queryAll("option", service).some(function (option) { return option.value === context.service; })) {
+        service.value = context.service;
+      }
+      if (message && context.message && (!message.value.trim() || message.dataset.contextPrefilled === "true")) {
+        message.value = context.message;
+        message.dataset.contextPrefilled = "true";
+      }
+    });
+  }
+
+  function initRequestBuilders() {
+    queryAll("[data-request-builder]").forEach(function (form) {
+      var status = form.querySelector("[data-request-builder-status]");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        var values = new FormData(form);
+        var type = String(values.get("requestType") || "");
+        var typeField = form.elements.requestType;
+        if (!type) {
+          if (status) { status.hidden = false; status.textContent = "Сначала выберите тип недвижимости."; }
+          if (typeField) typeField.focus();
+          return;
+        }
+        var labels = [
+          ["Тип", typeField.options[typeField.selectedIndex].text],
+          ["Территория", values.get("requestLocation")],
+          ["Бюджет", values.get("requestBudget")],
+          ["Комнаты / спальни", values.get("requestRooms")],
+          ["Площадь дома", values.get("requestArea")],
+          ["Участок", values.get("requestLand")]
+        ].filter(function (item) { return item[1]; });
+        var summary = labels.map(function (item) { return item[0] + ": " + item[1]; }).join("; ");
+        var context = {
+          page_type: document.body.dataset.pageType || "",
+          source_cta: "Конструктор критериев",
+          service: serviceForCategory(type),
+          criteria: summary,
+          message: "Критерии подбора: " + summary + ".",
+          captured_at: Date.now()
+        };
+        writeLeadContext(context);
+        applyLeadContext(context);
+        if (status) { status.hidden = false; status.textContent = "Критерии перенесены в форму. Добавьте имя и телефон или свяжитесь с офисом напрямую."; }
+        track("catalog_filter_use", { filter_name: "request_builder", filter_value: type, page_type: document.body.dataset.pageType || "" });
+        var lead = document.getElementById("lead-form-section");
+        if (lead) lead.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+      });
+    });
+  }
+
+  function initShowcaseFilters() {
+    queryAll("[data-showcase-filters]").forEach(function (filters) {
+      var section = filters.closest("section") || document;
+      var cards = queryAll("[data-showcase-card]", section);
+      queryAll("[data-showcase-filter]", filters).forEach(function (button) {
+        button.addEventListener("click", function () {
+          var value = button.getAttribute("data-showcase-filter") || "all";
+          queryAll("[data-showcase-filter]", filters).forEach(function (item) {
+            var active = item === button;
+            item.classList.toggle("is-active", active);
+            item.setAttribute("aria-pressed", String(active));
+          });
+          cards.forEach(function (card) { card.hidden = value !== "all" && card.getAttribute("data-category") !== value; });
+          track("catalog_filter_use", { filter_name: "showcase", filter_value: value, page_type: document.body.dataset.pageType || "" });
+        });
+      });
+    });
+  }
+
   function initInteractionTracking() {
     document.addEventListener("click", function (event) {
       var link = event.target.closest("a[href]");
@@ -197,13 +298,18 @@
       if (explicit) track(explicit.getAttribute("data-analytics"), { page_type: document.body.dataset.pageType || "" });
       if (!link) return;
       var href = link.getAttribute("href") || "";
-      if (href.indexOf("#lead-form-section") !== -1) {
-        var context = {
+      var category = link.getAttribute("data-lead-category") || "";
+      if (href.indexOf("#lead-form-section") !== -1 || category) {
+        var label = link.getAttribute("data-lead-label") || link.textContent.trim().slice(0, 64);
+        var context = Object.assign({}, readLeadContext(), {
           page_type: document.body.dataset.pageType || "",
-          source_cta: link.textContent.trim().slice(0, 64),
+          source_cta: label,
+          service: category ? serviceForCategory(category) : (readLeadContext().service || ""),
+          message: category ? "Интересует направление: " + label + ". Подготовьте актуальную подборку без демонстрационных объектов." : (readLeadContext().message || ""),
           captured_at: Date.now()
-        };
-        try { window.sessionStorage.setItem("domian_lead_context", JSON.stringify(context)); } catch (_error) { /* optional */ }
+        });
+        writeLeadContext(context);
+        applyLeadContext(context);
         if (document.body.dataset.pageType === "guide") track("guide_to_lead", context);
         if (document.body.dataset.pageType === "location") track("location_to_construction", context);
       }
@@ -306,6 +412,9 @@
   initHeader();
   initDrawer();
   initReveal();
+  applyLeadContext(readLeadContext());
+  initRequestBuilders();
+  initShowcaseFilters();
   initInteractionTracking();
   initMortgage();
   initCatalogs();
