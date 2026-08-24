@@ -28,12 +28,12 @@ test("unverified inventory and builders never enter public feeds", () => {
 test("showcase stays separate from real inventory and contains no fabricated offer data", () => {
   const showcase = JSON.parse(fs.readFileSync("src/data/showcase.json", "utf8"));
   assert.ok(showcase.length >= 8 && showcase.length <= 12);
-  assert.deepEqual(new Set(showcase.map((item) => item.category)), new Set(["new-house", "builder-house", "secondary-house", "apartment", "land", "house-land"]));
+  assert.deepEqual(new Set(showcase.map((item) => item.category)), new Set(["apartment-secondary", "apartment-newbuild", "new-house", "secondary-house", "builder-house", "land", "commercial", "garage-parking"]));
   for (const item of showcase) {
     for (const forbidden of ["price", "address", "area", "rooms", "floors", "landArea", "verified"]) {
       assert.equal(Object.hasOwn(item, forbidden), false, `${item.id} must not contain ${forbidden}`);
     }
-    assert.match(item.status, /^(?:Витрина готовится|Актуальные варианты — по запросу)$/u);
+    assert.equal(item.status, "Направление подбора · не объект продажи");
   }
   assert.deepEqual(JSON.parse(read("assets/data/showcase.json")), showcase);
   assert.doesNotMatch(read("index.html"), /"@type":"(?:Product|Offer)"/u);
@@ -105,6 +105,64 @@ test("every generated page has exactly one h1", () => {
   for (const file of pages) {
     assert.equal((fs.readFileSync(file, "utf8").match(/<h1\b/giu) || []).length, 1, path.relative(root, file));
   }
+});
+
+test("all core property directions have useful public pages and navigation entry points", () => {
+  const required = [
+    "apartments.html", "secondary-apartments.html", "new-build-apartments.html",
+    "houses.html", "construction.html", "secondary-houses.html", "builder-houses.html",
+    "lands.html", "commercial.html", "garages-parking.html"
+  ];
+  required.forEach((file) => assert.ok(fs.existsSync(path.join(root, file)), `${file} must exist`));
+  const home = read("index.html");
+  for (const label of ["Квартиры", "Дома", "Участки", "Коммерческая недвижимость", "Гаражи и парковочные места"]) {
+    assert.match(home, new RegExp(`mobile-drawer__group[\\s\\S]*${label}`, "u"));
+  }
+  assert.match(home, /<h1>Недвижимость в Шахтах/u);
+  assert.match(home, /Вторичные квартиры/u);
+  assert.ok(home.indexOf("Квартиры") < home.indexOf("Новые дома"), "apartments must be visible before the new-home showcase filter");
+});
+
+test("direction pages remain honest and their forms carry structured context", () => {
+  const pages = JSON.parse(fs.readFileSync("src/data/pages.json", "utf8"));
+  for (const page of pages) {
+    const html = read(page.path);
+    assert.doesNotMatch(html, /"@type":"(?:Product|Offer|AggregateRating|Review)"/u, page.path);
+    assert.match(html, /name="goal"/u, page.path);
+    assert.match(html, /name="property_type"/u, page.path);
+    assert.match(html, /name="territory"/u, page.path);
+    assert.match(html, /data-source-cta=/u, page.path);
+    if (page.form?.goal) assert.match(html, new RegExp(`<option value="${page.form.goal}" selected>`, "u"), page.path);
+    if (page.form?.propertyType) assert.match(html, new RegExp(`<option value="${page.form.propertyType}" selected>`, "u"), page.path);
+  }
+  for (const file of ["commercial.html", "garages-parking.html"]) {
+    assert.match(read(file), /Направление подбора · не объект продажи/u);
+    assert.match(read(file), /Подтверждённых публичных объектов: <strong data-catalog-count>0/u);
+  }
+});
+
+test("unconfirmed authorship and construction-company claims are absent", () => {
+  const publicSource = `${fs.readFileSync("src/templates.mjs", "utf8")}\n${fs.readFileSync("src/data/pages.json", "utf8")}`;
+  assert.doesNotMatch(publicSource, /Редактор:\s*Мария Воронина/u);
+  assert.doesNotMatch(publicSource, /editor:\s*\{[^}]*Мария/u);
+  assert.doesNotMatch(publicSource, /(?:мы|офис|агентство)\s+(?:сами\s+)?строим\s+дома/iu);
+  for (const guide of fs.readdirSync(path.join(root, "guides")).filter((name) => name.endsWith(".html"))) {
+    const html = read(`guides/${guide}`);
+    assert.doesNotMatch(html, /Редактор:\s*Мария Воронина/u);
+    if (guide !== "index.html") {
+      assert.match(html, /Подготовлено на основе открытых источников/u);
+      assert.match(html, /Информационный материал · условия рынка могут меняться/u);
+    }
+  }
+});
+
+test("listing schema expands types without breaking legacy values", () => {
+  const schema = JSON.parse(fs.readFileSync("src/data/listing.schema.json", "utf8"));
+  const types = schema.properties.type.enum;
+  for (const legacy of ["new-house", "resale-house", "apartment", "land", "project"]) assert.ok(types.includes(legacy));
+  for (const added of ["apartment-secondary", "apartment-newbuild", "house-new", "house-secondary", "house-builder", "commercial", "garage", "parking-space"]) assert.ok(types.includes(added));
+  assert.deepEqual(JSON.parse(fs.readFileSync("src/data/listings.json", "utf8")), []);
+  assert.deepEqual(JSON.parse(fs.readFileSync("src/data/projects.json", "utf8")), []);
 });
 
 test("production rendering drops the Pages base and adds canonical entity metadata", () => {
