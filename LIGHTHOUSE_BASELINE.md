@@ -4,7 +4,7 @@ URL: http://127.0.0.1:4173/DomianShakhty/
 
 | Category | Score |
 | --- | ---: |
-| performance | 95 |
+| performance | 83 |
 | accessibility | 100 |
 | best-practices | 100 |
 | seo | 66 |

@@ -52,10 +52,11 @@
   function validate(form) {
     var name = form.elements.name;
     var phone = form.elements.phone;
-    var service = form.elements.service;
+    var goal = form.elements.goal;
+    var propertyType = form.elements.property_type;
     var consent = form.elements.privacy_consent;
     var first = null;
-    [name, phone, service, consent].forEach(function (field) { if (field) clearError(field); });
+    [name, phone, goal, propertyType, consent].forEach(function (field) { if (field) clearError(field); });
     status(form, "", "");
     if (!name || text(name.value).length < 2) {
       if (name) error(name, "Укажите имя — минимум 2 символа.");
@@ -66,9 +67,13 @@
       if (phone) error(phone, "Укажите номер из 10 или 11 цифр.");
       first = first || phone;
     }
-    if (!service || !service.value) {
-      if (service) error(service, "Выберите тип запроса.");
-      first = first || service;
+    if (!goal || !goal.value) {
+      if (goal) error(goal, "Выберите цель обращения.");
+      first = first || goal;
+    }
+    if (!propertyType || !propertyType.value) {
+      if (propertyType) error(propertyType, "Выберите тип недвижимости.");
+      first = first || propertyType;
     }
     if (!consent || !consent.checked) {
       if (consent) error(consent, "Нужно подтвердить согласие.");
@@ -123,7 +128,12 @@
     hidden(form, "page_url", window.location.href);
     hidden(form, "page_title", document.title);
     hidden(form, "referrer", document.referrer || "");
-    hidden(form, "lead_type", form.elements.service.value);
+    hidden(form, "lead_type", form.elements.service ? form.elements.service.value : "service");
+    hidden(form, "lead_goal", form.elements.goal ? form.elements.goal.value : "");
+    hidden(form, "property_type_context", form.elements.property_type ? form.elements.property_type.value : "");
+    hidden(form, "market_context", form.elements.market ? form.elements.market.value : "");
+    hidden(form, "territory_context", form.elements.territory ? form.elements.territory.value : "");
+    hidden(form, "origin_page", form.getAttribute("data-origin-page") || window.location.pathname);
     hidden(form, "source_cta", context.source_cta || form.getAttribute("data-source-cta") || "form");
     if (context.criteria) hidden(form, "lead_context", context.criteria);
     utmKeys.forEach(function (key) { if (utm[key]) hidden(form, key, utm[key]); });

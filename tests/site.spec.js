@@ -3,6 +3,10 @@ import { expect, test } from "@playwright/test";
 const representativePages = [
   "",
   "construction.html",
+  "apartments.html",
+  "new-build-apartments.html",
+  "commercial.html",
+  "garages-parking.html",
   "locations/shakhty.html",
   "guides/kak-vybrat-dom-ot-zastroyshchika-v-shakhtah.html",
   "team/maria-voronina.html",
@@ -34,6 +38,11 @@ test("mobile drawer opens, traps focus and closes with Escape", async ({ page })
   await toggle.click();
   await expect(toggle).toHaveAttribute("aria-expanded", "true");
   await expect(page.locator("#mobile-drawer")).toHaveClass(/is-open/u);
+  await expect(page.locator(".mobile-drawer__group")).toContainText("Коммерческая недвижимость");
+  await expect(page.locator(".mobile-drawer__group")).toContainText("Гаражи и парковочные места");
+  await page.locator(".mobile-drawer__panel a").last().focus();
+  await page.keyboard.press("Tab");
+  await expect(page.locator(".mobile-drawer__panel a").first()).toBeFocused();
   await page.keyboard.press("Escape");
   await expect(toggle).toHaveAttribute("aria-expanded", "false");
   await expect(toggle).toBeFocused();
@@ -104,6 +113,23 @@ test("lead form validates locally and does not fake success", async ({ page }) =
   expect(outbound).toEqual([]);
 });
 
+test("lead analytics never receives entered personal data", async ({ page }) => {
+  await page.addInitScript(() => {
+    window.__domianEvents = [];
+    window.DOMIAN_ANALYTICS_TEST_HOOK = (name, params) => window.__domianEvents.push({ name, params });
+  });
+  await page.goto("commercial.html#lead-form-section");
+  const form = page.locator("form[data-lead-form]");
+  await form.locator('input[name="name"]').fill("Анна Проверка");
+  await form.locator('input[name="phone"]').fill("8 918 123-45-67");
+  await form.locator('input[name="privacy_consent"]').check();
+  await form.locator('button[type="submit"]').click();
+  const payload = JSON.stringify(await page.evaluate(() => window.__domianEvents));
+  expect(payload).not.toContain("Анна");
+  expect(payload).not.toContain("9181234567");
+  expect(payload).not.toContain("123-45-67");
+});
+
 test("mortgage calculator uses the visitor's rate", async ({ page }) => {
   await page.goto("mortgage.html");
   await page.locator('input[name="rate"]').fill("20");
@@ -113,24 +139,27 @@ test("mortgage calculator uses the visitor's rate", async ({ page }) => {
 test("home request builder transfers criteria into the lead form", async ({ page }) => {
   await page.goto("");
   const builder = page.locator("[data-request-builder]").first();
-  await builder.locator('select[name="requestType"]').selectOption("construction");
+  await builder.locator('select[name="requestType"]').selectOption("apartment");
+  await builder.locator('select[name="requestMarket"]').selectOption("secondary");
   await builder.locator('select[name="requestLocation"]').selectOption({ label: "Каменоломни" });
-  await builder.locator('select[name="requestBudget"]').selectOption({ label: "5–8 млн ₽" });
-  await builder.locator('select[name="requestRooms"]').selectOption("3");
+  await builder.locator('select[name="requestBudget"]').selectOption({ label: "4–7 млн ₽" });
+  await builder.locator('select[name="requestRooms"]').selectOption("3+");
   await builder.getByRole("button", { name: "Передать критерии" }).click();
   await expect(builder.locator("[data-request-builder-status]")).toContainText("Критерии перенесены");
-  await expect(page.locator('form[data-lead-form] select[name="service"]')).toHaveValue("construction");
+  await expect(page.locator('form[data-lead-form] select[name="property_type"]')).toHaveValue("apartment");
+  await expect(page.locator('form[data-lead-form] select[name="market"]')).toHaveValue("secondary");
+  await expect(page.locator('form[data-lead-form] select[name="territory"]')).toHaveValue("Каменоломни");
   await expect(page.locator('form[data-lead-form] textarea[name="message"]')).toHaveValue(/Каменоломни/u);
-  await expect(page.locator('form[data-lead-form] textarea[name="message"]')).toHaveValue(/5–8 млн ₽/u);
+  await expect(page.locator('form[data-lead-form] textarea[name="message"]')).toHaveValue(/4–7 млн ₽/u);
 });
 
 test("showcase filters ten honest placeholder cards", async ({ page }) => {
   await page.goto("");
   await expect(page.locator("[data-showcase-card]")).toHaveCount(10);
-  await page.getByRole("button", { name: "Квартиры", exact: true }).click();
-  await expect(page.locator('[data-showcase-filter="apartment"]')).toHaveAttribute("aria-pressed", "true");
-  await expect(page.locator("[data-showcase-card]:visible")).toHaveCount(2);
-  await expect(page.locator("[data-showcase-card]:visible").first()).toHaveAttribute("data-category", "apartment");
+  await page.getByRole("button", { name: "Вторичные квартиры", exact: true }).click();
+  await expect(page.locator('[data-showcase-filter="apartment-secondary"]')).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("[data-showcase-card]:visible")).toHaveCount(1);
+  await expect(page.locator("[data-showcase-card]:visible").first()).toHaveAttribute("data-category", "apartment-secondary");
 });
 
 test("mobile showcase filters form a complete grid without horizontal scrolling", async ({ page }) => {
@@ -165,6 +194,22 @@ test("catalog exposes no unverified inventory", async ({ page }) => {
   await expect(page.locator("[data-catalog-count]")).toHaveText("0");
   await expect(page.locator("[data-catalog-card]")).toHaveCount(0);
   await expect(page.locator("[data-catalog-empty]")).toBeVisible();
+});
+
+test("core direction pages have no horizontal overflow or overlapping headings", async ({ page }) => {
+  const paths = ["apartments.html", "secondary-apartments.html", "new-build-apartments.html", "houses.html", "construction.html", "secondary-houses.html", "builder-houses.html", "lands.html", "commercial.html", "garages-parking.html"];
+  for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
+    await page.setViewportSize(viewport);
+    for (const pathname of paths) {
+      await page.goto(pathname);
+      const layout = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
+      expect(layout.scroll, `${pathname} at ${viewport.width}px`).toBeLessThanOrEqual(layout.client + 1);
+      const h1 = page.locator("h1");
+      await expect(h1).toBeVisible();
+      const box = await h1.boundingBox();
+      expect(box.width, `${pathname} h1 width`).toBeLessThanOrEqual(viewport.width);
+    }
+  }
 });
 
 test("desktop criteria copy stays below its heading without overlap", async ({ page }) => {

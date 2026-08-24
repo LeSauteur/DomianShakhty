@@ -207,24 +207,46 @@
 
   function serviceForCategory(category) {
     var map = {
-      "new-house": "construction",
-      "builder-house": "builder",
-      "secondary-house": "house",
+      "apartment-secondary": "apartment-secondary",
+      "apartment-newbuild": "apartment-newbuild",
+      "new-house": "house-new",
+      "builder-house": "house-builder",
+      "secondary-house": "house-secondary",
       apartment: "apartment",
+      house: "house",
       land: "land",
-      "house-land": "house-land"
+      commercial: "commercial",
+      "garage-parking": "garage-parking"
     };
     return map[category] || category || "";
+  }
+
+  function propertyTypeForCategory(category) {
+    if (String(category).indexOf("apartment") === 0) return "apartment";
+    if (["new-house", "builder-house", "secondary-house", "house"].indexOf(category) !== -1) return "house";
+    return category || "";
+  }
+
+  function marketForCategory(category) {
+    if (["apartment-secondary", "secondary-house"].indexOf(category) !== -1) return "secondary";
+    if (["apartment-newbuild", "new-house", "builder-house"].indexOf(category) !== -1) return "primary";
+    return "";
   }
 
   function applyLeadContext(context) {
     if (!context || typeof context !== "object") return;
     queryAll("form[data-lead-form]").forEach(function (form) {
       var service = form.elements.service;
+      var goal = form.elements.goal;
+      var propertyType = form.elements.property_type;
+      var market = form.elements.market;
+      var territory = form.elements.territory;
       var message = form.elements.message;
-      if (service && context.service && queryAll("option", service).some(function (option) { return option.value === context.service; })) {
-        service.value = context.service;
-      }
+      if (service && context.service) service.value = context.service;
+      if (goal && context.goal) goal.value = context.goal;
+      if (propertyType && context.property_type) propertyType.value = context.property_type;
+      if (market && context.market) market.value = context.market;
+      if (territory && context.territory) territory.value = context.territory;
       if (message && context.message && (!message.value.trim() || message.dataset.contextPrefilled === "true")) {
         message.value = context.message;
         message.dataset.contextPrefilled = "true";
@@ -235,29 +257,50 @@
   function initRequestBuilders() {
     queryAll("[data-request-builder]").forEach(function (form) {
       var status = form.querySelector("[data-request-builder-status]");
+      var typeField = form.elements.requestType;
+
+      function updateFields() {
+        var type = String(typeField ? typeField.value : "");
+        queryAll("[data-request-field]", form).forEach(function (field) {
+          var applies = String(field.getAttribute("data-request-field") || "").split(/\s+/u);
+          var show = applies.indexOf(type) !== -1 || (field.getAttribute("data-request-field") === "market" && ["apartment", "house"].indexOf(type) !== -1);
+          field.hidden = !show;
+          queryAll("select, input", field).forEach(function (control) { control.disabled = !show; });
+        });
+      }
+      if (typeField) typeField.addEventListener("change", updateFields);
+      updateFields();
+
       form.addEventListener("submit", function (event) {
         event.preventDefault();
         var values = new FormData(form);
         var type = String(values.get("requestType") || "");
-        var typeField = form.elements.requestType;
         if (!type) {
           if (status) { status.hidden = false; status.textContent = "Сначала выберите тип недвижимости."; }
           if (typeField) typeField.focus();
           return;
         }
         var labels = [
+          ["Цель", form.elements.requestGoal.options[form.elements.requestGoal.selectedIndex].text],
           ["Тип", typeField.options[typeField.selectedIndex].text],
+          ["Рынок", form.elements.requestMarket && form.elements.requestMarket.options[form.elements.requestMarket.selectedIndex].text],
           ["Территория", values.get("requestLocation")],
           ["Бюджет", values.get("requestBudget")],
-          ["Комнаты / спальни", values.get("requestRooms")],
+          ["Комнаты", values.get("requestRooms")],
           ["Площадь дома", values.get("requestArea")],
-          ["Участок", values.get("requestLand")]
-        ].filter(function (item) { return item[1]; });
+          ["Участок", values.get("requestLand")],
+          ["Коммерческий тип", values.get("requestCommercial")],
+          ["Гараж / место", values.get("requestParking")]
+        ].filter(function (item) { return item[1] && item[1] !== "Не определено" && item[1] !== "Уточнить"; });
         var summary = labels.map(function (item) { return item[0] + ": " + item[1]; }).join("; ");
         var context = {
           page_type: document.body.dataset.pageType || "",
           source_cta: "Конструктор критериев",
           service: serviceForCategory(type),
+          goal: String(values.get("requestGoal") || "buy"),
+          property_type: type,
+          market: String(values.get("requestMarket") || ""),
+          territory: String(values.get("requestLocation") || ""),
           criteria: summary,
           message: "Критерии подбора: " + summary + ".",
           captured_at: Date.now()
@@ -305,6 +348,8 @@
           page_type: document.body.dataset.pageType || "",
           source_cta: label,
           service: category ? serviceForCategory(category) : (readLeadContext().service || ""),
+          property_type: category ? propertyTypeForCategory(category) : (readLeadContext().property_type || ""),
+          market: category ? marketForCategory(category) : (readLeadContext().market || ""),
           message: category ? "Интересует направление: " + label + ". Подготовьте актуальную подборку без демонстрационных объектов." : (readLeadContext().message || ""),
           captured_at: Date.now()
         });
@@ -350,6 +395,21 @@
     }
     form.addEventListener("input", calculate);
     calculate();
+  }
+
+  function initLeadDisclosure() {
+    queryAll("form[data-lead-form]").forEach(function (form) {
+      var type = form.elements.property_type;
+      var market = form.querySelector("[data-lead-market]");
+      if (!type || !market) return;
+      function update() {
+        var show = ["apartment", "house"].indexOf(type.value) !== -1;
+        market.hidden = !show;
+        if (form.elements.market) form.elements.market.disabled = !show;
+      }
+      type.addEventListener("change", update);
+      update();
+    });
   }
 
   function projectCard(item) {
@@ -414,6 +474,7 @@
   initReveal();
   applyLeadContext(readLeadContext());
   initRequestBuilders();
+  initLeadDisclosure();
   initShowcaseFilters();
   initInteractionTracking();
   initMortgage();
