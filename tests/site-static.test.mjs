@@ -36,6 +36,7 @@ test("showcase stays separate from real inventory and contains no fabricated off
     assert.equal(item.status, "Направление подбора · не объект продажи");
   }
   assert.deepEqual(JSON.parse(read("assets/data/showcase.json")), showcase);
+  assert.doesNotMatch(read("index.html"), /data-showcase-card|data-showcase-filters/u);
   assert.doesNotMatch(read("index.html"), /"@type":"(?:Product|Offer)"/u);
 });
 
@@ -45,7 +46,7 @@ test("territories use the owner-approved order everywhere", () => {
   assert.deepEqual(config.serviceAreas, expected);
   assert.deepEqual(locations.map((item) => item.name), expected);
   const home = read("index.html");
-  const positions = expected.map((name) => home.indexOf(`<h3>${name}</h3>`));
+  const positions = expected.map((name) => home.indexOf(`<strong>${name}</strong>`));
   assert.ok(positions.every((position) => position >= 0));
   assert.deepEqual(positions, positions.slice().sort((a, b) => a - b));
 });
@@ -115,12 +116,31 @@ test("all core property directions have useful public pages and navigation entry
   ];
   required.forEach((file) => assert.ok(fs.existsSync(path.join(root, file)), `${file} must exist`));
   const home = read("index.html");
-  for (const label of ["Квартиры", "Дома", "Участки", "Коммерческая недвижимость", "Гаражи и парковочные места"]) {
+  for (const label of ["Квартиры", "Дома", "Участки", "Коммерческая недвижимость", "Гаражи и парковка"]) {
     assert.match(home, new RegExp(`mobile-drawer__group[\\s\\S]*${label}`, "u"));
   }
   assert.match(home, /<h1>Недвижимость в Шахтах/u);
-  assert.match(home, /Вторичные квартиры/u);
-  assert.ok(home.indexOf("Квартиры") < home.indexOf("Новые дома"), "apartments must be visible before the new-home showcase filter");
+  assert.match(home, /Вторичный рынок и новостройки/u);
+  assert.ok(home.indexOf("Квартиры") < home.indexOf("Новые готовые дома"), "apartments must be visible before the new-home feature");
+});
+
+test("homepage uses the approved eight-section editorial composition", () => {
+  const home = read("index.html");
+  assert.equal((home.match(/<section\b/gu) || []).length, 8);
+  assert.equal((home.match(/class="home-property-card"/gu) || []).length, 6);
+  assert.match(home, /<h1>Недвижимость в Шахтах — спокойно и по делу<\/h1>/u);
+  assert.match(home, /Подобрать недвижимость/u);
+  assert.match(home, /Продать объект/u);
+  assert.match(home, /Оценить стоимость/u);
+  assert.match(home, /class="new-homes-feature"/u);
+  assert.match(home, /data-home-request-builder/u);
+  assert.match(home, /data-lead-compact/u);
+  assert.match(home, /hero-modern-city-living-mobile-600\.webp/u);
+  assert.match(home, /fetchpriority="high"/u);
+  assert.doesNotMatch(home, /apartment-building-(?:640|960)\.webp/u);
+  const order = ["property", "request", "seller", "locations", "expertise", "office", "lead"].map((name) => home.indexOf(`data-home-section="${name}"`));
+  assert.ok(order.every((position) => position >= 0));
+  assert.deepEqual(order, order.slice().sort((a, b) => a - b));
 });
 
 test("direction pages remain honest and their forms carry structured context", () => {

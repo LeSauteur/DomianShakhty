@@ -39,13 +39,25 @@ test("mobile drawer opens, traps focus and closes with Escape", async ({ page })
   await expect(toggle).toHaveAttribute("aria-expanded", "true");
   await expect(page.locator("#mobile-drawer")).toHaveClass(/is-open/u);
   await expect(page.locator(".mobile-drawer__group")).toContainText("Коммерческая недвижимость");
-  await expect(page.locator(".mobile-drawer__group")).toContainText("Гаражи и парковочные места");
+  await expect(page.locator(".mobile-drawer__group")).toContainText("Гаражи и парковка");
   await page.locator(".mobile-drawer__panel a").last().focus();
   await page.keyboard.press("Tab");
   await expect(page.locator(".mobile-drawer__panel a").first()).toBeFocused();
   await page.keyboard.press("Escape");
   await expect(toggle).toHaveAttribute("aria-expanded", "false");
   await expect(toggle).toBeFocused();
+});
+
+test("desktop property menu closes with Escape and restores focus", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("");
+  const menu = page.locator("[data-property-nav]");
+  const summary = menu.locator("summary");
+  await summary.click();
+  await expect(menu).toHaveAttribute("open", "");
+  await page.keyboard.press("Escape");
+  await expect(menu).not.toHaveAttribute("open", "");
+  await expect(summary).toBeFocused();
 });
 
 test("confirmed social links emit allowlisted events without PII", async ({ page }) => {
@@ -113,6 +125,20 @@ test("lead form validates locally and does not fake success", async ({ page }) =
   expect(outbound).toEqual([]);
 });
 
+test("compact home lead validates phone and consent without fake submission", async ({ page }) => {
+  const outbound = [];
+  page.on("request", (request) => {
+    if (!request.url().startsWith("http://127.0.0.1:4173")) outbound.push(request.url());
+  });
+  await page.goto("");
+  const form = page.locator("form[data-lead-compact]");
+  await form.locator('input[name="phone"]').fill("8 918 000-00-00");
+  await form.locator('input[name="privacy_consent"]').check();
+  await form.locator('button[type="submit"]').click();
+  await expect(form.locator("[data-form-status]")).toContainText("Форма пока не подключена");
+  expect(outbound).toEqual([]);
+});
+
 test("lead analytics never receives entered personal data", async ({ page }) => {
   await page.addInitScript(() => {
     window.__domianEvents = [];
@@ -138,55 +164,54 @@ test("mortgage calculator uses the visitor's rate", async ({ page }) => {
 
 test("home request builder transfers criteria into the lead form", async ({ page }) => {
   await page.goto("");
-  const builder = page.locator("[data-request-builder]").first();
+  const builder = page.locator("[data-home-request-builder]");
   await builder.locator('select[name="requestType"]').selectOption("apartment");
-  await builder.locator('select[name="requestMarket"]').selectOption("secondary");
   await builder.locator('select[name="requestLocation"]').selectOption({ label: "Каменоломни" });
   await builder.locator('select[name="requestBudget"]').selectOption({ label: "4–7 млн ₽" });
-  await builder.locator('select[name="requestRooms"]').selectOption("3+");
-  await builder.getByRole("button", { name: "Передать критерии" }).click();
-  await expect(builder.locator("[data-request-builder-status]")).toContainText("Критерии перенесены");
-  await expect(page.locator('form[data-lead-form] select[name="property_type"]')).toHaveValue("apartment");
-  await expect(page.locator('form[data-lead-form] select[name="market"]')).toHaveValue("secondary");
-  await expect(page.locator('form[data-lead-form] select[name="territory"]')).toHaveValue("Каменоломни");
-  await expect(page.locator('form[data-lead-form] textarea[name="message"]')).toHaveValue(/Каменоломни/u);
-  await expect(page.locator('form[data-lead-form] textarea[name="message"]')).toHaveValue(/4–7 млн ₽/u);
+  await builder.locator('input[name="requestPhone"]').fill("8 918 123-45-67");
+  await builder.getByRole("button", { name: "Получить актуальную подборку" }).click();
+  await expect(builder.locator("[data-home-request-status]")).toContainText("Телефон перенесён");
+  await expect(page.locator('form[data-lead-compact] input[name="phone"]')).toHaveValue("8 918 123-45-67");
+  const context = await page.evaluate(() => JSON.parse(sessionStorage.getItem("domian_lead_context")));
+  expect(context.property_type).toBe("apartment");
+  expect(context.territory).toBe("Каменоломни");
+  expect(context.criteria).toContain("4–7 млн ₽");
 });
 
-test("showcase filters ten honest placeholder cards", async ({ page }) => {
+test("homepage has six equal category cards and a separate new-home feature", async ({ page }) => {
   await page.goto("");
-  await expect(page.locator("[data-showcase-card]")).toHaveCount(10);
-  await page.getByRole("button", { name: "Вторичные квартиры", exact: true }).click();
-  await expect(page.locator('[data-showcase-filter="apartment-secondary"]')).toHaveAttribute("aria-pressed", "true");
-  await expect(page.locator("[data-showcase-card]:visible")).toHaveCount(1);
-  await expect(page.locator("[data-showcase-card]:visible").first()).toHaveAttribute("data-category", "apartment-secondary");
+  await expect(page.locator(".home-property-card")).toHaveCount(6);
+  await expect(page.locator(".new-homes-feature")).toHaveCount(1);
+  await expect(page.locator("[data-showcase-card]")).toHaveCount(0);
+  const sections = await page.locator("main > section").evaluateAll((nodes) => nodes.map((node) => node.getAttribute("data-home-section") || "hero"));
+  expect(sections).toEqual(["hero", "property", "request", "seller", "locations", "expertise", "office", "lead"]);
 });
 
-test("mobile showcase filters form a complete grid without horizontal scrolling", async ({ page }) => {
+test("mobile property cards form a two-column grid without horizontal scrolling", async ({ page }) => {
   await page.setViewportSize({ width: 400, height: 824 });
   await page.goto("");
-  const filter = page.locator("[data-showcase-filters]");
-  await filter.scrollIntoViewIfNeeded();
-  const layout = await filter.evaluate((node) => {
-    const filterRect = node.getBoundingClientRect();
-    const buttons = [...node.querySelectorAll("button")].map((button) => button.getBoundingClientRect());
+  const grid = page.locator(".home-property__grid");
+  await grid.scrollIntoViewIfNeeded();
+  const layout = await grid.evaluate((node) => {
+    const gridRect = node.getBoundingClientRect();
+    const cards = [...node.querySelectorAll(".home-property-card")].map((card) => card.getBoundingClientRect());
     return {
       display: getComputedStyle(node).display,
-      overflowX: getComputedStyle(node).overflowX,
+      columns: getComputedStyle(node).gridTemplateColumns.split(" ").length,
       scrollWidth: node.scrollWidth,
       clientWidth: node.clientWidth,
-      buttonsInside: buttons.every((rect) => rect.left >= filterRect.left - 1 && rect.right <= filterRect.right + 1)
+      cardsInside: cards.every((rect) => rect.left >= gridRect.left - 1 && rect.right <= gridRect.right + 1)
     };
   });
   expect(layout.display).toBe("grid");
-  expect(layout.overflowX).toBe("visible");
+  expect(layout.columns).toBe(2);
   expect(layout.scrollWidth).toBeLessThanOrEqual(layout.clientWidth + 1);
-  expect(layout.buttonsInside).toBe(true);
+  expect(layout.cardsInside).toBe(true);
 });
 
 test("territories keep the approved order and short Ayuta label", async ({ page }) => {
   await page.goto("");
-  await expect(page.locator(".location-card h3")).toHaveText(["Шахты", "Каменоломни", "Новошахтинск", "Аюта", "Красный Сулин"]);
+  await expect(page.locator(".home-locations__grid strong")).toHaveText(["Шахты", "Каменоломни", "Новошахтинск", "Аюта", "Красный Сулин"]);
 });
 
 test("catalog exposes no unverified inventory", async ({ page }) => {
@@ -228,12 +253,14 @@ test("desktop criteria copy stays below its heading without overlap", async ({ p
 });
 
 for (const viewport of [
+  { name: "mobile-320", width: 320, height: 700 },
   { name: "mobile-390", width: 390, height: 844 },
   { name: "mobile-430", width: 430, height: 932 },
   { name: "tablet-768", width: 768, height: 1024 },
   { name: "tablet-1024", width: 1024, height: 768 },
   { name: "desktop-1366", width: 1366, height: 768 },
   { name: "desktop-1440", width: 1440, height: 900 },
+  { name: "desktop-1904", width: 1904, height: 950 },
   { name: "landscape", width: 844, height: 390 }
 ]) {
   test(`responsive smoke: ${viewport.name}`, async ({ page }) => {

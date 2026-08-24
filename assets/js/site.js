@@ -150,6 +150,21 @@
     else if (typeof desktopQuery.addListener === "function") desktopQuery.addListener(closeAtDesktop);
   }
 
+  function initPropertyNav() {
+    queryAll("[data-property-nav]").forEach(function (details) {
+      var summary = details.querySelector("summary");
+      document.addEventListener("click", function (event) {
+        if (details.open && !details.contains(event.target)) details.open = false;
+      });
+      document.addEventListener("keydown", function (event) {
+        if (!details.open || event.key !== "Escape") return;
+        event.preventDefault();
+        details.open = false;
+        if (summary) summary.focus();
+      });
+    });
+  }
+
   function initReveal() {
     var targets = queryAll("[data-reveal]");
     if (!targets.length) return;
@@ -315,6 +330,54 @@
     });
   }
 
+  function initHomeRequestBuilder() {
+    queryAll("[data-home-request-builder]").forEach(function (form) {
+      var status = form.querySelector("[data-home-request-status]");
+      var typeField = form.elements.requestType;
+      var phoneField = form.elements.requestPhone;
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        var values = new FormData(form);
+        var type = String(values.get("requestType") || "");
+        var phone = String(values.get("requestPhone") || "");
+        var digits = phone.replace(/\D/gu, "");
+        if (!type) {
+          if (status) { status.hidden = false; status.textContent = "Выберите тип недвижимости."; }
+          if (typeField) typeField.focus();
+          return;
+        }
+        if (digits.length < 10 || digits.length > 15) {
+          if (status) { status.hidden = false; status.textContent = "Проверьте номер телефона: нужно от 10 до 15 цифр."; }
+          if (phoneField) phoneField.focus();
+          return;
+        }
+        var location = String(values.get("requestLocation") || "");
+        var budget = String(values.get("requestBudget") || "");
+        var typeLabel = typeField.options[typeField.selectedIndex].text;
+        var summary = ["Тип: " + typeLabel, location ? "Территория: " + location : "Несколько территорий", budget ? "Бюджет: " + budget : "Бюджет: обсудить"].join("; ");
+        var context = {
+          page_type: document.body.dataset.pageType || "home",
+          source_cta: "Подбор под запрос",
+          service: serviceForCategory(type),
+          goal: "buy",
+          property_type: propertyTypeForCategory(type),
+          territory: location,
+          criteria: summary,
+          message: "Критерии подбора: " + summary + ".",
+          captured_at: Date.now()
+        };
+        writeLeadContext(context);
+        applyLeadContext(context);
+        var compact = document.querySelector("form[data-lead-compact]");
+        if (compact && compact.elements.phone) compact.elements.phone.value = phone;
+        if (status) { status.hidden = false; status.textContent = "Запрос собран. Телефон перенесён в финальную форму — подтвердите согласие или свяжитесь с офисом напрямую."; }
+        track("catalog_filter_use", { filter_name: "home_request", filter_value: type, page_type: "home" });
+        var lead = document.getElementById("lead-form-section");
+        if (lead) lead.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+      });
+    });
+  }
+
   function initShowcaseFilters() {
     queryAll("[data-showcase-filters]").forEach(function (filters) {
       var section = filters.closest("section") || document;
@@ -471,9 +534,11 @@
   initMetrika();
   initHeader();
   initDrawer();
+  initPropertyNav();
   initReveal();
   applyLeadContext(readLeadContext());
   initRequestBuilders();
+  initHomeRequestBuilder();
   initLeadDisclosure();
   initShowcaseFilters();
   initInteractionTracking();

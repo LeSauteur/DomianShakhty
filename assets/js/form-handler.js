@@ -50,6 +50,7 @@
   }
 
   function validate(form) {
+    var compact = form.hasAttribute("data-lead-compact");
     var name = form.elements.name;
     var phone = form.elements.phone;
     var goal = form.elements.goal;
@@ -58,7 +59,7 @@
     var first = null;
     [name, phone, goal, propertyType, consent].forEach(function (field) { if (field) clearError(field); });
     status(form, "", "");
-    if (!name || text(name.value).length < 2) {
+    if (!compact && (!name || text(name.value).length < 2)) {
       if (name) error(name, "Укажите имя — минимум 2 символа.");
       first = first || name;
     }
@@ -71,7 +72,7 @@
       if (goal) error(goal, "Выберите цель обращения.");
       first = first || goal;
     }
-    if (!propertyType || !propertyType.value) {
+    if (!compact && (!propertyType || !propertyType.value)) {
       if (propertyType) error(propertyType, "Выберите тип недвижимости.");
       first = first || propertyType;
     }
@@ -84,7 +85,7 @@
       first.focus();
       return false;
     }
-    name.value = text(name.value);
+    if (name) name.value = text(name.value);
     phone.value = normalized;
     return true;
   }
