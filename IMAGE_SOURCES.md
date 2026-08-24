@@ -32,6 +32,15 @@
 - Созданные размеры: 640×480, 960×720.
 - Промпт: `Photorealistic editorial architectural photograph in the same visual system: a believable new mid-rise apartment building, six to eight storeys, in a southern Russian regional city. Pearl brick and pale stone façade, muted sage landscaping, warm champagne morning highlights, tidy human-scale courtyard, generic cars distant with no plates, no close people. Contemporary and attractive but not metropolitan, no skyscrapers, impossible balconies, logos, signage, addresses, text or watermarks. Exact windows, doors and perspective, horizontal 4:3.`
 
+## Современный многоквартирный дом — замена старого панельного фасада
+
+- Локальные файлы: `assets/images/editorial/modern-apartment-house-640.webp`, `assets/images/editorial/modern-apartment-house-960.webp`
+- Смысловая роль: единая замена удалённого изображения старого панельного фасада на страницах квартир, коммерции, ипотеки, территорий и в editorial-данных.
+- Дата генерации: 24 августа 2026 года.
+- Созданные размеры: 640×480, 960×720.
+- Пометка: **Generated with OpenAI ImageGen**; **editorial-иллюстрация категории, не объект продажи**.
+- Промпт: `Use case: photorealistic-natural. Asset type: responsive editorial website image for apartment and new-build categories. Primary request: a beautiful contemporary apartment house for a regional Russian real-estate website, with absolutely no old panel buildings visible anywhere in the frame. Scene/backdrop: a quiet landscaped courtyard with trees, lawn and clean pedestrian paths; background contains only sky, greenery and at most a small portion of another equally modern building. Subject: one complete modern six-to-seven-storey apartment building in pearl brick and warm pale stucco with restrained muted-sage facade accents; clear entrance, accurate balconies, windows and roofline. Style/medium: photorealistic natural architectural photography, refined but attainable, credible regional construction. Composition/framing: horizontal 4:3, eye-level three-quarter view, entire building readable with space around its silhouette; no foreground object blocking the facade. Lighting/mood: soft late-summer morning, warm champagne sunlight, natural shadows, calm welcoming atmosphere. Constraints: no Soviet or old panel buildings in foreground or background; exact window, balcony, door, roof and perspective geometry; no people close-up; no cars if avoidable; no logos, signs, addresses, house numbers, text, sale banners or watermarks. Avoid: stained concrete, gray panel blocks, skyscrapers, Moscow skyline, luxury palace, pool, futuristic architecture, impossible balconies, duplicated windows, distorted geometry, dramatic HDR.`
+
 ## Участки
 
 - Локальные файлы: `assets/images/editorial/category-land-640.webp`, `assets/images/editorial/category-land-960.webp`

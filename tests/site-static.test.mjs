@@ -143,6 +143,17 @@ test("homepage uses the approved eight-section editorial composition", () => {
   assert.deepEqual(order, order.slice().sort((a, b) => a - b));
 });
 
+test("legacy panel facade is removed from every affected public page", () => {
+  const affected = ["apartments.html", "commercial.html", "mortgage.html", "locations/index.html"];
+  for (const file of affected) {
+    const html = read(file);
+    assert.doesNotMatch(html, /apartment-building-(?:640|960)\.webp/u, file);
+    assert.match(html, /modern-apartment-house-(?:640|960)\.webp/u, file);
+  }
+  assert.equal(fs.existsSync(path.join(root, "assets/images/editorial/apartment-building-640.webp")), false);
+  assert.equal(fs.existsSync(path.join(root, "assets/images/editorial/apartment-building-960.webp")), false);
+});
+
 test("direction pages remain honest and their forms carry structured context", () => {
   const pages = JSON.parse(fs.readFileSync("src/data/pages.json", "utf8"));
   for (const page of pages) {

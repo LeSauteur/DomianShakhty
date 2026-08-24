@@ -82,7 +82,7 @@ const editorialImages = {
   "house-yard": { widths: [640, 960], width: 960, height: 720 },
   "suburban-house": { widths: [640, 960], width: 960, height: 720 },
   "apartment-interior": { widths: [640, 960], width: 960, height: 720 },
-  "apartment-building": { widths: [640, 960], width: 960, height: 720 },
+  "modern-apartment-house": { widths: [640, 960], width: 960, height: 720 },
   "premium-living": { widths: [640, 960], width: 960, height: 720 },
   "keys-handover": { widths: [640, 960], width: 960, height: 720 },
   "client-meeting": { widths: [640, 960], width: 960, height: 720 },
@@ -338,7 +338,7 @@ function showcaseSection(ctx) {
 
 function propertyDirectionsSection(ctx) {
   const items = [
-    { category: "apartment", title: "Квартиры", text: "Вторичный рынок и новостройки, от студий до квартир с тремя и более комнатами.", href: "apartments.html", label: "Выбрать квартиру", image: "apartment-building", alt: "Многоквартирный дом — нейтральная иллюстрация направления" },
+    { category: "apartment", title: "Квартиры", text: "Вторичный рынок и новостройки, от студий до квартир с тремя и более комнатами.", href: "apartments.html", label: "Выбрать квартиру", image: "modern-apartment-house", alt: "Современный многоквартирный дом — editorial-иллюстрация категории, не объект продажи" },
     { category: "new-house", title: "Новые дома", text: "Готовность, комплектация, инженерия, участок и документы.", href: "construction.html", label: "Смотреть новые дома", image: "hero-house", alt: "Современный дом — нейтральная иллюстрация направления" },
     { category: "house", title: "Дома", text: "Новые, вторичные, от застройщиков и дома с участком.", href: "houses.html", label: "Выбрать формат дома", image: "suburban-house", alt: "Частный дом — нейтральная иллюстрация направления" },
     { category: "land", title: "Участки", text: "Под строительство, с коммуникациями или существующим домом.", href: "lands.html", label: "Выбрать участок", image: "house-yard", alt: "Загородная территория — нейтральная иллюстрация направления" },
@@ -589,7 +589,7 @@ export function renderHome(ctx, guides) {
 }
 
 export function renderLocationsIndex(ctx) {
-  const page = { path: "locations/index.html", pageType: "location", title: "География работы — Шахты и соседние территории", description: "Шахты, Каменоломни, Новошахтинск, микрорайон Аютинский города Шахты и Красный Сулин: покупка, продажа и оценка недвижимости.", eyebrow: "Пять территорий", h1: "Недвижимость в Шахтах и рядом", lead: "Сохраняем утверждённый порядок территорий и сравниваем конкретные адреса, типы недвижимости и пользовательские маршруты без выдуманного рейтинга.", primaryCta: { label: "Выбрать территорию", href: "#locations" }, secondaryCta: { label: "Виды недвижимости", href: "apartments.html" }, heroFacts: ["Шахты", "Каменоломни", "Новошахтинск · Аюта · Красный Сулин"], heroImage: "apartment-building" };
+  const page = { path: "locations/index.html", pageType: "location", title: "География работы — Шахты и соседние территории", description: "Шахты, Каменоломни, Новошахтинск, микрорайон Аютинский города Шахты и Красный Сулин: покупка, продажа и оценка недвижимости.", eyebrow: "Пять территорий", h1: "Недвижимость в Шахтах и рядом", lead: "Сохраняем утверждённый порядок территорий и сравниваем конкретные адреса, типы недвижимости и пользовательские маршруты без выдуманного рейтинга.", primaryCta: { label: "Выбрать территорию", href: "#locations" }, secondaryCta: { label: "Виды недвижимости", href: "apartments.html" }, heroFacts: ["Шахты", "Каменоломни", "Новошахтинск · Аюта · Красный Сулин"], heroImage: "modern-apartment-house" };
   const cards = `<section class="section location-section" id="locations"><div class="container">${locationCards(ctx, true)}</div></section>`;
   const method = criteriaSection({ kicker: "Как сравнивать", title: "Одинаковая таблица — разные выводы", intro: "Сравнивайте конкретные адреса и типы объектов, а не названия территорий.", items: ["цель покупки или продажи", "тип и характеристики объекта", "ежедневные маршруты", "состояние и доступ", "документы", "полный бюджет"] });
   const body = `${hero(ctx, page)}${cards}${method}${leadForm(ctx, { type: "service", goal: "buy", title: "Сравнить территории под ваш запрос", text: "Назовите тип недвижимости, ключевые маршруты и критерии — офис поможет определить следующий шаг." })}`;
