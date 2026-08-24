@@ -209,6 +209,27 @@ test("mobile property cards form a two-column grid without horizontal scrolling"
   expect(layout.cardsInside).toBe(true);
 });
 
+test("mobile hero keeps its caption off the photograph", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("");
+  await expect(page.locator(".hero-media__caption")).toBeHidden();
+  const media = await page.locator(".hero-media").evaluate((node) => ({
+    paddingBottom: getComputedStyle(node).paddingBottom,
+    overflow: getComputedStyle(node).overflow
+  }));
+  expect(media.paddingBottom).toBe("8px");
+  expect(media.overflow).toBe("visible");
+});
+
+test("new-build card uses the generated modern house instead of the panel facade", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("new-build-apartments.html");
+  const image = page.locator(".showcase-card img").first();
+  await image.scrollIntoViewIfNeeded();
+  await expect(image).toHaveAttribute("src", /modern-apartment-house-960\.webp$/u);
+  expect(await image.evaluate((node) => node.naturalWidth)).toBeGreaterThan(0);
+});
+
 test("territories keep the approved order and short Ayuta label", async ({ page }) => {
   await page.goto("");
   await expect(page.locator(".home-locations__grid strong")).toHaveText(["Шахты", "Каменоломни", "Новошахтинск", "Аюта", "Красный Сулин"]);
