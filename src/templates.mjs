@@ -81,7 +81,7 @@ const editorialImages = {
   "hero-house": { widths: [720, 1200], width: 1200, height: 1500 },
   "house-yard": { widths: [640, 960], width: 960, height: 720 },
   "suburban-house": { widths: [640, 960], width: 960, height: 720 },
-  "apartment-interior": { widths: [640, 960], width: 960, height: 720 },
+  "apartment-interior": { widths: [640, 960, 1440], width: 1440, height: 1080 },
   "modern-apartment-house": { widths: [640, 960], width: 960, height: 720 },
   "premium-living": { widths: [640, 960], width: 960, height: 720 },
   "keys-handover": { widths: [640, 960], width: 960, height: 720 },

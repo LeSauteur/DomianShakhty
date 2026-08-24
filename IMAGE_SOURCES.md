@@ -18,6 +18,15 @@
 - Созданные размеры: 640×480, 960×720.
 - Промпт: `Photorealistic editorial interior photograph in the same pearl, muted sage and warm champagne visual language. A bright contemporary apartment living room in a believable regional Russian city: warm oak floor, pearl walls, restrained sage sofa, linen curtains, compact dining area, daylight from one realistic window, refined and attainable rather than luxurious. No people, logos, text, watermarks or staged sales details. Exact window, furniture and perspective geometry, soft late-summer morning light, horizontal 4:3.`
 
+## Вторичная квартира — резкий интерьер для hero и карточек
+
+- Локальные файлы: `assets/images/editorial/apartment-interior-640.webp`, `assets/images/editorial/apartment-interior-960.webp`, `assets/images/editorial/apartment-interior-1440.webp`
+- Смысловая роль: hero страницы вторичных квартир и карточки направления; замена размытого низкодетального интерьера.
+- Дата генерации: 24 августа 2026 года.
+- Созданные размеры: 640×480, 960×720, 1440×1080.
+- Пометка: **Generated with OpenAI ImageGen**; **editorial-иллюстрация категории, не объект продажи**.
+- Промпт: `Create a second, distinct brand-new high-resolution photorealistic editorial interior photograph for the hero and showcase card of a regional Russian real-estate website. A bright, contemporary and attainable apartment living room joined to a compact kitchen: warm oak floor, pearl and warm off-white walls, a refined muted-sage sofa, linen curtains, natural oak dining table, simple pendant light, restrained plants and ceramic details. Crucial exterior rule: through every window show ONLY soft green treetops and pale blue late-summer sky; no buildings of any kind, no apartment blocks, no panel houses, no roofs, no skyline. Composition: horizontal 4:3, wide eye-level professional architectural photograph, sofa, dining zone and kitchen all readable, generous uncluttered space, suitable for a website image displayed up to 1400 CSS pixels wide. Lighting: bright soft morning daylight, warm champagne highlights, realistic shadows. Quality: exceptionally crisp full-frame interior photography with fine fabric weave, wood grain and cabinet detail; uniform sharpness from foreground to background, natural microcontrast, no bokeh, blur, noise, upscaling artifacts, oversmoothing or JPEG damage. Exact believable geometry for windows, curtains, cabinets, chairs, table legs, lights and perspective. No people, text, logos, watermarks, addresses, sale signs, specific brands, marble luxury, palace styling, fisheye view, duplicated objects, warped edges or smeared details.`
+
 ## Дома
 
 - Локальные файлы: `assets/images/editorial/category-houses-640.webp`, `assets/images/editorial/category-houses-960.webp`
