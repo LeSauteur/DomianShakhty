@@ -242,6 +242,53 @@ p {
   text-decoration: none;
 }
 
+.property-nav {
+  position: relative;
+}
+
+.property-nav summary {
+  position: relative;
+  color: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  list-style: none;
+  cursor: pointer;
+}
+
+.property-nav summary::-webkit-details-marker {
+  display: none;
+}
+
+.property-nav summary::after {
+  margin-left: 5px;
+  content: "⌄";
+}
+
+.property-nav > div {
+  position: absolute;
+  top: calc(100% + 18px);
+  left: 50%;
+  display: grid;
+  width: min(320px, 82vw);
+  transform: translateX(-50%);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  padding: 10px;
+  color: var(--ink-deep);
+  box-shadow: var(--shadow);
+}
+
+.property-nav > div a {
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.property-nav > div a:hover,
+.property-nav > div a:focus-visible {
+  background: var(--paper-mint);
+}
+
 .site-nav a::after {
   position: absolute;
   right: 0;
@@ -361,6 +408,27 @@ p {
   font-family: var(--serif);
   font-size: 1.7rem;
   text-decoration: none;
+}
+
+.mobile-drawer__group {
+  display: grid;
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+}
+
+.mobile-drawer__group > span {
+  margin-bottom: 8px;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.mobile-drawer__group a {
+  border: 0;
+  padding: 7px 0;
+  font-size: 1.18rem;
 }
 
 .mobile-drawer__contact {
@@ -1250,7 +1318,7 @@ textarea {
   color: var(--ink);
 }
 
-.lead-form > label:nth-of-type(4),
+.lead-form .lead-form__message,
 .lead-form .consent,
 .lead-form .form-status,
 .lead-form .button,
@@ -2376,6 +2444,11 @@ textarea {
   white-space: nowrap;
 }
 
+.request-builder [hidden],
+.lead-form [hidden] {
+  display: none !important;
+}
+
 .request-builder select {
   min-height: 50px;
   border-color: rgba(255, 255, 255, 0.16);
@@ -3277,12 +3350,6 @@ textarea {
     min-width: 0;
     width: 100%;
     padding-inline: 10px;
-  }
-
-  .showcase-filter button:last-child {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: calc(50% - 4px);
   }
 
   .showcase-card__body > p:not(.showcase-card__category) {
