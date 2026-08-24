@@ -154,6 +154,15 @@ test("legacy panel facade is removed from every affected public page", () => {
   assert.equal(fs.existsSync(path.join(root, "assets/images/editorial/apartment-building-960.webp")), false);
 });
 
+test("secondary apartment imagery includes a sharp desktop source", () => {
+  const html = read("secondary-apartments.html");
+  assert.match(html, /apartment-interior-640\.webp 640w,[^"]+apartment-interior-960\.webp 960w,[^"]+apartment-interior-1440\.webp 1440w/u);
+  assert.match(html, /<img[^>]+apartment-interior-1440\.webp[^>]+width="1440" height="1080"/u);
+  for (const width of [640, 960, 1440]) {
+    assert.ok(fs.existsSync(path.join(root, `assets/images/editorial/apartment-interior-${width}.webp`)));
+  }
+});
+
 test("direction pages remain honest and their forms carry structured context", () => {
   const pages = JSON.parse(fs.readFileSync("src/data/pages.json", "utf8"));
   for (const page of pages) {
