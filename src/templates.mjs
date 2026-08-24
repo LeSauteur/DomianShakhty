@@ -81,7 +81,7 @@ const editorialImages = {
   "hero-house": { widths: [720, 1200], width: 1200, height: 1500 },
   "house-yard": { widths: [640, 960], width: 960, height: 720 },
   "suburban-house": { widths: [640, 960], width: 960, height: 720 },
-  "apartment-interior": { widths: [640, 960, 1440], width: 1440, height: 1080 },
+  "secondary-apartment-interior": { widths: [640, 960, 1440], width: 1440, height: 1080 },
   "modern-apartment-house": { widths: [640, 960], width: 960, height: 720 },
   "premium-living": { widths: [640, 960], width: 960, height: 720 },
   "keys-handover": { widths: [640, 960], width: 960, height: 720 },
@@ -357,7 +357,7 @@ function propertyDirectionsSection(ctx) {
 
 function homeScenariosSection(ctx) {
   const items = [
-    { index: "01", title: "Вторичная квартира", text: "Сравнить дом, планировку, состояние, право и полный бюджет.", image: "apartment-interior", category: "apartment-secondary", href: "secondary-apartments.html" },
+    { index: "01", title: "Вторичная квартира", text: "Сравнить дом, планировку, состояние, право и полный бюджет.", image: "secondary-apartment-interior", category: "apartment-secondary", href: "secondary-apartments.html" },
     { index: "02", title: "Новый готовый дом", text: "Проверить фактическую готовность, участок, инженерию и передачу.", image: "hero-house", category: "new-house", href: "construction.html" },
     { index: "03", title: "Коммерческий запрос", text: "Связать формат помещения с деятельностью, доступом и мощностями.", image: "client-meeting", category: "commercial", href: "commercial.html" }
   ];
