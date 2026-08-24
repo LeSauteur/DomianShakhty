@@ -20,7 +20,7 @@
 
 ## Вторичная квартира — резкий интерьер для hero и карточек
 
-- Локальные файлы: `assets/images/editorial/apartment-interior-640.webp`, `assets/images/editorial/apartment-interior-960.webp`, `assets/images/editorial/apartment-interior-1440.webp`
+- Локальные файлы: `assets/images/editorial/secondary-apartment-interior-640.webp`, `assets/images/editorial/secondary-apartment-interior-960.webp`, `assets/images/editorial/secondary-apartment-interior-1440.webp`
 - Смысловая роль: hero страницы вторичных квартир и карточки направления; замена размытого низкодетального интерьера.
 - Дата генерации: 24 августа 2026 года.
 - Созданные размеры: 640×480, 960×720, 1440×1080.
