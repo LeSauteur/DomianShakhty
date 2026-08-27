@@ -69,8 +69,9 @@ test("confirmed social channels and Maria's responsive portrait are published fr
     const htmlHref = href.replaceAll("&", "&amp;");
     assert.match(home, new RegExp(`href="${htmlHref.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")}"[^>]+data-analytics="${channel}_click"`, "u"));
   }
-  assert.match(home, /<picture><source type="image\/webp" srcset="[^"]+360w,[^"]+640w,[^"]+960w"/u);
-  assert.match(home, /<img[^>]+width="640" height="800"[^>]+alt="Мария Воронина/u);
+  const contacts = read("contacts.html");
+  assert.match(contacts, /<picture><source type="image\/webp" srcset="[^"]+360w,[^"]+640w,[^"]+960w"/u);
+  assert.match(contacts, /<img[^>]+width="640" height="800"[^>]+alt="Мария Воронина/u);
   for (const width of [360, 640, 960]) {
     assert.ok(fs.existsSync(path.join(root, `assets/images/maria-voronina-${width}.webp`)));
   }
@@ -124,15 +125,18 @@ test("all core property directions have useful public pages and navigation entry
   assert.ok(home.indexOf("Квартиры") < home.indexOf("Новые готовые дома"), "apartments must be visible before the new-home feature");
 });
 
-test("homepage uses the approved eight-section editorial composition", () => {
+test("homepage uses the editorial composition with verified hot offers", () => {
   const home = read("index.html");
-  assert.equal((home.match(/<section\b/gu) || []).length, 8);
+  assert.equal((home.match(/<section\b/gu) || []).length, 9);
   assert.equal((home.match(/class="home-property-card"/gu) || []).length, 6);
   assert.match(home, /<h1>Недвижимость в Шахтах — спокойно и по делу<\/h1>/u);
   assert.match(home, /Подобрать недвижимость/u);
   assert.match(home, /Продать объект/u);
   assert.match(home, /Оценить стоимость/u);
   assert.match(home, /class="new-homes-feature"/u);
+  assert.match(home, /id="hot-offers"/u);
+  assert.match(home, /Горячее предложение/u);
+  assert.match(home, /5[\s\u00a0]670[\s\u00a0]000 ₽/u);
   assert.match(home, /data-home-request-builder/u);
   assert.match(home, /data-lead-compact/u);
   assert.match(home, /hero-modern-city-living-mobile-600\.webp/u);
@@ -178,7 +182,8 @@ test("direction pages remain honest and their forms carry structured context", (
   }
   for (const file of ["commercial.html", "garages-parking.html"]) {
     assert.match(read(file), /Направление подбора · не объект продажи/u);
-    assert.match(read(file), /Подтверждённых публичных объектов: <strong data-catalog-count>0/u);
+    assert.doesNotMatch(read(file), /class="listing-card/u);
+    assert.match(read(file), /class="catalog-honesty"/u);
   }
 });
 
@@ -202,7 +207,12 @@ test("listing schema expands types without breaking legacy values", () => {
   const types = schema.properties.type.enum;
   for (const legacy of ["new-house", "resale-house", "apartment", "land", "project"]) assert.ok(types.includes(legacy));
   for (const added of ["apartment-secondary", "apartment-newbuild", "house-new", "house-secondary", "house-builder", "commercial", "garage", "parking-space"]) assert.ok(types.includes(added));
-  assert.deepEqual(JSON.parse(fs.readFileSync("src/data/listings.json", "utf8")), []);
+  const listings = JSON.parse(fs.readFileSync("src/data/listings.json", "utf8"));
+  assert.equal(listings.length, 1);
+  assert.equal(listings[0].verified, true);
+  assert.equal(listings[0].price, 5670000);
+  assert.equal(listings[0].location, "kamenolomni");
+  assert.ok(fs.existsSync(path.join(root, listings[0].image.src)));
   assert.deepEqual(JSON.parse(fs.readFileSync("src/data/projects.json", "utf8")), []);
 });
 

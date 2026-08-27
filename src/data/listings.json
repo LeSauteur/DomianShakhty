@@ -1,1 +1,60 @@
-[]
+[
+  {
+    "id": "dom-chistovaya-kamenolomni",
+    "type": "house-new",
+    "format": "newbuild",
+    "verified": true,
+    "title": "Дом под чистовую отделку в центре Каменоломней",
+    "location": "kamenolomni",
+    "address": "В самом центре Каменоломней",
+    "price": 5670000,
+    "status": "available",
+    "description": "Новый дом передаётся под чистовую отделку: стены подготовлены, выполнена стяжка, остаётся выбрать обои, натяжной потолок и чистовое напольное покрытие. Котёл и септик входят в стоимость.",
+    "features": [
+      "Под чистовую отделку",
+      "Котёл и септик входят в стоимость",
+      "Ориентир по платежу — от 27 000 ₽ в месяц после индивидуального расчёта",
+      "Семейная ипотека — при соответствии условиям программы и одобрении банка",
+      "Вариант оформления без собственных средств на первоначальный взнос обсуждается индивидуально"
+    ],
+    "updatedAt": "2026-08-27",
+    "image": {
+      "src": "assets/images/listings/kamenolomni-house-hero-1200.webp",
+      "alt": "Новый кирпичный дом под чистовую отделку в центре Каменоломней",
+      "width": 1200,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/kamenolomni-house-garden-1200.webp",
+        "alt": "Фасад и сад нового дома в Каменоломнях",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/kamenolomni-house-rear-1200.webp",
+        "alt": "Боковой фасад и мощёный двор нового дома",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/kamenolomni-house-interior-main-1200.webp",
+        "alt": "Светлая комната дома на этапе чистовой отделки",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/kamenolomni-house-windows-1200.webp",
+        "alt": "Панорамные окна в комнате нового дома",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/kamenolomni-house-layout-1200.webp",
+        "alt": "Внутренняя планировка дома под чистовую отделку",
+        "width": 1200,
+        "height": 900
+      }
+    ]
+  }
+]

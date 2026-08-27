@@ -6,6 +6,7 @@ const esc = (value = "") => String(value)
   .replaceAll("'", "&#39;");
 
 const formatDate = (value) => new Intl.DateTimeFormat("ru-RU", { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${value}T12:00:00Z`));
+const formatPrice = (value) => `${new Intl.NumberFormat("ru-RU").format(Number(value))} ₽`;
 
 const navItems = [
   ["sell", "Продать", "sell.html"],
@@ -105,6 +106,55 @@ function editorialImage(ctx, key, alt, { className = "", sizes = "(max-width: 76
   const fallbackWidth = image.widths.at(-1);
   const mobileSource = image.mobile ? `<source media="(max-width: 600px)" type="image/webp" srcset="${ctx.href(`assets/images/editorial/${image.mobile.src}`)}">` : "";
   return `<picture${className ? ` class="${esc(className)}"` : ""}>${mobileSource}<source type="image/webp" srcset="${srcset}" sizes="${esc(sizes)}"><img src="${ctx.href(`assets/images/editorial/${key}-${fallbackWidth}.webp`)}" width="${image.width}" height="${image.height}" alt="${esc(alt)}" loading="${priority ? "eager" : "lazy"}" decoding="async"${priority ? ' fetchpriority="high"' : ""}></picture>`;
+}
+
+const officeImages = {
+  "office-interior": { widths: [640, 1200], width: 1200, height: 900 },
+  "office-waiting-area": { widths: [640, 1200], width: 1200, height: 900 },
+  "office-staircase": { widths: [640, 1200], width: 1200, height: 900 },
+  "office-facade": { widths: [640, 1200], width: 1200, height: 900 }
+};
+
+function officeImage(ctx, key, alt, { className = "", sizes = "(max-width: 760px) calc(100vw - 32px), 50vw" } = {}) {
+  const image = officeImages[key];
+  if (!image) return "";
+  const srcset = image.widths.map((width) => `${ctx.href(`assets/images/office/${key}-${width}.webp`)} ${width}w`).join(", ");
+  const fallbackWidth = image.widths.at(-1);
+  return `<picture${className ? ` class="${esc(className)}"` : ""}><source type="image/webp" srcset="${srcset}" sizes="${esc(sizes)}"><img src="${ctx.href(`assets/images/office/${key}-${fallbackWidth}.webp`)}" width="${image.width}" height="${image.height}" alt="${esc(alt)}" loading="lazy" decoding="async"></picture>`;
+}
+
+function listingPath(item) {
+  return `listings/${item.id}.html`;
+}
+
+function listingPicture(ctx, image, { className = "", sizes = "(max-width: 760px) calc(100vw - 32px), 50vw", priority = false } = {}) {
+  if (!image?.src) return "";
+  const small = image.src.replace(/-1200\.webp$/u, "-640.webp");
+  const srcset = small === image.src ? "" : `<source type="image/webp" srcset="${ctx.href(small)} 640w, ${ctx.href(image.src)} ${image.width}w" sizes="${esc(sizes)}">`;
+  return `<picture${className ? ` class="${esc(className)}"` : ""}>${srcset}<img src="${ctx.href(image.src)}" width="${image.width}" height="${image.height}" alt="${esc(image.alt)}" loading="${priority ? "eager" : "lazy"}" decoding="async"${priority ? ' fetchpriority="high"' : ""}></picture>`;
+}
+
+function listingCategory(item) {
+  if (["new-house", "house-new"].includes(item.type)) return "new-house";
+  if (["resale-house", "house-secondary"].includes(item.type)) return "secondary-house";
+  if (item.type === "house-builder") return "builder-house";
+  if (["apartment", "apartment-secondary"].includes(item.type)) return "apartment-secondary";
+  if (item.type === "apartment-newbuild") return "apartment-newbuild";
+  if (item.type === "commercial") return "commercial";
+  if (["garage", "parking-space"].includes(item.type)) return "garage-parking";
+  return item.type;
+}
+
+function visibleListings(ctx) {
+  return (ctx.listings || []).filter((item) => item.verified === true && item.status !== "sold");
+}
+
+function listingCard(ctx, item, { hot = false } = {}) {
+  const payment = (item.features || []).find((feature) => feature.startsWith("Ориентир по платежу"));
+  return `<article class="listing-card${hot ? " listing-card--hot" : ""}" data-reveal>
+    <a class="listing-card__media" href="${ctx.href(listingPath(item))}" data-analytics="property_card_open">${listingPicture(ctx, item.image, { sizes: hot ? "(max-width: 820px) calc(100vw - 32px), 52vw" : "(max-width: 760px) calc(100vw - 64px), 38vw" })}<span>${hot ? "Горячее предложение" : "Подтверждённый объект"}</span></a>
+    <div class="listing-card__body"><p class="listing-card__location">${esc(item.address || "Каменоломни")}</p><h3><a href="${ctx.href(listingPath(item))}">${esc(item.title)}</a></h3><div class="listing-card__price">${formatPrice(item.price)}</div><p>${esc(item.description)}</p>${payment ? `<strong>${esc(payment.replace("Ориентир по платежу — ", ""))}</strong>` : ""}<a class="listing-card__cta" href="${ctx.href(listingPath(item))}">Смотреть объект <span aria-hidden="true">↗</span></a></div>
+  </article>`;
 }
 
 function nav(ctx, active, mobile = false) {
@@ -220,6 +270,12 @@ function homePropertySection(ctx) {
   </div></section>`;
 }
 
+function homeHotOffersSection(ctx) {
+  const items = visibleListings(ctx).slice(0, 3);
+  if (!items.length) return "";
+  return `<section class="section home-hot-offers" id="hot-offers" data-home-section="hot-offers"><div class="container"><div class="section-heading"><div><p class="eyebrow">Горячие предложения</p><h2>Объекты, которые уже можно обсудить</h2></div><p>Цена и комплектация подтверждены собственником. Ипотечный платёж и схема расчётов уточняются индивидуально перед подачей заявки.</p></div><div class="home-hot-offers__grid" data-reveal-group>${items.map((item) => listingCard(ctx, item, { hot: true })).join("")}</div></div></section>`;
+}
+
 function homeRequestSection(ctx) {
   const typeOptions = requestTypes.map(([value, label]) => `<option value="${value}">${label}</option>`).join("");
   const locationOptions = ctx.locations.map((location) => `<option value="${esc(location.name)}">${esc(location.name)}</option>`).join("");
@@ -240,7 +296,7 @@ function homeExpertiseSection(ctx, guides) {
 }
 
 function homeOfficeSection(ctx) {
-  return `<section class="section owner-section home-office" data-home-section="office"><div class="container home-office__layout">${ownerPortrait(ctx)}<div><p class="eyebrow">Ваш офис недвижимости в Шахтах</p><h2>Мария Воронина и офис на Маяковского</h2><p>Начать можно с короткого разговора о задаче. На связи собственник офиса; состав работы определяется после знакомства с объектом или критериями подбора.</p><address><strong>${esc(ctx.site.address)}</strong><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a></address><div class="owner-actions"><a class="button button--primary" href="${ctx.href("team/maria-voronina.html")}">Мария и направления</a><a class="button button--ghost" href="${ctx.href("contacts.html")}">Контакты офиса</a></div>${socialLinks(ctx, "social-links social-links--owner")}</div></div></section>`;
+  return `<section class="section owner-section home-office" data-home-section="office"><div class="container home-office__layout">${officeImage(ctx, "office-interior", "Интерьер офиса Домиан в Шахтах на улице Маяковского", { className: "office-photo home-office__photo", sizes: "(max-width: 760px) calc(100vw - 32px), 48vw" })}<div><p class="eyebrow">Ваш офис недвижимости в Шахтах</p><h2>Мария Воронина и офис на Маяковского</h2><p>Начать можно с короткого разговора о задаче. На связи собственник офиса; состав работы определяется после знакомства с объектом или критериями подбора.</p><address><strong>${esc(ctx.site.address)}</strong><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a></address><div class="owner-actions"><a class="button button--primary" href="${ctx.href("team/maria-voronina.html")}">Мария и направления</a><a class="button button--ghost" href="${ctx.href("contacts.html")}">Контакты офиса</a></div>${socialLinks(ctx, "social-links social-links--owner")}</div></div></section>`;
 }
 
 function homeLeadForm(ctx) {
@@ -392,6 +448,7 @@ function faqSection() {
 function catalogSection(ctx, section) {
   const showcaseTypes = section.showcaseTypes || [];
   const items = (ctx.showcase || []).filter((item) => !showcaseTypes.length || showcaseTypes.includes(item.category));
+  const realListings = visibleListings(ctx).filter((item) => !showcaseTypes.length || showcaseTypes.includes(listingCategory(item)));
   const defaultType = ({
     "apartment-secondary": "apartment",
     "apartment-newbuild": "apartment",
@@ -403,18 +460,15 @@ function catalogSection(ctx, section) {
     "garage-parking": "garage-parking"
   })[showcaseTypes[0]] || "";
   const defaultMarket = showcaseTypes.some((type) => ["apartment-secondary", "secondary-house"].includes(type)) ? "secondary" : (showcaseTypes.some((type) => ["apartment-newbuild", "new-house", "builder-house"].includes(type)) ? "primary" : "");
+  const listingResult = realListings.length ? `<p class="catalog-count">Подтверждённые объекты: <strong>${realListings.length}</strong></p><div class="listing-grid" data-reveal-group>${realListings.map((item) => listingCard(ctx, item)).join("")}</div>` : `<div class="catalog-honesty"><span aria-hidden="true">↗</span><div><h3>${esc(section.emptyTitle)}</h3><p>${esc(section.emptyText)}</p></div></div>`;
   return `<section class="section section--stone"><div class="container">
     ${sectionHeading(section)}
-    <div class="catalog-shell" data-catalog-root>
+    <div class="catalog-shell">
       ${requestBuilder(ctx, { defaultType, defaultMarket, compact: true })}
-      <p class="visually-hidden">Подтверждённых публичных объектов: <strong data-catalog-count>0</strong></p>
-      <div class="catalog-grid" data-catalog-grid hidden></div>
-      <div class="catalog-honesty" data-catalog-empty>
-        <span aria-hidden="true">↗</span>
-        <div><h3>${esc(section.emptyTitle)}</h3><p>${esc(section.emptyText)}</p></div>
-      </div>
+      ${listingResult}
+      <div class="catalog-directions"><p class="eyebrow">${realListings.length ? "Другие направления" : "Направления подбора"}</p></div>
       ${showcaseGrid(ctx, items)}
-      <div class="catalog-followup"><p>Каждая карточка обозначает направление запроса, а не конкретный объект. Реальные адреса, цены и характеристики не публикуются до подтверждения.</p><a class="button button--primary" href="#lead-form-section" data-lead-category="${esc(showcaseTypes[0] || defaultType)}">${esc(section.cta)}</a></div>
+      <div class="catalog-followup"><p>${realListings.length ? "Карточка с ценой и адресом относится к подтверждённому объекту. Остальные карточки обозначают направления запроса." : "Каждая карточка обозначает направление запроса, а не конкретный объект. Реальные адреса, цены и характеристики публикуются только после подтверждения."}</p><a class="button button--primary" href="#lead-form-section" data-lead-category="${esc(showcaseTypes[0] || defaultType)}">${esc(section.cta)}</a></div>
     </div>
   </div></section>`;
 }
@@ -522,6 +576,10 @@ function schemaFor(ctx, page, breadcrumbsItems) {
     const article = { "@type": "Article", headline: page.h1 || page.title, description: page.description, datePublished: page.publishedAt, dateModified: page.updatedAt };
     if (ctx.site.mode === "production") { article.url = ctx.absolute(page.path); article.publisher = { "@id": organization["@id"] }; }
     nodes.push(article);
+  } else if (page.pageType === "listing" && page.listing) {
+    const offer = { "@type": "Offer", price: page.listing.price, priceCurrency: "RUB", availability: "https://schema.org/InStock", itemOffered: { "@type": "House", name: page.listing.title, description: page.listing.description, address: { "@type": "PostalAddress", addressLocality: "Каменоломни", addressRegion: "Ростовская область", addressCountry: "RU" }, image: [page.listing.image, ...(page.listing.gallery || [])].map((image) => ctx.site.mode === "production" ? ctx.absolute(image.src) : ctx.href(image.src)) } };
+    if (ctx.site.mode === "production") offer.url = ctx.absolute(page.path);
+    nodes.push(offer);
   } else if (["construction", "service", "mortgage", "catalog", "location"].includes(page.pageType)) {
     const service = { "@type": "Service", name: page.h1, description: page.description, areaServed: ctx.site.serviceAreas.map((name) => ({ "@type": "Place", name })), provider: ctx.site.mode === "production" ? { "@id": organization["@id"] } : { "@type": "RealEstateAgent", name: ctx.site.displayName } };
     if (ctx.site.mode === "production") service.url = ctx.absolute(page.path);
@@ -584,7 +642,7 @@ export function renderCommercialPage(ctx, page) {
 
 export function renderHome(ctx, guides) {
   const page = { path: "", pageType: "home", title: "Недвижимость в Шахтах — купить, продать, оценить | Домиан", description: "Покупка, продажа и предварительная оценка квартир, домов, новостроек, участков, коммерческой недвижимости, гаражей и парковочных мест в Шахтах и рядом.", eyebrow: "Домиан · Шахты на Маяковского", h1: "Недвижимость в Шахтах — спокойно и по делу", lead: "Квартиры, дома, новостройки, участки и коммерческая недвижимость. Покупка, продажа и предварительная оценка — в одном офисе на Маяковского.", primaryCta: { label: "Подобрать недвижимость", href: "#request" }, secondaryCta: { label: "Продать объект", href: "sell.html" }, tertiaryCta: { label: "Оценить стоимость", href: "valuation.html" }, geo: "Шахты · Каменоломни · Новошахтинск · Аюта · Красный Сулин", heroImage: "hero-modern-city-living", heroImageAlt: "Современная городская жилая архитектура — editorial-иллюстрация категории, не объект продажи", heroMediaLabel: "Современная городская жизнь" };
-  const body = `${hero(ctx, page)}${homePropertySection(ctx)}${homeRequestSection(ctx)}${homeSellerSection(ctx)}${homeLocationsSection(ctx)}${homeExpertiseSection(ctx, guides)}${homeOfficeSection(ctx)}${homeLeadForm(ctx)}`;
+  const body = `${hero(ctx, page)}${homePropertySection(ctx)}${homeHotOffersSection(ctx)}${homeRequestSection(ctx)}${homeSellerSection(ctx)}${homeLocationsSection(ctx)}${homeExpertiseSection(ctx, guides)}${homeOfficeSection(ctx)}${homeLeadForm(ctx)}`;
   return layout(ctx, page, body, { active: "" });
 }
 
@@ -624,6 +682,13 @@ export function renderGuide(ctx, guide) {
   return layout(ctx, page, body, { active: "guides", breadcrumbs: [{ label: "Главная", href: "" }, { label: "Гайды", href: "guides/index.html" }, { label: guide.title, href: page.path }] });
 }
 
+export function renderListing(ctx, listing) {
+  const page = { path: listingPath(listing), pageType: "listing", listing, title: `${listing.title} — ${formatPrice(listing.price)} | Домиан`, description: `${listing.title}. Цена ${formatPrice(listing.price)}. ${listing.description}`, h1: listing.title };
+  const gallery = (listing.gallery || []).map((image, index) => `<figure class="listing-gallery__item${index === 0 ? " listing-gallery__item--wide" : ""}">${listingPicture(ctx, image, { className: "listing-gallery__picture", sizes: index === 0 ? "(max-width: 760px) calc(100vw - 32px), 62vw" : "(max-width: 760px) calc(100vw - 32px), 38vw" })}</figure>`).join("");
+  const body = `<article class="listing-detail"><header class="listing-detail__hero"><div class="container listing-detail__hero-layout"><div class="listing-detail__copy"><p class="eyebrow">Горячее предложение · новый дом</p><h1>${esc(listing.title)}</h1><p class="listing-detail__address">${esc(listing.address)}</p><div class="listing-detail__price">${formatPrice(listing.price)}</div><p>${esc(listing.description)}</p><div class="hero-actions"><a class="button button--primary" href="#lead-form-section">Записаться на просмотр</a><a class="button button--ghost" href="${ctx.site.phoneHref}" data-analytics="phone_click">Позвонить</a></div></div><div class="listing-detail__media">${listingPicture(ctx, listing.image, { priority: true, sizes: "(max-width: 820px) calc(100vw - 32px), 52vw" })}<span>Объект подтверждён · обновлено ${formatDate(listing.updatedAt)}</span></div></div></header><section class="section listing-detail__facts"><div class="container listing-detail__facts-layout"><div><p class="eyebrow">Комплектация</p><h2>Основные работы уже выполнены</h2><p>После передачи останется выбрать декоративные материалы: поклеить обои, установить натяжной потолок и уложить ламинат или плитку.</p></div><ul>${(listing.features || []).map((feature) => `<li>${esc(feature)}</li>`).join("")}</ul></div></section><section class="section section--stone listing-gallery"><div class="container"><div class="section-heading"><div><p class="eyebrow">Фотографии объекта</p><h2>Фасады, двор и состояние отделки</h2></div><p>Интерьер показан без виртуального ремонта: виден фактический этап готовности дома.</p></div><div class="listing-gallery__grid">${gallery}</div></div></section><section class="section listing-finance"><div class="container listing-finance__layout"><div><p class="eyebrow">Варианты покупки</p><h2>Ипотечный сценарий рассчитывается под семью</h2></div><div><p><strong>Ориентир по платежу — от 27 000 ₽ в месяц.</strong> Итог зависит от срока, ставки, первоначального взноса, страхования и решения банка.</p><p>Семейная ипотека может подойти семье с ребёнком до семи лет. Для семей с двумя несовершеннолетними детьми действуют дополнительные территориальные условия программы. Стандартные условия предусматривают первоначальный взнос; вариант без собственных средств на старте возможен только через отдельно применимый инструмент и после одобрения банка.</p><a class="text-link" href="https://government.ru/sanctions_measures/measure/52/" target="_blank" rel="noopener noreferrer">Актуальные условия программы на сайте Правительства РФ ↗</a></div></div></section></article>${leadForm(ctx, { type: "house-new", goal: "buy", propertyType: "house", market: "primary", title: "Записаться на просмотр дома", text: "Оставьте телефон — офис уточнит актуальность, комплектацию и возможный сценарий покупки." })}`;
+  return layout(ctx, page, body, { active: "types", breadcrumbs: [{ label: "Главная", href: "" }, { label: "Дома", href: "houses.html" }, { label: listing.title, href: page.path }] });
+}
+
 export function renderPerson(ctx) {
   const page = { path: "team/maria-voronina.html", pageType: "person", title: "Мария Воронина — собственник офиса Домиан в Шахтах", description: "Мария Воронина, собственник офиса «Домиан · Шахты на Маяковского»: подтверждённые контакты и направления недвижимости.", eyebrow: "Собственник офиса", h1: "Мария Воронина", lead: "Прямой контакт офиса «Домиан · Шахты на Маяковского» по вопросам покупки, продажи и предварительной оценки разных типов недвижимости.", primaryCta: { label: "Позвонить Марии", href: ctx.site.phoneHref, event: "phone_click" }, secondaryCta: { label: "Контакты офиса", href: "contacts.html" }, heroFacts: ["Шахты", "Маяковского 18А", "подтверждённые контакты"], heroImage: "client-meeting" };
   const profile = `<section class="section"><div class="container profile-layout">${ownerPortrait(ctx, "large")}<div><p class="eyebrow">Подтверждённые данные</p><h2>Собственник офиса в Шахтах</h2><p>Мария представляет офис по адресу ${esc(ctx.site.address)}. Через сайт можно обратиться по вопросам квартир, домов, участков, коммерческой недвижимости, гаражей и парковочных мест.</p><dl class="profile-facts"><div><dt>Офис</dt><dd>${esc(ctx.site.displayName)}</dd></div><div><dt>Телефон</dt><dd><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a></dd></div><div><dt>Email</dt><dd><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a></dd></div><div><dt>Город</dt><dd>Шахты</dd></div></dl>${socialLinks(ctx, "social-links social-links--profile")}</div></div></section>`;
@@ -638,8 +703,9 @@ export function renderPerson(ctx) {
 export function renderContacts(ctx) {
   const page = { path: "contacts.html", pageType: "contact", title: "Контакты — Домиан · Шахты на Маяковского", description: "Адрес, телефон, email и подтверждённые мессенджеры офиса «Домиан · Шахты на Маяковского», собственник Мария Воронина.", eyebrow: "Связаться с офисом", h1: "Начните с короткого разговора", lead: "Позвоните, напишите на email или выберите удобный мессенджер. Часы посещения офиса лучше уточнить заранее.", primaryCta: { label: `Позвонить ${ctx.site.phone}`, href: ctx.site.phoneHref, event: "phone_click" }, secondaryCta: { label: "Написать письмо", href: `mailto:${ctx.site.email}` }, heroFacts: ["Мария Воронина", "Шахты", "ул. Маяковского 18А"] };
   const contact = `<section class="section"><div class="container contact-layout"><div class="contact-grid"><article><span>01 · Телефон</span><h2><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a></h2><p>Самый прямой способ обсудить задачу.</p></article><article><span>02 · Email</span><h2><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a></h2><p>Подходит, если нужно отправить описание без чувствительных документов.</p></article><article><span>03 · Адрес</span><h2>${esc(ctx.site.address)}</h2><p>Часы посещения уточните по телефону.</p></article><article><span>04 · Мессенджеры</span><h2>Напишите Марии</h2><p>Подтверждённые каналы офиса — без QR-кодов и промежуточных страниц.</p>${socialLinks(ctx, "social-links social-links--contact")}</article></div><aside class="contact-owner">${ownerPortrait(ctx, "compact")}<p>Мария Воронина<br><span>собственник офиса</span></p></aside></div></section>`;
+  const gallery = `<section class="section section--stone office-gallery"><div class="container"><div class="section-heading"><div><p class="eyebrow">Офис на Маяковского</p><h2>Место, где можно обсудить задачу лично</h2></div><p>Вход с улицы Маяковского. Перед визитом лучше согласовать время по телефону.</p></div><div class="office-gallery__grid"><figure class="office-gallery__item office-gallery__item--wide">${officeImage(ctx, "office-interior", "Светлый интерьер офиса Домиан в Шахтах", { className: "office-photo", sizes: "(max-width: 760px) calc(100vw - 32px), 58vw" })}<figcaption>Рабочее пространство офиса</figcaption></figure><figure class="office-gallery__item office-gallery__item--narrow">${officeImage(ctx, "office-waiting-area", "Зона ожидания в офисе Домиан", { className: "office-photo", sizes: "(max-width: 760px) calc(100vw - 32px), 42vw" })}<figcaption>Зона ожидания</figcaption></figure><figure class="office-gallery__item office-gallery__item--narrow">${officeImage(ctx, "office-staircase", "Лестница и история команды в офисе Домиан", { className: "office-photo", sizes: "(max-width: 760px) calc(100vw - 32px), 42vw" })}<figcaption>История команды</figcaption></figure><figure class="office-gallery__item office-gallery__item--wide">${officeImage(ctx, "office-facade", "Фасад офиса Домиан по адресу улица Маяковского 18А", { className: "office-photo", sizes: "(max-width: 760px) calc(100vw - 32px), 58vw" })}<figcaption>ул. Маяковского, 18А</figcaption></figure></div></div></section>`;
   const prepare = criteriaSection({ kicker: "Перед обращением", title: "Достаточно трёх вводных", intro: "Не отправляйте паспортные, банковские или иные чувствительные данные через форму.", items: ["что хотите купить, продать или оценить", "какая территория важна", "бюджет или желаемая последовательность"] });
-  return layout(ctx, page, `${hero(ctx, page)}${contact}${prepare}${leadForm(ctx, { type: "service", title: "Оставить контакт для ответа", text: "В PRELAUNCH форма безопасно покажет прямые контакты вместо фиктивной отправки." })}`, { active: "contacts", breadcrumbs: [{ label: "Главная", href: "" }, { label: "Контакты", href: page.path }] });
+  return layout(ctx, page, `${hero(ctx, page)}${contact}${gallery}${prepare}${leadForm(ctx, { type: "service", title: "Оставить контакт для ответа", text: "В PRELAUNCH форма безопасно покажет прямые контакты вместо фиктивной отправки." })}`, { active: "contacts", breadcrumbs: [{ label: "Главная", href: "" }, { label: "Контакты", href: page.path }] });
 }
 
 export function renderDetails(ctx) {
