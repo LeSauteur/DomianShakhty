@@ -102,35 +102,6 @@ writeJson("assets/data/team.json", team.filter((item) => item.verified === true)
 writeJson("assets/data/showcase.json", showcase);
 
 write(".nojekyll", "");
-write("server/index.js", `const BASE_PATH = "/DomianShakhty";
-
-function assetRequest(request, pathname) {
-  const url = new URL(request.url);
-  url.pathname = pathname;
-  return new Request(url, request);
-}
-
-export default {
-  async fetch(request, env) {
-    const url = new URL(request.url);
-    let pathname = url.pathname;
-
-    if (pathname === BASE_PATH) pathname = "/";
-    else if (pathname.startsWith(\`\${BASE_PATH}/\`)) pathname = pathname.slice(BASE_PATH.length);
-
-    if (pathname.endsWith("/")) pathname += "index.html";
-
-    const response = await env.ASSETS.fetch(assetRequest(request, pathname));
-    if (response.status !== 404) return response;
-
-    const notFound = await env.ASSETS.fetch(assetRequest(request, "/404.html"));
-    return new Response(notFound.body, {
-      status: 404,
-      headers: notFound.headers
-    });
-  }
-};
-`);
 if (site.mode === "prelaunch") {
   write("robots.txt", "User-agent: *\nDisallow: /\n");
 } else {
