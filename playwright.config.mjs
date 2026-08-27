@@ -1,5 +1,8 @@
 import { defineConfig } from "@playwright/test";
 
+const port = Number(process.env.PLAYWRIGHT_PORT || 4173);
+const localUrl = `http://127.0.0.1:${port}/DomianShakhty/`;
+
 export default defineConfig({
   testDir: "./tests",
   testMatch: "**/*.spec.js",
@@ -9,14 +12,15 @@ export default defineConfig({
   workers: 1,
   reporter: process.env.CI ? "github" : "list",
   use: {
-    baseURL: "http://127.0.0.1:4173/DomianShakhty/",
+    baseURL: localUrl,
     colorScheme: "light",
     reducedMotion: "reduce",
     trace: "retain-on-failure"
   },
   webServer: {
-    command: "npm run dev",
-    url: "http://127.0.0.1:4173/DomianShakhty/",
+    command: "node tests/static-server.mjs",
+    url: localUrl,
+    env: { ...process.env, PORT: String(port) },
     reuseExistingServer: !process.env.CI,
     timeout: 30_000
   }

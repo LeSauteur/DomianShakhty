@@ -1,5 +1,7 @@
 import { expect, test } from "@playwright/test";
 
+const localOrigin = `http://127.0.0.1:${process.env.PLAYWRIGHT_PORT || 4173}`;
+
 const representativePages = [
   "",
   "construction.html",
@@ -111,7 +113,7 @@ test("Maria portrait is responsive, dimensioned and loads on trust pages", async
 test("lead form validates locally and does not fake success", async ({ page }) => {
   const outbound = [];
   page.on("request", (request) => {
-    if (!request.url().startsWith("http://127.0.0.1:4173")) outbound.push(request.url());
+    if (!request.url().startsWith(localOrigin)) outbound.push(request.url());
   });
   await page.goto("construction.html#lead-form-section");
   const form = page.locator("form[data-lead-form]");
@@ -128,7 +130,7 @@ test("lead form validates locally and does not fake success", async ({ page }) =
 test("compact home lead validates phone and consent without fake submission", async ({ page }) => {
   const outbound = [];
   page.on("request", (request) => {
-    if (!request.url().startsWith("http://127.0.0.1:4173")) outbound.push(request.url());
+    if (!request.url().startsWith(localOrigin)) outbound.push(request.url());
   });
   await page.goto("");
   const form = page.locator("form[data-lead-compact]");
@@ -184,7 +186,7 @@ test("homepage has six equal category cards and a separate new-home feature", as
   await expect(page.locator(".new-homes-feature")).toHaveCount(1);
   await expect(page.locator("[data-showcase-card]")).toHaveCount(0);
   const sections = await page.locator("main > section").evaluateAll((nodes) => nodes.map((node) => node.getAttribute("data-home-section") || "hero"));
-  expect(sections).toEqual(["hero", "property", "request", "seller", "locations", "expertise", "office", "lead"]);
+  expect(sections).toEqual(["hero", "property", "hot-offers", "request", "seller", "locations", "expertise", "office", "lead"]);
 });
 
 test("mobile property cards form a two-column grid without horizontal scrolling", async ({ page }) => {
@@ -235,11 +237,12 @@ test("territories keep the approved order and short Ayuta label", async ({ page 
   await expect(page.locator(".home-locations__grid strong")).toHaveText(["Шахты", "Каменоломни", "Новошахтинск", "Аюта", "Красный Сулин"]);
 });
 
-test("catalog exposes no unverified inventory", async ({ page }) => {
+test("catalog exposes only the verified house inventory", async ({ page }) => {
   await page.goto("construction.html");
-  await expect(page.locator("[data-catalog-count]")).toHaveText("0");
-  await expect(page.locator("[data-catalog-card]")).toHaveCount(0);
-  await expect(page.locator("[data-catalog-empty]")).toBeVisible();
+  await expect(page.locator(".catalog-count strong")).toHaveText("1");
+  await expect(page.locator(".listing-card")).toHaveCount(1);
+  await expect(page.locator(".listing-card h3")).toContainText("Дом под чистовую отделку в центре Каменоломней");
+  await expect(page.locator(".listing-card__price")).toContainText("5 670 000 ₽");
 });
 
 test("core direction pages have no horizontal overflow or overlapping headings", async ({ page }) => {

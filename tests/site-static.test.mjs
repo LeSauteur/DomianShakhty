@@ -142,6 +142,10 @@ test("homepage uses the editorial composition with verified hot offers", () => {
   assert.match(home, /hero-modern-city-living-mobile-600\.webp/u);
   assert.match(home, /fetchpriority="high"/u);
   assert.doesNotMatch(home, /apartment-building-(?:640|960)\.webp/u);
+  const officeSection = home.match(/<section class="section owner-section home-office"[\s\S]*?<\/section>/u)?.[0] || "";
+  assert.match(officeSection, /class="owner-portrait"/u);
+  assert.match(officeSection, /maria-voronina-960\.webp/u);
+  assert.doesNotMatch(officeSection, /assets\/images\/office\/office-interior/u);
   const order = ["property", "request", "seller", "locations", "expertise", "office", "lead"].map((name) => home.indexOf(`data-home-section="${name}"`));
   assert.ok(order.every((position) => position >= 0));
   assert.deepEqual(order, order.slice().sort((a, b) => a - b));
