@@ -3059,7 +3059,7 @@ body[data-page-type="home"] .hero-media__picture {
 
 .home-locations__grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   border-top: 1px solid var(--line-light);
 }
 
@@ -3075,6 +3075,14 @@ body[data-page-type="home"] .hero-media__picture {
 }
 
 .home-locations__grid a:first-child {
+  border-left: 1px solid var(--line-light);
+}
+
+.home-locations__grid a:nth-child(n + 4) {
+  border-top: 1px solid var(--line-light);
+}
+
+.home-locations__grid a:nth-child(3n + 1) {
   border-left: 1px solid var(--line-light);
 }
 
@@ -3363,6 +3371,18 @@ body[data-page-type="home"] .hero-media__picture {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .home-locations__grid a:nth-child(n + 3) {
+    border-top: 1px solid var(--line-light);
+  }
+
+  .home-locations__grid a:nth-child(3n + 1) {
+    border-left: 0;
+  }
+
+  .home-locations__grid a:nth-child(2n + 1) {
+    border-left: 1px solid var(--line-light);
+  }
+
   .home-locations__grid a {
     min-height: 148px;
     padding: 16px;
@@ -3462,7 +3482,7 @@ body[data-page-type="home"] .hero-media__picture {
 
 .hero-media__picture {
   display: block;
-  aspect-ratio: 0.88;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: 24px;
   background: var(--paper-deep);
@@ -4551,6 +4571,10 @@ body[data-page-type="home"] .hero-media__picture {
   object-fit: cover;
 }
 
+.home-seller__media {
+  aspect-ratio: 7 / 3;
+}
+
 .mortgage-layout__intro {
   display: grid;
   gap: 24px;
@@ -4638,6 +4662,7 @@ body[data-page-type="home"] .hero-media__picture {
 }
 
 .guide-intro-media img {
+  height: auto;
   aspect-ratio: 1;
   object-fit: cover;
 }
@@ -4650,6 +4675,34 @@ body[data-page-type="home"] .hero-media__picture {
 
   .home-locations__media {
     min-height: 220px;
+  }
+
+  .house-dark-cta__card {
+    min-height: 0;
+    padding-top: 42.857%;
+  }
+
+  .house-dark-cta__media,
+  .house-dark-cta__media picture {
+    bottom: auto;
+    height: auto;
+    aspect-ratio: 7 / 3;
+  }
+
+  .house-dark-cta__media img {
+    height: 100%;
+    object-position: 75% center;
+  }
+
+  .house-dark-cta__media::after {
+    background: linear-gradient(180deg, rgba(24, 35, 36, 0.25), rgba(24, 35, 36, 0.04));
+  }
+
+  .house-dark-cta__copy {
+    align-self: auto;
+    max-width: none;
+    padding: 28px;
+    background: var(--ink-deep);
   }
 
   .guide-index-intro {
