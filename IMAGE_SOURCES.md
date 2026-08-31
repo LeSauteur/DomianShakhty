@@ -1,5 +1,30 @@
 # Источники изображений
 
+## Интегрированный комплект из 16 сцен
+
+Все сцены ниже — **Generated with OpenAI ImageGen** и используются как **Editorial illustration, not a property listing**. Исходные PNG находятся вне публичной папки; в сайт подключены только WebP без метаданных.
+
+| Исходник | WebP | Страница и блок |
+| --- | --- | --- |
+| 01_hero.png | main-hero-720.webp, main-hero-1200.webp | Главная, hero |
+| 02_apartments.png | apartments-editorial-640.webp, apartments-editorial-960.webp | apartments.html, hero |
+| 03_houses.png | modern-house-640.webp, modern-house-960.webp | construction.html, hero |
+| 04_land_plots.png | land-plots-640.webp, land-plots-960.webp | lands.html, hero |
+| 05_banner.png | mortgage-housing-720.webp, mortgage-housing-1200.webp | mortgage.html, hero и вводный блок |
+| 06_footer.png | sale-interior-720.webp, sale-interior-1200.webp | sell.html, hero |
+| 07_new_buildings.png | new-buildings-640.webp, new-buildings-960.webp | new-build-apartments.html, hero |
+| 08_secondary_apartment.png | secondary-apartment-640.webp, secondary-apartment-960.webp | secondary-apartments.html, hero |
+| 09_commercial.png | commercial-space-640.webp, commercial-space-960.webp | commercial.html, hero |
+| 10_family_house.png | family-house-640.webp, family-house-960.webp | houses.html, hero |
+| 11_real_land_plot.png | real-land-plot-720.webp, real-land-plot-1200.webp | lands.html, direction-land |
+| 12_neighborhood.png | neighborhood-720.webp, neighborhood-1200.webp | Главная, география |
+| 13_sell_property_cta.png | sell-property-cta-960.webp, sell-property-cta-1440.webp | Главная, CTA собственникам |
+| 14_dark_cta.png | house-dark-cta-960.webp, house-dark-cta-1440.webp | construction.html, CTA консультации |
+| 15_mobile_hero.png | main-hero-mobile-600.webp | Главная, mobile hero pair for 01 |
+| 16_architecture_detail.png | architecture-detail-480.webp, architecture-detail-800.webp | guides/index.html, вводная карточка |
+
+Крупные варианты используют ширину 1200/1440 только в подходящих контейнерах; mobile hero загружается отдельным media-источником. Видимые подписи и alt-тексты не выдают сцены за реальные объявления.
+
 Дата генерации серии: **24 августа 2026 года**. Все перечисленные ниже изображения — **Generated with OpenAI ImageGen** и используются как **editorial-иллюстрация категории, не объект продажи**. Логотипы, вывески, адреса, номера домов, водяные знаки и утверждения о продаже отсутствуют.
 
 Исходное направление серии: правдоподобная современная недвижимость регионального российского города; мягкий позднелетний свет; жемчужная штукатурка и кирпич, приглушённая шалфейная зелень, тёплые детали цвета шампанского; сдержанная премиальность без дворцов, бассейнов и футуризма.
