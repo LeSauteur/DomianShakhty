@@ -79,7 +79,21 @@ function ownerPortrait(ctx, modifier = "") {
 }
 
 const editorialImages = {
-  "hero-house": { widths: [720, 1200], width: 1200, height: 1500 },
+  "main-hero": { widths: [720, 1200], width: 1200, height: 900, mobile: { src: "main-hero-mobile-600.webp", width: 600, height: 750 } },
+  "apartments-editorial": { widths: [640, 960], width: 960, height: 720 },
+  "modern-house": { widths: [640, 960], width: 960, height: 720 },
+  "land-plots": { widths: [640, 960], width: 960, height: 720 },
+  "new-buildings": { widths: [640, 960], width: 960, height: 720 },
+  "secondary-apartment": { widths: [640, 960], width: 960, height: 720 },
+  "commercial-space": { widths: [640, 960], width: 960, height: 720 },
+  "family-house": { widths: [640, 960], width: 960, height: 720 },
+  "mortgage-housing": { widths: [720, 1200], width: 1200, height: 675 },
+  "sale-interior": { widths: [720, 1200], width: 1200, height: 675 },
+  "real-land-plot": { widths: [720, 1200], width: 1200, height: 675 },
+  "neighborhood": { widths: [720, 1200], width: 1200, height: 675 },
+  "sell-property-cta": { widths: [960, 1440], width: 1440, height: 617 },
+  "house-dark-cta": { widths: [960, 1440], width: 1440, height: 617 },
+  "architecture-detail": { widths: [480, 800], width: 800, height: 800 },
   "house-yard": { widths: [640, 960], width: 960, height: 720 },
   "suburban-house": { widths: [640, 960], width: 960, height: 720 },
   "secondary-apartment-interior": { widths: [640, 960, 1440], width: 1440, height: 1080 },
@@ -104,7 +118,7 @@ function editorialImage(ctx, key, alt, { className = "", sizes = "(max-width: 76
   if (!image) return "";
   const srcset = image.widths.map((width) => `${ctx.href(`assets/images/editorial/${key}-${width}.webp`)} ${width}w`).join(", ");
   const fallbackWidth = image.widths.at(-1);
-  const mobileSource = image.mobile ? `<source media="(max-width: 600px)" type="image/webp" srcset="${ctx.href(`assets/images/editorial/${image.mobile.src}`)}">` : "";
+  const mobileSource = image.mobile ? `<source media="(max-width: 600px)" type="image/webp" srcset="${ctx.href(`assets/images/editorial/${image.mobile.src}`)}" sizes="100vw">` : "";
   return `<picture${className ? ` class="${esc(className)}"` : ""}>${mobileSource}<source type="image/webp" srcset="${srcset}" sizes="${esc(sizes)}"><img src="${ctx.href(`assets/images/editorial/${key}-${fallbackWidth}.webp`)}" width="${image.width}" height="${image.height}" alt="${esc(alt)}" loading="${priority ? "eager" : "lazy"}" decoding="async"${priority ? ' fetchpriority="high"' : ""}></picture>`;
 }
 
@@ -224,7 +238,7 @@ function hero(ctx, page) {
   })[page.slug || page.pageType];
   const visual = heroImageKey
     ? `<div class="hero-media" data-reveal>
-        ${editorialImage(ctx, heroImageKey, page.heroImageAlt || "Современная недвижимость — нейтральный визуальный образ направления, не объект продажи", { className: "hero-media__picture", sizes: "(max-width: 820px) calc(100vw - 32px), 44vw", priority: page.pageType === "home" })}
+        ${editorialImage(ctx, heroImageKey, page.heroImageAlt || "Современная недвижимость — нейтральный визуальный образ направления, не объект продажи", { className: "hero-media__picture", sizes: "(max-width: 820px) calc(100vw - 32px), 44vw", priority: true })}
         <div class="hero-media__caption"><span>${esc(page.heroMediaLabel || "Недвижимость")}</span><strong>${esc(page.heroMediaLocation || "Шахты и рядом")}</strong></div>
         <span class="hero-media__drawing" aria-hidden="true"></span>
       </div>`
@@ -283,11 +297,11 @@ function homeRequestSection(ctx) {
 }
 
 function homeSellerSection(ctx) {
-  return `<section class="section home-seller" data-home-section="seller"><div class="container home-seller__layout"><div><p class="eyebrow">Собственникам</p><h2>Планируете продажу? Начнём с предварительного разбора</h2><p>Характеристики объекта, состояние, документы, локация и аналоги помогают определить обоснованный диапазон. Дальнейший порядок работы формируется после знакомства с объектом.</p><div class="hero-actions"><a class="button button--primary" href="${ctx.href("valuation.html")}">Оценить недвижимость</a><a class="button button--ghost" href="${ctx.href("sell.html")}">Обсудить продажу</a></div><small>Без обещания точной онлайн-цены, срока продажи или гарантированной стоимости.</small></div><div class="home-seller__media">${editorialImage(ctx, "seller-valuation", "Предварительный разбор планировки и документов без указания стоимости", { sizes: "(max-width: 820px) calc(100vw - 32px), 48vw" })}<span>Планировка · характеристики · аналоги</span></div></div></section>`;
+  return `<section class="section home-seller" data-home-section="seller"><div class="container home-seller__layout"><div><p class="eyebrow">Собственникам</p><h2>Планируете продажу? Начнём с предварительного разбора</h2><p>Характеристики объекта, состояние, документы, локация и аналоги помогают определить обоснованный диапазон. Дальнейший порядок работы формируется после знакомства с объектом.</p><div class="hero-actions"><a class="button button--primary" href="${ctx.href("valuation.html")}">Оценить недвижимость</a><a class="button button--ghost" href="${ctx.href("sell.html")}">Обсудить продажу</a></div><small>Без обещания точной онлайн-цены, срока продажи или гарантированной стоимости.</small></div><div class="home-seller__media">${editorialImage(ctx, "sell-property-cta", "Подготовка недвижимости к продаже — иллюстрация сопровождения", { sizes: "(max-width: 820px) calc(100vw - 32px), 48vw" })}<span>Изображение носит иллюстративный характер и не является объектом продажи.</span></div></div></section>`;
 }
 
 function homeLocationsSection(ctx) {
-  return `<section class="section home-locations" data-home-section="locations"><div class="container"><div class="home-locations__heading"><div><p class="eyebrow">Территории</p><h2>Шахты и соседние территории</h2></div><p>Сравниваем не названия городов, а конкретные адреса, маршруты и параметры объекта.</p></div><div class="home-locations__grid">${ctx.locations.map((location, index) => `<a href="${ctx.href(`locations/${location.slug}.html`)}"><span>${String(index + 1).padStart(2, "0")}</span><strong>${esc(location.name)}</strong><small>${esc(location.administrativeName)}</small><b aria-hidden="true">↗</b></a>`).join("")}</div></div></section>`;
+  return `<section class="section home-locations" data-home-section="locations"><div class="container"><div class="home-locations__heading"><div><p class="eyebrow">Территории</p><h2>Шахты и соседние территории</h2></div><p>Сравниваем не названия городов, а конкретные адреса, маршруты и параметры объекта.</p></div><div class="home-locations__layout"><div class="home-locations__media">${editorialImage(ctx, "neighborhood", "Городское жилое окружение — иллюстрация географии работы, не конкретный район", { sizes: "(max-width: 820px) calc(100vw - 32px), 42vw" })}</div><div class="home-locations__grid">${ctx.locations.map((location, index) => `<a href="${ctx.href(`locations/${location.slug}.html`)}"><span>${String(index + 1).padStart(2, "0")}</span><strong>${esc(location.name)}</strong><small>${esc(location.administrativeName)}</small><b aria-hidden="true">↗</b></a>`).join("")}</div></div></div></section>`;
 }
 
 function homeExpertiseSection(ctx, guides) {
@@ -481,6 +495,10 @@ const locationImageKeys = {
   "krasnyy-sulin": "keys-handover"
 };
 
+function darkHouseCta(ctx) {
+  return `<section class="section house-dark-cta"><div class="container"><div class="house-dark-cta__card">${editorialImage(ctx, "house-dark-cta", "Консультация по выбору дома — редакционная иллюстрация", { className: "house-dark-cta__media", sizes: "(max-width: 820px) calc(100vw - 32px), 70vw" })}<div class="house-dark-cta__copy"><p class="eyebrow">Консультация по дому</p><h2>Соберём критерии до просмотра</h2><p>Разберём готовность, участок, инженерию и документы без вымышленных характеристик.</p><a class="button button--primary" href="${ctx.href("construction.html#lead-form-section")}">Обсудить задачу</a></div></div></div></section>`;
+}
+
 function locationCards(ctx, detailed = false) {
   return `<div class="location-grid${detailed ? " location-grid--detailed" : ""}" data-reveal-group>${ctx.locations.map((location, index) => `<a class="location-card" href="${ctx.href(`locations/${location.slug}.html`)}" data-location="${esc(location.slug)}" data-reveal>
     <div class="location-card__media">${editorialImage(ctx, locationImageKeys[location.slug], `${location.name} — нейтральный визуальный образ территории, не объект продажи`, { sizes: detailed ? "(max-width: 820px) calc(100vw - 32px), 47vw" : "(max-width: 820px) calc(100vw - 32px), 22vw" })}<span class="location-card__index">${String(index + 1).padStart(2, "0")}</span></div>
@@ -500,9 +518,9 @@ function splitSection(ctx, section) {
   return `<section class="section"><div class="container">${sectionHeading(section)}<div class="split-cards"><article class="split-card split-card--sage"><h3>${esc(section.left.title)}</h3><p>${esc(section.left.text)}</p><a class="text-link" href="${ctx.href(section.left.href)}">${esc(section.left.label)} ↗</a></article><article class="split-card"><h3>${esc(section.right.title)}</h3><p>${esc(section.right.text)}</p><a class="text-link" href="${ctx.href(section.right.href)}">${esc(section.right.label)} ↗</a></article></div></div></section>`;
 }
 
-function mortgageSection() {
+function mortgageSection(ctx) {
   return `<section class="section section--ink" id="mortgage-calculator"><div class="container mortgage-layout">
-    <div><p class="eyebrow">Ориентировочный расчёт</p><h2>Введите свои условия</h2><p>Ставка не подставлена намеренно: используйте значение, которое получили из актуального предложения банка. Расчёт не учитывает страховки, комиссии и изменение условий.</p></div>
+    <div class="mortgage-layout__intro"><div><p class="eyebrow">Ориентировочный расчёт</p><h2>Введите свои условия</h2><p>Ставка не подставлена намеренно: используйте значение, которое получили из актуального предложения банка. Расчёт не учитывает страховки, комиссии и изменение условий.</p></div>${editorialImage(ctx, "mortgage-housing", "Покупка жилья с ипотекой — редакционная иллюстрация, не объект продажи", { className: "mortgage-layout__media", sizes: "(max-width: 820px) calc(100vw - 32px), 34vw" })}</div>
     <form class="mortgage-calculator" data-mortgage-calculator>
       <label>Стоимость объекта, ₽<input name="price" type="number" min="100000" step="50000" value="5000000" inputmode="numeric"></label>
       <label>Первоначальный взнос, ₽<input name="downPayment" type="number" min="0" step="50000" value="1000000" inputmode="numeric"></label>
@@ -524,7 +542,7 @@ function renderSection(ctx, section) {
   if (section.kind === "locations") return locationsSection(ctx, section);
   if (section.kind === "process") return processSection(section);
   if (section.kind === "split") return splitSection(ctx, section);
-  if (section.kind === "mortgage") return mortgageSection();
+  if (section.kind === "mortgage") return mortgageSection(ctx);
   return "";
 }
 
@@ -594,6 +612,7 @@ function schemaFor(ctx, page, breadcrumbsItems) {
 function documentHead(ctx, page, breadcrumbsItems) {
   const canonical = ctx.site.mode === "production" ? ctx.absolute(page.path || "") : "";
   const ogImage = ctx.site.mode === "production" ? ctx.absolute("assets/images/og.png") : "";
+  const heroPreload = page.pageType === "home" ? '<link rel="preload" as="image" href="' + ctx.href("assets/images/editorial/main-hero-1200.webp") + '" imagesrcset="' + ctx.href("assets/images/editorial/main-hero-720.webp") + ' 720w, ' + ctx.href("assets/images/editorial/main-hero-1200.webp") + ' 1200w" imagesizes="(max-width: 820px) calc(100vw - 32px), 44vw" media="(min-width: 601px)"><link rel="preload" as="image" href="' + ctx.href("assets/images/editorial/main-hero-mobile-600.webp") + '" media="(max-width: 600px)">' : "";
   return `<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="${ctx.site.mode === "prelaunch" ? "noindex,nofollow" : "index,follow"}">
@@ -616,7 +635,8 @@ function documentHead(ctx, page, breadcrumbsItems) {
   <meta name="twitter:title" content="${esc(page.title)}">
   <meta name="twitter:description" content="${esc(page.description)}">
   ${ogImage ? `<meta name="twitter:image" content="${ogImage}">` : ""}
-  <link rel="stylesheet" href="${ctx.href("assets/css/site.css")}">
+   ${heroPreload}
+   <link rel="stylesheet" href="${ctx.href("assets/css/site.css")}">
   <script src="${ctx.href("assets/js/site-config.js")}" defer></script>
   <script src="${ctx.href("assets/js/site.js")}" defer></script>
   <script src="${ctx.href("assets/js/form-handler.js")}" defer></script>
@@ -635,13 +655,13 @@ function layout(ctx, page, body, { active = "", breadcrumbs: crumbs = [] } = {})
 
 export function renderCommercialPage(ctx, page) {
   const crumbs = [{ label: "Главная", href: "" }, { label: page.h1, href: page.path }];
-  const body = `${hero(ctx, page)}${page.sections.map((section) => renderSection(ctx, section)).join("")}${leadForm(ctx, page.form)}`;
+  const body = `${hero(ctx, page)}${page.sections.map((section) => renderSection(ctx, section)).join("")}${page.slug === "construction" ? darkHouseCta(ctx) : ""}${leadForm(ctx, page.form)}`;
   const active = page.slug === "sell" ? "sell" : page.slug === "valuation" ? "valuation" : page.pageType === "catalog" ? "types" : "buy";
   return layout(ctx, page, body, { active, breadcrumbs: crumbs });
 }
 
 export function renderHome(ctx, guides) {
-  const page = { path: "", pageType: "home", title: "Недвижимость в Шахтах — купить, продать, оценить | Домиан", description: "Покупка, продажа и предварительная оценка квартир, домов, новостроек, участков, коммерческой недвижимости, гаражей и парковочных мест в Шахтах и рядом.", eyebrow: "Домиан · Шахты на Маяковского", h1: "Недвижимость в Шахтах — спокойно и по делу", lead: "Квартиры, дома, новостройки, участки и коммерческая недвижимость. Покупка, продажа и предварительная оценка — в одном офисе на Маяковского.", primaryCta: { label: "Подобрать недвижимость", href: "#request" }, secondaryCta: { label: "Продать объект", href: "sell.html" }, tertiaryCta: { label: "Оценить стоимость", href: "valuation.html" }, geo: "Шахты · Каменоломни · Новошахтинск · Аюта · Красный Сулин", heroImage: "hero-modern-city-living", heroImageAlt: "Современная городская жилая архитектура — editorial-иллюстрация категории, не объект продажи", heroMediaLabel: "Современная городская жизнь" };
+  const page = { path: "", pageType: "home", title: "Недвижимость в Шахтах — купить, продать, оценить | Домиан", description: "Покупка, продажа и предварительная оценка квартир, домов, новостроек, участков, коммерческой недвижимости, гаражей и парковочных мест в Шахтах и рядом.", eyebrow: "Домиан · Шахты на Маяковского", h1: "Недвижимость в Шахтах — спокойно и по делу", lead: "Квартиры, дома, новостройки, участки и коммерческая недвижимость. Покупка, продажа и предварительная оценка — в одном офисе на Маяковского.", primaryCta: { label: "Подобрать недвижимость", href: "#request" }, secondaryCta: { label: "Продать объект", href: "sell.html" }, tertiaryCta: { label: "Оценить стоимость", href: "valuation.html" }, geo: "Шахты · Каменоломни · Новошахтинск · Аюта · Красный Сулин", heroImage: "main-hero", heroImageAlt: "Современная жилая недвижимость — имиджевая иллюстрация, не объект продажи", heroMediaLabel: "Современная городская жизнь" };
   const body = `${hero(ctx, page)}${homePropertySection(ctx)}${homeHotOffersSection(ctx)}${homeRequestSection(ctx)}${homeSellerSection(ctx)}${homeLocationsSection(ctx)}${homeExpertiseSection(ctx, guides)}${homeOfficeSection(ctx)}${homeLeadForm(ctx)}`;
   return layout(ctx, page, body, { active: "" });
 }
@@ -668,7 +688,7 @@ export function renderLocation(ctx, location) {
 
 export function renderGuidesIndex(ctx, guides) {
   const page = { path: "guides/index.html", pageType: "guides", title: "Материалы о недвижимости и сделках в Шахтах — Домиан", description: "Информационные материалы о квартирах, домах, участках, территориях и подготовке разных типов недвижимости к продаже в Шахтах.", eyebrow: "Полезные материалы", h1: "Короткие ответы и рабочие чек-листы", lead: "Материалы подготовлены на основе открытых источников, носят информационный характер и не заменяют разбор конкретного объекта.", primaryCta: { label: "Выбрать материал", href: "#guide-list" }, secondaryCta: { label: "Виды недвижимости", href: "apartments.html" }, heroFacts: ["открытые источники", "дата актуальности", "условия могут меняться"], heroImage: "client-meeting" };
-  const list = `<section class="section" id="guide-list"><div class="container guide-grid">${guides.map((guide, index) => `<article class="guide-card"><span>${String(index + 1).padStart(2, "0")} · ${esc(guide.readTime)}</span><h2><a href="${ctx.href(`guides/${guide.slug}.html`)}">${esc(guide.title)}</a></h2><p>${esc(guide.answer)}</p><a class="text-link" href="${ctx.href(`guides/${guide.slug}.html`)}">Читать материал ↗</a></article>`).join("")}</div></section>`;
+  const list = `<section class="section" id="guide-list"><div class="container guide-index-intro"><div class="guide-intro-media">${editorialImage(ctx, "architecture-detail", "Архитектурная деталь — декоративная иллюстрация к материалам, не конкретный объект", { sizes: "(max-width: 820px) 42vw, 280px" })}</div><p>Материалы помогают проверить качество строительства и подготовиться к разговору об объекте. Иллюстрация носит редакционный характер.</p></div><div class="container guide-grid">${guides.map((guide, index) => `<article class="guide-card"><span>${String(index + 1).padStart(2, "0")} · ${esc(guide.readTime)}</span><h2><a href="${ctx.href(`guides/${guide.slug}.html`)}">${esc(guide.title)}</a></h2><p>${esc(guide.answer)}</p><a class="text-link" href="${ctx.href(`guides/${guide.slug}.html`)}">Читать материал ↗</a></article>`).join("")}</div></section>`;
   const body = `${hero(ctx, page)}${list}${leadForm(ctx, { type: "service", title: "Нужен разбор после чтения?", text: "Опишите тип недвижимости и ситуацию — офис определит, какие данные нужны дальше." })}`;
   return layout(ctx, page, body, { active: "guides", breadcrumbs: [{ label: "Главная", href: "" }, { label: "Гайды", href: page.path }] });
 }

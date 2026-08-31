@@ -139,7 +139,9 @@ test("homepage uses the editorial composition with verified hot offers", () => {
   assert.match(home, /5[\s\u00a0]670[\s\u00a0]000 ₽/u);
   assert.match(home, /data-home-request-builder/u);
   assert.match(home, /data-lead-compact/u);
-  assert.match(home, /hero-modern-city-living-mobile-600\.webp/u);
+  assert.match(home, /main-hero-mobile-600\.webp/u);
+  assert.match(home, /main-hero-720\.webp 720w,[^"]+main-hero-1200\.webp 1200w/u);
+  assert.match(home, /main-hero-mobile-600\.webp" media="\(max-width: 600px\)"/u);
   assert.match(home, /fetchpriority="high"/u);
   assert.doesNotMatch(home, /apartment-building-(?:640|960)\.webp/u);
   const officeSection = home.match(/<section class="section owner-section home-office"[\s\S]*?<\/section>/u)?.[0] || "";
@@ -151,15 +153,46 @@ test("homepage uses the editorial composition with verified hot offers", () => {
   assert.deepEqual(order, order.slice().sort((a, b) => a - b));
 });
 
-test("legacy panel facade is removed from every affected public page", () => {
-  const affected = ["apartments.html", "commercial.html", "mortgage.html", "locations/index.html"];
-  for (const file of affected) {
-    const html = read(file);
-    assert.doesNotMatch(html, /apartment-building-(?:640|960)\.webp/u, file);
-    assert.match(html, /modern-apartment-house-(?:640|960)\.webp/u, file);
+test("editorial image pack is complete and mapped to the intended blocks", () => {
+  const variants = {
+    "main-hero": [720, 1200], "main-hero-mobile": [600],
+    "apartments-editorial": [640, 960], "modern-house": [640, 960],
+    "land-plots": [640, 960], "mortgage-housing": [720, 1200],
+    "sale-interior": [720, 1200], "new-buildings": [640, 960],
+    "secondary-apartment": [640, 960], "commercial-space": [640, 960],
+    "family-house": [640, 960], "real-land-plot": [720, 1200],
+    "neighborhood": [720, 1200], "sell-property-cta": [960, 1440],
+    "house-dark-cta": [960, 1440], "architecture-detail": [480, 800]
+  };
+  for (const [key, widths] of Object.entries(variants)) {
+    for (const width of widths) assert.ok(fs.existsSync(path.join(root, "assets/images/editorial/" + key + "-" + width + ".webp")), key + "-" + width);
   }
-  assert.equal(fs.existsSync(path.join(root, "assets/images/editorial/apartment-building-640.webp")), false);
-  assert.equal(fs.existsSync(path.join(root, "assets/images/editorial/apartment-building-960.webp")), false);
+  const allHtml = fs.readdirSync(root, { recursive: true }).filter((file) => file.endsWith(".html")).map((file) => read(file)).join("\n");
+  for (const key of Object.keys(variants)) assert.match(allHtml, new RegExp("assets/images/editorial/" + key + "-", "u"), key);
+  assert.doesNotMatch(allHtml, /real_estate_series\/.*\.png/u);
+  assert.match(read("construction.html"), /modern-house-960\.webp/u);
+  assert.match(read("lands.html"), /land-plots-960\.webp/u);
+  assert.match(read("new-build-apartments.html"), /new-buildings-960\.webp/u);
+  assert.match(read("secondary-apartments.html"), /secondary-apartment-960\.webp/u);
+  assert.match(read("commercial.html"), /commercial-space-960\.webp/u);
+  assert.match(read("houses.html"), /family-house-960\.webp/u);
+  assert.match(read("lands.html"), /real-land-plot-1200\.webp/u);
+  assert.match(read("mortgage.html"), /mortgage-housing-1200\.webp/u);
+  assert.match(read("sell.html"), /sale-interior-1200\.webp/u);
+  assert.match(read("guides/index.html"), /architecture-detail-800\.webp/u);
+  assert.match(read("construction.html"), /house-dark-cta-1440\.webp/u);
+  assert.match(read("index.html"), /neighborhood-1200\.webp/u);
+  assert.match(read("index.html"), /sell-property-cta-1440\.webp/u);
+});
+
+test("affected pages use responsive dimensions and loading priorities", () => {
+  for (const file of ["index.html", "apartments.html", "construction.html", "lands.html", "new-build-apartments.html", "secondary-apartments.html", "commercial.html", "houses.html", "mortgage.html", "sell.html", "guides/index.html"]) {
+    const html = read(file);
+    assert.match(html, /<picture[\s\S]*?<source[^>]+srcset="[^"]+ [0-9]+w[^"]*"[^>]*>[^<]*<img[^>]+width="[0-9]+" height="[0-9]+"/u, file);
+  }
+  assert.match(read("index.html"), /main-hero-1200\.webp[^>]+[^>]*loading="eager"[^>]+fetchpriority="high"/u);
+  assert.match(read("construction.html"), /modern-house-960\.webp[^>]+[^>]*loading="eager"[^>]+fetchpriority="high"/u);
+  assert.match(read("index.html"), /sell-property-cta-1440\.webp[^>]+loading="lazy"/u);
 });
 
 test("secondary apartment imagery includes a sharp desktop source", () => {
