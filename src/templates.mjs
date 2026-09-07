@@ -110,7 +110,23 @@ const editorialImages = {
   "category-commercial": { widths: [640, 960], width: 960, height: 720 },
   "category-parking": { widths: [640, 960], width: 960, height: 720 },
   "feature-new-homes": { widths: [720, 1200], width: 1200, height: 600 },
-  "seller-valuation": { widths: [640, 960], width: 960, height: 720 }
+  "seller-valuation": { widths: [640, 960], width: 960, height: 720 },
+  "garage-row": { widths: [640, 960], width: 960, height: 720 },
+  "novoshakhtinsk-entry-sign": { widths: [640, 960], width: 960, height: 720 },
+  "apartment-open-plan": { widths: [640, 960], width: 960, height: 720 },
+  "land-plot-izhs": { widths: [640, 960], width: 960, height: 720 },
+  "ayuta-entry-sign": { widths: [640, 960], width: 960, height: 720 },
+  "regional-apartment-street": { widths: [640, 960], width: 960, height: 720 },
+  "residential-parking": { widths: [640, 960], width: 960, height: 720 },
+  "detached-brick-house": { widths: [640, 960], width: 960, height: 720 },
+  "warehouse-loading-yard": { widths: [640, 960], width: 960, height: 720 },
+  "krasny-sulin-entry-sign": { widths: [640, 960], width: 960, height: 720 },
+  "kamenolomni-entry-sign": { widths: [640, 960], width: 960, height: 720 },
+  "commercial-street-retail": { widths: [640, 960], width: 960, height: 720 },
+  "ayuta-railway-station": { widths: [640, 960], width: 960, height: 720 },
+  "secondary-houses-street": { widths: [640, 960], width: 960, height: 720 },
+  "neighborhood-private-sector": { widths: [640, 960], width: 960, height: 720 },
+  "apartment-block-neighborhood": { widths: [640, 960], width: 960, height: 720 }
 };
 
 function editorialImage(ctx, key, alt, { className = "", sizes = "(max-width: 760px) calc(100vw - 32px), 50vw", priority = false } = {}) {
@@ -119,7 +135,7 @@ function editorialImage(ctx, key, alt, { className = "", sizes = "(max-width: 76
   const srcset = image.widths.map((width) => `${ctx.href(`assets/images/editorial/${key}-${width}.webp`)} ${width}w`).join(", ");
   const fallbackWidth = image.widths.at(-1);
   const mobileSource = image.mobile ? `<source media="(max-width: 600px)" type="image/webp" srcset="${ctx.href(`assets/images/editorial/${image.mobile.src}`)}" sizes="100vw">` : "";
-  return `<picture${className ? ` class="${esc(className)}"` : ""}>${mobileSource}<source type="image/webp" srcset="${srcset}" sizes="${esc(sizes)}"><img src="${ctx.href(`assets/images/editorial/${key}-${fallbackWidth}.webp`)}" width="${image.width}" height="${image.height}" alt="${esc(alt)}" loading="${priority ? "eager" : "lazy"}" decoding="async"${priority ? ' fetchpriority="high"' : ""}></picture>`;
+  return `<picture${className ? ` class="${esc(className)}"` : ""} data-editorial-image="${esc(key)}">${mobileSource}<source type="image/webp" srcset="${srcset}" sizes="${esc(sizes)}"><img src="${ctx.href(`assets/images/editorial/${key}-${fallbackWidth}.webp`)}" width="${image.width}" height="${image.height}" alt="${esc(alt)}" loading="${priority ? "eager" : "lazy"}" decoding="async"${priority ? ' fetchpriority="high"' : ""}></picture>`;
 }
 
 const officeImages = {
@@ -238,7 +254,7 @@ function hero(ctx, page) {
   })[page.slug || page.pageType];
   const visual = heroImageKey
     ? `<div class="hero-media" data-reveal>
-        ${editorialImage(ctx, heroImageKey, page.heroImageAlt || "Современная недвижимость — нейтральный визуальный образ направления, не объект продажи", { className: "hero-media__picture", sizes: "(max-width: 820px) calc(100vw - 32px), 44vw", priority: true })}
+        ${editorialImage(ctx, heroImageKey, page.heroImageAlt || "Современная жилая недвижимость", { className: "hero-media__picture", sizes: "(max-width: 820px) calc(100vw - 32px), 44vw", priority: true })}
         <div class="hero-media__caption"><span>${esc(page.heroMediaLabel || "Недвижимость")}</span><strong>${esc(page.heroMediaLocation || "Шахты и рядом")}</strong></div>
         <span class="hero-media__drawing" aria-hidden="true"></span>
       </div>`
@@ -270,17 +286,17 @@ function hero(ctx, page) {
 
 function homePropertySection(ctx) {
   const items = [
-    ["Квартиры", "Вторичный рынок и новостройки", "apartments.html", "apartment", "category-apartments", "Светлый современный интерьер квартиры — editorial-иллюстрация категории, не объект продажи"],
-    ["Дома", "Новые · вторичные · от застройщиков", "houses.html", "house", "category-houses", "Современный частный дом в жилом окружении — editorial-иллюстрация категории, не объект продажи"],
-    ["Новостройки", "Квартиры в новых многоквартирных проектах", "new-build-apartments.html", "apartment-newbuild", "category-new-buildings", "Современный многоквартирный двор — editorial-иллюстрация категории, не объект продажи"],
-    ["Участки", "ИЖС, коммуникации и жилое окружение", "lands.html", "land", "category-land", "Участок ИЖС с дорогой и жилым окружением — editorial-иллюстрация категории, не объект продажи"],
-    ["Коммерческая недвижимость", "Street-retail, офисы, склады и ПСН", "commercial.html", "commercial", "category-commercial", "Коммерческое помещение с витриной — editorial-иллюстрация категории, не объект продажи"],
-    ["Гаражи и парковка", "Гаражи, машиноместа и парковочные места", "garages-parking.html", "garage-parking", "category-parking", "Крытая парковка с размеченными местами — editorial-иллюстрация категории, не объект продажи"]
+    ["Квартиры", "Вторичный рынок и новостройки", "apartments.html", "apartment", "category-apartments", "Светлый современный интерьер квартиры"],
+    ["Дома", "Новые · вторичные · от застройщиков", "houses.html", "house", "category-houses", "Современный частный дом в жилом окружении"],
+    ["Новостройки", "Квартиры в новых многоквартирных проектах", "new-build-apartments.html", "apartment-newbuild", "category-new-buildings", "Современный многоквартирный двор"],
+    ["Участки", "ИЖС, коммуникации и жилое окружение", "lands.html", "land", "land-plot-izhs", "Свободный земельный участок в жилом окружении"],
+    ["Коммерческая недвижимость", "Street-retail, офисы, склады и ПСН", "commercial.html", "commercial", "commercial-street-retail", "Коммерческое помещение с витринным фасадом"],
+    ["Гаражи и парковка", "Гаражи, машиноместа и парковочные места", "garages-parking.html", "garage-parking", "category-parking", "Крытая парковка с размеченными местами"]
   ];
   return `<section class="section home-property" id="property-directions" data-home-section="property"><div class="container">
-    ${sectionHeading({ kicker: "Недвижимость", title: "Весь основной рынок — без лишней сложности", intro: "Шесть равноправных направлений. Изображения показывают категории, а не конкретные объекты в продаже." })}
+    ${sectionHeading({ kicker: "Недвижимость", title: "Весь основной рынок — без лишней сложности", intro: "Шесть направлений для покупки, продажи и предварительной оценки недвижимости." })}
     <div class="home-property__grid" data-reveal-group>${items.map(([title, text, href, category, image, alt], index) => `<a class="home-property-card" href="${ctx.href(href)}" data-lead-category="${category}" data-lead-label="${esc(title)}" data-reveal>${editorialImage(ctx, image, alt, { sizes: "(max-width: 600px) 46vw, (max-width: 1024px) 47vw, 31vw" })}<span class="home-property-card__veil" aria-hidden="true"></span><span class="home-property-card__number">${String(index + 1).padStart(2, "0")}</span><div><h3>${esc(title)}</h3><p>${esc(text)}</p><strong>Открыть направление ↗</strong></div></a>`).join("")}</div>
-    <a class="new-homes-feature" href="${ctx.href("construction.html")}" data-lead-category="new-house" data-lead-label="Новые готовые дома" data-reveal>${editorialImage(ctx, "feature-new-homes", "Новый готовый дом с благоустроенным двором — editorial-иллюстрация категории, не объект продажи", { sizes: "(max-width: 820px) calc(100vw - 32px), 60vw" })}<span class="new-homes-feature__veil" aria-hidden="true"></span><div><p class="eyebrow">Сильное направление внутри домов</p><h3>Новые готовые дома</h3><p>Подберём готовый дом и поможем разобраться в комплектации, участке, коммуникациях и условиях покупки.</p><strong>Смотреть направление ↗</strong></div></a>
+    <a class="new-homes-feature" href="${ctx.href("construction.html")}" data-lead-category="new-house" data-lead-label="Новые готовые дома" data-reveal>${editorialImage(ctx, "feature-new-homes", "Новый готовый дом с благоустроенным двором", { sizes: "(max-width: 820px) calc(100vw - 32px), 60vw" })}<span class="new-homes-feature__veil" aria-hidden="true"></span><div><p class="eyebrow">Сильное направление внутри домов</p><h3>Новые готовые дома</h3><p>Подберём готовый дом и поможем разобраться в комплектации, участке, коммуникациях и условиях покупки.</p><strong>Смотреть направление ↗</strong></div></a>
   </div></section>`;
 }
 
@@ -293,15 +309,18 @@ function homeHotOffersSection(ctx) {
 function homeRequestSection(ctx) {
   const typeOptions = requestTypes.map(([value, label]) => `<option value="${value}">${label}</option>`).join("");
   const locationOptions = ctx.locations.map((location) => `<option value="${esc(location.name)}">${esc(location.name)}</option>`).join("");
-  return `<section class="section home-request" id="request" data-home-section="request"><div class="container home-request__shell"><div class="home-request__intro"><p class="eyebrow">Подбор под ваш запрос</p><h2>Передайте критерии — соберём актуальные варианты</h2><p>Это не поиск по пустому каталогу. Критерии останутся в форме, а предложения и характеристики будут проверяться на дату обращения.</p></div><form class="home-request__form" data-home-request-builder novalidate><label><span>Что ищете</span><select name="requestType" required><option value="">Выберите тип</option>${typeOptions}</select></label><label><span>Территория</span><select name="requestLocation"><option value="">Несколько территорий</option>${locationOptions}</select></label><label><span>Бюджет</span><select name="requestBudget"><option value="">Обсудить</option><option>до 2 млн ₽</option><option>2–4 млн ₽</option><option>4–7 млн ₽</option><option>7–10 млн ₽</option><option>10–15 млн ₽</option><option>свыше 15 млн ₽</option></select></label><label><span>Телефон</span><input name="requestPhone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="+7 999 123-45-67"></label><button class="button button--primary" type="submit">Получить актуальную подборку</button><p class="home-request__status" data-home-request-status role="status" hidden></p></form><ol class="home-request__steps"><li><span>01</span><strong>Получаем критерии</strong><p>Тип, территория, бюджет и важные детали.</p></li><li><span>02</span><strong>Проверяем актуальность</strong><p>Без выдуманных адресов, цен и счётчиков.</p></li><li><span>03</span><strong>Сравниваем варианты</strong><p>По условиям, документам и полному бюджету.</p></li></ol></div></section>`;
+  return `<section class="section home-request" id="request" data-home-section="request"><div class="container home-request__shell"><div class="home-request__intro"><p class="eyebrow">Подбор под ваш запрос</p><h2>Передайте критерии — соберём актуальные варианты</h2><p>Критерии останутся в форме, а предложения и характеристики будут проверяться на дату обращения.</p></div><form class="home-request__form" data-home-request-builder novalidate><label><span>Что ищете</span><select name="requestType" required><option value="">Выберите тип</option>${typeOptions}</select></label><label><span>Территория</span><select name="requestLocation"><option value="">Несколько территорий</option>${locationOptions}</select></label><label><span>Бюджет</span><select name="requestBudget"><option value="">Обсудить</option><option>до 2 млн ₽</option><option>2–4 млн ₽</option><option>4–7 млн ₽</option><option>7–10 млн ₽</option><option>10–15 млн ₽</option><option>свыше 15 млн ₽</option></select></label><label><span>Телефон</span><input name="requestPhone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="+7 999 123-45-67"></label><button class="button button--primary" type="submit">Получить актуальную подборку</button><p class="home-request__status" data-home-request-status role="status" hidden></p></form><ol class="home-request__steps"><li><span>01</span><strong>Получаем критерии</strong><p>Тип, территория, бюджет и важные детали.</p></li><li><span>02</span><strong>Проверяем актуальность</strong><p>Уточняем предложения, цены и характеристики.</p></li><li><span>03</span><strong>Сравниваем варианты</strong><p>По условиям, документам и полному бюджету.</p></li></ol></div></section>`;
 }
 
 function homeSellerSection(ctx) {
-  return `<section class="section home-seller" data-home-section="seller"><div class="container home-seller__layout"><div><p class="eyebrow">Собственникам</p><h2>Планируете продажу? Начнём с предварительного разбора</h2><p>Характеристики объекта, состояние, документы, локация и аналоги помогают определить обоснованный диапазон. Дальнейший порядок работы формируется после знакомства с объектом.</p><div class="hero-actions"><a class="button button--primary" href="${ctx.href("valuation.html")}">Оценить недвижимость</a><a class="button button--ghost" href="${ctx.href("sell.html")}">Обсудить продажу</a></div><small>Без обещания точной онлайн-цены, срока продажи или гарантированной стоимости.</small></div><div class="home-seller__media">${editorialImage(ctx, "sell-property-cta", "Подготовка недвижимости к продаже — иллюстрация сопровождения", { sizes: "(max-width: 820px) calc(100vw - 32px), 48vw" })}<span>Изображение носит иллюстративный характер и не является объектом продажи.</span></div></div></section>`;
+  return `<section class="section home-seller" data-home-section="seller"><div class="container home-seller__layout"><div><p class="eyebrow">Собственникам</p><h2>Планируете продажу? Начнём с предварительного разбора</h2><p>Характеристики объекта, состояние, документы, локация и аналоги помогают определить обоснованный диапазон. Дальнейший порядок работы формируется после знакомства с объектом.</p><div class="hero-actions"><a class="button button--primary" href="${ctx.href("valuation.html")}">Оценить недвижимость</a><a class="button button--ghost" href="${ctx.href("sell.html")}">Обсудить продажу</a></div><small>Без обещания точной онлайн-цены, срока продажи или гарантированной стоимости.</small></div><div class="home-seller__media">${editorialImage(ctx, "sell-property-cta", "Светлый интерьер подготовленной к продаже квартиры", { sizes: "(max-width: 820px) calc(100vw - 32px), 48vw" })}</div></div></section>`;
 }
 
 function homeLocationsSection(ctx) {
-  return `<section class="section home-locations" data-home-section="locations"><div class="container"><div class="home-locations__heading"><div><p class="eyebrow">Территории</p><h2>Шахты и соседние территории</h2></div><p>Сравниваем не названия городов, а конкретные адреса, маршруты и параметры объекта.</p></div><div class="home-locations__layout"><div class="home-locations__media">${editorialImage(ctx, "neighborhood", "Городское жилое окружение — иллюстрация географии работы, не конкретный район", { sizes: "(max-width: 820px) calc(100vw - 32px), 42vw" })}</div><div class="home-locations__grid">${ctx.locations.map((location, index) => `<a href="${ctx.href(`locations/${location.slug}.html`)}"><span>${String(index + 1).padStart(2, "0")}</span><strong>${esc(location.name)}</strong><small>${esc(location.administrativeName)}</small><b aria-hidden="true">↗</b></a>`).join("")}</div></div></div></section>`;
+  return `<section class="section home-locations" data-home-section="locations"><div class="container"><div class="home-locations__heading"><div><p class="eyebrow">Территории</p><h2>Шахты и соседние территории</h2></div><p>Сравниваем конкретные адреса, маршруты и параметры недвижимости в каждой локации.</p></div><div class="home-locations__layout"><div class="home-locations__media">${editorialImage(ctx, "apartment-block-neighborhood", "Городская улица с современной многоквартирной застройкой", { sizes: "(max-width: 820px) calc(100vw - 32px), 42vw" })}</div><div class="home-locations__grid">${ctx.locations.map((location, index) => {
+    const media = locationMedia[location.slug];
+    return `<a class="home-location-card" href="${ctx.href(`locations/${location.slug}.html`)}">${editorialImage(ctx, media.card, media.cardAlt, { className: "home-location-card__media", sizes: "(max-width: 600px) 46vw, (max-width: 820px) 47vw, 18vw" })}<i class="home-location-card__veil" aria-hidden="true"></i><span>${String(index + 1).padStart(2, "0")}</span><strong>${esc(location.name)}</strong><small>${esc(location.administrativeName)}</small><b aria-hidden="true">↗</b></a>`;
+  }).join("")}</div></div></div></section>`;
 }
 
 function homeExpertiseSection(ctx, guides) {
@@ -356,14 +375,14 @@ function requestBuilder(ctx, { defaultType = "", defaultMarket = "", defaultGoal
     <label data-request-field="land house"><span>Размер участка</span><select name="requestLand"><option value="">Не определено</option><option>до 5 соток</option><option>5–8 соток</option><option>8–12 соток</option><option>от 12 соток</option></select></label>
     <label data-request-field="commercial"><span>Коммерческий тип</span><select name="requestCommercial"><option value="">Уточнить</option><option>Свободное назначение</option><option>Торговое помещение</option><option>Офис</option><option>Склад</option><option>Производственный объект</option><option>Коммерческий участок</option></select></label>
     <label data-request-field="garage-parking"><span>Гараж или место</span><select name="requestParking"><option value="">Уточнить</option><option>Гараж</option><option>Машиноместо</option><option>Парковочное место</option></select></label>
-    <div class="request-builder__action"><button class="button button--primary" type="submit">Передать критерии</button><small>Покажем направление и следующий шаг, а не выдуманную выдачу.</small></div>
+    <div class="request-builder__action"><button class="button button--primary" type="submit">Передать критерии</button><small>Офис уточнит направление и предложит следующий шаг.</small></div>
     <p class="request-builder__status" data-request-builder-status role="status" hidden></p>
   </form>`;
 }
 
 function quickFilterSection(ctx) {
   return `<section class="quick-search" id="quick-search"><div class="container quick-search__shell" data-reveal>
-    <div class="quick-search__intro"><p class="eyebrow">Быстрый подбор</p><h2>Соберите запрос за минуту</h2><p>Критерии перейдут в форму обращения. Это конструктор заявки, а не имитация каталога.</p></div>
+    <div class="quick-search__intro"><p class="eyebrow">Быстрый подбор</p><h2>Соберите запрос за минуту</h2><p>Критерии автоматически перейдут в форму обращения.</p></div>
     ${requestBuilder(ctx)}
   </div></section>`;
 }
@@ -372,7 +391,6 @@ function showcaseCard(ctx, item) {
   return `<article class="showcase-card" data-showcase-card data-category="${esc(item.category)}" data-reveal>
     <div class="showcase-card__media">
       ${editorialImage(ctx, item.image, item.imageAlt, { sizes: "(max-width: 600px) calc(100vw - 64px), (max-width: 1024px) 44vw, 30vw" })}
-      <span>${esc(item.status)}</span>
     </div>
     <div class="showcase-card__body">
       <p class="showcase-card__category">${esc(item.categoryLabel)}</p>
@@ -400,7 +418,7 @@ function showcaseSection(ctx) {
     ["garage-parking", "Гаражи и парковка"]
   ];
   return `<section class="section showcase-section" id="showcase"><div class="container">
-    ${sectionHeading({ kicker: "Навигатор рынка", title: "Направления подбора вместо выдуманных объявлений", intro: "Десять карточек показывают рыночные сегменты. Каждая из них — направление запроса, а не конкретный объект продажи." })}
+    ${sectionHeading({ kicker: "Навигатор рынка", title: "Направления подбора недвижимости", intro: "Десять карточек помогают быстро выбрать нужный сегмент рынка и перейти к подходящему запросу." })}
     <div class="showcase-filter" data-showcase-filters aria-label="Фильтр витрины">${filters.map(([value, label], index) => `<button type="button" data-showcase-filter="${value}"${index === 0 ? ' class="is-active" aria-pressed="true"' : ' aria-pressed="false"'}>${label}</button>`).join("")}</div>
     ${showcaseGrid(ctx, items)}
   </div></section>`;
@@ -408,12 +426,12 @@ function showcaseSection(ctx) {
 
 function propertyDirectionsSection(ctx) {
   const items = [
-    { category: "apartment", title: "Квартиры", text: "Вторичный рынок и новостройки, от студий до квартир с тремя и более комнатами.", href: "apartments.html", label: "Выбрать квартиру", image: "modern-apartment-house", alt: "Современный многоквартирный дом — editorial-иллюстрация категории, не объект продажи" },
-    { category: "new-house", title: "Новые дома", text: "Готовность, комплектация, инженерия, участок и документы.", href: "construction.html", label: "Смотреть новые дома", image: "hero-house", alt: "Современный дом — нейтральная иллюстрация направления" },
-    { category: "house", title: "Дома", text: "Новые, вторичные, от застройщиков и дома с участком.", href: "houses.html", label: "Выбрать формат дома", image: "suburban-house", alt: "Частный дом — нейтральная иллюстрация направления" },
-    { category: "land", title: "Участки", text: "Под строительство, с коммуникациями или существующим домом.", href: "lands.html", label: "Выбрать участок", image: "house-yard", alt: "Загородная территория — нейтральная иллюстрация направления" },
-    { category: "commercial", title: "Коммерческая недвижимость", text: "ПСН, торговля, офисы, склады, производство и коммерческая земля.", href: "commercial.html", label: "Описать задачу бизнеса", image: "client-meeting", alt: "Деловая встреча — нейтральная иллюстрация коммерческого направления" },
-    { category: "garage-parking", title: "Гаражи и парковка", text: "Гаражи, машиноместа и парковочные места с проверкой статуса и доступа.", href: "garages-parking.html", label: "Выбрать формат", image: "keys-handover", alt: "Передача ключей — нейтральная иллюстрация направления" }
+    { category: "apartment", title: "Квартиры", text: "Вторичный рынок и новостройки, от студий до квартир с тремя и более комнатами.", href: "apartments.html", label: "Выбрать квартиру", image: "modern-apartment-house", alt: "Современный многоквартирный дом" },
+    { category: "new-house", title: "Новые дома", text: "Готовность, комплектация, инженерия, участок и документы.", href: "construction.html", label: "Смотреть новые дома", image: "detached-brick-house", alt: "Современный одноэтажный кирпичный дом" },
+    { category: "house", title: "Дома", text: "Новые, вторичные, от застройщиков и дома с участком.", href: "houses.html", label: "Выбрать формат дома", image: "category-houses", alt: "Частный дом в жилом окружении" },
+    { category: "land", title: "Участки", text: "Под строительство, с коммуникациями или существующим домом.", href: "lands.html", label: "Выбрать участок", image: "land-plot-izhs", alt: "Свободный земельный участок в частном секторе" },
+    { category: "commercial", title: "Коммерческая недвижимость", text: "ПСН, торговля, офисы, склады, производство и коммерческая земля.", href: "commercial.html", label: "Описать задачу бизнеса", image: "commercial-street-retail", alt: "Коммерческое помещение с витринным фасадом" },
+    { category: "garage-parking", title: "Гаражи и парковка", text: "Гаражи, машиноместа и парковочные места с проверкой статуса и доступа.", href: "garages-parking.html", label: "Выбрать формат", image: "garage-row", alt: "Ряд кирпичных гаражей с металлическими воротами" }
   ];
   return `<section class="section directions-section" id="property-directions"><div class="container">
     ${sectionHeading({ kicker: "Основные виды недвижимости", title: "Весь основной рынок — в понятных направлениях", intro: "Квартиры и вторичный рынок видны сразу. Новые дома остаются сильным самостоятельным направлением." })}
@@ -434,7 +452,7 @@ function homeScenariosSection(ctx) {
   return `<section class="section section--ink scenarios-section"><div class="container">
     ${sectionHeading({ kicker: "Разные задачи", title: "Один офис — разные сценарии рынка", intro: "Начинаем с типа недвижимости и цели, затем собираем применимые критерии." })}
     <div class="scenario-grid" data-reveal-group>${items.map((item) => `<article class="scenario-card" data-reveal>
-      ${editorialImage(ctx, item.image, `${item.title} — нейтральная визуальная иллюстрация`, { sizes: "(max-width: 760px) calc(100vw - 32px), 31vw" })}
+      ${editorialImage(ctx, item.image, item.title, { sizes: "(max-width: 760px) calc(100vw - 32px), 31vw" })}
       <div><span>${item.index}</span><h3>${esc(item.title)}</h3><p>${esc(item.text)}</p><a href="${ctx.href(item.href)}" data-lead-category="${esc(item.category)}" data-lead-label="${esc(item.title)}">Открыть направление ↗</a></div>
     </article>`).join("")}</div>
   </div></section>`;
@@ -442,14 +460,14 @@ function homeScenariosSection(ctx) {
 
 function sellerSection(ctx) {
   return `<section class="section seller-section"><div class="container seller-layout">
-    <div class="seller-media" data-reveal>${editorialImage(ctx, "client-meeting", "Деловая встреча по документам — нейтральная иллюстрация сопровождения", { sizes: "(max-width: 820px) calc(100vw - 32px), 46vw" })}<span>Продажа · оценка · встречная покупка</span></div>
+    <div class="seller-media" data-reveal>${editorialImage(ctx, "client-meeting", "Деловая встреча по документам", { sizes: "(max-width: 820px) calc(100vw - 32px), 46vw" })}<span>Продажа · оценка · встречная покупка</span></div>
     <div data-reveal><p class="eyebrow">Для собственника</p><h2>Продажа — часть следующего решения</h2><p>Подготовим объект, объясним логику оценки и свяжем сроки продажи с покупкой дома или квартиры. Без обещания цены и срока до изучения исходных данных.</p><div class="hero-actions"><a class="button button--primary" href="${ctx.href("sell.html")}">План продажи</a><a class="button button--ghost" href="${ctx.href("valuation.html")}">Начать с оценки</a></div></div>
   </div></section>`;
 }
 
 function faqSection() {
   const items = [
-    ["Почему на карточках нет цен и адресов?", "Публичная база ещё готовится. Мы не подменяем её демонстрационными объектами: актуальные предложения и характеристики подтверждаются на дату обращения."],
+    ["Как получить актуальные цены и адреса?", "Оставьте критерии подбора — офис уточнит доступные предложения и характеристики на дату обращения."],
     ["Можно запросить сразу несколько территорий?", "Да. В конструкторе можно оставить географию открытой, а затем сравнить Шахты, Каменоломни, Новошахтинск, Аюту и Красный Сулин по вашим критериям."],
     ["Агентство строит дома?", "Нет. Офис помогает подобрать готовый дом, предложение от застройщика, участок и сценарий строительства, а также проверить документы и сопроводить сделку."],
     ["Что достаточно указать для первого подбора?", "Тип недвижимости, территорию и бюджет. Площадь, комнаты и параметры участка можно уточнить сразу или во время разговора."],
@@ -482,26 +500,26 @@ function catalogSection(ctx, section) {
       ${listingResult}
       <div class="catalog-directions"><p class="eyebrow">${realListings.length ? "Другие направления" : "Направления подбора"}</p></div>
       ${showcaseGrid(ctx, items)}
-      <div class="catalog-followup"><p>${realListings.length ? "Карточка с ценой и адресом относится к подтверждённому объекту. Остальные карточки обозначают направления запроса." : "Каждая карточка обозначает направление запроса, а не конкретный объект. Реальные адреса, цены и характеристики публикуются только после подтверждения."}</p><a class="button button--primary" href="#lead-form-section" data-lead-category="${esc(showcaseTypes[0] || defaultType)}">${esc(section.cta)}</a></div>
+      <div class="catalog-followup"><p>Расскажите о приоритетах — офис уточнит актуальные варианты и предложит следующий шаг.</p><a class="button button--primary" href="#lead-form-section" data-lead-category="${esc(showcaseTypes[0] || defaultType)}">${esc(section.cta)}</a></div>
     </div>
   </div></section>`;
 }
 
-const locationImageKeys = {
-  shakhty: "hero-house",
-  kamenolomni: "house-yard",
-  novoshakhtinsk: "suburban-house",
-  ayutinskiy: "newbuild-green",
-  "krasnyy-sulin": "keys-handover"
+const locationMedia = {
+  shakhty: { card: "regional-apartment-street", hero: "regional-apartment-street", cardAlt: "Городская улица с многоквартирными домами", heroAlt: "Городская жилая улица с многоквартирными домами" },
+  kamenolomni: { card: "kamenolomni-entry-sign", hero: "kamenolomni-entry-sign", cardAlt: "Въездная стела с надписью «Каменоломни»", heroAlt: "Въездная стела с надписью «Каменоломни»" },
+  novoshakhtinsk: { card: "novoshakhtinsk-entry-sign", hero: "novoshakhtinsk-entry-sign", cardAlt: "Въездная стела с надписью «Новошахтинск»", heroAlt: "Въездная стела с надписью «Новошахтинск»" },
+  ayutinskiy: { card: "ayuta-entry-sign", hero: "ayuta-railway-station", cardAlt: "Въездная стела с надписью «Аюта»", heroAlt: "Железнодорожная станция со стелой «Аюта»" },
+  "krasnyy-sulin": { card: "krasny-sulin-entry-sign", hero: "krasny-sulin-entry-sign", cardAlt: "Въездная стела с надписью «Красный Сулин»", heroAlt: "Въездная стела с надписью «Красный Сулин»" }
 };
 
 function darkHouseCta(ctx) {
-  return `<section class="section house-dark-cta"><div class="container"><div class="house-dark-cta__card">${editorialImage(ctx, "house-dark-cta", "Консультация по выбору дома — редакционная иллюстрация", { className: "house-dark-cta__media", sizes: "(max-width: 820px) calc(100vw - 32px), 70vw" })}<div class="house-dark-cta__copy"><p class="eyebrow">Консультация по дому</p><h2>Соберём критерии до просмотра</h2><p>Разберём готовность, участок, инженерию и документы без вымышленных характеристик.</p><a class="button button--primary" href="${ctx.href("construction.html#lead-form-section")}">Обсудить задачу</a></div></div></div></section>`;
+  return `<section class="section house-dark-cta"><div class="container"><div class="house-dark-cta__card">${editorialImage(ctx, "house-dark-cta", "Современный дом в вечернем освещении", { className: "house-dark-cta__media", sizes: "(max-width: 820px) calc(100vw - 32px), 70vw" })}<div class="house-dark-cta__copy"><p class="eyebrow">Консультация по дому</p><h2>Соберём критерии до просмотра</h2><p>Разберём готовность, участок, инженерные системы и документы.</p><a class="button button--primary" href="${ctx.href("construction.html#lead-form-section")}">Обсудить задачу</a></div></div></div></section>`;
 }
 
 function locationCards(ctx, detailed = false) {
   return `<div class="location-grid${detailed ? " location-grid--detailed" : ""}" data-reveal-group>${ctx.locations.map((location, index) => `<a class="location-card" href="${ctx.href(`locations/${location.slug}.html`)}" data-location="${esc(location.slug)}" data-reveal>
-    <div class="location-card__media">${editorialImage(ctx, locationImageKeys[location.slug], `${location.name} — нейтральный визуальный образ территории, не объект продажи`, { sizes: detailed ? "(max-width: 820px) calc(100vw - 32px), 47vw" : "(max-width: 820px) calc(100vw - 32px), 22vw" })}<span class="location-card__index">${String(index + 1).padStart(2, "0")}</span></div>
+    <div class="location-card__media">${editorialImage(ctx, locationMedia[location.slug].card, locationMedia[location.slug].cardAlt, { sizes: detailed ? "(max-width: 820px) calc(100vw - 32px), 47vw" : "(max-width: 820px) calc(100vw - 32px), 22vw" })}<span class="location-card__index">${String(index + 1).padStart(2, "0")}</span></div>
     <div class="location-card__body"><h${detailed ? "2" : "3"}>${esc(location.name)}</h${detailed ? "2" : "3"}><p>${esc(detailed ? location.context : location.administrativeName)}</p><strong>${esc(detailed ? location.kicker : "Подобрать в этой территории")} ↗</strong></div>
   </a>`).join("")}</div>`;
 }
@@ -520,7 +538,7 @@ function splitSection(ctx, section) {
 
 function mortgageSection(ctx) {
   return `<section class="section section--ink" id="mortgage-calculator"><div class="container mortgage-layout">
-    <div class="mortgage-layout__intro"><div><p class="eyebrow">Ориентировочный расчёт</p><h2>Введите свои условия</h2><p>Ставка не подставлена намеренно: используйте значение, которое получили из актуального предложения банка. Расчёт не учитывает страховки, комиссии и изменение условий.</p></div>${editorialImage(ctx, "mortgage-housing", "Покупка жилья с ипотекой — редакционная иллюстрация, не объект продажи", { className: "mortgage-layout__media", sizes: "(max-width: 820px) calc(100vw - 32px), 34vw" })}</div>
+    <div class="mortgage-layout__intro"><div><p class="eyebrow">Ориентировочный расчёт</p><h2>Введите свои условия</h2><p>Ставка не подставлена намеренно: используйте значение, которое получили из актуального предложения банка. Расчёт не учитывает страховки, комиссии и изменение условий.</p></div>${editorialImage(ctx, "mortgage-housing", "Современный жилой комплекс", { className: "mortgage-layout__media", sizes: "(max-width: 820px) calc(100vw - 32px), 34vw" })}</div>
     <form class="mortgage-calculator" data-mortgage-calculator>
       <label>Стоимость объекта, ₽<input name="price" type="number" min="100000" step="50000" value="5000000" inputmode="numeric"></label>
       <label>Первоначальный взнос, ₽<input name="downPayment" type="number" min="0" step="50000" value="1000000" inputmode="numeric"></label>
@@ -661,13 +679,13 @@ export function renderCommercialPage(ctx, page) {
 }
 
 export function renderHome(ctx, guides) {
-  const page = { path: "", pageType: "home", title: "Недвижимость в Шахтах — купить, продать, оценить | Домиан", description: "Покупка, продажа и предварительная оценка квартир, домов, новостроек, участков, коммерческой недвижимости, гаражей и парковочных мест в Шахтах и рядом.", eyebrow: "Домиан · Шахты на Маяковского", h1: "Недвижимость в Шахтах — спокойно и по делу", lead: "Квартиры, дома, новостройки, участки и коммерческая недвижимость. Покупка, продажа и предварительная оценка — в одном офисе на Маяковского.", primaryCta: { label: "Подобрать недвижимость", href: "#request" }, secondaryCta: { label: "Продать объект", href: "sell.html" }, tertiaryCta: { label: "Оценить стоимость", href: "valuation.html" }, geo: "Шахты · Каменоломни · Новошахтинск · Аюта · Красный Сулин", heroImage: "main-hero", heroImageAlt: "Современная жилая недвижимость — имиджевая иллюстрация, не объект продажи", heroMediaLabel: "Современная городская жизнь" };
+  const page = { path: "", pageType: "home", title: "Недвижимость в Шахтах — купить, продать, оценить | Домиан", description: "Покупка, продажа и предварительная оценка квартир, домов, новостроек, участков, коммерческой недвижимости, гаражей и парковочных мест в Шахтах и рядом.", eyebrow: "Домиан · Шахты на Маяковского", h1: "Недвижимость в Шахтах — спокойно и по делу", lead: "Квартиры, дома, новостройки, участки и коммерческая недвижимость. Покупка, продажа и предварительная оценка — в одном офисе на Маяковского.", primaryCta: { label: "Подобрать недвижимость", href: "#request" }, secondaryCta: { label: "Продать объект", href: "sell.html" }, tertiaryCta: { label: "Оценить стоимость", href: "valuation.html" }, geo: "Шахты · Каменоломни · Новошахтинск · Аюта · Красный Сулин", heroImage: "main-hero", heroImageAlt: "Современная жилая недвижимость", heroMediaLabel: "Современная городская жизнь" };
   const body = `${hero(ctx, page)}${homePropertySection(ctx)}${homeHotOffersSection(ctx)}${homeRequestSection(ctx)}${homeSellerSection(ctx)}${homeLocationsSection(ctx)}${homeExpertiseSection(ctx, guides)}${homeOfficeSection(ctx)}${homeLeadForm(ctx)}`;
   return layout(ctx, page, body, { active: "" });
 }
 
 export function renderLocationsIndex(ctx) {
-  const page = { path: "locations/index.html", pageType: "location", title: "География работы — Шахты и соседние территории", description: "Шахты, Каменоломни, Новошахтинск, микрорайон Аютинский города Шахты и Красный Сулин: покупка, продажа и оценка недвижимости.", eyebrow: "Пять территорий", h1: "Недвижимость в Шахтах и рядом", lead: "Сохраняем утверждённый порядок территорий и сравниваем конкретные адреса, типы недвижимости и пользовательские маршруты без выдуманного рейтинга.", primaryCta: { label: "Выбрать территорию", href: "#locations" }, secondaryCta: { label: "Виды недвижимости", href: "apartments.html" }, heroFacts: ["Шахты", "Каменоломни", "Новошахтинск · Аюта · Красный Сулин"], heroImage: "modern-apartment-house" };
+  const page = { path: "locations/index.html", pageType: "location", title: "География работы — Шахты и соседние территории", description: "Шахты, Каменоломни, Новошахтинск, микрорайон Аютинский города Шахты и Красный Сулин: покупка, продажа и оценка недвижимости.", eyebrow: "Пять территорий", h1: "Недвижимость в Шахтах и рядом", lead: "Сравниваем конкретные адреса, типы недвижимости и ежедневные маршруты в пяти территориях.", primaryCta: { label: "Выбрать территорию", href: "#locations" }, secondaryCta: { label: "Виды недвижимости", href: "apartments.html" }, heroFacts: ["Шахты", "Каменоломни", "Новошахтинск · Аюта · Красный Сулин"], heroImage: "modern-apartment-house" };
   const cards = `<section class="section location-section" id="locations"><div class="container">${locationCards(ctx, true)}</div></section>`;
   const method = criteriaSection({ kicker: "Как сравнивать", title: "Одинаковая таблица — разные выводы", intro: "Сравнивайте конкретные адреса и типы объектов, а не названия территорий.", items: ["цель покупки или продажи", "тип и характеристики объекта", "ежедневные маршруты", "состояние и доступ", "документы", "полный бюджет"] });
   const body = `${hero(ctx, page)}${cards}${method}${leadForm(ctx, { type: "service", goal: "buy", title: "Сравнить территории под ваш запрос", text: "Назовите тип недвижимости, ключевые маршруты и критерии — офис поможет определить следующий шаг." })}`;
@@ -676,11 +694,11 @@ export function renderLocationsIndex(ctx) {
 
 export function renderLocation(ctx, location) {
   const seoName = location.slug === "ayutinskiy" ? "Микрорайон Аютинский (Аюта)" : location.name;
-  const page = { path: `locations/${location.slug}.html`, pageType: "location", title: `${seoName}: недвижимость — Домиан Шахты`, description: `${seoName}: подбор разных типов недвижимости, продажа и предварительная оценка; административный контекст — ${location.administrativeName}.`, eyebrow: location.kicker, h1: location.title, lead: location.intro, primaryCta: { label: "Оставить запрос", href: "#lead-form-section" }, secondaryCta: { label: "Виды недвижимости", href: "apartments.html" }, heroFacts: [location.administrativeName, ...location.types.slice(0, 2)], heroImage: locationImageKeys[location.slug] };
+  const page = { path: `locations/${location.slug}.html`, pageType: "location", title: `${seoName}: недвижимость — Домиан Шахты`, description: `${seoName}: подбор разных типов недвижимости, продажа и предварительная оценка; административный контекст — ${location.administrativeName}.`, eyebrow: location.kicker, h1: location.title, lead: location.intro, primaryCta: { label: "Оставить запрос", href: "#lead-form-section" }, secondaryCta: { label: "Виды недвижимости", href: "apartments.html" }, heroFacts: [location.administrativeName, ...location.types.slice(0, 2)], heroImage: locationMedia[location.slug].hero, heroImageAlt: locationMedia[location.slug].heroAlt };
   const context = `<section class="section"><div class="container location-story"><div><p class="eyebrow">Административный контекст</p><h2>${esc(location.administrativeName)}</h2><p>${esc(location.context)}</p></div><aside><span>Сценарий частного дома</span><p>${esc(location.houseScenario)}</p></aside></div></section>`;
-  const who = cardsSection(ctx, { kicker: "Кому подходит", title: "Сценарии для этой территории", intro: "Это не готовые объекты, а ситуации покупателя.", items: location.idealFor.map((item, index) => ({ index: String(index + 1).padStart(2, "0"), title: item, text: index === 0 ? location.houseScenario : `Критерии уточняются по конкретному адресу в ${location.name}.` })) });
+  const who = cardsSection(ctx, { kicker: "Кому подходит", title: "Сценарии для этой территории", intro: "Сопоставьте задачу покупателя с особенностями территории.", items: location.idealFor.map((item, index) => ({ index: String(index + 1).padStart(2, "0"), title: item, text: index === 0 ? location.houseScenario : `Критерии уточняются по конкретному адресу в ${location.name}.` })) });
   const checks = criteriaSection({ kicker: "Что проверить", title: "Вопросы к конкретному адресу", intro: "Общие сведения о территории не заменяют проверку объекта.", items: location.checks });
-  const types = `<section class="section section--stone"><div class="container"><div class="section-heading"><div><p class="eyebrow">Что рассматриваем</p><h2>${location.types.map(esc).join(" · ")}</h2></div><p>Публичных объектов пока нет. Актуальность и характеристики подтверждаются на дату обращения.</p></div><div class="hero-actions"><a class="button button--ghost" href="${ctx.href("apartments.html")}">Квартиры</a><a class="button button--ghost" href="${ctx.href("houses.html")}">Дома</a><a class="button button--ghost" href="${ctx.href("lands.html")}">Участки</a><a class="button button--ghost" href="${ctx.href("commercial.html")}">Коммерческая</a></div></div></section>`;
+  const types = `<section class="section section--stone"><div class="container"><div class="section-heading"><div><p class="eyebrow">Что рассматриваем</p><h2>${location.types.map(esc).join(" · ")}</h2></div><p>Актуальность предложений и характеристики уточняются на дату обращения.</p></div><div class="hero-actions"><a class="button button--ghost" href="${ctx.href("apartments.html")}">Квартиры</a><a class="button button--ghost" href="${ctx.href("houses.html")}">Дома</a><a class="button button--ghost" href="${ctx.href("lands.html")}">Участки</a><a class="button button--ghost" href="${ctx.href("commercial.html")}">Коммерческая</a></div></div></section>`;
   const related = splitSection(ctx, { kicker: "Связанные маршруты", title: "Продолжить выбор", left: { title: "Виды недвижимости", text: "Перейти к квартирам, домам, участкам, коммерческим объектам, гаражам и парковке.", href: "services.html", label: "Все направления" }, right: { title: "Практический материал", text: "Открыть чек-лист, связанный с проверкой этой территории.", href: `guides/${location.relatedGuide}.html`, label: "Читать материал" } });
   const body = `${hero(ctx, page)}${context}${who}${checks}${types}${related}${leadForm(ctx, { type: "service", goal: "buy", title: `Недвижимость: ${location.name}`, text: "Укажите тип, цель, бюджет и обязательные параметры. Офис начнёт с актуальных данных." })}`;
   return layout(ctx, page, body, { active: "locations", breadcrumbs: [{ label: "Главная", href: "" }, { label: "География", href: "locations/index.html" }, { label: location.name, href: page.path }] });
@@ -688,7 +706,7 @@ export function renderLocation(ctx, location) {
 
 export function renderGuidesIndex(ctx, guides) {
   const page = { path: "guides/index.html", pageType: "guides", title: "Материалы о недвижимости и сделках в Шахтах — Домиан", description: "Информационные материалы о квартирах, домах, участках, территориях и подготовке разных типов недвижимости к продаже в Шахтах.", eyebrow: "Полезные материалы", h1: "Короткие ответы и рабочие чек-листы", lead: "Материалы подготовлены на основе открытых источников, носят информационный характер и не заменяют разбор конкретного объекта.", primaryCta: { label: "Выбрать материал", href: "#guide-list" }, secondaryCta: { label: "Виды недвижимости", href: "apartments.html" }, heroFacts: ["открытые источники", "дата актуальности", "условия могут меняться"], heroImage: "client-meeting" };
-  const list = `<section class="section" id="guide-list"><div class="container guide-index-intro"><div class="guide-intro-media">${editorialImage(ctx, "architecture-detail", "Архитектурная деталь — декоративная иллюстрация к материалам, не конкретный объект", { sizes: "(max-width: 820px) 42vw, 280px" })}</div><p>Материалы помогают проверить качество строительства и подготовиться к разговору об объекте. Иллюстрация носит редакционный характер.</p></div><div class="container guide-grid">${guides.map((guide, index) => `<article class="guide-card"><span>${String(index + 1).padStart(2, "0")} · ${esc(guide.readTime)}</span><h2><a href="${ctx.href(`guides/${guide.slug}.html`)}">${esc(guide.title)}</a></h2><p>${esc(guide.answer)}</p><a class="text-link" href="${ctx.href(`guides/${guide.slug}.html`)}">Читать материал ↗</a></article>`).join("")}</div></section>`;
+  const list = `<section class="section" id="guide-list"><div class="container guide-index-intro"><div class="guide-intro-media">${editorialImage(ctx, "architecture-detail", "Фрагмент фасада современной архитектуры", { sizes: "(max-width: 820px) 42vw, 280px" })}</div><p>Материалы помогают проверить качество строительства и подготовиться к разговору об объекте.</p></div><div class="container guide-grid">${guides.map((guide, index) => `<article class="guide-card"><span>${String(index + 1).padStart(2, "0")} · ${esc(guide.readTime)}</span><h2><a href="${ctx.href(`guides/${guide.slug}.html`)}">${esc(guide.title)}</a></h2><p>${esc(guide.answer)}</p><a class="text-link" href="${ctx.href(`guides/${guide.slug}.html`)}">Читать материал ↗</a></article>`).join("")}</div></section>`;
   const body = `${hero(ctx, page)}${list}${leadForm(ctx, { type: "service", title: "Нужен разбор после чтения?", text: "Опишите тип недвижимости и ситуацию — офис определит, какие данные нужны дальше." })}`;
   return layout(ctx, page, body, { active: "guides", breadcrumbs: [{ label: "Главная", href: "" }, { label: "Гайды", href: page.path }] });
 }

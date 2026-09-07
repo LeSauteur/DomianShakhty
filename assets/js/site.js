@@ -413,7 +413,7 @@
           service: category ? serviceForCategory(category) : (readLeadContext().service || ""),
           property_type: category ? propertyTypeForCategory(category) : (readLeadContext().property_type || ""),
           market: category ? marketForCategory(category) : (readLeadContext().market || ""),
-          message: category ? "Интересует направление: " + label + ". Подготовьте актуальную подборку без демонстрационных объектов." : (readLeadContext().message || ""),
+          message: category ? "Интересует направление: " + label + ". Подготовьте актуальную подборку по выбранным критериям." : (readLeadContext().message || ""),
           captured_at: Date.now()
         });
         writeLeadContext(context);
