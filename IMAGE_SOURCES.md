@@ -1,5 +1,30 @@
 # Источники изображений
 
+## Дополнительная editorial-серия — сентябрь 2026
+
+Все перечисленные сцены — **Generated with OpenAI ImageGen** и подключаются только как **Editorial illustration, not a property listing**. Исходные PNG остаются в рабочей папке `new/`; в публичных assets размещены только responsive WebP 640×480 и 960×720, quality 82, без метаданных.
+
+| Исходное имя | Итоговые WebP | Страница / блок | Назначение |
+| --- | --- | --- | --- |
+| apartment-open-plan-01.png | apartment-open-plan-640.webp, apartment-open-plan-960.webp | apartments.html, hero | Общее направление квартир |
+| detached-brick-house-01.png | detached-brick-house-640.webp, detached-brick-house-960.webp | construction.html, hero; карточка нового дома | Современный готовый дом |
+| secondary-houses-street-01.png | secondary-houses-street-640.webp, secondary-houses-street-960.webp | secondary-houses.html, hero | Вторичный частный сектор |
+| land-plot-izhs-01.png | land-plot-izhs-640.webp, land-plot-izhs-960.webp | lands.html, hero; главная, карточка участков | Свободный земельный участок |
+| commercial-street-retail-01.png | commercial-street-retail-640.webp, commercial-street-retail-960.webp | commercial.html, hero; главная, карточка коммерции | Помещение формата street-retail |
+| warehouse-loading-yard-01.png | warehouse-loading-yard-640.webp, warehouse-loading-yard-960.webp | коммерческий showcase | Склад и зона погрузки |
+| garage-row-01.png | garage-row-640.webp, garage-row-960.webp | карточка направления гаражей | Ряд капитальных гаражей |
+| residential-parking-01.png | residential-parking-640.webp, residential-parking-960.webp | garages-parking.html, hero | Открытая парковка в жилой среде |
+| private-sector-street-03.png | neighborhood-private-sector-640.webp, neighborhood-private-sector-960.webp | карточка вторичных домов | Жилая улица частного сектора |
+| apartment-block-street-01.png | regional-apartment-street-640.webp, regional-apartment-street-960.webp | главная, карточка Шахт; locations/shakhty.html, hero | Generic-городская жилая среда без утверждения точной локации |
+| apartment-block-street-02.png | apartment-block-neighborhood-640.webp, apartment-block-neighborhood-960.webp | главная, общий visual секции территорий | Многоквартирная городская среда |
+| kamenolomni-entry-sign-01.png | kamenolomni-entry-sign-640.webp, kamenolomni-entry-sign-960.webp | карточка и страница Каменоломней | Тематический visual территории; надпись на generated-стеле не считается документальным подтверждением |
+| novoshakhtinsk-entry-sign-01.png | novoshakhtinsk-entry-sign-640.webp, novoshakhtinsk-entry-sign-960.webp | карточка и страница Новошахтинска | Тематический visual территории; надпись на generated-стеле не считается документальным подтверждением |
+| ayuta-entry-sign-01.png | ayuta-entry-sign-640.webp, ayuta-entry-sign-960.webp | главная и карточка Аюты | Тематический visual территории; надпись на generated-стеле не считается документальным подтверждением |
+| ayuta-railway-station-01.png | ayuta-railway-station-640.webp, ayuta-railway-station-960.webp | locations/ayutinskiy.html, hero | Железнодорожная среда территории; editorial-визуал |
+| krasny-sulin-entry-sign-01.png | krasny-sulin-entry-sign-640.webp, krasny-sulin-entry-sign-960.webp | карточка и страница Красного Сулина | Тематический visual территории; надпись на generated-стеле не считается документальным подтверждением |
+
+Не внедрены слабые или дублирующие сцены: `detached-brick-house-02.png`, `private-sector-street-01.png`, `private-sector-street-04.png`, `private-sector-street-05.png`. Файл `krasny-sulin-city-street-01.png` исключён из медиапула по прямому требованию владельца.
+
 ## Интегрированный комплект из 16 сцен
 
 Все сцены ниже — **Generated with OpenAI ImageGen** и используются как **Editorial illustration, not a property listing**. Исходные PNG находятся вне публичной папки; в сайт подключены только WebP без метаданных.

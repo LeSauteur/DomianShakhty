@@ -33,7 +33,7 @@ test("showcase stays separate from real inventory and contains no fabricated off
     for (const forbidden of ["price", "address", "area", "rooms", "floors", "landArea", "verified"]) {
       assert.equal(Object.hasOwn(item, forbidden), false, `${item.id} must not contain ${forbidden}`);
     }
-    assert.equal(item.status, "Направление подбора · не объект продажи");
+    assert.equal(Object.hasOwn(item, "status"), false, `${item.id} must not carry a promotional disclaimer badge`);
   }
   assert.deepEqual(JSON.parse(read("assets/data/showcase.json")), showcase);
   assert.doesNotMatch(read("index.html"), /data-showcase-card|data-showcase-filters/u);
@@ -49,6 +49,11 @@ test("territories use the owner-approved order everywhere", () => {
   const positions = expected.map((name) => home.indexOf(`<strong>${name}</strong>`));
   assert.ok(positions.every((position) => position >= 0));
   assert.deepEqual(positions, positions.slice().sort((a, b) => a - b));
+  assert.equal((home.match(/class="home-location-card"/gu) || []).length, 5);
+  for (const key of ["regional-apartment-street", "kamenolomni-entry-sign", "novoshakhtinsk-entry-sign", "ayuta-entry-sign", "krasny-sulin-entry-sign"]) {
+    assert.match(home, new RegExp(`data-editorial-image="${key}"`, "u"), key);
+  }
+  assert.match(home, /data-editorial-image="apartment-block-neighborhood"/u);
 });
 
 test("runtime config contains no configured outbound services", () => {
@@ -154,7 +159,7 @@ test("homepage uses the editorial composition with verified hot offers", () => {
 });
 
 test("editorial image pack is complete and mapped to the intended blocks", () => {
-  const variants = {
+  const establishedVariants = {
     "main-hero": [720, 1200], "main-hero-mobile": [600],
     "apartments-editorial": [640, 960], "modern-house": [640, 960],
     "land-plots": [640, 960], "mortgage-housing": [720, 1200],
@@ -164,24 +169,45 @@ test("editorial image pack is complete and mapped to the intended blocks", () =>
     "neighborhood": [720, 1200], "sell-property-cta": [960, 1440],
     "house-dark-cta": [960, 1440], "architecture-detail": [480, 800]
   };
-  for (const [key, widths] of Object.entries(variants)) {
+  const newVariants = {
+    "garage-row": [640, 960],
+    "novoshakhtinsk-entry-sign": [640, 960],
+    "apartment-open-plan": [640, 960],
+    "land-plot-izhs": [640, 960],
+    "ayuta-entry-sign": [640, 960],
+    "regional-apartment-street": [640, 960],
+    "residential-parking": [640, 960],
+    "detached-brick-house": [640, 960],
+    "warehouse-loading-yard": [640, 960],
+    "krasny-sulin-entry-sign": [640, 960],
+    "kamenolomni-entry-sign": [640, 960],
+    "commercial-street-retail": [640, 960],
+    "ayuta-railway-station": [640, 960],
+    "secondary-houses-street": [640, 960],
+    "neighborhood-private-sector": [640, 960],
+    "apartment-block-neighborhood": [640, 960]
+  };
+  for (const [key, widths] of Object.entries({ ...establishedVariants, ...newVariants })) {
     for (const width of widths) assert.ok(fs.existsSync(path.join(root, "assets/images/editorial/" + key + "-" + width + ".webp")), key + "-" + width);
   }
   const allHtml = fs.readdirSync(root, { recursive: true }).filter((file) => file.endsWith(".html")).map((file) => read(file)).join("\n");
-  for (const key of Object.keys(variants)) assert.match(allHtml, new RegExp("assets/images/editorial/" + key + "-", "u"), key);
-  assert.doesNotMatch(allHtml, /real_estate_series\/.*\.png/u);
-  assert.match(read("construction.html"), /modern-house-960\.webp/u);
-  assert.match(read("lands.html"), /land-plots-960\.webp/u);
+  for (const key of Object.keys(newVariants)) assert.match(allHtml, new RegExp("assets/images/editorial/" + key + "-", "u"), key);
+  assert.doesNotMatch(allHtml, /(?:real_estate_series|new)\/.*\.png/u);
+  assert.match(read("apartments.html"), /apartment-open-plan-960\.webp/u);
+  assert.match(read("construction.html"), /detached-brick-house-960\.webp/u);
+  assert.match(read("secondary-houses.html"), /secondary-houses-street-960\.webp/u);
+  assert.match(read("lands.html"), /land-plot-izhs-960\.webp/u);
   assert.match(read("new-build-apartments.html"), /new-buildings-960\.webp/u);
   assert.match(read("secondary-apartments.html"), /secondary-apartment-960\.webp/u);
-  assert.match(read("commercial.html"), /commercial-space-960\.webp/u);
+  assert.match(read("commercial.html"), /commercial-street-retail-960\.webp/u);
+  assert.match(read("garages-parking.html"), /residential-parking-960\.webp/u);
   assert.match(read("houses.html"), /family-house-960\.webp/u);
   assert.match(read("lands.html"), /real-land-plot-1200\.webp/u);
   assert.match(read("mortgage.html"), /mortgage-housing-1200\.webp/u);
   assert.match(read("sell.html"), /sale-interior-1200\.webp/u);
   assert.match(read("guides/index.html"), /architecture-detail-800\.webp/u);
   assert.match(read("construction.html"), /house-dark-cta-1440\.webp/u);
-  assert.match(read("index.html"), /neighborhood-1200\.webp/u);
+  assert.match(read("index.html"), /apartment-block-neighborhood-960\.webp/u);
   assert.match(read("index.html"), /sell-property-cta-1440\.webp/u);
 });
 
@@ -191,8 +217,11 @@ test("affected pages use responsive dimensions and loading priorities", () => {
     assert.match(html, /<picture[\s\S]*?<source[^>]+srcset="[^"]+ [0-9]+w[^"]*"[^>]*>[^<]*<img[^>]+width="[0-9]+" height="[0-9]+"/u, file);
   }
   assert.match(read("index.html"), /main-hero-1200\.webp[^>]+[^>]*loading="eager"[^>]+fetchpriority="high"/u);
-  assert.match(read("construction.html"), /modern-house-960\.webp[^>]+[^>]*loading="eager"[^>]+fetchpriority="high"/u);
+  assert.match(read("construction.html"), /detached-brick-house-960\.webp[^>]+[^>]*loading="eager"[^>]+fetchpriority="high"/u);
+  assert.match(read("commercial.html"), /commercial-street-retail-960\.webp[^>]+[^>]*loading="eager"[^>]+fetchpriority="high"/u);
+  assert.match(read("garages-parking.html"), /residential-parking-960\.webp[^>]+[^>]*loading="eager"[^>]+fetchpriority="high"/u);
   assert.match(read("index.html"), /sell-property-cta-1440\.webp[^>]+loading="lazy"/u);
+  assert.match(read("index.html"), /regional-apartment-street-960\.webp[^>]+loading="lazy"/u);
 });
 
 test("secondary apartment imagery includes a sharp desktop source", () => {
@@ -218,10 +247,11 @@ test("direction pages remain honest and their forms carry structured context", (
     if (page.form?.propertyType) assert.match(html, new RegExp(`<option value="${page.form.propertyType}" selected>`, "u"), page.path);
   }
   for (const file of ["commercial.html", "garages-parking.html"]) {
-    assert.match(read(file), /Направление подбора · не объект продажи/u);
     assert.doesNotMatch(read(file), /class="listing-card/u);
     assert.match(read(file), /class="catalog-honesty"/u);
   }
+  const allHtml = fs.readdirSync(root, { recursive: true }).filter((file) => file.endsWith(".html")).map((file) => read(file)).join("\n");
+  assert.doesNotMatch(allHtml, /(?:не объект продажи|не является объектом продажи|иллюстративный характер|промо[ -]?объект|демонстрационными объектами|не продаваемую квартиру)/iu);
 });
 
 test("unconfirmed authorship and construction-company claims are absent", () => {
