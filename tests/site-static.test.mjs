@@ -56,6 +56,55 @@ test("territories use the owner-approved order everywhere", () => {
   assert.match(home, /data-editorial-image="apartment-block-neighborhood"/u);
 });
 
+test("homepage hero exposes real territory links from central data", () => {
+  const locations = JSON.parse(fs.readFileSync("src/data/locations.json", "utf8"));
+  const home = read("index.html");
+  const heroLinks = home.match(/<nav class="hero-locations"[\s\S]*?<\/nav>/u)?.[0] || "";
+  for (const location of locations) {
+    assert.match(heroLinks, new RegExp(`href="/locations/${location.slug}\\.html">${location.name}</a>`, "u"));
+  }
+  assert.equal((heroLinks.match(/<a /gu) || []).length, locations.length);
+});
+
+test("two-level navigation publishes the full desktop and mobile contract", () => {
+  const home = read("index.html");
+  assert.match(home, /class="utility-nav"/u);
+  assert.match(home, /class="category-nav"/u);
+  for (const label of ["Города и районы", "Полезные статьи", "О компании", "Контакты", "Квартиры", "Дома", "Участки", "Новостройки", "Коммерция", "Гаражи и парковка", "Услуги"]) {
+    assert.match(home, new RegExp(label, "u"));
+  }
+  for (const route of ["apartments.html", "secondary-apartments.html", "new-build-apartments.html", "houses.html", "secondary-houses.html", "construction.html", "builder-houses.html", "lands.html", "commercial.html", "garages-parking.html", "sell.html", "valuation.html", "mortgage.html", "team/maria-voronina.html", "contacts.html", "details.html"]) {
+    assert.match(home, new RegExp(`href="/${route.replace(".", "\\.")}`, "u"), route);
+  }
+  assert.doesNotMatch(home, />Аренда</u);
+  assert.match(home, /<summary aria-expanded="false"/u);
+});
+
+test("all five location pages contain useful search, editorial content, guides, FAQ and a preserved territory", () => {
+  const locations = JSON.parse(fs.readFileSync("src/data/locations.json", "utf8"));
+  const content = JSON.parse(fs.readFileSync("src/data/location-content.json", "utf8"));
+  assert.equal(locations.length, 5);
+  for (const location of locations) {
+    const html = read(`locations/${location.slug}.html`);
+    const articleText = [content[location.slug].articleTitle, content[location.slug].articleIntro, ...content[location.slug].sections.flatMap((section) => [section.title, ...section.paragraphs, ...(section.checklist || [])])].join(" ");
+    assert.ok(articleText.length >= 5000 && articleText.length <= 8000, `${location.slug} editorial length`);
+    assert.equal(content[location.slug].sections.length, 6);
+    assert.equal(content[location.slug].relatedGuides.length, 3);
+    assert.ok(content[location.slug].faq.length >= 5 && content[location.slug].faq.length <= 7);
+    assert.match(html, new RegExp(`<h1>Недвижимость в ${location.namePrepositional}</h1>`, "u"));
+    assert.match(html, /data-location-search/u);
+    assert.match(html, /name="type"/u);
+    assert.match(html, /name="priceMin"/u);
+    assert.match(html, /name="priceMax"/u);
+    assert.match(html, new RegExp(`data-default-territory="${location.name}"`, "u"));
+    assert.equal((html.match(/class="location-guides__grid"/gu) || []).length, 1);
+    assert.equal((html.match(/<details><summary>/gu) || []).length, content[location.slug].faq.length);
+  }
+  assert.match(read("locations/kamenolomni.html"), /data-search-scope="local"[\s\S]*data-listing-id="dom-chistovaya-kamenolomni"/u);
+  assert.doesNotMatch(read("locations/kamenolomni.html"), /data-nearby-section/u);
+  assert.match(read("locations/shakhty.html"), /data-search-scope="nearby"[\s\S]*data-listing-id="dom-chistovaya-kamenolomni"/u);
+});
+
 test("runtime config contains no configured outbound services", () => {
   const source = read("assets/js/site-config.js");
   assert.match(source, /"metrikaId":null/u);
