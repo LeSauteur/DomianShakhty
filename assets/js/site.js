@@ -233,6 +233,19 @@
     try { window.sessionStorage.setItem("domian_lead_context", JSON.stringify(context)); } catch (_error) { /* optional */ }
   }
 
+  function initLeadCommentOwnership() {
+    queryAll('form[data-lead-form] textarea[name="message"]').forEach(function (message) {
+      message.addEventListener("input", function () {
+        var context = readLeadContext();
+        message.dataset.criteriaPrefilled = "false";
+        context.message = message.value;
+        context.comment_is_manual = true;
+        context.captured_at = Date.now();
+        writeLeadContext(context);
+      });
+    });
+  }
+
   function serviceForCategory(category) {
     var map = {
       "apartment-secondary": "apartment-secondary",
@@ -277,9 +290,9 @@
       if (territory && form.dataset.defaultTerritory) territory.value = form.dataset.defaultTerritory;
       else if (territory && context.territory) territory.value = context.territory;
       var contextMatchesTerritory = !form.dataset.defaultTerritory || !context.territory || context.territory === form.dataset.defaultTerritory;
-      if (message && context.message && contextMatchesTerritory && (!message.value.trim() || message.dataset.contextPrefilled === "true")) {
+      if (message && context.message && contextMatchesTerritory && (!message.value.trim() || message.dataset.criteriaPrefilled === "true")) {
         message.value = context.message;
-        message.dataset.contextPrefilled = "true";
+        message.dataset.criteriaPrefilled = context.comment_is_manual === true ? "false" : "true";
       }
     });
   }
@@ -631,16 +644,19 @@
           message: message,
           captured_at: Date.now()
         };
-        writeLeadContext(context);
         queryAll("form[data-lead-form]").forEach(function (leadForm) {
           if (leadForm.elements.territory) leadForm.elements.territory.value = currentLocationName;
           if (leadForm.elements.property_type) leadForm.elements.property_type.value = context.property_type;
           if (leadForm.elements.service) leadForm.elements.service.value = context.service;
-          if (leadForm.elements.message && (!leadForm.elements.message.value.trim() || leadForm.elements.message.dataset.locationSearchPrefilled === "true")) {
+          if (leadForm.elements.message && (!leadForm.elements.message.value.trim() || leadForm.elements.message.dataset.criteriaPrefilled === "true")) {
             leadForm.elements.message.value = message;
-            leadForm.elements.message.dataset.locationSearchPrefilled = "true";
+            leadForm.elements.message.dataset.criteriaPrefilled = "true";
+          } else if (leadForm.elements.message) {
+            context.message = leadForm.elements.message.value;
+            context.comment_is_manual = true;
           }
         });
+        writeLeadContext(context);
       }
 
       function applyState(state, announce) {
@@ -740,6 +756,7 @@
   initDrawer();
   initNavigationMenus();
   initReveal();
+  initLeadCommentOwnership();
   applyLeadContext(readLeadContext());
   initRequestBuilders();
   initHomeRequestBuilder();

@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
-import { createContext, renderHome } from "../src/templates.mjs";
+import { createContext, renderHome, renderLocation } from "../src/templates.mjs";
 
 const root = path.resolve("dist");
 const config = JSON.parse(fs.readFileSync("site.config.json", "utf8"));
@@ -103,6 +103,33 @@ test("all five location pages contain useful search, editorial content, guides, 
   assert.match(read("locations/kamenolomni.html"), /data-search-scope="local"[\s\S]*data-listing-id="dom-chistovaya-kamenolomni"/u);
   assert.doesNotMatch(read("locations/kamenolomni.html"), /data-nearby-section/u);
   assert.match(read("locations/shakhty.html"), /data-search-scope="nearby"[\s\S]*data-listing-id="dom-chistovaya-kamenolomni"/u);
+});
+
+test("rendered nearby cards follow the configured neighbor order", () => {
+  const readSource = (file) => JSON.parse(fs.readFileSync(file, "utf8"));
+  const locations = readSource("src/data/locations.json");
+  const ayuta = locations.find((item) => item.slug === "ayutinskiy");
+  const baseListing = readSource("src/data/listings.json")[0];
+  const data = {
+    locations,
+    locationContent: readSource("src/data/location-content.json"),
+    guides: readSource("src/data/guides.json"),
+    pages: readSource("src/data/pages.json"),
+    projects: readSource("src/data/projects.json"),
+    builders: readSource("src/data/builders.json"),
+    team: readSource("src/data/team.json"),
+    showcase: readSource("src/data/showcase.json"),
+    listings: [
+      { ...baseListing, id: "kamen-first-in-source", location: "kamenolomni", address: "Каменоломни" },
+      { ...baseListing, id: "shakhty-second-in-source", location: "shakhty", address: "Шахты" }
+    ]
+  };
+  const html = renderLocation(createContext(config, data), ayuta);
+  const nearby = html.match(/<div class="location-nearby"[\s\S]*?<\/section>/u)?.[0] || "";
+  const shakhtyPosition = nearby.indexOf('data-listing-id="shakhty-second-in-source"');
+  const kamenolomniPosition = nearby.indexOf('data-listing-id="kamen-first-in-source"');
+  assert.ok(shakhtyPosition >= 0 && kamenolomniPosition >= 0);
+  assert.ok(shakhtyPosition < kamenolomniPosition, "Shakhty must render before Kamenolomni for Ayuta");
 });
 
 test("runtime config contains no configured outbound services", () => {

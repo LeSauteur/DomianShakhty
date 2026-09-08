@@ -78,3 +78,33 @@ test("type and price filters apply equally to local and nearby results", () => {
   assert.deepEqual(result.local, []);
   assert.deepEqual(result.nearby.map((item) => item.id), ["near-house"]);
 });
+
+test("duplicate ids are removed within local, within nearby and across both scopes", () => {
+  const localDuplicate = [listing("same"), listing("same")];
+  assert.deepEqual(searchLocationInventory(localDuplicate, location("shakhty")).local.map((item) => item.id), ["same"]);
+
+  const nearbyDuplicate = [
+    listing("same", { location: "kamenolomni" }),
+    listing("same", { location: "kamenolomni" })
+  ];
+  assert.deepEqual(searchLocationInventory(nearbyDuplicate, location("ayutinskiy", ["shakhty", "kamenolomni"])).nearby.map((item) => item.id), ["same"]);
+
+  const crossScopeDuplicate = [
+    listing("same", { location: "kamenolomni" }),
+    listing("same", { location: "ayutinskiy" })
+  ];
+  const result = searchLocationInventory(crossScopeDuplicate, location("ayutinskiy", ["kamenolomni"]));
+  assert.deepEqual(result.local.map((item) => item.id), ["same"]);
+  assert.deepEqual(result.nearby, []);
+});
+
+test("nearby order follows neighbors and stays stable inside each territory", () => {
+  const items = [
+    listing("kamen-1", { location: "kamenolomni" }),
+    listing("shakhty-1"),
+    listing("kamen-2", { location: "kamenolomni" }),
+    listing("shakhty-2")
+  ];
+  const result = searchLocationInventory(items, location("ayutinskiy", ["shakhty", "kamenolomni"]));
+  assert.deepEqual(result.nearby.map((item) => item.id), ["shakhty-1", "shakhty-2", "kamen-1", "kamen-2"]);
+});

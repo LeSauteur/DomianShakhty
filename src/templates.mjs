@@ -3,7 +3,6 @@ import {
   SEARCH_CATEGORIES,
   categoryForListing,
   isAvailableListing,
-  localLocationSlugs,
   searchLocationInventory
 } from "./listing-search.mjs";
 
@@ -722,12 +721,9 @@ export function renderLocationsIndex(ctx) {
 
 function locationSearchSection(ctx, location) {
   const available = visibleListings(ctx);
-  const localSlugs = new Set(localLocationSlugs(location.slug));
-  const neighborSlugs = new Set(location.neighbors || []);
-  const localCandidates = available.filter((item) => localSlugs.has(item.location));
-  const localIds = new Set(localCandidates.map((item) => item.id));
-  const nearbyCandidates = available.filter((item) => neighborSlugs.has(item.location) && !localIds.has(item.id));
   const initial = searchLocationInventory(available, location);
+  const localCandidates = initial.local;
+  const nearbyCandidates = initial.nearby;
   const typeOptions = Object.entries(SEARCH_CATEGORIES).map(([value, label]) => `<option value="${value}">${esc(label)}</option>`).join("");
   const territoryOptions = ctx.locations.map((item) => `<option value="${esc(item.slug)}" data-url="${ctx.href(`locations/${item.slug}.html`)}"${item.slug === location.slug ? " selected" : ""}>${esc(item.name)}</option>`).join("");
   const typeButtons = Object.entries(SEARCH_CATEGORIES).map(([value, label]) => `<button type="button" data-location-type="${value}" aria-pressed="${value === "all" ? "true" : "false"}">${esc(label)}</button>`).join("");
@@ -738,7 +734,7 @@ function locationSearchSection(ctx, location) {
   const nearbyBlock = nearbyCandidates.length ? `<div class="location-nearby" data-nearby-section${showNearby ? "" : " hidden"}><div class="container"><div class="location-results__heading"><div><p class="eyebrow">Расширение географии</p><h2>${location.slug === "ayutinskiy" ? "В других локациях Шахт и поблизости" : "В других локациях поблизости"}</h2></div><p>Те же тип и диапазон цены; фактическая территория указана в каждой карточке.</p></div><div class="listing-grid location-listing-grid" data-nearby-grid>${nearbyCards}</div></div></div>` : "";
   return `<section class="location-search" id="location-search" data-location-search data-location="${esc(location.slug)}" data-location-name="${esc(location.name)}" data-nearby-threshold="${NEARBY_AUTO_THRESHOLD}">
     <div class="container location-search__shell">
-      <div class="location-search__heading"><div><p class="eyebrow">Поиск по подтверждённым объектам</p><h2>Найти недвижимость в ${esc(location.namePrepositional)}</h2></div><p>Фильтры работают по опубликованным доступным записям. Статус и условия уточняются перед просмотром.</p></div>
+      <div class="location-search__heading"><div><p class="eyebrow">Поиск по подтверждённым объектам</p><h2>Найти недвижимость в ${esc(location.namePrepositional)}</h2></div><p>Фильтры учитывают только подтверждённые доступные объекты. Статус и условия уточняются перед просмотром.</p></div>
       <form class="location-search__form" data-location-search-form action="${ctx.href(`locations/${location.slug}.html`)}" method="get">
         <label><span>Территория</span><select name="location">${territoryOptions}</select></label>
         <label><span>Тип недвижимости</span><select name="type">${typeOptions}</select></label>
@@ -767,7 +763,7 @@ function locationArticle(content) {
 
 function locationRelatedGuides(ctx, content) {
   const guides = content.relatedGuides.map((slug) => ctx.guides.find((guide) => guide.slug === slug)).filter(Boolean);
-  return `<section class="section section--stone location-guides"><div class="container">${sectionHeading({ kicker: "Полезные статьи", title: "Продолжить проверку", intro: "Три существующих материала помогают подготовиться к просмотру и сравнению конкретных объектов." })}<div class="location-guides__grid">${guides.map((guide) => `<article><p>${esc(guide.readTime)}</p><h3><a href="${ctx.href(`guides/${guide.slug}.html`)}">${esc(guide.title)}</a></h3><p>${esc(guide.description)}</p><a class="text-link" href="${ctx.href(`guides/${guide.slug}.html`)}">Читать статью ↗</a></article>`).join("")}</div></div></section>`;
+  return `<section class="section section--stone location-guides"><div class="container">${sectionHeading({ kicker: "Полезные статьи", title: "Продолжить проверку", intro: "Материалы для подготовки к просмотру, сравнению и покупке конкретного объекта." })}<div class="location-guides__grid">${guides.map((guide) => `<article><p>${esc(guide.readTime)}</p><h3><a href="${ctx.href(`guides/${guide.slug}.html`)}">${esc(guide.title)}</a></h3><p>${esc(guide.description)}</p><a class="text-link" href="${ctx.href(`guides/${guide.slug}.html`)}">Читать статью ↗</a></article>`).join("")}</div></div></section>`;
 }
 
 function locationFaq(content, location) {
