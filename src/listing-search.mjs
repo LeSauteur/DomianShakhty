@@ -79,11 +79,19 @@ export function searchLocationInventory(listings, location, input = {}) {
   const nearbyRank = new Map(nearbyOrder.map((slug, index) => [slug, index]));
   const seen = new Set();
   const available = (Array.isArray(listings) ? listings : []).filter(isAvailableListing);
-  const local = available.filter((item) => localSlugs.has(item.location) && listingMatchesFilters(item, filters));
-  local.forEach((item) => seen.add(item.id));
+  const local = available.filter((item) => {
+    if (!localSlugs.has(item.location) || !listingMatchesFilters(item, filters) || seen.has(item.id)) return false;
+    seen.add(item.id);
+    return true;
+  });
   const nearby = available
     .filter((item) => nearbyRank.has(item.location) && !seen.has(item.id) && listingMatchesFilters(item, filters))
-    .sort((left, right) => nearbyRank.get(left.location) - nearbyRank.get(right.location));
+    .sort((left, right) => nearbyRank.get(left.location) - nearbyRank.get(right.location))
+    .filter((item) => {
+      if (seen.has(item.id)) return false;
+      seen.add(item.id);
+      return true;
+    });
   return {
     filters,
     local,

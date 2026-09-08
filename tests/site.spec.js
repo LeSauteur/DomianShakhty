@@ -97,6 +97,39 @@ test("location search persists filters, restores history and carries territory i
   await expect(page.locator('form[data-lead-form] textarea[name="message"]')).toHaveValue(/Территория: Аюта/u);
 });
 
+test("location lead context survives reload, follows filters and preserves a manual comment", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("locations/ayutinskiy.html");
+  const searchForm = page.locator("[data-location-search-form]");
+  const leadForm = page.locator("form[data-lead-form]");
+  const comment = leadForm.locator('textarea[name="message"]');
+
+  await page.locator('[data-location-type="houses"]').click();
+  await page.reload();
+  await page.locator('[data-location-type="apartments"]').click();
+  await expect(page).toHaveURL(/type=apartments/u);
+  await expect(leadForm.locator('select[name="property_type"]')).toHaveValue("apartment");
+  await expect(comment).toHaveValue("Критерии подбора: Территория: Аюта; Тип: квартиры.");
+
+  await page.reload();
+  await searchForm.locator('input[name="priceMax"]').fill("5000000");
+  await searchForm.evaluate((form) => form.requestSubmit());
+  await expect(comment).toHaveValue(/Тип: квартиры; Цена до: 5 000 000 ₽\.$/u);
+
+  await searchForm.locator('button[type="reset"]').click();
+  await expect(page).not.toHaveURL(/type=|priceMin=|priceMax=/u);
+  await expect(comment).toHaveValue("Критерии подбора: Территория: Аюта; Тип: любая недвижимость.");
+
+  const manualComment = "Синтетический комментарий для браузерного теста.";
+  await comment.fill(manualComment);
+  await page.locator('[data-location-type="houses"]').click();
+  await expect(comment).toHaveValue(manualComment);
+  await expect(leadForm.locator('select[name="property_type"]')).toHaveValue("house");
+  expect(await page.evaluate(() => JSON.parse(sessionStorage.getItem("domian_lead_context") || "{}").criteria)).toContain("Тип: дома");
+  await page.reload();
+  await expect(comment).toHaveValue(manualComment);
+});
+
 test("navigation switches to the drawer before narrow-desktop overflow", async ({ page }) => {
   await page.setViewportSize({ width: 1024, height: 768 });
   await page.goto("");
@@ -107,10 +140,11 @@ test("navigation switches to the drawer before narrow-desktop overflow", async (
 });
 
 test("location pages keep search controls, imagery and content usable across target widths", async ({ page }) => {
-  const paths = ["locations/shakhty.html", "locations/kamenolomni.html", "locations/ayutinskiy.html"];
-  for (const viewport of [{ width: 360, height: 800 }, { width: 1024, height: 900 }, { width: 1440, height: 900 }]) {
+  const allPaths = ["locations/shakhty.html", "locations/kamenolomni.html", "locations/novoshakhtinsk.html", "locations/ayutinskiy.html", "locations/krasnyy-sulin.html"];
+  const mobilePaths = ["locations/kamenolomni.html", "locations/ayutinskiy.html"];
+  for (const viewport of [{ width: 360, height: 800 }, { width: 390, height: 844 }, { width: 1024, height: 900 }, { width: 1440, height: 900 }]) {
     await page.setViewportSize(viewport);
-    for (const pathname of paths) {
+    for (const pathname of viewport.width < 600 ? mobilePaths : allPaths) {
       await page.goto(pathname);
       const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
       expect(dimensions.scroll, `${pathname} at ${viewport.width}px`).toBeLessThanOrEqual(dimensions.client + 1);
@@ -120,8 +154,30 @@ test("location pages keep search controls, imagery and content usable across tar
       const image = page.locator(".page-hero .hero-media img");
       expect(await image.evaluate((node) => ({ currentSrc: node.currentSrc, naturalWidth: node.naturalWidth }))).toEqual(expect.objectContaining({ naturalWidth: expect.any(Number) }));
       expect(await image.evaluate((node) => node.naturalWidth)).toBeGreaterThan(0);
+      await expect(page.locator(".location-listing-grid .listing-card")).toHaveCount(1);
+      await expect(page.locator(".location-article__layout")).toBeVisible();
       await expect(page.locator(".location-guides__grid article")).toHaveCount(3);
       await expect(page.locator(".location-faq__list details")).toHaveCount(6);
+    }
+  }
+});
+
+test("all desktop location searches fit their primary controls inside the first viewport", async ({ page }) => {
+  const paths = ["locations/shakhty.html", "locations/kamenolomni.html", "locations/novoshakhtinsk.html", "locations/ayutinskiy.html", "locations/krasnyy-sulin.html"];
+  const controlSelectors = ['select[name="location"]', 'select[name="type"]', 'input[name="priceMin"]', 'input[name="priceMax"]', 'button[type="submit"]'];
+  for (const viewport of [{ width: 1366, height: 900 }, { width: 1440, height: 900 }]) {
+    await page.setViewportSize(viewport);
+    for (const pathname of paths) {
+      await page.goto(pathname);
+      const headerBottom = await page.locator("[data-site-header]").evaluate((node) => node.getBoundingClientRect().bottom);
+      const h1Top = await page.locator(".page-hero h1").evaluate((node) => node.getBoundingClientRect().top);
+      expect(h1Top, `${pathname} h1 below fixed header at ${viewport.width}px`).toBeGreaterThanOrEqual(headerBottom - 1);
+      for (const selector of controlSelectors) {
+        const box = await page.locator(`[data-location-search-form] ${selector}`).boundingBox();
+        expect(box, `${pathname} ${selector}`).not.toBeNull();
+        expect(box.y, `${pathname} ${selector} top at ${viewport.width}px`).toBeGreaterThanOrEqual(0);
+        expect(box.y + box.height, `${pathname} ${selector} bottom at ${viewport.width}px`).toBeLessThanOrEqual(viewport.height);
+      }
     }
   }
 });
