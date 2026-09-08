@@ -48,6 +48,7 @@ if (site.mode === "production" && !site.web3formsAccessKey) {
   throw new Error("web3formsAccessKey is required in production mode; keep PRELAUNCH until the form provider is approved and tested");
 }
 const locations = readJson("src/data/locations.json");
+const locationContent = readJson("src/data/location-content.json");
 const guides = readJson("src/data/guides.json");
 const pages = readJson("src/data/pages.json");
 const listings = readJson("src/data/listings.json");
@@ -55,7 +56,7 @@ const projects = readJson("src/data/projects.json");
 const builders = readJson("src/data/builders.json");
 const team = readJson("src/data/team.json");
 const showcase = readJson("src/data/showcase.json");
-const ctx = createContext(site, { locations, guides, pages, listings, projects, builders, team, showcase });
+const ctx = createContext(site, { locations, locationContent, guides, pages, listings, projects, builders, team, showcase });
 const outputs = [];
 
 function publish(relativePath, html) {

@@ -150,18 +150,31 @@
     else if (typeof desktopQuery.addListener === "function") desktopQuery.addListener(closeAtDesktop);
   }
 
-  function initPropertyNav() {
-    queryAll("[data-property-nav]").forEach(function (details) {
+  function initNavigationMenus() {
+    var menus = queryAll("[data-nav-menu]");
+    menus.forEach(function (details) {
       var summary = details.querySelector("summary");
-      document.addEventListener("click", function (event) {
-        if (details.open && !details.contains(event.target)) details.open = false;
+      details.addEventListener("toggle", function () {
+        if (summary) summary.setAttribute("aria-expanded", String(details.open));
+        if (!details.open || details.classList.contains("nav-menu--mobile")) return;
+        menus.forEach(function (other) {
+          if (other !== details && !other.classList.contains("nav-menu--mobile")) other.open = false;
+        });
       });
-      document.addEventListener("keydown", function (event) {
-        if (!details.open || event.key !== "Escape") return;
-        event.preventDefault();
-        details.open = false;
-        if (summary) summary.focus();
+    });
+    document.addEventListener("click", function (event) {
+      menus.forEach(function (details) {
+        if (details.open && !details.contains(event.target) && !details.classList.contains("nav-menu--mobile")) details.open = false;
       });
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key !== "Escape") return;
+      var openMenu = menus.find(function (details) { return details.open; });
+      if (!openMenu) return;
+      event.preventDefault();
+      openMenu.open = false;
+      var summary = openMenu.querySelector("summary");
+      if (summary) summary.focus();
     });
   }
 
@@ -261,8 +274,10 @@
       if (goal && context.goal) goal.value = context.goal;
       if (propertyType && context.property_type) propertyType.value = context.property_type;
       if (market && context.market) market.value = context.market;
-      if (territory && context.territory) territory.value = context.territory;
-      if (message && context.message && (!message.value.trim() || message.dataset.contextPrefilled === "true")) {
+      if (territory && form.dataset.defaultTerritory) territory.value = form.dataset.defaultTerritory;
+      else if (territory && context.territory) territory.value = context.territory;
+      var contextMatchesTerritory = !form.dataset.defaultTerritory || !context.territory || context.territory === form.dataset.defaultTerritory;
+      if (message && context.message && contextMatchesTerritory && (!message.value.trim() || message.dataset.contextPrefilled === "true")) {
         message.value = context.message;
         message.dataset.contextPrefilled = "true";
       }
@@ -530,11 +545,200 @@
     });
   }
 
+  function initLocationSearch() {
+    queryAll("[data-location-search]").forEach(function (root) {
+      var form = root.querySelector("[data-location-search-form]");
+      var localCards = queryAll('[data-location-listing][data-search-scope="local"]', root);
+      var nearbyCards = queryAll('[data-location-listing][data-search-scope="nearby"]', root);
+      var localCount = root.querySelector("[data-local-count]");
+      var localEmpty = root.querySelector("[data-local-empty]");
+      var allEmpty = root.querySelector("[data-all-empty]");
+      var nearbySection = root.querySelector("[data-nearby-section]");
+      var nearbyToggle = root.querySelector("[data-nearby-toggle]");
+      var status = root.querySelector("[data-location-search-status]");
+      var threshold = Number(root.dataset.nearbyThreshold) || 6;
+      var currentLocation = root.dataset.location || "";
+      var currentLocationName = root.dataset.locationName || "";
+      var nearbyExpanded = false;
+      var validTypes = ["all", "apartments", "houses", "lands", "commercial", "parking"];
+      if (!form) return;
+
+      function numericValue(value) {
+        var digits = String(value || "").replace(/[^0-9]/gu, "");
+        if (!digits) return null;
+        var parsed = Number(digits);
+        return Number.isSafeInteger(parsed) ? parsed : null;
+      }
+
+      function stateFromForm() {
+        var values = new FormData(form);
+        var type = String(values.get("type") || "all");
+        var min = numericValue(values.get("priceMin"));
+        var max = numericValue(values.get("priceMax"));
+        return {
+          location: String(values.get("location") || currentLocation),
+          type: validTypes.indexOf(type) === -1 ? "all" : type,
+          priceMin: min,
+          priceMax: max,
+          invalidRange: min != null && max != null && min > max
+        };
+      }
+
+      function stateFromUrl() {
+        var params = new URLSearchParams(window.location.search || "");
+        var type = params.get("type") || "all";
+        return {
+          location: currentLocation,
+          type: validTypes.indexOf(type) === -1 ? "all" : type,
+          priceMin: numericValue(params.get("priceMin")),
+          priceMax: numericValue(params.get("priceMax"))
+        };
+      }
+
+      function setFormState(state) {
+        form.elements.location.value = currentLocation;
+        form.elements.type.value = state.type;
+        form.elements.priceMin.value = state.priceMin == null ? "" : String(state.priceMin);
+        form.elements.priceMax.value = state.priceMax == null ? "" : String(state.priceMax);
+      }
+
+      function matches(card, state) {
+        if (state.invalidRange) return false;
+        if (state.type !== "all" && card.dataset.listingCategory !== state.type) return false;
+        var hasLimit = state.priceMin != null || state.priceMax != null;
+        var price = card.dataset.listingPrice ? Number(card.dataset.listingPrice) : null;
+        if (hasLimit && !Number.isFinite(price)) return false;
+        if (state.priceMin != null && price < state.priceMin) return false;
+        if (state.priceMax != null && price > state.priceMax) return false;
+        return true;
+      }
+
+      function updateLeadContext(state) {
+        var labels = { all: "любая недвижимость", apartments: "квартиры", houses: "дома", lands: "участки", commercial: "коммерческая недвижимость", parking: "гаражи и парковка" };
+        var propertyTypes = { apartments: "apartment", houses: "house", lands: "land", commercial: "commercial", parking: "garage-parking" };
+        var parts = ["Территория: " + currentLocationName, "Тип: " + labels[state.type]];
+        if (state.priceMin != null) parts.push("Цена от: " + state.priceMin.toLocaleString("ru-RU") + " ₽");
+        if (state.priceMax != null) parts.push("Цена до: " + state.priceMax.toLocaleString("ru-RU") + " ₽");
+        var message = "Критерии подбора: " + parts.join("; ") + ".";
+        var context = {
+          page_type: "location",
+          source_cta: "Поиск по территории",
+          service: propertyTypes[state.type] || "service",
+          goal: "buy",
+          property_type: propertyTypes[state.type] || "",
+          territory: currentLocationName,
+          criteria: parts.join("; "),
+          message: message,
+          captured_at: Date.now()
+        };
+        writeLeadContext(context);
+        queryAll("form[data-lead-form]").forEach(function (leadForm) {
+          if (leadForm.elements.territory) leadForm.elements.territory.value = currentLocationName;
+          if (leadForm.elements.property_type) leadForm.elements.property_type.value = context.property_type;
+          if (leadForm.elements.service) leadForm.elements.service.value = context.service;
+          if (leadForm.elements.message && (!leadForm.elements.message.value.trim() || leadForm.elements.message.dataset.locationSearchPrefilled === "true")) {
+            leadForm.elements.message.value = message;
+            leadForm.elements.message.dataset.locationSearchPrefilled = "true";
+          }
+        });
+      }
+
+      function applyState(state, announce) {
+        var visibleLocal = localCards.filter(function (card) {
+          var show = matches(card, state);
+          card.hidden = !show;
+          return show;
+        });
+        var matchingNearby = nearbyCards.filter(function (card) { return matches(card, state); });
+        matchingNearby.forEach(function (card, index) { card.hidden = index >= 6; });
+        nearbyCards.filter(function (card) { return matchingNearby.indexOf(card) === -1; }).forEach(function (card) { card.hidden = true; });
+        var showNearby = matchingNearby.length > 0 && (nearbyExpanded || visibleLocal.length < threshold);
+        if (localCount) localCount.textContent = String(visibleLocal.length);
+        if (localEmpty) localEmpty.hidden = visibleLocal.length > 0;
+        if (nearbySection) nearbySection.hidden = !showNearby;
+        if (nearbyToggle) nearbyToggle.hidden = matchingNearby.length === 0 || visibleLocal.length < threshold || nearbyExpanded;
+        if (allEmpty) allEmpty.hidden = state.invalidRange || visibleLocal.length > 0 || matchingNearby.length > 0;
+        queryAll("[data-location-type]", root).forEach(function (button) {
+          var selected = button.dataset.locationType === state.type;
+          button.classList.toggle("is-active", selected);
+          button.setAttribute("aria-pressed", String(selected));
+        });
+        if (status) {
+          status.hidden = !announce && !state.invalidRange;
+          status.textContent = state.invalidRange ? "Цена от не может быть больше цены до. Исправьте диапазон." : "Фильтры применены: местных объектов — " + visibleLocal.length + ", рядом — " + matchingNearby.length + ".";
+        }
+        if (!state.invalidRange) updateLeadContext(state);
+      }
+
+      function searchParams(state) {
+        var params = new URLSearchParams();
+        if (state.type !== "all") params.set("type", state.type);
+        if (state.priceMin != null) params.set("priceMin", String(state.priceMin));
+        if (state.priceMax != null) params.set("priceMax", String(state.priceMax));
+        return params;
+      }
+
+      function commitState(state, replace) {
+        if (state.location !== currentLocation) {
+          var option = form.elements.location.options[form.elements.location.selectedIndex];
+          var target = option && option.dataset.url;
+          if (target) {
+            var nextParams = searchParams(state).toString();
+            window.location.assign(target + (nextParams ? "?" + nextParams : ""));
+          }
+          return;
+        }
+        var query = searchParams(state).toString();
+        var url = window.location.pathname + (query ? "?" + query : "") + window.location.hash;
+        window.history[replace ? "replaceState" : "pushState"]({}, "", url);
+        applyState(state, true);
+        track("catalog_filter_use", { filter_name: "location_search", filter_value: state.type, location: currentLocation, page_type: "location" });
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        nearbyExpanded = false;
+        commitState(stateFromForm(), false);
+      });
+      form.elements.location.addEventListener("change", function () { commitState(stateFromForm(), false); });
+      form.addEventListener("reset", function () {
+        window.setTimeout(function () {
+          setFormState({ type: "all", priceMin: null, priceMax: null });
+          nearbyExpanded = false;
+          commitState(stateFromForm(), false);
+        }, 0);
+      });
+      queryAll("[data-location-type]", root).forEach(function (button) {
+        button.addEventListener("click", function () {
+          form.elements.type.value = button.dataset.locationType || "all";
+          nearbyExpanded = false;
+          commitState(stateFromForm(), false);
+        });
+      });
+      if (nearbyToggle) nearbyToggle.addEventListener("click", function () {
+        nearbyExpanded = true;
+        applyState(stateFromForm(), true);
+        if (nearbySection) nearbySection.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+      });
+      window.addEventListener("popstate", function () {
+        var state = stateFromUrl();
+        state.invalidRange = state.priceMin != null && state.priceMax != null && state.priceMin > state.priceMax;
+        setFormState(state);
+        nearbyExpanded = false;
+        applyState(state, false);
+      });
+      var initial = stateFromUrl();
+      initial.invalidRange = initial.priceMin != null && initial.priceMax != null && initial.priceMin > initial.priceMax;
+      setFormState(initial);
+      applyState(initial, false);
+    });
+  }
+
   persistAttribution();
   initMetrika();
   initHeader();
   initDrawer();
-  initPropertyNav();
+  initNavigationMenus();
   initReveal();
   applyLeadContext(readLeadContext());
   initRequestBuilders();
@@ -544,4 +748,5 @@
   initInteractionTracking();
   initMortgage();
   initCatalogs();
+  initLocationSearch();
 }());

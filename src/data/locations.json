@@ -2,6 +2,9 @@
   {
     "slug": "shakhty",
     "name": "Шахты",
+    "namePrepositional": "Шахтах",
+    "nameGenitive": "Шахт",
+    "neighbors": ["kamenolomni", "novoshakhtinsk", "krasnyy-sulin"],
     "administrativeName": "город Шахты и городской округ, Ростовская область",
     "kicker": "Основная территория офиса",
     "title": "Недвижимость в Шахтах: начать с типа объекта и задачи",
@@ -16,6 +19,9 @@
   {
     "slug": "kamenolomni",
     "name": "Каменоломни",
+    "namePrepositional": "Каменоломнях",
+    "nameGenitive": "Каменоломен",
+    "neighbors": ["shakhty", "novoshakhtinsk", "krasnyy-sulin"],
     "administrativeName": "рабочий посёлок и административный центр Октябрьского района",
     "kicker": "Административный центр Октябрьского района",
     "title": "Недвижимость в Каменоломнях: проверять конкретный адрес",
@@ -30,6 +36,9 @@
   {
     "slug": "novoshakhtinsk",
     "name": "Новошахтинск",
+    "namePrepositional": "Новошахтинске",
+    "nameGenitive": "Новошахтинска",
+    "neighbors": ["shakhty", "kamenolomni", "krasnyy-sulin"],
     "administrativeName": "городской округ «Город Новошахтинск»",
     "kicker": "Отдельный городской округ",
     "title": "Недвижимость в Новошахтинске: уточнить тип объекта и право",
@@ -44,6 +53,9 @@
   {
     "slug": "ayutinskiy",
     "name": "Аюта",
+    "namePrepositional": "Аюте",
+    "nameGenitive": "Аюты",
+    "neighbors": ["shakhty", "kamenolomni", "novoshakhtinsk"],
     "administrativeName": "микрорайон Аютинский города Шахты",
     "kicker": "Микрорайон в составе Шахт",
     "title": "Недвижимость в Аюте: городской адрес и локальный контекст",
@@ -58,6 +70,9 @@
   {
     "slug": "krasnyy-sulin",
     "name": "Красный Сулин",
+    "namePrepositional": "Красном Сулине",
+    "nameGenitive": "Красного Сулина",
+    "neighbors": ["novoshakhtinsk", "shakhty", "kamenolomni"],
     "administrativeName": "город и административный центр Красносулинского района",
     "kicker": "Город и районный центр",
     "title": "Недвижимость в Красном Сулине: считать полный сценарий",

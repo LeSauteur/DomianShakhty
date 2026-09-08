@@ -10,6 +10,11 @@ const representativePages = [
   "commercial.html",
   "garages-parking.html",
   "locations/shakhty.html",
+  "locations/kamenolomni.html",
+  "locations/novoshakhtinsk.html",
+  "locations/ayutinskiy.html",
+  "locations/krasnyy-sulin.html",
+  "listings/dom-chistovaya-kamenolomni.html",
   "guides/kak-vybrat-dom-ot-zastroyshchika-v-shakhtah.html",
   "team/maria-voronina.html",
   "contacts.html",
@@ -40,8 +45,9 @@ test("mobile drawer opens, traps focus and closes with Escape", async ({ page })
   await toggle.click();
   await expect(toggle).toHaveAttribute("aria-expanded", "true");
   await expect(page.locator("#mobile-drawer")).toHaveClass(/is-open/u);
-  await expect(page.locator(".mobile-drawer__group")).toContainText("Коммерческая недвижимость");
-  await expect(page.locator(".mobile-drawer__group")).toContainText("Гаражи и парковка");
+  const propertyGroup = page.locator(".mobile-drawer__group").first();
+  await expect(propertyGroup).toContainText("Коммерция");
+  await expect(propertyGroup).toContainText("Гаражи и парковка");
   await page.locator(".mobile-drawer__panel a").last().focus();
   await page.keyboard.press("Tab");
   await expect(page.locator(".mobile-drawer__panel a").first()).toBeFocused();
@@ -50,16 +56,74 @@ test("mobile drawer opens, traps focus and closes with Escape", async ({ page })
   await expect(toggle).toBeFocused();
 });
 
-test("desktop property menu closes with Escape and restores focus", async ({ page }) => {
+test("desktop navigation menu exposes aria state, closes with Escape and restores focus", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("");
-  const menu = page.locator("[data-property-nav]");
+  const menu = page.locator(".category-nav [data-nav-menu]").first();
   const summary = menu.locator("summary");
   await summary.click();
   await expect(menu).toHaveAttribute("open", "");
+  await expect(summary).toHaveAttribute("aria-expanded", "true");
   await page.keyboard.press("Escape");
   await expect(menu).not.toHaveAttribute("open", "");
+  await expect(summary).toHaveAttribute("aria-expanded", "false");
   await expect(summary).toBeFocused();
+});
+
+test("location search persists filters, restores history and carries territory into the form", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("locations/kamenolomni.html");
+  await expect(page.locator("[data-local-count]")).toHaveText("1");
+  await expect(page.locator('[data-search-scope="local"]')).toBeVisible();
+  await page.locator('[data-location-type="apartments"]').click();
+  await expect(page).toHaveURL(/type=apartments/u);
+  await expect(page.locator("[data-local-count]")).toHaveText("0");
+  await page.locator('[data-location-type="houses"]').click();
+  await expect(page).toHaveURL(/type=houses/u);
+  await expect(page.locator("[data-local-count]")).toHaveText("1");
+  await page.goBack();
+  await expect(page.locator("[data-local-count]")).toHaveText("0");
+  await expect(page.locator('select[name="type"]')).toHaveValue("apartments");
+  await page.locator('input[name="priceMin"]').fill("7000000");
+  await page.locator('input[name="priceMax"]').fill("5000000");
+  await page.locator("[data-location-search-form]").evaluate((form) => form.requestSubmit());
+  await expect(page.locator("[data-location-search-status]")).toContainText("не может быть больше");
+  await page.locator('input[name="priceMin"]').fill("");
+  await page.locator('input[name="priceMax"]').fill("");
+  await page.locator('select[name="location"]').selectOption("ayutinskiy");
+  await expect(page).toHaveURL(/locations\/ayutinskiy\.html\?type=apartments/u);
+  await expect(page.locator("h1")).toHaveText("Недвижимость в Аюте");
+  await expect(page.locator('form[data-lead-form] select[name="territory"]')).toHaveValue("Аюта");
+  await expect(page.locator('form[data-lead-form] textarea[name="message"]')).toHaveValue(/Территория: Аюта/u);
+});
+
+test("navigation switches to the drawer before narrow-desktop overflow", async ({ page }) => {
+  await page.setViewportSize({ width: 1024, height: 768 });
+  await page.goto("");
+  await expect(page.locator("[data-menu-toggle]")).toBeVisible();
+  await expect(page.locator(".category-nav")).toBeHidden();
+  const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
+  expect(dimensions.scroll).toBeLessThanOrEqual(dimensions.client + 1);
+});
+
+test("location pages keep search controls, imagery and content usable across target widths", async ({ page }) => {
+  const paths = ["locations/shakhty.html", "locations/kamenolomni.html", "locations/ayutinskiy.html"];
+  for (const viewport of [{ width: 360, height: 800 }, { width: 1024, height: 900 }, { width: 1440, height: 900 }]) {
+    await page.setViewportSize(viewport);
+    for (const pathname of paths) {
+      await page.goto(pathname);
+      const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
+      expect(dimensions.scroll, `${pathname} at ${viewport.width}px`).toBeLessThanOrEqual(dimensions.client + 1);
+      await expect(page.locator("[data-location-search-form]")).toBeVisible();
+      const formBox = await page.locator("[data-location-search-form]").boundingBox();
+      expect(formBox.width, `${pathname} filter width`).toBeLessThanOrEqual(viewport.width);
+      const image = page.locator(".page-hero .hero-media img");
+      expect(await image.evaluate((node) => ({ currentSrc: node.currentSrc, naturalWidth: node.naturalWidth }))).toEqual(expect.objectContaining({ naturalWidth: expect.any(Number) }));
+      expect(await image.evaluate((node) => node.naturalWidth)).toBeGreaterThan(0);
+      await expect(page.locator(".location-guides__grid article")).toHaveCount(3);
+      await expect(page.locator(".location-faq__list details")).toHaveCount(6);
+    }
+  }
 });
 
 test("confirmed social links emit allowlisted events without PII", async ({ page }) => {
@@ -278,6 +342,7 @@ test("desktop criteria copy stays below its heading without overlap", async ({ p
 
 for (const viewport of [
   { name: "mobile-320", width: 320, height: 700 },
+  { name: "mobile-360", width: 360, height: 800 },
   { name: "mobile-390", width: 390, height: 844 },
   { name: "mobile-430", width: 430, height: 932 },
   { name: "tablet-768", width: 768, height: 1024 },
