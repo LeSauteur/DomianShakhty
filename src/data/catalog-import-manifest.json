@@ -1,0 +1,47 @@
+{
+  "importedAt": "2026-09-10",
+  "newbuilds": {
+    "entryPage": "newbuilds.html",
+    "runtimeScript": "assets/js/newbuilds-catalog.js",
+    "dataFile": "output/newbuilds/catalog-v3.json",
+    "sourceGeneratedAt": "2026-07-16T00:00:00+03:00",
+    "sourceCount": 78,
+    "importedCount": 78,
+    "completeness": { "complete": 20, "partial": 5, "needs_review": 53 },
+    "verifiedPrices": 14,
+    "unverifiedPrices": 64
+  },
+  "construction": {
+    "entryPage": "construction.html",
+    "dataFile": "_private/construction-projects.json",
+    "sourceGeneratedAt": "2026-08-11",
+    "sourceCount": 26,
+    "importedCount": 26,
+    "priceStatuses": { "request": 3, "dated-confirmed": 4, "partner-outdated": 15, "individual": 4 }
+  },
+  "media": {
+    "uniqueSourceReferences": 208,
+    "generatedResponsiveWebpFiles": 459,
+    "minimumResponsiveWidth": 640,
+    "photoWebpQuality": 92,
+    "planWebpQuality": 96,
+    "upscaling": false
+  },
+  "sourceSha256": {
+    "newbuilds.html": "4396E099A111DA7FACAC3CF9EA495064CFC5ACEEF869504B95E07EA5C2621969",
+    "assets/js/newbuilds-catalog.js": "EE83258C17F141CCBC764125D3266A7AD302FC9F7A97EDF40B91744903117974",
+    "output/newbuilds/catalog-v3.json": "7F38D648CD1C6B96D65DD74A3EB33BAEF902AB02A11D640CE2A017FF4860CBED",
+    "construction.html": "EF2D7B2E31CDE64475A9A4C18AC0634652A06B5E3B0F668FF8F5BCADB14BA63C",
+    "_private/construction-projects.json": "4C49AE4E09C183527A66B38EFD2037876FB206E7301438C83E077F66DC9F2E76"
+  },
+  "excluded": [
+    "secondary apartments",
+    "secondary houses",
+    "owner listings",
+    "land",
+    "commercial property",
+    "rent",
+    "output/apartments/new-objects.json",
+    "output/houses/house_*"
+  ]
+}

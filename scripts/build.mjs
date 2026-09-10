@@ -10,6 +10,10 @@ import {
   renderGuide,
   renderGuidesIndex,
   renderHome,
+  renderNewbuild,
+  renderNewbuilds,
+  renderConstruction,
+  renderConstructionProject,
   renderListing,
   renderLocation,
   renderLocationsIndex,
@@ -56,7 +60,9 @@ const projects = readJson("src/data/projects.json");
 const builders = readJson("src/data/builders.json");
 const team = readJson("src/data/team.json");
 const showcase = readJson("src/data/showcase.json");
-const ctx = createContext(site, { locations, locationContent, guides, pages, listings, projects, builders, team, showcase });
+const newbuilds = readJson("src/data/newbuilds.json");
+const constructionProjects = readJson("src/data/construction-projects.json");
+const ctx = createContext(site, { locations, locationContent, guides, pages, listings, projects, builders, team, showcase, newbuilds, constructionProjects });
 const outputs = [];
 
 function publish(relativePath, html) {
@@ -68,7 +74,11 @@ safeResetDist();
 fs.cpSync(path.join(root, "assets"), path.join(dist, "assets"), { recursive: true });
 
 publish("index.html", renderHome(ctx, guides));
-for (const page of pages) publish(page.path, renderCommercialPage(ctx, page));
+for (const page of pages.filter((item) => item.path !== "construction.html")) publish(page.path, renderCommercialPage(ctx, page));
+publish("newbuilds.html", renderNewbuilds(ctx));
+for (const item of newbuilds.items) publish(`newbuilds/${item.slug}.html`, renderNewbuild(ctx, item));
+publish("construction.html", renderConstruction(ctx));
+for (const item of constructionProjects.items) publish(`construction/projects/${item.slug}.html`, renderConstructionProject(ctx, item));
 for (const listing of listings.filter((item) => item.verified === true)) publish(`listings/${listing.id}.html`, renderListing(ctx, listing));
 publish("locations/index.html", renderLocationsIndex(ctx));
 for (const location of locations) publish(`locations/${location.slug}.html`, renderLocation(ctx, location));

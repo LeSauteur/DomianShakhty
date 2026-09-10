@@ -5,7 +5,11 @@ const localOrigin = `http://127.0.0.1:${process.env.PLAYWRIGHT_PORT || 4173}`;
 const representativePages = [
   "",
   "construction.html",
+  "construction/projects/domanstroy-ds-80.html",
   "apartments.html",
+  "newbuilds.html",
+  "newbuilds/dvizhenie-61.html",
+  "newbuilds/manhetten-2-0-novaya-vysota.html",
   "new-build-apartments.html",
   "commercial.html",
   "garages-parking.html",
@@ -306,7 +310,29 @@ test("homepage has six equal category cards and a separate new-home feature", as
   await expect(page.locator(".new-homes-feature")).toHaveCount(1);
   await expect(page.locator("[data-showcase-card]")).toHaveCount(0);
   const sections = await page.locator("main > section").evaluateAll((nodes) => nodes.map((node) => node.getAttribute("data-home-section") || "hero"));
-  expect(sections).toEqual(["hero", "property", "hot-offers", "request", "seller", "locations", "expertise", "office", "lead"]);
+  expect(sections).toEqual(["hero", "property", "newbuilds", "construction", "hot-offers", "request", "seller", "locations", "expertise", "office", "lead"]);
+});
+
+test("homepage catalog showcases stay compact, truthful and link to imported details", async ({ page }) => {
+  for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
+    await page.setViewportSize(viewport);
+    await page.goto("");
+    await expect(page.locator("[data-home-newbuild]")).toHaveCount(6);
+    await expect(page.locator("[data-home-construction]")).toHaveCount(6);
+    const layout = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
+    expect(layout.scroll).toBeLessThanOrEqual(layout.client + 1);
+    const firstNewbuild = page.locator("[data-home-newbuild]").first();
+    await firstNewbuild.scrollIntoViewIfNeeded();
+    await expect(firstNewbuild.locator("img")).toBeVisible();
+    expect(await firstNewbuild.locator("img").evaluate((image) => image.naturalWidth)).toBeGreaterThan(0);
+    await expect(firstNewbuild.locator('.home-catalog-card__cta')).toHaveAttribute("href", /\/newbuilds\/.+\.html$/u);
+    const firstConstruction = page.locator("[data-home-construction]").first();
+    await firstConstruction.scrollIntoViewIfNeeded();
+    await expect(firstConstruction.locator("img")).toBeVisible();
+    await expect(firstConstruction.locator('.home-catalog-card__cta')).toHaveAttribute("href", /\/construction\/projects\/.+\.html$/u);
+    const cardWidths = await page.locator(".home-catalog-card").evaluateAll((cards) => cards.map((card) => ({ scroll: card.scrollWidth, client: card.clientWidth })));
+    expect(cardWidths.every((card) => card.scroll <= card.client + 1)).toBe(true);
+  }
 });
 
 test("mobile property cards form a two-column grid without horizontal scrolling", async ({ page }) => {
@@ -357,16 +383,23 @@ test("territories keep the approved order and short Ayuta label", async ({ page 
   await expect(page.locator(".home-locations__grid strong")).toHaveText(["Шахты", "Каменоломни", "Новошахтинск", "Аюта", "Красный Сулин"]);
 });
 
-test("catalog exposes only the verified house inventory", async ({ page }) => {
+test("construction catalog exposes only build-to-order projects", async ({ page }) => {
   await page.goto("construction.html");
-  await expect(page.locator(".catalog-count strong")).toHaveText("1");
-  await expect(page.locator(".listing-card")).toHaveCount(1);
-  await expect(page.locator(".listing-card h3")).toContainText("Дом под чистовую отделку в центре Каменоломней");
-  await expect(page.locator(".listing-card__price")).toContainText("5 670 000 ₽");
+  await expect(page.locator("[data-product-count]")).toHaveText("26");
+  await expect(page.locator("[data-product-card]")).toHaveCount(26);
+  await expect(page.locator("[data-product-card]").first()).toContainText("Проект DS-80");
+  await expect(page.locator("main")).not.toContainText("Дом под чистовую отделку в центре Каменоломней");
+  const media = await page.locator(".product-card__media").first().evaluate((node) => {
+    const image = node.querySelector("img");
+    const box = image.getBoundingClientRect();
+    return { ratio: box.width / box.height, currentSrc: image.currentSrc };
+  });
+  expect(media.ratio).toBeCloseTo(4 / 3, 2);
+  expect(media.currentSrc).toMatch(/-(?:640|960|1440)\.webp$/u);
 });
 
 test("core direction pages have no horizontal overflow or overlapping headings", async ({ page }) => {
-  const paths = ["apartments.html", "secondary-apartments.html", "new-build-apartments.html", "houses.html", "construction.html", "secondary-houses.html", "builder-houses.html", "lands.html", "commercial.html", "garages-parking.html"];
+  const paths = ["apartments.html", "secondary-apartments.html", "new-build-apartments.html", "newbuilds.html", "newbuilds/leventsovka-park.html", "houses.html", "construction.html", "construction/projects/domanstroy-ds-80.html", "secondary-houses.html", "builder-houses.html", "lands.html", "commercial.html", "garages-parking.html"];
   for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
     await page.setViewportSize(viewport);
     for (const pathname of paths) {
@@ -377,6 +410,45 @@ test("core direction pages have no horizontal overflow or overlapping headings",
       await expect(h1).toBeVisible();
       const box = await h1.boundingBox();
       expect(box.width, `${pathname} h1 width`).toBeLessThanOrEqual(viewport.width);
+    }
+  }
+});
+
+test("newbuild and construction filters update the catalog without hiding missing-data truth", async ({ page }) => {
+  await page.goto("newbuilds.html");
+  await expect(page.locator("[data-product-count]")).toHaveText("78");
+  await page.locator('select[name="city"]').selectOption({ label: "Аксай" });
+  await expect(page.locator("[data-product-count]")).toHaveText("4");
+  await page.locator('select[name="completeness"]').selectOption("needs_review");
+  const remaining = Number(await page.locator("[data-product-count]").textContent());
+  expect(remaining).toBeGreaterThanOrEqual(0);
+  for (const card of await page.locator("[data-product-card]:visible").all()) {
+    await expect(card).toContainText("Требует проверки");
+  }
+  await page.locator('button[type="reset"]').click();
+  await expect(page.locator("[data-product-count]")).toHaveText("78");
+
+  await page.goto("construction.html");
+  await page.locator('select[name="builder"]').selectOption("domanstroy");
+  await expect(page.locator("[data-product-count]")).toHaveText("7");
+  await page.locator('select[name="floors"]').selectOption("2");
+  expect(Number(await page.locator("[data-product-count]").textContent())).toBeLessThanOrEqual(7);
+  await expect(page.locator("main")).toContainText(/Архивный ориентир|Расчёт по запросу|Стоимость комплектации/u);
+});
+
+test("catalog imagery loads responsive WebP at required viewports", async ({ page }) => {
+  const paths = ["newbuilds.html", "newbuilds/leventsovka-park.html", "newbuilds/manhetten-2-0-novaya-vysota.html", "construction.html", "construction/projects/domanstroy-ds-80.html"];
+  for (const viewport of [{ width: 390, height: 844 }, { width: 430, height: 932 }, { width: 768, height: 1024 }, { width: 1366, height: 900 }, { width: 1440, height: 900 }]) {
+    await page.setViewportSize(viewport);
+    for (const pathname of paths) {
+      await page.goto(pathname);
+      const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
+      expect(dimensions.scroll, `${pathname} at ${viewport.width}px`).toBeLessThanOrEqual(dimensions.client + 1);
+      const image = page.locator("main img").first();
+      const state = await image.evaluate((node) => ({ currentSrc: node.currentSrc, naturalWidth: node.naturalWidth, complete: node.complete }));
+      expect(state.complete, pathname).toBe(true);
+      expect(state.naturalWidth, pathname).toBeGreaterThan(0);
+      expect(state.currentSrc, pathname).toMatch(/\.webp$/u);
     }
   }
 });

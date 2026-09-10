@@ -73,7 +73,7 @@ test("two-level navigation publishes the full desktop and mobile contract", () =
   for (const label of ["Города и районы", "Полезные статьи", "О компании", "Контакты", "Квартиры", "Дома", "Участки", "Новостройки", "Коммерция", "Гаражи и парковка", "Услуги"]) {
     assert.match(home, new RegExp(label, "u"));
   }
-  for (const route of ["apartments.html", "secondary-apartments.html", "new-build-apartments.html", "houses.html", "secondary-houses.html", "construction.html", "builder-houses.html", "lands.html", "commercial.html", "garages-parking.html", "sell.html", "valuation.html", "mortgage.html", "team/maria-voronina.html", "contacts.html", "details.html"]) {
+  for (const route of ["apartments.html", "secondary-apartments.html", "newbuilds.html", "houses.html", "secondary-houses.html", "construction.html", "builder-houses.html", "lands.html", "commercial.html", "garages-parking.html", "sell.html", "valuation.html", "mortgage.html", "team/maria-voronina.html", "contacts.html", "details.html"]) {
     assert.match(home, new RegExp(`href="/${route.replace(".", "\\.")}`, "u"), route);
   }
   assert.doesNotMatch(home, />Аренда</u);
@@ -203,17 +203,17 @@ test("all core property directions have useful public pages and navigation entry
   }
   assert.match(home, /<h1>Недвижимость в Шахтах/u);
   assert.match(home, /Вторичный рынок и новостройки/u);
-  assert.ok(home.indexOf("Квартиры") < home.indexOf("Новые готовые дома"), "apartments must be visible before the new-home feature");
+  assert.ok(home.indexOf("Квартиры") < home.indexOf("Строительство домов под ключ"), "apartments must be visible before the construction feature");
 });
 
 test("homepage uses the editorial composition with verified hot offers", () => {
   const home = read("index.html");
-  assert.equal((home.match(/<section\b/gu) || []).length, 9);
+  assert.equal((home.match(/<section\b/gu) || []).length, 11);
   assert.equal((home.match(/class="home-property-card"/gu) || []).length, 6);
   assert.match(home, /<h1>Недвижимость в Шахтах — спокойно и по делу<\/h1>/u);
-  assert.match(home, /Подобрать недвижимость/u);
-  assert.match(home, /Продать объект/u);
-  assert.match(home, /Оценить стоимость/u);
+  assert.match(home, /Смотреть новостройки/u);
+  assert.match(home, /Выбрать проект дома/u);
+  assert.match(home, /Продать недвижимость/u);
   assert.match(home, /class="new-homes-feature"/u);
   assert.match(home, /id="hot-offers"/u);
   assert.match(home, /Горячее предложение/u);
@@ -229,7 +229,7 @@ test("homepage uses the editorial composition with verified hot offers", () => {
   assert.match(officeSection, /class="owner-portrait"/u);
   assert.match(officeSection, /maria-voronina-960\.webp/u);
   assert.doesNotMatch(officeSection, /assets\/images\/office\/office-interior/u);
-  const order = ["property", "request", "seller", "locations", "expertise", "office", "lead"].map((name) => home.indexOf(`data-home-section="${name}"`));
+  const order = ["property", "newbuilds", "construction", "hot-offers", "request", "seller", "locations", "expertise", "office", "lead"].map((name) => home.indexOf(`data-home-section="${name}"`));
   assert.ok(order.every((position) => position >= 0));
   assert.deepEqual(order, order.slice().sort((a, b) => a - b));
 });
@@ -270,7 +270,7 @@ test("editorial image pack is complete and mapped to the intended blocks", () =>
   for (const key of Object.keys(newVariants)) assert.match(allHtml, new RegExp("assets/images/editorial/" + key + "-", "u"), key);
   assert.doesNotMatch(allHtml, /(?:real_estate_series|new)\/.*\.png/u);
   assert.match(read("apartments.html"), /apartment-open-plan-960\.webp/u);
-  assert.match(read("construction.html"), /detached-brick-house-960\.webp/u);
+  assert.match(read("construction.html"), /modern-house-960\.webp/u);
   assert.match(read("secondary-houses.html"), /secondary-houses-street-960\.webp/u);
   assert.match(read("lands.html"), /land-plot-izhs-960\.webp/u);
   assert.match(read("new-build-apartments.html"), /new-buildings-960\.webp/u);
@@ -282,7 +282,7 @@ test("editorial image pack is complete and mapped to the intended blocks", () =>
   assert.match(read("mortgage.html"), /mortgage-housing-1200\.webp/u);
   assert.match(read("sell.html"), /sale-interior-1200\.webp/u);
   assert.match(read("guides/index.html"), /architecture-detail-800\.webp/u);
-  assert.match(read("construction.html"), /house-dark-cta-1440\.webp/u);
+  assert.match(read("construction.html"), /assets\/images\/construction-projects\//u);
   assert.match(read("index.html"), /apartment-block-neighborhood-960\.webp/u);
   assert.match(read("index.html"), /sell-property-cta-1440\.webp/u);
 });
@@ -293,7 +293,7 @@ test("affected pages use responsive dimensions and loading priorities", () => {
     assert.match(html, /<picture[\s\S]*?<source[^>]+srcset="[^"]+ [0-9]+w[^"]*"[^>]*>[^<]*<img[^>]+width="[0-9]+" height="[0-9]+"/u, file);
   }
   assert.match(read("index.html"), /main-hero-1200\.webp[^>]+[^>]*loading="eager"[^>]+fetchpriority="high"/u);
-  assert.match(read("construction.html"), /detached-brick-house-960\.webp[^>]+[^>]*loading="eager"[^>]+fetchpriority="high"/u);
+  assert.match(read("construction.html"), /modern-house-960\.webp[^>]+[^>]*loading="eager"[^>]+fetchpriority="high"/u);
   assert.match(read("commercial.html"), /commercial-street-retail-960\.webp[^>]+[^>]*loading="eager"[^>]+fetchpriority="high"/u);
   assert.match(read("garages-parking.html"), /residential-parking-960\.webp[^>]+[^>]*loading="eager"[^>]+fetchpriority="high"/u);
   assert.match(read("index.html"), /sell-property-cta-1440\.webp[^>]+loading="lazy"/u);

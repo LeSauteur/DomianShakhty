@@ -750,6 +750,66 @@
     });
   }
 
+  function initProductCatalogs() {
+    queryAll("[data-product-catalog]").forEach(function (root) {
+      var form = root.querySelector("[data-product-filters]");
+      var cards = queryAll("[data-product-card]", root);
+      var count = root.querySelector("[data-product-count]");
+      var empty = root.querySelector("[data-product-empty]");
+      if (!form || !cards.length) return;
+
+      function field(name) {
+        return form.elements[name] ? String(form.elements[name].value || "").trim() : "";
+      }
+
+      function matches(card) {
+        var query = field("query").toLocaleLowerCase("ru-RU");
+        var city = field("city");
+        var status = field("status");
+        var completeness = field("completeness");
+        var builder = field("builder");
+        var floors = field("floors");
+        var areaRange = field("area");
+        var searchable = (card.dataset.search || "").toLocaleLowerCase("ru-RU");
+        var area = Number(card.dataset.area);
+        var inArea = true;
+        if (areaRange) {
+          var bounds = areaRange.split("-").map(Number);
+          inArea = Number.isFinite(area) && area >= bounds[0] && area <= bounds[1];
+        }
+        return (!query || searchable.indexOf(query) !== -1)
+          && (!city || card.dataset.city === city)
+          && (!status || card.dataset.status === status)
+          && (!completeness || card.dataset.completeness === completeness)
+          && (!builder || card.dataset.builder === builder)
+          && (!floors || card.dataset.floors === floors)
+          && inArea;
+      }
+
+      function apply(announce) {
+        var visible = cards.filter(function (card) {
+          var show = matches(card);
+          card.hidden = !show;
+          return show;
+        });
+        if (count) count.textContent = String(visible.length);
+        if (empty) empty.hidden = visible.length > 0;
+        if (announce) {
+          track("catalog_filter_use", {
+            filter_name: root.dataset.productCatalog || "product_catalog",
+            filter_value: Array.from(form.elements).filter(function (control) { return control.name && control.value; }).map(function (control) { return control.name + ":" + control.value; }).join("|") || "reset",
+            page_type: document.body.dataset.pageType || "catalog"
+          });
+        }
+      }
+
+      form.addEventListener("input", function () { apply(false); });
+      form.addEventListener("change", function () { apply(true); });
+      form.addEventListener("reset", function () { window.setTimeout(function () { apply(true); }, 0); });
+      apply(false);
+    });
+  }
+
   persistAttribution();
   initMetrika();
   initHeader();
@@ -766,4 +826,5 @@
   initMortgage();
   initCatalogs();
   initLocationSearch();
+  initProductCatalogs();
 }());
