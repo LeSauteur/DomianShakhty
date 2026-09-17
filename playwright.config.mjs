@@ -1,9 +1,9 @@
 import fs from "node:fs";
 import { defineConfig } from "@playwright/test";
 
-const port = Number(process.env.PLAYWRIGHT_PORT || 4173);
+const port = Number(process.env.PLAYWRIGHT_PORT || 43173);
 const config = JSON.parse(fs.readFileSync(new URL("./site.config.json", import.meta.url), "utf8"));
-const basePath = config.mode === "prelaunch" ? (config.previewBasePath || "") : "";
+const basePath = new URL(config.productionOrigin).pathname.replace(/\/$/u, "");
 const localUrl = `http://127.0.0.1:${port}${basePath}/`;
 
 export default defineConfig({

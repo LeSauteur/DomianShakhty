@@ -4,6 +4,7 @@ import process from "node:process";
 
 const root = path.resolve(process.cwd(), "dist");
 const config = JSON.parse(fs.readFileSync(path.resolve("site.config.json"), "utf8"));
+const base = new URL(config.productionOrigin).pathname.replace(/\/$/u, "");
 const htmlFiles = [];
 
 function visit(directory) {
@@ -25,7 +26,6 @@ function text(value) {
 function resolveInternal(href, file) {
   const withoutHash = href.split("#")[0].split("?")[0];
   if (!withoutHash || /^(?:mailto:|tel:|https?:)/iu.test(withoutHash)) return null;
-  const base = config.mode === "prelaunch" ? (config.previewBasePath || "") : "";
   let relative = withoutHash;
   const rootRelative = relative.startsWith("/");
   if (base && relative === `${base}/`) relative = "/";
@@ -40,7 +40,6 @@ function resolveInternal(href, file) {
 function resolveAsset(src) {
   const withoutHash = src.split("#")[0].split("?")[0];
   if (!withoutHash || /^(?:data:|https?:)/iu.test(withoutHash)) return null;
-  const base = config.mode === "prelaunch" ? (config.previewBasePath || "") : "";
   let relative = withoutHash;
   if (base && relative.startsWith(`${base}/`)) relative = relative.slice(base.length);
   relative = relative.replace(/^\/+/, "");
@@ -71,14 +70,15 @@ for (const file of htmlFiles) {
     try { JSON.parse(block[1]); } catch { failures.push(`${relative}: invalid JSON-LD`); }
   }
 
-  if (config.mode === "prelaunch") {
-    if (robots.toLowerCase() !== "noindex,nofollow") failures.push(`${relative}: prelaunch robots must be noindex,nofollow`);
-    if (canonicals.length) failures.push(`${relative}: prelaunch page must not expose a canonical`);
-    if (/property="og:(?:url|image)"/iu.test(html)) failures.push(`${relative}: prelaunch page must not expose og:url or og:image`);
-  } else if (relative !== "404.html" && relative !== "thanks.html") {
-    if (robots.toLowerCase() !== "index,follow") failures.push(`${relative}: production robots must be index,follow`);
-    if (canonicals.length !== 1) failures.push(`${relative}: production page needs one canonical`);
-  }
+  const technical = ["404.html", "thanks.html"].includes(relative);
+  const route = relative === "index.html" ? "/" : relative.endsWith("/index.html") ? `/${relative.slice(0, -"index.html".length)}` : `/${relative}`;
+  const canonical = `${config.productionOrigin}${route}`;
+  if (robots.toLowerCase() !== (technical ? "noindex,follow" : "index,follow")) failures.push(`${relative}: incorrect robots directive`);
+  if (canonicals.length !== 1 || canonicals[0][1] !== canonical) failures.push(`${relative}: incorrect canonical`);
+  if (!html.includes(`<meta property="og:url" content="${canonical}">`)) failures.push(`${relative}: incorrect og:url`);
+  if (!html.includes(`<meta property="og:image" content="${config.productionOrigin}/assets/images/og.png">`)) failures.push(`${relative}: incorrect og:image`);
+  if (/prelaunch|demo|data:,/iu.test(html)) failures.push(`${relative}: launch placeholder in HTML`);
+  if (!html.includes(`${base}/favicon.ico`) || !html.includes(`${base}/manifest.webmanifest`)) failures.push(`${relative}: site icons missing`);
 
   if (title) {
     if (titles.has(title)) failures.push(`${relative}: duplicate title also used by ${titles.get(title)}`);
@@ -115,12 +115,24 @@ for (const file of htmlFiles) {
 }
 
 const robotsText = fs.readFileSync(path.join(root, "robots.txt"), "utf8");
-if (config.mode === "prelaunch" && !/Disallow:\s*\//iu.test(robotsText)) failures.push("robots.txt: prelaunch must disallow all crawling");
-if (config.mode === "prelaunch" && fs.existsSync(path.join(root, "sitemap.xml"))) failures.push("prelaunch must not publish sitemap.xml");
+if (/Disallow:\s*\//iu.test(robotsText) || !robotsText.includes(`Sitemap: ${config.productionOrigin}/sitemap.xml`)) failures.push("robots.txt: invalid production directives");
+for (const file of [".nojekyll", "sitemap.xml", "favicon.ico", "manifest.webmanifest", "assets/icons/favicon.svg", "assets/icons/apple-touch-icon.png", "assets/images/og.png", "assets/js/site-config.js", "assets/js/site.js", "assets/js/form-handler.js", "404.html"]) {
+  if (!fs.existsSync(path.join(root, file))) failures.push(`missing production file: ${file}`);
+}
+const sitemap = fs.existsSync(path.join(root, "sitemap.xml")) ? fs.readFileSync(path.join(root, "sitemap.xml"), "utf8") : "";
+const actualUrls = matches(sitemap, /<loc>([^<]+)<\/loc>/giu).map((match) => match[1]);
+const expectedUrls = htmlFiles.map((file) => path.relative(root, file).replaceAll("\\", "/"))
+  .filter((relative) => !["404.html", "thanks.html"].includes(relative))
+  .map((relative) => `${config.productionOrigin}${relative === "index.html" ? "/" : relative.endsWith("/index.html") ? `/${relative.slice(0, -"index.html".length)}` : `/${relative}`}`);
+if (actualUrls.length !== expectedUrls.length || new Set(actualUrls).size !== expectedUrls.length || expectedUrls.some((url) => !actualUrls.includes(url))) failures.push("sitemap.xml: routes do not match indexable pages");
+for (const provider of ["google", "yandex"]) {
+  const verification = config[`${provider}Verification`];
+  if (verification?.file && (!fs.existsSync(path.join(root, verification.file)) || fs.readFileSync(path.join(root, verification.file), "utf8") !== verification.content)) failures.push(`${provider} verification file missing or changed`);
+}
 
 if (failures.length) {
   console.error(`SEO audit failed (${failures.length}):\n- ${failures.join("\n- ")}`);
   process.exit(1);
 }
 
-console.log(`SEO audit passed: ${htmlFiles.length} pages, unique metadata, valid links/media and ${config.mode} indexation rules.`);
+console.log(`SEO audit passed: ${htmlFiles.length} pages, unique metadata, valid links/media and production indexation rules.`);

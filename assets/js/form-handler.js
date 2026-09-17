@@ -180,7 +180,10 @@
         try { data = JSON.parse(result.body); } catch (_error) { data = null; }
         if (!result.response.ok || !data || data.success !== true) throw new Error("rejected");
         track("lead_form_success", { page_type: document.body.dataset.pageType || "" });
-        try { window.sessionStorage.removeItem("domian_lead_context"); } catch (_error) { /* optional */ }
+        try {
+          window.sessionStorage.removeItem("domian_lead_context");
+          window.sessionStorage.setItem("domian_form_success", String(Date.now()));
+        } catch (_error) { /* optional */ }
         window.location.assign(config.redirectUrl || "/thanks.html");
       })
       .catch(function (reason) {

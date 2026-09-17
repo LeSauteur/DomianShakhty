@@ -6,7 +6,7 @@
 
 - Рабочий репозиторий: `https://github.com/LeSauteur/DomianShakhty.git`.
 - Канонический remote: `origin`.
-- Публичный PRELAUNCH: `https://lesauteur.github.io/DomianShakhty/`.
+- Публичный сайт: `https://lesauteur.github.io/DomianShakhty/`.
 - Публикация уже настроена в `.github/workflows/pages.yml`: push/merge в `main` автоматически собирает `dist` и разворачивает GitHub Pages.
 - Проверка pull request настроена в `.github/workflows/qa.yml`.
 

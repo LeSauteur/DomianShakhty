@@ -9,4 +9,4 @@ URL: http://127.0.0.1:4173/DomianShakhty/
 | best-practices | 100 |
 | seo | 66 |
 
-> SEO is measured on an intentional PRELAUNCH page with `noindex,nofollow`; this baseline must not be represented as a production indexability score.
+> This historic baseline predates the current indexable production build. Re-run Lighthouse against the deployed site for current scores.
