@@ -139,11 +139,13 @@ test("rendered nearby cards follow the configured neighbor order", () => {
   assert.ok(shakhtyPosition < kamenolomniPosition, "Shakhty must render before Kamenolomni for Ayuta");
 });
 
-test("runtime config contains no configured outbound services", () => {
+test("runtime config and search verification match configured services", () => {
   const source = read("assets/js/site-config.js");
-  assert.match(source, /"metrikaId":null/u);
+  assert.match(source, /"metrikaId":112739000/u);
   assert.match(source, /"ga4Id":null/u);
   assert.match(source, /"web3formsAccessKey":null/u);
+  assert.match(read("index.html"), /<meta name="yandex-verification" content="33fe62fd5bdcd26a">/u);
+  assert.equal(read("googlea9952ce6911e1672.html"), "google-site-verification: googlea9952ce6911e1672.html");
 });
 
 test("confirmed social channels and Maria's responsive portrait are published from central data", () => {
@@ -175,7 +177,7 @@ test("legal details are confined to the details page", () => {
     for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
       const target = path.join(directory, entry.name);
       if (entry.isDirectory()) visit(target);
-      else if (entry.name.endsWith(".html")) pages.push(target);
+      else if (entry.name.endsWith(".html") && ![config.googleVerification?.file, config.yandexVerification?.file].includes(path.relative(root, target).replaceAll("\\", "/"))) pages.push(target);
     }
   }
   visit(root);
@@ -189,7 +191,7 @@ test("every generated page has exactly one h1", () => {
     for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
       const target = path.join(directory, entry.name);
       if (entry.isDirectory()) visit(target);
-      else if (entry.name.endsWith(".html")) pages.push(target);
+      else if (entry.name.endsWith(".html") && ![config.googleVerification?.file, config.yandexVerification?.file].includes(path.relative(root, target).replaceAll("\\", "/"))) pages.push(target);
     }
   }
   visit(root);

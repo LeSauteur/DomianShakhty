@@ -6,12 +6,13 @@ const root = path.resolve(process.cwd(), "dist");
 const config = JSON.parse(fs.readFileSync(path.resolve("site.config.json"), "utf8"));
 const base = new URL(config.productionOrigin).pathname.replace(/\/$/u, "");
 const htmlFiles = [];
+const verificationFiles = new Set([config.googleVerification?.file, config.yandexVerification?.file].filter(Boolean));
 
 function visit(directory) {
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
     const target = path.join(directory, entry.name);
     if (entry.isDirectory()) visit(target);
-    else if (entry.name.endsWith(".html")) htmlFiles.push(target);
+    else if (entry.name.endsWith(".html") && !verificationFiles.has(path.relative(root, target).replaceAll("\\", "/"))) htmlFiles.push(target);
   }
 }
 
