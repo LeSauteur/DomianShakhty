@@ -107,13 +107,25 @@ html {
 
 .nav-menu > summary::after {
   display: inline-block;
-  margin-left: 6px;
-  content: "⌄";
-  transition: transform 160ms ease;
+  width: 12px;
+  height: 12px;
+  margin-left: 8px;
+  vertical-align: -1px;
+  background: linear-gradient(currentColor, currentColor) center / 10px 1.5px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 1.5px 10px no-repeat;
+  content: "";
+  opacity: 0.65;
+  transition: opacity 160ms ease, background-size 160ms ease;
 }
 
 .nav-menu[open] > summary::after {
-  transform: rotate(180deg);
+  background-size: 10px 1.5px, 1.5px 0;
+  opacity: 1;
+}
+
+.nav-menu > summary:hover::after,
+.nav-menu > summary:focus-visible::after {
+  opacity: 1;
 }
 
 .nav-menu > summary[aria-current="page"],
@@ -137,17 +149,21 @@ html {
   width: min(300px, 82vw);
   transform: translateX(-50%);
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 16px;
   background: var(--surface);
-  padding: 8px;
+  padding: 10px;
   color: var(--ink-deep);
   box-shadow: var(--shadow);
 }
 
+.utility-nav .nav-menu__panel {
+  top: calc(100% + 70px);
+}
+
 .nav-menu__panel a {
-  border-radius: 9px;
-  padding: 10px 12px;
-  font-size: 0.78rem;
+  border-radius: 10px;
+  padding: 11px 13px;
+  font-size: 0.84rem;
   font-weight: 700;
   text-decoration: none;
   white-space: normal;
@@ -1077,8 +1093,8 @@ body[data-page-type="location"] .hero-facts {
   max-width: 16ch;
   margin: 10px 0 20px;
   overflow-wrap: anywhere;
-  font-size: clamp(2.5rem, 5.1vw, 5.4rem);
-  line-height: .98;
+  font-size: clamp(2.5rem, 3.8vw, 3.55rem);
+  line-height: 1.04;
 }
 
 .catalog-detail__hero-layout > div > p:not(.eyebrow) {
@@ -1305,14 +1321,14 @@ h2 {
 
 h1 {
   margin-bottom: 24px;
-  font-size: clamp(3rem, 5.5vw, 5.65rem);
-  line-height: 0.98;
+  font-size: clamp(2.75rem, 4vw, 3.8rem);
+  line-height: 1.03;
 }
 
 h2 {
   margin-bottom: 18px;
-  font-size: clamp(2.2rem, 4.4vw, 4.5rem);
-  line-height: 1.04;
+  font-size: clamp(2.1rem, 3.2vw, 3.3rem);
+  line-height: 1.08;
 }
 
 h3 {
@@ -2716,7 +2732,8 @@ textarea {
 }
 
 .guide-hero h1 {
-  font-size: clamp(2.8rem, 6vw, 6rem);
+  font-size: clamp(2.8rem, 3.8vw, 3.55rem);
+  line-height: 1.04;
 }
 
 .guide-answer {
@@ -3701,7 +3718,7 @@ textarea {
 }
 
 .listing-detail__copy h1 {
-  font-size: clamp(2.8rem, 5.8vw, 6rem);
+  font-size: clamp(2.8rem, 4vw, 3.8rem);
 }
 
 .listing-detail__copy > p:not(.eyebrow):not(.listing-detail__address) {
@@ -3942,8 +3959,8 @@ body[data-page-type="home"] .page-hero__copy {
 
 body[data-page-type="home"] .page-hero h1 {
   max-width: 600px;
-  font-size: clamp(3.15rem, 5vw, 5rem);
-  line-height: 0.96;
+  font-size: clamp(3rem, 4vw, 3.8rem);
+  line-height: 1.02;
 }
 
 body[data-page-type="home"] .hero-lead {
@@ -4710,8 +4727,8 @@ body[data-page-type="home"] .hero-media__picture {
 
 .page-hero:has(.hero-media) h1 {
   max-width: 780px;
-  font-size: clamp(3.7rem, 6.2vw, 6.7rem);
-  line-height: 0.92;
+  font-size: clamp(3rem, 4.2vw, 4rem);
+  line-height: 1.02;
 }
 
 .hero-media {
