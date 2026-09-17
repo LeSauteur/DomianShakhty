@@ -6,7 +6,7 @@
 
 - Рабочий репозиторий: `https://github.com/LeSauteur/DomianShakhty.git`.
 - Канонический remote: `origin`.
-- Публичный сайт: `https://lesauteur.github.io/DomianShakhty/`.
+- Публичный сайт: `https://xn--80aakqtid1b0a2a0b.xn--p1ai/` (custom domain в настройках GitHub Pages).
 - Публикация уже настроена в `.github/workflows/pages.yml`: push/merge в `main` автоматически собирает `dist` и разворачивает GitHub Pages.
 - Проверка pull request настроена в `.github/workflows/qa.yml`.
 
@@ -56,7 +56,7 @@ gh run list --limit 5
 gh run watch <ID_RUN_DEPLOY> --exit-status
 ```
 
-После успешного workflow открой `https://lesauteur.github.io/DomianShakhty/` с cache-bust query, проверь затронутые страницы на desktop и mobile и только после этого сообщай о завершении.
+После успешного workflow открой `https://xn--80aakqtid1b0a2a0b.xn--p1ai/` с cache-bust query, проверь затронутые страницы на desktop и mobile и только после этого сообщай о завершении.
 
 ## Запрещённые обходные пути
 
