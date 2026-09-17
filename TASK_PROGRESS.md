@@ -17,7 +17,7 @@
 
 - Рабочий worktree: `C:\SHAKHTY-listings-25`.
 - Ветка: `codex/shakhty-listings-25`, база `origin/main` @ `2c5db1b87b174cca112f668c38b8eed3d041a530`.
-- Есть незакоммиченные изменения. Коммитов задачи и PR пока нет.
+- Коммит реализации: `b5420b6` (`Add 25 Shakhty property listings and initial media`). Этот checkpoint обновляется отдельным коммитом; PR пока нет.
 - Исходный `C:\SHAKHTY` находится на `main` и содержит чужие неотслеживаемые файлы; его не трогать.
 
 # Выполнено
@@ -113,11 +113,11 @@
 
 # Последнее завершённое действие
 
-Финальный `npm run qa` прошёл: 35 статических, 63 браузерных теста, SEO и donor audit. Новые listing pages проверены на desktop/mobile; 10 WebP и пути медиа проверены.
+Создан коммит реализации `b5420b6` после PASS финального QA (35 статических, 63 браузерных теста, SEO и donor audit).
 
 # Следующее действие
 
-Проверить `git diff --check`, добавить изменения и создать коммит в `codex/shakhty-listings-25`, затем штатно отправить ветку и создать PR.
+Выполнить `git push -u origin codex/shakhty-listings-25`, затем `gh pr create --base main --head codex/shakhty-listings-25`.
 
 # Проверки
 
