@@ -19,6 +19,11 @@ const representativePages = [
   "locations/ayutinskiy.html",
   "locations/krasnyy-sulin.html",
   "listings/dom-chistovaya-kamenolomni.html",
+  "listings/shk-a02-budget-1k.html",
+  "listings/shk-a03-hbk-1k.html",
+  "listings/shk-a13-aleksandrovskiy-park.html",
+  "listings/shk-h03-artem-brick-house.html",
+  "listings/shk-l06-regular-city-plot.html",
   "guides/kak-vybrat-dom-ot-zastroyshchika-v-shakhtah.html",
   "team/maria-voronina.html",
   "contacts.html",
@@ -41,6 +46,22 @@ for (const pathname of representativePages) {
     expect(failed).toEqual([]);
   });
 }
+
+test("new listing hero images load without overflow on desktop and mobile", async ({ page }) => {
+  for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
+    await page.setViewportSize(viewport);
+    for (const id of ["shk-a02-budget-1k", "shk-a03-hbk-1k", "shk-h03-artem-brick-house", "shk-l06-regular-city-plot"]) {
+      await page.goto(`listings/${id}.html`);
+      const hero = page.locator(".listing-detail__media img");
+      await expect(hero).toBeVisible();
+      const state = await hero.evaluate((node) => ({ src: node.currentSrc, width: node.naturalWidth }));
+      expect(state.src).toMatch(/\.webp$/u);
+      expect(state.width).toBeGreaterThan(0);
+      const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
+      expect(dimensions.scroll, `${id} at ${viewport.width}px`).toBeLessThanOrEqual(dimensions.client + 1);
+    }
+  }
+});
 
 test("mobile drawer opens, traps focus and closes with Escape", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
@@ -158,7 +179,7 @@ test("location pages keep search controls, imagery and content usable across tar
       const image = page.locator(".page-hero .hero-media img");
       expect(await image.evaluate((node) => ({ currentSrc: node.currentSrc, naturalWidth: node.naturalWidth }))).toEqual(expect.objectContaining({ naturalWidth: expect.any(Number) }));
       expect(await image.evaluate((node) => node.naturalWidth)).toBeGreaterThan(0);
-      await expect(page.locator(".location-listing-grid .listing-card")).toHaveCount(1);
+      expect(await page.locator(".location-listing-grid .listing-card").count()).toBeGreaterThan(0);
       await expect(page.locator(".location-article__layout")).toBeVisible();
       await expect(page.locator(".location-guides__grid article")).toHaveCount(3);
       await expect(page.locator(".location-faq__list details")).toHaveCount(6);

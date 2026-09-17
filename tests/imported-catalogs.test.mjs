@@ -64,7 +64,8 @@ test("construction projects remain separate from secondary inventory", () => {
     assert.doesNotMatch(serialized, new RegExp(forbidden, "u"));
   }
   const existingListings = readJson("src/data/listings.json");
-  assert.deepEqual(existingListings.map(({ id, price, verified }) => ({ id, price, verified })), [{ id: "dom-chistovaya-kamenolomni", price: 5670000, verified: true }]);
+  assert.deepEqual(existingListings[0] && { id: existingListings[0].id, price: existingListings[0].price, verified: existingListings[0].verified }, { id: "dom-chistovaya-kamenolomni", price: 5670000, verified: true });
+  assert.equal(existingListings.length, 26);
 });
 
 test("all imported responsive media is local WebP and exists", () => {

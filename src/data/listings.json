@@ -56,5 +56,795 @@
         "height": 900
       }
     ]
+  },
+  {
+    "id": "shk-a01-studio-olymp",
+    "type": "apartment-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Продаётся студия в районе Олимпийский",
+    "location": "shakhty",
+    "address": "Шахты, район Олимпийский",
+    "price": 2160000,
+    "status": "available",
+    "description": "Студия площадью 27 м² в районе Олимпийский. Квартира в жилом состоянии, готова к проживанию. Поблизости магазины и остановки.",
+    "features": [
+      "27 м²",
+      "Студия",
+      "Жилое состояние",
+      "Район Олимпийский"
+    ],
+    "updatedAt": "2026-09-17",
+    "area": 27,
+    "rooms": 0,
+    "image": {
+      "src": "assets/images/editorial/secondary-apartment-960.webp",
+      "alt": "Изображение категории вторичных квартир",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-a02-budget-1k",
+    "type": "apartment-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Продаётся 1-комнатная квартира в Шахтах",
+    "location": "shakhty",
+    "address": "Шахты, район Машиносчётная",
+    "price": 2120000,
+    "status": "available",
+    "description": "1-комнатная квартира площадью 32 м² в кирпичном доме района Машиносчётная. Второй этаж из пяти. Состояние жилое, отделка простая. Рядом магазины и остановки.",
+    "features": [
+      "32 м²",
+      "2 этаж из 5",
+      "Кирпичный дом",
+      "Жилое состояние"
+    ],
+    "updatedAt": "2026-09-17",
+    "area": 32,
+    "rooms": 1,
+    "floors": 5,
+    "material": "кирпич",
+    "image": {
+      "src": "assets/images/listings/shk-a02-budget-1k/hero.webp",
+      "alt": "Продаётся 1-комнатная квартира в Шахтах: основная комната",
+      "width": 1200,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-a02-budget-1k/01.webp",
+        "alt": "Продаётся 1-комнатная квартира в Шахтах: другой ракурс комнаты",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a02-budget-1k/02.webp",
+        "alt": "Прихожая 1-комнатной квартиры в районе Машиносчётная",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a02-budget-1k/03.webp",
+        "alt": "Продаётся 1-комнатная квартира в Шахтах: кухня",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a02-budget-1k/04.webp",
+        "alt": "Кирпичный дом с квартирой в районе Машиносчётная",
+        "width": 1200,
+        "height": 900
+      }
+    ]
+  },
+  {
+    "id": "shk-a03-hbk-1k",
+    "type": "apartment-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Продаётся 1-комнатная квартира в районе ХБК",
+    "location": "shakhty",
+    "address": "Шахты, ХБК",
+    "price": 2790000,
+    "status": "available",
+    "description": "1-комнатная квартира площадью 37 м² в районе ХБК. Третий этаж кирпичного пятиэтажного дома. Есть балкон; квартира в хорошем жилом состоянии. Рядом магазины, школа и остановки.",
+    "features": [
+      "37 м²",
+      "3 этаж из 5",
+      "Балкон",
+      "Кирпичный дом",
+      "Хорошее жилое состояние"
+    ],
+    "updatedAt": "2026-09-17",
+    "area": 37,
+    "rooms": 1,
+    "floors": 5,
+    "material": "кирпич",
+    "image": {
+      "src": "assets/images/listings/shk-a03-hbk-1k/hero.webp",
+      "alt": "Продаётся 1-комнатная квартира в районе ХБК: основная комната",
+      "width": 1200,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-a03-hbk-1k/01.webp",
+        "alt": "Продаётся 1-комнатная квартира в районе ХБК: другой ракурс комнаты",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a03-hbk-1k/02.webp",
+        "alt": "Прихожая 1-комнатной квартиры в районе ХБК",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a03-hbk-1k/03.webp",
+        "alt": "Продаётся 1-комнатная квартира в районе ХБК: кухня",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a03-hbk-1k/04.webp",
+        "alt": "Остеклённый балкон квартиры в районе ХБК",
+        "width": 1200,
+        "height": 900
+      }
+    ]
+  },
+  {
+    "id": "shk-a04-olymp-1k-aogv",
+    "type": "apartment-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Продаётся 1-комнатная квартира в Олимпийском",
+    "location": "shakhty",
+    "address": "Шахты, район Олимпийский",
+    "price": 3060000,
+    "status": "available",
+    "description": "1-комнатная квартира площадью 36 м² в более новом доме района Олимпийский. Индивидуальное газовое отопление, хорошее состояние. Поблизости магазины и школа.",
+    "features": [
+      "36 м²",
+      "Индивидуальное отопление",
+      "Хорошее состояние",
+      "Более новый дом"
+    ],
+    "updatedAt": "2026-09-17",
+    "area": 36,
+    "rooms": 1,
+    "image": {
+      "src": "assets/images/editorial/secondary-apartment-960.webp",
+      "alt": "Изображение категории вторичных квартир",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-a05-center-renovated-1k",
+    "type": "apartment-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Продаётся 1-комнатная квартира в Центре",
+    "location": "shakhty",
+    "address": "Шахты, Центр",
+    "price": 3680000,
+    "status": "available",
+    "description": "1-комнатная квартира площадью 32 м² в центральной части Шахт. Кирпичный дом, современный ремонт. Рядом магазины, остановки и повседневная инфраструктура.",
+    "features": [
+      "32 м²",
+      "Кирпичный дом",
+      "Современный ремонт",
+      "Центр"
+    ],
+    "updatedAt": "2026-09-17",
+    "area": 32,
+    "rooms": 1,
+    "material": "кирпич",
+    "image": {
+      "src": "assets/images/editorial/secondary-apartment-960.webp",
+      "alt": "Изображение категории вторичных квартир",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-a06-budget-2k",
+    "type": "apartment-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Продаётся 2-комнатная квартира в Шахтах",
+    "location": "shakhty",
+    "address": "Шахты, район Машиносчётная",
+    "price": 2880000,
+    "status": "available",
+    "description": "2-комнатная квартира площадью 45 м² в районе Машиносчётная. Вторичный жилой фонд, простая отделка. Подойдёт для обновления под свои потребности.",
+    "features": [
+      "45 м²",
+      "2 комнаты",
+      "Простая отделка",
+      "Вторичный фонд"
+    ],
+    "updatedAt": "2026-09-17",
+    "area": 45,
+    "rooms": 2,
+    "image": {
+      "src": "assets/images/editorial/secondary-apartment-960.webp",
+      "alt": "Изображение категории вторичных квартир",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-a07-hbk-brick-2k",
+    "type": "apartment-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Продаётся 2-комнатная квартира в районе ХБК",
+    "location": "shakhty",
+    "address": "Шахты, ХБК",
+    "price": 3220000,
+    "status": "available",
+    "description": "2-комнатная квартира площадью 46 м² в кирпичном доме района ХБК. Есть балкон, квартира в жилом состоянии. Рядом магазины, школа и остановки.",
+    "features": [
+      "46 м²",
+      "Кирпичный дом",
+      "Балкон",
+      "Жилое состояние"
+    ],
+    "updatedAt": "2026-09-17",
+    "area": 46,
+    "rooms": 2,
+    "material": "кирпич",
+    "image": {
+      "src": "assets/images/editorial/secondary-apartment-960.webp",
+      "alt": "Изображение категории вторичных квартир",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-a08-aogv-2k",
+    "type": "apartment-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Продаётся 2-комнатная квартира с АОГВ",
+    "location": "shakhty",
+    "address": "Шахты, район Олимпийский",
+    "price": 3960000,
+    "status": "available",
+    "description": "2-комнатная квартира площадью 44 м² в районе Олимпийский. Индивидуальное газовое отопление, хороший ремонт. Квартира готова к проживанию.",
+    "features": [
+      "44 м²",
+      "Индивидуальное газовое отопление",
+      "Хороший ремонт",
+      "Готова к проживанию"
+    ],
+    "updatedAt": "2026-09-17",
+    "area": 44,
+    "rooms": 2,
+    "image": {
+      "src": "assets/images/editorial/secondary-apartment-960.webp",
+      "alt": "Изображение категории вторичных квартир",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-a09-sotsgorodok-2k",
+    "type": "apartment-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Продаётся 2-комнатная квартира в Соцгородке",
+    "location": "shakhty",
+    "address": "Шахты, Соцгородок",
+    "price": 4410000,
+    "status": "available",
+    "description": "2-комнатная квартира площадью 42 м² в Соцгородке. Качественный ремонт, квартира готова к проживанию. Рядом магазины и остановки.",
+    "features": [
+      "42 м²",
+      "Качественный ремонт",
+      "Готова к проживанию",
+      "Соцгородок"
+    ],
+    "updatedAt": "2026-09-17",
+    "area": 42,
+    "rooms": 2,
+    "image": {
+      "src": "assets/images/editorial/secondary-apartment-960.webp",
+      "alt": "Изображение категории вторичных квартир",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-a10-budget-3k",
+    "type": "apartment-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Продаётся 3-комнатная квартира в Шахтах",
+    "location": "shakhty",
+    "address": "Шахты, район Машиносчётная",
+    "price": 2900000,
+    "status": "available",
+    "description": "3-комнатная квартира площадью 58 м² во вторичном жилом фонде. Состояние простое, помещение можно обновить под себя. Поблизости повседневные магазины и транспорт.",
+    "features": [
+      "58 м²",
+      "3 комнаты",
+      "Простое жилое состояние",
+      "Под ремонт"
+    ],
+    "updatedAt": "2026-09-17",
+    "area": 58,
+    "rooms": 3,
+    "image": {
+      "src": "assets/images/editorial/secondary-apartment-960.webp",
+      "alt": "Изображение категории вторичных квартир",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-a11-hbk-family-3k",
+    "type": "apartment-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Продаётся 3-комнатная квартира в районе ХБК",
+    "location": "shakhty",
+    "address": "Шахты, ХБК",
+    "price": 4030000,
+    "status": "available",
+    "description": "3-комнатная квартира площадью 62 м² в районе ХБК. Жилое состояние и удобная семейная площадь. Рядом школы, магазины и остановки.",
+    "features": [
+      "62 м²",
+      "3 комнаты",
+      "Жилое состояние",
+      "Район ХБК"
+    ],
+    "updatedAt": "2026-09-17",
+    "area": 62,
+    "rooms": 3,
+    "image": {
+      "src": "assets/images/editorial/secondary-apartment-960.webp",
+      "alt": "Изображение категории вторичных квартир",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-a12-center-designer-3k",
+    "type": "apartment-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Продаётся 3-комнатная квартира в Центре",
+    "location": "shakhty",
+    "address": "Шахты, Центр",
+    "price": 7920000,
+    "status": "available",
+    "description": "Просторная 3-комнатная квартира площадью 72 м² в Центре Шахт. Дизайнерский ремонт, квартира готова к проживанию. В пешей доступности магазины, школы и парк.",
+    "features": [
+      "72 м²",
+      "3 комнаты",
+      "Дизайнерский ремонт",
+      "Центральная локация"
+    ],
+    "updatedAt": "2026-09-17",
+    "area": 72,
+    "rooms": 3,
+    "image": {
+      "src": "assets/images/editorial/secondary-apartment-960.webp",
+      "alt": "Изображение категории вторичных квартир",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-a13-aleksandrovskiy-park",
+    "type": "apartment-newbuild",
+    "format": "newbuild",
+    "verified": true,
+    "title": "Продаётся 1-комнатная квартира в ЖК «Александровский Парк»",
+    "location": "shakhty",
+    "address": "Шахты, ул. Шевченко, 135-А",
+    "price": 4800000,
+    "status": "available",
+    "description": "1-комнатная квартира в шестэтажном ЖК «Александровский Парк». Проектом предусмотрены лоджия, подземный паркинг и двор без машин. Площадь и отделка конкретной квартиры уточняются.",
+    "features": [
+      "1 комната",
+      "6-этажный комплекс",
+      "Лоджия",
+      "Подземный паркинг",
+      "Двор без машин",
+      "Площадь уточняется"
+    ],
+    "updatedAt": "2026-09-17",
+    "rooms": 1,
+    "floors": 6,
+    "builder": "СЗ ЖК Александровский Парк",
+    "image": {
+      "src": "assets/images/editorial/category-new-buildings-960.webp",
+      "alt": "Изображение категории новостроек",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-h01-renovation-house",
+    "type": "house-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Продаётся дом под ремонт в Даниловке",
+    "location": "shakhty",
+    "address": "Шахты, Даниловка",
+    "price": 1140000,
+    "status": "available",
+    "description": "Дом площадью 60 м² на участке 14 соток. Каменные стены, требуется ремонт. Электричество и центральная вода; газ не подключён. Отопление и канализация требуют проверки. Есть подъезд к участку.",
+    "features": [
+      "Дом 60 м²",
+      "Участок 14 соток",
+      "Материал: камень",
+      "Электричество",
+      "Центральная вода",
+      "Газ не подключён",
+      "Отопление и канализация уточняются"
+    ],
+    "updatedAt": "2026-09-17",
+    "area": 60,
+    "landArea": 14,
+    "material": "камень",
+    "image": {
+      "src": "assets/images/editorial/secondary-houses-street-960.webp",
+      "alt": "Изображение категории частных домов",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-h02-budget-house",
+    "type": "house-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Продаётся жилой дом в Киреевке",
+    "location": "shakhty",
+    "address": "Шахты, Киреевка",
+    "price": 1910000,
+    "status": "available",
+    "description": "Жилой дом площадью 58 м² на участке 12 соток. Подключены газ, центральная вода и электричество; отопление газовое, канализация — септик. Состояние простое, пригодно для проживания.",
+    "features": [
+      "Дом 58 м²",
+      "Участок 12 соток",
+      "Газ",
+      "Центральная вода",
+      "Электричество",
+      "Газовое отопление",
+      "Септик"
+    ],
+    "updatedAt": "2026-09-17",
+    "area": 58,
+    "landArea": 12,
+    "image": {
+      "src": "assets/images/editorial/secondary-houses-street-960.webp",
+      "alt": "Изображение категории частных домов",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-h03-artem-brick-house",
+    "type": "house-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Продаётся кирпичный дом в районе Артём",
+    "location": "shakhty",
+    "address": "Шахты, район Артём",
+    "price": 4440000,
+    "status": "available",
+    "description": "Кирпичный дом площадью 92 м² на участке 9 соток. Хорошее жилое состояние, благоустроенный двор. Газ, вода и электричество подключены, газовое отопление, канализация — септик. Есть хозяйственные постройки.",
+    "features": [
+      "Дом 92 м²",
+      "Участок 9 соток",
+      "Кирпич",
+      "Газ, вода, электричество",
+      "Газовое отопление",
+      "Септик",
+      "Хозяйственные постройки"
+    ],
+    "updatedAt": "2026-09-17",
+    "area": 92,
+    "landArea": 9,
+    "material": "кирпич",
+    "image": {
+      "src": "assets/images/editorial/secondary-houses-street-960.webp",
+      "alt": "Изображение категории частных домов",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-h04-garage-house",
+    "type": "house-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Продаётся благоустроенный дом с гаражом",
+    "location": "shakhty",
+    "address": "Шахты, район Фрунзе",
+    "price": 5280000,
+    "status": "available",
+    "description": "Дом площадью 108 м² на участке 8 соток. Хороший ремонт, во дворе гараж и летняя кухня. Подключены газ, вода и электричество; отопление газовое, канализация — септик.",
+    "features": [
+      "Дом 108 м²",
+      "Участок 8 соток",
+      "Хороший ремонт",
+      "Газ, вода, электричество",
+      "Газовое отопление",
+      "Септик",
+      "Гараж",
+      "Летняя кухня"
+    ],
+    "updatedAt": "2026-09-17",
+    "area": 108,
+    "landArea": 8,
+    "image": {
+      "src": "assets/images/editorial/secondary-houses-street-960.webp",
+      "alt": "Изображение категории частных домов",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-h05-large-modern-house",
+    "type": "house-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Продаётся просторный дом с тёплым полом",
+    "location": "shakhty",
+    "address": "Шахты, район Фрунзе",
+    "price": 6570000,
+    "status": "available",
+    "description": "Дом площадью 148 м² на участке 15 соток. Современная отделка, тёплый пол и несколько жилых комнат. Подключены газ, вода и электричество; газовое отопление, канализация — септик. Во дворе хозяйственная зона.",
+    "features": [
+      "Дом 148 м²",
+      "Участок 15 соток",
+      "Современная отделка",
+      "Тёплый пол",
+      "Газ, вода, электричество",
+      "Газовое отопление",
+      "Септик",
+      "Хозяйственная зона"
+    ],
+    "updatedAt": "2026-09-17",
+    "area": 148,
+    "landArea": 15,
+    "image": {
+      "src": "assets/images/editorial/secondary-houses-street-960.webp",
+      "alt": "Изображение категории частных домов",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-h06-city-designer-house",
+    "type": "house-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Продаётся дом с дизайнерским ремонтом",
+    "location": "shakhty",
+    "address": "Шахты, городской частный сектор",
+    "price": 8090000,
+    "status": "available",
+    "description": "Дом площадью 126 м² на участке 6 соток. Дизайнерский ремонт, есть гараж. Газ, вода и электричество подключены; отопление газовое. Тип канализации уточняется.",
+    "features": [
+      "Дом 126 м²",
+      "Участок 6 соток",
+      "Дизайнерский ремонт",
+      "Гараж",
+      "Газ, вода, электричество",
+      "Газовое отопление",
+      "Канализация уточняется"
+    ],
+    "updatedAt": "2026-09-17",
+    "area": 126,
+    "landArea": 6,
+    "image": {
+      "src": "assets/images/editorial/secondary-houses-street-960.webp",
+      "alt": "Изображение категории частных домов",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-l01-snt-plot",
+    "type": "land",
+    "format": "land",
+    "verified": true,
+    "title": "Продаётся участок в СНТ «Коммунар»",
+    "location": "shakhty",
+    "address": "Шахты, СНТ «Коммунар»",
+    "price": 390000,
+    "status": "available",
+    "description": "Участок площадью 5,5 сотки в СНТ «Коммунар». Электричество и газ проходят по границе. Водоснабжение уточняется. Подъезд по внутренним проездам СНТ.",
+    "features": [
+      "5,5 сотки",
+      "СНТ",
+      "Газ по границе",
+      "Электричество по границе",
+      "Вода уточняется",
+      "Подъезд по проезду СНТ"
+    ],
+    "updatedAt": "2026-09-17",
+    "landArea": 5.5,
+    "image": {
+      "src": "assets/images/editorial/land-plot-izhs-960.webp",
+      "alt": "Изображение категории земельных участков",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-l02-budget-izhs",
+    "type": "land",
+    "format": "land",
+    "verified": true,
+    "title": "Продаётся участок ИЖС в районе Южная",
+    "location": "shakhty",
+    "address": "Шахты, район Южная",
+    "price": 610000,
+    "status": "available",
+    "description": "Участок ИЖС площадью 6 соток в районе Южная. Коммуникации поблизости: газ и электричество рядом; возможность подключения воды уточняется. Есть подъезд к участку.",
+    "features": [
+      "6 соток",
+      "ИЖС",
+      "Газ рядом",
+      "Электричество рядом",
+      "Вода уточняется",
+      "Подъезд к участку"
+    ],
+    "updatedAt": "2026-09-17",
+    "landArea": 6,
+    "image": {
+      "src": "assets/images/editorial/land-plot-izhs-960.webp",
+      "alt": "Изображение категории земельных участков",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-l03-artem-izhs",
+    "type": "land",
+    "format": "land",
+    "verified": true,
+    "title": "Продаётся участок ИЖС в районе Артём",
+    "location": "shakhty",
+    "address": "Шахты, район Артём",
+    "price": 830000,
+    "status": "available",
+    "description": "Участок ИЖС площадью 8 соток в районе Артём. Газ, электричество и вода поблизости; точки подключения уточняются. Есть подъезд к участку.",
+    "features": [
+      "8 соток",
+      "ИЖС",
+      "Газ рядом",
+      "Электричество рядом",
+      "Вода рядом",
+      "Подъезд к участку"
+    ],
+    "updatedAt": "2026-09-17",
+    "landArea": 8,
+    "image": {
+      "src": "assets/images/editorial/land-plot-izhs-960.webp",
+      "alt": "Изображение категории земельных участков",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-l04-peripheral-large-plot",
+    "type": "land",
+    "format": "land",
+    "verified": true,
+    "title": "Продаётся большой участок ИЖС в Шахтах",
+    "location": "shakhty",
+    "address": "Шахты, периферийный частный сектор",
+    "price": 770000,
+    "status": "available",
+    "description": "Участок ИЖС площадью 12 соток в частном секторе Шахт. Газ, электричество и вода находятся поблизости; условия подключения уточняются. Подъезд к участку предусмотрен.",
+    "features": [
+      "12 соток",
+      "ИЖС",
+      "Газ рядом",
+      "Электричество рядом",
+      "Вода рядом",
+      "Подъезд к участку"
+    ],
+    "updatedAt": "2026-09-17",
+    "landArea": 12,
+    "image": {
+      "src": "assets/images/editorial/land-plot-izhs-960.webp",
+      "alt": "Изображение категории земельных участков",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-l05-serviced-city-plot",
+    "type": "land",
+    "format": "land",
+    "verified": true,
+    "title": "Продаётся городской участок ИЖС с коммуникациями",
+    "location": "shakhty",
+    "address": "Шахты, городской частный сектор",
+    "price": 2370000,
+    "status": "available",
+    "description": "Городской участок ИЖС площадью 6 соток. Доступны газ, электричество и вода. Рядом городская инфраструктура; к участку есть подъезд.",
+    "features": [
+      "6 соток",
+      "ИЖС",
+      "Газ",
+      "Электричество",
+      "Вода",
+      "Подъезд",
+      "Городская инфраструктура"
+    ],
+    "updatedAt": "2026-09-17",
+    "landArea": 6,
+    "image": {
+      "src": "assets/images/editorial/land-plot-izhs-960.webp",
+      "alt": "Изображение категории земельных участков",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-l06-regular-city-plot",
+    "type": "land",
+    "format": "land",
+    "verified": true,
+    "title": "Продаётся участок ИЖС правильной формы",
+    "location": "shakhty",
+    "address": "Шахты, городской частный сектор",
+    "price": 2830000,
+    "status": "available",
+    "description": "Участок ИЖС площадью 6,5 сотки, правильной прямоугольной формы. Вода и электричество доступны, газ проходит по границе. Есть подъезд к участку.",
+    "features": [
+      "6,5 сотки",
+      "ИЖС",
+      "Прямоугольная форма",
+      "Вода",
+      "Электричество",
+      "Газ по границе",
+      "Подъезд"
+    ],
+    "updatedAt": "2026-09-17",
+    "landArea": 6.5,
+    "image": {
+      "src": "assets/images/editorial/land-plot-izhs-960.webp",
+      "alt": "Изображение категории земельных участков",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": []
   }
 ]

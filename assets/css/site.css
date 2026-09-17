@@ -3647,7 +3647,7 @@ textarea {
   left: 18px;
   border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 999px;
-  background: rgba(116, 31, 38, 0.88);
+  background: rgba(41, 56, 58, 0.88);
   padding: 8px 13px;
   color: white;
   font-size: 0.67rem;
@@ -3691,6 +3691,24 @@ textarea {
 
 .listing-card__body > p:not(.listing-card__location) {
   font-size: 0.88rem;
+}
+
+.listing-card__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.listing-card__facts li {
+  border: 1px solid var(--stone);
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: var(--sage-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
 }
 
 .listing-card__body > strong {
@@ -3811,6 +3829,17 @@ textarea {
   border-top: 1px solid var(--line);
   padding: 17px 0;
   font-weight: 650;
+}
+
+.listing-detail__facts-layout > div li {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.listing-detail__facts-layout > div li span {
+  color: var(--ink-soft);
+  font-weight: 500;
 }
 
 .listing-detail__facts-layout li:last-child {
