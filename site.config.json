@@ -36,11 +36,16 @@
     "Аюта",
     "Красный Сулин"
   ],
-  "metrikaId": null,
+  "metrikaId": 112739000,
   "ga4Id": null,
   "web3formsAccessKey": null,
-  "googleVerification": null,
-  "yandexVerification": null,
+  "googleVerification": {
+    "file": "googlea9952ce6911e1672.html",
+    "content": "google-site-verification: googlea9952ce6911e1672.html"
+  },
+  "yandexVerification": {
+    "meta": "33fe62fd5bdcd26a"
+  },
   "requestTimeoutMs": 12000,
   "publishedAt": "2026-08-19",
   "updatedAt": "2026-08-24"
