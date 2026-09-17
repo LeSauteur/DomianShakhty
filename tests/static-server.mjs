@@ -5,7 +5,7 @@ import process from "node:process";
 
 const root = path.resolve(process.cwd(), "dist");
 const config = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), "site.config.json"), "utf8"));
-const basePath = config.mode === "prelaunch" ? (config.previewBasePath || "") : "";
+const basePath = new URL(config.productionOrigin).pathname.replace(/\/$/u, "");
 const port = Number(process.env.PORT || 4173);
 const host = process.env.HOST || "127.0.0.1";
 const mime = {
@@ -15,6 +15,7 @@ const mime = {
   ".jpg": "image/jpeg",
   ".js": "text/javascript; charset=utf-8",
   ".json": "application/json; charset=utf-8",
+  ".webmanifest": "application/manifest+json; charset=utf-8",
   ".png": "image/png",
   ".svg": "image/svg+xml",
   ".webp": "image/webp",

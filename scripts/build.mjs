@@ -48,9 +48,16 @@ function writeJson(relativePath, value) {
 }
 
 const site = readJson("site.config.json");
-if (site.mode === "production" && !site.web3formsAccessKey) {
-  throw new Error("web3formsAccessKey is required in production mode; keep PRELAUNCH until the form provider is approved and tested");
+if (site.web3formsAccessKey === "test-only-placeholder") throw new Error("Test-only Web3Forms key cannot be published");
+if (site.metrikaId != null && !/^\d+$/u.test(String(site.metrikaId))) throw new Error("metrikaId must be a numeric counter ID");
+if (site.ga4Id != null && !/^G-[A-Z0-9]+$/u.test(site.ga4Id)) throw new Error("ga4Id must be a GA4 Measurement ID");
+if (process.env.DOMIAN_BROWSER_TEST_FIXTURE === "1") {
+  site.web3formsAccessKey = "test-only-placeholder";
+  site.googleVerification = { meta: "test-google", file: "googlefixture.html", content: "google-site-verification: googlefixture.html" };
+  site.yandexVerification = { meta: "test-yandex", file: "yandexfixture.html", content: "test-yandex" };
 }
+const productionUrl = new URL(site.productionOrigin);
+if (productionUrl.protocol !== "https:" || productionUrl.search || productionUrl.hash || site.productionOrigin.endsWith("/")) throw new Error("productionOrigin must be an HTTPS URL without query, hash or trailing slash");
 const locations = readJson("src/data/locations.json");
 const locationContent = readJson("src/data/location-content.json");
 const guides = readJson("src/data/guides.json");
@@ -72,6 +79,8 @@ function publish(relativePath, html) {
 
 safeResetDist();
 fs.cpSync(path.join(root, "assets"), path.join(dist, "assets"), { recursive: true });
+fs.copyFileSync(path.join(root, "favicon.ico"), path.join(dist, "favicon.ico"));
+write("manifest.webmanifest", `${JSON.stringify({ name: site.displayName, short_name: site.brand, start_url: `${ctx.base}/`, display: "browser", background_color: "#f7f9f7", theme_color: "#29383a", icons: [{ src: `${ctx.base}/assets/icons/apple-touch-icon.png`, sizes: "180x180", type: "image/png" }] }, null, 2)}\n`);
 
 publish("index.html", renderHome(ctx, guides));
 for (const page of pages.filter((item) => item.path !== "construction.html")) publish(page.path, renderCommercialPage(ctx, page));
@@ -92,9 +101,10 @@ publish("thanks.html", renderThanks(ctx));
 publish("404.html", render404(ctx));
 
 const runtimeConfig = {
-  mode: site.mode,
   basePath: ctx.base,
+  analyticsTestMode: process.env.DOMIAN_BROWSER_TEST_FIXTURE === "1",
   metrikaId: site.metrikaId,
+  ga4Id: site.ga4Id,
   web3formsAccessKey: site.web3formsAccessKey,
   endpoint: "https://api.web3forms.com/submit",
   redirectUrl: ctx.href("thanks.html"),
@@ -113,18 +123,19 @@ writeJson("assets/data/team.json", team.filter((item) => item.verified === true)
 writeJson("assets/data/showcase.json", showcase);
 
 write(".nojekyll", "");
-if (site.mode === "prelaunch") {
-  write("robots.txt", "User-agent: *\nDisallow: /\n");
-} else {
-  if (!site.productionOrigin) throw new Error("productionOrigin is required in production mode");
-  const origin = site.productionOrigin.replace(/\/$/u, "");
+{
+  const origin = site.productionOrigin;
   const urls = outputs
     .filter((file) => !["404.html", "thanks.html"].includes(file))
     .map((file) => file === "index.html" ? `${origin}/` : (file.endsWith("/index.html") ? `${origin}/${file.slice(0, -"index.html".length)}` : `${origin}/${file}`));
   write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((url) => `  <url><loc>${url}</loc></url>`).join("\n")}\n</urlset>\n`);
   write("robots.txt", `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
-  if (site.googleVerification) write(site.googleVerification.file, site.googleVerification.content);
-  if (site.yandexVerification) write(site.yandexVerification.file, site.yandexVerification.content);
+  for (const provider of ["google", "yandex"]) {
+    const verification = site[`${provider}Verification`];
+    if (!verification?.file && !verification?.content) continue;
+    if (!verification?.file || !verification?.content || !new RegExp(`^${provider}[a-z0-9_-]*\\.html$`, "iu").test(verification.file)) throw new Error(`Invalid ${provider} verification file`);
+    write(verification.file, verification.content);
+  }
 }
 
-console.log(`Built ${outputs.length} HTML pages in ${path.relative(root, dist)} (${site.mode}).`);
+console.log(`Built ${outputs.length} HTML pages in ${path.relative(root, dist)}.`);

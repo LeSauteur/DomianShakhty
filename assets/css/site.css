@@ -695,6 +695,25 @@ body[data-page-type="location"] .hero-facts {
   }
 }
 
+.analytics-consent {
+  position: fixed;
+  z-index: 1000;
+  right: 16px;
+  bottom: 16px;
+  width: min(420px, calc(100vw - 32px));
+  padding: 18px;
+  border: 1px solid #c7a66a;
+  border-radius: 12px;
+  background: #f7f9f7;
+  box-shadow: 0 8px 32px rgba(41, 56, 58, 0.2);
+  color: #29383a;
+}
+
+.analytics-consent p { margin: 0 0 12px; }
+.analytics-consent div { display: flex; flex-wrap: wrap; gap: 8px; }
+.analytics-consent button { padding: 8px 14px; border: 1px solid #29383a; border-radius: 6px; background: #29383a; color: white; cursor: pointer; }
+.analytics-consent button[data-analytics-decline] { background: transparent; color: #29383a; }
+
 /* Compact homepage catalog showcases */
 .home-catalog-showcase {
   padding-block: clamp(54px, 6vw, 88px);

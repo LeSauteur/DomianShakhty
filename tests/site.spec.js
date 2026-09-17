@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-const localOrigin = `http://127.0.0.1:${process.env.PLAYWRIGHT_PORT || 4173}`;
+const localOrigin = `http://127.0.0.1:${process.env.PLAYWRIGHT_PORT || 43173}`;
 
 const representativePages = [
   "",
@@ -36,7 +36,7 @@ for (const pathname of representativePages) {
     const response = await page.goto(pathname, { waitUntil: "load" });
     expect(response?.status()).toBe(200);
     await expect(page.locator("h1")).toHaveCount(1);
-    await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "noindex,nofollow");
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "index,follow");
     expect(errors).toEqual([]);
     expect(failed).toEqual([]);
   });
@@ -234,11 +234,9 @@ test("Maria portrait is responsive, dimensioned and loads on trust pages", async
   }
 });
 
-test("lead form validates locally and does not fake success", async ({ page }) => {
-  const outbound = [];
-  page.on("request", (request) => {
-    if (!request.url().startsWith(localOrigin)) outbound.push(request.url());
-  });
+test("lead form validates locally and handles provider rejection", async ({ page }) => {
+  let requests = 0;
+  await page.route("https://api.web3forms.com/submit", async (route) => { requests += 1; await route.fulfill({ status: 400, contentType: "application/json", body: '{"success":false}' }); });
   await page.goto("construction.html#lead-form-section");
   const form = page.locator("form[data-lead-form]");
   await form.locator('button[type="submit"]').click();
@@ -247,25 +245,23 @@ test("lead form validates locally and does not fake success", async ({ page }) =
   await form.locator('input[name="phone"]').fill("8 918 000-00-00");
   await form.locator('input[name="privacy_consent"]').check();
   await form.locator('button[type="submit"]').click();
-  await expect(form.locator("[data-form-status]")).toContainText("Форма пока не подключена");
-  expect(outbound).toEqual([]);
+  await expect(form.locator("[data-form-status]")).toContainText("не подтвердил отправку");
+  expect(requests).toBe(1);
 });
 
-test("compact home lead validates phone and consent without fake submission", async ({ page }) => {
-  const outbound = [];
-  page.on("request", (request) => {
-    if (!request.url().startsWith(localOrigin)) outbound.push(request.url());
-  });
+test("compact home lead redirects only after provider success", async ({ page }) => {
+  await page.route("https://api.web3forms.com/submit", async (route) => { await route.fulfill({ status: 200, contentType: "application/json", body: '{"success":true}' }); });
   await page.goto("");
   const form = page.locator("form[data-lead-compact]");
   await form.locator('input[name="phone"]').fill("8 918 000-00-00");
   await form.locator('input[name="privacy_consent"]').check();
   await form.locator('button[type="submit"]').click();
-  await expect(form.locator("[data-form-status]")).toContainText("Форма пока не подключена");
-  expect(outbound).toEqual([]);
+  await expect(page).toHaveURL(/\/thanks\.html$/u);
+  await expect(page.locator("[data-thanks-title]")).toHaveText("Спасибо за обращение");
 });
 
 test("lead analytics never receives entered personal data", async ({ page }) => {
+  await page.route("https://api.web3forms.com/submit", async (route) => { await route.fulfill({ status: 400, contentType: "application/json", body: '{"success":false}' }); });
   await page.addInitScript(() => {
     window.__domianEvents = [];
     window.DOMIAN_ANALYTICS_TEST_HOOK = (name, params) => window.__domianEvents.push({ name, params });
@@ -280,6 +276,28 @@ test("lead analytics never receives entered personal data", async ({ page }) => 
   expect(payload).not.toContain("Анна");
   expect(payload).not.toContain("9181234567");
   expect(payload).not.toContain("123-45-67");
+});
+
+test("Metrika and GA4 load once after consent and omit personal URL parameters", async ({ page }) => {
+  const runtime = { basePath: "/DomianShakhty", analyticsTestMode: true, metrikaId: "12345678", ga4Id: "G-TEST123456", web3formsAccessKey: null };
+  await page.route("**/assets/js/site-config.js", (route) => route.fulfill({ contentType: "text/javascript", body: `window.DOMIAN_SITE_CONFIG=Object.freeze(${JSON.stringify(runtime)});` }));
+  await page.route("https://mc.yandex.ru/**", (route) => route.fulfill({ contentType: "text/javascript", body: "" }));
+  await page.route("https://www.googletagmanager.com/**", (route) => route.fulfill({ contentType: "text/javascript", body: "" }));
+  await page.goto("");
+  await expect(page.locator(".analytics-consent")).toBeVisible();
+  expect(await page.locator('script[src*="mc.yandex.ru"], script[src*="googletagmanager.com"]').count()).toBe(0);
+  await page.locator("[data-analytics-accept]").click();
+  await expect(page.locator(".analytics-consent")).toHaveCount(0);
+  expect(await page.locator('script[src*="mc.yandex.ru"]').count()).toBe(1);
+  expect(await page.locator('script[src*="googletagmanager.com"]').count()).toBe(1);
+  await page.evaluate(() => window.domianTrack("phone_click", { page_type: "home", phone: "+7 918 123-45-67" }));
+  const calls = await page.evaluate(() => JSON.stringify({ ym: window.ym.a || [], ga: window.dataLayer || [] }));
+  expect(calls).toContain("reachGoal");
+  expect(calls).toContain("phone_click");
+  expect(calls).toContain("page_view");
+  expect(calls).not.toContain("123-45-67");
+  await page.goto("commercial.html?phone=79181234567");
+  expect(await page.locator('script[src*="mc.yandex.ru"], script[src*="googletagmanager.com"]').count()).toBe(0);
 });
 
 test("mortgage calculator uses the visitor's rate", async ({ page }) => {

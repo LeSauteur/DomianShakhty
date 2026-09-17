@@ -64,8 +64,7 @@ const socialChannels = [
 ];
 
 export function createContext(site, data) {
-  const base = site.mode === "prelaunch" ? (site.previewBasePath || "") : "";
-  const cleanBase = base ? `/${base.replace(/^\/+|\/+$/g, "")}` : "";
+  const cleanBase = new URL(site.productionOrigin).pathname.replace(/\/$/u, "");
 
   function href(value = "") {
     if (/^(?:https?:|mailto:|tel:)/iu.test(value)) return value;
@@ -79,8 +78,7 @@ export function createContext(site, data) {
   }
 
   function absolute(pathname = "") {
-    if (!site.productionOrigin) return "";
-    return new URL(href(pathname).replace(cleanBase, ""), site.productionOrigin).href;
+    return new URL(href(pathname).slice(cleanBase.length).replace(/^\/+/, ""), `${site.productionOrigin}/`).href;
   }
 
   return { site, ...data, href, absolute, base: cleanBase };
@@ -270,7 +268,7 @@ function footer(ctx) {
       <div><h2>Офис</h2><a href="${ctx.href("team/maria-voronina.html")}">Мария Воронина</a><a href="${ctx.href("contacts.html")}">Контакты</a><a href="${ctx.href("details.html")}">Реквизиты</a><a href="${ctx.href("privacy.html")}">Обработка данных</a></div>
       <address><h2>Связаться</h2><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a><span>${esc(ctx.site.address)}</span>${socialLinks(ctx, "social-links social-links--footer")}</address>
     </div>
-    <div class="container footer-bottom"><span>© ${new Date().getFullYear()} ${esc(ctx.site.displayName)}</span><span>${ctx.site.mode === "prelaunch" ? "PRELAUNCH · сайт закрыт от индексации" : "Информация не является публичной офертой"}</span></div>
+    <div class="container footer-bottom"><span>© ${new Date().getFullYear()} ${esc(ctx.site.displayName)}</span><span>Информация не является публичной офертой</span></div>
   </footer>`;
 }
 
@@ -345,7 +343,7 @@ function homeHotOffersSection(ctx) {
 function homeRequestSection(ctx) {
   const typeOptions = requestTypes.map(([value, label]) => `<option value="${value}">${label}</option>`).join("");
   const locationOptions = ctx.locations.map((location) => `<option value="${esc(location.name)}">${esc(location.name)}</option>`).join("");
-  return `<section class="section home-request" id="request" data-home-section="request"><div class="container home-request__shell"><div class="home-request__intro"><p class="eyebrow">Подбор под ваш запрос</p><h2>Передайте критерии — соберём актуальные варианты</h2><p>Критерии останутся в форме, а предложения и характеристики будут проверяться на дату обращения.</p></div><form class="home-request__form" data-home-request-builder novalidate><label><span>Что ищете</span><select name="requestType" required><option value="">Выберите тип</option>${typeOptions}</select></label><label><span>Территория</span><select name="requestLocation"><option value="">Несколько территорий</option>${locationOptions}</select></label><label><span>Бюджет</span><select name="requestBudget"><option value="">Обсудить</option><option>до 2 млн ₽</option><option>2–4 млн ₽</option><option>4–7 млн ₽</option><option>7–10 млн ₽</option><option>10–15 млн ₽</option><option>свыше 15 млн ₽</option></select></label><label><span>Телефон</span><input name="requestPhone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="+7 999 123-45-67"></label><button class="button button--primary" type="submit">Получить актуальную подборку</button><p class="home-request__status" data-home-request-status role="status" hidden></p></form><ol class="home-request__steps"><li><span>01</span><strong>Получаем критерии</strong><p>Тип, территория, бюджет и важные детали.</p></li><li><span>02</span><strong>Проверяем актуальность</strong><p>Уточняем предложения, цены и характеристики.</p></li><li><span>03</span><strong>Сравниваем варианты</strong><p>По условиям, документам и полному бюджету.</p></li></ol></div></section>`;
+  return `<section class="section home-request" id="request" data-home-section="request"><div class="container home-request__shell"><div class="home-request__intro"><p class="eyebrow">Подбор под ваш запрос</p><h2>Передайте критерии — соберём актуальные варианты</h2><p>${ctx.site.web3formsAccessKey ? "Критерии останутся в форме, а предложения и характеристики будут проверяться на дату обращения." : "Выберите критерии, затем свяжитесь с офисом напрямую для подбора актуальных вариантов."}</p></div><form class="home-request__form" data-home-request-builder novalidate><label><span>Что ищете</span><select name="requestType" required><option value="">Выберите тип</option>${typeOptions}</select></label><label><span>Территория</span><select name="requestLocation"><option value="">Несколько территорий</option>${locationOptions}</select></label><label><span>Бюджет</span><select name="requestBudget"><option value="">Обсудить</option><option>до 2 млн ₽</option><option>2–4 млн ₽</option><option>4–7 млн ₽</option><option>7–10 млн ₽</option><option>10–15 млн ₽</option><option>свыше 15 млн ₽</option></select></label>${ctx.site.web3formsAccessKey ? `<label><span>Телефон</span><input name="requestPhone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="+7 999 123-45-67"></label>` : ""}<button class="button button--primary" type="submit">${ctx.site.web3formsAccessKey ? "Получить актуальную подборку" : "Обсудить подбор"}</button><p class="home-request__status" data-home-request-status role="status" hidden></p></form><ol class="home-request__steps"><li><span>01</span><strong>Получаем критерии</strong><p>Тип, территория, бюджет и важные детали.</p></li><li><span>02</span><strong>Проверяем актуальность</strong><p>Уточняем предложения, цены и характеристики.</p></li><li><span>03</span><strong>Сравниваем варианты</strong><p>По условиям, документам и полному бюджету.</p></li></ol></div></section>`;
 }
 
 function homeSellerSection(ctx) {
@@ -369,7 +367,8 @@ function homeOfficeSection(ctx) {
 }
 
 function homeLeadForm(ctx) {
-  return `<section class="lead-section home-lead" id="lead-form-section" data-home-section="lead"><div class="container home-lead__layout"><div><p class="eyebrow">Короткий первый шаг</p><h2>Расскажите, какая задача стоит перед вами</h2><p>Выберите цель и оставьте телефон. В PRELAUNCH данные не отправляются наружу — форма сохранит введённое и подскажет прямые контакты.</p><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a></div><form class="lead-form home-lead__form" data-lead-form data-lead-compact data-source-cta="home-final" novalidate><input type="hidden" name="service" value="service"><label>Телефон<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="+7 999 123-45-67"></label><label>Задача<select name="goal" required><option value="buy">Купить</option><option value="sell">Продать</option><option value="valuation">Оценить</option><option value="consultation">Другое</option></select></label><label class="consent"><input name="privacy_consent" type="checkbox" required><span>Согласен(на) на обработку данных по <a href="${ctx.href("privacy.html")}">политике</a>.</span></label><p class="form-status" data-form-status role="status" hidden></p><button class="button button--primary" type="submit">Передать обращение</button><p class="form-note">Отправка включится после отдельной проверки провайдера. Сейчас используйте телефон или email.</p></form></div></section>`;
+  if (!ctx.site.web3formsAccessKey) return `<section class="lead-section home-lead" id="lead-form-section" data-home-section="lead"><div class="container home-lead__layout"><div><p class="eyebrow">Связаться с офисом</p><h2>Расскажите, какая задача стоит перед вами</h2><p>Позвоните или напишите Марии Ворониной, чтобы обсудить покупку, продажу или оценку недвижимости.</p></div><div class="direct-contact"><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a>${socialLinks(ctx)}</div></div></section>`;
+  return `<section class="lead-section home-lead" id="lead-form-section" data-home-section="lead"><div class="container home-lead__layout"><div><p class="eyebrow">Короткий первый шаг</p><h2>Расскажите, какая задача стоит перед вами</h2><p>Выберите цель и оставьте телефон. Мы свяжемся с вами по выбранной задаче.</p><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a></div><form class="lead-form home-lead__form" data-lead-form data-lead-compact data-source-cta="home-final" novalidate><input type="hidden" name="service" value="service"><label>Телефон<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="+7 999 123-45-67"></label><label>Задача<select name="goal" required><option value="buy">Купить</option><option value="sell">Продать</option><option value="valuation">Оценить</option><option value="consultation">Другое</option></select></label><label class="consent"><input name="privacy_consent" type="checkbox" required><span>Согласен(на) на обработку данных по <a href="${ctx.href("privacy.html")}">политике</a>.</span></label><p class="form-status" data-form-status role="status" hidden></p><button class="button button--primary" type="submit">Передать обращение</button><p class="form-note">Не отправляйте паспортные, банковские и иные чувствительные сведения.</p></form></div></section>`;
 }
 
 function cardsSection(ctx, section) {
@@ -411,14 +410,14 @@ function requestBuilder(ctx, { defaultType = "", defaultMarket = "", defaultGoal
     <label data-request-field="land house"><span>Размер участка</span><select name="requestLand"><option value="">Не определено</option><option>до 5 соток</option><option>5–8 соток</option><option>8–12 соток</option><option>от 12 соток</option></select></label>
     <label data-request-field="commercial"><span>Коммерческий тип</span><select name="requestCommercial"><option value="">Уточнить</option><option>Свободное назначение</option><option>Торговое помещение</option><option>Офис</option><option>Склад</option><option>Производственный объект</option><option>Коммерческий участок</option></select></label>
     <label data-request-field="garage-parking"><span>Гараж или место</span><select name="requestParking"><option value="">Уточнить</option><option>Гараж</option><option>Машиноместо</option><option>Парковочное место</option></select></label>
-    <div class="request-builder__action"><button class="button button--primary" type="submit">Передать критерии</button><small>Офис уточнит направление и предложит следующий шаг.</small></div>
+    <div class="request-builder__action"><button class="button button--primary" type="submit">${ctx.site.web3formsAccessKey ? "Передать критерии" : "Показать контакты"}</button><small>Офис уточнит направление и предложит следующий шаг.</small></div>
     <p class="request-builder__status" data-request-builder-status role="status" hidden></p>
   </form>`;
 }
 
 function quickFilterSection(ctx) {
   return `<section class="quick-search" id="quick-search"><div class="container quick-search__shell" data-reveal>
-    <div class="quick-search__intro"><p class="eyebrow">Быстрый подбор</p><h2>Соберите запрос за минуту</h2><p>Критерии автоматически перейдут в форму обращения.</p></div>
+    <div class="quick-search__intro"><p class="eyebrow">Быстрый подбор</p><h2>Соберите запрос за минуту</h2><p>${ctx.site.web3formsAccessKey ? "Критерии автоматически перейдут в форму обращения." : "Соберите критерии и обсудите варианты с офисом напрямую."}</p></div>
     ${requestBuilder(ctx)}
   </div></section>`;
 }
@@ -601,12 +600,13 @@ function renderSection(ctx, section) {
 }
 
 function leadForm(ctx, form = {}) {
+  if (!ctx.site.web3formsAccessKey) return `<section class="lead-section" id="lead-form-section"><div class="container lead-layout"><div><p class="eyebrow">Связаться с офисом</p><h2>${esc(form.title || "Обсудить задачу")}</h2><p>${esc(form.text || "Расскажите, что нужно решить.")}</p></div><div class="direct-contact"><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a>${socialLinks(ctx)}</div></div></section>`;
   const goals = [["buy", "Купить"], ["sell", "Продать"], ["valuation", "Предварительно оценить"], ["consultation", "Обсудить другую задачу"]];
   const locationOptions = ctx.locations.map((location) => `<option value="${esc(location.name)}"${location.name === form.territory ? " selected" : ""}>${esc(location.name)}</option>`).join("");
   const defaultGoal = form.goal || ({ sell: "sell", valuation: "valuation" })[form.type] || "buy";
   const defaultPropertyType = form.propertyType || ({ apartment: "apartment", "apartment-secondary": "apartment", "apartment-newbuild": "apartment", house: "house", "house-new": "house", "house-secondary": "house", "house-builder": "house", land: "land", commercial: "commercial", "garage-parking": "garage-parking" })[form.type] || "";
   return `<section class="lead-section" id="lead-form-section"><div class="container lead-layout">
-    <div><p class="eyebrow">Короткий первый шаг</p><h2>${esc(form.title || "Обсудить задачу")}</h2><p>${esc(form.text || "Расскажите, что нужно решить.")}</p><div class="direct-contact"><span>${ctx.site.mode === "prelaunch" ? "В PRELAUNCH форма не отправляет данные наружу." : "Можно также связаться с офисом напрямую."}</span><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a></div></div>
+    <div><p class="eyebrow">Короткий первый шаг</p><h2>${esc(form.title || "Обсудить задачу")}</h2><p>${esc(form.text || "Расскажите, что нужно решить.")}</p><div class="direct-contact"><span>Можно также связаться с офисом напрямую.</span><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a></div></div>
     <form class="lead-form" data-lead-form data-source-cta="${esc(form.type || "contact")}" data-origin-page="${esc(form.originPage || "")}"${form.territory ? ` data-default-territory="${esc(form.territory)}"` : ""} novalidate>
       <div class="honeypot" aria-hidden="true"><label>Не заполняйте<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label></div>
       <input type="hidden" name="service" value="${esc(form.type || "service")}">
@@ -620,7 +620,7 @@ function leadForm(ctx, form = {}) {
       <label class="consent"><input name="privacy_consent" type="checkbox" required><span>Согласен(на) на обработку данных по <a href="${ctx.href("privacy.html")}">политике</a>.</span></label>
       <p class="form-status" data-form-status role="status" hidden></p>
       <button class="button button--primary" type="submit">Передать обращение</button>
-      <p class="form-note">${ctx.site.mode === "prelaunch" ? "Отправка включится после отдельной проверки провайдера. Сейчас используйте телефон или email." : "Не отправляйте паспортные, банковские и иные чувствительные сведения."}</p>
+      <p class="form-note">Не отправляйте паспортные, банковские и иные чувствительные сведения.</p>
     </form>
   </div></section>`;
 }
@@ -635,52 +635,56 @@ function schemaFor(ctx, page, breadcrumbsItems) {
     address: { "@type": "PostalAddress", addressLocality: "Шахты", streetAddress: "ул. Маяковского 18А", addressRegion: "Ростовская область", addressCountry: "RU" },
     areaServed: ctx.site.serviceAreas.map((name) => ({ "@type": "Place", name }))
   };
-  if (ctx.site.mode === "production") {
-    organization["@id"] = `${ctx.site.productionOrigin.replace(/\/$/u, "")}/#organization`;
-    organization.url = ctx.absolute("");
-  }
+  organization["@id"] = `${ctx.absolute("")}#organization`;
+  organization.url = ctx.absolute("");
   const nodes = [organization];
   if (page.pageType === "person") {
-    const person = { "@type": "Person", name: ctx.site.owner.name, jobTitle: ctx.site.owner.role, telephone: ctx.site.phone, email: ctx.site.email, sameAs: Object.values(ctx.site.socials || {}), worksFor: ctx.site.mode === "production" ? { "@id": organization["@id"] } : { "@type": "RealEstateAgent", name: ctx.site.displayName } };
-    if (ctx.site.mode === "production") person["@id"] = `${ctx.absolute("team/maria-voronina.html")}#person`;
+    const person = { "@type": "Person", name: ctx.site.owner.name, jobTitle: ctx.site.owner.role, telephone: ctx.site.phone, email: ctx.site.email, sameAs: Object.values(ctx.site.socials || {}), worksFor: { "@id": organization["@id"] } };
+    person["@id"] = `${ctx.absolute("team/maria-voronina.html")}#person`;
     nodes.push(person);
   } else if (page.pageType === "guide") {
     const article = { "@type": "Article", headline: page.h1 || page.title, description: page.description, datePublished: page.publishedAt, dateModified: page.updatedAt };
-    if (ctx.site.mode === "production") { article.url = ctx.absolute(page.path); article.publisher = { "@id": organization["@id"] }; }
+    article.url = ctx.absolute(page.path); article.publisher = { "@id": organization["@id"] };
     nodes.push(article);
   } else if (page.pageType === "listing" && page.listing) {
-    const offer = { "@type": "Offer", price: page.listing.price, priceCurrency: "RUB", availability: "https://schema.org/InStock", itemOffered: { "@type": "House", name: page.listing.title, description: page.listing.description, address: { "@type": "PostalAddress", addressLocality: "Каменоломни", addressRegion: "Ростовская область", addressCountry: "RU" }, image: [page.listing.image, ...(page.listing.gallery || [])].map((image) => ctx.site.mode === "production" ? ctx.absolute(image.src) : ctx.href(image.src)) } };
-    if (ctx.site.mode === "production") offer.url = ctx.absolute(page.path);
+    const offer = { "@type": "Offer", price: page.listing.price, priceCurrency: "RUB", availability: "https://schema.org/InStock", itemOffered: { "@type": "House", name: page.listing.title, description: page.listing.description, address: { "@type": "PostalAddress", addressLocality: "Каменоломни", addressRegion: "Ростовская область", addressCountry: "RU" }, image: [page.listing.image, ...(page.listing.gallery || [])].map((image) => ctx.absolute(image.src)) } };
+    offer.url = ctx.absolute(page.path);
     nodes.push(offer);
   } else if (["construction", "construction-catalog", "construction-project", "newbuild-catalog", "newbuild", "service", "mortgage", "catalog", "location"].includes(page.pageType)) {
-    const service = { "@type": "Service", name: page.h1, description: page.description, areaServed: ctx.site.serviceAreas.map((name) => ({ "@type": "Place", name })), provider: ctx.site.mode === "production" ? { "@id": organization["@id"] } : { "@type": "RealEstateAgent", name: ctx.site.displayName } };
-    if (ctx.site.mode === "production") service.url = ctx.absolute(page.path);
+    const service = { "@type": "Service", name: page.h1, description: page.description, areaServed: ctx.site.serviceAreas.map((name) => ({ "@type": "Place", name })), provider: { "@id": organization["@id"] } };
+    service.url = ctx.absolute(page.path);
     nodes.push(service);
   }
-  if (ctx.site.mode === "production" && breadcrumbsItems?.length) {
+  if (breadcrumbsItems?.length) {
     nodes.push({ "@type": "BreadcrumbList", itemListElement: breadcrumbsItems.map((item, index) => ({ "@type": "ListItem", position: index + 1, name: item.label, item: ctx.absolute(item.href || page.path) })) });
   }
   return `<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": nodes }).replaceAll("<", "\\u003c")}</script>`;
 }
 
 function documentHead(ctx, page, breadcrumbsItems) {
-  const canonical = ctx.site.mode === "production" ? ctx.absolute(page.path || "") : "";
-  const ogImage = ctx.site.mode === "production" ? ctx.absolute("assets/images/og.png") : "";
+  const canonical = ctx.absolute(page.path || "");
+  const ogImage = ctx.absolute("assets/images/og.png");
+  const robots = ["404.html", "thanks.html"].includes(page.path) ? "noindex,follow" : "index,follow";
   const heroPreload = page.pageType === "home" ? '<link rel="preload" as="image" href="' + ctx.href("assets/images/editorial/main-hero-1200.webp") + '" imagesrcset="' + ctx.href("assets/images/editorial/main-hero-720.webp") + ' 720w, ' + ctx.href("assets/images/editorial/main-hero-1200.webp") + ' 1200w" imagesizes="(max-width: 820px) calc(100vw - 32px), 44vw" media="(min-width: 601px)"><link rel="preload" as="image" href="' + ctx.href("assets/images/editorial/main-hero-mobile-600.webp") + '" media="(max-width: 600px)">' : "";
   return `<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="${ctx.site.mode === "prelaunch" ? "noindex,nofollow" : "index,follow"}">
+  <meta name="robots" content="${robots}">
   <meta name="description" content="${esc(page.description)}">
   <meta name="theme-color" content="#29383a">
-  <link rel="icon" href="data:,">
+  <link rel="icon" href="${ctx.href("favicon.ico")}" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="${ctx.href("assets/icons/favicon.svg")}">
+  <link rel="apple-touch-icon" href="${ctx.href("assets/icons/apple-touch-icon.png")}">
+  <link rel="manifest" href="${ctx.href("manifest.webmanifest")}">
   <title>${esc(page.title)}</title>
-  ${canonical ? `<link rel="canonical" href="${canonical}">` : ""}
+  <link rel="canonical" href="${canonical}">
+  ${ctx.site.googleVerification?.meta ? `<meta name="google-site-verification" content="${esc(ctx.site.googleVerification.meta)}">` : ""}
+  ${ctx.site.yandexVerification?.meta ? `<meta name="yandex-verification" content="${esc(ctx.site.yandexVerification.meta)}">` : ""}
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="${page.pageType === "guide" ? "article" : "website"}">
   <meta property="og:site_name" content="${esc(ctx.site.displayName)}">
   <meta property="og:title" content="${esc(page.title)}">
   <meta property="og:description" content="${esc(page.description)}">
-  ${canonical ? `<meta property="og:url" content="${canonical}">` : ""}
+  <meta property="og:url" content="${canonical}">
   ${ogImage ? `<meta property="og:image" content="${ogImage}">
   <meta property="og:image:width" content="1536">
   <meta property="og:image:height" content="1024">
@@ -1043,7 +1047,7 @@ export function renderContacts(ctx) {
   const contact = `<section class="section"><div class="container contact-layout"><div class="contact-grid"><article><span>01 · Телефон</span><h2><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a></h2><p>Самый прямой способ обсудить задачу.</p></article><article><span>02 · Email</span><h2><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a></h2><p>Подходит, если нужно отправить описание без чувствительных документов.</p></article><article><span>03 · Адрес</span><h2>${esc(ctx.site.address)}</h2><p>Часы посещения уточните по телефону.</p></article><article><span>04 · Мессенджеры</span><h2>Напишите Марии</h2><p>Подтверждённые каналы офиса — без QR-кодов и промежуточных страниц.</p>${socialLinks(ctx, "social-links social-links--contact")}</article></div><aside class="contact-owner">${ownerPortrait(ctx, "compact")}<p>Мария Воронина<br><span>собственник офиса</span></p></aside></div></section>`;
   const gallery = `<section class="section section--stone office-gallery"><div class="container"><div class="section-heading"><div><p class="eyebrow">Офис на Маяковского</p><h2>Место, где можно обсудить задачу лично</h2></div><p>Вход с улицы Маяковского. Перед визитом лучше согласовать время по телефону.</p></div><div class="office-gallery__grid"><figure class="office-gallery__item office-gallery__item--wide">${officeImage(ctx, "office-interior", "Светлый интерьер офиса Домиан в Шахтах", { className: "office-photo", sizes: "(max-width: 760px) calc(100vw - 32px), 58vw" })}<figcaption>Рабочее пространство офиса</figcaption></figure><figure class="office-gallery__item office-gallery__item--narrow">${officeImage(ctx, "office-waiting-area", "Зона ожидания в офисе Домиан", { className: "office-photo", sizes: "(max-width: 760px) calc(100vw - 32px), 42vw" })}<figcaption>Зона ожидания</figcaption></figure><figure class="office-gallery__item office-gallery__item--narrow">${officeImage(ctx, "office-staircase", "Лестница и история команды в офисе Домиан", { className: "office-photo", sizes: "(max-width: 760px) calc(100vw - 32px), 42vw" })}<figcaption>История команды</figcaption></figure><figure class="office-gallery__item office-gallery__item--wide">${officeImage(ctx, "office-facade", "Фасад офиса Домиан по адресу улица Маяковского 18А", { className: "office-photo", sizes: "(max-width: 760px) calc(100vw - 32px), 58vw" })}<figcaption>ул. Маяковского, 18А</figcaption></figure></div></div></section>`;
   const prepare = criteriaSection({ kicker: "Перед обращением", title: "Достаточно трёх вводных", intro: "Не отправляйте паспортные, банковские или иные чувствительные данные через форму.", items: ["что хотите купить, продать или оценить", "какая территория важна", "бюджет или желаемая последовательность"] });
-  return layout(ctx, page, `${hero(ctx, page)}${contact}${gallery}${prepare}${leadForm(ctx, { type: "service", title: "Оставить контакт для ответа", text: "В PRELAUNCH форма безопасно покажет прямые контакты вместо фиктивной отправки." })}`, { active: "contacts", breadcrumbs: [{ label: "Главная", href: "" }, { label: "Контакты", href: page.path }] });
+  return layout(ctx, page, `${hero(ctx, page)}${contact}${gallery}${prepare}${leadForm(ctx, { type: "service", title: "Связаться с офисом", text: "Выберите удобный способ связи, чтобы обсудить вашу задачу." })}`, { active: "contacts", breadcrumbs: [{ label: "Главная", href: "" }, { label: "Контакты", href: page.path }] });
 }
 
 export function renderDetails(ctx) {
@@ -1058,19 +1062,20 @@ export function renderPrivacy(ctx) {
     ["1. Оператор", `${ctx.site.legal.name}, ИНН ${ctx.site.legal.inn}, ОГРНИП ${ctx.site.legal.ogrnip}. Контакты оператора: ${ctx.site.email}, ${ctx.site.phone}; адрес: ${ctx.site.address}.`],
     ["2. Какие данные предусмотрены формой", "Имя, номер телефона, тип запроса и необязательный комментарий. Не направляйте через форму паспортные данные, банковские реквизиты, документы на объект или специальные категории персональных данных."],
     ["3. Цель и основание обработки", "Данные запрашиваются для ответа на обращение, подготовки консультации и связи по выбранной пользователем задаче. Основание — согласие пользователя, выраженное отдельной отметкой перед отправкой формы."],
-    ["4. PRELAUNCH-режим", "На этапе предварительного просмотра внешний провайдер формы не настроен. Введённые данные не отправляются с сайта и не сохраняются в браузере как клиентская база. Пользователю предлагаются телефон и email."],
-    ["5. После подключения формы", "До включения внешнего провайдера владелец должен проверить договор, место хранения, трансграничную передачу и требования локализации по действующему законодательству. Политика и текст согласия должны быть обновлены под фактический процесс."],
-    ["6. Срок и прекращение обработки", "После запуска данные должны храниться не дольше, чем требуется для цели обращения или исполнения обязанностей по закону. Пользователь вправе отозвать согласие и запросить сведения об обработке по контактам оператора."],
-    ["7. Безопасность", "Оператор принимает необходимые правовые, организационные и технические меры для защиты персональных данных. Сайт не должен передавать персональные данные в аналитику."],
-    ["8. Обновления", "Актуальная версия размещается на этой странице. Дата публикации и обновления: 19 августа 2026 года." ]
+    ["4. Передача обращения", ctx.site.web3formsAccessKey ? "При отправке формы сведения передаются сервису Web3Forms для доставки обращения оператору. До использования формы ознакомьтесь с её условиями обработки данных." : "Пока форма отправки не подключена, обращайтесь к оператору по телефону, email или через указанные мессенджеры."],
+    ["5. Внешние сервисы", "Перед включением обработчика заявок и аналитики оператор проверяет условия сервисов, место хранения данных, применимость требований о локализации и необходимость отдельного согласия. Сведения о фактически включённых сервисах должны поддерживаться в актуальном состоянии."],
+    ["6. Срок и прекращение обработки", "Данные хранятся не дольше, чем требуется для цели обращения или исполнения обязанностей по закону. Пользователь вправе отозвать согласие и запросить сведения об обработке по контактам оператора."],
+    ["7. Аналитика", ctx.site.metrikaId || ctx.site.ga4Id ? `После отдельного согласия посетителя сайт может использовать ${[ctx.site.metrikaId ? "Яндекс Метрику" : "", ctx.site.ga4Id ? "Google Analytics 4" : ""].filter(Boolean).join(" и ")} и их аналитические cookies. Отказ не мешает пользоваться сайтом; в события не передаются имя, телефон, email и текст обращения.` : "Счётчики аналитики сейчас не подключены. При их включении посетителю предлагается отдельный выбор; отказ не мешает пользоваться сайтом."],
+    ["8. Безопасность", "Оператор принимает необходимые правовые, организационные и технические меры для защиты персональных данных. Сайт не передаёт содержимое формы в аналитику."],
+    ["9. Обновления", "Актуальная версия размещается на этой странице. Дата публикации: 19 августа 2026 года." ]
   ];
-  const body = `<section class="legal-hero"><div class="container"><p class="eyebrow">Персональные данные</p><h1>${esc(page.h1)}</h1><p>PRELAUNCH-редакция с учётом того, что внешний сервис заявок пока не подключён.</p></div></section><article class="legal-content container">${sections.map(([title, text]) => `<section><h2>${esc(title)}</h2><p>${esc(text)}</p></section>`).join("")}<section><h2>Правовая основа</h2><p>Федеральный закон от 27.07.2006 № 152-ФЗ «О персональных данных» в актуальной редакции.</p><a href="https://ips.pravo.gov.ru/api/ips/legislation/document?baseid=None&amp;hash=98490812b3409e2a8d78a11ca9010f434ea3d9250a11dbbdb78690cd5551bdd6" target="_blank" rel="noopener noreferrer">Официальный текст закона</a></section></article>`;
+  const body = `<section class="legal-hero"><div class="container"><p class="eyebrow">Персональные данные</p><h1>${esc(page.h1)}</h1><p>Как используются сведения, которые вы передаёте при обращении в офис.</p></div></section><article class="legal-content container">${sections.map(([title, text]) => `<section><h2>${esc(title)}</h2><p>${esc(text)}</p></section>`).join("")}<section><h2>Правовая основа</h2><p>Федеральный закон от 27.07.2006 № 152-ФЗ «О персональных данных» в актуальной редакции.</p><a href="https://ips.pravo.gov.ru/api/ips/legislation/document?baseid=None&amp;hash=98490812b3409e2a8d78a11ca9010f434ea3d9250a11dbbdb78690cd5551bdd6" target="_blank" rel="noopener noreferrer">Официальный текст закона</a></section></article>`;
   return layout(ctx, page, body, { breadcrumbs: [{ label: "Главная", href: "" }, { label: "Политика обработки данных", href: page.path }] });
 }
 
 export function renderThanks(ctx) {
-  const page = { path: "thanks.html", pageType: "thanks", title: "Спасибо за обращение — Домиан Шахты", description: "Подтверждение обращения в офис Домиан в Шахтах и полезные следующие шаги.", h1: "Спасибо за обращение" };
-  const body = `<section class="status-page"><div class="container status-card"><span class="status-code">✓</span><p class="eyebrow">Обращение принято</p><h1>Спасибо за обращение</h1><p>Эта страница используется только после подтверждённой отправки провайдером. В PRELAUNCH форма сюда не перенаправляет.</p><div class="hero-actions"><a class="button button--primary" href="${ctx.href("")}">На главную</a><a class="button button--ghost" href="${ctx.href("guides/index.html")}">Открыть гайды</a></div></div></section>`;
+  const page = { path: "thanks.html", pageType: "thanks", title: "Статус обращения — Домиан Шахты", description: "Информация об отправке обращения в офис Домиан в Шахтах и прямые контакты.", h1: "Обращение" };
+  const body = `<section class="status-page"><div class="container status-card"><span class="status-code">✓</span><p class="eyebrow">Статус обращения</p><h1 data-thanks-title>Обращение</h1><p data-thanks-message>Подтверждение отправки доступно только после ответа сервиса. Если вы хотите связаться с офисом, используйте прямые контакты.</p><div class="hero-actions"><a class="button button--primary" href="${ctx.href("")}">На главную</a><a class="button button--ghost" href="${ctx.href("contacts.html")}">Контакты офиса</a></div></div></section>`;
   return layout(ctx, page, body);
 }
 

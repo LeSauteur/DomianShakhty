@@ -1,4 +1,4 @@
-name: Deploy prelaunch to GitHub Pages
+name: Deploy production to GitHub Pages
 
 on:
   push:

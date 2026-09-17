@@ -18,7 +18,9 @@
   function analyticsDisabled() {
     var host = (window.location.hostname || "").toLowerCase();
     var qa = new URLSearchParams(window.location.search || "").get("qa") === "1";
-    return !config.metrikaId || host === "localhost" || host === "::1" || /^127(?:\.\d+){3}$/u.test(host) || qa;
+    var consent = "";
+    try { consent = window.localStorage.getItem("domian_analytics_consent") || ""; } catch (_error) { /* optional */ }
+    return (!config.metrikaId && !config.ga4Id) || (!config.analyticsTestMode && (host === "localhost" || host === "::1" || /^127(?:\.\d+){3}$/u.test(host))) || qa || Boolean(window.location.search) || consent !== "accepted";
   }
 
   window.DOMIAN_ANALYTICS_DISABLED = analyticsDisabled();
@@ -40,7 +42,8 @@
         window.DOMIAN_ANALYTICS_TEST_HOOK(name, safe);
       }
       if (window.DOMIAN_ANALYTICS_DISABLED) return;
-      if (typeof window.ym === "function") window.ym(config.metrikaId, "reachGoal", name, safe);
+      if (config.metrikaId && typeof window.ym === "function") window.ym(config.metrikaId, "reachGoal", name, safe);
+      if (config.ga4Id && typeof window.gtag === "function") window.gtag("event", name, safe);
     } catch (_error) {
       // Analytics never interrupts the site.
     }
@@ -57,7 +60,60 @@
     script.async = true;
     script.src = "https://mc.yandex.ru/metrika/tag.js?id=" + encodeURIComponent(config.metrikaId);
     document.head.appendChild(script);
-    window.ym(config.metrikaId, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+    window.ym(config.metrikaId, "init", { clickmap: false, trackLinks: false, accurateTrackBounce: false, defer: true });
+    window.ym(config.metrikaId, "hit", window.location.origin + window.location.pathname);
+  }
+
+  function initGa4() {
+    if (window.DOMIAN_ANALYTICS_DISABLED || !config.ga4Id || typeof window.gtag === "function") return;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", config.ga4Id, { send_page_view: false });
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(config.ga4Id);
+    document.head.appendChild(script);
+    window.gtag("event", "page_view", { page_location: window.location.origin + window.location.pathname, page_title: document.title });
+  }
+
+  function initAnalyticsConsent() {
+    var host = (window.location.hostname || "").toLowerCase();
+    var choice = "";
+    if ((!config.metrikaId && !config.ga4Id) || (!config.analyticsTestMode && (host === "localhost" || host === "::1" || /^127(?:\.\d+){3}$/u.test(host))) || window.location.search) return;
+    try { choice = window.localStorage.getItem("domian_analytics_consent") || ""; } catch (_error) { /* optional */ }
+    if (choice) return;
+    var notice = document.createElement("aside");
+    notice.className = "analytics-consent";
+    notice.setAttribute("aria-label", "Аналитика сайта");
+    notice.innerHTML = '<p>Разрешить аналитические cookies для улучшения сайта? Подробности — в <a href="' + config.basePath + '/privacy.html">политике обработки данных</a>.</p><div><button type="button" data-analytics-accept>Разрешить</button><button type="button" data-analytics-decline>Отказаться</button></div>';
+    document.body.appendChild(notice);
+    notice.addEventListener("click", function (event) {
+      var accepted = event.target.hasAttribute("data-analytics-accept");
+      if (!accepted && !event.target.hasAttribute("data-analytics-decline")) return;
+      try { window.localStorage.setItem("domian_analytics_consent", accepted ? "accepted" : "declined"); } catch (_error) { /* optional */ }
+      notice.remove();
+      if (accepted) {
+        window.DOMIAN_ANALYTICS_DISABLED = false;
+        initMetrika();
+        initGa4();
+      }
+    });
+  }
+
+  function initThanks() {
+    var title = document.querySelector("[data-thanks-title]");
+    var message = document.querySelector("[data-thanks-message]");
+    if (!title || !message) return;
+    var sentAt = 0;
+    try {
+      sentAt = Number(window.sessionStorage.getItem("domian_form_success") || 0);
+      window.sessionStorage.removeItem("domian_form_success");
+    } catch (_error) { /* optional */ }
+    if (!sentAt || Date.now() - sentAt > 5 * 60 * 1000) return;
+    title.textContent = "Спасибо за обращение";
+    message.textContent = "Ваше обращение отправлено. Мы свяжемся с вами по указанному номеру.";
+    document.title = "Спасибо за обращение — Домиан Шахты";
   }
 
   function persistAttribution() {
@@ -350,7 +406,7 @@
         };
         writeLeadContext(context);
         applyLeadContext(context);
-        if (status) { status.hidden = false; status.textContent = "Критерии перенесены в форму. Добавьте имя и телефон или свяжитесь с офисом напрямую."; }
+        if (status) { status.hidden = false; status.textContent = document.querySelector("form[data-lead-form]") ? "Критерии перенесены в форму. Добавьте имя и телефон." : "Критерии собраны. Свяжитесь с офисом напрямую, чтобы обсудить варианты."; }
         track("catalog_filter_use", { filter_name: "request_builder", filter_value: type, page_type: document.body.dataset.pageType || "" });
         var lead = document.getElementById("lead-form-section");
         if (lead) lead.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
@@ -374,7 +430,7 @@
           if (typeField) typeField.focus();
           return;
         }
-        if (digits.length < 10 || digits.length > 15) {
+        if (phoneField && (digits.length < 10 || digits.length > 15)) {
           if (status) { status.hidden = false; status.textContent = "Проверьте номер телефона: нужно от 10 до 15 цифр."; }
           if (phoneField) phoneField.focus();
           return;
@@ -398,7 +454,7 @@
         applyLeadContext(context);
         var compact = document.querySelector("form[data-lead-compact]");
         if (compact && compact.elements.phone) compact.elements.phone.value = phone;
-        if (status) { status.hidden = false; status.textContent = "Запрос собран. Телефон перенесён в финальную форму — подтвердите согласие или свяжитесь с офисом напрямую."; }
+        if (status) { status.hidden = false; status.textContent = compact ? "Запрос собран. Телефон перенесён в финальную форму — подтвердите согласие." : "Критерии собраны. Свяжитесь с офисом напрямую, чтобы обсудить актуальные варианты."; }
         track("catalog_filter_use", { filter_name: "home_request", filter_value: type, page_type: "home" });
         var lead = document.getElementById("lead-form-section");
         if (lead) lead.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
@@ -812,6 +868,9 @@
 
   persistAttribution();
   initMetrika();
+  initGa4();
+  initAnalyticsConsent();
+  initThanks();
   initHeader();
   initDrawer();
   initNavigationMenus();

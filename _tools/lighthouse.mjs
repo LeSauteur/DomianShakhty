@@ -14,7 +14,7 @@ try {
     onlyCategories: ["performance", "accessibility", "best-practices", "seo"]
   });
   const categories = Object.fromEntries(Object.entries(result.lhr.categories).map(([key, value]) => [key, Math.round(value.score * 100)]));
-  const report = `# Lighthouse baseline\n\nURL: ${url}\n\n| Category | Score |\n| --- | ---: |\n${Object.entries(categories).map(([name, score]) => `| ${name} | ${score} |`).join("\n")}\n\n> SEO is measured on an intentional PRELAUNCH page with \`noindex,nofollow\`; this baseline must not be represented as a production indexability score.\n`;
+  const report = `# Lighthouse baseline\n\nURL: ${url}\n\n| Category | Score |\n| --- | ---: |\n${Object.entries(categories).map(([name, score]) => `| ${name} | ${score} |`).join("\n")}\n\n> Results describe the URL shown above; use the deployed production URL for public-site scores.\n`;
   fs.writeFileSync("LIGHTHOUSE_BASELINE.md", report, "utf8");
   fs.mkdirSync("artifacts", { recursive: true });
   fs.writeFileSync("artifacts/lighthouse.json", result.report, "utf8");
