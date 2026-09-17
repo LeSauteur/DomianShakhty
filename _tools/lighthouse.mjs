@@ -3,7 +3,7 @@ import process from "node:process";
 import lighthouse from "lighthouse";
 import { launch } from "chrome-launcher";
 
-const url = process.env.LIGHTHOUSE_URL || "http://127.0.0.1:4173/DomianShakhty/";
+const url = process.env.LIGHTHOUSE_URL || "http://127.0.0.1:4173/";
 const chrome = await launch({ chromeFlags: ["--headless", "--no-sandbox", "--disable-gpu"] });
 
 try {

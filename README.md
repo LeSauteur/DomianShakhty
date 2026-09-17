@@ -13,19 +13,19 @@ npm run dev
 npm run qa
 ```
 
-Локальный адрес: `http://127.0.0.1:4173/DomianShakhty/`. `dist` генерируется сборкой и не коммитится. Pull request проверяет `.github/workflows/qa.yml`; merge в `main` автоматически публикует `dist` через `.github/workflows/pages.yml`.
+Локальный адрес: `http://127.0.0.1:4173/`. `dist` генерируется сборкой и не коммитится. Pull request проверяет `.github/workflows/qa.yml`; merge в `main` автоматически публикует `dist` через `.github/workflows/pages.yml`.
 
 ## Production-конфигурация
 
 Единственный источник настроек — `site.config.json`:
 
-- `productionOrigin`: текущий подтверждённый адрес `https://lesauteur.github.io/DomianShakhty` без завершающего `/`. От него строятся ссылки, canonical, OpenGraph, sitemap и JSON-LD.
+- `productionOrigin`: подтверждённый в настройках GitHub Pages custom domain `https://xn--80aakqtid1b0a2a0b.xn--p1ai` без завершающего `/`. От него строятся ссылки, canonical, OpenGraph, sitemap и JSON-LD. Адрес `https://lesauteur.github.io/DomianShakhty/` перенаправляется на этот домен.
 - `metrikaId`: числовой ID счётчика Яндекс Метрики или `null`.
 - `ga4Id`: Google Analytics 4 Measurement ID вида `G-XXXXXXXXXX` или `null`.
 - `web3formsAccessKey`: действующий Web3Forms Access Key или `null`. Пока ключа нет, формы заменены прямыми контактами; успешная отправка не имитируется. Ключ доступен в клиентском JS, поэтому нельзя использовать здесь секретные серверные ключи.
 - `googleVerification` и `yandexVerification`: `null` либо объект с `meta` (только значение атрибута `content`) и/или парой `file` + `content` (точные имя HTML-файла и его содержимое, полученные в панели вебмастера). Можно использовать любой поддерживаемый способ подтверждения или оба. После изменения нужна сборка и публикация.
 
-Для Google URL-prefix property используйте текущий полный Pages URL. На проектном пути GitHub Pages `robots.txt` доступен внутри `/DomianShakhty/`; поисковые системы читают основной robots с корня хоста, который управляется GitHub. Индексацию страниц обеспечивает отсутствие запрета в HTML и sitemap по текущему адресу. 404 и `thanks.html` имеют `noindex` и исключены из sitemap.
+Для Google URL-prefix property используйте текущий custom domain. `robots.txt` и `sitemap.xml` публикуются в корне домена. 404 и `thanks.html` имеют `noindex` и исключены из sitemap.
 
 После указания ID Метрика и GA4 предлагают посетителю выбор и загружаются только после согласия; на localhost и URL с query-параметрами они не работают. События ограничены списками имён и параметров в `assets/js/site.js`; URL с пользовательскими параметрами и данные формы в аналитику не передаются. Метрика использует цели `reachGoal`, GA4 — одноимённые события. Возможные цели: `phone_click`, `email_click`, `whatsapp_click`, `telegram_click`, `max_click`, `lead_form_submit_attempt`, `lead_form_success`, `lead_form_error`, `property_card_open`, `project_open`, `construction_interest`.
 

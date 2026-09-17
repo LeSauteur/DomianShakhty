@@ -10,13 +10,13 @@ const config = JSON.parse(fs.readFileSync("site.config.json", "utf8"));
 function read(file) { return fs.readFileSync(path.join(root, file), "utf8"); }
 
 test("production publishes indexable pages and required files", () => {
-  assert.equal(config.productionOrigin, "https://lesauteur.github.io/DomianShakhty");
+  assert.equal(config.productionOrigin, "https://xn--80aakqtid1b0a2a0b.xn--p1ai");
   assert.doesNotMatch(read("robots.txt"), /Disallow:\s*\//u);
-  assert.match(read("robots.txt"), /Sitemap: https:\/\/lesauteur\.github\.io\/DomianShakhty\/sitemap\.xml/u);
-  assert.match(read("sitemap.xml"), /<loc>https:\/\/lesauteur\.github\.io\/DomianShakhty\/<\/loc>/u);
+  assert.ok(read("robots.txt").includes(`Sitemap: ${config.productionOrigin}/sitemap.xml`));
+  assert.ok(read("sitemap.xml").includes(`<loc>${config.productionOrigin}/</loc>`));
   assert.doesNotMatch(read("sitemap.xml"), /(?:404|thanks)\.html/u);
   assert.match(read("index.html"), /name="robots" content="index,follow"/u);
-  assert.match(read("index.html"), /rel="canonical" href="https:\/\/lesauteur\.github\.io\/DomianShakhty\/"/u);
+  assert.ok(read("index.html").includes(`rel="canonical" href="${config.productionOrigin}/"`));
   assert.match(read("404.html"), /name="robots" content="noindex,follow"/u);
   assert.match(read("thanks.html"), /name="robots" content="noindex,follow"/u);
   assert.doesNotMatch(read("thanks.html"), /Ваше обращение отправлено/u);
@@ -67,7 +67,7 @@ test("homepage hero exposes real territory links from central data", () => {
   const home = read("index.html");
   const heroLinks = home.match(/<nav class="hero-locations"[\s\S]*?<\/nav>/u)?.[0] || "";
   for (const location of locations) {
-    assert.match(heroLinks, new RegExp(`href="/DomianShakhty/locations/${location.slug}\\.html">${location.name}</a>`, "u"));
+    assert.match(heroLinks, new RegExp(`href="/locations/${location.slug}\\.html">${location.name}</a>`, "u"));
   }
   assert.equal((heroLinks.match(/<a /gu) || []).length, locations.length);
 });
@@ -80,7 +80,7 @@ test("two-level navigation publishes the full desktop and mobile contract", () =
     assert.match(home, new RegExp(label, "u"));
   }
   for (const route of ["apartments.html", "secondary-apartments.html", "newbuilds.html", "houses.html", "secondary-houses.html", "construction.html", "builder-houses.html", "lands.html", "commercial.html", "garages-parking.html", "sell.html", "valuation.html", "mortgage.html", "team/maria-voronina.html", "contacts.html", "details.html"]) {
-    assert.match(home, new RegExp(`href="/DomianShakhty/${route.replace(".", "\\.")}`, "u"), route);
+    assert.match(home, new RegExp(`href="/${route.replace(".", "\\.")}`, "u"), route);
   }
   assert.doesNotMatch(home, />Аренда</u);
   assert.match(home, /<summary aria-expanded="false"/u);
@@ -383,8 +383,8 @@ test("production rendering keeps the Pages base and adds canonical entity metada
   };
   const html = renderHome(createContext(productionSite, data), data.guides);
   assert.match(html, /name="robots" content="index,follow"/u);
-  assert.match(html, /rel="canonical" href="https:\/\/lesauteur\.github\.io\/DomianShakhty\/"/u);
-  assert.match(html, /property="og:image" content="https:\/\/lesauteur\.github\.io\/DomianShakhty\/assets\/images\/og\.png"/u);
-  assert.match(html, /"@id":"https:\/\/lesauteur\.github\.io\/DomianShakhty\/#organization"/u);
+  assert.ok(html.includes(`rel="canonical" href="${config.productionOrigin}/"`));
+  assert.ok(html.includes(`property="og:image" content="${config.productionOrigin}/assets/images/og.png"`));
+  assert.ok(html.includes(`"@id":"${config.productionOrigin}/#organization"`));
   assert.doesNotMatch(html, /сайт закрыт от индексации/u);
 });

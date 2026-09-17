@@ -98,7 +98,7 @@ test("catalog and detail pages are generated with production SEO", () => {
     assert.ok(fs.existsSync(path.join(dist, file)), file);
     const html = readDist(file);
     assert.match(html, /name="robots" content="index,follow"/u);
-    assert.match(html, /rel="canonical" href="https:\/\/lesauteur\.github\.io\/DomianShakhty\/newbuilds\//u);
+    assert.match(html, /rel="canonical" href="https:\/\/xn--80aakqtid1b0a2a0b\.xn--p1ai\/newbuilds\//u);
     assert.match(html, /"@type":"Service"/u);
     assert.doesNotMatch(html, /"@type":"(?:Product|Offer)"/u);
   }
@@ -107,7 +107,7 @@ test("catalog and detail pages are generated with production SEO", () => {
     assert.ok(fs.existsSync(path.join(dist, file)), file);
     const html = readDist(file);
     assert.match(html, /name="robots" content="index,follow"/u);
-    assert.match(html, /rel="canonical" href="https:\/\/lesauteur\.github\.io\/DomianShakhty\/construction\/projects\//u);
+    assert.match(html, /rel="canonical" href="https:\/\/xn--80aakqtid1b0a2a0b\.xn--p1ai\/construction\/projects\//u);
     assert.match(html, /"@type":"Service"/u);
     assert.doesNotMatch(html, /"@type":"(?:Product|Offer)"/u);
   }
@@ -122,12 +122,12 @@ test("homepage features only complete newbuilds and never promotes archived cons
   for (const slug of newbuildSlugs) {
     const item = newbuilds.items.find((candidate) => candidate.slug === slug);
     assert.equal(item?.completeness.state, "complete", slug);
-    assert.match(home, new RegExp(`href="/DomianShakhty/newbuilds/${slug}\\.html"`, "u"));
+    assert.match(home, new RegExp(`href="/newbuilds/${slug}\\.html"`, "u"));
   }
   const constructionSection = home.match(/data-home-section="construction"[\s\S]*?<\/section>/u)?.[0] || "";
   assert.doesNotMatch(constructionSection, /Архивный ориентир|2023/u);
   for (const slug of constructionSlugs) {
-    assert.match(home, new RegExp(`href="/DomianShakhty/construction/projects/${slug}\\.html"`, "u"));
+    assert.match(home, new RegExp(`href="/construction/projects/${slug}\\.html"`, "u"));
     const item = construction.items.find((candidate) => candidate.slug === slug);
     if (item?.priceStatus !== "dated-confirmed") {
       const card = constructionSection.match(new RegExp(`data-home-construction="${slug}"[\\s\\S]*?<\\/article>`, "u"))?.[0] || "";
