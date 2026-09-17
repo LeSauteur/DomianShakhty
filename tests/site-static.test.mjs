@@ -108,7 +108,7 @@ test("all five location pages contain useful search, editorial content, guides, 
     assert.equal((html.match(/<details><summary>/gu) || []).length, content[location.slug].faq.length);
   }
   assert.match(read("locations/kamenolomni.html"), /data-search-scope="local"[\s\S]*data-listing-id="dom-chistovaya-kamenolomni"/u);
-  assert.doesNotMatch(read("locations/kamenolomni.html"), /data-nearby-section/u);
+  assert.match(read("locations/kamenolomni.html"), /data-nearby-section[\s\S]*data-listing-id="shk-a02-budget-1k"/u);
   assert.match(read("locations/shakhty.html"), /data-search-scope="nearby"[\s\S]*data-listing-id="dom-chistovaya-kamenolomni"/u);
 });
 
@@ -358,11 +358,24 @@ test("listing schema expands types without breaking legacy values", () => {
   for (const legacy of ["new-house", "resale-house", "apartment", "land", "project"]) assert.ok(types.includes(legacy));
   for (const added of ["apartment-secondary", "apartment-newbuild", "house-new", "house-secondary", "house-builder", "commercial", "garage", "parking-space"]) assert.ok(types.includes(added));
   const listings = JSON.parse(fs.readFileSync("src/data/listings.json", "utf8"));
-  assert.equal(listings.length, 1);
-  assert.equal(listings[0].verified, true);
+  assert.equal(listings.length, 26);
+  assert.equal(new Set(listings.map((item) => item.id)).size, listings.length);
+  assert.equal(listings.filter((item) => item.id.startsWith("shk-")).length, 25);
+  assert.ok(listings.every((item) => item.verified === true));
   assert.equal(listings[0].price, 5670000);
   assert.equal(listings[0].location, "kamenolomni");
   assert.ok(fs.existsSync(path.join(root, listings[0].image.src)));
+  for (const item of listings) {
+    for (const image of [item.image, ...(item.gallery || [])]) assert.ok(fs.existsSync(path.join(root, image.src)), image.src);
+  }
+  const mediaManifest = JSON.parse(fs.readFileSync("src/data/listing-media-manifest.json", "utf8"));
+  assert.equal(mediaManifest.length, 25);
+  assert.equal(mediaManifest.filter((item) => item.status === "done").length, 2);
+  assert.equal(mediaManifest.filter((item) => item.status === "pending").length, 23);
+  for (const item of mediaManifest.filter((entry) => entry.status === "done")) {
+    assert.deepEqual(item.files, ["hero.webp", "01.webp", "02.webp", "03.webp", "04.webp"]);
+    for (const file of item.files) assert.ok(fs.existsSync(path.join(root, "assets/images/listings", item.id, file)));
+  }
   assert.deepEqual(JSON.parse(fs.readFileSync("src/data/projects.json", "utf8")), []);
 });
 

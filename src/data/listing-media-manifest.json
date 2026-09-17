@@ -1,0 +1,277 @@
+[
+  {
+    "id": "shk-a01-studio-olymp",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-a02-budget-1k",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-a03-hbk-1k",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-a04-olymp-1k-aogv",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-a05-center-renovated-1k",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-a06-budget-2k",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-a07-hbk-brick-2k",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-a08-aogv-2k",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-a09-sotsgorodok-2k",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-a10-budget-3k",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-a11-hbk-family-3k",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-a12-center-designer-3k",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-a13-aleksandrovskiy-park",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-h01-renovation-house",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-h02-budget-house",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-h03-artem-brick-house",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-h04-garage-house",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-h05-large-modern-house",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-h06-city-designer-house",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-l01-snt-plot",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-l02-budget-izhs",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-l03-artem-izhs",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-l04-peripheral-large-plot",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-l05-serviced-city-plot",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-l06-regular-city-plot",
+    "status": "pending",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  }
+]
