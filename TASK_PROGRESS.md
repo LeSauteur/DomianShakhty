@@ -17,7 +17,7 @@
 
 - Рабочий worktree: `C:\SHAKHTY-listings-25`.
 - Ветка: `codex/shakhty-listings-25`, база `origin/main` @ `2c5db1b87b174cca112f668c38b8eed3d041a530`.
-- Коммит реализации: `b5420b6` (`Add 25 Shakhty property listings and initial media`). Этот checkpoint обновляется отдельным коммитом; PR пока нет.
+- Коммит реализации: `b5420b6` (`Add 25 Shakhty property listings and initial media`). Коммит checkpoint: `194a5d2`; ветка отправлена в `origin`; PR #25: https://github.com/LeSauteur/DomianShakhty/pull/25.
 - Исходный `C:\SHAKHTY` находится на `main` и содержит чужие неотслеживаемые файлы; его не трогать.
 
 # Выполнено
@@ -37,7 +37,7 @@
 - [x] ADDING_LISTING.md готов
 - [x] build PASS
 - [x] qa PASS на финальной версии
-- [ ] PR создан
+- [x] PR создан: https://github.com/LeSauteur/DomianShakhty/pull/25
 - [ ] PR merged / deployment checked
 
 # Изменённые файлы
@@ -113,11 +113,11 @@
 
 # Последнее завершённое действие
 
-Создан коммит реализации `b5420b6` после PASS финального QA (35 статических, 63 браузерных теста, SEO и donor audit).
+Создан PR #25: https://github.com/LeSauteur/DomianShakhty/pull/25. Ветка и коммиты реализации доступны в origin.
 
 # Следующее действие
 
-Выполнить `git push -u origin codex/shakhty-listings-25`, затем `gh pr create --base main --head codex/shakhty-listings-25`.
+Дождаться зелёных проверок PR #25 командой `gh pr checks 25 --watch --interval 10`, затем выполнить штатный merge.
 
 # Проверки
 
