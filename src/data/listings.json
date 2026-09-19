@@ -781,12 +781,37 @@
     "landArea": 14,
     "material": "камень",
     "image": {
-      "src": "assets/images/editorial/secondary-houses-street-960.webp",
-      "alt": "Изображение категории частных домов",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-h01-renovation-house/hero.webp",
+      "alt": "Фасад дома под чистовую отделку в Даниловке",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-h01-renovation-house/01.webp",
+        "alt": "Участок и двор дома в Даниловке",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-h01-renovation-house/02.webp",
+        "alt": "Гостиная дома под чистовую отделку",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-h01-renovation-house/03.webp",
+        "alt": "Кухня дома под чистовую отделку",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-h01-renovation-house/04.webp",
+        "alt": "Задняя часть участка дома в Даниловке",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-h02-budget-house",
@@ -812,12 +837,37 @@
     "area": 58,
     "landArea": 12,
     "image": {
-      "src": "assets/images/editorial/secondary-houses-street-960.webp",
-      "alt": "Изображение категории частных домов",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-h02-budget-house/hero.webp",
+      "alt": "Фасад жилого дома в Киреевке",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-h02-budget-house/01.webp",
+        "alt": "Гостиная дома в Киреевке",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-h02-budget-house/02.webp",
+        "alt": "Спальня дома в Киреевке",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-h02-budget-house/03.webp",
+        "alt": "Кухня дома в Киреевке",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-h02-budget-house/04.webp",
+        "alt": "Задний двор и участок дома в Киреевке",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-h03-artem-brick-house",
@@ -844,12 +894,37 @@
     "landArea": 9,
     "material": "кирпич",
     "image": {
-      "src": "assets/images/editorial/secondary-houses-street-960.webp",
-      "alt": "Изображение категории частных домов",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-h03-artem-brick-house/hero.webp",
+      "alt": "Фасад кирпичного дома в районе Артём",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-h03-artem-brick-house/01.webp",
+        "alt": "Гостиная кирпичного дома в районе Артём",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-h03-artem-brick-house/02.webp",
+        "alt": "Кухня кирпичного дома в районе Артём",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-h03-artem-brick-house/03.webp",
+        "alt": "Спальня кирпичного дома в районе Артём",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-h03-artem-brick-house/04.webp",
+        "alt": "Двор и хозяйственная постройка дома в районе Артём",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-h04-garage-house",
@@ -876,12 +951,37 @@
     "area": 108,
     "landArea": 8,
     "image": {
-      "src": "assets/images/editorial/secondary-houses-street-960.webp",
-      "alt": "Изображение категории частных домов",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-h04-garage-house/hero.webp",
+      "alt": "Фасад дома с гаражом в районе Фрунзе",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-h04-garage-house/01.webp",
+        "alt": "Гостиная дома с гаражом",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-h04-garage-house/02.webp",
+        "alt": "Кухня дома с гаражом",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-h04-garage-house/03.webp",
+        "alt": "Спальня дома с гаражом",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-h04-garage-house/04.webp",
+        "alt": "Двор, гараж и летняя кухня",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-h05-large-modern-house",
@@ -908,12 +1008,37 @@
     "area": 148,
     "landArea": 15,
     "image": {
-      "src": "assets/images/editorial/secondary-houses-street-960.webp",
-      "alt": "Изображение категории частных домов",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-h05-large-modern-house/hero.webp",
+      "alt": "Фасад большого современного дома в районе Фрунзе",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-h05-large-modern-house/01.webp",
+        "alt": "Гостиная большого современного дома",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-h05-large-modern-house/02.webp",
+        "alt": "Кухня-столовая большого современного дома",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-h05-large-modern-house/03.webp",
+        "alt": "Спальня большого современного дома",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-h05-large-modern-house/04.webp",
+        "alt": "Участок и хозяйственная зона большого дома",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-h06-city-designer-house",
@@ -939,12 +1064,37 @@
     "area": 126,
     "landArea": 6,
     "image": {
-      "src": "assets/images/editorial/secondary-houses-street-960.webp",
-      "alt": "Изображение категории частных домов",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-h06-city-designer-house/hero.webp",
+      "alt": "Фасад дома с дизайнерским ремонтом и гаражом",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-h06-city-designer-house/01.webp",
+        "alt": "Гостиная дома с дизайнерским ремонтом",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-h06-city-designer-house/02.webp",
+        "alt": "Кухня-столовая дома с дизайнерским ремонтом",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-h06-city-designer-house/03.webp",
+        "alt": "Спальня дома с дизайнерским ремонтом",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-h06-city-designer-house/04.webp",
+        "alt": "Гараж и двор городского дома",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-l01-snt-plot",
@@ -968,12 +1118,37 @@
     "updatedAt": "2026-09-17",
     "landArea": 5.5,
     "image": {
-      "src": "assets/images/editorial/land-plot-izhs-960.webp",
-      "alt": "Изображение категории земельных участков",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-l01-snt-plot/hero.webp",
+      "alt": "Участок 5,5 сотки в СНТ «Коммунар»",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-l01-snt-plot/01.webp",
+        "alt": "Вид участка в СНТ «Коммунар» от дальней границы",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-l01-snt-plot/02.webp",
+        "alt": "Въезд и подъезд к участку в СНТ «Коммунар»",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-l01-snt-plot/03.webp",
+        "alt": "Газ и электричество по границе участка в СНТ «Коммунар»",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-l01-snt-plot/04.webp",
+        "alt": "Границы и глубина участка в СНТ «Коммунар»",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-l02-budget-izhs",
@@ -997,12 +1172,37 @@
     "updatedAt": "2026-09-17",
     "landArea": 6,
     "image": {
-      "src": "assets/images/editorial/land-plot-izhs-960.webp",
-      "alt": "Изображение категории земельных участков",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-l02-budget-izhs/hero.webp",
+      "alt": "Участок ИЖС 6 соток в районе Южная",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-l02-budget-izhs/01.webp",
+        "alt": "Участок в районе Южная от дальней границы",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-l02-budget-izhs/02.webp",
+        "alt": "Подъезд к участку в районе Южная",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-l02-budget-izhs/03.webp",
+        "alt": "Газ и электричество рядом с участком в районе Южная",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-l02-budget-izhs/04.webp",
+        "alt": "Границы участка ИЖС в районе Южная",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-l03-artem-izhs",
@@ -1026,12 +1226,37 @@
     "updatedAt": "2026-09-17",
     "landArea": 8,
     "image": {
-      "src": "assets/images/editorial/land-plot-izhs-960.webp",
-      "alt": "Изображение категории земельных участков",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-l03-artem-izhs/hero.webp",
+      "alt": "Участок ИЖС 8 соток в районе Артём",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-l03-artem-izhs/01.webp",
+        "alt": "Участок в районе Артём от дальней границы",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-l03-artem-izhs/02.webp",
+        "alt": "Подъезд к участку в районе Артём",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-l03-artem-izhs/03.webp",
+        "alt": "Коммуникации рядом с участком в районе Артём",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-l03-artem-izhs/04.webp",
+        "alt": "Границы и глубина участка в районе Артём",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-l04-peripheral-large-plot",
@@ -1055,12 +1280,37 @@
     "updatedAt": "2026-09-17",
     "landArea": 12,
     "image": {
-      "src": "assets/images/editorial/land-plot-izhs-960.webp",
-      "alt": "Изображение категории земельных участков",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-l04-peripheral-large-plot/hero.webp",
+      "alt": "Большой участок ИЖС 12 соток на окраине Шахт",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-l04-peripheral-large-plot/01.webp",
+        "alt": "Вид большого участка от дальней границы",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-l04-peripheral-large-plot/02.webp",
+        "alt": "Подъезд к большому участку на окраине Шахт",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-l04-peripheral-large-plot/03.webp",
+        "alt": "Коммуникации рядом с большим участком",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-l04-peripheral-large-plot/04.webp",
+        "alt": "Границы и глубина участка 12 соток",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-l05-serviced-city-plot",
@@ -1085,12 +1335,37 @@
     "updatedAt": "2026-09-17",
     "landArea": 6,
     "image": {
-      "src": "assets/images/editorial/land-plot-izhs-960.webp",
-      "alt": "Изображение категории земельных участков",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-l05-serviced-city-plot/hero.webp",
+      "alt": "Участок ИЖС 6 соток с коммуникациями в Шахтах",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-l05-serviced-city-plot/01.webp",
+        "alt": "Городской участок от дальней границы",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-l05-serviced-city-plot/02.webp",
+        "alt": "Асфальтированный подъезд к городскому участку",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-l05-serviced-city-plot/03.webp",
+        "alt": "Газ, электричество и вода на городском участке",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-l05-serviced-city-plot/04.webp",
+        "alt": "Границы городского участка с коммуникациями",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-l06-regular-city-plot",
@@ -1115,11 +1390,36 @@
     "updatedAt": "2026-09-17",
     "landArea": 6.5,
     "image": {
-      "src": "assets/images/editorial/land-plot-izhs-960.webp",
-      "alt": "Изображение категории земельных участков",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-l06-regular-city-plot/hero.webp",
+      "alt": "Прямоугольный участок ИЖС 6,5 сотки в Шахтах",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-l06-regular-city-plot/01.webp",
+        "alt": "Участок 6,5 сотки от дальней границы",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-l06-regular-city-plot/02.webp",
+        "alt": "Подъезд к прямоугольному городскому участку",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-l06-regular-city-plot/03.webp",
+        "alt": "Вода и электричество на участке, газ по границе",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-l06-regular-city-plot/04.webp",
+        "alt": "Форма и границы участка 6,5 сотки",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   }
 ]
