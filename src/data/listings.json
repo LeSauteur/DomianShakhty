@@ -349,12 +349,37 @@
     "area": 45,
     "rooms": 2,
     "image": {
-      "src": "assets/images/editorial/secondary-apartment-960.webp",
-      "alt": "Изображение категории вторичных квартир",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-a06-budget-2k/hero.webp",
+      "alt": "Продаётся 2-комнатная квартира в Шахтах: гостиная",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-a06-budget-2k/01.webp",
+        "alt": "Спальня 2-комнатной квартиры на Машиносчётной",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a06-budget-2k/02.webp",
+        "alt": "Кухня 2-комнатной квартиры на Машиносчётной",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a06-budget-2k/03.webp",
+        "alt": "Санузел 2-комнатной квартиры на Машиносчётной",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a06-budget-2k/04.webp",
+        "alt": "Прихожая 2-комнатной квартиры на Машиносчётной",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-a07-hbk-brick-2k",
@@ -378,12 +403,37 @@
     "rooms": 2,
     "material": "кирпич",
     "image": {
-      "src": "assets/images/editorial/secondary-apartment-960.webp",
-      "alt": "Изображение категории вторичных квартир",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-a07-hbk-brick-2k/hero.webp",
+      "alt": "Продаётся 2-комнатная квартира в районе ХБК: гостиная",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-a07-hbk-brick-2k/01.webp",
+        "alt": "Спальня 2-комнатной квартиры в районе ХБК",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a07-hbk-brick-2k/02.webp",
+        "alt": "Кухня 2-комнатной квартиры в районе ХБК",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a07-hbk-brick-2k/03.webp",
+        "alt": "Застеклённый балкон квартиры в районе ХБК",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a07-hbk-brick-2k/04.webp",
+        "alt": "Кирпичный дом с квартирой в районе ХБК",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-a08-aogv-2k",
@@ -406,12 +456,37 @@
     "area": 44,
     "rooms": 2,
     "image": {
-      "src": "assets/images/editorial/secondary-apartment-960.webp",
-      "alt": "Изображение категории вторичных квартир",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-a08-aogv-2k/hero.webp",
+      "alt": "Продаётся 2-комнатная квартира с АОГВ: гостиная",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-a08-aogv-2k/01.webp",
+        "alt": "Спальня 2-комнатной квартиры с АОГВ",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a08-aogv-2k/02.webp",
+        "alt": "Кухня с индивидуальным газовым отоплением",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a08-aogv-2k/03.webp",
+        "alt": "Санузел 2-комнатной квартиры с АОГВ",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a08-aogv-2k/04.webp",
+        "alt": "Прихожая 2-комнатной квартиры с АОГВ",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-a09-sotsgorodok-2k",
@@ -434,12 +509,37 @@
     "area": 42,
     "rooms": 2,
     "image": {
-      "src": "assets/images/editorial/secondary-apartment-960.webp",
-      "alt": "Изображение категории вторичных квартир",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-a09-sotsgorodok-2k/hero.webp",
+      "alt": "Продаётся 2-комнатная квартира в Соцгородке: гостиная",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-a09-sotsgorodok-2k/01.webp",
+        "alt": "Спальня 2-комнатной квартиры в Соцгородке",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a09-sotsgorodok-2k/02.webp",
+        "alt": "Кухня 2-комнатной квартиры в Соцгородке",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a09-sotsgorodok-2k/03.webp",
+        "alt": "Санузел 2-комнатной квартиры в Соцгородке",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a09-sotsgorodok-2k/04.webp",
+        "alt": "Прихожая 2-комнатной квартиры в Соцгородке",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-a10-budget-3k",
