@@ -374,6 +374,35 @@ test("homepage catalog showcases stay compact, truthful and link to imported det
   }
 });
 
+test("desktop hot offers remain wide and readable", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("");
+  const grid = page.locator(".home-hot-offers__grid");
+  await grid.scrollIntoViewIfNeeded();
+  const layout = await grid.evaluate((node) => {
+    const cards = [...node.querySelectorAll(".listing-card--hot")];
+    return {
+      columns: getComputedStyle(node).gridTemplateColumns.split(" ").length,
+      cards: cards.map((card) => {
+        const cardRect = card.getBoundingClientRect();
+        const mediaRect = card.querySelector(".listing-card__media").getBoundingClientRect();
+        const bodyRect = card.querySelector(".listing-card__body").getBoundingClientRect();
+        return {
+          width: cardRect.width,
+          height: cardRect.height,
+          mediaWidth: mediaRect.width,
+          bodyWidth: bodyRect.width
+        };
+      })
+    };
+  });
+  expect(layout.columns).toBe(1);
+  expect(layout.cards).toHaveLength(3);
+  expect(layout.cards.every((card) => card.width > 1000)).toBe(true);
+  expect(layout.cards.every((card) => card.height < 650)).toBe(true);
+  expect(layout.cards.every((card) => card.mediaWidth > 500 && card.bodyWidth > 360)).toBe(true);
+});
+
 test("mobile property cards form a two-column grid without horizontal scrolling", async ({ page }) => {
   await page.setViewportSize({ width: 400, height: 824 });
   await page.goto("");
