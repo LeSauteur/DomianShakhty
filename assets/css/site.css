@@ -5740,8 +5740,12 @@ body[data-page-type="home"] .hero-media__picture {
 }
 
 @media (max-width: 600px) {
+  .page-hero:has(.hero-media) .page-hero__copy {
+    min-width: 0;
+  }
+
   .page-hero:has(.hero-media) h1 {
-    font-size: clamp(2.75rem, 13vw, 4.2rem);
+    font-size: clamp(2.25rem, 10.5vw, 3.5rem);
   }
 
   .page-hero:has(.hero-media) .hero-lead {

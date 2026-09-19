@@ -63,6 +63,23 @@ test("new listing hero images load without overflow on desktop and mobile", asyn
   }
 });
 
+test("valuation hero text and actions stay inside narrow mobile viewports", async ({ page }) => {
+  for (const viewport of [{ width: 320, height: 720 }, { width: 390, height: 844 }]) {
+    await page.setViewportSize(viewport);
+    await page.goto("valuation.html");
+    const clientWidth = await page.evaluate(() => document.documentElement.clientWidth);
+    for (const selector of [".page-hero h1", ".page-hero .hero-actions", ".page-hero .hero-actions .button"]) {
+      for (const box of await page.locator(selector).evaluateAll((nodes) => nodes.map((node) => {
+        const rect = node.getBoundingClientRect();
+        return { left: rect.left, right: rect.right };
+      }))) {
+        expect(box.left, `${selector} left at ${viewport.width}px`).toBeGreaterThanOrEqual(0);
+        expect(box.right, `${selector} right at ${viewport.width}px`).toBeLessThanOrEqual(clientWidth + 1);
+      }
+    }
+  }
+});
+
 test("mobile drawer opens, traps focus and closes with Escape", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("");
