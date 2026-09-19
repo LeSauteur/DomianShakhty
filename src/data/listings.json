@@ -78,12 +78,37 @@
     "area": 27,
     "rooms": 0,
     "image": {
-      "src": "assets/images/editorial/secondary-apartment-960.webp",
-      "alt": "Изображение категории вторичных квартир",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-a01-studio-olymp/hero.webp",
+      "alt": "Продаётся студия в районе Олимпийский: общий вид",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-a01-studio-olymp/01.webp",
+        "alt": "Студия в районе Олимпийский: вид в сторону кухни и прихожей",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a01-studio-olymp/02.webp",
+        "alt": "Жилая зона студии в районе Олимпийский",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a01-studio-olymp/03.webp",
+        "alt": "Кухонная зона студии в районе Олимпийский",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a01-studio-olymp/04.webp",
+        "alt": "Санузел студии в районе Олимпийский",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-a02-budget-1k",
@@ -217,12 +242,37 @@
     "area": 36,
     "rooms": 1,
     "image": {
-      "src": "assets/images/editorial/secondary-apartment-960.webp",
-      "alt": "Изображение категории вторичных квартир",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-a04-olymp-1k-aogv/hero.webp",
+      "alt": "Продаётся 1-комнатная квартира в Олимпийском: жилая комната",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-a04-olymp-1k-aogv/01.webp",
+        "alt": "Жилая комната квартиры в Олимпийском: обратный ракурс",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a04-olymp-1k-aogv/02.webp",
+        "alt": "Кухня с индивидуальным газовым отоплением в квартире",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a04-olymp-1k-aogv/03.webp",
+        "alt": "Прихожая 1-комнатной квартиры в Олимпийском",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a04-olymp-1k-aogv/04.webp",
+        "alt": "Санузел 1-комнатной квартиры в Олимпийском",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-a05-center-renovated-1k",
@@ -246,12 +296,37 @@
     "rooms": 1,
     "material": "кирпич",
     "image": {
-      "src": "assets/images/editorial/secondary-apartment-960.webp",
-      "alt": "Изображение категории вторичных квартир",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-a05-center-renovated-1k/hero.webp",
+      "alt": "Продаётся 1-комнатная квартира в Центре: жилая комната",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-a05-center-renovated-1k/01.webp",
+        "alt": "Жилая комната с рабочей зоной в квартире в Центре",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a05-center-renovated-1k/02.webp",
+        "alt": "Кухня 1-комнатной квартиры в Центре",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a05-center-renovated-1k/03.webp",
+        "alt": "Санузел 1-комнатной квартиры в Центре",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a05-center-renovated-1k/04.webp",
+        "alt": "Кирпичный дом с квартирой в центральной части Шахт",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-a06-budget-2k",
