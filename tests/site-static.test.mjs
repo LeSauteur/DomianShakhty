@@ -370,8 +370,8 @@ test("listing schema expands types without breaking legacy values", () => {
   }
   const mediaManifest = JSON.parse(fs.readFileSync("src/data/listing-media-manifest.json", "utf8"));
   assert.equal(mediaManifest.length, 25);
-  assert.equal(mediaManifest.filter((item) => item.status === "done").length, 9);
-  assert.equal(mediaManifest.filter((item) => item.status === "pending").length, 16);
+  assert.equal(mediaManifest.filter((item) => item.status === "done").length, 13);
+  assert.equal(mediaManifest.filter((item) => item.status === "pending").length, 12);
   for (const item of mediaManifest.filter((entry) => entry.status === "done")) {
     assert.deepEqual(item.files, ["hero.webp", "01.webp", "02.webp", "03.webp", "04.webp"]);
     for (const file of item.files) assert.ok(fs.existsSync(path.join(root, "assets/images/listings", item.id, file)));

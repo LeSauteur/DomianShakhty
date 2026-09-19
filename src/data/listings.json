@@ -562,12 +562,37 @@
     "area": 58,
     "rooms": 3,
     "image": {
-      "src": "assets/images/editorial/secondary-apartment-960.webp",
-      "alt": "Изображение категории вторичных квартир",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-a10-budget-3k/hero.webp",
+      "alt": "Гостиная 3-комнатной квартиры в районе Машиносчётная",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-a10-budget-3k/01.webp",
+        "alt": "Спальня 3-комнатной квартиры в районе Машиносчётная",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a10-budget-3k/02.webp",
+        "alt": "Вторая спальня 3-комнатной квартиры в районе Машиносчётная",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a10-budget-3k/03.webp",
+        "alt": "Кухня 3-комнатной квартиры в районе Машиносчётная",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a10-budget-3k/04.webp",
+        "alt": "Санузел 3-комнатной квартиры в районе Машиносчётная",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-a11-hbk-family-3k",
@@ -590,12 +615,37 @@
     "area": 62,
     "rooms": 3,
     "image": {
-      "src": "assets/images/editorial/secondary-apartment-960.webp",
-      "alt": "Изображение категории вторичных квартир",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-a11-hbk-family-3k/hero.webp",
+      "alt": "Гостиная 3-комнатной квартиры в районе ХБК",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-a11-hbk-family-3k/01.webp",
+        "alt": "Спальня 3-комнатной квартиры в районе ХБК",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a11-hbk-family-3k/02.webp",
+        "alt": "Детская комната 3-комнатной квартиры в районе ХБК",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a11-hbk-family-3k/03.webp",
+        "alt": "Кухня 3-комнатной квартиры в районе ХБК",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a11-hbk-family-3k/04.webp",
+        "alt": "Санузел 3-комнатной квартиры в районе ХБК",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-a12-center-designer-3k",
@@ -618,12 +668,37 @@
     "area": 72,
     "rooms": 3,
     "image": {
-      "src": "assets/images/editorial/secondary-apartment-960.webp",
-      "alt": "Изображение категории вторичных квартир",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-a12-center-designer-3k/hero.webp",
+      "alt": "Гостиная 3-комнатной квартиры в Центре Шахт",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-a12-center-designer-3k/01.webp",
+        "alt": "Спальня 3-комнатной квартиры в Центре Шахт",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a12-center-designer-3k/02.webp",
+        "alt": "Кабинет и гостевая комната квартиры в Центре Шахт",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a12-center-designer-3k/03.webp",
+        "alt": "Кухня 3-комнатной квартиры в Центре Шахт",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a12-center-designer-3k/04.webp",
+        "alt": "Санузел 3-комнатной квартиры в Центре Шахт",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-a13-aleksandrovskiy-park",
@@ -649,12 +724,37 @@
     "floors": 6,
     "builder": "СЗ ЖК Александровский Парк",
     "image": {
-      "src": "assets/images/editorial/category-new-buildings-960.webp",
-      "alt": "Изображение категории новостроек",
-      "width": 960,
-      "height": 720
+      "src": "assets/images/listings/shk-a13-aleksandrovskiy-park/hero.webp",
+      "alt": "Фасад ЖК «Александровский Парк» в Шахтах",
+      "width": 1200,
+      "height": 900
     },
-    "gallery": []
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-a13-aleksandrovskiy-park/01.webp",
+        "alt": "Двор без машин в ЖК «Александровский Парк»",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a13-aleksandrovskiy-park/02.webp",
+        "alt": "Входная группа ЖК «Александровский Парк»",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a13-aleksandrovskiy-park/03.webp",
+        "alt": "Подземный паркинг ЖК «Александровский Парк»",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "assets/images/listings/shk-a13-aleksandrovskiy-park/04.webp",
+        "alt": "Вход и лоджии ЖК «Александровский Парк»",
+        "width": 1200,
+        "height": 900
+      }
+    ]
   },
   {
     "id": "shk-h01-renovation-house",
