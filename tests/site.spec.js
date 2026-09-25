@@ -492,6 +492,8 @@ test("construction catalog exposes only build-to-order projects", async ({ page 
   await expect(page.locator("[data-product-card]")).toHaveCount(26);
   await expect(page.locator("[data-product-card]").first()).toContainText("Дом под ключ 80 м² с тремя спальнями");
   await expect(page.locator("main")).not.toContainText("Дом под чистовую отделку в центре Каменоломней");
+  await expect(page.locator('select[name="builder"]')).toHaveCount(0);
+  await expect(page.locator("main")).not.toContainText(/ДоманСтрой|Эквита|Партнёрская подборка|\bDS-\d|\bEQ-\d/u);
   const media = await page.locator(".product-card__media").first().evaluate((node) => {
     const image = node.querySelector("img");
     const box = image.getBoundingClientRect();
@@ -499,6 +501,39 @@ test("construction catalog exposes only build-to-order projects", async ({ page 
   });
   expect(media.ratio).toBeCloseTo(4 / 3, 2);
   expect(media.currentSrc).toMatch(/-(?:640|960|1440)\.webp$/u);
+
+  const partnerCards = page.locator('.construction-product-card:has(a[href*="partner-house-"])');
+  await expect(partnerCards).toHaveCount(15);
+  for (const image of await partnerCards.locator("img").all()) {
+    await image.scrollIntoViewIfNeeded();
+    const state = await image.evaluate((node) => ({ complete: node.complete, naturalWidth: node.naturalWidth, currentSrc: node.currentSrc }));
+    expect(state.complete).toBe(true);
+    expect(state.naturalWidth).toBeGreaterThan(0);
+    expect(state.currentSrc).toMatch(/\.webp$/u);
+  }
+});
+
+test("catalog detail hero images keep a bounded aspect ratio", async ({ page }) => {
+  for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
+    await page.setViewportSize(viewport);
+    for (const pathname of ["construction/projects/partner-house-0750.html", "newbuilds/gray.html"]) {
+      await page.goto(pathname);
+      const media = page.locator(".catalog-detail__media");
+      const image = media.locator("img");
+      await expect(image).toBeVisible();
+      const state = await media.evaluate((node) => {
+        const rect = node.getBoundingClientRect();
+        const imageNode = node.querySelector("img");
+        return { height: rect.height, width: rect.width, complete: imageNode.complete, naturalWidth: imageNode.naturalWidth };
+      });
+      expect(state.complete, pathname).toBe(true);
+      expect(state.naturalWidth, pathname).toBeGreaterThan(0);
+      expect(state.height, `${pathname} at ${viewport.width}px`).toBeLessThan(viewport.height * 0.75);
+      expect(state.width / state.height, pathname).toBeGreaterThan(1.2);
+      const h1 = await page.locator("h1").boundingBox();
+      expect(h1.y, `${pathname} title at ${viewport.width}px`).toBeLessThan(viewport.height);
+    }
+  }
 });
 
 test("matched built-house galleries load full-resolution photos without layout overflow", async ({ page }) => {
@@ -564,11 +599,34 @@ test("newbuild and construction filters update the catalog without hiding missin
   await expect(page.locator("[data-product-count]")).toHaveText("78");
 
   await page.goto("construction.html");
-  await page.locator('select[name="builder"]').selectOption("domanstroy");
-  await expect(page.locator("[data-product-count]")).toHaveText("7");
+  await expect(page.locator('select[name="builder"]')).toHaveCount(0);
+  await page.locator('select[name="area"]').selectOption("130-9999");
+  const largeProjects = Number(await page.locator("[data-product-count]").textContent());
+  expect(largeProjects).toBeGreaterThan(0);
+  expect(largeProjects).toBeLessThan(26);
   await page.locator('select[name="floors"]').selectOption("2");
-  expect(Number(await page.locator("[data-product-count]").textContent())).toBeLessThanOrEqual(7);
-  await expect(page.locator("main")).toContainText(/Архивный ориентир|Расчёт по запросу|Стоимость комплектации/u);
+  expect(Number(await page.locator("[data-product-count]").textContent())).toBeLessThanOrEqual(largeProjects);
+  await expect(page.locator("main")).toContainText(/Предварительный ориентир|Расчёт по запросу|Комплектация/u);
+});
+
+test("primary customer journeys fit all requested audit viewports", async ({ page }) => {
+  const paths = ["", "apartments.html", "listings/shk-a01-studio-olymp.html", "houses.html", "lands.html", "newbuilds.html", "construction.html", "sell.html", "valuation.html", "services.html", "team/index.html", "contacts.html"];
+  const viewports = [
+    { width: 360, height: 800 },
+    { width: 390, height: 844 },
+    { width: 412, height: 915 },
+    { width: 1366, height: 768 },
+    { width: 1440, height: 900 }
+  ];
+  for (const viewport of viewports) {
+    await page.setViewportSize(viewport);
+    for (const pathname of paths) {
+      await page.goto(pathname);
+      await expect(page.locator("h1")).toBeVisible();
+      const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
+      expect(dimensions.scroll, `${pathname || "home"} at ${viewport.width}px`).toBeLessThanOrEqual(dimensions.client + 1);
+    }
+  }
 });
 
 test("catalog imagery loads responsive WebP at required viewports", async ({ page }) => {

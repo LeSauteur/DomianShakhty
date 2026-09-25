@@ -98,6 +98,21 @@ test("public catalog pages omit internal source and presentation notes", () => {
   assert.doesNotMatch(pages, /Обезличенная партнёрская презентация|Партнёрская презентация|Происхождение данных|Материалы проекта, не оферта|Источник и актуальность|Официальный источник|Документ:\s|по данным источника|первичном источнике|по расчёту презентации|Ориентир из презентации/iu);
 });
 
+test("construction pages do not expose builders, internal codes or source labels", () => {
+  const files = ["index.html", "construction.html", ...construction.items.map((item) => `construction/projects/${item.slug}.html`)];
+  const forbidden = /ДоманСтрой|Эквита|Партнёрская подборка|\bDS-\d|\bEQ-\d|\bВариант\s+\d|источник(?:и|а|е|ом)?\s+проект/iu;
+  for (const file of files) {
+    const html = readDist(file);
+    const visibleText = html
+      .replace(/<script\b[^>]*>[\s\S]*?<\/script>/giu, " ")
+      .replace(/<style\b[^>]*>[\s\S]*?<\/style>/giu, " ")
+      .replace(/<[^>]+>/gu, " ");
+    const imageAlts = [...html.matchAll(/\salt="([^"]*)"/gu)].map((match) => match[1]).join(" ");
+    const description = html.match(/<meta name="description" content="([^"]*)"/u)?.[1] || "";
+    assert.doesNotMatch([visibleText, imageAlts, description].join("\n"), forbidden, file);
+  }
+});
+
 test("partner house cards are anonymized and use the supplied presentation values", () => {
   const partnerItems = construction.items.filter((item) => item.builderId === "partner-selection");
   assert.equal(partnerItems.length, 15);
