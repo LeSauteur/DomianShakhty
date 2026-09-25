@@ -5,7 +5,7 @@
   "items": [
     {
       "id": "ds-80",
-      "slug": "domanstroy-ds-80",
+      "slug": "dom-pod-klyuch-80m2-tri-spalni",
       "builderId": "domanstroy",
       "builder": "ДоманСтрой",
       "title": "Дом под ключ 80 м² с тремя спальнями",
@@ -46,20 +46,20 @@
         "Адаптацию проекта и смету"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/domanstroy-ds-80/facade-1200.webp",
+        "src": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/facade-1200.webp",
         "width": 1200,
         "height": 800,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-80/facade-640.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/facade-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-80/facade-960.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/facade-960.webp",
             "width": 960
           },
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-80/facade-1200.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/facade-1200.webp",
             "width": 1200
           }
         ],
@@ -67,40 +67,40 @@
       },
       "gallery": [
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-80/facade-1200.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/facade-1200.webp",
           "width": 1200,
           "height": 800,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-80/facade-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/facade-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-80/facade-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/facade-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-80/facade-1200.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/facade-1200.webp",
               "width": 1200
             }
           ],
           "alt": "Проект DS-80: вид 1"
         },
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-80/facade-2-1200.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/facade-2-1200.webp",
           "width": 1200,
           "height": 800,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-80/facade-2-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/facade-2-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-80/facade-2-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/facade-2-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-80/facade-2-1200.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/facade-2-1200.webp",
               "width": 1200
             }
           ],
@@ -109,20 +109,20 @@
       ],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-80/plan-986.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/plan-986.webp",
           "width": 986,
           "height": 1400,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-80/plan-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-80/plan-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-80/plan-986.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/plan-986.webp",
               "width": 986
             }
           ],
@@ -136,7 +136,7 @@
     },
     {
       "id": "ds-85-5",
-      "slug": "domanstroy-ds-85-5",
+      "slug": "dom-pod-klyuch-85m2-dva-sanuzla",
       "builderId": "domanstroy",
       "builder": "ДоманСтрой",
       "title": "Дом под ключ 85 м² с двумя санузлами",
@@ -177,20 +177,20 @@
         "Адаптацию проекта и смету"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/domanstroy-ds-85-5/facade-1200.webp",
+        "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-1200.webp",
         "width": 1200,
         "height": 800,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-85-5/facade-640.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-85-5/facade-960.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-960.webp",
             "width": 960
           },
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-85-5/facade-1200.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-1200.webp",
             "width": 1200
           }
         ],
@@ -198,40 +198,40 @@
       },
       "gallery": [
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-85-5/facade-1200.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-1200.webp",
           "width": 1200,
           "height": 800,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-85-5/facade-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-85-5/facade-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-85-5/facade-1200.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-1200.webp",
               "width": 1200
             }
           ],
           "alt": "Проект DS-85(5): вид 1"
         },
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-85-5/facade-2-1200.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-2-1200.webp",
           "width": 1200,
           "height": 800,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-85-5/facade-2-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-2-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-85-5/facade-2-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-2-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-85-5/facade-2-1200.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-2-1200.webp",
               "width": 1200
             }
           ],
@@ -240,20 +240,20 @@
       ],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-85-5/plan-1440.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/plan-1440.webp",
           "width": 1440,
           "height": 1251,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-85-5/plan-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-85-5/plan-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-85-5/plan-1440.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/plan-1440.webp",
               "width": 1440
             }
           ],
@@ -267,7 +267,7 @@
     },
     {
       "id": "ds-85",
-      "slug": "domanstroy-ds-85",
+      "slug": "dom-pod-klyuch-85m2-kuhnya-gostinaya",
       "builderId": "domanstroy",
       "builder": "ДоманСтрой",
       "title": "Дом под ключ 85 м² с кухней-гостиной",
@@ -308,20 +308,20 @@
         "Адаптацию проекта и смету"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/domanstroy-ds-85/facade-1200.webp",
+        "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/facade-1200.webp",
         "width": 1200,
         "height": 800,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-85/facade-640.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/facade-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-85/facade-960.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/facade-960.webp",
             "width": 960
           },
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-85/facade-1200.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/facade-1200.webp",
             "width": 1200
           }
         ],
@@ -329,40 +329,40 @@
       },
       "gallery": [
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-85/facade-1200.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/facade-1200.webp",
           "width": 1200,
           "height": 800,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-85/facade-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/facade-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-85/facade-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/facade-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-85/facade-1200.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/facade-1200.webp",
               "width": 1200
             }
           ],
           "alt": "Проект DS-85: вид 1"
         },
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-85/facade-2-1200.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/facade-2-1200.webp",
           "width": 1200,
           "height": 800,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-85/facade-2-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/facade-2-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-85/facade-2-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/facade-2-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-85/facade-2-1200.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/facade-2-1200.webp",
               "width": 1200
             }
           ],
@@ -371,20 +371,20 @@
       ],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-85/plan-1120.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/plan-1120.webp",
           "width": 1120,
           "height": 1400,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-85/plan-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-85/plan-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-85/plan-1120.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/plan-1120.webp",
               "width": 1120
             }
           ],
@@ -398,7 +398,7 @@
     },
     {
       "id": "ds-115",
-      "slug": "domanstroy-ds-115",
+      "slug": "dom-pod-klyuch-115m2-kuhnya-i-gostinaya",
       "builderId": "domanstroy",
       "builder": "ДоманСтрой",
       "title": "Дом под ключ 115 м² с отдельной кухней и гостиной",
@@ -439,20 +439,20 @@
         "Адаптацию проекта и смету"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/domanstroy-ds-115/facade-1200.webp",
+        "src": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/facade-1200.webp",
         "width": 1200,
         "height": 800,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-115/facade-640.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/facade-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-115/facade-960.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/facade-960.webp",
             "width": 960
           },
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-115/facade-1200.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/facade-1200.webp",
             "width": 1200
           }
         ],
@@ -460,40 +460,40 @@
       },
       "gallery": [
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-115/facade-1200.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/facade-1200.webp",
           "width": 1200,
           "height": 800,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-115/facade-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/facade-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-115/facade-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/facade-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-115/facade-1200.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/facade-1200.webp",
               "width": 1200
             }
           ],
           "alt": "Проект DS-115: вид 1"
         },
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-115/facade-2-1200.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/facade-2-1200.webp",
           "width": 1200,
           "height": 800,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-115/facade-2-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/facade-2-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-115/facade-2-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/facade-2-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-115/facade-2-1200.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/facade-2-1200.webp",
               "width": 1200
             }
           ],
@@ -502,20 +502,20 @@
       ],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-115/plan-1262.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/plan-1262.webp",
           "width": 1262,
           "height": 1400,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-115/plan-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-115/plan-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-115/plan-1262.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/plan-1262.webp",
               "width": 1262
             }
           ],
@@ -529,7 +529,7 @@
     },
     {
       "id": "ds-116",
-      "slug": "domanstroy-ds-116",
+      "slug": "dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya",
       "builderId": "domanstroy",
       "builder": "ДоманСтрой",
       "title": "Дом под ключ 116 м² с просторной кухней-гостиной",
@@ -570,20 +570,20 @@
         "Адаптацию проекта и смету"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/domanstroy-ds-116/facade-1200.webp",
+        "src": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-1200.webp",
         "width": 1200,
         "height": 800,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-116/facade-640.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-116/facade-960.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-960.webp",
             "width": 960
           },
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-116/facade-1200.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-1200.webp",
             "width": 1200
           }
         ],
@@ -591,40 +591,40 @@
       },
       "gallery": [
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-116/facade-1200.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-1200.webp",
           "width": 1200,
           "height": 800,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-116/facade-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-116/facade-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-116/facade-1200.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-1200.webp",
               "width": 1200
             }
           ],
           "alt": "Проект DS-116: вид 1"
         },
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-116/facade-2-1200.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-2-1200.webp",
           "width": 1200,
           "height": 800,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-116/facade-2-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-2-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-116/facade-2-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-2-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-116/facade-2-1200.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-2-1200.webp",
               "width": 1200
             }
           ],
@@ -633,20 +633,20 @@
       ],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-116/plan-1344.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/plan-1344.webp",
           "width": 1344,
           "height": 1400,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-116/plan-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-116/plan-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-116/plan-1344.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/plan-1344.webp",
               "width": 1344
             }
           ],
@@ -660,7 +660,7 @@
     },
     {
       "id": "ds-128",
-      "slug": "domanstroy-ds-128",
+      "slug": "dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2",
       "builderId": "domanstroy",
       "builder": "ДоманСтрой",
       "title": "Дом под ключ 128 м² с кухней-гостиной 39 м²",
@@ -701,20 +701,20 @@
         "Адаптацию проекта и смету"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/domanstroy-ds-128/facade-1200.webp",
+        "src": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/facade-1200.webp",
         "width": 1200,
         "height": 800,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-128/facade-640.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/facade-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-128/facade-960.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/facade-960.webp",
             "width": 960
           },
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-128/facade-1200.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/facade-1200.webp",
             "width": 1200
           }
         ],
@@ -722,40 +722,40 @@
       },
       "gallery": [
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-128/facade-1200.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/facade-1200.webp",
           "width": 1200,
           "height": 800,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-128/facade-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/facade-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-128/facade-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/facade-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-128/facade-1200.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/facade-1200.webp",
               "width": 1200
             }
           ],
           "alt": "Проект DS-128: вид 1"
         },
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-128/facade-2-1200.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/facade-2-1200.webp",
           "width": 1200,
           "height": 800,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-128/facade-2-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/facade-2-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-128/facade-2-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/facade-2-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-128/facade-2-1200.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/facade-2-1200.webp",
               "width": 1200
             }
           ],
@@ -764,20 +764,20 @@
       ],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-128/plan-1440.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/plan-1440.webp",
           "width": 1440,
           "height": 1333,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-128/plan-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-128/plan-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-128/plan-1440.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/plan-1440.webp",
               "width": 1440
             }
           ],
@@ -791,7 +791,7 @@
     },
     {
       "id": "ds-130",
-      "slug": "domanstroy-ds-130",
+      "slug": "dom-pod-klyuch-130m2-garderobnaya-kotelnaya",
       "builderId": "domanstroy",
       "builder": "ДоманСтрой",
       "title": "Дом под ключ 130 м² с гардеробной и котельной",
@@ -832,20 +832,20 @@
         "Адаптацию проекта и смету"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/domanstroy-ds-130/facade-1200.webp",
+        "src": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-1200.webp",
         "width": 1200,
         "height": 800,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-130/facade-640.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-130/facade-960.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-960.webp",
             "width": 960
           },
           {
-            "src": "assets/images/construction-projects/domanstroy-ds-130/facade-1200.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-1200.webp",
             "width": 1200
           }
         ],
@@ -853,40 +853,40 @@
       },
       "gallery": [
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-130/facade-1200.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-1200.webp",
           "width": 1200,
           "height": 800,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-130/facade-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-130/facade-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-130/facade-1200.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-1200.webp",
               "width": 1200
             }
           ],
           "alt": "Проект DS-130: вид 1"
         },
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-130/facade-2-1200.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-2-1200.webp",
           "width": 1200,
           "height": 800,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-130/facade-2-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-2-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-130/facade-2-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-2-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-130/facade-2-1200.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-2-1200.webp",
               "width": 1200
             }
           ],
@@ -895,20 +895,20 @@
       ],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/domanstroy-ds-130/plan-1313.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/plan-1313.webp",
           "width": 1313,
           "height": 1400,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-130/plan-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-130/plan-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/domanstroy-ds-130/plan-1313.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/plan-1313.webp",
               "width": 1313
             }
           ],
@@ -922,7 +922,7 @@
     },
     {
       "id": "partner-house-0699",
-      "slug": "partner-house-0699",
+      "slug": "kompaktnyy-dom-pod-klyuch-69-9m2",
       "builderId": "partner-selection",
       "builder": "Партнёрская подборка",
       "title": "Компактный дом под ключ 69,9 м² с двумя спальнями",
@@ -964,16 +964,16 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/partner-house-0699/plan-772.webp",
+        "src": "assets/images/construction-projects/kompaktnyy-dom-pod-klyuch-69-9m2/plan-772.webp",
         "width": 772,
         "height": 915,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/partner-house-0699/plan-640.webp",
+            "src": "assets/images/construction-projects/kompaktnyy-dom-pod-klyuch-69-9m2/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/partner-house-0699/plan-772.webp",
+            "src": "assets/images/construction-projects/kompaktnyy-dom-pod-klyuch-69-9m2/plan-772.webp",
             "width": 772
           }
         ],
@@ -982,16 +982,16 @@
       "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/partner-house-0699/plan-772.webp",
+          "src": "assets/images/construction-projects/kompaktnyy-dom-pod-klyuch-69-9m2/plan-772.webp",
           "width": 772,
           "height": 915,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/partner-house-0699/plan-640.webp",
+              "src": "assets/images/construction-projects/kompaktnyy-dom-pod-klyuch-69-9m2/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/partner-house-0699/plan-772.webp",
+              "src": "assets/images/construction-projects/kompaktnyy-dom-pod-klyuch-69-9m2/plan-772.webp",
               "width": 772
             }
           ],
@@ -1008,7 +1008,7 @@
     },
     {
       "id": "partner-house-0750",
-      "slug": "partner-house-0750",
+      "slug": "dom-pod-klyuch-75m2-dve-spalni",
       "builderId": "partner-selection",
       "builder": "Партнёрская подборка",
       "title": "Дом под ключ 75 м² с двумя спальнями",
@@ -1050,44 +1050,44 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/partner-house-0750/built-example-02.webp",
+        "src": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/built-example-02.webp",
         "width": 1280,
         "height": 960,
         "alt": "Пример построенного одноэтажного дома сопоставимого профиля"
       },
       "gallery": [
         {
-          "src": "assets/images/construction-projects/partner-house-0750/built-example-01.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/built-example-01.webp",
           "width": 1280,
           "height": 960,
           "alt": "Пример построенного дома сопоставимого профиля: боковой фасад"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-0750/built-example-03.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/built-example-03.webp",
           "width": 720,
           "height": 960,
           "alt": "Пример построенного дома сопоставимого профиля: входная зона"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-0750/built-example-04.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/built-example-04.webp",
           "width": 1280,
           "height": 960,
           "alt": "Пример построенного дома сопоставимого профиля: фасад и двор"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-0750/built-example-05.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/built-example-05.webp",
           "width": 1280,
           "height": 960,
           "alt": "Пример построенного дома сопоставимого профиля: угловой вид"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-0750/built-example-06.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/built-example-06.webp",
           "width": 1280,
           "height": 960,
           "alt": "Пример построенного дома сопоставимого профиля: вход и остекление"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-0750/built-example-07.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/built-example-07.webp",
           "width": 1280,
           "height": 960,
           "alt": "Пример построенного дома сопоставимого профиля: торцевой фасад"
@@ -1095,20 +1095,20 @@
       ],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/partner-house-0750/plan-1104.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/plan-1104.webp",
           "width": 1104,
           "height": 930,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/partner-house-0750/plan-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/partner-house-0750/plan-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/partner-house-0750/plan-1104.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/plan-1104.webp",
               "width": 1104
             }
           ],
@@ -1125,7 +1125,7 @@
     },
     {
       "id": "partner-house-0838",
-      "slug": "partner-house-0838",
+      "slug": "dom-pod-klyuch-83-8m2-s-terrasoy",
       "builderId": "partner-selection",
       "builder": "Партнёрская подборка",
       "title": "Дом под ключ 83,8 м² с террасой и двумя спальнями",
@@ -1167,32 +1167,32 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/partner-house-0838/built-example-01.webp",
+        "src": "assets/images/construction-projects/dom-pod-klyuch-83-8m2-s-terrasoy/built-example-01.webp",
         "width": 1280,
         "height": 959,
         "alt": "Пример построенного одноэтажного дома с крытой террасой"
       },
       "gallery": [
         {
-          "src": "assets/images/construction-projects/partner-house-0838/built-example-02.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-83-8m2-s-terrasoy/built-example-02.webp",
           "width": 720,
           "height": 960,
           "alt": "Пример построенного дома сопоставимого профиля: крытая терраса"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-0838/built-example-03.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-83-8m2-s-terrasoy/built-example-03.webp",
           "width": 1280,
           "height": 959,
           "alt": "Пример построенного дома сопоставимого профиля: фасад с панорамными окнами"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-0838/built-example-04.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-83-8m2-s-terrasoy/built-example-04.webp",
           "width": 1280,
           "height": 960,
           "alt": "Пример построенного дома сопоставимого профиля: главный фасад"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-0838/built-example-05.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-83-8m2-s-terrasoy/built-example-05.webp",
           "width": 1280,
           "height": 960,
           "alt": "Пример построенного дома сопоставимого профиля: участок и боковой фасад"
@@ -1200,16 +1200,16 @@
       ],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/partner-house-0838/plan-820.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-83-8m2-s-terrasoy/plan-820.webp",
           "width": 820,
           "height": 924,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/partner-house-0838/plan-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-83-8m2-s-terrasoy/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/partner-house-0838/plan-820.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-83-8m2-s-terrasoy/plan-820.webp",
               "width": 820
             }
           ],
@@ -1226,7 +1226,7 @@
     },
     {
       "id": "partner-house-0840",
-      "slug": "partner-house-0840",
+      "slug": "semeynyy-dom-pod-klyuch-84m2",
       "builderId": "partner-selection",
       "builder": "Партнёрская подборка",
       "title": "Семейный дом под ключ 84 м² с тремя спальнями",
@@ -1268,12 +1268,12 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/partner-house-0840/plan-576.webp",
+        "src": "assets/images/construction-projects/semeynyy-dom-pod-klyuch-84m2/plan-576.webp",
         "width": 576,
         "height": 690,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/partner-house-0840/plan-576.webp",
+            "src": "assets/images/construction-projects/semeynyy-dom-pod-klyuch-84m2/plan-576.webp",
             "width": 576
           }
         ],
@@ -1282,12 +1282,12 @@
       "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/partner-house-0840/plan-576.webp",
+          "src": "assets/images/construction-projects/semeynyy-dom-pod-klyuch-84m2/plan-576.webp",
           "width": 576,
           "height": 690,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/partner-house-0840/plan-576.webp",
+              "src": "assets/images/construction-projects/semeynyy-dom-pod-klyuch-84m2/plan-576.webp",
               "width": 576
             }
           ],
@@ -1304,7 +1304,7 @@
     },
     {
       "id": "partner-house-0850",
-      "slug": "partner-house-0850",
+      "slug": "dom-pod-klyuch-85m2-tri-spalni",
       "builderId": "partner-selection",
       "builder": "Партнёрская подборка",
       "title": "Дом под ключ 85 м² с тремя спальнями",
@@ -1346,20 +1346,20 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/partner-house-0850/plan-1059.webp",
+        "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-tri-spalni/plan-1059.webp",
         "width": 1059,
         "height": 924,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/partner-house-0850/plan-640.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-tri-spalni/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/partner-house-0850/plan-960.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-tri-spalni/plan-960.webp",
             "width": 960
           },
           {
-            "src": "assets/images/construction-projects/partner-house-0850/plan-1059.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-tri-spalni/plan-1059.webp",
             "width": 1059
           }
         ],
@@ -1368,20 +1368,20 @@
       "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/partner-house-0850/plan-1059.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-tri-spalni/plan-1059.webp",
           "width": 1059,
           "height": 924,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/partner-house-0850/plan-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-tri-spalni/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/partner-house-0850/plan-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-tri-spalni/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/partner-house-0850/plan-1059.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-85m2-tri-spalni/plan-1059.webp",
               "width": 1059
             }
           ],
@@ -1398,7 +1398,7 @@
     },
     {
       "id": "partner-house-0900",
-      "slug": "partner-house-0900",
+      "slug": "dom-pod-klyuch-90m2-dve-spalni",
       "builderId": "partner-selection",
       "builder": "Партнёрская подборка",
       "title": "Дом под ключ 90 м² с двумя спальнями и кухней-гостиной",
@@ -1440,16 +1440,16 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/partner-house-0900/plan-806.webp",
+        "src": "assets/images/construction-projects/dom-pod-klyuch-90m2-dve-spalni/plan-806.webp",
         "width": 806,
         "height": 860,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/partner-house-0900/plan-640.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-90m2-dve-spalni/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/partner-house-0900/plan-806.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-90m2-dve-spalni/plan-806.webp",
             "width": 806
           }
         ],
@@ -1458,16 +1458,16 @@
       "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/partner-house-0900/plan-806.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-90m2-dve-spalni/plan-806.webp",
           "width": 806,
           "height": 860,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/partner-house-0900/plan-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-90m2-dve-spalni/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/partner-house-0900/plan-806.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-90m2-dve-spalni/plan-806.webp",
               "width": 806
             }
           ],
@@ -1484,7 +1484,7 @@
     },
     {
       "id": "partner-house-0990",
-      "slug": "partner-house-0990",
+      "slug": "dom-pod-klyuch-99m2-tri-spalni",
       "builderId": "partner-selection",
       "builder": "Партнёрская подборка",
       "title": "Дом под ключ 99 м² с тремя спальнями",
@@ -1526,20 +1526,20 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/partner-house-0990/plan-1210.webp",
+        "src": "assets/images/construction-projects/dom-pod-klyuch-99m2-tri-spalni/plan-1210.webp",
         "width": 1210,
         "height": 924,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/partner-house-0990/plan-640.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-99m2-tri-spalni/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/partner-house-0990/plan-960.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-99m2-tri-spalni/plan-960.webp",
             "width": 960
           },
           {
-            "src": "assets/images/construction-projects/partner-house-0990/plan-1210.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-99m2-tri-spalni/plan-1210.webp",
             "width": 1210
           }
         ],
@@ -1548,20 +1548,20 @@
       "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/partner-house-0990/plan-1210.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-99m2-tri-spalni/plan-1210.webp",
           "width": 1210,
           "height": 924,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/partner-house-0990/plan-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-99m2-tri-spalni/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/partner-house-0990/plan-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-99m2-tri-spalni/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/partner-house-0990/plan-1210.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-99m2-tri-spalni/plan-1210.webp",
               "width": 1210
             }
           ],
@@ -1578,7 +1578,7 @@
     },
     {
       "id": "partner-house-1050",
-      "slug": "partner-house-1050",
+      "slug": "dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla",
       "builderId": "partner-selection",
       "builder": "Партнёрская подборка",
       "title": "Дом под ключ 105 м²: 3 спальни, 2 санузла",
@@ -1620,62 +1620,62 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/partner-house-1050/built-example-07.webp",
+        "src": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/built-example-07.webp",
         "width": 1920,
         "height": 1082,
         "alt": "Пример построенного одноэтажного дома с панорамным остеклением"
       },
       "gallery": [
         {
-          "src": "assets/images/construction-projects/partner-house-1050/built-example-01.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/built-example-01.webp",
           "width": 1082,
           "height": 1920,
           "alt": "Пример построенного дома сопоставимого профиля: коридор под чистовую отделку"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-1050/built-example-02.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/built-example-02.webp",
           "width": 1082,
           "height": 1920,
           "alt": "Пример построенного дома сопоставимого профиля: кухня-гостиная под отделку"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-1050/built-example-03.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/built-example-03.webp",
           "width": 1082,
           "height": 1920,
           "alt": "Пример построенного дома сопоставимого профиля: фасадное остекление"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-1050/built-example-04.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/built-example-04.webp",
           "width": 1082,
           "height": 1920,
           "alt": "Пример построенного дома сопоставимого профиля: угловое остекление"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-1050/built-example-05.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/built-example-05.webp",
           "width": 1082,
           "height": 1920,
           "alt": "Пример построенного дома сопоставимого профиля: входная группа"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-1050/built-example-06.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/built-example-06.webp",
           "width": 1082,
           "height": 1920,
           "alt": "Пример построенного дома сопоставимого профиля: торцевой фасад"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-1050/built-example-08.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/built-example-08.webp",
           "width": 1082,
           "height": 1920,
           "alt": "Пример построенного дома сопоставимого профиля: панорамные двери"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-1050/built-example-09.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/built-example-09.webp",
           "width": 1080,
           "height": 1920,
           "alt": "Пример построенного дома сопоставимого профиля: фасадный угол"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-1050/built-example-10.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/built-example-10.webp",
           "width": 1082,
           "height": 1920,
           "alt": "Пример построенного дома сопоставимого профиля: инженерный ввод"
@@ -1683,20 +1683,20 @@
       ],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/partner-house-1050/plan-1005.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/plan-1005.webp",
           "width": 1005,
           "height": 924,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/partner-house-1050/plan-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/partner-house-1050/plan-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/partner-house-1050/plan-1005.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/plan-1005.webp",
               "width": 1005
             }
           ],
@@ -1713,7 +1713,7 @@
     },
     {
       "id": "partner-house-1070",
-      "slug": "partner-house-1070",
+      "slug": "dom-pod-klyuch-107m2-prostornaya-kuhnya-gostinaya",
       "builderId": "partner-selection",
       "builder": "Партнёрская подборка",
       "title": "Дом под ключ 107 м² с просторной кухней-гостиной",
@@ -1755,20 +1755,20 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/partner-house-1070/plan-1125.webp",
+        "src": "assets/images/construction-projects/dom-pod-klyuch-107m2-prostornaya-kuhnya-gostinaya/plan-1125.webp",
         "width": 1125,
         "height": 927,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/partner-house-1070/plan-640.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-107m2-prostornaya-kuhnya-gostinaya/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/partner-house-1070/plan-960.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-107m2-prostornaya-kuhnya-gostinaya/plan-960.webp",
             "width": 960
           },
           {
-            "src": "assets/images/construction-projects/partner-house-1070/plan-1125.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-107m2-prostornaya-kuhnya-gostinaya/plan-1125.webp",
             "width": 1125
           }
         ],
@@ -1777,20 +1777,20 @@
       "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/partner-house-1070/plan-1125.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-107m2-prostornaya-kuhnya-gostinaya/plan-1125.webp",
           "width": 1125,
           "height": 927,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/partner-house-1070/plan-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-107m2-prostornaya-kuhnya-gostinaya/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/partner-house-1070/plan-960.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-107m2-prostornaya-kuhnya-gostinaya/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/partner-house-1070/plan-1125.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-107m2-prostornaya-kuhnya-gostinaya/plan-1125.webp",
               "width": 1125
             }
           ],
@@ -1807,7 +1807,7 @@
     },
     {
       "id": "partner-house-1090",
-      "slug": "partner-house-1090",
+      "slug": "semeynyy-dom-pod-klyuch-109m2",
       "builderId": "partner-selection",
       "builder": "Партнёрская подборка",
       "title": "Дом под ключ 109 м² для семьи с тремя спальнями",
@@ -1849,20 +1849,20 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/partner-house-1090/plan-1092.webp",
+        "src": "assets/images/construction-projects/semeynyy-dom-pod-klyuch-109m2/plan-1092.webp",
         "width": 1092,
         "height": 932,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/partner-house-1090/plan-640.webp",
+            "src": "assets/images/construction-projects/semeynyy-dom-pod-klyuch-109m2/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/partner-house-1090/plan-960.webp",
+            "src": "assets/images/construction-projects/semeynyy-dom-pod-klyuch-109m2/plan-960.webp",
             "width": 960
           },
           {
-            "src": "assets/images/construction-projects/partner-house-1090/plan-1092.webp",
+            "src": "assets/images/construction-projects/semeynyy-dom-pod-klyuch-109m2/plan-1092.webp",
             "width": 1092
           }
         ],
@@ -1871,20 +1871,20 @@
       "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/partner-house-1090/plan-1092.webp",
+          "src": "assets/images/construction-projects/semeynyy-dom-pod-klyuch-109m2/plan-1092.webp",
           "width": 1092,
           "height": 932,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/partner-house-1090/plan-640.webp",
+              "src": "assets/images/construction-projects/semeynyy-dom-pod-klyuch-109m2/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/partner-house-1090/plan-960.webp",
+              "src": "assets/images/construction-projects/semeynyy-dom-pod-klyuch-109m2/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/partner-house-1090/plan-1092.webp",
+              "src": "assets/images/construction-projects/semeynyy-dom-pod-klyuch-109m2/plan-1092.webp",
               "width": 1092
             }
           ],
@@ -1901,7 +1901,7 @@
     },
     {
       "id": "partner-house-1111",
-      "slug": "partner-house-1111",
+      "slug": "dom-pod-klyuch-111-1m2-tri-spalni",
       "builderId": "partner-selection",
       "builder": "Партнёрская подборка",
       "title": "Дом под ключ 111,1 м² с тремя спальнями",
@@ -1943,56 +1943,56 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/partner-house-1111/built-example-01.webp",
+        "src": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/built-example-01.webp",
         "width": 1280,
         "height": 960,
         "alt": "Пример построенного одноэтажного дома в кирпичном фасаде"
       },
       "gallery": [
         {
-          "src": "assets/images/construction-projects/partner-house-1111/built-example-02.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/built-example-02.webp",
           "width": 1280,
           "height": 960,
           "alt": "Пример построенного дома сопоставимого профиля: кирпичный фасад"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-1111/built-example-03.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/built-example-03.webp",
           "width": 1059,
           "height": 699,
           "alt": "Пример построенного дома сопоставимого профиля: светлый фасад"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-1111/built-example-04.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/built-example-04.webp",
           "width": 1125,
           "height": 868,
           "alt": "Пример построенного дома сопоставимого профиля: помещения под чистовую отделку"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-1111/built-example-05.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/built-example-05.webp",
           "width": 1280,
           "height": 960,
           "alt": "Пример построенного дома сопоставимого профиля: боковой фасад"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-1111/built-example-06.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/built-example-06.webp",
           "width": 1125,
           "height": 836,
           "alt": "Пример построенного дома сопоставимого профиля: комната под чистовую отделку"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-1111/built-example-07.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/built-example-07.webp",
           "width": 1063,
           "height": 732,
           "alt": "Пример построенного дома сопоставимого профиля: светлый фасад и терраса"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-1111/built-example-08.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/built-example-08.webp",
           "width": 1072,
           "height": 716,
           "alt": "Пример построенного дома сопоставимого профиля: панорамные окна"
         },
         {
-          "src": "assets/images/construction-projects/partner-house-1111/built-example-09.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/built-example-09.webp",
           "width": 1280,
           "height": 931,
           "alt": "Пример построенного дома сопоставимого профиля: фасад с выходом во двор"
@@ -2000,12 +2000,12 @@
       ],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/partner-house-1111/plan-615.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/plan-615.webp",
           "width": 615,
           "height": 636,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/partner-house-1111/plan-615.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/plan-615.webp",
               "width": 615
             }
           ],
@@ -2022,7 +2022,7 @@
     },
     {
       "id": "partner-house-1142",
-      "slug": "partner-house-1142",
+      "slug": "dom-pod-klyuch-114-2m2-kuhnya-gostinaya",
       "builderId": "partner-selection",
       "builder": "Партнёрская подборка",
       "title": "Дом под ключ 114,2 м² с кухней-гостиной",
@@ -2064,16 +2064,16 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/partner-house-1142/plan-641.webp",
+        "src": "assets/images/construction-projects/dom-pod-klyuch-114-2m2-kuhnya-gostinaya/plan-641.webp",
         "width": 641,
         "height": 681,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/partner-house-1142/plan-640.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-114-2m2-kuhnya-gostinaya/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/partner-house-1142/plan-641.webp",
+            "src": "assets/images/construction-projects/dom-pod-klyuch-114-2m2-kuhnya-gostinaya/plan-641.webp",
             "width": 641
           }
         ],
@@ -2082,16 +2082,16 @@
       "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/partner-house-1142/plan-641.webp",
+          "src": "assets/images/construction-projects/dom-pod-klyuch-114-2m2-kuhnya-gostinaya/plan-641.webp",
           "width": 641,
           "height": 681,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/partner-house-1142/plan-640.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-114-2m2-kuhnya-gostinaya/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/partner-house-1142/plan-641.webp",
+              "src": "assets/images/construction-projects/dom-pod-klyuch-114-2m2-kuhnya-gostinaya/plan-641.webp",
               "width": 641
             }
           ],
@@ -2108,7 +2108,7 @@
     },
     {
       "id": "partner-house-1240",
-      "slug": "partner-house-1240",
+      "slug": "prostornyy-dom-pod-klyuch-124m2",
       "builderId": "partner-selection",
       "builder": "Партнёрская подборка",
       "title": "Просторный дом под ключ 124 м² с тремя спальнями",
@@ -2150,20 +2150,20 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/partner-house-1240/plan-1140.webp",
+        "src": "assets/images/construction-projects/prostornyy-dom-pod-klyuch-124m2/plan-1140.webp",
         "width": 1140,
         "height": 931,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/partner-house-1240/plan-640.webp",
+            "src": "assets/images/construction-projects/prostornyy-dom-pod-klyuch-124m2/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/partner-house-1240/plan-960.webp",
+            "src": "assets/images/construction-projects/prostornyy-dom-pod-klyuch-124m2/plan-960.webp",
             "width": 960
           },
           {
-            "src": "assets/images/construction-projects/partner-house-1240/plan-1140.webp",
+            "src": "assets/images/construction-projects/prostornyy-dom-pod-klyuch-124m2/plan-1140.webp",
             "width": 1140
           }
         ],
@@ -2172,20 +2172,20 @@
       "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/partner-house-1240/plan-1140.webp",
+          "src": "assets/images/construction-projects/prostornyy-dom-pod-klyuch-124m2/plan-1140.webp",
           "width": 1140,
           "height": 931,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/partner-house-1240/plan-640.webp",
+              "src": "assets/images/construction-projects/prostornyy-dom-pod-klyuch-124m2/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/partner-house-1240/plan-960.webp",
+              "src": "assets/images/construction-projects/prostornyy-dom-pod-klyuch-124m2/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/partner-house-1240/plan-1140.webp",
+              "src": "assets/images/construction-projects/prostornyy-dom-pod-klyuch-124m2/plan-1140.webp",
               "width": 1140
             }
           ],
@@ -2202,7 +2202,7 @@
     },
     {
       "id": "partner-house-1370",
-      "slug": "partner-house-1370",
+      "slug": "dvukhetazhnyy-dom-pod-klyuch-137m2",
       "builderId": "partner-selection",
       "builder": "Партнёрская подборка",
       "title": "Двухэтажный дом под ключ 137 м² с тремя спальнями",
@@ -2244,16 +2244,16 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/partner-house-1370/plan-679.webp",
+        "src": "assets/images/construction-projects/dvukhetazhnyy-dom-pod-klyuch-137m2/plan-679.webp",
         "width": 679,
         "height": 684,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/partner-house-1370/plan-640.webp",
+            "src": "assets/images/construction-projects/dvukhetazhnyy-dom-pod-klyuch-137m2/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/partner-house-1370/plan-679.webp",
+            "src": "assets/images/construction-projects/dvukhetazhnyy-dom-pod-klyuch-137m2/plan-679.webp",
             "width": 679
           }
         ],
@@ -2262,16 +2262,16 @@
       "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/partner-house-1370/plan-679.webp",
+          "src": "assets/images/construction-projects/dvukhetazhnyy-dom-pod-klyuch-137m2/plan-679.webp",
           "width": 679,
           "height": 684,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/partner-house-1370/plan-640.webp",
+              "src": "assets/images/construction-projects/dvukhetazhnyy-dom-pod-klyuch-137m2/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/partner-house-1370/plan-679.webp",
+              "src": "assets/images/construction-projects/dvukhetazhnyy-dom-pod-klyuch-137m2/plan-679.webp",
               "width": 679
             }
           ],
@@ -2288,7 +2288,7 @@
     },
     {
       "id": "partner-house-1422",
-      "slug": "partner-house-1422",
+      "slug": "dvukhetazhnyy-semeynyy-dom-142-2m2",
       "builderId": "partner-selection",
       "builder": "Партнёрская подборка",
       "title": "Двухэтажный дом под ключ 142,2 м² для семьи",
@@ -2330,16 +2330,16 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/partner-house-1422/plan-748.webp",
+        "src": "assets/images/construction-projects/dvukhetazhnyy-semeynyy-dom-142-2m2/plan-748.webp",
         "width": 748,
         "height": 681,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/partner-house-1422/plan-640.webp",
+            "src": "assets/images/construction-projects/dvukhetazhnyy-semeynyy-dom-142-2m2/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/partner-house-1422/plan-748.webp",
+            "src": "assets/images/construction-projects/dvukhetazhnyy-semeynyy-dom-142-2m2/plan-748.webp",
             "width": 748
           }
         ],
@@ -2348,16 +2348,16 @@
       "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/partner-house-1422/plan-748.webp",
+          "src": "assets/images/construction-projects/dvukhetazhnyy-semeynyy-dom-142-2m2/plan-748.webp",
           "width": 748,
           "height": 681,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/partner-house-1422/plan-640.webp",
+              "src": "assets/images/construction-projects/dvukhetazhnyy-semeynyy-dom-142-2m2/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/partner-house-1422/plan-748.webp",
+              "src": "assets/images/construction-projects/dvukhetazhnyy-semeynyy-dom-142-2m2/plan-748.webp",
               "width": 748
             }
           ],
@@ -2374,7 +2374,7 @@
     },
     {
       "id": "eqvita-01",
-      "slug": "eqvita-01",
+      "slug": "prostornyy-dvukhetazhnyy-dom-337m2",
       "builderId": "eqvita",
       "builder": "Эквита",
       "title": "Просторный двухэтажный дом под ключ 337 м²",
@@ -2409,16 +2409,16 @@
         "Срок, гарантию и индивидуальную стоимость"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/eqvita-01/facade-765.webp",
+        "src": "assets/images/construction-projects/prostornyy-dvukhetazhnyy-dom-337m2/facade-765.webp",
         "width": 765,
         "height": 470,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/eqvita-01/facade-640.webp",
+            "src": "assets/images/construction-projects/prostornyy-dvukhetazhnyy-dom-337m2/facade-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/eqvita-01/facade-765.webp",
+            "src": "assets/images/construction-projects/prostornyy-dvukhetazhnyy-dom-337m2/facade-765.webp",
             "width": 765
           }
         ],
@@ -2426,28 +2426,28 @@
       },
       "gallery": [
         {
-          "src": "assets/images/construction-projects/eqvita-01/facade-765.webp",
+          "src": "assets/images/construction-projects/prostornyy-dvukhetazhnyy-dom-337m2/facade-765.webp",
           "width": 765,
           "height": 470,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/eqvita-01/facade-640.webp",
+              "src": "assets/images/construction-projects/prostornyy-dvukhetazhnyy-dom-337m2/facade-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/eqvita-01/facade-765.webp",
+              "src": "assets/images/construction-projects/prostornyy-dvukhetazhnyy-dom-337m2/facade-765.webp",
               "width": 765
             }
           ],
           "alt": "Индивидуальный проект Эквита №1: вид 1"
         },
         {
-          "src": "assets/images/construction-projects/eqvita-01/facade-2-380.webp",
+          "src": "assets/images/construction-projects/prostornyy-dvukhetazhnyy-dom-337m2/facade-2-380.webp",
           "width": 380,
           "height": 263,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/eqvita-01/facade-2-380.webp",
+              "src": "assets/images/construction-projects/prostornyy-dvukhetazhnyy-dom-337m2/facade-2-380.webp",
               "width": 380
             }
           ],
@@ -2456,12 +2456,12 @@
       ],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/eqvita-01/plan-390.webp",
+          "src": "assets/images/construction-projects/prostornyy-dvukhetazhnyy-dom-337m2/plan-390.webp",
           "width": 390,
           "height": 640,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/eqvita-01/plan-390.webp",
+              "src": "assets/images/construction-projects/prostornyy-dvukhetazhnyy-dom-337m2/plan-390.webp",
               "width": 390
             }
           ],
@@ -2475,7 +2475,7 @@
     },
     {
       "id": "eqvita-02",
-      "slug": "eqvita-02",
+      "slug": "bolshoy-dvukhetazhnyy-dom-416-6m2",
       "builderId": "eqvita",
       "builder": "Эквита",
       "title": "Большой двухэтажный дом под ключ 416,6 м²",
@@ -2510,12 +2510,12 @@
         "Срок, гарантию и индивидуальную стоимость"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/eqvita-02/facade-635.webp",
+        "src": "assets/images/construction-projects/bolshoy-dvukhetazhnyy-dom-416-6m2/facade-635.webp",
         "width": 635,
         "height": 420,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/eqvita-02/facade-635.webp",
+            "src": "assets/images/construction-projects/bolshoy-dvukhetazhnyy-dom-416-6m2/facade-635.webp",
             "width": 635
           }
         ],
@@ -2523,24 +2523,24 @@
       },
       "gallery": [
         {
-          "src": "assets/images/construction-projects/eqvita-02/facade-635.webp",
+          "src": "assets/images/construction-projects/bolshoy-dvukhetazhnyy-dom-416-6m2/facade-635.webp",
           "width": 635,
           "height": 420,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/eqvita-02/facade-635.webp",
+              "src": "assets/images/construction-projects/bolshoy-dvukhetazhnyy-dom-416-6m2/facade-635.webp",
               "width": 635
             }
           ],
           "alt": "Индивидуальный проект Эквита №2: вид 1"
         },
         {
-          "src": "assets/images/construction-projects/eqvita-02/facade-2-425.webp",
+          "src": "assets/images/construction-projects/bolshoy-dvukhetazhnyy-dom-416-6m2/facade-2-425.webp",
           "width": 425,
           "height": 355,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/eqvita-02/facade-2-425.webp",
+              "src": "assets/images/construction-projects/bolshoy-dvukhetazhnyy-dom-416-6m2/facade-2-425.webp",
               "width": 425
             }
           ],
@@ -2549,16 +2549,16 @@
       ],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/eqvita-02/plan-668.webp",
+          "src": "assets/images/construction-projects/bolshoy-dvukhetazhnyy-dom-416-6m2/plan-668.webp",
           "width": 668,
           "height": 813,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/eqvita-02/plan-640.webp",
+              "src": "assets/images/construction-projects/bolshoy-dvukhetazhnyy-dom-416-6m2/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/eqvita-02/plan-668.webp",
+              "src": "assets/images/construction-projects/bolshoy-dvukhetazhnyy-dom-416-6m2/plan-668.webp",
               "width": 668
             }
           ],
@@ -2572,7 +2572,7 @@
     },
     {
       "id": "eqvita-03",
-      "slug": "eqvita-03",
+      "slug": "odnoetazhnyy-dom-pod-klyuch-217m2",
       "builderId": "eqvita",
       "builder": "Эквита",
       "title": "Одноэтажный дом под ключ 217 м²",
@@ -2607,16 +2607,16 @@
         "Срок, гарантию и индивидуальную стоимость"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/eqvita-03/facade-655.webp",
+        "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-217m2/facade-655.webp",
         "width": 655,
         "height": 255,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/eqvita-03/facade-640.webp",
+            "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-217m2/facade-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/eqvita-03/facade-655.webp",
+            "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-217m2/facade-655.webp",
             "width": 655
           }
         ],
@@ -2624,28 +2624,28 @@
       },
       "gallery": [
         {
-          "src": "assets/images/construction-projects/eqvita-03/facade-655.webp",
+          "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-217m2/facade-655.webp",
           "width": 655,
           "height": 255,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/eqvita-03/facade-640.webp",
+              "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-217m2/facade-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/eqvita-03/facade-655.webp",
+              "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-217m2/facade-655.webp",
               "width": 655
             }
           ],
           "alt": "Индивидуальный проект Эквита №3 — ТИП-О-1: вид 1"
         },
         {
-          "src": "assets/images/construction-projects/eqvita-03/facade-2-465.webp",
+          "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-217m2/facade-2-465.webp",
           "width": 465,
           "height": 345,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/eqvita-03/facade-2-465.webp",
+              "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-217m2/facade-2-465.webp",
               "width": 465
             }
           ],
@@ -2654,12 +2654,12 @@
       ],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/eqvita-03/plan-445.webp",
+          "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-217m2/plan-445.webp",
           "width": 445,
           "height": 545,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/eqvita-03/plan-445.webp",
+              "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-217m2/plan-445.webp",
               "width": 445
             }
           ],
@@ -2673,7 +2673,7 @@
     },
     {
       "id": "eqvita-04",
-      "slug": "eqvita-04",
+      "slug": "odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni",
       "builderId": "eqvita",
       "builder": "Эквита",
       "title": "Одноэтажный дом под ключ 161 м² с двумя спальнями",
@@ -2708,16 +2708,16 @@
         "Срок, гарантию и индивидуальную стоимость"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/eqvita-04/facade-690.webp",
+        "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni/facade-690.webp",
         "width": 690,
         "height": 305,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/eqvita-04/facade-640.webp",
+            "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni/facade-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/eqvita-04/facade-690.webp",
+            "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni/facade-690.webp",
             "width": 690
           }
         ],
@@ -2725,32 +2725,32 @@
       },
       "gallery": [
         {
-          "src": "assets/images/construction-projects/eqvita-04/facade-690.webp",
+          "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni/facade-690.webp",
           "width": 690,
           "height": 305,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/eqvita-04/facade-640.webp",
+              "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni/facade-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/eqvita-04/facade-690.webp",
+              "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni/facade-690.webp",
               "width": 690
             }
           ],
           "alt": "Индивидуальный проект Эквита №4 — ТИП-О-3: вид 1"
         },
         {
-          "src": "assets/images/construction-projects/eqvita-04/facade-2-690.webp",
+          "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni/facade-2-690.webp",
           "width": 690,
           "height": 295,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/eqvita-04/facade-2-640.webp",
+              "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni/facade-2-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/eqvita-04/facade-2-690.webp",
+              "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni/facade-2-690.webp",
               "width": 690
             }
           ],
@@ -2759,12 +2759,12 @@
       ],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/eqvita-04/plan-415.webp",
+          "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni/plan-415.webp",
           "width": 415,
           "height": 310,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/eqvita-04/plan-415.webp",
+              "src": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni/plan-415.webp",
               "width": 415
             }
           ],

@@ -998,9 +998,9 @@ body[data-page-type="location"] .hero-facts {
   transition: transform .45s ease;
 }
 
-.home-catalog-card__media img[src*="/partner-house-"],
-.product-card__media img[src*="/partner-house-"],
-.catalog-detail__media img[src*="/partner-house-"] {
+.home-catalog-card__media img[data-catalog-fit="contain"],
+.product-card__media img[data-catalog-fit="contain"],
+.catalog-detail__media img[data-catalog-fit="contain"] {
   object-fit: contain;
   background: white;
   padding: 14px;
