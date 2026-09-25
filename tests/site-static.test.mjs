@@ -79,7 +79,7 @@ test("two-level navigation publishes the full desktop and mobile contract", () =
   for (const label of ["Города и районы", "Полезные статьи", "О компании", "Контакты", "Квартиры", "Дома", "Участки", "Новостройки", "Коммерция", "Гаражи и парковка", "Услуги"]) {
     assert.match(home, new RegExp(label, "u"));
   }
-  for (const route of ["apartments.html", "secondary-apartments.html", "newbuilds.html", "houses.html", "secondary-houses.html", "construction.html", "builder-houses.html", "lands.html", "commercial.html", "garages-parking.html", "sell.html", "valuation.html", "mortgage.html", "team/maria-voronina.html", "contacts.html", "details.html"]) {
+  for (const route of ["apartments.html", "secondary-apartments.html", "newbuilds.html", "houses.html", "secondary-houses.html", "construction.html", "builder-houses.html", "lands.html", "commercial.html", "garages-parking.html", "sell.html", "valuation.html", "mortgage.html", "team/", "team/maria-voronina.html", "team/olga-chernenko.html", "contacts.html", "details.html"]) {
     assert.match(home, new RegExp(`href="/${route.replace(".", "\\.")}`, "u"), route);
   }
   assert.doesNotMatch(home, />Аренда</u);
@@ -168,6 +168,22 @@ test("confirmed social channels and Maria's responsive portrait are published fr
   }
   assert.ok(fs.existsSync(path.join(root, "assets/images/maria-voronina-original.png")));
   assert.doesNotMatch(home, /qr[-_ ]?code|mariyavoronina87/u);
+});
+
+test("team page keeps Maria first and publishes Olga's verified profile", () => {
+  const team = read("team/index.html");
+  const mariaPosition = team.indexOf('data-team-member="maria-voronina"');
+  const olgaPosition = team.indexOf('data-team-member="olga-chernenko"');
+  assert.ok(mariaPosition >= 0 && olgaPosition > mariaPosition);
+  assert.match(team, /Черненко Ольга Васильевна/u);
+  assert.match(team, /Кадастровый инженер · агент по продаже недвижимости/u);
+  assert.match(team, /\+7-988-589-59-02/u);
+  assert.match(team, /olyaka2004@yandex\.ru/u);
+  assert.match(team, /MAX: \+7-988-589-59-02/u);
+  const profile = read("team/olga-chernenko.html");
+  for (const text of ["Профессиональная оценка объекта", "Подготовка объекта к продаже", "Проверка и сопровождение покупателей", "Октябрьский сельский район"]) assert.match(profile, new RegExp(text, "u"));
+  assert.match(profile, /olga-chernenko-(?:360|640|960)\.webp/u);
+  for (const width of [360, 640, 960]) assert.ok(fs.existsSync(path.join(root, `assets/images/olga-chernenko-${width}.webp`)));
 });
 
 test("legal details are confined to the details page", () => {

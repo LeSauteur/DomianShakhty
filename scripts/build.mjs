@@ -18,6 +18,7 @@ import {
   renderLocation,
   renderLocationsIndex,
   renderPerson,
+  renderTeam,
   renderPrivacy,
   renderThanks
 } from "../src/templates.mjs";
@@ -93,7 +94,8 @@ publish("locations/index.html", renderLocationsIndex(ctx));
 for (const location of locations) publish(`locations/${location.slug}.html`, renderLocation(ctx, location));
 publish("guides/index.html", renderGuidesIndex(ctx, guides));
 for (const guide of guides) publish(`guides/${guide.slug}.html`, renderGuide(ctx, guide));
-publish("team/maria-voronina.html", renderPerson(ctx));
+publish("team/index.html", renderTeam(ctx));
+for (const person of team.filter((item) => item.verified === true)) publish(`team/${person.slug || person.id}.html`, renderPerson(ctx, person));
 publish("contacts.html", renderContacts(ctx));
 publish("details.html", renderDetails(ctx));
 publish("privacy.html", renderPrivacy(ctx));

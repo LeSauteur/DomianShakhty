@@ -994,6 +994,18 @@ body[data-page-type="location"] .hero-facts {
   transition: transform .45s ease;
 }
 
+.home-catalog-card__media img[src*="/partner-house-"],
+.product-card__media img[src*="/partner-house-"],
+.catalog-detail__media img[src*="/partner-house-"] {
+  object-fit: contain;
+  background: white;
+  padding: 14px;
+}
+
+.construction-product-card[data-builder="partner-selection"] .product-quality {
+  inset: auto 14px 14px auto;
+}
+
 .product-card:hover .product-card__media img {
   transform: scale(1.025);
 }
@@ -1061,6 +1073,13 @@ body[data-page-type="location"] .hero-facts {
 
 .product-card__price--request { font-size: 1.15rem; }
 .product-card__price-row small { color: var(--muted); line-height: 1.35; }
+
+.product-card__payment {
+  color: var(--sage-dark);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
 
 .product-card__facts {
   display: grid;
@@ -1215,6 +1234,9 @@ body[data-page-type="location"] .hero-facts {
 .catalog-plan-grid picture,
 .catalog-plan-grid img { display: block; width: 100%; }
 .catalog-gallery img { aspect-ratio: 16 / 10; object-fit: cover; }
+.catalog-gallery__photo-link { display: block; cursor: zoom-in; }
+.catalog-gallery__photo-link img { height: clamp(220px, 31vw, 440px); }
+.catalog-gallery__photo-link:focus-visible { outline: 3px solid var(--champagne); outline-offset: -5px; }
 .catalog-plan-grid img { height: clamp(300px, 44vw, 620px); object-fit: contain; background: white; }
 
 .catalog-source { border-top: 1px solid var(--line); }
@@ -2428,6 +2450,159 @@ textarea {
   display: none;
 }
 
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(22px, 4vw, 48px);
+}
+
+.team-card {
+  display: grid;
+  grid-template-columns: minmax(210px, 0.8fr) minmax(0, 1.2fr);
+  overflow: hidden;
+  border: 1px solid rgba(86, 105, 97, 0.16);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: 0 24px 70px rgba(41, 56, 58, 0.08);
+}
+
+.team-card__media,
+.team-card__media picture {
+  display: block;
+  min-height: 100%;
+}
+
+.team-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  object-fit: cover;
+  object-position: center 32%;
+}
+
+.team-card__body {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(24px, 4vw, 42px);
+}
+
+.team-card__index {
+  margin: 0 0 22px;
+  color: var(--sage);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.team-card h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 3vw, 2.65rem);
+  line-height: 1.04;
+}
+
+.team-card h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.team-card__role {
+  min-height: 3.2em;
+  margin: 12px 0 18px;
+  color: var(--ink-soft);
+}
+
+.team-card ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.team-card li {
+  border-radius: 999px;
+  background: var(--paper-mint);
+  padding: 7px 10px;
+  color: var(--sage-dark);
+  font-size: 0.72rem;
+  font-weight: 750;
+}
+
+.team-card__contacts {
+  display: grid;
+  width: 100%;
+  gap: 6px;
+  margin: auto 0 24px;
+  font-size: 0.82rem;
+}
+
+.team-card__contacts a,
+.team-card__contacts span {
+  overflow-wrap: anywhere;
+}
+
+.team-card__contacts a {
+  color: var(--sage-dark);
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.agent-skill-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.agent-skill-list li {
+  display: grid;
+  align-content: space-between;
+  min-height: 210px;
+  border-top: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  gap: 44px;
+  padding: 24px;
+}
+
+.agent-skill-list li:last-child {
+  border-right: 0;
+}
+
+.agent-skill-list span {
+  color: var(--sage);
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+}
+
+.agent-area-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(34px, 8vw, 110px);
+}
+
+.agent-area-layout ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.agent-area-layout li {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  color: var(--sage-dark);
+  font-weight: 750;
+}
+
 .owner-actions {
   display: flex;
   flex-wrap: wrap;
@@ -3236,6 +3411,7 @@ textarea {
   .mortgage-layout,
   .owner-layout,
   .profile-layout,
+  .agent-area-layout,
   .office-layout,
   .lead-layout,
   .location-story,
@@ -3247,6 +3423,22 @@ textarea {
 
   .page-hero__layout {
     gap: 44px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .agent-skill-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .agent-skill-list li:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .agent-skill-list li:last-child {
+    grid-column: 1 / -1;
   }
 
   .architectural-card {
@@ -3420,6 +3612,31 @@ textarea {
   .contact-grid,
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .team-card {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card__media img {
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+  }
+
+  .team-card__role {
+    min-height: 0;
+  }
+
+  .agent-skill-list,
+  .agent-area-layout ul {
+    grid-template-columns: 1fr;
+  }
+
+  .agent-skill-list li,
+  .agent-skill-list li:nth-child(2n),
+  .agent-skill-list li:last-child {
+    grid-column: auto;
+    border-right: 0;
   }
 
   .info-card {

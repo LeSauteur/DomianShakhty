@@ -1,6 +1,7 @@
 [
   {
     "id": "maria-voronina",
+    "slug": "maria-voronina",
     "name": "Мария Воронина",
     "role": "Собственник офиса",
     "initials": "МВ",
@@ -20,6 +21,54 @@
         { "src": "assets/images/maria-voronina-360.webp", "width": 360 },
         { "src": "assets/images/maria-voronina-640.webp", "width": 640 },
         { "src": "assets/images/maria-voronina-960.webp", "width": 960 }
+      ]
+    }
+  },
+  {
+    "id": "olga-chernenko",
+    "slug": "olga-chernenko",
+    "name": "Черненко Ольга Васильевна",
+    "shortName": "Ольга Черненко",
+    "role": "Кадастровый инженер · агент по продаже недвижимости",
+    "initials": "ОЧ",
+    "phone": "+7-988-589-59-02",
+    "phoneHref": "tel:+79885895902",
+    "maxPhone": "+7-988-589-59-02",
+    "email": "olyaka2004@yandex.ru",
+    "office": "Домиан · Шахты на Маяковского",
+    "city": "Шахты",
+    "directions": [
+      "Квартиры",
+      "Земельные участки",
+      "Домовладения",
+      "Строительство"
+    ],
+    "serviceAreas": [
+      "Шахты · Центр",
+      "Петровка",
+      "Южная",
+      "Каменоломни",
+      "Красногорняцкий",
+      "Октябрьский сельский район"
+    ],
+    "skills": [
+      "Профессиональная оценка объекта",
+      "Подготовка объекта к продаже и создание привлекательной презентации",
+      "Проверка и сопровождение покупателей",
+      "Помощь в получении лучших условий и цены",
+      "Подготовка документов к продаже"
+    ],
+    "verified": true,
+    "image": {
+      "alt": "Черненко Ольга Васильевна, кадастровый инженер и агент по продаже недвижимости",
+      "original": "assets/images/olga-chernenko-original.webp",
+      "fallback": "assets/images/olga-chernenko-640.webp",
+      "width": 640,
+      "height": 800,
+      "srcset": [
+        { "src": "assets/images/olga-chernenko-360.webp", "width": 360 },
+        { "src": "assets/images/olga-chernenko-640.webp", "width": 640 },
+        { "src": "assets/images/olga-chernenko-960.webp", "width": 960 }
       ]
     }
   }

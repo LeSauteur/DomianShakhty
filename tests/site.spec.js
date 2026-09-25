@@ -25,7 +25,9 @@ const representativePages = [
   "listings/shk-h03-artem-brick-house.html",
   "listings/shk-l06-regular-city-plot.html",
   "guides/kak-vybrat-dom-ot-zastroyshchika-v-shakhtah.html",
+  "team/index.html",
   "team/maria-voronina.html",
+  "team/olga-chernenko.html",
   "contacts.html",
   "details.html",
   "privacy.html"
@@ -272,6 +274,23 @@ test("Maria portrait is responsive, dimensioned and loads on trust pages", async
   }
 });
 
+test("team cards and Olga portrait fit desktop and mobile without overflow", async ({ page }) => {
+  for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
+    await page.setViewportSize(viewport);
+    await page.goto("team/index.html");
+    const cards = page.locator(".team-card");
+    await expect(cards).toHaveCount(2);
+    await expect(cards.nth(0)).toHaveAttribute("data-team-member", "maria-voronina");
+    await expect(cards.nth(1)).toHaveAttribute("data-team-member", "olga-chernenko");
+    const olga = cards.nth(1).locator('img[alt*="Черненко Ольга"]');
+    await olga.scrollIntoViewIfNeeded();
+    await expect(olga).toBeVisible();
+    expect((await olga.evaluate((node) => node.currentSrc))).toMatch(/olga-chernenko-(?:360|640|960)\.webp$/u);
+    const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
+    expect(dimensions.scroll, `team at ${viewport.width}px`).toBeLessThanOrEqual(dimensions.client + 1);
+  }
+});
+
 test("lead form validates locally and handles provider rejection", async ({ page }) => {
   let requests = 0;
   await page.route("https://api.web3forms.com/submit", async (route) => { requests += 1; await route.fulfill({ status: 400, contentType: "application/json", body: '{"success":false}' }); });
@@ -481,6 +500,38 @@ test("construction catalog exposes only build-to-order projects", async ({ page 
   });
   expect(media.ratio).toBeCloseTo(4 / 3, 2);
   expect(media.currentSrc).toMatch(/-(?:640|960|1440)\.webp$/u);
+});
+
+test("matched built-house galleries load full-resolution photos without layout overflow", async ({ page }) => {
+  const projects = [
+    ["partner-house-0750", 6],
+    ["partner-house-0838", 4],
+    ["partner-house-1050", 9],
+    ["partner-house-1111", 8]
+  ];
+  for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
+    await page.setViewportSize(viewport);
+    for (const [slug, photoCount] of projects) {
+      await page.goto(`construction/projects/${slug}.html`);
+      await expect(page.locator(".catalog-gallery h2")).toHaveText("Примеры близкого архитектурного профиля");
+      const links = page.locator(".catalog-gallery__photo-link");
+      await expect(links).toHaveCount(photoCount);
+      await expect(links.first()).toHaveAttribute("target", "_blank");
+      for (const image of await page.locator(".catalog-gallery img").all()) {
+        await image.scrollIntoViewIfNeeded();
+        await image.evaluate((node) => node.complete && node.naturalWidth > 0
+          ? true
+          : new Promise((resolve) => node.addEventListener("load", resolve, { once: true })));
+        const state = await image.evaluate((node) => ({ currentSrc: node.currentSrc, naturalWidth: node.naturalWidth, height: node.getBoundingClientRect().height }));
+        expect(state.currentSrc, slug).toMatch(/built-example-\d{2}\.webp$/u);
+        expect(state.naturalWidth, slug).toBeGreaterThanOrEqual(720);
+        expect(state.height, `${slug} at ${viewport.width}px`).toBeGreaterThanOrEqual(219);
+        expect(state.height, `${slug} at ${viewport.width}px`).toBeLessThanOrEqual(441);
+      }
+      const layout = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
+      expect(layout.scroll, `${slug} at ${viewport.width}px`).toBeLessThanOrEqual(layout.client + 1);
+    }
+  }
 });
 
 test("core direction pages have no horizontal overflow or overlapping headings", async ({ page }) => {
