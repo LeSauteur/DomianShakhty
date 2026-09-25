@@ -68,6 +68,36 @@ test("construction projects remain separate from secondary inventory", () => {
   assert.equal(existingListings.length, 26);
 });
 
+test("published concrete inventory count is exact and separate from catalogs", () => {
+  const existingListings = readJson("src/data/listings.json");
+  const available = existingListings.filter((item) => item.verified === true && item.status === "available");
+  assert.equal(available.length, 26);
+  assert.deepEqual(countBy(available, (item) => item.type), {
+    "house-new": 1,
+    "apartment-secondary": 12,
+    "apartment-newbuild": 1,
+    "house-secondary": 6,
+    land: 6
+  });
+  assert.equal(newbuilds.items.length, 78);
+  assert.equal(construction.items.length, 26);
+});
+
+test("construction cards use unique customer-facing house titles", () => {
+  const titles = construction.items.map((item) => item.title);
+  assert.equal(new Set(titles).size, construction.items.length);
+  assert.ok(titles.every((title) => /дом под ключ/iu.test(title)));
+  assert.doesNotMatch(titles.join("\n"), /Проект DS|Эквита №|ТИП-О/iu);
+});
+
+test("public catalog pages omit internal source and presentation notes", () => {
+  const pages = [
+    ...newbuilds.items.map((item) => readDist(`newbuilds/${item.slug}.html`)),
+    ...construction.items.map((item) => readDist(`construction/projects/${item.slug}.html`))
+  ].join("\n");
+  assert.doesNotMatch(pages, /Обезличенная партнёрская презентация|Партнёрская презентация|Происхождение данных|Материалы проекта, не оферта|Источник и актуальность|Официальный источник|Документ:\s|по данным источника|первичном источнике|по расчёту презентации|Ориентир из презентации/iu);
+});
+
 test("partner house cards are anonymized and use the supplied presentation values", () => {
   const partnerItems = construction.items.filter((item) => item.builderId === "partner-selection");
   assert.equal(partnerItems.length, 15);

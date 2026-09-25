@@ -27,7 +27,7 @@ npm run qa
 
 Для Google URL-prefix property используйте текущий custom domain. `robots.txt` и `sitemap.xml` публикуются в корне домена. 404 и `thanks.html` имеют `noindex` и исключены из sitemap.
 
-После указания ID Метрика и GA4 предлагают посетителю выбор и загружаются только после согласия; на localhost и URL с query-параметрами они не работают. События ограничены списками имён и параметров в `assets/js/site.js`; URL с пользовательскими параметрами и данные формы в аналитику не передаются. Метрика использует цели `reachGoal`, GA4 — одноимённые события. Возможные цели: `phone_click`, `email_click`, `whatsapp_click`, `telegram_click`, `max_click`, `lead_form_submit_attempt`, `lead_form_success`, `lead_form_error`, `property_card_open`, `project_open`, `construction_interest`.
+После указания ID Метрика и GA4 предлагают посетителю выбор и загружаются только после согласия; на localhost и URL с query-параметрами они не работают. События ограничены списками имён и параметров в `assets/js/site.js`; URL с пользовательскими параметрами и данные формы в аналитику не передаются. Метрика использует цели `reachGoal`, GA4 — одноимённые события. Возможные цели: `phone_click`, `email_click`, `telegram_click`, `max_click`, `lead_form_submit_attempt`, `lead_form_success`, `lead_form_error`, `property_card_open`, `project_open`, `construction_interest`.
 
 Перед включением Web3Forms и аналитики владелец должен проверить условия обработки и хранения данных, редакцию политики, применимость требований о согласии и провести реальную тестовую заявку. Уведомление о согласии появляется только при настроенном счётчике; фактические сервисы должны быть отражены в политике.
 

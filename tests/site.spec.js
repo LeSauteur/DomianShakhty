@@ -239,7 +239,6 @@ test("confirmed social links emit allowlisted events without PII", async ({ page
     }, true);
   });
   const expected = {
-    whatsapp_click: "https://wa.me/message/YL42DCFCGMPQH1",
     telegram_click: "https://t.me/MariyaVoronina87",
     max_click: "https://max.ru/u/f9LHodD0cOIKT6pyYpEr_SpFY0ZcDT9BWF4LEwhkoft3td7dLbNOySNW-RA",
     instagram_click: "https://www.instagram.com/domian_shakhty_mayakovskogo?utm_source=qr&igsi=dTFsYmg4Nm15Y3F0"
@@ -491,7 +490,7 @@ test("construction catalog exposes only build-to-order projects", async ({ page 
   await page.goto("construction.html");
   await expect(page.locator("[data-product-count]")).toHaveText("26");
   await expect(page.locator("[data-product-card]")).toHaveCount(26);
-  await expect(page.locator("[data-product-card]").first()).toContainText("Проект DS-80");
+  await expect(page.locator("[data-product-card]").first()).toContainText("Дом под ключ 80 м² с тремя спальнями");
   await expect(page.locator("main")).not.toContainText("Дом под чистовую отделку в центре Каменоломней");
   const media = await page.locator(".product-card__media").first().evaluate((node) => {
     const image = node.querySelector("img");
@@ -559,7 +558,7 @@ test("newbuild and construction filters update the catalog without hiding missin
   const remaining = Number(await page.locator("[data-product-count]").textContent());
   expect(remaining).toBeGreaterThanOrEqual(0);
   for (const card of await page.locator("[data-product-card]:visible").all()) {
-    await expect(card).toContainText("Требует проверки");
+    await expect(card).toContainText("Актуализируется");
   }
   await page.locator('button[type="reset"]').click();
   await expect(page.locator("[data-product-count]")).toHaveText("78");
