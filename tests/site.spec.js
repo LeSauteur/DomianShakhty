@@ -502,6 +502,38 @@ test("construction catalog exposes only build-to-order projects", async ({ page 
   expect(media.currentSrc).toMatch(/-(?:640|960|1440)\.webp$/u);
 });
 
+test("matched built-house galleries load full-resolution photos without layout overflow", async ({ page }) => {
+  const projects = [
+    ["partner-house-0750", 6],
+    ["partner-house-0838", 4],
+    ["partner-house-1050", 9],
+    ["partner-house-1111", 8]
+  ];
+  for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
+    await page.setViewportSize(viewport);
+    for (const [slug, photoCount] of projects) {
+      await page.goto(`construction/projects/${slug}.html`);
+      await expect(page.locator(".catalog-gallery h2")).toHaveText("Примеры близкого архитектурного профиля");
+      const links = page.locator(".catalog-gallery__photo-link");
+      await expect(links).toHaveCount(photoCount);
+      await expect(links.first()).toHaveAttribute("target", "_blank");
+      for (const image of await page.locator(".catalog-gallery img").all()) {
+        await image.scrollIntoViewIfNeeded();
+        await image.evaluate((node) => node.complete && node.naturalWidth > 0
+          ? true
+          : new Promise((resolve) => node.addEventListener("load", resolve, { once: true })));
+        const state = await image.evaluate((node) => ({ currentSrc: node.currentSrc, naturalWidth: node.naturalWidth, height: node.getBoundingClientRect().height }));
+        expect(state.currentSrc, slug).toMatch(/built-example-\d{2}\.webp$/u);
+        expect(state.naturalWidth, slug).toBeGreaterThanOrEqual(720);
+        expect(state.height, `${slug} at ${viewport.width}px`).toBeGreaterThanOrEqual(219);
+        expect(state.height, `${slug} at ${viewport.width}px`).toBeLessThanOrEqual(441);
+      }
+      const layout = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
+      expect(layout.scroll, `${slug} at ${viewport.width}px`).toBeLessThanOrEqual(layout.client + 1);
+    }
+  }
+});
+
 test("core direction pages have no horizontal overflow or overlapping headings", async ({ page }) => {
   const paths = ["apartments.html", "secondary-apartments.html", "new-build-apartments.html", "newbuilds.html", "newbuilds/leventsovka-park.html", "houses.html", "construction.html", "construction/projects/domanstroy-ds-80.html", "secondary-houses.html", "builder-houses.html", "lands.html", "commercial.html", "garages-parking.html"];
   for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {

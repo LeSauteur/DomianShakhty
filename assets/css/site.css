@@ -1234,6 +1234,9 @@ body[data-page-type="location"] .hero-facts {
 .catalog-plan-grid picture,
 .catalog-plan-grid img { display: block; width: 100%; }
 .catalog-gallery img { aspect-ratio: 16 / 10; object-fit: cover; }
+.catalog-gallery__photo-link { display: block; cursor: zoom-in; }
+.catalog-gallery__photo-link img { height: clamp(220px, 31vw, 440px); }
+.catalog-gallery__photo-link:focus-visible { outline: 3px solid var(--champagne); outline-offset: -5px; }
 .catalog-plan-grid img { height: clamp(300px, 44vw, 620px); object-fit: contain; background: white; }
 
 .catalog-source { border-top: 1px solid var(--line); }

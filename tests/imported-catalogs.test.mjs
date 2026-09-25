@@ -78,12 +78,18 @@ test("partner house cards are anonymized and use the supplied presentation value
   ]);
   const publicProjectData = JSON.stringify(partnerItems);
   assert.doesNotMatch(publicProjectData, /Союз Застройщиков|soyuz-|souz-zastroi|Ростов \(1\)/iu);
-  assert.ok(partnerItems.every((item) => item.gallery.length === 0));
-  assert.ok(partnerItems.every((item) => item.mainImage.src.includes("/plan-")));
+  const builtExamples = partnerItems.filter((item) => item.imageKind === "Пример построенного дома");
+  assert.deepEqual(builtExamples.map((item) => [item.area, item.gallery.length]), [[75, 6], [83.8, 4], [105, 9], [111.1, 8]]);
+  assert.ok(builtExamples.every((item) => item.mainImage.src.includes("/built-example-")));
+  assert.equal(builtExamples.flatMap((item) => [item.mainImage, ...item.gallery]).length, 31);
+  assert.ok(partnerItems.filter((item) => !builtExamples.includes(item)).every((item) => item.gallery.length === 0 && item.mainImage.src.includes("/plan-")));
   const catalog = readDist("construction.html");
   assert.match(catalog, /от 4\s545\s947 ₽/u);
   assert.match(catalog, /от 21\s804 ₽\/мес\./u);
   assert.doesNotMatch(catalog, /Союз Застройщиков|soyuz-|souz-zastroi/iu);
+  const builtPage = readDist("construction/projects/partner-house-0838.html");
+  assert.match(builtPage, /Примеры близкого архитектурного профиля/u);
+  assert.match(builtPage, /Точное соответствие выбранной планировке, фасаду и комплектации подтверждается агентством/u);
 });
 
 test("all imported responsive media is local WebP and exists", () => {
@@ -105,7 +111,7 @@ test("all imported responsive media is local WebP and exists", () => {
   const generatedFiles = ["assets/images/newbuilds", "assets/images/construction-projects"]
     .flatMap((directory) => fs.readdirSync(path.join(repo, directory), { recursive: true }).filter((file) => file.endsWith(".webp")));
   assert.equal(generatedFiles.length, manifest.media.generatedResponsiveWebpFiles);
-  assert.equal(generatedFiles.length, 391);
+  assert.equal(generatedFiles.length, 422);
   assert.ok(generatedFiles.every((file) => !file.endsWith("-480.webp")));
 });
 

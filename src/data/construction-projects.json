@@ -1050,26 +1050,49 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/partner-house-0750/plan-1104.webp",
-        "width": 1104,
-        "height": 930,
-        "srcset": [
-          {
-            "src": "assets/images/construction-projects/partner-house-0750/plan-640.webp",
-            "width": 640
-          },
-          {
-            "src": "assets/images/construction-projects/partner-house-0750/plan-960.webp",
-            "width": 960
-          },
-          {
-            "src": "assets/images/construction-projects/partner-house-0750/plan-1104.webp",
-            "width": 1104
-          }
-        ],
-        "alt": "Дом 75 м²: планировка 1"
+        "src": "assets/images/construction-projects/partner-house-0750/built-example-02.webp",
+        "width": 1280,
+        "height": 960,
+        "alt": "Пример построенного одноэтажного дома сопоставимого профиля"
       },
-      "gallery": [],
+      "gallery": [
+        {
+          "src": "assets/images/construction-projects/partner-house-0750/built-example-01.webp",
+          "width": 1280,
+          "height": 960,
+          "alt": "Пример построенного дома сопоставимого профиля: боковой фасад"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-0750/built-example-03.webp",
+          "width": 720,
+          "height": 960,
+          "alt": "Пример построенного дома сопоставимого профиля: входная зона"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-0750/built-example-04.webp",
+          "width": 1280,
+          "height": 960,
+          "alt": "Пример построенного дома сопоставимого профиля: фасад и двор"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-0750/built-example-05.webp",
+          "width": 1280,
+          "height": 960,
+          "alt": "Пример построенного дома сопоставимого профиля: угловой вид"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-0750/built-example-06.webp",
+          "width": 1280,
+          "height": 960,
+          "alt": "Пример построенного дома сопоставимого профиля: вход и остекление"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-0750/built-example-07.webp",
+          "width": 1280,
+          "height": 960,
+          "alt": "Пример построенного дома сопоставимого профиля: торцевой фасад"
+        }
+      ],
       "floorPlans": [
         {
           "src": "assets/images/construction-projects/partner-house-0750/plan-1104.webp",
@@ -1092,7 +1115,7 @@
           "alt": "Дом 75 м²: планировка 1"
         }
       ],
-      "imageKind": "Планировка проекта",
+      "imageKind": "Пример построенного дома",
       "sourceDocument": "Партнёрская презентация",
       "sourcePage": 1,
       "factSource": "Обезличенная партнёрская презентация, переданная офису",
@@ -1144,22 +1167,37 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/partner-house-0838/plan-820.webp",
-        "width": 820,
-        "height": 924,
-        "srcset": [
-          {
-            "src": "assets/images/construction-projects/partner-house-0838/plan-640.webp",
-            "width": 640
-          },
-          {
-            "src": "assets/images/construction-projects/partner-house-0838/plan-820.webp",
-            "width": 820
-          }
-        ],
-        "alt": "Дом 83,8 м²: планировка 1"
+        "src": "assets/images/construction-projects/partner-house-0838/built-example-01.webp",
+        "width": 1280,
+        "height": 959,
+        "alt": "Пример построенного одноэтажного дома с крытой террасой"
       },
-      "gallery": [],
+      "gallery": [
+        {
+          "src": "assets/images/construction-projects/partner-house-0838/built-example-02.webp",
+          "width": 720,
+          "height": 960,
+          "alt": "Пример построенного дома сопоставимого профиля: крытая терраса"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-0838/built-example-03.webp",
+          "width": 1280,
+          "height": 959,
+          "alt": "Пример построенного дома сопоставимого профиля: фасад с панорамными окнами"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-0838/built-example-04.webp",
+          "width": 1280,
+          "height": 960,
+          "alt": "Пример построенного дома сопоставимого профиля: главный фасад"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-0838/built-example-05.webp",
+          "width": 1280,
+          "height": 960,
+          "alt": "Пример построенного дома сопоставимого профиля: участок и боковой фасад"
+        }
+      ],
       "floorPlans": [
         {
           "src": "assets/images/construction-projects/partner-house-0838/plan-820.webp",
@@ -1178,7 +1216,7 @@
           "alt": "Дом 83,8 м²: планировка 1"
         }
       ],
-      "imageKind": "Планировка проекта",
+      "imageKind": "Пример построенного дома",
       "sourceDocument": "Партнёрская презентация",
       "sourcePage": 1,
       "factSource": "Обезличенная партнёрская презентация, переданная офису",
@@ -1582,26 +1620,67 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/partner-house-1050/plan-1005.webp",
-        "width": 1005,
-        "height": 924,
-        "srcset": [
-          {
-            "src": "assets/images/construction-projects/partner-house-1050/plan-640.webp",
-            "width": 640
-          },
-          {
-            "src": "assets/images/construction-projects/partner-house-1050/plan-960.webp",
-            "width": 960
-          },
-          {
-            "src": "assets/images/construction-projects/partner-house-1050/plan-1005.webp",
-            "width": 1005
-          }
-        ],
-        "alt": "Дом 105 м²: планировка 1"
+        "src": "assets/images/construction-projects/partner-house-1050/built-example-07.webp",
+        "width": 1920,
+        "height": 1082,
+        "alt": "Пример построенного одноэтажного дома с панорамным остеклением"
       },
-      "gallery": [],
+      "gallery": [
+        {
+          "src": "assets/images/construction-projects/partner-house-1050/built-example-01.webp",
+          "width": 1082,
+          "height": 1920,
+          "alt": "Пример построенного дома сопоставимого профиля: коридор под чистовую отделку"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-1050/built-example-02.webp",
+          "width": 1082,
+          "height": 1920,
+          "alt": "Пример построенного дома сопоставимого профиля: кухня-гостиная под отделку"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-1050/built-example-03.webp",
+          "width": 1082,
+          "height": 1920,
+          "alt": "Пример построенного дома сопоставимого профиля: фасадное остекление"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-1050/built-example-04.webp",
+          "width": 1082,
+          "height": 1920,
+          "alt": "Пример построенного дома сопоставимого профиля: угловое остекление"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-1050/built-example-05.webp",
+          "width": 1082,
+          "height": 1920,
+          "alt": "Пример построенного дома сопоставимого профиля: входная группа"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-1050/built-example-06.webp",
+          "width": 1082,
+          "height": 1920,
+          "alt": "Пример построенного дома сопоставимого профиля: торцевой фасад"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-1050/built-example-08.webp",
+          "width": 1082,
+          "height": 1920,
+          "alt": "Пример построенного дома сопоставимого профиля: панорамные двери"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-1050/built-example-09.webp",
+          "width": 1080,
+          "height": 1920,
+          "alt": "Пример построенного дома сопоставимого профиля: фасадный угол"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-1050/built-example-10.webp",
+          "width": 1082,
+          "height": 1920,
+          "alt": "Пример построенного дома сопоставимого профиля: инженерный ввод"
+        }
+      ],
       "floorPlans": [
         {
           "src": "assets/images/construction-projects/partner-house-1050/plan-1005.webp",
@@ -1624,7 +1703,7 @@
           "alt": "Дом 105 м²: планировка 1"
         }
       ],
-      "imageKind": "Планировка проекта",
+      "imageKind": "Пример построенного дома",
       "sourceDocument": "Партнёрская презентация",
       "sourcePage": 1,
       "factSource": "Обезличенная партнёрская презентация, переданная офису",
@@ -1864,18 +1943,61 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/partner-house-1111/plan-615.webp",
-        "width": 615,
-        "height": 636,
-        "srcset": [
-          {
-            "src": "assets/images/construction-projects/partner-house-1111/plan-615.webp",
-            "width": 615
-          }
-        ],
-        "alt": "Дом 111,1 м²: планировка 1"
+        "src": "assets/images/construction-projects/partner-house-1111/built-example-01.webp",
+        "width": 1280,
+        "height": 960,
+        "alt": "Пример построенного одноэтажного дома в кирпичном фасаде"
       },
-      "gallery": [],
+      "gallery": [
+        {
+          "src": "assets/images/construction-projects/partner-house-1111/built-example-02.webp",
+          "width": 1280,
+          "height": 960,
+          "alt": "Пример построенного дома сопоставимого профиля: кирпичный фасад"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-1111/built-example-03.webp",
+          "width": 1059,
+          "height": 699,
+          "alt": "Пример построенного дома сопоставимого профиля: светлый фасад"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-1111/built-example-04.webp",
+          "width": 1125,
+          "height": 868,
+          "alt": "Пример построенного дома сопоставимого профиля: помещения под чистовую отделку"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-1111/built-example-05.webp",
+          "width": 1280,
+          "height": 960,
+          "alt": "Пример построенного дома сопоставимого профиля: боковой фасад"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-1111/built-example-06.webp",
+          "width": 1125,
+          "height": 836,
+          "alt": "Пример построенного дома сопоставимого профиля: комната под чистовую отделку"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-1111/built-example-07.webp",
+          "width": 1063,
+          "height": 732,
+          "alt": "Пример построенного дома сопоставимого профиля: светлый фасад и терраса"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-1111/built-example-08.webp",
+          "width": 1072,
+          "height": 716,
+          "alt": "Пример построенного дома сопоставимого профиля: панорамные окна"
+        },
+        {
+          "src": "assets/images/construction-projects/partner-house-1111/built-example-09.webp",
+          "width": 1280,
+          "height": 931,
+          "alt": "Пример построенного дома сопоставимого профиля: фасад с выходом во двор"
+        }
+      ],
       "floorPlans": [
         {
           "src": "assets/images/construction-projects/partner-house-1111/plan-615.webp",
@@ -1890,7 +2012,7 @@
           "alt": "Дом 111,1 м²: планировка 1"
         }
       ],
-      "imageKind": "Планировка проекта",
+      "imageKind": "Пример построенного дома",
       "sourceDocument": "Партнёрская презентация",
       "sourcePage": 1,
       "factSource": "Обезличенная партнёрская презентация, переданная офису",
