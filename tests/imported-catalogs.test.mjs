@@ -90,6 +90,19 @@ test("construction cards use unique customer-facing house titles", () => {
   assert.doesNotMatch(titles.join("\n"), /Проект DS|Эквита №|ТИП-О/iu);
 });
 
+test("construction project URLs are neutral and customer-facing", () => {
+  const slugs = construction.items.map((item) => item.slug);
+  assert.ok(slugs.every((slug) => /dom/u.test(slug)), slugs.join("\n"));
+  assert.doesNotMatch(slugs.join("\n"), /domanstroy|eqvita|partner-house|\bds-|\beq-/iu);
+  const catalog = readDist("construction.html");
+  assert.doesNotMatch(catalog, /domanstroy|eqvita|partner-house|construction\/projects\/(?:ds-|eq-)/iu);
+  for (const item of construction.items) {
+    const html = readDist(`construction/projects/${item.slug}.html`);
+    assert.match(html, new RegExp(`data-construction-project="${item.slug}"`, "u"), item.slug);
+    assert.doesNotMatch(html, /domanstroy|eqvita|partner-house/iu, item.slug);
+  }
+});
+
 test("public catalog pages omit internal source and presentation notes", () => {
   const pages = [
     ...newbuilds.items.map((item) => readDist(`newbuilds/${item.slug}.html`)),
@@ -132,7 +145,7 @@ test("partner house cards are anonymized and use the supplied presentation value
   assert.match(catalog, /от 4\s545\s947 ₽/u);
   assert.match(catalog, /от 21\s804 ₽\/мес\./u);
   assert.doesNotMatch(catalog, /Союз Застройщиков|soyuz-|souz-zastroi/iu);
-  const builtPage = readDist("construction/projects/partner-house-0838.html");
+  const builtPage = readDist("construction/projects/dom-pod-klyuch-83-8m2-s-terrasoy.html");
   assert.match(builtPage, /Примеры близкого архитектурного профиля/u);
   assert.match(builtPage, /Точное соответствие выбранной планировке, фасаду и комплектации подтверждается агентством/u);
 });

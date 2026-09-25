@@ -5,7 +5,7 @@ const localOrigin = `http://127.0.0.1:${process.env.PLAYWRIGHT_PORT || 43173}`;
 const representativePages = [
   "",
   "construction.html",
-  "construction/projects/domanstroy-ds-80.html",
+  "construction/projects/dom-pod-klyuch-80m2-tri-spalni.html",
   "apartments.html",
   "newbuilds.html",
   "newbuilds/dvizhenie-61.html",
@@ -502,9 +502,9 @@ test("construction catalog exposes only build-to-order projects", async ({ page 
   expect(media.ratio).toBeCloseTo(4 / 3, 2);
   expect(media.currentSrc).toMatch(/-(?:640|960|1440)\.webp$/u);
 
-  const partnerCards = page.locator('.construction-product-card:has(a[href*="partner-house-"])');
-  await expect(partnerCards).toHaveCount(15);
-  for (const image of await partnerCards.locator("img").all()) {
+  const projectCards = page.locator(".construction-product-card");
+  await expect(projectCards).toHaveCount(26);
+  for (const image of await projectCards.locator("img").all()) {
     await image.scrollIntoViewIfNeeded();
     const state = await image.evaluate((node) => ({ complete: node.complete, naturalWidth: node.naturalWidth, currentSrc: node.currentSrc }));
     expect(state.complete).toBe(true);
@@ -516,7 +516,7 @@ test("construction catalog exposes only build-to-order projects", async ({ page 
 test("catalog detail hero images keep a bounded aspect ratio", async ({ page }) => {
   for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
     await page.setViewportSize(viewport);
-    for (const pathname of ["construction/projects/partner-house-0750.html", "newbuilds/gray.html"]) {
+    for (const pathname of ["construction/projects/dom-pod-klyuch-75m2-dve-spalni.html", "newbuilds/gray.html"]) {
       await page.goto(pathname);
       const media = page.locator(".catalog-detail__media");
       const image = media.locator("img");
@@ -538,10 +538,10 @@ test("catalog detail hero images keep a bounded aspect ratio", async ({ page }) 
 
 test("matched built-house galleries load full-resolution photos without layout overflow", async ({ page }) => {
   const projects = [
-    ["partner-house-0750", 6],
-    ["partner-house-0838", 4],
-    ["partner-house-1050", 9],
-    ["partner-house-1111", 8]
+    ["dom-pod-klyuch-75m2-dve-spalni", 6],
+    ["dom-pod-klyuch-83-8m2-s-terrasoy", 4],
+    ["dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla", 9],
+    ["dom-pod-klyuch-111-1m2-tri-spalni", 8]
   ];
   for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
     await page.setViewportSize(viewport);
@@ -569,7 +569,7 @@ test("matched built-house galleries load full-resolution photos without layout o
 });
 
 test("core direction pages have no horizontal overflow or overlapping headings", async ({ page }) => {
-  const paths = ["apartments.html", "secondary-apartments.html", "new-build-apartments.html", "newbuilds.html", "newbuilds/leventsovka-park.html", "houses.html", "construction.html", "construction/projects/domanstroy-ds-80.html", "secondary-houses.html", "builder-houses.html", "lands.html", "commercial.html", "garages-parking.html"];
+  const paths = ["apartments.html", "secondary-apartments.html", "new-build-apartments.html", "newbuilds.html", "newbuilds/leventsovka-park.html", "houses.html", "construction.html", "construction/projects/dom-pod-klyuch-80m2-tri-spalni.html", "secondary-houses.html", "builder-houses.html", "lands.html", "commercial.html", "garages-parking.html"];
   for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
     await page.setViewportSize(viewport);
     for (const pathname of paths) {
@@ -630,7 +630,7 @@ test("primary customer journeys fit all requested audit viewports", async ({ pag
 });
 
 test("catalog imagery loads responsive WebP at required viewports", async ({ page }) => {
-  const paths = ["newbuilds.html", "newbuilds/leventsovka-park.html", "newbuilds/manhetten-2-0-novaya-vysota.html", "construction.html", "construction/projects/domanstroy-ds-80.html"];
+  const paths = ["newbuilds.html", "newbuilds/leventsovka-park.html", "newbuilds/manhetten-2-0-novaya-vysota.html", "construction.html", "construction/projects/dom-pod-klyuch-80m2-tri-spalni.html"];
   for (const viewport of [{ width: 390, height: 844 }, { width: 430, height: 932 }, { width: 768, height: 1024 }, { width: 1366, height: 900 }, { width: 1440, height: 900 }]) {
     await page.setViewportSize(viewport);
     for (const pathname of paths) {
