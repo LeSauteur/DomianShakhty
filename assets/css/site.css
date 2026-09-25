@@ -922,6 +922,10 @@ body[data-page-type="location"] .hero-facts {
   box-shadow: 0 16px 38px rgba(52, 67, 69, .07);
 }
 
+.product-filters--construction {
+  grid-template-columns: minmax(260px, 1.6fr) repeat(2, minmax(160px, 1fr)) auto;
+}
+
 .product-filters label {
   display: grid;
   gap: 7px;
@@ -1158,6 +1162,7 @@ body[data-page-type="location"] .hero-facts {
 }
 
 .catalog-detail__media img {
+  height: auto;
   aspect-ratio: 16 / 11;
   object-fit: cover;
 }

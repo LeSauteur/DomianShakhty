@@ -150,7 +150,6 @@ test("runtime config and search verification match configured services", () => {
 
 test("confirmed social channels and Maria's responsive portrait are published from central data", () => {
   assert.deepEqual(config.socials, {
-    whatsapp: "https://wa.me/message/YL42DCFCGMPQH1",
     telegram: "https://t.me/MariyaVoronina87",
     max: "https://max.ru/u/f9LHodD0cOIKT6pyYpEr_SpFY0ZcDT9BWF4LEwhkoft3td7dLbNOySNW-RA",
     instagram: "https://www.instagram.com/domian_shakhty_mayakovskogo?utm_source=qr&igsi=dTFsYmg4Nm15Y3F0"
@@ -168,6 +167,18 @@ test("confirmed social channels and Maria's responsive portrait are published fr
   }
   assert.ok(fs.existsSync(path.join(root, "assets/images/maria-voronina-original.png")));
   assert.doesNotMatch(home, /qr[-_ ]?code|mariyavoronina87/u);
+  assert.doesNotMatch(home, /whatsapp|wa\.me/iu);
+});
+
+test("public output omits WhatsApp and uses the updated review status label", () => {
+  const publicTextFiles = fs.readdirSync(root, { recursive: true })
+    .filter((file) => /\.(?:html|js|json|xml|txt)$/u.test(file));
+  for (const file of publicTextFiles) {
+    const contents = read(file);
+    assert.doesNotMatch(contents, /whatsapp|wa\.me/iu, file);
+    assert.doesNotMatch(contents, /Требует проверки/iu, file);
+  }
+  assert.match(read("newbuilds.html"), /Актуализируется/u);
 });
 
 test("team page keeps Maria first and publishes Olga's verified profile", () => {
