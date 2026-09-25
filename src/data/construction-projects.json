@@ -921,12 +921,12 @@
       "factSource": "Архив и официальный каталог застройщика, указанный в PDF"
     },
     {
-      "id": "soyuz-69-9",
-      "slug": "soyuz-69-9",
-      "builderId": "soyuz",
-      "builder": "Союз Застройщиков",
-      "title": "Проект дома 69,9 м²",
-      "code": "СЗ-69,9",
+      "id": "partner-house-0699",
+      "slug": "partner-house-0699",
+      "builderId": "partner-selection",
+      "builder": "Партнёрская подборка",
+      "title": "Дом 69,9 м²",
+      "code": "Вариант 01",
       "area": 69.9,
       "floors": 1,
       "bedrooms": 2,
@@ -937,11 +937,11 @@
         "gazobeton"
       ],
       "projectType": "typical",
-      "price": 4644226,
+      "price": 4545947,
       "priceStatus": "partner-outdated",
-      "priceDate": "2023",
+      "priceDate": null,
       "pricePackage": "White Box",
-      "description": "Проект дома 69,9 м² — типовой проект площадью 69,9 м² от компании «Союз Застройщиков». Планировочные параметры: 1 этаж, 2 спальни, 1 санузел. Материалы по каталогу: Кирпич / газобетон. Посадка на участок, комплектация, инженерия, срок и итоговая смета подтверждаются для конкретного строительства.",
+      "description": "Одно из планировочных решений площадью 69,9 м² из партнёрской подборки. Параметры: 1 этаж, 2 спальни, 1 санузел. Название исполнителя и точный адрес не публикуются; участок, комплектация, срок и итоговая смета подтверждаются через агентство для конкретной задачи.",
       "features": [
         "1 этаж",
         "2 спальни",
@@ -964,85 +964,55 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/soyuz-69-9/facade-735.webp",
-        "width": 735,
-        "height": 417,
+        "src": "assets/images/construction-projects/partner-house-0699/plan-772.webp",
+        "width": 772,
+        "height": 915,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/soyuz-69-9/facade-640.webp",
+            "src": "assets/images/construction-projects/partner-house-0699/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/soyuz-69-9/facade-735.webp",
-            "width": 735
+            "src": "assets/images/construction-projects/partner-house-0699/plan-772.webp",
+            "width": 772
           }
         ],
-        "alt": "Проект дома 69,9 м²: фасад проекта"
+        "alt": "Дом 69,9 м²: планировка 1"
       },
-      "gallery": [
-        {
-          "src": "assets/images/construction-projects/soyuz-69-9/facade-735.webp",
-          "width": 735,
-          "height": 417,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-69-9/facade-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-69-9/facade-735.webp",
-              "width": 735
-            }
-          ],
-          "alt": "Проект дома 69,9 м²: вид 1"
-        },
-        {
-          "src": "assets/images/construction-projects/soyuz-69-9/facade-2-735.webp",
-          "width": 735,
-          "height": 451,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-69-9/facade-2-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-69-9/facade-2-735.webp",
-              "width": 735
-            }
-          ],
-          "alt": "Проект дома 69,9 м²: вид 2"
-        }
-      ],
+      "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/soyuz-69-9/plan-772.webp",
+          "src": "assets/images/construction-projects/partner-house-0699/plan-772.webp",
           "width": 772,
           "height": 915,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/soyuz-69-9/plan-640.webp",
+              "src": "assets/images/construction-projects/partner-house-0699/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/soyuz-69-9/plan-772.webp",
+              "src": "assets/images/construction-projects/partner-house-0699/plan-772.webp",
               "width": 772
             }
           ],
-          "alt": "Проект дома 69,9 м²: планировка 1"
+          "alt": "Дом 69,9 м²: планировка 1"
         }
       ],
-      "imageKind": "Рендер проекта",
-      "sourceDocument": "Ростов (1) (1).pdf",
+      "imageKind": "Планировка проекта",
+      "sourceDocument": "Партнёрская презентация",
       "sourcePage": 1,
-      "factSource": "Каталог компании, подготовленный в 2023 году"
+      "factSource": "Обезличенная партнёрская презентация, переданная офису",
+      "monthlyPayment": 21804,
+      "mortgageRateFrom": 6,
+      "downPaymentPercentFrom": 20
     },
     {
-      "id": "soyuz-75",
-      "slug": "soyuz-75",
-      "builderId": "soyuz",
-      "builder": "Союз Застройщиков",
-      "title": "Проект дома 75 м²",
-      "code": "СЗ-75",
+      "id": "partner-house-0750",
+      "slug": "partner-house-0750",
+      "builderId": "partner-selection",
+      "builder": "Партнёрская подборка",
+      "title": "Дом 75 м²",
+      "code": "Вариант 02",
       "area": 75,
       "floors": 1,
       "bedrooms": 2,
@@ -1053,11 +1023,11 @@
         "gazobeton"
       ],
       "projectType": "typical",
-      "price": 4827450,
+      "price": 4797000,
       "priceStatus": "partner-outdated",
-      "priceDate": "2023",
+      "priceDate": null,
       "pricePackage": "White Box",
-      "description": "Проект дома 75 м² — типовой проект площадью 75 м² от компании «Союз Застройщиков». Планировочные параметры: 1 этаж, 2 спальни, 1 санузел. Материалы по каталогу: Кирпич / газобетон. Посадка на участок, комплектация, инженерия, срок и итоговая смета подтверждаются для конкретного строительства.",
+      "description": "Одно из планировочных решений площадью 75 м² из партнёрской подборки. Параметры: 1 этаж, 2 спальни, 1 санузел. Название исполнителя и точный адрес не публикуются; участок, комплектация, срок и итоговая смета подтверждаются через агентство для конкретной задачи.",
       "features": [
         "1 этаж",
         "2 спальни",
@@ -1080,89 +1050,63 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/soyuz-75/facade-762.webp",
-        "width": 762,
-        "height": 417,
+        "src": "assets/images/construction-projects/partner-house-0750/plan-1104.webp",
+        "width": 1104,
+        "height": 930,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/soyuz-75/facade-640.webp",
+            "src": "assets/images/construction-projects/partner-house-0750/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/soyuz-75/facade-762.webp",
-            "width": 762
+            "src": "assets/images/construction-projects/partner-house-0750/plan-960.webp",
+            "width": 960
+          },
+          {
+            "src": "assets/images/construction-projects/partner-house-0750/plan-1104.webp",
+            "width": 1104
           }
         ],
-        "alt": "Проект дома 75 м²: фасад проекта"
+        "alt": "Дом 75 м²: планировка 1"
       },
-      "gallery": [
-        {
-          "src": "assets/images/construction-projects/soyuz-75/facade-762.webp",
-          "width": 762,
-          "height": 417,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-75/facade-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-75/facade-762.webp",
-              "width": 762
-            }
-          ],
-          "alt": "Проект дома 75 м²: вид 1"
-        },
-        {
-          "src": "assets/images/construction-projects/soyuz-75/facade-2-761.webp",
-          "width": 761,
-          "height": 451,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-75/facade-2-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-75/facade-2-761.webp",
-              "width": 761
-            }
-          ],
-          "alt": "Проект дома 75 м²: вид 2"
-        }
-      ],
+      "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/soyuz-75/plan-1104.webp",
+          "src": "assets/images/construction-projects/partner-house-0750/plan-1104.webp",
           "width": 1104,
           "height": 930,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/soyuz-75/plan-640.webp",
+              "src": "assets/images/construction-projects/partner-house-0750/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/soyuz-75/plan-960.webp",
+              "src": "assets/images/construction-projects/partner-house-0750/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/soyuz-75/plan-1104.webp",
+              "src": "assets/images/construction-projects/partner-house-0750/plan-1104.webp",
               "width": 1104
             }
           ],
-          "alt": "Проект дома 75 м²: планировка 1"
+          "alt": "Дом 75 м²: планировка 1"
         }
       ],
-      "imageKind": "Рендер проекта",
-      "sourceDocument": "Ростов (1) (1).pdf",
+      "imageKind": "Планировка проекта",
+      "sourceDocument": "Партнёрская презентация",
       "sourcePage": 1,
-      "factSource": "Каталог компании, подготовленный в 2023 году"
+      "factSource": "Обезличенная партнёрская презентация, переданная офису",
+      "monthlyPayment": 23008,
+      "mortgageRateFrom": 6,
+      "downPaymentPercentFrom": 20
     },
     {
-      "id": "soyuz-83-8",
-      "slug": "soyuz-83-8",
-      "builderId": "soyuz",
-      "builder": "Союз Застройщиков",
-      "title": "Проект дома 83,8 м²",
-      "code": "СЗ-83,8",
+      "id": "partner-house-0838",
+      "slug": "partner-house-0838",
+      "builderId": "partner-selection",
+      "builder": "Партнёрская подборка",
+      "title": "Дом 83,8 м²",
+      "code": "Вариант 03",
       "area": 83.8,
       "floors": 1,
       "bedrooms": 2,
@@ -1173,11 +1117,11 @@
         "gazobeton"
       ],
       "projectType": "typical",
-      "price": 5316356,
+      "price": 5449933,
       "priceStatus": "partner-outdated",
-      "priceDate": "2023",
+      "priceDate": null,
       "pricePackage": "White Box",
-      "description": "Проект дома 83,8 м² — типовой проект площадью 83,8 м² от компании «Союз Застройщиков». Планировочные параметры: 1 этаж, 2 спальни, 1 санузел. Материалы по каталогу: Кирпич / газобетон. Посадка на участок, комплектация, инженерия, срок и итоговая смета подтверждаются для конкретного строительства.",
+      "description": "Одно из планировочных решений площадью 83,8 м² из партнёрской подборки. Параметры: 1 этаж, 2 спальни, 1 санузел. Название исполнителя и точный адрес не публикуются; участок, комплектация, срок и итоговая смета подтверждаются через агентство для конкретной задачи.",
       "features": [
         "1 этаж",
         "2 спальни",
@@ -1200,85 +1144,55 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/soyuz-83-8/facade-743.webp",
-        "width": 743,
-        "height": 417,
+        "src": "assets/images/construction-projects/partner-house-0838/plan-820.webp",
+        "width": 820,
+        "height": 924,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/soyuz-83-8/facade-640.webp",
+            "src": "assets/images/construction-projects/partner-house-0838/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/soyuz-83-8/facade-743.webp",
-            "width": 743
+            "src": "assets/images/construction-projects/partner-house-0838/plan-820.webp",
+            "width": 820
           }
         ],
-        "alt": "Проект дома 83,8 м²: фасад проекта"
+        "alt": "Дом 83,8 м²: планировка 1"
       },
-      "gallery": [
-        {
-          "src": "assets/images/construction-projects/soyuz-83-8/facade-743.webp",
-          "width": 743,
-          "height": 417,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-83-8/facade-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-83-8/facade-743.webp",
-              "width": 743
-            }
-          ],
-          "alt": "Проект дома 83,8 м²: вид 1"
-        },
-        {
-          "src": "assets/images/construction-projects/soyuz-83-8/facade-2-750.webp",
-          "width": 750,
-          "height": 459,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-83-8/facade-2-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-83-8/facade-2-750.webp",
-              "width": 750
-            }
-          ],
-          "alt": "Проект дома 83,8 м²: вид 2"
-        }
-      ],
+      "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/soyuz-83-8/plan-820.webp",
+          "src": "assets/images/construction-projects/partner-house-0838/plan-820.webp",
           "width": 820,
           "height": 924,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/soyuz-83-8/plan-640.webp",
+              "src": "assets/images/construction-projects/partner-house-0838/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/soyuz-83-8/plan-820.webp",
+              "src": "assets/images/construction-projects/partner-house-0838/plan-820.webp",
               "width": 820
             }
           ],
-          "alt": "Проект дома 83,8 м²: планировка 1"
+          "alt": "Дом 83,8 м²: планировка 1"
         }
       ],
-      "imageKind": "Рендер проекта",
-      "sourceDocument": "Ростов (1) (1).pdf",
+      "imageKind": "Планировка проекта",
+      "sourceDocument": "Партнёрская презентация",
       "sourcePage": 1,
-      "factSource": "Каталог компании, подготовленный в 2023 году"
+      "factSource": "Обезличенная партнёрская презентация, переданная офису",
+      "monthlyPayment": 26140,
+      "mortgageRateFrom": 6,
+      "downPaymentPercentFrom": 20
     },
     {
-      "id": "soyuz-84",
-      "slug": "soyuz-84",
-      "builderId": "soyuz",
-      "builder": "Союз Застройщиков",
-      "title": "Проект дома 84 м²",
-      "code": "СЗ-84",
+      "id": "partner-house-0840",
+      "slug": "partner-house-0840",
+      "builderId": "partner-selection",
+      "builder": "Партнёрская подборка",
+      "title": "Дом 84 м²",
+      "code": "Вариант 04",
       "area": 84,
       "floors": 1,
       "bedrooms": 3,
@@ -1289,11 +1203,11 @@
         "gazobeton"
       ],
       "projectType": "typical",
-      "price": 5451525,
+      "price": 5345225,
       "priceStatus": "partner-outdated",
-      "priceDate": "2023",
+      "priceDate": null,
       "pricePackage": "White Box",
-      "description": "Проект дома 84 м² — типовой проект площадью 84 м² от компании «Союз Застройщиков». Планировочные параметры: 1 этаж, 3 спальни, 1 санузел. Материалы по каталогу: Кирпич / газобетон. Посадка на участок, комплектация, инженерия, срок и итоговая смета подтверждаются для конкретного строительства.",
+      "description": "Одно из планировочных решений площадью 84 м² из партнёрской подборки. Параметры: 1 этаж, 3 спальни, 1 санузел. Название исполнителя и точный адрес не публикуются; участок, комплектация, срок и итоговая смета подтверждаются через агентство для конкретной задачи.",
       "features": [
         "1 этаж",
         "3 спальни",
@@ -1316,93 +1230,47 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/soyuz-84/facade-1440.webp",
-        "width": 1440,
-        "height": 901,
+        "src": "assets/images/construction-projects/partner-house-0840/plan-576.webp",
+        "width": 576,
+        "height": 690,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/soyuz-84/facade-640.webp",
-            "width": 640
-          },
-          {
-            "src": "assets/images/construction-projects/soyuz-84/facade-960.webp",
-            "width": 960
-          },
-          {
-            "src": "assets/images/construction-projects/soyuz-84/facade-1440.webp",
-            "width": 1440
+            "src": "assets/images/construction-projects/partner-house-0840/plan-576.webp",
+            "width": 576
           }
         ],
-        "alt": "Проект дома 84 м²: фасад проекта"
+        "alt": "Дом 84 м²: планировка 1"
       },
-      "gallery": [
-        {
-          "src": "assets/images/construction-projects/soyuz-84/facade-1440.webp",
-          "width": 1440,
-          "height": 901,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-84/facade-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-84/facade-960.webp",
-              "width": 960
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-84/facade-1440.webp",
-              "width": 1440
-            }
-          ],
-          "alt": "Проект дома 84 м²: вид 1"
-        },
-        {
-          "src": "assets/images/construction-projects/soyuz-84/facade-2-1440.webp",
-          "width": 1440,
-          "height": 1049,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-84/facade-2-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-84/facade-2-960.webp",
-              "width": 960
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-84/facade-2-1440.webp",
-              "width": 1440
-            }
-          ],
-          "alt": "Проект дома 84 м²: вид 2"
-        }
-      ],
+      "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/soyuz-84/plan-576.webp",
+          "src": "assets/images/construction-projects/partner-house-0840/plan-576.webp",
           "width": 576,
           "height": 690,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/soyuz-84/plan-576.webp",
+              "src": "assets/images/construction-projects/partner-house-0840/plan-576.webp",
               "width": 576
             }
           ],
-          "alt": "Проект дома 84 м²: планировка 1"
+          "alt": "Дом 84 м²: планировка 1"
         }
       ],
-      "imageKind": "Рендер проекта",
-      "sourceDocument": "Ростов (1) (1).pdf",
+      "imageKind": "Планировка проекта",
+      "sourceDocument": "Партнёрская презентация",
       "sourcePage": 1,
-      "factSource": "Каталог компании, подготовленный в 2023 году"
+      "factSource": "Обезличенная партнёрская презентация, переданная офису",
+      "monthlyPayment": 25637,
+      "mortgageRateFrom": 6,
+      "downPaymentPercentFrom": 20
     },
     {
-      "id": "soyuz-85",
-      "slug": "soyuz-85",
-      "builderId": "soyuz",
-      "builder": "Союз Застройщиков",
-      "title": "Проект дома 85 м²",
-      "code": "СЗ-85",
+      "id": "partner-house-0850",
+      "slug": "partner-house-0850",
+      "builderId": "partner-selection",
+      "builder": "Партнёрская подборка",
+      "title": "Дом 85 м²",
+      "code": "Вариант 05",
       "area": 85,
       "floors": 1,
       "bedrooms": 3,
@@ -1413,11 +1281,11 @@
         "gazobeton"
       ],
       "projectType": "typical",
-      "price": 5392485,
+      "price": 5345225,
       "priceStatus": "partner-outdated",
-      "priceDate": "2023",
+      "priceDate": null,
       "pricePackage": "White Box",
-      "description": "Проект дома 85 м² — типовой проект площадью 85 м² от компании «Союз Застройщиков». Планировочные параметры: 1 этаж, 3 спальни, 1 санузел. Материалы по каталогу: Кирпич / газобетон. Посадка на участок, комплектация, инженерия, срок и итоговая смета подтверждаются для конкретного строительства.",
+      "description": "Одно из планировочных решений площадью 85 м² из партнёрской подборки. Параметры: 1 этаж, 3 спальни, 1 санузел. Название исполнителя и точный адрес не публикуются; участок, комплектация, срок и итоговая смета подтверждаются через агентство для конкретной задачи.",
       "features": [
         "1 этаж",
         "3 спальни",
@@ -1440,89 +1308,63 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/soyuz-85/facade-741.webp",
-        "width": 741,
-        "height": 416,
+        "src": "assets/images/construction-projects/partner-house-0850/plan-1059.webp",
+        "width": 1059,
+        "height": 924,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/soyuz-85/facade-640.webp",
+            "src": "assets/images/construction-projects/partner-house-0850/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/soyuz-85/facade-741.webp",
-            "width": 741
+            "src": "assets/images/construction-projects/partner-house-0850/plan-960.webp",
+            "width": 960
+          },
+          {
+            "src": "assets/images/construction-projects/partner-house-0850/plan-1059.webp",
+            "width": 1059
           }
         ],
-        "alt": "Проект дома 85 м²: фасад проекта"
+        "alt": "Дом 85 м²: планировка 1"
       },
-      "gallery": [
-        {
-          "src": "assets/images/construction-projects/soyuz-85/facade-741.webp",
-          "width": 741,
-          "height": 416,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-85/facade-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-85/facade-741.webp",
-              "width": 741
-            }
-          ],
-          "alt": "Проект дома 85 м²: вид 1"
-        },
-        {
-          "src": "assets/images/construction-projects/soyuz-85/facade-2-749.webp",
-          "width": 749,
-          "height": 460,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-85/facade-2-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-85/facade-2-749.webp",
-              "width": 749
-            }
-          ],
-          "alt": "Проект дома 85 м²: вид 2"
-        }
-      ],
+      "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/soyuz-85/plan-1059.webp",
+          "src": "assets/images/construction-projects/partner-house-0850/plan-1059.webp",
           "width": 1059,
           "height": 924,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/soyuz-85/plan-640.webp",
+              "src": "assets/images/construction-projects/partner-house-0850/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/soyuz-85/plan-960.webp",
+              "src": "assets/images/construction-projects/partner-house-0850/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/soyuz-85/plan-1059.webp",
+              "src": "assets/images/construction-projects/partner-house-0850/plan-1059.webp",
               "width": 1059
             }
           ],
-          "alt": "Проект дома 85 м²: планировка 1"
+          "alt": "Дом 85 м²: планировка 1"
         }
       ],
-      "imageKind": "Рендер проекта",
-      "sourceDocument": "Ростов (1) (1).pdf",
+      "imageKind": "Планировка проекта",
+      "sourceDocument": "Партнёрская презентация",
       "sourcePage": 1,
-      "factSource": "Каталог компании, подготовленный в 2023 году"
+      "factSource": "Обезличенная партнёрская презентация, переданная офису",
+      "monthlyPayment": 25637,
+      "mortgageRateFrom": 6,
+      "downPaymentPercentFrom": 20
     },
     {
-      "id": "soyuz-90",
-      "slug": "soyuz-90",
-      "builderId": "soyuz",
-      "builder": "Союз Застройщиков",
-      "title": "Проект дома 90 м²",
-      "code": "СЗ-90",
+      "id": "partner-house-0900",
+      "slug": "partner-house-0900",
+      "builderId": "partner-selection",
+      "builder": "Партнёрская подборка",
+      "title": "Дом 90 м²",
+      "code": "Вариант 06",
       "area": 90,
       "floors": 1,
       "bedrooms": 2,
@@ -1533,11 +1375,11 @@
         "gazobeton"
       ],
       "projectType": "typical",
-      "price": 5612940,
+      "price": 5659650,
       "priceStatus": "partner-outdated",
-      "priceDate": "2023",
+      "priceDate": null,
       "pricePackage": "White Box",
-      "description": "Проект дома 90 м² — типовой проект площадью 90 м² от компании «Союз Застройщиков». Планировочные параметры: 1 этаж, 2 спальни, 1 санузел. Материалы по каталогу: Кирпич / газобетон. Посадка на участок, комплектация, инженерия, срок и итоговая смета подтверждаются для конкретного строительства.",
+      "description": "Одно из планировочных решений площадью 90 м² из партнёрской подборки. Параметры: 1 этаж, 2 спальни, 1 санузел. Название исполнителя и точный адрес не публикуются; участок, комплектация, срок и итоговая смета подтверждаются через агентство для конкретной задачи.",
       "features": [
         "1 этаж",
         "2 спальни",
@@ -1560,85 +1402,55 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/soyuz-90/facade-735.webp",
-        "width": 735,
-        "height": 416,
+        "src": "assets/images/construction-projects/partner-house-0900/plan-806.webp",
+        "width": 806,
+        "height": 860,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/soyuz-90/facade-640.webp",
+            "src": "assets/images/construction-projects/partner-house-0900/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/soyuz-90/facade-735.webp",
-            "width": 735
+            "src": "assets/images/construction-projects/partner-house-0900/plan-806.webp",
+            "width": 806
           }
         ],
-        "alt": "Проект дома 90 м²: фасад проекта"
+        "alt": "Дом 90 м²: планировка 1"
       },
-      "gallery": [
-        {
-          "src": "assets/images/construction-projects/soyuz-90/facade-735.webp",
-          "width": 735,
-          "height": 416,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-90/facade-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-90/facade-735.webp",
-              "width": 735
-            }
-          ],
-          "alt": "Проект дома 90 м²: вид 1"
-        },
-        {
-          "src": "assets/images/construction-projects/soyuz-90/facade-2-735.webp",
-          "width": 735,
-          "height": 449,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-90/facade-2-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-90/facade-2-735.webp",
-              "width": 735
-            }
-          ],
-          "alt": "Проект дома 90 м²: вид 2"
-        }
-      ],
+      "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/soyuz-90/plan-806.webp",
+          "src": "assets/images/construction-projects/partner-house-0900/plan-806.webp",
           "width": 806,
           "height": 860,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/soyuz-90/plan-640.webp",
+              "src": "assets/images/construction-projects/partner-house-0900/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/soyuz-90/plan-806.webp",
+              "src": "assets/images/construction-projects/partner-house-0900/plan-806.webp",
               "width": 806
             }
           ],
-          "alt": "Проект дома 90 м²: планировка 1"
+          "alt": "Дом 90 м²: планировка 1"
         }
       ],
-      "imageKind": "Рендер проекта",
-      "sourceDocument": "Ростов (1) (1).pdf",
+      "imageKind": "Планировка проекта",
+      "sourceDocument": "Партнёрская презентация",
       "sourcePage": 1,
-      "factSource": "Каталог компании, подготовленный в 2023 году"
+      "factSource": "Обезличенная партнёрская презентация, переданная офису",
+      "monthlyPayment": 27145,
+      "mortgageRateFrom": 6,
+      "downPaymentPercentFrom": 20
     },
     {
-      "id": "soyuz-99",
-      "slug": "soyuz-99",
-      "builderId": "soyuz",
-      "builder": "Союз Застройщиков",
-      "title": "Проект дома 99 м²",
-      "code": "СЗ-99",
+      "id": "partner-house-0990",
+      "slug": "partner-house-0990",
+      "builderId": "partner-selection",
+      "builder": "Партнёрская подборка",
+      "title": "Дом 99 м²",
+      "code": "Вариант 07",
       "area": 99,
       "floors": 1,
       "bedrooms": 3,
@@ -1649,11 +1461,11 @@
         "gazobeton"
       ],
       "projectType": "typical",
-      "price": 6014516,
+      "price": 6172353,
       "priceStatus": "partner-outdated",
-      "priceDate": "2023",
+      "priceDate": null,
       "pricePackage": "White Box",
-      "description": "Проект дома 99 м² — типовой проект площадью 99 м² от компании «Союз Застройщиков». Планировочные параметры: 1 этаж, 3 спальни, 1 санузел. Материалы по каталогу: Кирпич / газобетон. Посадка на участок, комплектация, инженерия, срок и итоговая смета подтверждаются для конкретного строительства.",
+      "description": "Одно из планировочных решений площадью 99 м² из партнёрской подборки. Параметры: 1 этаж, 3 спальни, 1 санузел. Название исполнителя и точный адрес не публикуются; участок, комплектация, срок и итоговая смета подтверждаются через агентство для конкретной задачи.",
       "features": [
         "1 этаж",
         "3 спальни",
@@ -1676,89 +1488,63 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/soyuz-99/facade-750.webp",
-        "width": 750,
-        "height": 417,
+        "src": "assets/images/construction-projects/partner-house-0990/plan-1210.webp",
+        "width": 1210,
+        "height": 924,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/soyuz-99/facade-640.webp",
+            "src": "assets/images/construction-projects/partner-house-0990/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/soyuz-99/facade-750.webp",
-            "width": 750
+            "src": "assets/images/construction-projects/partner-house-0990/plan-960.webp",
+            "width": 960
+          },
+          {
+            "src": "assets/images/construction-projects/partner-house-0990/plan-1210.webp",
+            "width": 1210
           }
         ],
-        "alt": "Проект дома 99 м²: фасад проекта"
+        "alt": "Дом 99 м²: планировка 1"
       },
-      "gallery": [
-        {
-          "src": "assets/images/construction-projects/soyuz-99/facade-750.webp",
-          "width": 750,
-          "height": 417,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-99/facade-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-99/facade-750.webp",
-              "width": 750
-            }
-          ],
-          "alt": "Проект дома 99 м²: вид 1"
-        },
-        {
-          "src": "assets/images/construction-projects/soyuz-99/facade-2-750.webp",
-          "width": 750,
-          "height": 451,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-99/facade-2-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-99/facade-2-750.webp",
-              "width": 750
-            }
-          ],
-          "alt": "Проект дома 99 м²: вид 2"
-        }
-      ],
+      "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/soyuz-99/plan-1210.webp",
+          "src": "assets/images/construction-projects/partner-house-0990/plan-1210.webp",
           "width": 1210,
           "height": 924,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/soyuz-99/plan-640.webp",
+              "src": "assets/images/construction-projects/partner-house-0990/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/soyuz-99/plan-960.webp",
+              "src": "assets/images/construction-projects/partner-house-0990/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/soyuz-99/plan-1210.webp",
+              "src": "assets/images/construction-projects/partner-house-0990/plan-1210.webp",
               "width": 1210
             }
           ],
-          "alt": "Проект дома 99 м²: планировка 1"
+          "alt": "Дом 99 м²: планировка 1"
         }
       ],
-      "imageKind": "Рендер проекта",
-      "sourceDocument": "Ростов (1) (1).pdf",
+      "imageKind": "Планировка проекта",
+      "sourceDocument": "Партнёрская презентация",
       "sourcePage": 1,
-      "factSource": "Каталог компании, подготовленный в 2023 году"
+      "factSource": "Обезличенная партнёрская презентация, переданная офису",
+      "monthlyPayment": 29605,
+      "mortgageRateFrom": 6,
+      "downPaymentPercentFrom": 20
     },
     {
-      "id": "soyuz-105",
-      "slug": "soyuz-105",
-      "builderId": "soyuz",
-      "builder": "Союз Застройщиков",
-      "title": "Проект дома 105 м²",
-      "code": "СЗ-105",
+      "id": "partner-house-1050",
+      "slug": "partner-house-1050",
+      "builderId": "partner-selection",
+      "builder": "Партнёрская подборка",
+      "title": "Дом 105 м²",
+      "code": "Вариант 08",
       "area": 105,
       "floors": 1,
       "bedrooms": 3,
@@ -1769,11 +1555,11 @@
         "gazobeton"
       ],
       "projectType": "typical",
-      "price": 6491940,
+      "price": 6433560,
       "priceStatus": "partner-outdated",
-      "priceDate": "2023",
+      "priceDate": null,
       "pricePackage": "White Box",
-      "description": "Проект дома 105 м² — типовой проект площадью 105 м² от компании «Союз Застройщиков». Планировочные параметры: 1 этаж, 3 спальни, 2 санузла. Материалы по каталогу: Кирпич / газобетон. Посадка на участок, комплектация, инженерия, срок и итоговая смета подтверждаются для конкретного строительства.",
+      "description": "Одно из планировочных решений площадью 105 м² из партнёрской подборки. Параметры: 1 этаж, 3 спальни, 2 санузла. Название исполнителя и точный адрес не публикуются; участок, комплектация, срок и итоговая смета подтверждаются через агентство для конкретной задачи.",
       "features": [
         "1 этаж",
         "3 спальни",
@@ -1796,89 +1582,63 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/soyuz-105/facade-758.webp",
-        "width": 758,
-        "height": 416,
+        "src": "assets/images/construction-projects/partner-house-1050/plan-1005.webp",
+        "width": 1005,
+        "height": 924,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/soyuz-105/facade-640.webp",
+            "src": "assets/images/construction-projects/partner-house-1050/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/soyuz-105/facade-758.webp",
-            "width": 758
+            "src": "assets/images/construction-projects/partner-house-1050/plan-960.webp",
+            "width": 960
+          },
+          {
+            "src": "assets/images/construction-projects/partner-house-1050/plan-1005.webp",
+            "width": 1005
           }
         ],
-        "alt": "Проект дома 105 м²: фасад проекта"
+        "alt": "Дом 105 м²: планировка 1"
       },
-      "gallery": [
-        {
-          "src": "assets/images/construction-projects/soyuz-105/facade-758.webp",
-          "width": 758,
-          "height": 416,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-105/facade-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-105/facade-758.webp",
-              "width": 758
-            }
-          ],
-          "alt": "Проект дома 105 м²: вид 1"
-        },
-        {
-          "src": "assets/images/construction-projects/soyuz-105/facade-2-758.webp",
-          "width": 758,
-          "height": 451,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-105/facade-2-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-105/facade-2-758.webp",
-              "width": 758
-            }
-          ],
-          "alt": "Проект дома 105 м²: вид 2"
-        }
-      ],
+      "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/soyuz-105/plan-1005.webp",
+          "src": "assets/images/construction-projects/partner-house-1050/plan-1005.webp",
           "width": 1005,
           "height": 924,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/soyuz-105/plan-640.webp",
+              "src": "assets/images/construction-projects/partner-house-1050/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/soyuz-105/plan-960.webp",
+              "src": "assets/images/construction-projects/partner-house-1050/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/soyuz-105/plan-1005.webp",
+              "src": "assets/images/construction-projects/partner-house-1050/plan-1005.webp",
               "width": 1005
             }
           ],
-          "alt": "Проект дома 105 м²: планировка 1"
+          "alt": "Дом 105 м²: планировка 1"
         }
       ],
-      "imageKind": "Рендер проекта",
-      "sourceDocument": "Ростов (1) (1).pdf",
+      "imageKind": "Планировка проекта",
+      "sourceDocument": "Партнёрская презентация",
       "sourcePage": 1,
-      "factSource": "Каталог компании, подготовленный в 2023 году"
+      "factSource": "Обезличенная партнёрская презентация, переданная офису",
+      "monthlyPayment": 30857,
+      "mortgageRateFrom": 6,
+      "downPaymentPercentFrom": 20
     },
     {
-      "id": "soyuz-107",
-      "slug": "soyuz-107",
-      "builderId": "soyuz",
-      "builder": "Союз Застройщиков",
-      "title": "Проект дома 107 м²",
-      "code": "СЗ-107",
+      "id": "partner-house-1070",
+      "slug": "partner-house-1070",
+      "builderId": "partner-selection",
+      "builder": "Партнёрская подборка",
+      "title": "Дом 107 м²",
+      "code": "Вариант 09",
       "area": 107,
       "floors": 1,
       "bedrooms": 3,
@@ -1889,11 +1649,11 @@
         "gazobeton"
       ],
       "projectType": "typical",
-      "price": 6443005,
+      "price": 6613670,
       "priceStatus": "partner-outdated",
-      "priceDate": "2023",
+      "priceDate": null,
       "pricePackage": "White Box",
-      "description": "Проект дома 107 м² — типовой проект площадью 107 м² от компании «Союз Застройщиков». Планировочные параметры: 1 этаж, 3 спальни, 2 санузла. Материалы по каталогу: Кирпич / газобетон. Посадка на участок, комплектация, инженерия, срок и итоговая смета подтверждаются для конкретного строительства.",
+      "description": "Одно из планировочных решений площадью 107 м² из партнёрской подборки. Параметры: 1 этаж, 3 спальни, 2 санузла. Название исполнителя и точный адрес не публикуются; участок, комплектация, срок и итоговая смета подтверждаются через агентство для конкретной задачи.",
       "features": [
         "1 этаж",
         "3 спальни",
@@ -1916,89 +1676,63 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/soyuz-107/facade-756.webp",
-        "width": 756,
-        "height": 416,
+        "src": "assets/images/construction-projects/partner-house-1070/plan-1125.webp",
+        "width": 1125,
+        "height": 927,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/soyuz-107/facade-640.webp",
+            "src": "assets/images/construction-projects/partner-house-1070/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/soyuz-107/facade-756.webp",
-            "width": 756
+            "src": "assets/images/construction-projects/partner-house-1070/plan-960.webp",
+            "width": 960
+          },
+          {
+            "src": "assets/images/construction-projects/partner-house-1070/plan-1125.webp",
+            "width": 1125
           }
         ],
-        "alt": "Проект дома 107 м²: фасад проекта"
+        "alt": "Дом 107 м²: планировка 1"
       },
-      "gallery": [
-        {
-          "src": "assets/images/construction-projects/soyuz-107/facade-756.webp",
-          "width": 756,
-          "height": 416,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-107/facade-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-107/facade-756.webp",
-              "width": 756
-            }
-          ],
-          "alt": "Проект дома 107 м²: вид 1"
-        },
-        {
-          "src": "assets/images/construction-projects/soyuz-107/facade-2-756.webp",
-          "width": 756,
-          "height": 451,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-107/facade-2-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-107/facade-2-756.webp",
-              "width": 756
-            }
-          ],
-          "alt": "Проект дома 107 м²: вид 2"
-        }
-      ],
+      "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/soyuz-107/plan-1125.webp",
+          "src": "assets/images/construction-projects/partner-house-1070/plan-1125.webp",
           "width": 1125,
           "height": 927,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/soyuz-107/plan-640.webp",
+              "src": "assets/images/construction-projects/partner-house-1070/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/soyuz-107/plan-960.webp",
+              "src": "assets/images/construction-projects/partner-house-1070/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/soyuz-107/plan-1125.webp",
+              "src": "assets/images/construction-projects/partner-house-1070/plan-1125.webp",
               "width": 1125
             }
           ],
-          "alt": "Проект дома 107 м²: планировка 1"
+          "alt": "Дом 107 м²: планировка 1"
         }
       ],
-      "imageKind": "Рендер проекта",
-      "sourceDocument": "Ростов (1) (1).pdf",
+      "imageKind": "Планировка проекта",
+      "sourceDocument": "Партнёрская презентация",
       "sourcePage": 1,
-      "factSource": "Каталог компании, подготовленный в 2023 году"
+      "factSource": "Обезличенная партнёрская презентация, переданная офису",
+      "monthlyPayment": 31721,
+      "mortgageRateFrom": 6,
+      "downPaymentPercentFrom": 20
     },
     {
-      "id": "soyuz-109",
-      "slug": "soyuz-109",
-      "builderId": "soyuz",
-      "builder": "Союз Застройщиков",
-      "title": "Проект дома 109 м²",
-      "code": "СЗ-109",
+      "id": "partner-house-1090",
+      "slug": "partner-house-1090",
+      "builderId": "partner-selection",
+      "builder": "Партнёрская подборка",
+      "title": "Дом 109 м²",
+      "code": "Вариант 10",
       "area": 109,
       "floors": 1,
       "bedrooms": 3,
@@ -2009,11 +1743,11 @@
         "gazobeton"
       ],
       "projectType": "typical",
-      "price": 6563435,
+      "price": 6737290,
       "priceStatus": "partner-outdated",
-      "priceDate": "2023",
+      "priceDate": null,
       "pricePackage": "White Box",
-      "description": "Проект дома 109 м² — типовой проект площадью 109 м² от компании «Союз Застройщиков». Планировочные параметры: 1 этаж, 3 спальни, 2 санузла. Материалы по каталогу: Кирпич / газобетон. Посадка на участок, комплектация, инженерия, срок и итоговая смета подтверждаются для конкретного строительства.",
+      "description": "Одно из планировочных решений площадью 109 м² из партнёрской подборки. Параметры: 1 этаж, 3 спальни, 2 санузла. Название исполнителя и точный адрес не публикуются; участок, комплектация, срок и итоговая смета подтверждаются через агентство для конкретной задачи.",
       "features": [
         "1 этаж",
         "3 спальни",
@@ -2036,89 +1770,63 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/soyuz-109/facade-750.webp",
-        "width": 750,
-        "height": 416,
+        "src": "assets/images/construction-projects/partner-house-1090/plan-1092.webp",
+        "width": 1092,
+        "height": 932,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/soyuz-109/facade-640.webp",
+            "src": "assets/images/construction-projects/partner-house-1090/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/soyuz-109/facade-750.webp",
-            "width": 750
+            "src": "assets/images/construction-projects/partner-house-1090/plan-960.webp",
+            "width": 960
+          },
+          {
+            "src": "assets/images/construction-projects/partner-house-1090/plan-1092.webp",
+            "width": 1092
           }
         ],
-        "alt": "Проект дома 109 м²: фасад проекта"
+        "alt": "Дом 109 м²: планировка 1"
       },
-      "gallery": [
-        {
-          "src": "assets/images/construction-projects/soyuz-109/facade-750.webp",
-          "width": 750,
-          "height": 416,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-109/facade-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-109/facade-750.webp",
-              "width": 750
-            }
-          ],
-          "alt": "Проект дома 109 м²: вид 1"
-        },
-        {
-          "src": "assets/images/construction-projects/soyuz-109/facade-2-750.webp",
-          "width": 750,
-          "height": 443,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-109/facade-2-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-109/facade-2-750.webp",
-              "width": 750
-            }
-          ],
-          "alt": "Проект дома 109 м²: вид 2"
-        }
-      ],
+      "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/soyuz-109/plan-1092.webp",
+          "src": "assets/images/construction-projects/partner-house-1090/plan-1092.webp",
           "width": 1092,
           "height": 932,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/soyuz-109/plan-640.webp",
+              "src": "assets/images/construction-projects/partner-house-1090/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/soyuz-109/plan-960.webp",
+              "src": "assets/images/construction-projects/partner-house-1090/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/soyuz-109/plan-1092.webp",
+              "src": "assets/images/construction-projects/partner-house-1090/plan-1092.webp",
               "width": 1092
             }
           ],
-          "alt": "Проект дома 109 м²: планировка 1"
+          "alt": "Дом 109 м²: планировка 1"
         }
       ],
-      "imageKind": "Рендер проекта",
-      "sourceDocument": "Ростов (1) (1).pdf",
+      "imageKind": "Планировка проекта",
+      "sourceDocument": "Партнёрская презентация",
       "sourcePage": 1,
-      "factSource": "Каталог компании, подготовленный в 2023 году"
+      "factSource": "Обезличенная партнёрская презентация, переданная офису",
+      "monthlyPayment": 32314,
+      "mortgageRateFrom": 6,
+      "downPaymentPercentFrom": 20
     },
     {
-      "id": "soyuz-111-1",
-      "slug": "soyuz-111-1",
-      "builderId": "soyuz",
-      "builder": "Союз Застройщиков",
-      "title": "Проект дома 111,1 м²",
-      "code": "СЗ-111,1",
+      "id": "partner-house-1111",
+      "slug": "partner-house-1111",
+      "builderId": "partner-selection",
+      "builder": "Партнёрская подборка",
+      "title": "Дом 111,1 м²",
+      "code": "Вариант 11",
       "area": 111.1,
       "floors": 1,
       "bedrooms": 3,
@@ -2129,11 +1837,11 @@
         "gazobeton"
       ],
       "projectType": "typical",
-      "price": 7143841,
+      "price": 7320935,
       "priceStatus": "partner-outdated",
-      "priceDate": "2023",
+      "priceDate": null,
       "pricePackage": "White Box",
-      "description": "Проект дома 111,1 м² — типовой проект площадью 111,1 м² от компании «Союз Застройщиков». Планировочные параметры: 1 этаж, 3 спальни, 2 санузла. Материалы по каталогу: Кирпич / газобетон. Посадка на участок, комплектация, инженерия, срок и итоговая смета подтверждаются для конкретного строительства.",
+      "description": "Одно из планировочных решений площадью 111,1 м² из партнёрской подборки. Параметры: 1 этаж, 3 спальни, 2 санузла. Название исполнителя и точный адрес не публикуются; участок, комплектация, срок и итоговая смета подтверждаются через агентство для конкретной задачи.",
       "features": [
         "1 этаж",
         "3 спальни",
@@ -2156,93 +1864,47 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/soyuz-111-1/facade-1440.webp",
-        "width": 1440,
-        "height": 810,
+        "src": "assets/images/construction-projects/partner-house-1111/plan-615.webp",
+        "width": 615,
+        "height": 636,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/soyuz-111-1/facade-640.webp",
-            "width": 640
-          },
-          {
-            "src": "assets/images/construction-projects/soyuz-111-1/facade-960.webp",
-            "width": 960
-          },
-          {
-            "src": "assets/images/construction-projects/soyuz-111-1/facade-1440.webp",
-            "width": 1440
+            "src": "assets/images/construction-projects/partner-house-1111/plan-615.webp",
+            "width": 615
           }
         ],
-        "alt": "Проект дома 111,1 м²: фасад проекта"
+        "alt": "Дом 111,1 м²: планировка 1"
       },
-      "gallery": [
-        {
-          "src": "assets/images/construction-projects/soyuz-111-1/facade-1440.webp",
-          "width": 1440,
-          "height": 810,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-111-1/facade-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-111-1/facade-960.webp",
-              "width": 960
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-111-1/facade-1440.webp",
-              "width": 1440
-            }
-          ],
-          "alt": "Проект дома 111,1 м²: вид 1"
-        },
-        {
-          "src": "assets/images/construction-projects/soyuz-111-1/facade-2-1440.webp",
-          "width": 1440,
-          "height": 810,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-111-1/facade-2-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-111-1/facade-2-960.webp",
-              "width": 960
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-111-1/facade-2-1440.webp",
-              "width": 1440
-            }
-          ],
-          "alt": "Проект дома 111,1 м²: вид 2"
-        }
-      ],
+      "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/soyuz-111-1/plan-615.webp",
+          "src": "assets/images/construction-projects/partner-house-1111/plan-615.webp",
           "width": 615,
           "height": 636,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/soyuz-111-1/plan-615.webp",
+              "src": "assets/images/construction-projects/partner-house-1111/plan-615.webp",
               "width": 615
             }
           ],
-          "alt": "Проект дома 111,1 м²: планировка 1"
+          "alt": "Дом 111,1 м²: планировка 1"
         }
       ],
-      "imageKind": "Рендер проекта",
-      "sourceDocument": "Ростов (1) (1).pdf",
+      "imageKind": "Планировка проекта",
+      "sourceDocument": "Партнёрская презентация",
       "sourcePage": 1,
-      "factSource": "Каталог компании, подготовленный в 2023 году"
+      "factSource": "Обезличенная партнёрская презентация, переданная офису",
+      "monthlyPayment": 35114,
+      "mortgageRateFrom": 6,
+      "downPaymentPercentFrom": 20
     },
     {
-      "id": "soyuz-114-2",
-      "slug": "soyuz-114-2",
-      "builderId": "soyuz",
-      "builder": "Союз Застройщиков",
-      "title": "Проект дома 114,2 м²",
-      "code": "СЗ-114,2",
+      "id": "partner-house-1142",
+      "slug": "partner-house-1142",
+      "builderId": "partner-selection",
+      "builder": "Партнёрская подборка",
+      "title": "Дом 114,2 м²",
+      "code": "Вариант 12",
       "area": 114.2,
       "floors": 1,
       "bedrooms": 3,
@@ -2253,11 +1915,11 @@
         "gazobeton"
       ],
       "projectType": "typical",
-      "price": 8485174,
+      "price": 8667209,
       "priceStatus": "partner-outdated",
-      "priceDate": "2023",
+      "priceDate": null,
       "pricePackage": "White Box",
-      "description": "Проект дома 114,2 м² — типовой проект площадью 114,2 м² от компании «Союз Застройщиков». Планировочные параметры: 1 этаж, 3 спальни, 2 санузла. Материалы по каталогу: Кирпич / газобетон. Посадка на участок, комплектация, инженерия, срок и итоговая смета подтверждаются для конкретного строительства.",
+      "description": "Одно из планировочных решений площадью 114,2 м² из партнёрской подборки. Параметры: 1 этаж, 3 спальни, 2 санузла. Название исполнителя и точный адрес не публикуются; участок, комплектация, срок и итоговая смета подтверждаются через агентство для конкретной задачи.",
       "features": [
         "1 этаж",
         "3 спальни",
@@ -2280,97 +1942,55 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/soyuz-114-2/facade-1440.webp",
-        "width": 1440,
-        "height": 810,
+        "src": "assets/images/construction-projects/partner-house-1142/plan-641.webp",
+        "width": 641,
+        "height": 681,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/soyuz-114-2/facade-640.webp",
+            "src": "assets/images/construction-projects/partner-house-1142/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/soyuz-114-2/facade-960.webp",
-            "width": 960
-          },
-          {
-            "src": "assets/images/construction-projects/soyuz-114-2/facade-1440.webp",
-            "width": 1440
+            "src": "assets/images/construction-projects/partner-house-1142/plan-641.webp",
+            "width": 641
           }
         ],
-        "alt": "Проект дома 114,2 м²: фасад проекта"
+        "alt": "Дом 114,2 м²: планировка 1"
       },
-      "gallery": [
-        {
-          "src": "assets/images/construction-projects/soyuz-114-2/facade-1440.webp",
-          "width": 1440,
-          "height": 810,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-114-2/facade-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-114-2/facade-960.webp",
-              "width": 960
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-114-2/facade-1440.webp",
-              "width": 1440
-            }
-          ],
-          "alt": "Проект дома 114,2 м²: вид 1"
-        },
-        {
-          "src": "assets/images/construction-projects/soyuz-114-2/facade-2-1440.webp",
-          "width": 1440,
-          "height": 810,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-114-2/facade-2-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-114-2/facade-2-960.webp",
-              "width": 960
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-114-2/facade-2-1440.webp",
-              "width": 1440
-            }
-          ],
-          "alt": "Проект дома 114,2 м²: вид 2"
-        }
-      ],
+      "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/soyuz-114-2/plan-641.webp",
+          "src": "assets/images/construction-projects/partner-house-1142/plan-641.webp",
           "width": 641,
           "height": 681,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/soyuz-114-2/plan-640.webp",
+              "src": "assets/images/construction-projects/partner-house-1142/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/soyuz-114-2/plan-641.webp",
+              "src": "assets/images/construction-projects/partner-house-1142/plan-641.webp",
               "width": 641
             }
           ],
-          "alt": "Проект дома 114,2 м²: планировка 1"
+          "alt": "Дом 114,2 м²: планировка 1"
         }
       ],
-      "imageKind": "Рендер проекта",
-      "sourceDocument": "Ростов (1) (1).pdf",
+      "imageKind": "Планировка проекта",
+      "sourceDocument": "Партнёрская презентация",
       "sourcePage": 1,
-      "factSource": "Каталог компании, подготовленный в 2023 году"
+      "factSource": "Обезличенная партнёрская презентация, переданная офису",
+      "monthlyPayment": 41571,
+      "mortgageRateFrom": 6,
+      "downPaymentPercentFrom": 20
     },
     {
-      "id": "soyuz-124",
-      "slug": "soyuz-124",
-      "builderId": "soyuz",
-      "builder": "Союз Застройщиков",
-      "title": "Проект дома 124 м²",
-      "code": "СЗ-124",
+      "id": "partner-house-1240",
+      "slug": "partner-house-1240",
+      "builderId": "partner-selection",
+      "builder": "Партнёрская подборка",
+      "title": "Дом 124 м²",
+      "code": "Вариант 13",
       "area": 124,
       "floors": 1,
       "bedrooms": 3,
@@ -2381,11 +2001,11 @@
         "gazobeton"
       ],
       "projectType": "typical",
-      "price": 7399948,
+      "price": 7597728,
       "priceStatus": "partner-outdated",
-      "priceDate": "2023",
+      "priceDate": null,
       "pricePackage": "White Box",
-      "description": "Проект дома 124 м² — типовой проект площадью 124 м² от компании «Союз Застройщиков». Планировочные параметры: 1 этаж, 3 спальни, 2 санузла. Материалы по каталогу: Кирпич / газобетон. Посадка на участок, комплектация, инженерия, срок и итоговая смета подтверждаются для конкретного строительства.",
+      "description": "Одно из планировочных решений площадью 124 м² из партнёрской подборки. Параметры: 1 этаж, 3 спальни, 2 санузла. Название исполнителя и точный адрес не публикуются; участок, комплектация, срок и итоговая смета подтверждаются через агентство для конкретной задачи.",
       "features": [
         "1 этаж",
         "3 спальни",
@@ -2408,89 +2028,63 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/soyuz-124/facade-742.webp",
-        "width": 742,
-        "height": 416,
+        "src": "assets/images/construction-projects/partner-house-1240/plan-1140.webp",
+        "width": 1140,
+        "height": 931,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/soyuz-124/facade-640.webp",
+            "src": "assets/images/construction-projects/partner-house-1240/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/soyuz-124/facade-742.webp",
-            "width": 742
+            "src": "assets/images/construction-projects/partner-house-1240/plan-960.webp",
+            "width": 960
+          },
+          {
+            "src": "assets/images/construction-projects/partner-house-1240/plan-1140.webp",
+            "width": 1140
           }
         ],
-        "alt": "Проект дома 124 м²: фасад проекта"
+        "alt": "Дом 124 м²: планировка 1"
       },
-      "gallery": [
-        {
-          "src": "assets/images/construction-projects/soyuz-124/facade-742.webp",
-          "width": 742,
-          "height": 416,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-124/facade-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-124/facade-742.webp",
-              "width": 742
-            }
-          ],
-          "alt": "Проект дома 124 м²: вид 1"
-        },
-        {
-          "src": "assets/images/construction-projects/soyuz-124/facade-2-741.webp",
-          "width": 741,
-          "height": 452,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-124/facade-2-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-124/facade-2-741.webp",
-              "width": 741
-            }
-          ],
-          "alt": "Проект дома 124 м²: вид 2"
-        }
-      ],
+      "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/soyuz-124/plan-1140.webp",
+          "src": "assets/images/construction-projects/partner-house-1240/plan-1140.webp",
           "width": 1140,
           "height": 931,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/soyuz-124/plan-640.webp",
+              "src": "assets/images/construction-projects/partner-house-1240/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/soyuz-124/plan-960.webp",
+              "src": "assets/images/construction-projects/partner-house-1240/plan-960.webp",
               "width": 960
             },
             {
-              "src": "assets/images/construction-projects/soyuz-124/plan-1140.webp",
+              "src": "assets/images/construction-projects/partner-house-1240/plan-1140.webp",
               "width": 1140
             }
           ],
-          "alt": "Проект дома 124 м²: планировка 1"
+          "alt": "Дом 124 м²: планировка 1"
         }
       ],
-      "imageKind": "Рендер проекта",
-      "sourceDocument": "Ростов (1) (1).pdf",
+      "imageKind": "Планировка проекта",
+      "sourceDocument": "Партнёрская презентация",
       "sourcePage": 1,
-      "factSource": "Каталог компании, подготовленный в 2023 году"
+      "factSource": "Обезличенная партнёрская презентация, переданная офису",
+      "monthlyPayment": 36441,
+      "mortgageRateFrom": 6,
+      "downPaymentPercentFrom": 20
     },
     {
-      "id": "soyuz-137",
-      "slug": "soyuz-137",
-      "builderId": "soyuz",
-      "builder": "Союз Застройщиков",
-      "title": "Проект дома 137 м²",
-      "code": "СЗ-137",
+      "id": "partner-house-1370",
+      "slug": "partner-house-1370",
+      "builderId": "partner-selection",
+      "builder": "Партнёрская подборка",
+      "title": "Дом 137 м²",
+      "code": "Вариант 14",
       "area": 137,
       "floors": 2,
       "bedrooms": 3,
@@ -2501,11 +2095,11 @@
         "gazobeton"
       ],
       "projectType": "typical",
-      "price": 8470436,
+      "price": 8688814,
       "priceStatus": "partner-outdated",
-      "priceDate": "2023",
+      "priceDate": null,
       "pricePackage": "White Box",
-      "description": "Проект дома 137 м² — типовой проект площадью 137 м² от компании «Союз Застройщиков». Планировочные параметры: 2 этажа, 3 спальни, 2 санузла. Материалы по каталогу: Кирпич / газобетон. Посадка на участок, комплектация, инженерия, срок и итоговая смета подтверждаются для конкретного строительства.",
+      "description": "Одно из планировочных решений площадью 137 м² из партнёрской подборки. Параметры: 2 этажа, 3 спальни, 2 санузла. Название исполнителя и точный адрес не публикуются; участок, комплектация, срок и итоговая смета подтверждаются через агентство для конкретной задачи.",
       "features": [
         "2 этажа",
         "3 спальни",
@@ -2528,85 +2122,55 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/soyuz-137/facade-764.webp",
-        "width": 764,
-        "height": 417,
+        "src": "assets/images/construction-projects/partner-house-1370/plan-679.webp",
+        "width": 679,
+        "height": 684,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/soyuz-137/facade-640.webp",
+            "src": "assets/images/construction-projects/partner-house-1370/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/soyuz-137/facade-764.webp",
-            "width": 764
+            "src": "assets/images/construction-projects/partner-house-1370/plan-679.webp",
+            "width": 679
           }
         ],
-        "alt": "Проект дома 137 м²: фасад проекта"
+        "alt": "Дом 137 м²: планировка 1"
       },
-      "gallery": [
-        {
-          "src": "assets/images/construction-projects/soyuz-137/facade-764.webp",
-          "width": 764,
-          "height": 417,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-137/facade-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-137/facade-764.webp",
-              "width": 764
-            }
-          ],
-          "alt": "Проект дома 137 м²: вид 1"
-        },
-        {
-          "src": "assets/images/construction-projects/soyuz-137/facade-2-764.webp",
-          "width": 764,
-          "height": 451,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-137/facade-2-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-137/facade-2-764.webp",
-              "width": 764
-            }
-          ],
-          "alt": "Проект дома 137 м²: вид 2"
-        }
-      ],
+      "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/soyuz-137/plan-679.webp",
+          "src": "assets/images/construction-projects/partner-house-1370/plan-679.webp",
           "width": 679,
           "height": 684,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/soyuz-137/plan-640.webp",
+              "src": "assets/images/construction-projects/partner-house-1370/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/soyuz-137/plan-679.webp",
+              "src": "assets/images/construction-projects/partner-house-1370/plan-679.webp",
               "width": 679
             }
           ],
-          "alt": "Проект дома 137 м²: планировка 1"
+          "alt": "Дом 137 м²: планировка 1"
         }
       ],
-      "imageKind": "Рендер проекта",
-      "sourceDocument": "Ростов (1) (1).pdf",
+      "imageKind": "Планировка проекта",
+      "sourceDocument": "Партнёрская презентация",
       "sourcePage": 1,
-      "factSource": "Каталог компании, подготовленный в 2023 году"
+      "factSource": "Обезличенная партнёрская презентация, переданная офису",
+      "monthlyPayment": 41675,
+      "mortgageRateFrom": 6,
+      "downPaymentPercentFrom": 20
     },
     {
-      "id": "soyuz-142-2",
-      "slug": "soyuz-142-2",
-      "builderId": "soyuz",
-      "builder": "Союз Застройщиков",
-      "title": "Проект дома 142,2 м²",
-      "code": "СЗ-142,2",
+      "id": "partner-house-1422",
+      "slug": "partner-house-1422",
+      "builderId": "partner-selection",
+      "builder": "Партнёрская подборка",
+      "title": "Дом 142,2 м²",
+      "code": "Вариант 15",
       "area": 142.2,
       "floors": 2,
       "bedrooms": 3,
@@ -2617,11 +2181,11 @@
         "gazobeton"
       ],
       "projectType": "typical",
-      "price": 9785777,
+      "price": 10012444,
       "priceStatus": "partner-outdated",
-      "priceDate": "2023",
+      "priceDate": null,
       "pricePackage": "White Box",
-      "description": "Проект дома 142,2 м² — типовой проект площадью 142,2 м² от компании «Союз Застройщиков». Планировочные параметры: 2 этажа, 3 спальни, 2 санузла. Материалы по каталогу: Кирпич / газобетон. Посадка на участок, комплектация, инженерия, срок и итоговая смета подтверждаются для конкретного строительства.",
+      "description": "Одно из планировочных решений площадью 142,2 м² из партнёрской подборки. Параметры: 2 этажа, 3 спальни, 2 санузла. Название исполнителя и точный адрес не публикуются; участок, комплектация, срок и итоговая смета подтверждаются через агентство для конкретной задачи.",
       "features": [
         "2 этажа",
         "3 спальни",
@@ -2644,89 +2208,47 @@
         "Чистовую отделку и оборудование"
       ],
       "mainImage": {
-        "src": "assets/images/construction-projects/soyuz-142-2/facade-1440.webp",
-        "width": 1440,
-        "height": 810,
+        "src": "assets/images/construction-projects/partner-house-1422/plan-748.webp",
+        "width": 748,
+        "height": 681,
         "srcset": [
           {
-            "src": "assets/images/construction-projects/soyuz-142-2/facade-640.webp",
+            "src": "assets/images/construction-projects/partner-house-1422/plan-640.webp",
             "width": 640
           },
           {
-            "src": "assets/images/construction-projects/soyuz-142-2/facade-960.webp",
-            "width": 960
-          },
-          {
-            "src": "assets/images/construction-projects/soyuz-142-2/facade-1440.webp",
-            "width": 1440
+            "src": "assets/images/construction-projects/partner-house-1422/plan-748.webp",
+            "width": 748
           }
         ],
-        "alt": "Проект дома 142,2 м²: фасад проекта"
+        "alt": "Дом 142,2 м²: планировка 1"
       },
-      "gallery": [
-        {
-          "src": "assets/images/construction-projects/soyuz-142-2/facade-1440.webp",
-          "width": 1440,
-          "height": 810,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-142-2/facade-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-142-2/facade-960.webp",
-              "width": 960
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-142-2/facade-1440.webp",
-              "width": 1440
-            }
-          ],
-          "alt": "Проект дома 142,2 м²: вид 1"
-        },
-        {
-          "src": "assets/images/construction-projects/soyuz-142-2/facade-2-1440.webp",
-          "width": 1440,
-          "height": 810,
-          "srcset": [
-            {
-              "src": "assets/images/construction-projects/soyuz-142-2/facade-2-640.webp",
-              "width": 640
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-142-2/facade-2-960.webp",
-              "width": 960
-            },
-            {
-              "src": "assets/images/construction-projects/soyuz-142-2/facade-2-1440.webp",
-              "width": 1440
-            }
-          ],
-          "alt": "Проект дома 142,2 м²: вид 2"
-        }
-      ],
+      "gallery": [],
       "floorPlans": [
         {
-          "src": "assets/images/construction-projects/soyuz-142-2/plan-748.webp",
+          "src": "assets/images/construction-projects/partner-house-1422/plan-748.webp",
           "width": 748,
           "height": 681,
           "srcset": [
             {
-              "src": "assets/images/construction-projects/soyuz-142-2/plan-640.webp",
+              "src": "assets/images/construction-projects/partner-house-1422/plan-640.webp",
               "width": 640
             },
             {
-              "src": "assets/images/construction-projects/soyuz-142-2/plan-748.webp",
+              "src": "assets/images/construction-projects/partner-house-1422/plan-748.webp",
               "width": 748
             }
           ],
-          "alt": "Проект дома 142,2 м²: планировка 1"
+          "alt": "Дом 142,2 м²: планировка 1"
         }
       ],
-      "imageKind": "Рендер проекта",
-      "sourceDocument": "Ростов (1) (1).pdf",
+      "imageKind": "Планировка проекта",
+      "sourceDocument": "Партнёрская презентация",
       "sourcePage": 1,
-      "factSource": "Каталог компании, подготовленный в 2023 году"
+      "factSource": "Обезличенная партнёрская презентация, переданная офису",
+      "monthlyPayment": 48023,
+      "mortgageRateFrom": 6,
+      "downPaymentPercentFrom": 20
     },
     {
       "id": "eqvita-01",

@@ -25,7 +25,9 @@ const representativePages = [
   "listings/shk-h03-artem-brick-house.html",
   "listings/shk-l06-regular-city-plot.html",
   "guides/kak-vybrat-dom-ot-zastroyshchika-v-shakhtah.html",
+  "team/index.html",
   "team/maria-voronina.html",
+  "team/olga-chernenko.html",
   "contacts.html",
   "details.html",
   "privacy.html"
@@ -269,6 +271,23 @@ test("Maria portrait is responsive, dimensioned and loads on trust pages", async
     expect(image.naturalWidth).toBeGreaterThan(0);
     expect(image.currentSrc).toMatch(/maria-voronina-(?:360|640|960)\.webp$/u);
     expect(image.filter).toBe("none");
+  }
+});
+
+test("team cards and Olga portrait fit desktop and mobile without overflow", async ({ page }) => {
+  for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
+    await page.setViewportSize(viewport);
+    await page.goto("team/index.html");
+    const cards = page.locator(".team-card");
+    await expect(cards).toHaveCount(2);
+    await expect(cards.nth(0)).toHaveAttribute("data-team-member", "maria-voronina");
+    await expect(cards.nth(1)).toHaveAttribute("data-team-member", "olga-chernenko");
+    const olga = cards.nth(1).locator('img[alt*="Черненко Ольга"]');
+    await olga.scrollIntoViewIfNeeded();
+    await expect(olga).toBeVisible();
+    expect((await olga.evaluate((node) => node.currentSrc))).toMatch(/olga-chernenko-(?:360|640|960)\.webp$/u);
+    const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
+    expect(dimensions.scroll, `team at ${viewport.width}px`).toBeLessThanOrEqual(dimensions.client + 1);
   }
 });
 

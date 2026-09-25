@@ -56,7 +56,7 @@ test("construction projects remain separate from secondary inventory", () => {
   assert.deepEqual(statuses, { request: 3, "dated-confirmed": 4, "partner-outdated": 15, individual: 4 });
   assert.deepEqual(countBy(construction.items, (item) => item.builder), {
     "ДоманСтрой": 7,
-    "Союз Застройщиков": 15,
+    "Партнёрская подборка": 15,
     "Эквита": 4
   });
   const serialized = JSON.stringify({ newbuilds, construction });
@@ -66,6 +66,24 @@ test("construction projects remain separate from secondary inventory", () => {
   const existingListings = readJson("src/data/listings.json");
   assert.deepEqual(existingListings[0] && { id: existingListings[0].id, price: existingListings[0].price, verified: existingListings[0].verified }, { id: "dom-chistovaya-kamenolomni", price: 5670000, verified: true });
   assert.equal(existingListings.length, 26);
+});
+
+test("partner house cards are anonymized and use the supplied presentation values", () => {
+  const partnerItems = construction.items.filter((item) => item.builderId === "partner-selection");
+  assert.equal(partnerItems.length, 15);
+  assert.deepEqual(partnerItems.map((item) => [item.area, item.price, item.monthlyPayment]), [
+    [69.9, 4545947, 21804], [75, 4797000, 23008], [83.8, 5449933, 26140], [84, 5345225, 25637], [85, 5345225, 25637],
+    [90, 5659650, 27145], [99, 6172353, 29605], [105, 6433560, 30857], [107, 6613670, 31721], [109, 6737290, 32314],
+    [111.1, 7320935, 35114], [114.2, 8667209, 41571], [124, 7597728, 36441], [137, 8688814, 41675], [142.2, 10012444, 48023]
+  ]);
+  const publicProjectData = JSON.stringify(partnerItems);
+  assert.doesNotMatch(publicProjectData, /Союз Застройщиков|soyuz-|souz-zastroi|Ростов \(1\)/iu);
+  assert.ok(partnerItems.every((item) => item.gallery.length === 0));
+  assert.ok(partnerItems.every((item) => item.mainImage.src.includes("/plan-")));
+  const catalog = readDist("construction.html");
+  assert.match(catalog, /от 4\s545\s947 ₽/u);
+  assert.match(catalog, /от 21\s804 ₽\/мес\./u);
+  assert.doesNotMatch(catalog, /Союз Застройщиков|soyuz-|souz-zastroi/iu);
 });
 
 test("all imported responsive media is local WebP and exists", () => {
@@ -87,7 +105,7 @@ test("all imported responsive media is local WebP and exists", () => {
   const generatedFiles = ["assets/images/newbuilds", "assets/images/construction-projects"]
     .flatMap((directory) => fs.readdirSync(path.join(repo, directory), { recursive: true }).filter((file) => file.endsWith(".webp")));
   assert.equal(generatedFiles.length, manifest.media.generatedResponsiveWebpFiles);
-  assert.equal(generatedFiles.length, 459);
+  assert.equal(generatedFiles.length, 391);
   assert.ok(generatedFiles.every((file) => !file.endsWith("-480.webp")));
 });
 
