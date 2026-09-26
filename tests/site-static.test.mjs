@@ -151,8 +151,7 @@ test("runtime config and search verification match configured services", () => {
 test("confirmed social channels and Maria's responsive portrait are published from central data", () => {
   assert.deepEqual(config.socials, {
     telegram: "https://t.me/MariyaVoronina87",
-    max: "https://max.ru/u/f9LHodD0cOIKT6pyYpEr_SpFY0ZcDT9BWF4LEwhkoft3td7dLbNOySNW-RA",
-    instagram: "https://www.instagram.com/domian_shakhty_mayakovskogo?utm_source=qr&igsi=dTFsYmg4Nm15Y3F0"
+    max: "https://max.ru/u/f9LHodD0cOIKT6pyYpEr_SpFY0ZcDT9BWF4LEwhkoft3td7dLbNOySNW-RA"
   });
   const home = read("index.html");
   for (const [channel, href] of Object.entries(config.socials)) {
@@ -170,12 +169,13 @@ test("confirmed social channels and Maria's responsive portrait are published fr
   assert.doesNotMatch(home, /whatsapp|wa\.me/iu);
 });
 
-test("public output omits WhatsApp and uses the updated review status label", () => {
+test("public output omits removed social channels and uses the updated review status label", () => {
   const publicTextFiles = fs.readdirSync(root, { recursive: true })
     .filter((file) => /\.(?:html|js|json|xml|txt)$/u.test(file));
   for (const file of publicTextFiles) {
     const contents = read(file);
     assert.doesNotMatch(contents, /whatsapp|wa\.me/iu, file);
+    assert.doesNotMatch(contents, /instagram|instagram\.com/iu, file);
     assert.doesNotMatch(contents, /Требует проверки/iu, file);
   }
   assert.match(read("newbuilds.html"), /Актуализируется/u);
@@ -194,6 +194,10 @@ test("team page keeps Maria first and publishes Olga's verified profile", () => 
   const profile = read("team/olga-chernenko.html");
   for (const text of ["Профессиональная оценка объекта", "Подготовка объекта к продаже", "Проверка и сопровождение покупателей", "Октябрьский сельский район"]) assert.match(profile, new RegExp(text, "u"));
   assert.match(profile, /olga-chernenko-(?:360|640|960)\.webp/u);
+  assert.match(profile, /class="hero-agent"/u);
+  assert.doesNotMatch(profile, /data-editorial-image="client-meeting"/u);
+  assert.equal((profile.match(/class="agent-direction-grid"/gu) || []).length, 1);
+  assert.equal((profile.match(/class="agent-skill-panel"/gu) || []).length, 1);
   for (const width of [360, 640, 960]) assert.ok(fs.existsSync(path.join(root, `assets/images/olga-chernenko-${width}.webp`)));
 });
 

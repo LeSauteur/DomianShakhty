@@ -6,7 +6,7 @@
   var allowedEvents = [
     "catalog_filter_use", "property_card_open", "construction_interest", "project_open",
     "guide_to_catalog", "guide_to_lead", "location_to_construction", "map_click",
-    "phone_click", "email_click", "telegram_click", "max_click", "instagram_click",
+    "phone_click", "email_click", "telegram_click", "max_click",
     "lead_form_view", "lead_form_open",
     "lead_form_submit_attempt", "lead_form_success", "lead_form_error", "mortgage_interaction"
   ];
