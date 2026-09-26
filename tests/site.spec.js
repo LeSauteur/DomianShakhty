@@ -92,6 +92,13 @@ test("mobile drawer opens, traps focus and closes with Escape", async ({ page })
   const propertyGroup = page.locator(".mobile-drawer__group").first();
   await expect(propertyGroup).toContainText("Коммерция");
   await expect(propertyGroup).toContainText("Гаражи и парковка");
+  const expandable = propertyGroup.locator("[data-nav-menu]").first();
+  const expandableSummary = expandable.locator("summary");
+  await expect(expandableSummary.locator(".nav-menu__indicator svg")).toBeVisible();
+  await expect(expandableSummary).not.toContainText("+");
+  await expandableSummary.click();
+  await expect(expandable).toHaveAttribute("open", "");
+  await expect(expandableSummary).toHaveAttribute("aria-expanded", "true");
   await page.locator(".mobile-drawer__panel a").last().focus();
   await page.keyboard.press("Tab");
   await expect(page.locator(".mobile-drawer__panel a").first()).toBeFocused();
@@ -240,8 +247,7 @@ test("confirmed social links emit allowlisted events without PII", async ({ page
   });
   const expected = {
     telegram_click: "https://t.me/MariyaVoronina87",
-    max_click: "https://max.ru/u/f9LHodD0cOIKT6pyYpEr_SpFY0ZcDT9BWF4LEwhkoft3td7dLbNOySNW-RA",
-    instagram_click: "https://www.instagram.com/domian_shakhty_mayakovskogo?utm_source=qr&igsi=dTFsYmg4Nm15Y3F0"
+    max_click: "https://max.ru/u/f9LHodD0cOIKT6pyYpEr_SpFY0ZcDT9BWF4LEwhkoft3td7dLbNOySNW-RA"
   };
   for (const [name, href] of Object.entries(expected)) {
     const link = page.locator(`.social-links--contact a[data-analytics="${name}"]`);
@@ -257,7 +263,7 @@ test("confirmed social links emit allowlisted events without PII", async ({ page
 test("Maria portrait is responsive, dimensioned and loads on trust pages", async ({ page }) => {
   for (const pathname of ["", "team/maria-voronina.html", "contacts.html"]) {
     await page.goto(pathname);
-    const portrait = page.locator('.owner-portrait img[alt*="Мария Воронина"]').first();
+    const portrait = page.locator('.owner-portrait img[alt*="Мария Воронина"], .hero-agent img[alt*="Мария Воронина"]').first();
     await portrait.scrollIntoViewIfNeeded();
     await expect(portrait).toBeVisible();
     await expect(portrait).toHaveAttribute("width", "640");
@@ -288,6 +294,40 @@ test("team cards and Olga portrait fit desktop and mobile without overflow", asy
     const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
     expect(dimensions.scroll, `team at ${viewport.width}px`).toBeLessThanOrEqual(dimensions.client + 1);
   }
+});
+
+test("Olga profile opens with her portrait and keeps expertise compact on mobile", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("team/olga-chernenko.html");
+  const portrait = page.locator('.hero-agent img[alt*="Черненко Ольга"]');
+  const heading = page.locator("h1");
+  await expect(portrait).toBeVisible();
+  await expect(heading).toBeVisible();
+  const portraitBox = await portrait.boundingBox();
+  const headingBox = await heading.boundingBox();
+  expect(portraitBox.y).toBeLessThan(headingBox.y);
+  await expect(page.locator('[data-editorial-image="client-meeting"]')).toHaveCount(0);
+  await expect(page.locator(".agent-direction-grid article")).toHaveCount(4);
+  await expect(page.locator(".agent-skill-panel li")).toHaveCount(5);
+  for (const card of await page.locator(".agent-direction-grid article").all()) {
+    expect((await card.evaluate((node) => node.getBoundingClientRect().height))).toBeLessThan(180);
+  }
+  const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
+  expect(dimensions.scroll).toBeLessThanOrEqual(dimensions.client + 1);
+});
+
+test("contacts stay concise and action-first on mobile", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("contacts.html");
+  await expect(page.locator(".contact-action")).toHaveCount(2);
+  await expect(page.locator(".social-links--contact a")).toHaveCount(2);
+  await expect(page.locator('.contact-owner img[alt*="Мария Воронина"]')).toBeVisible();
+  await expect(page.locator(".contact-grid")).toHaveCount(0);
+  await expect(page.locator(".criteria-list")).toHaveCount(0);
+  const hubHeight = await page.locator(".contact-hub").evaluate((node) => node.getBoundingClientRect().height);
+  expect(hubHeight).toBeLessThan(1200);
+  const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
+  expect(dimensions.scroll).toBeLessThanOrEqual(dimensions.client + 1);
 });
 
 test("lead form validates locally and handles provider rejection", async ({ page }) => {
@@ -646,17 +686,17 @@ test("catalog imagery loads responsive WebP at required viewports", async ({ pag
   }
 });
 
-test("desktop criteria copy stays below its heading without overlap", async ({ page }) => {
+test("desktop contact actions stay below their heading without overlap", async ({ page }) => {
   await page.setViewportSize({ width: 1904, height: 950 });
   await page.goto("contacts.html");
-  const heading = page.locator(".criteria-copy h2");
-  const intro = page.locator(".criteria-copy .criteria-intro");
+  const heading = page.locator(".contact-hub__panel h2");
+  const actions = page.locator(".contact-actions");
   await heading.scrollIntoViewIfNeeded();
   const headingBox = await heading.boundingBox();
-  const introBox = await intro.boundingBox();
+  const actionsBox = await actions.boundingBox();
   expect(headingBox).not.toBeNull();
-  expect(introBox).not.toBeNull();
-  expect(headingBox.y + headingBox.height).toBeLessThanOrEqual(introBox.y);
+  expect(actionsBox).not.toBeNull();
+  expect(headingBox.y + headingBox.height).toBeLessThanOrEqual(actionsBox.y);
   const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
   expect(dimensions.scroll).toBeLessThanOrEqual(dimensions.client + 1);
 });
