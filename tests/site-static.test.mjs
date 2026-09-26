@@ -23,6 +23,14 @@ test("production publishes indexable pages and required files", () => {
   for (const file of [".nojekyll", "favicon.ico", "manifest.webmanifest", "assets/icons/favicon.svg", "assets/icons/apple-touch-icon.png"]) assert.ok(fs.existsSync(path.join(root, file)), file);
 });
 
+test("critical styles and scripts use one content-derived cache version", () => {
+  const html = read("index.html");
+  const versions = [...html.matchAll(/(?:site\.css|site-config\.js|site\.js|form-handler\.js)\?v=([a-f0-9]{12})/gu)]
+    .map((match) => match[1]);
+  assert.equal(versions.length, 4);
+  assert.equal(new Set(versions).size, 1);
+});
+
 test("unverified inventory and builders never enter public feeds", () => {
   for (const file of ["assets/data/listings.json", "assets/data/projects.json", "assets/data/builders.json"]) {
     const items = JSON.parse(read(file));

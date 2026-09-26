@@ -376,7 +376,7 @@ test("lead analytics never receives entered personal data", async ({ page }) => 
 
 test("Metrika and GA4 load once after consent and omit personal URL parameters", async ({ page }) => {
   const runtime = { basePath: "", analyticsTestMode: true, metrikaId: "12345678", ga4Id: "G-TEST123456", web3formsAccessKey: null };
-  await page.route("**/assets/js/site-config.js", (route) => route.fulfill({ contentType: "text/javascript", body: `window.DOMIAN_SITE_CONFIG=Object.freeze(${JSON.stringify(runtime)});` }));
+  await page.route("**/assets/js/site-config.js*", (route) => route.fulfill({ contentType: "text/javascript", body: `window.DOMIAN_SITE_CONFIG=Object.freeze(${JSON.stringify(runtime)});` }));
   await page.route("https://mc.yandex.ru/**", (route) => route.fulfill({ contentType: "text/javascript", body: "" }));
   await page.route("https://www.googletagmanager.com/**", (route) => route.fulfill({ contentType: "text/javascript", body: "" }));
   await page.goto("");

@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import {
   createContext,
@@ -49,6 +50,13 @@ function writeJson(relativePath, value) {
 }
 
 const site = readJson("site.config.json");
+site.assetVersion = createHash("sha256")
+  .update(fs.readFileSync(path.join(root, "site.config.json")))
+  .update(fs.readFileSync(path.join(root, "assets/css/site.css")))
+  .update(fs.readFileSync(path.join(root, "assets/js/site.js")))
+  .update(fs.readFileSync(path.join(root, "assets/js/form-handler.js")))
+  .digest("hex")
+  .slice(0, 12);
 if (site.web3formsAccessKey === "test-only-placeholder") throw new Error("Test-only Web3Forms key cannot be published");
 if (site.metrikaId != null && !/^\d+$/u.test(String(site.metrikaId))) throw new Error("metrikaId must be a numeric counter ID");
 if (site.ga4Id != null && !/^G-[A-Z0-9]+$/u.test(site.ga4Id)) throw new Error("ga4Id must be a GA4 Measurement ID");

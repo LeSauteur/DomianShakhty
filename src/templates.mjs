@@ -716,10 +716,10 @@ function documentHead(ctx, page, breadcrumbsItems) {
   <meta name="twitter:description" content="${esc(page.description)}">
   ${ogImage ? `<meta name="twitter:image" content="${ogImage}">` : ""}
    ${heroPreload}
-   <link rel="stylesheet" href="${ctx.href("assets/css/site.css")}">
-  <script src="${ctx.href("assets/js/site-config.js")}" defer></script>
-  <script src="${ctx.href("assets/js/site.js")}" defer></script>
-  <script src="${ctx.href("assets/js/form-handler.js")}" defer></script>
+   <link rel="stylesheet" href="${ctx.href(`assets/css/site.css?v=${ctx.site.assetVersion}`)}">
+  <script src="${ctx.href(`assets/js/site-config.js?v=${ctx.site.assetVersion}`)}" defer></script>
+  <script src="${ctx.href(`assets/js/site.js?v=${ctx.site.assetVersion}`)}" defer></script>
+  <script src="${ctx.href(`assets/js/form-handler.js?v=${ctx.site.assetVersion}`)}" defer></script>
   ${schemaFor(ctx, page, breadcrumbsItems)}`;
 }
 
