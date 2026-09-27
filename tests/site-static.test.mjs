@@ -206,6 +206,15 @@ test("team page keeps Maria first and publishes Olga's verified profile", () => 
   assert.doesNotMatch(profile, /data-editorial-image="client-meeting"/u);
   assert.equal((profile.match(/class="agent-direction-grid"/gu) || []).length, 1);
   assert.equal((profile.match(/class="agent-skill-panel"/gu) || []).length, 1);
+  const olgaLead = profile.match(/<section class="lead-section"[\s\S]*?<\/section>/u)?.[0] || "";
+  assert.match(olgaLead, /tel:\+79885895902/u);
+  assert.match(olgaLead, /mailto:olyaka2004@yandex\.ru/u);
+  assert.match(olgaLead, /Связаться с Ольгой/u);
+  assert.doesNotMatch(olgaLead, /Babushkina_Mariya\.10@mail\.ru/u);
+  const listing = read("listings/shk-a01-studio-olymp.html");
+  assert.match(listing, /tel:\+79185071000/u);
+  assert.match(listing, /mailto:Babushkina_Mariya\.10@mail\.ru/u);
+  assert.doesNotMatch(listing, /mailto:olyaka2004@yandex\.ru/u);
   for (const width of [360, 640, 960]) assert.ok(fs.existsSync(path.join(root, `assets/images/olga-chernenko-${width}.webp`)));
 });
 
@@ -252,21 +261,22 @@ test("all core property directions have useful public pages and navigation entry
   }
   assert.match(home, /<h1>Недвижимость в Шахтах/u);
   assert.match(home, /Вторичный рынок и новостройки/u);
-  assert.ok(home.indexOf("Квартиры") < home.indexOf("Строительство домов под ключ"), "apartments must be visible before the construction feature");
+  assert.ok(home.indexOf('data-home-section="property"') < home.indexOf('data-home-section="construction"'), "local property directions must appear before construction");
 });
 
 test("homepage uses the editorial composition with verified hot offers", () => {
   const home = read("index.html");
-  assert.equal((home.match(/<section\b/gu) || []).length, 11);
-  assert.equal((home.match(/class="home-property-card"/gu) || []).length, 6);
+  assert.equal((home.match(/<section\b/gu) || []).length, 12);
+  assert.equal((home.match(/class="home-property-card"/gu) || []).length, 3);
   assert.match(home, /<h1>Недвижимость в Шахтах — спокойно и по делу<\/h1>/u);
-  assert.match(home, /Смотреть новостройки/u);
-  assert.match(home, /Выбрать проект дома/u);
+  assert.match(home, /Смотреть объекты в Шахтах/u);
+  assert.match(home, /Подобрать недвижимость/u);
   assert.match(home, /Продать недвижимость/u);
-  assert.match(home, /class="new-homes-feature"/u);
+  assert.doesNotMatch(home, /class="new-homes-feature"/u);
   assert.match(home, /id="hot-offers"/u);
-  assert.match(home, /Горячее предложение/u);
-  assert.match(home, /5[\s\u00a0]670[\s\u00a0]000 ₽/u);
+  assert.equal((home.match(/class="listing-card"/gu) || []).length, 6);
+  assert.match(home, /Подтверждённый объект/u);
+  assert.match(home, /data-mortgage-calculator data-page-type="home"/u);
   assert.match(home, /data-home-request-builder/u);
   assert.doesNotMatch(home, /data-lead-compact/u);
   assert.match(home, /mailto:Babushkina_Mariya\.10@mail\.ru/u);
@@ -279,7 +289,7 @@ test("homepage uses the editorial composition with verified hot offers", () => {
   assert.match(officeSection, /class="owner-portrait"/u);
   assert.match(officeSection, /maria-voronina-960\.webp/u);
   assert.doesNotMatch(officeSection, /assets\/images\/office\/office-interior/u);
-  const order = ["property", "newbuilds", "construction", "hot-offers", "request", "seller", "locations", "expertise", "office", "lead"].map((name) => home.indexOf(`data-home-section="${name}"`));
+  const order = ["property", "hot-offers", "request", "mortgage", "seller", "team", "locations", "newbuilds", "construction", "expertise", "lead"].map((name) => home.indexOf(`data-home-section="${name}"`));
   assert.ok(order.every((position) => position >= 0));
   assert.deepEqual(order, order.slice().sort((a, b) => a - b));
 });
