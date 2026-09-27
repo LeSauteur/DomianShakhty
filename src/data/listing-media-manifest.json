@@ -273,5 +273,45 @@
       "03.webp",
       "04.webp"
     ]
+  },
+  {
+    "id": "shk-h07-two-houses-kamenolomni",
+    "status": "done",
+    "files": ["hero.webp", "01.webp", "02.webp", "03.webp", "04.webp", "05.webp"]
+  },
+  {
+    "id": "shk-h08-two-houses-center",
+    "status": "done",
+    "files": ["hero.webp", "01.webp", "02.webp", "03.webp", "04.webp", "05.webp", "06.webp"]
+  },
+  {
+    "id": "shk-a14-renovated-2k-43",
+    "status": "done",
+    "files": ["hero.webp", "01.webp", "02.webp", "03.webp", "04.webp", "05.webp", "06.webp"]
+  },
+  {
+    "id": "shk-h09-renovated-76",
+    "status": "done",
+    "files": ["hero.webp", "01.webp", "02.webp", "03.webp", "04.webp", "05.webp", "06.webp", "07.webp", "08.webp", "09.webp"]
+  },
+  {
+    "id": "shk-l07-corner-12-sot",
+    "status": "done",
+    "files": ["hero.webp"]
+  },
+  {
+    "id": "shk-l08-goroda-budushchego-plot",
+    "status": "done",
+    "files": ["hero.webp", "01.webp", "02.webp", "03.webp"]
+  },
+  {
+    "id": "shk-l09-serviced-8-sot",
+    "status": "done",
+    "files": ["hero.webp"]
+  },
+  {
+    "id": "shk-l10-flat-6-sot",
+    "status": "done",
+    "files": ["hero.webp"]
   }
 ]

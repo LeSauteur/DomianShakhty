@@ -1421,5 +1421,431 @@
         "height": 900
       }
     ]
+  },
+  {
+    "id": "shk-h07-two-houses-kamenolomni",
+    "type": "house-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Два дома 96 и 53 м² в Каменоломнях",
+    "location": "kamenolomni",
+    "address": "Каменоломни",
+    "price": 5100000,
+    "status": "available",
+    "description": "Два дома 96 и 53 м², построенные в 2021 году. В основном одноэтажном доме семь комнат и косметический ремонт. Газовое отопление, центральные вода и канализация, терраса и асфальтированный подъезд.",
+    "features": [
+      "Основной дом — 96 м²",
+      "Второй дом — 53 м²",
+      "Построены в 2021 году",
+      "7 комнат в основном доме",
+      "Газовое отопление",
+      "Центральные вода и канализация",
+      "Терраса",
+      "Асфальтированный подъезд"
+    ],
+    "updatedAt": "2026-09-27",
+    "area": 96,
+    "rooms": 7,
+    "floors": 1,
+    "image": {
+      "src": "assets/images/listings/shk-h07-two-houses-kamenolomni/hero.webp",
+      "alt": "Кухня и столовая основного дома в Каменоломнях",
+      "width": 1156,
+      "height": 868
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-h07-two-houses-kamenolomni/01.webp",
+        "alt": "Спальня в доме в Каменоломнях",
+        "width": 1080,
+        "height": 1456
+      },
+      {
+        "src": "assets/images/listings/shk-h07-two-houses-kamenolomni/02.webp",
+        "alt": "Санузел дома в Каменоломнях",
+        "width": 780,
+        "height": 1052
+      },
+      {
+        "src": "assets/images/listings/shk-h07-two-houses-kamenolomni/03.webp",
+        "alt": "Кухонная зона дома в Каменоломнях",
+        "width": 780,
+        "height": 1052
+      },
+      {
+        "src": "assets/images/listings/shk-h07-two-houses-kamenolomni/04.webp",
+        "alt": "Дом и терраса со стороны двора",
+        "width": 1156,
+        "height": 868
+      },
+      {
+        "src": "assets/images/listings/shk-h07-two-houses-kamenolomni/05.webp",
+        "alt": "Внешний вид дома с просторной террасой",
+        "width": 1156,
+        "height": 868
+      }
+    ]
+  },
+  {
+    "id": "shk-h08-two-houses-center",
+    "type": "house-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Два дома рядом с центром Шахт",
+    "location": "shakhty",
+    "address": "Шахты, рядом с гимназией №10",
+    "price": 5500000,
+    "status": "available",
+    "description": "Два дома 75 и 51 м² на участке 4,5 сотки рядом с гимназией №10. Основной дом двухэтажный, второй находится в процессе ремонта. Во дворе есть гараж, беседка 5 × 6 м и парковка минимум для двух автомобилей.",
+    "features": [
+      "Основной дом — 75 м²",
+      "Второй дом — 51 м²",
+      "Участок 4,5 сотки",
+      "Газ и центральная вода",
+      "Септик",
+      "Гараж",
+      "Беседка 5 × 6 м",
+      "Парковка минимум для двух автомобилей"
+    ],
+    "updatedAt": "2026-09-27",
+    "area": 75,
+    "landArea": 4.5,
+    "floors": 2,
+    "image": {
+      "src": "assets/images/listings/shk-h08-two-houses-center/hero.webp",
+      "alt": "Двор и два дома рядом с центром Шахт",
+      "width": 720,
+      "height": 909
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-h08-two-houses-center/01.webp",
+        "alt": "Спальня в основном доме",
+        "width": 720,
+        "height": 921
+      },
+      {
+        "src": "assets/images/listings/shk-h08-two-houses-center/02.webp",
+        "alt": "Кухня и лестница в основном доме",
+        "width": 720,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-h08-two-houses-center/03.webp",
+        "alt": "Комната в доме рядом с центром Шахт",
+        "width": 720,
+        "height": 912
+      },
+      {
+        "src": "assets/images/listings/shk-h08-two-houses-center/04.webp",
+        "alt": "Гостиная в основном доме",
+        "width": 1280,
+        "height": 902
+      },
+      {
+        "src": "assets/images/listings/shk-h08-two-houses-center/05.webp",
+        "alt": "Жилая комната в основном доме",
+        "width": 720,
+        "height": 915
+      },
+      {
+        "src": "assets/images/listings/shk-h08-two-houses-center/06.webp",
+        "alt": "Интерьер дома рядом с центром Шахт",
+        "width": 719,
+        "height": 907
+      }
+    ]
+  },
+  {
+    "id": "shk-a14-renovated-2k-43",
+    "type": "apartment-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "2-комнатная квартира 43 м² с ремонтом",
+    "location": "shakhty",
+    "address": "Шахты",
+    "price": 5650000,
+    "status": "available",
+    "description": "2-комнатная квартира 43 м² с ремонтом в новом трёхэтажном доме. Индивидуальное отопление, балкон, парковка и отдельное место для хранения. Часть мебели остаётся; рядом школы, детский сад и магазины.",
+    "features": [
+      "43 м²",
+      "2 комнаты",
+      "Новый трёхэтажный дом",
+      "Индивидуальное отопление",
+      "Ремонт",
+      "Часть мебели остаётся",
+      "Балкон",
+      "Парковка и место для хранения"
+    ],
+    "updatedAt": "2026-09-27",
+    "area": 43,
+    "rooms": 2,
+    "floors": 3,
+    "image": {
+      "src": "assets/images/listings/shk-a14-renovated-2k-43/hero.webp",
+      "alt": "Кухня 2-комнатной квартиры площадью 43 м²",
+      "width": 1920,
+      "height": 1080
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-a14-renovated-2k-43/01.webp",
+        "alt": "Кухонная зона квартиры с ремонтом",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "assets/images/listings/shk-a14-renovated-2k-43/02.webp",
+        "alt": "Обеденная зона 2-комнатной квартиры",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "assets/images/listings/shk-a14-renovated-2k-43/03.webp",
+        "alt": "Жилая комната квартиры площадью 43 м²",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "assets/images/listings/shk-a14-renovated-2k-43/04.webp",
+        "alt": "Спальня 2-комнатной квартиры",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "assets/images/listings/shk-a14-renovated-2k-43/05.webp",
+        "alt": "Ванная комната квартиры",
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "src": "assets/images/listings/shk-a14-renovated-2k-43/06.webp",
+        "alt": "Интерьер квартиры с индивидуальным отоплением",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  },
+  {
+    "id": "shk-h09-renovated-76",
+    "type": "house-secondary",
+    "format": "secondary",
+    "verified": true,
+    "title": "Дом 76 м² с ремонтом в Шахтах",
+    "location": "shakhty",
+    "address": "Шахты",
+    "price": 3200000,
+    "status": "available",
+    "description": "Одноэтажный 3-комнатный дом 76 м² с ремонтом. Подключены газ и центральная вода, оборудованы современный санузел и кухня. Во дворе есть хозяйственные постройки; рядом остановки, магазины, школа и детский сад.",
+    "features": [
+      "76 м²",
+      "3 комнаты",
+      "1 этаж",
+      "Ремонт",
+      "Газ",
+      "Центральная вода",
+      "Хозяйственные постройки",
+      "Возможность расчёта с маткапиталом — после проверки условий"
+    ],
+    "updatedAt": "2026-09-27",
+    "area": 76,
+    "rooms": 3,
+    "floors": 1,
+    "image": {
+      "src": "assets/images/listings/shk-h09-renovated-76/hero.webp",
+      "alt": "Одноэтажный дом площадью 76 м² в Шахтах",
+      "width": 1440,
+      "height": 1920
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-h09-renovated-76/01.webp",
+        "alt": "Вход в одноэтажный дом",
+        "width": 1440,
+        "height": 1920
+      },
+      {
+        "src": "assets/images/listings/shk-h09-renovated-76/02.webp",
+        "alt": "Гостиная дома площадью 76 м²",
+        "width": 1440,
+        "height": 1920
+      },
+      {
+        "src": "assets/images/listings/shk-h09-renovated-76/03.webp",
+        "alt": "Жилая комната дома в Шахтах",
+        "width": 1440,
+        "height": 1920
+      },
+      {
+        "src": "assets/images/listings/shk-h09-renovated-76/04.webp",
+        "alt": "Спальня одноэтажного дома",
+        "width": 1440,
+        "height": 1920
+      },
+      {
+        "src": "assets/images/listings/shk-h09-renovated-76/05.webp",
+        "alt": "Вторая спальня дома площадью 76 м²",
+        "width": 1440,
+        "height": 1920
+      },
+      {
+        "src": "assets/images/listings/shk-h09-renovated-76/06.webp",
+        "alt": "Кухня дома с ремонтом",
+        "width": 1440,
+        "height": 1920
+      },
+      {
+        "src": "assets/images/listings/shk-h09-renovated-76/07.webp",
+        "alt": "Санузел дома с ремонтом",
+        "width": 1440,
+        "height": 1920
+      },
+      {
+        "src": "assets/images/listings/shk-h09-renovated-76/08.webp",
+        "alt": "Интерьер одноэтажного дома",
+        "width": 1440,
+        "height": 1920
+      },
+      {
+        "src": "assets/images/listings/shk-h09-renovated-76/09.webp",
+        "alt": "Комната дома площадью 76 м²",
+        "width": 1440,
+        "height": 1920
+      }
+    ]
+  },
+  {
+    "id": "shk-l07-corner-12-sot",
+    "type": "land",
+    "format": "land",
+    "verified": true,
+    "title": "Угловой участок 12 соток в Шахтах",
+    "location": "shakhty",
+    "address": "Шахты",
+    "price": 1500000,
+    "status": "available",
+    "description": "Угловой участок 12 соток с фасадом 17,5 м, водой и электричеством. Подходит для строительства дома; раздел на две части можно рассмотреть после проверки градостроительных и кадастровых условий.",
+    "features": [
+      "12 соток",
+      "Фасад 17,5 м",
+      "Угловое расположение",
+      "Вода",
+      "Электричество",
+      "Возможность раздела — после проверки условий"
+    ],
+    "updatedAt": "2026-09-27",
+    "landArea": 12,
+    "image": {
+      "src": "assets/images/listings/shk-l07-corner-12-sot/hero.webp",
+      "alt": "Угловой земельный участок площадью 12 соток",
+      "width": 1072,
+      "height": 683
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-l08-goroda-budushchego-plot",
+    "type": "land",
+    "format": "land",
+    "verified": true,
+    "title": "Участок 5,5 сотки в районе Города Будущего",
+    "location": "shakhty",
+    "address": "Шахты, район Города Будущего",
+    "price": 2130000,
+    "status": "available",
+    "description": "Земельный участок площадью 5,5 сотки с широким фасадом в районе Города Будущего. Электричество и вода заведены на участок. Подходит для строительства дома.",
+    "features": [
+      "5,5 сотки",
+      "Широкий фасад",
+      "Электричество заведено",
+      "Вода заведена",
+      "Под строительство дома"
+    ],
+    "updatedAt": "2026-09-27",
+    "landArea": 5.5,
+    "image": {
+      "src": "assets/images/listings/shk-l08-goroda-budushchego-plot/hero.webp",
+      "alt": "Участок 5,5 сотки в районе Города Будущего",
+      "width": 1920,
+      "height": 1440
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-l08-goroda-budushchego-plot/01.webp",
+        "alt": "Широкий фасад участка в районе Города Будущего",
+        "width": 1440,
+        "height": 1920
+      },
+      {
+        "src": "assets/images/listings/shk-l08-goroda-budushchego-plot/02.webp",
+        "alt": "Границы земельного участка площадью 5,5 сотки",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "src": "assets/images/listings/shk-l08-goroda-budushchego-plot/03.webp",
+        "alt": "Подъезд к участку с водой и электричеством",
+        "width": 1440,
+        "height": 1920
+      }
+    ]
+  },
+  {
+    "id": "shk-l09-serviced-8-sot",
+    "type": "land",
+    "format": "land",
+    "verified": true,
+    "title": "Участок 8 соток с коммуникациями по границе",
+    "location": "shakhty",
+    "address": "Шахты, развивающийся район",
+    "price": 1400000,
+    "status": "available",
+    "description": "Земельный участок площадью 8 соток с фасадом 20 м в развивающемся районе Шахт. Центральный водопровод и канализация, газ и электричество проходят по границе участка.",
+    "features": [
+      "8 соток",
+      "Фасад 20 м",
+      "Центральная вода по границе",
+      "Центральная канализация по границе",
+      "Газ по границе",
+      "Электричество по границе"
+    ],
+    "updatedAt": "2026-09-27",
+    "landArea": 8,
+    "image": {
+      "src": "assets/images/listings/shk-l09-serviced-8-sot/hero.webp",
+      "alt": "Земельный участок 8 соток в Шахтах",
+      "width": 1920,
+      "height": 1440
+    },
+    "gallery": []
+  },
+  {
+    "id": "shk-l10-flat-6-sot",
+    "type": "land",
+    "format": "land",
+    "verified": true,
+    "title": "Ровный участок 6 соток в Шахтах",
+    "location": "shakhty",
+    "address": "Шахты",
+    "price": 900000,
+    "status": "available",
+    "description": "Ровный земельный участок площадью 6 соток с фасадом 20 м, без строений и уклона. Центральный водопровод и канализация, газ и электричество проходят по границе участка.",
+    "features": [
+      "6 соток",
+      "Фасад 20 м",
+      "Ровный рельеф",
+      "Без строений",
+      "Центральные вода и канализация по границе",
+      "Газ и электричество по границе"
+    ],
+    "updatedAt": "2026-09-27",
+    "landArea": 6,
+    "image": {
+      "src": "assets/images/listings/shk-l10-flat-6-sot/hero.webp",
+      "alt": "Ровный земельный участок 6 соток в Шахтах",
+      "width": 622,
+      "height": 634
+    },
+    "gallery": []
   }
 ]
