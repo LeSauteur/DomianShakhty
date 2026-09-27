@@ -87,7 +87,7 @@ test("two-level navigation publishes the full desktop and mobile contract", () =
   for (const label of ["Города и районы", "Полезные статьи", "О компании", "Контакты", "Квартиры", "Дома", "Участки", "Новостройки", "Коммерция", "Гаражи и парковка", "Услуги"]) {
     assert.match(home, new RegExp(label, "u"));
   }
-  for (const route of ["apartments.html", "secondary-apartments.html", "newbuilds.html", "houses.html", "secondary-houses.html", "construction.html", "builder-houses.html", "lands.html", "commercial.html", "garages-parking.html", "sell.html", "valuation.html", "mortgage.html", "team/", "team/maria-voronina.html", "team/olga-chernenko.html", "contacts.html", "details.html"]) {
+  for (const route of ["apartments.html", "secondary-apartments.html", "newbuilds.html", "houses.html", "secondary-houses.html", "construction.html", "builder-houses.html", "lands.html", "commercial.html", "garages-parking.html", "sell.html", "valuation.html", "mortgage.html", "team/", "team/maria-voronina.html", "team/olga-chernenko.html", "team/maria-smolina.html", "contacts.html", "details.html"]) {
     assert.match(home, new RegExp(`href="/${route.replace(".", "\\.")}`, "u"), route);
   }
   assert.doesNotMatch(home, />Аренда</u);
@@ -189,11 +189,12 @@ test("public output omits removed social channels and uses the updated review st
   assert.match(read("newbuilds.html"), /Актуализируется/u);
 });
 
-test("team page keeps Maria first and publishes Olga's verified profile", () => {
+test("team page keeps the owner first and publishes both agent profiles", () => {
   const team = read("team/index.html");
   const mariaPosition = team.indexOf('data-team-member="maria-voronina"');
   const olgaPosition = team.indexOf('data-team-member="olga-chernenko"');
-  assert.ok(mariaPosition >= 0 && olgaPosition > mariaPosition);
+  const smolinaPosition = team.indexOf('data-team-member="maria-smolina"');
+  assert.ok(mariaPosition >= 0 && olgaPosition > mariaPosition && smolinaPosition > olgaPosition);
   assert.match(team, /Черненко Ольга Васильевна/u);
   assert.match(team, /Кадастровый инженер · агент по продаже недвижимости/u);
   assert.match(team, /\+7-988-589-59-02/u);
@@ -216,6 +217,21 @@ test("team page keeps Maria first and publishes Olga's verified profile", () => 
   assert.match(listing, /mailto:Babushkina_Mariya\.10@mail\.ru/u);
   assert.doesNotMatch(listing, /mailto:olyaka2004@yandex\.ru/u);
   for (const width of [360, 640, 960]) assert.ok(fs.existsSync(path.join(root, `assets/images/olga-chernenko-${width}.webp`)));
+
+  assert.match(team, /Смолина Мария Геннадиевна/u);
+  assert.match(team, /Ведущий специалист по продаже недвижимости/u);
+  assert.match(team, /\+7-900-122-82-11/u);
+  assert.match(team, /mashuta5@mail\.ru/u);
+  assert.match(team, /MAX: \+7-900-122-82-11/u);
+  const smolina = read("team/maria-smolina.html");
+  for (const text of ["Финансовая аналитика и оценка объекта недвижимости", "Проверка и сопровождение документов", "Технические знания о строительстве и эксплуатации", "Красный Сулин", "Зверево"]) assert.match(smolina, new RegExp(text, "u"));
+  assert.match(smolina, /maria-smolina-(?:360|640|960)\.webp/u);
+  const smolinaLead = smolina.match(/<section class="lead-section"[\s\S]*?<\/section>/u)?.[0] || "";
+  assert.match(smolinaLead, /tel:\+79001228211/u);
+  assert.match(smolinaLead, /mailto:mashuta5@mail\.ru/u);
+  assert.doesNotMatch(smolinaLead, /Babushkina_Mariya\.10@mail\.ru/u);
+  for (const width of [360, 640, 960]) assert.ok(fs.existsSync(path.join(root, `assets/images/maria-smolina-${width}.webp`)));
+  assert.ok(fs.existsSync(path.join(root, "assets/images/maria-smolina-original.png")));
 });
 
 test("legal details are confined to the details page", () => {
@@ -407,9 +423,9 @@ test("listing schema expands types without breaking legacy values", () => {
   for (const legacy of ["new-house", "resale-house", "apartment", "land", "project"]) assert.ok(types.includes(legacy));
   for (const added of ["apartment-secondary", "apartment-newbuild", "house-new", "house-secondary", "house-builder", "commercial", "garage", "parking-space"]) assert.ok(types.includes(added));
   const listings = JSON.parse(fs.readFileSync("src/data/listings.json", "utf8"));
-  assert.equal(listings.length, 26);
+  assert.equal(listings.length, 34);
   assert.equal(new Set(listings.map((item) => item.id)).size, listings.length);
-  assert.equal(listings.filter((item) => item.id.startsWith("shk-")).length, 25);
+  assert.equal(listings.filter((item) => item.id.startsWith("shk-")).length, 33);
   assert.ok(listings.every((item) => item.verified === true));
   assert.equal(listings[0].price, 5670000);
   assert.equal(listings[0].location, "kamenolomni");
@@ -418,13 +434,30 @@ test("listing schema expands types without breaking legacy values", () => {
     for (const image of [item.image, ...(item.gallery || [])]) assert.ok(fs.existsSync(path.join(root, image.src)), image.src);
   }
   const mediaManifest = JSON.parse(fs.readFileSync("src/data/listing-media-manifest.json", "utf8"));
-  assert.equal(mediaManifest.length, 25);
-  assert.equal(mediaManifest.filter((item) => item.status === "done").length, 25);
+  assert.equal(mediaManifest.length, 33);
+  assert.equal(mediaManifest.filter((item) => item.status === "done").length, 33);
   assert.equal(mediaManifest.filter((item) => item.status === "pending").length, 0);
   for (const item of mediaManifest.filter((entry) => entry.status === "done")) {
-    assert.deepEqual(item.files, ["hero.webp", "01.webp", "02.webp", "03.webp", "04.webp"]);
+    assert.equal(item.files[0], "hero.webp");
+    assert.equal(new Set(item.files).size, item.files.length);
     for (const file of item.files) assert.ok(fs.existsSync(path.join(root, "assets/images/listings", item.id, file)));
   }
+  const newListings = listings.slice(-8);
+  assert.deepEqual(newListings.map((item) => item.id), [
+    "shk-h07-two-houses-kamenolomni",
+    "shk-h08-two-houses-center",
+    "shk-a14-renovated-2k-43",
+    "shk-h09-renovated-76",
+    "shk-l07-corner-12-sot",
+    "shk-l08-goroda-budushchego-plot",
+    "shk-l09-serviced-8-sot",
+    "shk-l10-flat-6-sot"
+  ]);
+  assert.deepEqual(newListings.map((item) => item.price), [5100000, 5500000, 5650000, 3200000, 1500000, 2130000, 1400000, 900000]);
+  assert.deepEqual(newListings.map((item) => 1 + item.gallery.length), [6, 7, 7, 10, 1, 4, 1, 1]);
+  assert.match(read("listings/shk-h08-two-houses-center.html"), /Два дома рядом с центром Шахт/u);
+  assert.match(read("listings/shk-a14-renovated-2k-43.html"), /2-комнатная квартира 43 м²/u);
+  assert.match(read("listings/shk-l08-goroda-budushchego-plot.html"), /районе Города Будущего/u);
   assert.deepEqual(JSON.parse(fs.readFileSync("src/data/projects.json", "utf8")), []);
 });
 

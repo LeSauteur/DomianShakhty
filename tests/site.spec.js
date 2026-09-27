@@ -24,10 +24,16 @@ const representativePages = [
   "listings/shk-a13-aleksandrovskiy-park.html",
   "listings/shk-h03-artem-brick-house.html",
   "listings/shk-l06-regular-city-plot.html",
+  "listings/shk-h07-two-houses-kamenolomni.html",
+  "listings/shk-h08-two-houses-center.html",
+  "listings/shk-a14-renovated-2k-43.html",
+  "listings/shk-h09-renovated-76.html",
+  "listings/shk-l08-goroda-budushchego-plot.html",
   "guides/kak-vybrat-dom-ot-zastroyshchika-v-shakhtah.html",
   "team/index.html",
   "team/maria-voronina.html",
   "team/olga-chernenko.html",
+  "team/maria-smolina.html",
   "contacts.html",
   "details.html",
   "privacy.html"
@@ -52,7 +58,7 @@ for (const pathname of representativePages) {
 test("new listing hero images load without overflow on desktop and mobile", async ({ page }) => {
   for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
     await page.setViewportSize(viewport);
-    for (const id of ["shk-a02-budget-1k", "shk-a03-hbk-1k", "shk-h03-artem-brick-house", "shk-l06-regular-city-plot"]) {
+    for (const id of ["shk-a02-budget-1k", "shk-a03-hbk-1k", "shk-h03-artem-brick-house", "shk-l06-regular-city-plot", "shk-h07-two-houses-kamenolomni", "shk-h08-two-houses-center", "shk-a14-renovated-2k-43", "shk-h09-renovated-76", "shk-l08-goroda-budushchego-plot"]) {
       await page.goto(`listings/${id}.html`);
       const hero = page.locator(".listing-detail__media img");
       await expect(hero).toBeVisible();
@@ -124,14 +130,16 @@ test("desktop navigation menu exposes aria state, closes with Escape and restore
 test("location search persists filters, restores history and carries territory into the form", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("locations/kamenolomni.html");
-  await expect(page.locator("[data-local-count]")).toHaveText("1");
-  await expect(page.locator('[data-search-scope="local"]')).toBeVisible();
+  await expect(page.locator("[data-local-count]")).toHaveText("2");
+  const localCards = page.locator('[data-search-scope="local"]');
+  await expect(localCards).toHaveCount(2);
+  await expect(localCards.first()).toBeVisible();
   await page.locator('[data-location-type="apartments"]').click();
   await expect(page).toHaveURL(/type=apartments/u);
   await expect(page.locator("[data-local-count]")).toHaveText("0");
   await page.locator('[data-location-type="houses"]').click();
   await expect(page).toHaveURL(/type=houses/u);
-  await expect(page.locator("[data-local-count]")).toHaveText("1");
+  await expect(page.locator("[data-local-count]")).toHaveText("2");
   await page.goBack();
   await expect(page.locator("[data-local-count]")).toHaveText("0");
   await expect(page.locator('select[name="type"]')).toHaveValue("apartments");
@@ -279,18 +287,23 @@ test("Maria portrait is responsive, dimensioned and loads on trust pages", async
   }
 });
 
-test("team cards and Olga portrait fit desktop and mobile without overflow", async ({ page }) => {
+test("team cards and agent portraits fit desktop and mobile without overflow", async ({ page }) => {
   for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
     await page.setViewportSize(viewport);
     await page.goto("team/index.html");
     const cards = page.locator(".team-card");
-    await expect(cards).toHaveCount(2);
+    await expect(cards).toHaveCount(3);
     await expect(cards.nth(0)).toHaveAttribute("data-team-member", "maria-voronina");
     await expect(cards.nth(1)).toHaveAttribute("data-team-member", "olga-chernenko");
+    await expect(cards.nth(2)).toHaveAttribute("data-team-member", "maria-smolina");
     const olga = cards.nth(1).locator('img[alt*="Черненко Ольга"]');
     await olga.scrollIntoViewIfNeeded();
     await expect(olga).toBeVisible();
     expect((await olga.evaluate((node) => node.currentSrc))).toMatch(/olga-chernenko-(?:360|640|960)\.webp$/u);
+    const smolina = cards.nth(2).locator('img[alt*="Смолина Мария"]');
+    await smolina.scrollIntoViewIfNeeded();
+    await expect(smolina).toBeVisible();
+    expect((await smolina.evaluate((node) => node.currentSrc))).toMatch(/maria-smolina-(?:360|640|960)\.webp$/u);
     const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
     expect(dimensions.scroll, `team at ${viewport.width}px`).toBeLessThanOrEqual(dimensions.client + 1);
   }
@@ -316,6 +329,23 @@ test("Olga profile opens with her portrait and keeps expertise compact on mobile
   for (const card of await page.locator(".agent-direction-grid article").all()) {
     expect((await card.evaluate((node) => node.getBoundingClientRect().height))).toBeLessThan(180);
   }
+  const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
+  expect(dimensions.scroll).toBeLessThanOrEqual(dimensions.client + 1);
+});
+
+test("Maria Smolina profile uses her portrait, direct contacts and full expertise", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("team/maria-smolina.html");
+  const portrait = page.locator('.hero-agent img[alt*="Смолина Мария"]');
+  await expect(portrait).toBeVisible();
+  expect((await portrait.evaluate((node) => node.currentSrc))).toMatch(/maria-smolina-(?:360|640|960)\.webp$/u);
+  await expect(page.locator("h1")).toContainText("Смолина Мария Геннадиевна");
+  await expect(page.locator(".agent-direction-grid article")).toHaveCount(5);
+  await expect(page.locator(".agent-skill-panel li")).toHaveCount(6);
+  const directContact = page.locator("#lead-form-section .direct-contact");
+  await expect(directContact.locator('a[href="tel:+79001228211"]')).toBeVisible();
+  await expect(directContact.locator('a[href="mailto:mashuta5@mail.ru"]')).toBeVisible();
+  await expect(directContact.locator('a[href="mailto:Babushkina_Mariya.10@mail.ru"]')).toHaveCount(0);
   const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
   expect(dimensions.scroll).toBeLessThanOrEqual(dimensions.client + 1);
 });

@@ -29,6 +29,10 @@
     "slug": "olga-chernenko",
     "name": "Черненко Ольга Васильевна",
     "shortName": "Ольга Черненко",
+    "firstName": "Ольга",
+    "nameDative": "Ольге",
+    "nameInstrumental": "Ольгой",
+    "nameGenitive": "Ольги",
     "role": "Кадастровый инженер · агент по продаже недвижимости",
     "initials": "ОЧ",
     "phone": "+7-988-589-59-02",
@@ -69,6 +73,65 @@
         { "src": "assets/images/olga-chernenko-360.webp", "width": 360 },
         { "src": "assets/images/olga-chernenko-640.webp", "width": 640 },
         { "src": "assets/images/olga-chernenko-960.webp", "width": 960 }
+      ]
+    }
+  },
+  {
+    "id": "maria-smolina",
+    "slug": "maria-smolina",
+    "name": "Смолина Мария Геннадиевна",
+    "shortName": "Мария Смолина",
+    "firstName": "Мария",
+    "nameDative": "Марии",
+    "nameInstrumental": "Марией",
+    "nameGenitive": "Марии",
+    "role": "Ведущий специалист по продаже недвижимости",
+    "initials": "МС",
+    "phone": "+7-900-122-82-11",
+    "phoneHref": "tel:+79001228211",
+    "maxPhone": "+7-900-122-82-11",
+    "email": "mashuta5@mail.ru",
+    "office": "Домиан · Шахты на Маяковского",
+    "city": "Шахты",
+    "directions": [
+      "Строительство домов",
+      "Земельные участки",
+      "Дома",
+      "Квартиры",
+      "Коммерческая недвижимость"
+    ],
+    "serviceAreas": [
+      "Шахты",
+      "Каменоломни",
+      "Красногорняцкий",
+      "Октябрьский сельский район",
+      "Красный Сулин",
+      "Зверево"
+    ],
+    "skills": [
+      "Финансовая аналитика и оценка объекта недвижимости",
+      "Подготовка объекта недвижимости к продаже",
+      "Проверка и сопровождение документов",
+      "Подбор объекта недвижимости",
+      "Подготовка документов к продаже",
+      "Технические знания о строительстве и эксплуатации"
+    ],
+    "heroFacts": [
+      "дома · участки · квартиры",
+      "строительство · коммерция",
+      "Шахты и соседние территории"
+    ],
+    "verified": true,
+    "image": {
+      "alt": "Смолина Мария Геннадиевна, ведущий специалист по продаже недвижимости",
+      "original": "assets/images/maria-smolina-original.png",
+      "fallback": "assets/images/maria-smolina-640.webp",
+      "width": 640,
+      "height": 800,
+      "srcset": [
+        { "src": "assets/images/maria-smolina-360.webp", "width": 360 },
+        { "src": "assets/images/maria-smolina-640.webp", "width": 640 },
+        { "src": "assets/images/maria-smolina-960.webp", "width": 960 }
       ]
     }
   }
