@@ -3,6 +3,7 @@
 
   var config = window.DOMIAN_SITE_CONFIG || {};
   var allowedAnalyticsKeys = ["page_type", "object_type", "object_id", "location", "source_section", "source_cta", "interaction", "filter_name", "filter_value"];
+  var allowedAttributionKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "yclid", "gclid"];
   var allowedEvents = [
     "catalog_filter_use", "property_card_open", "construction_interest", "project_open",
     "guide_to_catalog", "guide_to_lead", "location_to_construction", "map_click",
@@ -15,15 +16,31 @@
     return Array.prototype.slice.call((root || document).querySelectorAll(selector));
   }
 
-  function analyticsDisabled() {
+  function analyticsEnvironmentBlocked() {
     var host = (window.location.hostname || "").toLowerCase();
     var qa = new URLSearchParams(window.location.search || "").get("qa") === "1";
+    return (!config.metrikaId && !config.ga4Id) || (!config.analyticsTestMode && (host === "localhost" || host === "::1" || /^127(?:\.\d+){3}$/u.test(host))) || qa;
+  }
+
+  function analyticsDisabled() {
     var consent = "";
     try { consent = window.localStorage.getItem("domian_analytics_consent") || ""; } catch (_error) { /* optional */ }
-    return (!config.metrikaId && !config.ga4Id) || (!config.analyticsTestMode && (host === "localhost" || host === "::1" || /^127(?:\.\d+){3}$/u.test(host))) || qa || Boolean(window.location.search) || consent !== "accepted";
+    return analyticsEnvironmentBlocked() || consent !== "accepted";
   }
 
   window.DOMIAN_ANALYTICS_DISABLED = analyticsDisabled();
+
+  function analyticsPageUrl() {
+    var source = new URLSearchParams(window.location.search || "");
+    var safe = new URLSearchParams();
+    allowedAttributionKeys.forEach(function (key) {
+      var value = source.get(key);
+      if (!value) return;
+      safe.set(key, value.slice(0, 200));
+    });
+    var query = safe.toString();
+    return window.location.origin + window.location.pathname + (query ? "?" + query : "");
+  }
 
   function cleanParams(params) {
     var safe = {};
@@ -61,7 +78,7 @@
     script.src = "https://mc.yandex.ru/metrika/tag.js?id=" + encodeURIComponent(config.metrikaId);
     document.head.appendChild(script);
     window.ym(config.metrikaId, "init", { clickmap: false, trackLinks: false, accurateTrackBounce: false, defer: true });
-    window.ym(config.metrikaId, "hit", window.location.origin + window.location.pathname);
+    window.ym(config.metrikaId, "hit", analyticsPageUrl());
   }
 
   function initGa4() {
@@ -74,13 +91,12 @@
     script.async = true;
     script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(config.ga4Id);
     document.head.appendChild(script);
-    window.gtag("event", "page_view", { page_location: window.location.origin + window.location.pathname, page_title: document.title });
+    window.gtag("event", "page_view", { page_location: analyticsPageUrl(), page_title: document.title });
   }
 
   function initAnalyticsConsent() {
-    var host = (window.location.hostname || "").toLowerCase();
     var choice = "";
-    if ((!config.metrikaId && !config.ga4Id) || (!config.analyticsTestMode && (host === "localhost" || host === "::1" || /^127(?:\.\d+){3}$/u.test(host))) || window.location.search) return;
+    if (analyticsEnvironmentBlocked()) return;
     try { choice = window.localStorage.getItem("domian_analytics_consent") || ""; } catch (_error) { /* optional */ }
     if (choice) return;
     var notice = document.createElement("aside");
@@ -118,7 +134,7 @@
 
   function persistAttribution() {
     var params = new URLSearchParams(window.location.search || "");
-    ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach(function (key) {
+    allowedAttributionKeys.forEach(function (key) {
       var value = params.get(key);
       if (!value) return;
       try { window.sessionStorage.setItem("domian_" + key, value.slice(0, 200)); } catch (_error) { /* optional */ }
@@ -537,7 +553,7 @@
       result.textContent = Math.round(payment).toLocaleString("ru-RU") + " ₽ / мес.";
       if (event && !interacted) {
         interacted = true;
-        track("mortgage_interaction", { interaction: "calculation", page_type: "mortgage" });
+        track("mortgage_interaction", { interaction: "calculation", page_type: form.dataset.pageType || "mortgage" });
       }
     }
     form.addEventListener("input", calculate);

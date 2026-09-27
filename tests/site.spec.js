@@ -309,6 +309,10 @@ test("Olga profile opens with her portrait and keeps expertise compact on mobile
   await expect(page.locator('[data-editorial-image="client-meeting"]')).toHaveCount(0);
   await expect(page.locator(".agent-direction-grid article")).toHaveCount(4);
   await expect(page.locator(".agent-skill-panel li")).toHaveCount(5);
+  const directContact = page.locator("#lead-form-section .direct-contact");
+  await expect(directContact.locator('a[href="tel:+79885895902"]')).toBeVisible();
+  await expect(directContact.locator('a[href="mailto:olyaka2004@yandex.ru"]')).toBeVisible();
+  await expect(directContact.locator('a[href="mailto:Babushkina_Mariya.10@mail.ru"]')).toHaveCount(0);
   for (const card of await page.locator(".agent-direction-grid article").all()) {
     expect((await card.evaluate((node) => node.getBoundingClientRect().height))).toBeLessThan(180);
   }
@@ -374,12 +378,12 @@ test("lead analytics never receives entered personal data", async ({ page }) => 
   expect(payload).not.toContain("123-45-67");
 });
 
-test("Metrika and GA4 load once after consent and omit personal URL parameters", async ({ page }) => {
+test("Metrika and GA4 preserve advertising attribution but omit personal URL parameters", async ({ page }) => {
   const runtime = { basePath: "", analyticsTestMode: true, metrikaId: "12345678", ga4Id: "G-TEST123456", web3formsAccessKey: null };
   await page.route("**/assets/js/site-config.js*", (route) => route.fulfill({ contentType: "text/javascript", body: `window.DOMIAN_SITE_CONFIG=Object.freeze(${JSON.stringify(runtime)});` }));
   await page.route("https://mc.yandex.ru/**", (route) => route.fulfill({ contentType: "text/javascript", body: "" }));
   await page.route("https://www.googletagmanager.com/**", (route) => route.fulfill({ contentType: "text/javascript", body: "" }));
-  await page.goto("");
+  await page.goto("?utm_source=yandex&utm_medium=cpc&yclid=12345&phone=79181234567&random=secret");
   await expect(page.locator(".analytics-consent")).toBeVisible();
   expect(await page.locator('script[src*="mc.yandex.ru"], script[src*="googletagmanager.com"]').count()).toBe(0);
   await page.locator("[data-analytics-accept]").click();
@@ -391,15 +395,45 @@ test("Metrika and GA4 load once after consent and omit personal URL parameters",
   expect(calls).toContain("reachGoal");
   expect(calls).toContain("phone_click");
   expect(calls).toContain("page_view");
+  expect(calls).toContain("utm_source");
+  expect(calls).toContain("yandex");
+  expect(calls).toContain("yclid");
+  expect(calls).toContain("12345");
+  expect(calls).not.toContain("79181234567");
+  expect(calls).not.toContain("random");
+  expect(calls).not.toContain("secret");
   expect(calls).not.toContain("123-45-67");
-  await page.goto("commercial.html?phone=79181234567");
-  expect(await page.locator('script[src*="mc.yandex.ru"], script[src*="googletagmanager.com"]').count()).toBe(0);
+  const attribution = await page.evaluate(() => ({
+    utmSource: sessionStorage.getItem("domian_utm_source"),
+    utmMedium: sessionStorage.getItem("domian_utm_medium"),
+    yclid: sessionStorage.getItem("domian_yclid"),
+    phone: sessionStorage.getItem("domian_phone"),
+    random: sessionStorage.getItem("domian_random")
+  }));
+  expect(attribution).toEqual({ utmSource: "yandex", utmMedium: "cpc", yclid: "12345", phone: null, random: null });
+});
+
+test("qa=1 and localhost keep analytics disabled", async ({ page }) => {
+  const enabledRuntime = { basePath: "", analyticsTestMode: true, metrikaId: "12345678", ga4Id: "G-TEST123456", web3formsAccessKey: null };
+  await page.route("**/assets/js/site-config.js*", (route) => route.fulfill({ contentType: "text/javascript", body: `window.DOMIAN_SITE_CONFIG=Object.freeze(${JSON.stringify(enabledRuntime)});` }));
+  await page.goto("?qa=1&utm_source=yandex");
+  await expect(page.locator(".analytics-consent")).toHaveCount(0);
+  await expect(page.locator('script[src*="mc.yandex.ru"], script[src*="googletagmanager.com"]')).toHaveCount(0);
+
+  const localRuntime = { ...enabledRuntime, analyticsTestMode: false };
+  await page.unroute("**/assets/js/site-config.js*");
+  await page.route("**/assets/js/site-config.js*", (route) => route.fulfill({ contentType: "text/javascript", body: `window.DOMIAN_SITE_CONFIG=Object.freeze(${JSON.stringify(localRuntime)});` }));
+  await page.goto("");
+  await expect(page.locator(".analytics-consent")).toHaveCount(0);
+  await expect(page.locator('script[src*="mc.yandex.ru"], script[src*="googletagmanager.com"]')).toHaveCount(0);
 });
 
 test("mortgage calculator uses the visitor's rate", async ({ page }) => {
-  await page.goto("mortgage.html");
-  await page.locator('input[name="rate"]').fill("20");
-  await expect(page.locator("[data-mortgage-result]")).toContainText("₽ / мес.");
+  for (const url of ["mortgage.html", ""]) {
+    await page.goto(url);
+    await page.locator('input[name="rate"]').fill("20");
+    await expect(page.locator("[data-mortgage-result]")).toContainText("₽ / мес.");
+  }
 });
 
 test("home request builder transfers criteria into the lead form", async ({ page }) => {
@@ -418,13 +452,14 @@ test("home request builder transfers criteria into the lead form", async ({ page
   expect(context.criteria).toContain("4–7 млн ₽");
 });
 
-test("homepage has six equal category cards and a separate new-home feature", async ({ page }) => {
+test("homepage prioritizes local property, request and mortgage sections", async ({ page }) => {
   await page.goto("");
-  await expect(page.locator(".home-property-card")).toHaveCount(6);
-  await expect(page.locator(".new-homes-feature")).toHaveCount(1);
+  await expect(page.locator(".home-property-card")).toHaveCount(3);
+  await expect(page.locator(".new-homes-feature")).toHaveCount(0);
+  await expect(page.locator("[data-mortgage-calculator]")).toHaveCount(1);
   await expect(page.locator("[data-showcase-card]")).toHaveCount(0);
   const sections = await page.locator("main > section").evaluateAll((nodes) => nodes.map((node) => node.getAttribute("data-home-section") || "hero"));
-  expect(sections).toEqual(["hero", "property", "newbuilds", "construction", "hot-offers", "request", "seller", "locations", "expertise", "office", "lead"]);
+  expect(sections).toEqual(["hero", "property", "hot-offers", "request", "mortgage", "seller", "team", "locations", "newbuilds", "construction", "expertise", "lead"]);
 });
 
 test("homepage catalog showcases stay compact, truthful and link to imported details", async ({ page }) => {
@@ -438,7 +473,7 @@ test("homepage catalog showcases stay compact, truthful and link to imported det
     const firstNewbuild = page.locator("[data-home-newbuild]").first();
     await firstNewbuild.scrollIntoViewIfNeeded();
     await expect(firstNewbuild.locator("img")).toBeVisible();
-    expect(await firstNewbuild.locator("img").evaluate((image) => image.naturalWidth)).toBeGreaterThan(0);
+    await expect.poll(() => firstNewbuild.locator("img").evaluate((image) => image.naturalWidth)).toBeGreaterThan(0);
     await expect(firstNewbuild.locator('.home-catalog-card__cta')).toHaveAttribute("href", /\/newbuilds\/.+\.html$/u);
     const firstConstruction = page.locator("[data-home-construction]").first();
     await firstConstruction.scrollIntoViewIfNeeded();
@@ -449,33 +484,34 @@ test("homepage catalog showcases stay compact, truthful and link to imported det
   }
 });
 
-test("desktop hot offers remain wide and readable", async ({ page }) => {
+test("desktop local offers form a balanced three-column grid", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("");
   const grid = page.locator(".home-hot-offers__grid");
   await grid.scrollIntoViewIfNeeded();
   const layout = await grid.evaluate((node) => {
-    const cards = [...node.querySelectorAll(".listing-card--hot")];
+    const cards = [...node.querySelectorAll(".listing-card")];
     return {
       columns: getComputedStyle(node).gridTemplateColumns.split(" ").length,
+      scrollWidth: node.scrollWidth,
+      clientWidth: node.clientWidth,
       cards: cards.map((card) => {
         const cardRect = card.getBoundingClientRect();
         const mediaRect = card.querySelector(".listing-card__media").getBoundingClientRect();
-        const bodyRect = card.querySelector(".listing-card__body").getBoundingClientRect();
         return {
           width: cardRect.width,
           height: cardRect.height,
-          mediaWidth: mediaRect.width,
-          bodyWidth: bodyRect.width
+          mediaWidth: mediaRect.width
         };
       })
     };
   });
-  expect(layout.columns).toBe(1);
-  expect(layout.cards).toHaveLength(3);
-  expect(layout.cards.every((card) => card.width > 1000)).toBe(true);
-  expect(layout.cards.every((card) => card.height < 650)).toBe(true);
-  expect(layout.cards.every((card) => card.mediaWidth > 500 && card.bodyWidth > 360)).toBe(true);
+  expect(layout.columns).toBe(3);
+  expect(layout.cards).toHaveLength(6);
+  expect(layout.cards.every((card) => card.width > 350)).toBe(true);
+  expect(layout.cards.every((card) => card.height < 850)).toBe(true);
+  expect(layout.cards.every((card) => card.mediaWidth > 350)).toBe(true);
+  expect(layout.scrollWidth).toBeLessThanOrEqual(layout.clientWidth + 1);
 });
 
 test("mobile property cards form a two-column grid without horizontal scrolling", async ({ page }) => {
@@ -498,6 +534,21 @@ test("mobile property cards form a two-column grid without horizontal scrolling"
   expect(layout.columns).toBe(2);
   expect(layout.scrollWidth).toBeLessThanOrEqual(layout.clientWidth + 1);
   expect(layout.cardsInside).toBe(true);
+});
+
+test("mobile local offers remain readable in one column", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("");
+  const grid = page.locator(".home-hot-offers__grid");
+  await grid.scrollIntoViewIfNeeded();
+  await expect(grid.locator(".listing-card")).toHaveCount(6);
+  const layout = await grid.evaluate((node) => ({
+    columns: getComputedStyle(node).gridTemplateColumns.split(" ").length,
+    scrollWidth: node.scrollWidth,
+    clientWidth: node.clientWidth
+  }));
+  expect(layout.columns).toBe(1);
+  expect(layout.scrollWidth).toBeLessThanOrEqual(layout.clientWidth + 1);
 });
 
 test("mobile hero keeps its caption off the photograph", async ({ page }) => {

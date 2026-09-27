@@ -340,23 +340,24 @@ function hero(ctx, page) {
 function homePropertySection(ctx) {
   const items = [
     ["Квартиры", "Вторичный рынок и новостройки", "apartments.html", "apartment", "category-apartments", "Светлый современный интерьер квартиры"],
-    ["Дома", "Новые · вторичные · от застройщиков", "houses.html", "house", "category-houses", "Современный частный дом в жилом окружении"],
-    ["Новостройки", "Жилые комплексы Ростовской области", "newbuilds.html", "apartment-newbuild", "category-new-buildings", "Современный многоквартирный двор"],
-    ["Участки", "ИЖС, коммуникации и жилое окружение", "lands.html", "land", "land-plot-izhs", "Свободный земельный участок в жилом окружении"],
-    ["Коммерческая недвижимость", "Street-retail, офисы, склады и ПСН", "commercial.html", "commercial", "commercial-street-retail", "Коммерческое помещение с витринным фасадом"],
-    ["Гаражи и парковка", "Гаражи, машиноместа и парковочные места", "garages-parking.html", "garage-parking", "category-parking", "Крытая парковка с размеченными местами"]
+    ["Дома", "Новые и вторичные дома с участками", "houses.html", "house", "category-houses", "Современный частный дом в жилом окружении"],
+    ["Участки", "ИЖС, коммуникации и жилое окружение", "lands.html", "land", "land-plot-izhs", "Свободный земельный участок в жилом окружении"]
   ];
   return `<section class="section home-property" id="property-directions" data-home-section="property"><div class="container">
-    ${sectionHeading({ kicker: "Недвижимость", title: "Весь основной рынок — без лишней сложности", intro: "Шесть направлений для покупки, продажи и предварительной оценки недвижимости." })}
+    ${sectionHeading({ kicker: "Недвижимость в Шахтах", title: "Квартиры, дома и участки", intro: "Основные направления местного рынка — сразу после первого экрана." })}
     <div class="home-property__grid" data-reveal-group>${items.map(([title, text, href, category, image, alt], index) => `<a class="home-property-card" href="${ctx.href(href)}" data-lead-category="${category}" data-lead-label="${esc(title)}" data-reveal>${editorialImage(ctx, image, alt, { sizes: "(max-width: 600px) 46vw, (max-width: 1024px) 47vw, 31vw" })}<span class="home-property-card__veil" aria-hidden="true"></span><span class="home-property-card__number">${String(index + 1).padStart(2, "0")}</span><div><h3>${esc(title)}</h3><p>${esc(text)}</p><strong>Открыть направление ↗</strong></div></a>`).join("")}</div>
-    <a class="new-homes-feature" href="${ctx.href("construction.html")}" data-lead-category="house" data-lead-label="Строительство домов под ключ" data-reveal>${editorialImage(ctx, "feature-new-homes", "Новый дом с благоустроенным двором", { sizes: "(max-width: 820px) calc(100vw - 32px), 60vw" })}<span class="new-homes-feature__veil" aria-hidden="true"></span><div><p class="eyebrow">Отдельное направление</p><h3>Строительство домов под ключ</h3><p>Сравните проекты, площади и комплектации; актуальную смету и возможность строительства офис уточнит для конкретного участка.</p><strong>Смотреть проекты ↗</strong></div></a>
   </div></section>`;
 }
 
 function homeHotOffersSection(ctx) {
-  const items = visibleListings(ctx).slice(0, 3);
+  const available = visibleListings(ctx);
+  const items = [
+    ...available.filter((item) => listingCategory(item).startsWith("apartment")).slice(0, 2),
+    ...available.filter((item) => ["new-house", "secondary-house"].includes(listingCategory(item))).slice(0, 2),
+    ...available.filter((item) => listingCategory(item) === "land").slice(0, 2)
+  ];
   if (!items.length) return "";
-  return `<section class="section home-hot-offers" id="hot-offers" data-home-section="hot-offers"><div class="container"><div class="section-heading"><div><p class="eyebrow">Горячие предложения</p><h2>Объекты, которые уже можно обсудить</h2></div><p>Цена и комплектация подтверждены собственником. Ипотечный платёж и схема расчётов уточняются индивидуально перед подачей заявки.</p></div><div class="home-hot-offers__grid" data-reveal-group>${items.map((item) => listingCard(ctx, item, { hot: true })).join("")}</div></div></section>`;
+  return `<section class="section home-hot-offers" id="hot-offers" data-home-section="hot-offers"><div class="container"><div class="section-heading"><div><p class="eyebrow">Предложения в Шахтах</p><h2>Квартиры, дома и участки</h2></div><p>Шесть локальных объектов из действующего каталога. Цена и комплектация подтверждены собственником.</p></div><div class="home-hot-offers__grid listing-grid" data-reveal-group>${items.map((item) => listingCard(ctx, item)).join("")}</div></div></section>`;
 }
 
 function homeRequestSection(ctx) {
@@ -382,7 +383,7 @@ function homeExpertiseSection(ctx, guides) {
 }
 
 function homeOfficeSection(ctx) {
-  return `<section class="section owner-section home-office" data-home-section="office"><div class="container home-office__layout">${ownerPortrait(ctx)}<div><p class="eyebrow">Ваш офис недвижимости в Шахтах</p><h2>Мария Воронина и офис на Маяковского</h2><p>Начать можно с короткого разговора о задаче. На связи собственник офиса; состав работы определяется после знакомства с объектом или критериями подбора.</p><address><strong>${esc(ctx.site.address)}</strong><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a></address><div class="owner-actions"><a class="button button--primary" href="${ctx.href("team/maria-voronina.html")}">Мария и направления</a><a class="button button--ghost" href="${ctx.href("contacts.html")}">Контакты офиса</a></div>${socialLinks(ctx, "social-links social-links--owner")}</div></div></section>`;
+  return `<section class="section owner-section home-office" data-home-section="team"><div class="container home-office__layout">${ownerPortrait(ctx)}<div><p class="eyebrow">Команда на Маяковского</p><h2>Мария Воронина и Ольга Черненко</h2><p>Мария принимает обращения по объектам и работе агентства. Ольга помогает с оценкой, подготовкой документов и сопровождением продажи недвижимости.</p><address><strong>${esc(ctx.site.address)}</strong><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a></address><div class="owner-actions"><a class="button button--primary" href="${ctx.href("team/index.html")}">Вся команда</a><a class="button button--ghost" href="${ctx.href("contacts.html")}">Контакты офиса</a></div>${socialLinks(ctx, "social-links social-links--owner")}</div></div></section>`;
 }
 
 function homeLeadForm(ctx) {
@@ -590,10 +591,10 @@ function splitSection(ctx, section) {
   return `<section class="section"><div class="container">${sectionHeading(section)}<div class="split-cards"><article class="split-card split-card--sage"><h3>${esc(section.left.title)}</h3><p>${esc(section.left.text)}</p><a class="text-link" href="${ctx.href(section.left.href)}">${esc(section.left.label)} ↗</a></article><article class="split-card"><h3>${esc(section.right.title)}</h3><p>${esc(section.right.text)}</p><a class="text-link" href="${ctx.href(section.right.href)}">${esc(section.right.label)} ↗</a></article></div></div></section>`;
 }
 
-function mortgageSection(ctx) {
-  return `<section class="section section--ink" id="mortgage-calculator"><div class="container mortgage-layout">
+function mortgageSection(ctx, { home = false } = {}) {
+  return `<section class="section section--ink" id="mortgage-calculator"${home ? ' data-home-section="mortgage"' : ""}><div class="container mortgage-layout">
     <div class="mortgage-layout__intro"><div><p class="eyebrow">Ориентировочный расчёт</p><h2>Введите свои условия</h2><p>Ставка не подставлена намеренно: используйте значение, которое получили из актуального предложения банка. Расчёт не учитывает страховки, комиссии и изменение условий.</p></div>${editorialImage(ctx, "mortgage-housing", "Современный жилой комплекс", { className: "mortgage-layout__media", sizes: "(max-width: 820px) calc(100vw - 32px), 34vw" })}</div>
-    <form class="mortgage-calculator" data-mortgage-calculator>
+    <form class="mortgage-calculator" data-mortgage-calculator data-page-type="${home ? "home" : "mortgage"}">
       <label>Стоимость объекта, ₽<input name="price" type="number" min="100000" step="50000" value="5000000" inputmode="numeric"></label>
       <label>Первоначальный взнос, ₽<input name="downPayment" type="number" min="0" step="50000" value="1000000" inputmode="numeric"></label>
       <label>Ставка, % годовых<input name="rate" type="number" min="0.01" max="100" step="0.01" placeholder="Введите актуальную ставку" inputmode="decimal" required></label>
@@ -619,13 +620,17 @@ function renderSection(ctx, section) {
 }
 
 function leadForm(ctx, form = {}) {
-  if (!ctx.site.web3formsAccessKey) return `<section class="lead-section" id="lead-form-section"><div class="container lead-layout"><div><p class="eyebrow">Связаться с офисом</p><h2>${esc(form.title || "Обсудить задачу")}</h2><p>${esc(form.text || "Расскажите, что нужно решить.")}</p></div><div class="direct-contact"><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a>${socialLinks(ctx)}</div></div></section>`;
+  const directPhone = form.phone || ctx.site.phone;
+  const directPhoneHref = form.phoneHref || ctx.site.phoneHref;
+  const directEmail = form.email || ctx.site.email;
+  const directSocials = form.socials === false ? "" : socialLinks(ctx);
+  if (!ctx.site.web3formsAccessKey) return `<section class="lead-section" id="lead-form-section"><div class="container lead-layout"><div><p class="eyebrow">${esc(form.kicker || "Связаться с офисом")}</p><h2>${esc(form.title || "Обсудить задачу")}</h2><p>${esc(form.text || "Расскажите, что нужно решить.")}</p></div><div class="direct-contact"><a href="${esc(directPhoneHref)}" data-analytics="phone_click">${esc(directPhone)}</a><a href="mailto:${esc(directEmail)}" data-analytics="email_click">${esc(directEmail)}</a>${directSocials}</div></div></section>`;
   const goals = [["buy", "Купить"], ["sell", "Продать"], ["valuation", "Предварительно оценить"], ["consultation", "Обсудить другую задачу"]];
   const locationOptions = ctx.locations.map((location) => `<option value="${esc(location.name)}"${location.name === form.territory ? " selected" : ""}>${esc(location.name)}</option>`).join("");
   const defaultGoal = form.goal || ({ sell: "sell", valuation: "valuation" })[form.type] || "buy";
   const defaultPropertyType = form.propertyType || ({ apartment: "apartment", "apartment-secondary": "apartment", "apartment-newbuild": "apartment", house: "house", "house-new": "house", "house-secondary": "house", "house-builder": "house", land: "land", commercial: "commercial", "garage-parking": "garage-parking" })[form.type] || "";
   return `<section class="lead-section" id="lead-form-section"><div class="container lead-layout">
-    <div><p class="eyebrow">Короткий первый шаг</p><h2>${esc(form.title || "Обсудить задачу")}</h2><p>${esc(form.text || "Расскажите, что нужно решить.")}</p><div class="direct-contact"><span>Можно также связаться с офисом напрямую.</span><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a></div></div>
+    <div><p class="eyebrow">${esc(form.kicker || "Короткий первый шаг")}</p><h2>${esc(form.title || "Обсудить задачу")}</h2><p>${esc(form.text || "Расскажите, что нужно решить.")}</p><div class="direct-contact"><span>Можно также связаться напрямую.</span><a href="${esc(directPhoneHref)}" data-analytics="phone_click">${esc(directPhone)}</a><a href="mailto:${esc(directEmail)}" data-analytics="email_click">${esc(directEmail)}</a></div></div>
     <form class="lead-form" data-lead-form data-source-cta="${esc(form.type || "contact")}" data-origin-page="${esc(form.originPage || "")}"${form.territory ? ` data-default-territory="${esc(form.territory)}"` : ""} novalidate>
       <div class="honeypot" aria-hidden="true"><label>Не заполняйте<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label></div>
       <input type="hidden" name="service" value="${esc(form.type || "service")}">
@@ -741,8 +746,8 @@ export function renderCommercialPage(ctx, page) {
 }
 
 export function renderHome(ctx, guides) {
-  const page = { path: "", pageType: "home", title: "Недвижимость в Шахтах — купить, продать, оценить | Домиан", description: "Покупка, продажа и предварительная оценка квартир, домов, новостроек, участков, коммерческой недвижимости, гаражей и парковочных мест в Шахтах и рядом.", eyebrow: "Домиан · Шахты на Маяковского", h1: "Недвижимость в Шахтах — спокойно и по делу", lead: "Квартиры, дома, новостройки, участки и коммерческая недвижимость. Покупка, продажа и предварительная оценка — в одном офисе на Маяковского.", primaryCta: { label: "Смотреть новостройки", href: "newbuilds.html" }, secondaryCta: { label: "Выбрать проект дома", href: "construction.html" }, tertiaryCta: { label: "Продать недвижимость", href: "sell.html" }, geoLinks: true, heroImage: "main-hero", heroImageAlt: "Современная жилая недвижимость", heroMediaLabel: "Современная городская жизнь" };
-  const body = `${hero(ctx, page)}${homePropertySection(ctx)}${homeFeaturedNewbuilds(ctx)}${homeFeaturedConstruction(ctx)}${homeHotOffersSection(ctx)}${homeRequestSection(ctx)}${homeSellerSection(ctx)}${homeLocationsSection(ctx)}${homeExpertiseSection(ctx, guides)}${homeOfficeSection(ctx)}${homeLeadForm(ctx)}`;
+  const page = { path: "", pageType: "home", title: "Недвижимость в Шахтах — купить, продать, оценить | Домиан", description: "Покупка, продажа и предварительная оценка квартир, домов, новостроек, участков, коммерческой недвижимости, гаражей и парковочных мест в Шахтах и рядом.", eyebrow: "Домиан · Шахты на Маяковского", h1: "Недвижимость в Шахтах — спокойно и по делу", lead: "Квартиры, дома, участки и сопровождение сделки в Шахтах и рядом. Начните с локальных объектов или расскажите, что нужно подобрать.", primaryCta: { label: "Смотреть объекты в Шахтах", href: "#hot-offers" }, secondaryCta: { label: "Подобрать недвижимость", href: "#request" }, tertiaryCta: { label: "Продать недвижимость", href: "sell.html" }, geoLinks: true, heroImage: "main-hero", heroImageAlt: "Современная жилая недвижимость", heroMediaLabel: "Современная городская жизнь" };
+  const body = `${hero(ctx, page)}${homePropertySection(ctx)}${homeHotOffersSection(ctx)}${homeRequestSection(ctx)}${mortgageSection(ctx, { home: true })}${homeSellerSection(ctx)}${homeOfficeSection(ctx)}${homeLocationsSection(ctx)}${homeFeaturedNewbuilds(ctx)}${homeFeaturedConstruction(ctx)}${homeExpertiseSection(ctx, guides)}${homeLeadForm(ctx)}`;
   return layout(ctx, page, body, { active: "" });
 }
 
@@ -1128,7 +1133,7 @@ export function renderPerson(ctx, person = ctx.team.find((item) => item.id === "
   const profile = `<section class="section profile-summary-section"><div class="container profile-summary"><div><p class="eyebrow">Прямой контакт</p><h2>${esc(person.role)}</h2><p>Оценка объекта, подготовка документов и сопровождение продажи — с одним специалистом.</p></div><dl class="profile-facts"><div><dt>Телефон</dt><dd><a href="${esc(person.phoneHref)}" data-analytics="phone_click">${esc(person.phone)}</a></dd></div><div><dt>MAX</dt><dd>${esc(person.maxPhone)}</dd></div><div><dt>Email</dt><dd><a href="mailto:${esc(person.email)}" data-analytics="email_click">${esc(person.email)}</a></dd></div><div><dt>Офис</dt><dd>${esc(person.office)}</dd></div></dl></div></section>`;
   const directionNotes = ["Подбор и продажа", "Параметры земли и сделка", "Дом, участок и документы", "Проект и условия строительства"];
   const expertise = `<section class="section section--stone agent-expertise" id="agent-expertise"><div class="container">${sectionHeading({ kicker: "Работа с недвижимостью", title: "Всё важное — в одном маршруте", intro: "Коротко о направлениях, задачах и территориях работы Ольги." })}<div class="agent-expertise__layout"><div class="agent-direction-grid">${person.directions.map((title, index) => `<article><span>${String(index + 1).padStart(2, "0")}</span><div><h3>${esc(title)}</h3><p>${esc(directionNotes[index])}</p></div></article>`).join("")}</div><div class="agent-skill-panel"><p class="eyebrow">Что беру на себя</p><h3>Подготовка и сопровождение продажи</h3><ul>${person.skills.map((skill) => `<li><span aria-hidden="true">✓</span>${esc(skill)}</li>`).join("")}</ul></div></div><div class="agent-area-strip"><div><p class="eyebrow">География</p><h3>Шахты и рядом</h3></div><ul>${person.serviceAreas.map((area) => `<li>${esc(area)}</li>`).join("")}</ul></div></div></section>`;
-  return layout(ctx, page, `${hero(ctx, page)}${profile}${expertise}${leadForm(ctx, { type: "service", title: "Передать задачу Ольге", text: "Укажите тип недвижимости, территорию и желаемый результат. Не отправляйте чувствительные документы через форму." })}`, { active: "olga-chernenko", breadcrumbs: [{ label: "Главная", href: "" }, { label: "Команда", href: "team/index.html" }, { label: person.shortName || person.name, href: page.path }] });
+  return layout(ctx, page, `${hero(ctx, page)}${profile}${expertise}${leadForm(ctx, { type: "service", kicker: "Связаться с Ольгой", title: "Передать задачу Ольге", text: "Укажите тип недвижимости, территорию и желаемый результат. Не отправляйте чувствительные документы через форму.", phone: person.phone, phoneHref: person.phoneHref, email: person.email, socials: false })}`, { active: "olga-chernenko", breadcrumbs: [{ label: "Главная", href: "" }, { label: "Команда", href: "team/index.html" }, { label: person.shortName || person.name, href: page.path }] });
 }
 
 export function renderContacts(ctx) {

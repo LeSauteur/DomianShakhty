@@ -3837,6 +3837,12 @@ textarea {
     var(--paper-mint);
 }
 
+#hot-offers,
+#request,
+#mortgage-calculator {
+  scroll-margin-top: 120px;
+}
+
 .home-hot-offers__grid,
 .listing-grid {
   display: grid;
@@ -3850,6 +3856,22 @@ textarea {
 
 .listing-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.home-hot-offers__grid.listing-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.home-hot-offers__grid .listing-card__body {
+  padding: clamp(24px, 2.5vw, 34px);
+}
+
+.home-hot-offers__grid .listing-card h3 {
+  font-size: clamp(1.45rem, 1.8vw, 1.9rem);
+}
+
+.home-hot-offers__grid .listing-card__price {
+  font-size: clamp(1.55rem, 2.2vw, 2.2rem);
 }
 
 .listing-card {
@@ -4780,6 +4802,10 @@ body[data-page-type="home"] .hero-media__picture {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .home-hot-offers__grid.listing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .home-locations__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -4832,6 +4858,10 @@ body[data-page-type="home"] .hero-media__picture {
   .home-expertise__grid a {
     min-height: 240px;
   }
+
+  .home-hot-offers__grid.listing-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 600px) {
@@ -4868,6 +4898,12 @@ body[data-page-type="home"] .hero-media__picture {
     min-height: 190px;
     aspect-ratio: 0.84;
     border-radius: 16px;
+  }
+
+  .home-property-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    min-height: 170px;
+    aspect-ratio: 2 / 1;
   }
 
   .home-property-card > div {
