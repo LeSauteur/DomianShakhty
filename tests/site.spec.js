@@ -34,6 +34,7 @@ const representativePages = [
   "team/maria-voronina.html",
   "team/olga-chernenko.html",
   "team/maria-smolina.html",
+  "team/yana-efimchenko.html",
   "contacts.html",
   "details.html",
   "privacy.html"
@@ -292,10 +293,11 @@ test("team cards and agent portraits fit desktop and mobile without overflow", a
     await page.setViewportSize(viewport);
     await page.goto("team/index.html");
     const cards = page.locator(".team-card");
-    await expect(cards).toHaveCount(3);
+    await expect(cards).toHaveCount(4);
     await expect(cards.nth(0)).toHaveAttribute("data-team-member", "maria-voronina");
     await expect(cards.nth(1)).toHaveAttribute("data-team-member", "olga-chernenko");
     await expect(cards.nth(2)).toHaveAttribute("data-team-member", "maria-smolina");
+    await expect(cards.nth(3)).toHaveAttribute("data-team-member", "yana-efimchenko");
     const olga = cards.nth(1).locator('img[alt*="Черненко Ольга"]');
     await olga.scrollIntoViewIfNeeded();
     await expect(olga).toBeVisible();
@@ -489,7 +491,7 @@ test("homepage prioritizes local property, request and mortgage sections", async
   await expect(page.locator("[data-mortgage-calculator]")).toHaveCount(1);
   await expect(page.locator("[data-showcase-card]")).toHaveCount(0);
   const sections = await page.locator("main > section").evaluateAll((nodes) => nodes.map((node) => node.getAttribute("data-home-section") || "hero"));
-  expect(sections).toEqual(["hero", "property", "hot-offers", "request", "mortgage", "seller", "team", "locations", "newbuilds", "construction", "expertise", "lead"]);
+  expect(sections).toEqual(["hero", "property", "hot-offers", "request", "mortgage", "seller", "team", "team-life", "locations", "newbuilds", "construction", "expertise", "lead"]);
 });
 
 test("homepage catalog showcases stay compact, truthful and link to imported details", async ({ page }) => {

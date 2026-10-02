@@ -282,7 +282,7 @@ test("all core property directions have useful public pages and navigation entry
 
 test("homepage uses the editorial composition with verified hot offers", () => {
   const home = read("index.html");
-  assert.equal((home.match(/<section\b/gu) || []).length, 12);
+  assert.equal((home.match(/<section\b/gu) || []).length, 13);
   assert.equal((home.match(/class="home-property-card"/gu) || []).length, 3);
   assert.match(home, /<h1>Недвижимость в Шахтах — спокойно и по делу<\/h1>/u);
   assert.match(home, /Смотреть объекты в Шахтах/u);
@@ -305,7 +305,7 @@ test("homepage uses the editorial composition with verified hot offers", () => {
   assert.match(officeSection, /class="owner-portrait"/u);
   assert.match(officeSection, /maria-voronina-960\.webp/u);
   assert.doesNotMatch(officeSection, /assets\/images\/office\/office-interior/u);
-  const order = ["property", "hot-offers", "request", "mortgage", "seller", "team", "locations", "newbuilds", "construction", "expertise", "lead"].map((name) => home.indexOf(`data-home-section="${name}"`));
+  const order = ["property", "hot-offers", "request", "mortgage", "seller", "team", "team-life", "locations", "newbuilds", "construction", "expertise", "lead"].map((name) => home.indexOf(`data-home-section="${name}"`));
   assert.ok(order.every((position) => position >= 0));
   assert.deepEqual(order, order.slice().sort((a, b) => a - b));
 });
@@ -484,4 +484,28 @@ test("production rendering keeps the Pages base and adds canonical entity metada
   assert.ok(html.includes(`property="og:image" content="${config.productionOrigin}/assets/images/og.png"`));
   assert.ok(html.includes(`"@id":"${config.productionOrigin}/#organization"`));
   assert.doesNotMatch(html, /сайт закрыт от индексации/u);
+});
+
+test("team publishes Yana Efimchenko and the team life gallery", () => {
+  const team = read("team/index.html");
+  const yanaPosition = team.indexOf('data-team-member="yana-efimchenko"');
+  assert.ok(yanaPosition > team.indexOf('data-team-member="maria-smolina"'));
+  assert.match(team, /Ефимченко Яна Владимировна/u);
+  assert.match(team, /tel:\+79882553101/u);
+  assert.match(team, /tel:\+79185453854/u);
+  const yana = read("team/yana-efimchenko.html");
+  assert.match(yana, /yana-efimchenko-(?:360|640|960)\.webp/u);
+  const yanaLead = yana.match(/<section class="lead-section"[\s\S]*?<\/section>/u)?.[0] || "";
+  assert.match(yanaLead, /tel:\+79882553101/u);
+  assert.match(yanaLead, /mailto:2382740@gmail\.com/u);
+  assert.doesNotMatch(yana, /полную гарантию безопасности/u);
+  for (const width of [360, 640, 960]) assert.ok(fs.existsSync(path.join(root, `assets/images/yana-efimchenko-${width}.webp`)));
+  const life = JSON.parse(fs.readFileSync(path.resolve("src/data/team-life.json"), "utf8"));
+  const gallery = team.match(/<section class="section team-life"[\s\S]*?<\/section>/u)?.[0] || "";
+  assert.equal((gallery.match(/class="team-life__item"/gu) || []).length, life.items.length);
+  for (const item of life.items) for (const width of item.widths) assert.ok(fs.existsSync(path.join(root, `assets/images/team-life/${item.key}-${width}.webp`)));
+  const home = read("index.html");
+  const teaser = home.match(/<section class="section team-life team-life--teaser"[\s\S]*?<\/section>/u)?.[0] || "";
+  assert.equal((teaser.match(/class="team-life__item"/gu) || []).length, 3);
+  assert.match(teaser, /team\/(?:index\.html)?#team-life/u);
 });
