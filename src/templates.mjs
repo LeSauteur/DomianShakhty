@@ -52,6 +52,7 @@ function utilityNavigation(ctx) {
       ["Мария Воронина", "team/maria-voronina.html", "maria-voronina"],
       ["Ольга Черненко", "team/olga-chernenko.html", "olga-chernenko"],
       ["Мария Смолина", "team/maria-smolina.html", "maria-smolina"],
+      ["Яна Ефимченко", "team/yana-efimchenko.html", "yana-efimchenko"],
       ["Контакты офиса", "contacts.html", "contacts"],
       ["Реквизиты", "details.html", "details"]
     ] },
@@ -104,7 +105,7 @@ function personPicture(ctx, person, sizes, { priority = false } = {}) {
   const image = person?.image;
   if (!image) return "";
   const srcset = (image.srcset || []).map((source) => `${ctx.href(source.src)} ${source.width}w`).join(", ");
-  return `<picture>${srcset ? `<source type="image/webp" srcset="${srcset}" sizes="${esc(sizes)}">` : ""}<img src="${ctx.href(image.fallback)}" width="${image.width}" height="${image.height}" alt="${esc(image.alt)}" loading="${priority ? "eager" : "lazy"}" decoding="async"${priority ? ' fetchpriority="high"' : ""}></picture>`;
+  return `<picture>${srcset ? `<source type="image/webp" srcset="${srcset}" sizes="${esc(sizes)}">` : ""}<img src="${ctx.href(image.fallback)}" width="${image.width}" height="${image.height}" alt="${esc(image.alt)}"${image.position ? ` style="object-position: ${esc(image.position)}"` : ""} loading="${priority ? "eager" : "lazy"}" decoding="async"${priority ? ' fetchpriority="high"' : ""}></picture>`;
 }
 
 function personPortrait(ctx, person, modifier = "") {
@@ -280,7 +281,7 @@ function footer(ctx) {
       <div class="footer-brand">${brand(ctx)}<p>Покупка, продажа и предварительная оценка недвижимости в Шахтах и соседних территориях.</p></div>
       <div><h2>Недвижимость</h2><a href="${ctx.href("apartments.html")}">Квартиры</a><a href="${ctx.href("houses.html")}">Дома</a><a href="${ctx.href("lands.html")}">Участки</a><a href="${ctx.href("commercial.html")}">Коммерческая</a><a href="${ctx.href("garages-parking.html")}">Гаражи и парковка</a></div>
       <div><h2>Клиентам</h2><a href="${ctx.href("sell.html")}">Продать</a><a href="${ctx.href("valuation.html")}">Оценка</a><a href="${ctx.href("mortgage.html")}">Ипотечный сценарий</a><a href="${ctx.href("guides/index.html")}">Полезные материалы</a></div>
-      <div><h2>Офис</h2><a href="${ctx.href("team/index.html")}">Команда</a><a href="${ctx.href("team/maria-voronina.html")}">Мария Воронина</a><a href="${ctx.href("team/olga-chernenko.html")}">Ольга Черненко</a><a href="${ctx.href("team/maria-smolina.html")}">Мария Смолина</a><a href="${ctx.href("contacts.html")}">Контакты</a><a href="${ctx.href("details.html")}">Реквизиты</a><a href="${ctx.href("privacy.html")}">Обработка данных</a></div>
+      <div><h2>Офис</h2><a href="${ctx.href("team/index.html")}">Команда</a><a href="${ctx.href("team/maria-voronina.html")}">Мария Воронина</a><a href="${ctx.href("team/olga-chernenko.html")}">Ольга Черненко</a><a href="${ctx.href("team/maria-smolina.html")}">Мария Смолина</a><a href="${ctx.href("team/yana-efimchenko.html")}">Яна Ефимченко</a><a href="${ctx.href("contacts.html")}">Контакты</a><a href="${ctx.href("details.html")}">Реквизиты</a><a href="${ctx.href("privacy.html")}">Обработка данных</a></div>
       <address><h2>Связаться</h2><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a><span>${esc(ctx.site.address)}</span>${socialLinks(ctx, "social-links social-links--footer")}</address>
     </div>
     <div class="container footer-bottom"><span>© ${new Date().getFullYear()} ${esc(ctx.site.displayName)}</span><span>Информация не является публичной офертой</span></div>
@@ -381,6 +382,22 @@ function homeLocationsSection(ctx) {
 function homeExpertiseSection(ctx, guides) {
   const items = guides.slice(0, 3);
   return `<section class="section home-expertise" data-home-section="expertise"><div class="container">${sectionHeading({ kicker: "Локальная экспертиза", title: "Решения начинаются с контекста", intro: `Срез и материалы актуальны на ${formatDate(ctx.site.updatedAt)} Публичные объявления не равны уникальным объектам или завершённым сделкам.` })}<div class="home-expertise__grid">${items.map((guide, index) => `<a href="${ctx.href(`guides/${guide.slug}.html`)}"><span>${String(index + 1).padStart(2, "0")}</span><h3>${esc(guide.title)}</h3><p>${esc(guide.answer)}</p><strong>Читать материал ↗</strong></a>`).join("")}</div><a class="text-link" href="${ctx.href("guides/index.html")}">Все полезные материалы ↗</a></div></section>`;
+}
+
+function teamLifePicture(ctx, item, sizes) {
+  const srcset = item.widths.map((width) => `${ctx.href(`assets/images/team-life/${item.key}-${width}.webp`)} ${width}w`).join(", ");
+  const fallbackWidth = item.widths.includes(640) ? 640 : item.widths[0];
+  const height = Math.round(item.height * fallbackWidth / item.width);
+  return `<picture><source type="image/webp" srcset="${srcset}" sizes="${esc(sizes)}"><img src="${ctx.href(`assets/images/team-life/${item.key}-${fallbackWidth}.webp`)}" width="${fallbackWidth}" height="${height}" alt="${esc(item.alt)}" loading="lazy" decoding="async"></picture>`;
+}
+
+function teamLifeSection(ctx, { limit = 0, teaser = false } = {}) {
+  const life = ctx.teamLife;
+  if (!life?.items?.length) return "";
+  const items = limit ? life.items.slice(0, limit) : life.items;
+  const figures = items.map((item) => `<figure class="team-life__item">${teamLifePicture(ctx, item, teaser ? "(max-width: 600px) calc(100vw - 32px), 33vw" : "(max-width: 600px) calc(100vw - 32px), (max-width: 980px) 50vw, 33vw")}<figcaption>${esc(item.caption)}</figcaption></figure>`).join("");
+  const action = teaser ? `<a class="button button--ghost" href="${ctx.href("team/index.html#team-life")}">Вся команда и жизнь офиса</a>` : "";
+  return `<section class="section team-life${teaser ? " team-life--teaser" : ""}" id="team-life"${teaser ? ' data-home-section="team-life"' : ""}><div class="container">${sectionHeading({ kicker: "Жизнь команды", title: teaser ? "Команда, которая работает и отдыхает вместе" : "Работаем, учимся и отдыхаем вместе", intro: life.intro })}<div class="team-life__grid${teaser ? " team-life__grid--teaser" : ""}">${figures}</div>${action ? `<div class="team-life__action">${action}</div>` : ""}</div></section>`;
 }
 
 function homeOfficeSection(ctx) {
@@ -748,7 +765,7 @@ export function renderCommercialPage(ctx, page) {
 
 export function renderHome(ctx, guides) {
   const page = { path: "", pageType: "home", title: "Недвижимость в Шахтах — купить, продать, оценить | Домиан", description: "Покупка, продажа и предварительная оценка квартир, домов, новостроек, участков, коммерческой недвижимости, гаражей и парковочных мест в Шахтах и рядом.", eyebrow: "Домиан · Шахты на Маяковского", h1: "Недвижимость в Шахтах — спокойно и по делу", lead: "Квартиры, дома, участки и сопровождение сделки в Шахтах и рядом. Начните с локальных объектов или расскажите, что нужно подобрать.", primaryCta: { label: "Смотреть объекты в Шахтах", href: "#hot-offers" }, secondaryCta: { label: "Подобрать недвижимость", href: "#request" }, tertiaryCta: { label: "Продать недвижимость", href: "sell.html" }, geoLinks: true, heroImage: "main-hero", heroImageAlt: "Современная жилая недвижимость", heroMediaLabel: "Современная городская жизнь" };
-  const body = `${hero(ctx, page)}${homePropertySection(ctx)}${homeHotOffersSection(ctx)}${homeRequestSection(ctx)}${mortgageSection(ctx, { home: true })}${homeSellerSection(ctx)}${homeOfficeSection(ctx)}${homeLocationsSection(ctx)}${homeFeaturedNewbuilds(ctx)}${homeFeaturedConstruction(ctx)}${homeExpertiseSection(ctx, guides)}${homeLeadForm(ctx)}`;
+  const body = `${hero(ctx, page)}${homePropertySection(ctx)}${homeHotOffersSection(ctx)}${homeRequestSection(ctx)}${mortgageSection(ctx, { home: true })}${homeSellerSection(ctx)}${homeOfficeSection(ctx)}${teamLifeSection(ctx, { limit: 3, teaser: true })}${homeLocationsSection(ctx)}${homeFeaturedNewbuilds(ctx)}${homeFeaturedConstruction(ctx)}${homeExpertiseSection(ctx, guides)}${homeLeadForm(ctx)}`;
   return layout(ctx, page, body, { active: "" });
 }
 
@@ -1105,15 +1122,15 @@ function teamMemberCard(ctx, person, index) {
     : ["Покупка недвижимости", "Продажа недвижимости", "Предварительная оценка"];
   return `<article class="team-card" data-team-member="${esc(person.id)}">
     <a class="team-card__media" href="${ctx.href(path)}">${personPicture(ctx, person, "(max-width: 600px) calc(100vw - 32px), (max-width: 980px) 45vw, 38vw")}</a>
-    <div class="team-card__body"><p class="team-card__index">${String(index + 1).padStart(2, "0")} · ${esc(person.city || "Шахты")}</p><h2><a href="${ctx.href(path)}">${esc(person.name)}</a></h2><p class="team-card__role">${esc(person.role)}</p><ul>${directions.map((item) => `<li>${esc(item)}</li>`).join("")}</ul><div class="team-card__contacts"><a href="${esc(person.phoneHref)}" data-analytics="phone_click">${esc(person.phone)}</a><a href="mailto:${esc(person.email)}" data-analytics="email_click">${esc(person.email)}</a>${person.maxPhone ? `<span>MAX: ${esc(person.maxPhone)}</span>` : ""}</div><a class="button button--ghost" href="${ctx.href(path)}">Подробнее о специалисте</a></div>
+    <div class="team-card__body"><p class="team-card__index">${String(index + 1).padStart(2, "0")} · ${esc(person.city || "Шахты")}</p><h2><a href="${ctx.href(path)}">${esc(person.name)}</a></h2><p class="team-card__role">${esc(person.role)}</p><ul>${directions.map((item) => `<li>${esc(item)}</li>`).join("")}</ul><div class="team-card__contacts"><a href="${esc(person.phoneHref)}" data-analytics="phone_click">${esc(person.phone)}</a>${person.secondaryPhone ? `<a href="${esc(person.secondaryPhoneHref)}" data-analytics="phone_click">${esc(person.secondaryPhone)}</a>` : ""}<a href="mailto:${esc(person.email)}" data-analytics="email_click">${esc(person.email)}</a>${person.maxPhone ? `<span>MAX: ${esc(person.maxPhone)}</span>` : ""}</div><a class="button button--ghost" href="${ctx.href(path)}">Подробнее о специалисте</a></div>
   </article>`;
 }
 
 export function renderTeam(ctx) {
   const members = ctx.team.filter((person) => person.verified === true);
-  const page = { path: "team/index.html", pageType: "team", title: "Команда офиса Домиан в Шахтах", description: "Мария Воронина, Ольга Черненко и Мария Смолина — специалисты офиса «Домиан · Шахты на Маяковского»: направления работы и прямые контакты.", eyebrow: "Команда офиса", h1: "Специалисты рядом на каждом этапе", lead: "Сначала определяем задачу, затем подключаем нужную экспертизу: от оценки и подготовки объекта до проверки документов и сопровождения сделки.", primaryCta: { label: "Выбрать специалиста", href: "#team-members" }, secondaryCta: { label: "Контакты офиса", href: "contacts.html" }, heroFacts: [`${members.length} специалиста`, "Шахты и соседние территории", "прямые контакты"], heroImage: "client-meeting" };
+  const page = { path: "team/index.html", pageType: "team", title: "Команда офиса Домиан в Шахтах", description: "Мария Воронина, Ольга Черненко, Мария Смолина и Яна Ефимченко — специалисты офиса «Домиан · Шахты на Маяковского»: направления работы и прямые контакты.", eyebrow: "Команда офиса", h1: "Специалисты рядом на каждом этапе", lead: "Сначала определяем задачу, затем подключаем нужную экспертизу: от оценки и подготовки объекта до проверки документов и сопровождения сделки.", primaryCta: { label: "Выбрать специалиста", href: "#team-members" }, secondaryCta: { label: "Контакты офиса", href: "contacts.html" }, heroFacts: [`${members.length} специалиста`, "Шахты и соседние территории", "прямые контакты"], heroImage: "client-meeting" };
   const team = `<section class="section section--stone" id="team-members"><div class="container">${sectionHeading({ kicker: "Наша команда", title: "Личное сопровождение без лишних звеньев", intro: "В карточках указаны направления и контакты каждого специалиста. Мария Воронина представлена первой как собственник офиса." })}<div class="team-grid">${members.map((person, index) => teamMemberCard(ctx, person, index)).join("")}</div></div></section>`;
-  return layout(ctx, page, `${hero(ctx, page)}${team}${leadForm(ctx, { type: "service", title: "Обсудить задачу с командой", text: "Опишите объект или критерии подбора — офис направит обращение профильному специалисту." })}`, { active: "team", breadcrumbs: [{ label: "Главная", href: "" }, { label: "Команда", href: page.path }] });
+  return layout(ctx, page, `${hero(ctx, page)}${team}${teamLifeSection(ctx)}${leadForm(ctx, { type: "service", title: "Обсудить задачу с командой", text: "Опишите объект или критерии подбора — офис направит обращение профильному специалисту." })}`, { active: "team", breadcrumbs: [{ label: "Главная", href: "" }, { label: "Команда", href: page.path }] });
 }
 
 export function renderPerson(ctx, person = ctx.team.find((item) => item.id === "maria-voronina")) {
@@ -1134,9 +1151,10 @@ export function renderPerson(ctx, person = ctx.team.find((item) => item.id === "
   const nameDative = person.nameDative || "специалисту";
   const nameInstrumental = person.nameInstrumental || "специалистом";
   const nameGenitive = person.nameGenitive || "специалиста";
-  const page = { path, pageType: "person", person, title: `${displayName} — ${person.role} | Домиан`, description: `${person.name}: ${person.role.toLowerCase()} в Шахтах и соседних территориях. Направления работы и прямые контакты.`, eyebrow: person.role, h1: person.name, lead: "Помощь с анализом и подготовкой объекта, документами, подбором недвижимости и сопровождением сделки.", primaryCta: { label: `Позвонить ${nameDative}`, href: person.phoneHref, event: "phone_click" }, secondaryCta: { label: "Вся команда", href: "team/index.html" }, heroFacts: person.heroFacts || ["квартиры · участки · дома", "строительство", "Шахты и соседние территории"] };
+  const page = { path, pageType: "person", person, title: `${displayName} — ${person.role} | Домиан`, description: `${person.name}: ${person.role.toLowerCase()} в Шахтах и соседних территориях. Направления работы и прямые контакты.`, eyebrow: person.role, h1: person.name, lead: person.lead || "Помощь с анализом и подготовкой объекта, документами, подбором недвижимости и сопровождением сделки.", primaryCta: { label: `Позвонить ${nameDative}`, href: person.phoneHref, event: "phone_click" }, secondaryCta: { label: "Вся команда", href: "team/index.html" }, heroFacts: person.heroFacts || ["квартиры · участки · дома", "строительство", "Шахты и соседние территории"] };
+  const secondaryContact = person.secondaryPhone ? `<div><dt>Второй телефон</dt><dd><a href="${esc(person.secondaryPhoneHref)}" data-analytics="phone_click">${esc(person.secondaryPhone)}</a></dd></div>` : "";
   const maxContact = person.maxPhone ? `<div><dt>MAX</dt><dd>${esc(person.maxPhone)}</dd></div>` : "";
-  const profile = `<section class="section profile-summary-section"><div class="container profile-summary"><div><p class="eyebrow">Прямой контакт</p><h2>${esc(person.role)}</h2><p>Аналитика объекта, подготовка документов и сопровождение сделки — с одним специалистом.</p></div><dl class="profile-facts"><div><dt>Телефон</dt><dd><a href="${esc(person.phoneHref)}" data-analytics="phone_click">${esc(person.phone)}</a></dd></div>${maxContact}<div><dt>Email</dt><dd><a href="mailto:${esc(person.email)}" data-analytics="email_click">${esc(person.email)}</a></dd></div><div><dt>Офис</dt><dd>${esc(person.office)}</dd></div></dl></div></section>`;
+  const profile = `<section class="section profile-summary-section"><div class="container profile-summary"><div><p class="eyebrow">Прямой контакт</p><h2>${esc(person.role)}</h2><p>Аналитика объекта, подготовка документов и сопровождение сделки — с одним специалистом.</p></div><dl class="profile-facts"><div><dt>Телефон</dt><dd><a href="${esc(person.phoneHref)}" data-analytics="phone_click">${esc(person.phone)}</a></dd></div>${secondaryContact}${maxContact}<div><dt>Email</dt><dd><a href="mailto:${esc(person.email)}" data-analytics="email_click">${esc(person.email)}</a></dd></div><div><dt>Офис</dt><dd>${esc(person.office)}</dd></div></dl></div></section>`;
   const directionNotes = {
     "Квартиры": "Подбор, оценка и сопровождение сделки",
     "Земельные участки": "Параметры земли, документы и сделка",

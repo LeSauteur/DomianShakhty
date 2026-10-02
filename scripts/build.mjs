@@ -78,7 +78,8 @@ const team = readJson("src/data/team.json");
 const showcase = readJson("src/data/showcase.json");
 const newbuilds = readJson("src/data/newbuilds.json");
 const constructionProjects = readJson("src/data/construction-projects.json");
-const ctx = createContext(site, { locations, locationContent, guides, pages, listings, projects, builders, team, showcase, newbuilds, constructionProjects });
+const teamLife = readJson("src/data/team-life.json");
+const ctx = createContext(site, { locations, locationContent, guides, pages, listings, projects, builders, team, teamLife, showcase, newbuilds, constructionProjects });
 const outputs = [];
 
 function publish(relativePath, html) {
