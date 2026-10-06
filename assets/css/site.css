@@ -2497,15 +2497,15 @@ textarea {
 .team-card__media,
 .team-card__media picture {
   display: block;
-  min-height: 100%;
+  min-height: 0;
+  align-self: start;
 }
 
 .team-card__media img {
   display: block;
   width: 100%;
-  height: 100%;
-  min-height: 520px;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   object-position: center 32%;
 }
 
@@ -3647,8 +3647,7 @@ textarea {
   }
 
   .team-card__media img {
-    min-height: 0;
-    aspect-ratio: 4 / 5;
+    height: auto;
   }
 
   .team-card__role {
@@ -6416,23 +6415,19 @@ body[data-page-type="home"] .hero-media__picture {
 
 .hero-agent picture {
   display: block;
-  aspect-ratio: 4 / 5;
   overflow: hidden;
 }
 
 .hero-agent img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   object-position: center 24%;
 }
 
 .hero-agent__caption {
-  position: absolute;
-  right: 14px;
-  bottom: 14px;
-  left: 14px;
+  position: relative;
   display: grid;
   border-left: 3px solid var(--champagne);
   border-radius: 8px;
@@ -6453,6 +6448,19 @@ body[data-page-type="home"] .hero-media__picture {
   font-size: 0.66rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+body[data-page-type="team"] .page-hero--team:has(.hero-agent) {
+  min-height: 0;
+  padding-bottom: 40px;
+}
+
+.page-hero--team .hero-agent {
+  width: min(100%, 340px);
+}
+
+body[data-page-type="team"] #team-members {
+  padding-top: 40px;
 }
 
 .profile-summary-section {
@@ -6765,7 +6773,7 @@ body[data-page-type="home"] .hero-media__picture {
   }
 
   .hero-agent picture {
-    aspect-ratio: 16 / 10;
+    height: auto;
   }
 
   .hero-agent img {
@@ -6828,9 +6836,6 @@ body[data-page-type="home"] .hero-media__picture {
   }
 
   .hero-agent__caption {
-    right: 9px;
-    bottom: 9px;
-    left: 9px;
     padding: 9px 11px;
   }
 

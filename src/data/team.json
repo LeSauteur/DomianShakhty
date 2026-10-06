@@ -179,10 +179,10 @@
     "verified": true,
     "image": {
       "alt": "Ефимченко Яна Владимировна, специалист по недвижимости офиса Домиан в Шахтах",
-      "original": "assets/images/yana-efimchenko-original.webp",
+      "original": "assets/images/yana-efimchenko-original.png",
       "fallback": "assets/images/yana-efimchenko-640.webp",
       "width": 640,
-      "height": 800,
+      "height": 636,
       "srcset": [
         {
           "src": "assets/images/yana-efimchenko-360.webp",
@@ -196,8 +196,7 @@
           "src": "assets/images/yana-efimchenko-960.webp",
           "width": 960
         }
-      ],
-      "position": "center 45%"
+      ]
     }
   }
 ]
