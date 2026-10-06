@@ -289,7 +289,8 @@ test("Maria portrait is responsive, dimensioned and loads on trust pages", async
 });
 
 test("team cards and agent portraits fit desktop and mobile without overflow", async ({ page }) => {
-  for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  for (const viewport of [{ width: 320, height: 740 }, { width: 434, height: 861 }, { width: 820, height: 900 }, { width: 1440, height: 900 }]) {
     await page.setViewportSize(viewport);
     await page.goto("team/index.html");
     const cards = page.locator(".team-card");
@@ -298,6 +299,24 @@ test("team cards and agent portraits fit desktop and mobile without overflow", a
     await expect(cards.nth(1)).toHaveAttribute("data-team-member", "olga-chernenko");
     await expect(cards.nth(2)).toHaveAttribute("data-team-member", "maria-smolina");
     await expect(cards.nth(3)).toHaveAttribute("data-team-member", "yana-efimchenko");
+    const hero = page.locator(".hero-agent");
+    await expect(hero.locator("img")).toHaveAttribute("alt", /Мария Воронина/u);
+    await expect(hero.locator(".hero-agent__caption")).toContainText("Собственник офиса");
+    await expect(page.locator('[data-editorial-image="client-meeting"]')).toHaveCount(0);
+    await page.evaluate(async () => {
+      await document.fonts.ready;
+      await document.querySelector(".hero-agent img").decode();
+    });
+    await expect.poll(() => page.evaluate(() => {
+      const contentBottom = Math.max(...[...document.querySelectorAll(".page-hero__copy, .hero-agent")].map((node) => node.getBoundingClientRect().bottom));
+      return document.querySelector("#team-members .section-heading").getBoundingClientRect().top - contentBottom;
+    }), { message: `team content gap at ${viewport.width}px` }).toBeLessThanOrEqual(100);
+    for (const image of await cards.locator("img").all()) {
+      await image.scrollIntoViewIfNeeded();
+      await expect.poll(() => image.evaluate((node) => node.naturalWidth)).toBeGreaterThan(0);
+      const dimensions = await image.evaluate((node) => ({ width: node.clientWidth, height: node.clientHeight, ratio: node.naturalHeight / node.naturalWidth }));
+      expect(Math.abs(dimensions.height - dimensions.width * dimensions.ratio)).toBeLessThanOrEqual(1);
+    }
     const olga = cards.nth(1).locator('img[alt*="Черненко Ольга"]');
     await olga.scrollIntoViewIfNeeded();
     await expect(olga).toBeVisible();
@@ -308,6 +327,26 @@ test("team cards and agent portraits fit desktop and mobile without overflow", a
     expect((await smolina.evaluate((node) => node.currentSrc))).toMatch(/maria-smolina-(?:360|640|960)\.webp$/u);
     const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
     expect(dimensions.scroll, `team at ${viewport.width}px`).toBeLessThanOrEqual(dimensions.client + 1);
+  }
+});
+
+test("profile portraits preserve the full image and captions stay below it", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  for (const width of [320, 434, 820, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const slug of ["maria-voronina", "olga-chernenko", "maria-smolina", "yana-efimchenko"]) {
+      await page.goto(`team/${slug}.html`);
+      const image = page.locator(".hero-agent img");
+      await expect.poll(() => image.evaluate((node) => node.naturalWidth)).toBeGreaterThan(0);
+      const geometry = await image.evaluate((node) => {
+        const photo = node.getBoundingClientRect();
+        const caption = node.closest(".hero-agent").querySelector(".hero-agent__caption").getBoundingClientRect();
+        return { width: photo.width, height: photo.height, ratio: node.naturalHeight / node.naturalWidth, bottom: photo.bottom, captionTop: caption.top };
+      });
+      expect(Math.abs(geometry.height - geometry.width * geometry.ratio), `${slug} at ${width}px`).toBeLessThanOrEqual(1);
+      expect(geometry.captionTop).toBeGreaterThanOrEqual(geometry.bottom - 1);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
+    }
   }
 });
 

@@ -191,6 +191,10 @@ test("public output omits removed social channels and uses the updated review st
 
 test("team page keeps the owner first and publishes both agent profiles", () => {
   const team = read("team/index.html");
+  const home = read("index.html");
+  assert.match(home, /<h2>Мария Воронина — собственник офиса<\/h2>/u);
+  assert.match(home, /Ольга Черненко — агент по продаже недвижимости и кадастровый инженер/u);
+  assert.doesNotMatch(home, /<h2>Мария Воронина и Ольга Черненко<\/h2>/u);
   const mariaPosition = team.indexOf('data-team-member="maria-voronina"');
   const olgaPosition = team.indexOf('data-team-member="olga-chernenko"');
   const smolinaPosition = team.indexOf('data-team-member="maria-smolina"');
