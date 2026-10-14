@@ -169,7 +169,7 @@ test("all imported responsive media is local WebP and exists", () => {
   const generatedFiles = ["assets/images/newbuilds", "assets/images/construction-projects"]
     .flatMap((directory) => fs.readdirSync(path.join(repo, directory), { recursive: true }).filter((file) => file.endsWith(".webp")));
   assert.equal(generatedFiles.length, manifest.media.generatedResponsiveWebpFiles);
-  assert.equal(generatedFiles.length, 422);
+  assert.equal(generatedFiles.length, 434);
   assert.ok(generatedFiles.every((file) => !file.endsWith("-480.webp")));
 });
 

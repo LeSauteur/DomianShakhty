@@ -7031,3 +7031,8 @@ body[data-page-type="team"] #team-members {
     grid-template-columns: 1fr;
   }
 }
+
+/* Content expansion: editorial cards and local office information. */
+.editorial-grid,.office-discovery__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.editorial-card,.office-discovery__grid>article{min-width:0;padding:28px;border:1px solid rgba(41,56,58,.14);border-radius:20px;background:rgba(255,255,255,.65)}.editorial-card h3{margin-top:0}.editorial-card p{line-height:1.7}.editorial-card .text-link,.office-discovery .text-link{display:block;margin-top:16px;overflow-wrap:anywhere}.editorial-card li{margin-bottom:10px}.office-discovery__grid{grid-template-columns:repeat(3,minmax(0,1fr))}.office-discovery__value{font-size:1.6rem;font-weight:700}.office-discovery small{display:block}.pricing-table-wrap{overflow-x:auto}.pricing-table{width:100%;border-collapse:collapse}.pricing-table td,.pricing-table th{padding:16px;text-align:left;border-bottom:1px solid rgba(41,56,58,.18)}.inventory-filters{margin:24px 0}.construction-built-card p{line-height:1.6}[data-product-card][hidden]{display:none!important}@media(max-width:760px){.editorial-grid,.office-discovery__grid{grid-template-columns:1fr}.editorial-card,.office-discovery__grid>article{padding:22px}.pricing-table td,.pricing-table th{padding:12px 8px;font-size:.9rem}.inventory-filters{grid-template-columns:1fr}}
+
+.yandex-reviews{width:min(100%,560px);height:640px;position:relative;margin:28px auto 0}.yandex-reviews[hidden]{display:none}.yandex-reviews iframe{width:100%;height:600px;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box}.yandex-reviews>a{display:block;text-align:center;font-size:12px;margin-top:10px}.office-discovery [data-load-reviews]{margin-top:18px}

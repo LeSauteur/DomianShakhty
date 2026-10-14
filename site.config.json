@@ -36,7 +36,7 @@
   ],
   "metrikaId": 112739000,
   "ga4Id": null,
-  "web3formsAccessKey": null,
+  "web3formsAccessKey": "7b90f0a7-e4a2-4848-921c-e37c09e30829",
   "googleVerification": {
     "file": "googlea9952ce6911e1672.html",
     "content": "google-site-verification: googlea9952ce6911e1672.html"
@@ -46,5 +46,36 @@
   },
   "requestTimeoutMs": 12000,
   "publishedAt": "2026-08-19",
-  "updatedAt": "2026-08-24"
+  "updatedAt": "2026-08-24",
+  "officeHours": {
+    "label": "10:00–19:00",
+    "opens": "10:00",
+    "closes": "19:00",
+    "days": null,
+    "confirmedAt": "2026-10-14",
+    "confirmedBy": "Владелец сайта в чате"
+  },
+  "maps": {
+    "yandex": {
+      "organizationId": "6252687869",
+      "url": "https://yandex.ru/maps/org/6252687869/",
+      "routeUrl": "https://yandex.ru/maps/?rtext=~47.700263,40.204406&rtt=auto",
+      "snapshot": {
+        "rating": 5,
+        "ratingsCount": 52,
+        "reviewsCount": 39,
+        "checkedAt": "2026-10-05",
+        "checkedAtLabel": "5 октября 2026 года",
+        "source": "SEO-аудит владельца от 05.10.2026"
+      }
+    },
+    "twoGis": {
+      "url": "https://2gis.ru/shakhty/firm/70000001105836319"
+    },
+    "geo": {
+      "latitude": 47.700263,
+      "longitude": 40.204406
+    }
+  },
+  "contentUpdatedAt": "2026-10-14"
 }

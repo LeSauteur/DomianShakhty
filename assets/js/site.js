@@ -841,6 +841,7 @@
         var completeness = field("completeness");
         var builder = field("builder");
         var floors = field("floors");
+        var rooms = field("rooms");
         var areaRange = field("area");
         var searchable = (card.dataset.search || "").toLocaleLowerCase("ru-RU");
         var area = Number(card.dataset.area);
@@ -855,6 +856,7 @@
           && (!completeness || card.dataset.completeness === completeness)
           && (!builder || card.dataset.builder === builder)
           && (!floors || card.dataset.floors === floors)
+          && (!rooms || (rooms === "3plus" ? Number(card.dataset.rooms) >= 3 : card.dataset.rooms === rooms))
           && inArea;
       }
 
@@ -882,6 +884,20 @@
     });
   }
 
+  function initReviewWidgets() {
+    queryAll('[data-load-reviews]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        var widget = button.closest('.office-discovery').querySelector('[data-reviews-widget]');
+        var frame = widget.querySelector('iframe');
+        frame.src = frame.dataset.src;
+        widget.hidden = false;
+        button.setAttribute('aria-expanded', 'true');
+        button.hidden = true;
+      }, { once: true });
+    });
+  }
+
+  initReviewWidgets();
   persistAttribution();
   initMetrika();
   initGa4();

@@ -2776,5 +2776,199 @@
       "sourcePage": 11,
       "factSource": "Архитектурная презентация компании"
     }
+  ],
+  "builtExamples": [
+    {
+      "id": "postroim-dom-konstantinovsk-110",
+      "slug": "postroim-dom-konstantinovsk-110",
+      "recordType": "built-object",
+      "title": "Каменный дом 110 м² в Константиновске",
+      "area": 110,
+      "location": "Константиновск",
+      "material": "Каменный дом",
+      "bedrooms": null,
+      "description": "Каменный дом с кирпичным фасадом и предчистовой отделкой. На объекте выполнены подключения света и воды.",
+      "price": null,
+      "sourceUrl": "https://postroim-dom-rostov.ru/",
+      "checkedAt": "2026-10-14",
+      "officeServiceArea": "Шахты",
+      "serviceAreaConfirmedAt": "2026-10-14",
+      "mainImage": {
+        "src": "assets/images/construction-projects/postroim-dom-konstantinovsk-110/facade.webp",
+        "alt": "Каменный дом 110 м² в Константиновске",
+        "width": 1184,
+        "height": 864,
+        "srcset": [
+          {
+            "src": "assets/images/construction-projects/postroim-dom-konstantinovsk-110/facade-640.webp",
+            "width": 640
+          },
+          {
+            "src": "assets/images/construction-projects/postroim-dom-konstantinovsk-110/facade.webp",
+            "width": 1184
+          }
+        ]
+      }
+    },
+    {
+      "id": "postroim-dom-rostov-stone-100-120",
+      "slug": "postroim-dom-rostov-stone-100-120",
+      "recordType": "built-object",
+      "title": "Каменный дом 100 м² с двухскатной крышей",
+      "area": 100,
+      "location": "Ростов-на-Дону",
+      "material": "Каменный дом",
+      "bedrooms": null,
+      "description": "Дом с кирпичным фасадом, двухскатной крышей и предчистовой отделкой.",
+      "price": null,
+      "sourceUrl": "https://postroim-dom-rostov.ru/",
+      "checkedAt": "2026-10-14",
+      "officeServiceArea": "Шахты",
+      "serviceAreaConfirmedAt": "2026-10-14",
+      "mainImage": {
+        "src": "assets/images/construction-projects/postroim-dom-rostov-stone-100-120/facade.webp",
+        "alt": "Каменный дом 100 м² с двухскатной крышей",
+        "width": 1184,
+        "height": 864,
+        "srcset": [
+          {
+            "src": "assets/images/construction-projects/postroim-dom-rostov-stone-100-120/facade-640.webp",
+            "width": 640
+          },
+          {
+            "src": "assets/images/construction-projects/postroim-dom-rostov-stone-100-120/facade.webp",
+            "width": 1184
+          }
+        ]
+      }
+    },
+    {
+      "id": "postroim-dom-rostov-brick-110",
+      "slug": "postroim-dom-rostov-brick-110",
+      "recordType": "built-object",
+      "title": "Кирпичный дом 110 м² с высоким цоколем",
+      "area": 110,
+      "location": "Ростов-на-Дону",
+      "material": "Кирпич",
+      "bedrooms": null,
+      "description": "Дом из кирпича с высоким бетонным цоколем. Толщина стены — 510 мм.",
+      "price": null,
+      "sourceUrl": "https://postroim-dom-rostov.ru/",
+      "checkedAt": "2026-10-14",
+      "officeServiceArea": "Шахты",
+      "serviceAreaConfirmedAt": "2026-10-14",
+      "mainImage": {
+        "src": "assets/images/construction-projects/postroim-dom-rostov-brick-110/facade.webp",
+        "alt": "Кирпичный дом 110 м² с высоким цоколем",
+        "width": 1184,
+        "height": 864,
+        "srcset": [
+          {
+            "src": "assets/images/construction-projects/postroim-dom-rostov-brick-110/facade-640.webp",
+            "width": 640
+          },
+          {
+            "src": "assets/images/construction-projects/postroim-dom-rostov-brick-110/facade.webp",
+            "width": 1184
+          }
+        ]
+      }
+    },
+    {
+      "id": "postroim-dom-rostov-brick-100-180",
+      "slug": "postroim-dom-rostov-brick-100-180",
+      "recordType": "built-object",
+      "title": "Кирпичный дом 100 м² с тремя спальнями",
+      "area": 100,
+      "location": "Ростов-на-Дону",
+      "material": "Кирпич",
+      "bedrooms": 3,
+      "description": "Дом с кирпичными стенами и утеплением, тремя спальнями, кухней-гостиной и террасой.",
+      "price": null,
+      "sourceUrl": "https://postroim-dom-rostov.ru/",
+      "checkedAt": "2026-10-14",
+      "officeServiceArea": "Шахты",
+      "serviceAreaConfirmedAt": "2026-10-14",
+      "mainImage": {
+        "src": "assets/images/construction-projects/postroim-dom-rostov-brick-100-180/facade.webp",
+        "alt": "Кирпичный дом 100 м² с тремя спальнями",
+        "width": 1184,
+        "height": 864,
+        "srcset": [
+          {
+            "src": "assets/images/construction-projects/postroim-dom-rostov-brick-100-180/facade-640.webp",
+            "width": 640
+          },
+          {
+            "src": "assets/images/construction-projects/postroim-dom-rostov-brick-100-180/facade.webp",
+            "width": 1184
+          }
+        ]
+      }
+    },
+    {
+      "id": "postroim-dom-rostov-brick-100-90",
+      "slug": "postroim-dom-rostov-brick-100-90",
+      "recordType": "built-object",
+      "title": "Кирпичный дом 100 м² для вытянутого участка",
+      "area": 100,
+      "location": "Ростов-на-Дону",
+      "material": "Кирпич",
+      "bedrooms": null,
+      "description": "Кирпичный дом с утеплением. Планировочное решение рассчитано на вытянутый участок.",
+      "price": null,
+      "sourceUrl": "https://postroim-dom-rostov.ru/",
+      "checkedAt": "2026-10-14",
+      "officeServiceArea": "Шахты",
+      "serviceAreaConfirmedAt": "2026-10-14",
+      "mainImage": {
+        "src": "assets/images/construction-projects/postroim-dom-rostov-brick-100-90/facade.webp",
+        "alt": "Кирпичный дом 100 м² для вытянутого участка",
+        "width": 1200,
+        "height": 896,
+        "srcset": [
+          {
+            "src": "assets/images/construction-projects/postroim-dom-rostov-brick-100-90/facade-640.webp",
+            "width": 640
+          },
+          {
+            "src": "assets/images/construction-projects/postroim-dom-rostov-brick-100-90/facade.webp",
+            "width": 1200
+          }
+        ]
+      }
+    },
+    {
+      "id": "postroim-dom-rostov-stone-120",
+      "slug": "postroim-dom-rostov-stone-120",
+      "recordType": "built-object",
+      "title": "Каменный дом 120 м² с террасой",
+      "area": 120,
+      "location": "Ростов-на-Дону",
+      "material": "Каменный дом",
+      "bedrooms": null,
+      "description": "Дом с кухней-гостиной 40 м², окном в сторону леса, высоким цоколем и террасой.",
+      "price": null,
+      "sourceUrl": "https://postroim-dom-rostov.ru/",
+      "checkedAt": "2026-10-14",
+      "officeServiceArea": "Шахты",
+      "serviceAreaConfirmedAt": "2026-10-14",
+      "mainImage": {
+        "src": "assets/images/construction-projects/postroim-dom-rostov-stone-120/facade.webp",
+        "alt": "Каменный дом 120 м² с террасой",
+        "width": 1200,
+        "height": 896,
+        "srcset": [
+          {
+            "src": "assets/images/construction-projects/postroim-dom-rostov-stone-120/facade-640.webp",
+            "width": 640
+          },
+          {
+            "src": "assets/images/construction-projects/postroim-dom-rostov-stone-120/facade.webp",
+            "width": 1200
+          }
+        ]
+      }
+    }
   ]
 }

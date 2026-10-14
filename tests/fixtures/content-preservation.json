@@ -1,0 +1,48 @@
+{
+  "listingsHash": "6e57a37e038aac2dba1bb357b1ef1651c5efb7f67593bc8e97de76cd33852379",
+  "teamHash": "600239cead9228f91e272eb5df566cd24e4f35126db34a7d695754738d6a30d0",
+  "constructionItemsHash": "21a1fe3d4c7a37b2f89f488bff3f5ade2a978d858d5f9cb57b056eef41609f46",
+  "protectedConfig": {
+    "legal": {
+      "name": "ИП Воронина Мария Петровна",
+      "inn": "262810552536",
+      "ogrnip": "324619600204770"
+    },
+    "bank": {
+      "account": "40802810352090442239",
+      "name": "Юго-Западный банк ПАО Сбербанк г. Ростов-на-Дону",
+      "correspondentAccount": "30101810600000000602",
+      "bic": "046015602"
+    },
+    "phone": "+7-918-507-10-00",
+    "address": "г. Шахты, ул. Маяковского 18А",
+    "socials": {
+      "telegram": "https://t.me/MariyaVoronina87",
+      "max": "https://max.ru/u/f9LHodD0cOIKT6pyYpEr_SpFY0ZcDT9BWF4LEwhkoft3td7dLbNOySNW-RA"
+    },
+    "metrikaId": 112739000,
+    "googleVerification": {
+      "file": "googlea9952ce6911e1672.html",
+      "content": "google-site-verification: googlea9952ce6911e1672.html"
+    },
+    "yandexVerification": {
+      "meta": "33fe62fd5bdcd26a"
+    }
+  },
+  "pagePaths": [
+    "apartments.html",
+    "secondary-apartments.html",
+    "new-build-apartments.html",
+    "houses.html",
+    "construction.html",
+    "secondary-houses.html",
+    "builder-houses.html",
+    "lands.html",
+    "commercial.html",
+    "garages-parking.html",
+    "services.html",
+    "sell.html",
+    "valuation.html",
+    "mortgage.html"
+  ]
+}

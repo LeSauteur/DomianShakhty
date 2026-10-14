@@ -7,7 +7,11 @@
     "sourceGeneratedAt": "2026-07-16T00:00:00+03:00",
     "sourceCount": 78,
     "importedCount": 78,
-    "completeness": { "complete": 20, "partial": 5, "needs_review": 53 },
+    "completeness": {
+      "complete": 20,
+      "partial": 5,
+      "needs_review": 53
+    },
     "verifiedPrices": 14,
     "unverifiedPrices": 64
   },
@@ -17,11 +21,22 @@
     "sourceGeneratedAt": "2026-08-11",
     "sourceCount": 26,
     "importedCount": 26,
-    "priceStatuses": { "request": 3, "dated-confirmed": 4, "partner-outdated": 15, "individual": 4 }
+    "priceStatuses": {
+      "request": 3,
+      "dated-confirmed": 4,
+      "partner-outdated": 15,
+      "individual": 4
+    },
+    "builtExamples": {
+      "count": 6,
+      "importedAt": "2026-10-14",
+      "sourceCommit": "3829c44ba1ef208cf4f46b7dce4768d640e791bb",
+      "sourcePath": "_private/construction-projects.json"
+    }
   },
   "media": {
     "uniqueSourceReferences": 208,
-    "generatedResponsiveWebpFiles": 422,
+    "generatedResponsiveWebpFiles": 434,
     "minimumResponsiveWidth": 640,
     "photoWebpQuality": 92,
     "planWebpQuality": 96,

@@ -79,7 +79,9 @@ const showcase = readJson("src/data/showcase.json");
 const newbuilds = readJson("src/data/newbuilds.json");
 const constructionProjects = readJson("src/data/construction-projects.json");
 const teamLife = readJson("src/data/team-life.json");
-const ctx = createContext(site, { locations, locationContent, guides, pages, listings, projects, builders, team, teamLife, showcase, newbuilds, constructionProjects });
+const pricing = readJson("src/data/pricing.json");
+const localZhk = readJson("src/data/zhk/aleksandrovskiy-park.json");
+const ctx = createContext(site, { locations, locationContent, guides, pages, listings, projects, builders, team, teamLife, pricing, showcase, newbuilds, constructionProjects });
 const outputs = [];
 
 function publish(relativePath, html) {
@@ -93,11 +95,11 @@ fs.copyFileSync(path.join(root, "favicon.ico"), path.join(dist, "favicon.ico"));
 write("manifest.webmanifest", `${JSON.stringify({ name: site.displayName, short_name: site.brand, start_url: `${ctx.base}/`, display: "browser", background_color: "#f7f9f7", theme_color: "#29383a", icons: [{ src: `${ctx.base}/assets/icons/apple-touch-icon.png`, sizes: "180x180", type: "image/png" }] }, null, 2)}\n`);
 
 publish("index.html", renderHome(ctx, guides));
-for (const page of pages.filter((item) => item.path !== "construction.html")) publish(page.path, renderCommercialPage(ctx, page));
+for (const page of pages.filter((item) => item.path !== "construction.html" && (item.slug !== "zhk-aleksandrovskiy-park" || localZhk.publish === true))) publish(page.path, renderCommercialPage(ctx, page));
 publish("newbuilds.html", renderNewbuilds(ctx));
 for (const item of newbuilds.items) publish(`newbuilds/${item.slug}.html`, renderNewbuild(ctx, item));
 publish("construction.html", renderConstruction(ctx));
-for (const item of constructionProjects.items) publish(`construction/projects/${item.slug}.html`, renderConstructionProject(ctx, item));
+for (const item of [...constructionProjects.items, ...(constructionProjects.builtExamples || [])]) publish(`construction/projects/${item.slug}.html`, renderConstructionProject(ctx, item));
 for (const listing of listings.filter((item) => item.verified === true)) publish(`listings/${listing.id}.html`, renderListing(ctx, listing));
 publish("locations/index.html", renderLocationsIndex(ctx));
 for (const location of locations) publish(`locations/${location.slug}.html`, renderLocation(ctx, location));
@@ -139,7 +141,7 @@ write(".nojekyll", "");
   const urls = outputs
     .filter((file) => !["404.html", "thanks.html"].includes(file))
     .map((file) => file === "index.html" ? `${origin}/` : (file.endsWith("/index.html") ? `${origin}/${file.slice(0, -"index.html".length)}` : `${origin}/${file}`));
-  write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((url) => `  <url><loc>${url}</loc></url>`).join("\n")}\n</urlset>\n`);
+  write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((url) => `  <url><loc>${url}</loc><lastmod>${site.contentUpdatedAt || site.updatedAt}</lastmod></url>`).join("\n")}\n</urlset>\n`);
   write("robots.txt", `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
   for (const provider of ["google", "yandex"]) {
     const verification = site[`${provider}Verification`];

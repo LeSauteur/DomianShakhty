@@ -102,15 +102,15 @@ test("all five location pages contain useful search, editorial content, guides, 
     const html = read(`locations/${location.slug}.html`);
     const articleText = [content[location.slug].articleTitle, content[location.slug].articleIntro, ...content[location.slug].sections.flatMap((section) => [section.title, ...section.paragraphs, ...(section.checklist || [])])].join(" ");
     assert.ok(articleText.length >= 5000 && articleText.length <= 8000, `${location.slug} editorial length`);
-    assert.equal(content[location.slug].sections.length, 6);
+    assert.equal(content[location.slug].sections.length, location.slug === "kamenolomni" ? 7 : 6);
     assert.equal(content[location.slug].relatedGuides.length, 3);
     assert.ok(content[location.slug].faq.length >= 5 && content[location.slug].faq.length <= 7);
-    assert.match(html, new RegExp(`<h1>Недвижимость в ${location.namePrepositional}</h1>`, "u"));
+    assert.match(html, new RegExp(`<h1>${location.slug === "kamenolomni" ? "Купить дом в Каменоломнях" : `Недвижимость в ${location.namePrepositional}`}</h1>`, "u"));
     assert.match(html, /data-location-search/u);
     assert.match(html, /name="type"/u);
     assert.match(html, /name="priceMin"/u);
     assert.match(html, /name="priceMax"/u);
-    assert.doesNotMatch(html, /data-lead-form/u);
+    assert.match(html, /data-lead-form/u);
     assert.match(html, /id="lead-form-section"[\s\S]*mailto:/u);
     assert.equal((html.match(/class="location-guides__grid"/gu) || []).length, 1);
     assert.equal((html.match(/<details><summary>/gu) || []).length, content[location.slug].faq.length);
@@ -151,7 +151,7 @@ test("runtime config and search verification match configured services", () => {
   const source = read("assets/js/site-config.js");
   assert.match(source, /"metrikaId":112739000/u);
   assert.match(source, /"ga4Id":null/u);
-  assert.match(source, /"web3formsAccessKey":null/u);
+  assert.ok(source.includes(`"web3formsAccessKey":${JSON.stringify(config.web3formsAccessKey)}`));
   assert.match(read("index.html"), /<meta name="yandex-verification" content="33fe62fd5bdcd26a">/u);
   assert.equal(read("googlea9952ce6911e1672.html"), "google-site-verification: googlea9952ce6911e1672.html");
 });
@@ -279,26 +279,27 @@ test("all core property directions have useful public pages and navigation entry
   for (const label of ["Квартиры", "Дома", "Участки", "Коммерческая недвижимость", "Гаражи и парковка"]) {
     assert.match(home, new RegExp(`mobile-drawer__group[\\s\\S]*${label}`, "u"));
   }
-  assert.match(home, /<h1>Недвижимость в Шахтах/u);
+  assert.match(home, /<h1>Агентство недвижимости в Шахтах/u);
   assert.match(home, /Вторичный рынок и новостройки/u);
   assert.ok(home.indexOf('data-home-section="property"') < home.indexOf('data-home-section="construction"'), "local property directions must appear before construction");
 });
 
-test("homepage uses the editorial composition with verified hot offers", () => {
+test("homepage uses the editorial composition with catalog offers", () => {
   const home = read("index.html");
-  assert.equal((home.match(/<section\b/gu) || []).length, 13);
+  assert.equal((home.match(/<section\b/gu) || []).length, 15);
   assert.equal((home.match(/class="home-property-card"/gu) || []).length, 3);
-  assert.match(home, /<h1>Недвижимость в Шахтах — спокойно и по делу<\/h1>/u);
+  assert.match(home, /<h1>Агентство недвижимости в Шахтах — офис Домиан на Маяковского<\/h1>/u);
   assert.match(home, /Смотреть объекты в Шахтах/u);
   assert.match(home, /Подобрать недвижимость/u);
   assert.match(home, /Продать недвижимость/u);
   assert.doesNotMatch(home, /class="new-homes-feature"/u);
   assert.match(home, /id="hot-offers"/u);
   assert.equal((home.match(/class="listing-card"/gu) || []).length, 6);
-  assert.match(home, /Подтверждённый объект/u);
+  assert.match(home, /Объект (?:офиса|из обзора рынка)/u);
+  assert.doesNotMatch(home, /Подтверждённый объект/u);
   assert.match(home, /data-mortgage-calculator data-page-type="home"/u);
   assert.match(home, /data-home-request-builder/u);
-  assert.doesNotMatch(home, /data-lead-compact/u);
+  assert.match(home, /data-lead-compact/u);
   assert.match(home, /mailto:Babushkina_Mariya\.10@mail\.ru/u);
   assert.match(home, /main-hero-mobile-600\.webp/u);
   assert.match(home, /main-hero-720\.webp 720w,[^"]+main-hero-1200\.webp 1200w/u);
@@ -390,12 +391,12 @@ test("secondary apartment imagery includes a sharp desktop source", () => {
   }
 });
 
-test("direction pages remain honest and expose direct contacts without a form key", () => {
+test("direction pages remain honest and expose configured forms and direct contacts", () => {
   const pages = JSON.parse(fs.readFileSync("src/data/pages.json", "utf8"));
   for (const page of pages) {
     const html = read(page.path);
     assert.doesNotMatch(html, /"@type":"(?:Product|Offer|AggregateRating|Review)"/u, page.path);
-    assert.doesNotMatch(html, /data-lead-form/u, page.path);
+    assert.match(html, /data-lead-form/u, page.path);
     assert.match(html, /id="lead-form-section"[\s\S]*mailto:/u, page.path);
   }
   for (const file of ["commercial.html", "garages-parking.html"]) {

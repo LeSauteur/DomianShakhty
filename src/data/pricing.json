@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "id": "legal",
+      "label": "Юридическое сопровождение сделки",
+      "value": 20000,
+      "payer": "Покупатель",
+      "source": "Сведения владельца от 09.10.2026, переданные в чате",
+      "confirmedAt": "2026-10-09"
+    },
+    {
+      "id": "sell",
+      "label": "Продажа недвижимости",
+      "value": null,
+      "payer": null,
+      "source": null,
+      "confirmedAt": null
+    },
+    {
+      "id": "selection",
+      "label": "Подбор недвижимости",
+      "value": null,
+      "payer": null,
+      "source": null,
+      "confirmedAt": null
+    },
+    {
+      "id": "cadastre",
+      "label": "Кадастровые работы",
+      "value": null,
+      "payer": null,
+      "source": null,
+      "confirmedAt": null
+    }
+  ]
+}

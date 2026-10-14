@@ -1,0 +1,47 @@
+{
+  "slug": "aleksandrovskiy-park",
+  "publish": true,
+  "officeSells": true,
+  "confirmedAt": "2026-10-14",
+  "confirmedBy": "Владелец сайта в чате",
+  "name": "Александровский парк",
+  "address": "Шахты, ул. Шевченко, 135-А",
+  "developer": "ООО СЗ ЖК АЛЕКСАНДРОВСКИЙ ПАРК",
+  "eisDeveloperId": 6602,
+  "buildings": [
+    {
+      "eisId": 55652,
+      "status": null,
+      "commissioningDate": null
+    },
+    {
+      "eisId": 55653,
+      "status": null,
+      "commissioningDate": null
+    }
+  ],
+  "listingsConfirmed": [],
+  "sources": [
+    {
+      "url": "https://alexandrovskii-park.ru/",
+      "checkedAt": "2026-10-14",
+      "supports": "Название ЖК и адрес"
+    },
+    {
+      "url": "https://xn--80az8a.xn--d1aqf.xn--p1ai/сервисы/единый-реестр-застройщиков/застройщик/6602",
+      "checkedAt": "2026-10-14",
+      "supports": "Название застройщика и ID домов"
+    },
+    {
+      "url": "https://xn--80az8a.xn--d1aqf.xn--p1ai/сервисы/каталог-новостроек/объект/55652",
+      "checkedAt": "2026-10-14",
+      "supports": "Дом 55652"
+    },
+    {
+      "url": "https://xn--80az8a.xn--d1aqf.xn--p1ai/сервисы/каталог-новостроек/объект/55653",
+      "checkedAt": "2026-10-14",
+      "supports": "Дом 55653"
+    }
+  ],
+  "notes": "Публичные представления ЕИСЖС расходятся по статусам. Сроки и статус не публикуются до проверки актуальных документов."
+}
