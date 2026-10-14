@@ -50,6 +50,10 @@ function resolveAsset(src) {
 if (!fs.existsSync(root)) throw new Error("dist is missing; run npm run build first");
 visit(root);
 const failures = [];
+const inventory = JSON.parse(fs.readFileSync('src/data/listings.json','utf8'));
+const inventoryByPath = new Map(inventory.map(item => ['listings/'+item.id+'.html', item]));
+const builtExamples = JSON.parse(fs.readFileSync('src/data/construction-projects.json','utf8')).builtExamples || [];
+const builtPaths = new Set(builtExamples.map(item => 'construction/projects/'+item.slug+'.html'));
 const titles = new Map();
 const descriptions = new Map();
 
@@ -71,6 +75,10 @@ for (const file of htmlFiles) {
     try { JSON.parse(block[1]); } catch { failures.push(`${relative}: invalid JSON-LD`); }
   }
 
+  const listing = inventoryByPath.get(relative);
+  if (listing && (!listing.verifiedAt || !listing.verifiedBy) && /"@type":"Offer"/u.test(html)) failures.push(relative + ': unconfirmed Offer');
+  if (builtPaths.has(relative) && /"@type":"(?:Product|Offer)"/u.test(html)) failures.push(relative + ': portfolio example treated as an offer');
+  if (/"@type":"(?:AggregateRating|Review)"|"aggregateRating"/u.test(html)) failures.push(relative + ': third-party review schema');
   const technical = ["404.html", "thanks.html"].includes(relative);
   const route = relative === "index.html" ? "/" : relative.endsWith("/index.html") ? `/${relative.slice(0, -"index.html".length)}` : `/${relative}`;
   const canonical = `${config.productionOrigin}${route}`;
