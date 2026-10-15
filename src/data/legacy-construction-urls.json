@@ -1,0 +1,1270 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-15",
+  "entries": [
+    {
+      "from": "construction/projects/domanstroy-ds-115.html",
+      "to": "construction/projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya.html",
+      "projectId": "ds-115",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "ds-115",
+          "oldBuilderId": "domanstroy",
+          "area": 115,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "ds-115",
+          "oldBuilderId": "domanstroy",
+          "area": 115,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "ds-115",
+          "oldBuilderId": "domanstroy",
+          "area": 115,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "ds-115",
+          "oldBuilderId": "domanstroy",
+          "area": 115,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/domanstroy-ds-116.html",
+      "to": "construction/projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya.html",
+      "projectId": "ds-116",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "ds-116",
+          "oldBuilderId": "domanstroy",
+          "area": 116,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "ds-116",
+          "oldBuilderId": "domanstroy",
+          "area": 116,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "ds-116",
+          "oldBuilderId": "domanstroy",
+          "area": 116,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "ds-116",
+          "oldBuilderId": "domanstroy",
+          "area": 116,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/domanstroy-ds-128.html",
+      "to": "construction/projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2.html",
+      "projectId": "ds-128",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "ds-128",
+          "oldBuilderId": "domanstroy",
+          "area": 128,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "ds-128",
+          "oldBuilderId": "domanstroy",
+          "area": 128,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "ds-128",
+          "oldBuilderId": "domanstroy",
+          "area": 128,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "ds-128",
+          "oldBuilderId": "domanstroy",
+          "area": 128,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/domanstroy-ds-130.html",
+      "to": "construction/projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya.html",
+      "projectId": "ds-130",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "ds-130",
+          "oldBuilderId": "domanstroy",
+          "area": 130,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "ds-130",
+          "oldBuilderId": "domanstroy",
+          "area": 130,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "ds-130",
+          "oldBuilderId": "domanstroy",
+          "area": 130,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "ds-130",
+          "oldBuilderId": "domanstroy",
+          "area": 130,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/domanstroy-ds-80.html",
+      "to": "construction/projects/dom-pod-klyuch-80m2-tri-spalni.html",
+      "projectId": "ds-80",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "ds-80",
+          "oldBuilderId": "domanstroy",
+          "area": 80,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "ds-80",
+          "oldBuilderId": "domanstroy",
+          "area": 80,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "ds-80",
+          "oldBuilderId": "domanstroy",
+          "area": 80,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "ds-80",
+          "oldBuilderId": "domanstroy",
+          "area": 80,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/domanstroy-ds-85-5.html",
+      "to": "construction/projects/dom-pod-klyuch-85m2-dva-sanuzla.html",
+      "projectId": "ds-85-5",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "ds-85-5",
+          "oldBuilderId": "domanstroy",
+          "area": 85,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "ds-85-5",
+          "oldBuilderId": "domanstroy",
+          "area": 85,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "ds-85-5",
+          "oldBuilderId": "domanstroy",
+          "area": 85,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "ds-85-5",
+          "oldBuilderId": "domanstroy",
+          "area": 85,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/domanstroy-ds-85.html",
+      "to": "construction/projects/dom-pod-klyuch-85m2-kuhnya-gostinaya.html",
+      "projectId": "ds-85",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "ds-85",
+          "oldBuilderId": "domanstroy",
+          "area": 85,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 1
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "ds-85",
+          "oldBuilderId": "domanstroy",
+          "area": 85,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 1
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "ds-85",
+          "oldBuilderId": "domanstroy",
+          "area": 85,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 1
+        },
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "ds-85",
+          "oldBuilderId": "domanstroy",
+          "area": 85,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 1
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/eqvita-01.html",
+      "to": "construction/projects/prostornyy-dvukhetazhnyy-dom-337m2.html",
+      "projectId": "eqvita-01",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "eqvita-01",
+          "oldBuilderId": "eqvita",
+          "area": 337,
+          "floors": 2,
+          "bedrooms": null,
+          "bathrooms": null
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "eqvita-01",
+          "oldBuilderId": "eqvita",
+          "area": 337,
+          "floors": 2,
+          "bedrooms": null,
+          "bathrooms": null
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "eqvita-01",
+          "oldBuilderId": "eqvita",
+          "area": 337,
+          "floors": 2,
+          "bedrooms": null,
+          "bathrooms": null
+        },
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "eqvita-01",
+          "oldBuilderId": "eqvita",
+          "area": 337,
+          "floors": 2,
+          "bedrooms": null,
+          "bathrooms": null
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/eqvita-02.html",
+      "to": "construction/projects/bolshoy-dvukhetazhnyy-dom-416-6m2.html",
+      "projectId": "eqvita-02",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "eqvita-02",
+          "oldBuilderId": "eqvita",
+          "area": 416.6,
+          "floors": 2,
+          "bedrooms": null,
+          "bathrooms": null
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "eqvita-02",
+          "oldBuilderId": "eqvita",
+          "area": 416.6,
+          "floors": 2,
+          "bedrooms": null,
+          "bathrooms": null
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "eqvita-02",
+          "oldBuilderId": "eqvita",
+          "area": 416.6,
+          "floors": 2,
+          "bedrooms": null,
+          "bathrooms": null
+        },
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "eqvita-02",
+          "oldBuilderId": "eqvita",
+          "area": 416.6,
+          "floors": 2,
+          "bedrooms": null,
+          "bathrooms": null
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/eqvita-03.html",
+      "to": "construction/projects/odnoetazhnyy-dom-pod-klyuch-217m2.html",
+      "projectId": "eqvita-03",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "eqvita-03",
+          "oldBuilderId": "eqvita",
+          "area": 217,
+          "floors": 1,
+          "bedrooms": null,
+          "bathrooms": null
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "eqvita-03",
+          "oldBuilderId": "eqvita",
+          "area": 217,
+          "floors": 1,
+          "bedrooms": null,
+          "bathrooms": null
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "eqvita-03",
+          "oldBuilderId": "eqvita",
+          "area": 217,
+          "floors": 1,
+          "bedrooms": null,
+          "bathrooms": null
+        },
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "eqvita-03",
+          "oldBuilderId": "eqvita",
+          "area": 217,
+          "floors": 1,
+          "bedrooms": null,
+          "bathrooms": null
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/eqvita-04.html",
+      "to": "construction/projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni.html",
+      "projectId": "eqvita-04",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "eqvita-04",
+          "oldBuilderId": "eqvita",
+          "area": 161,
+          "floors": 1,
+          "bedrooms": 2,
+          "bathrooms": 2
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "eqvita-04",
+          "oldBuilderId": "eqvita",
+          "area": 161,
+          "floors": 1,
+          "bedrooms": 2,
+          "bathrooms": 2
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "eqvita-04",
+          "oldBuilderId": "eqvita",
+          "area": 161,
+          "floors": 1,
+          "bedrooms": 2,
+          "bathrooms": 2
+        },
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "eqvita-04",
+          "oldBuilderId": "eqvita",
+          "area": 161,
+          "floors": 1,
+          "bedrooms": 2,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/partner-house-0699.html",
+      "to": "construction/projects/kompaktnyy-dom-pod-klyuch-69-9m2.html",
+      "projectId": "partner-house-0699",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "partner-house-0699",
+          "oldBuilderId": "partner-selection",
+          "area": 69.9,
+          "floors": 1,
+          "bedrooms": 2,
+          "bathrooms": 1
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "partner-house-0699",
+          "oldBuilderId": "partner-selection",
+          "area": 69.9,
+          "floors": 1,
+          "bedrooms": 2,
+          "bathrooms": 1
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "partner-house-0699",
+          "oldBuilderId": "partner-selection",
+          "area": 69.9,
+          "floors": 1,
+          "bedrooms": 2,
+          "bathrooms": 1
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/partner-house-0750.html",
+      "to": "construction/projects/dom-pod-klyuch-75m2-dve-spalni.html",
+      "projectId": "partner-house-0750",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "partner-house-0750",
+          "oldBuilderId": "partner-selection",
+          "area": 75,
+          "floors": 1,
+          "bedrooms": 2,
+          "bathrooms": 1
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "partner-house-0750",
+          "oldBuilderId": "partner-selection",
+          "area": 75,
+          "floors": 1,
+          "bedrooms": 2,
+          "bathrooms": 1
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "partner-house-0750",
+          "oldBuilderId": "partner-selection",
+          "area": 75,
+          "floors": 1,
+          "bedrooms": 2,
+          "bathrooms": 1
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/partner-house-0838.html",
+      "to": "construction/projects/dom-pod-klyuch-83-8m2-s-terrasoy.html",
+      "projectId": "partner-house-0838",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "partner-house-0838",
+          "oldBuilderId": "partner-selection",
+          "area": 83.8,
+          "floors": 1,
+          "bedrooms": 2,
+          "bathrooms": 1
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "partner-house-0838",
+          "oldBuilderId": "partner-selection",
+          "area": 83.8,
+          "floors": 1,
+          "bedrooms": 2,
+          "bathrooms": 1
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "partner-house-0838",
+          "oldBuilderId": "partner-selection",
+          "area": 83.8,
+          "floors": 1,
+          "bedrooms": 2,
+          "bathrooms": 1
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/partner-house-0840.html",
+      "to": "construction/projects/semeynyy-dom-pod-klyuch-84m2.html",
+      "projectId": "partner-house-0840",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "partner-house-0840",
+          "oldBuilderId": "partner-selection",
+          "area": 84,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 1
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "partner-house-0840",
+          "oldBuilderId": "partner-selection",
+          "area": 84,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 1
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "partner-house-0840",
+          "oldBuilderId": "partner-selection",
+          "area": 84,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 1
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/partner-house-0850.html",
+      "to": "construction/projects/dom-pod-klyuch-85m2-tri-spalni.html",
+      "projectId": "partner-house-0850",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "partner-house-0850",
+          "oldBuilderId": "partner-selection",
+          "area": 85,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 1
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "partner-house-0850",
+          "oldBuilderId": "partner-selection",
+          "area": 85,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 1
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "partner-house-0850",
+          "oldBuilderId": "partner-selection",
+          "area": 85,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 1
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/partner-house-0900.html",
+      "to": "construction/projects/dom-pod-klyuch-90m2-dve-spalni.html",
+      "projectId": "partner-house-0900",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "partner-house-0900",
+          "oldBuilderId": "partner-selection",
+          "area": 90,
+          "floors": 1,
+          "bedrooms": 2,
+          "bathrooms": 1
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "partner-house-0900",
+          "oldBuilderId": "partner-selection",
+          "area": 90,
+          "floors": 1,
+          "bedrooms": 2,
+          "bathrooms": 1
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "partner-house-0900",
+          "oldBuilderId": "partner-selection",
+          "area": 90,
+          "floors": 1,
+          "bedrooms": 2,
+          "bathrooms": 1
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/partner-house-0990.html",
+      "to": "construction/projects/dom-pod-klyuch-99m2-tri-spalni.html",
+      "projectId": "partner-house-0990",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "partner-house-0990",
+          "oldBuilderId": "partner-selection",
+          "area": 99,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 1
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "partner-house-0990",
+          "oldBuilderId": "partner-selection",
+          "area": 99,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 1
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "partner-house-0990",
+          "oldBuilderId": "partner-selection",
+          "area": 99,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 1
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/partner-house-1050.html",
+      "to": "construction/projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla.html",
+      "projectId": "partner-house-1050",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "partner-house-1050",
+          "oldBuilderId": "partner-selection",
+          "area": 105,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "partner-house-1050",
+          "oldBuilderId": "partner-selection",
+          "area": 105,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "partner-house-1050",
+          "oldBuilderId": "partner-selection",
+          "area": 105,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/partner-house-1070.html",
+      "to": "construction/projects/dom-pod-klyuch-107m2-prostornaya-kuhnya-gostinaya.html",
+      "projectId": "partner-house-1070",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "partner-house-1070",
+          "oldBuilderId": "partner-selection",
+          "area": 107,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "partner-house-1070",
+          "oldBuilderId": "partner-selection",
+          "area": 107,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "partner-house-1070",
+          "oldBuilderId": "partner-selection",
+          "area": 107,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/partner-house-1090.html",
+      "to": "construction/projects/semeynyy-dom-pod-klyuch-109m2.html",
+      "projectId": "partner-house-1090",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "partner-house-1090",
+          "oldBuilderId": "partner-selection",
+          "area": 109,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "partner-house-1090",
+          "oldBuilderId": "partner-selection",
+          "area": 109,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "partner-house-1090",
+          "oldBuilderId": "partner-selection",
+          "area": 109,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/partner-house-1111.html",
+      "to": "construction/projects/dom-pod-klyuch-111-1m2-tri-spalni.html",
+      "projectId": "partner-house-1111",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "partner-house-1111",
+          "oldBuilderId": "partner-selection",
+          "area": 111.1,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "partner-house-1111",
+          "oldBuilderId": "partner-selection",
+          "area": 111.1,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "partner-house-1111",
+          "oldBuilderId": "partner-selection",
+          "area": 111.1,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/partner-house-1142.html",
+      "to": "construction/projects/dom-pod-klyuch-114-2m2-kuhnya-gostinaya.html",
+      "projectId": "partner-house-1142",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "partner-house-1142",
+          "oldBuilderId": "partner-selection",
+          "area": 114.2,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "partner-house-1142",
+          "oldBuilderId": "partner-selection",
+          "area": 114.2,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "partner-house-1142",
+          "oldBuilderId": "partner-selection",
+          "area": 114.2,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/partner-house-1240.html",
+      "to": "construction/projects/prostornyy-dom-pod-klyuch-124m2.html",
+      "projectId": "partner-house-1240",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "partner-house-1240",
+          "oldBuilderId": "partner-selection",
+          "area": 124,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "partner-house-1240",
+          "oldBuilderId": "partner-selection",
+          "area": 124,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "partner-house-1240",
+          "oldBuilderId": "partner-selection",
+          "area": 124,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/partner-house-1370.html",
+      "to": "construction/projects/dvukhetazhnyy-dom-pod-klyuch-137m2.html",
+      "projectId": "partner-house-1370",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "partner-house-1370",
+          "oldBuilderId": "partner-selection",
+          "area": 137,
+          "floors": 2,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "partner-house-1370",
+          "oldBuilderId": "partner-selection",
+          "area": 137,
+          "floors": 2,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "partner-house-1370",
+          "oldBuilderId": "partner-selection",
+          "area": 137,
+          "floors": 2,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/partner-house-1422.html",
+      "to": "construction/projects/dvukhetazhnyy-semeynyy-dom-142-2m2.html",
+      "projectId": "partner-house-1422",
+      "method": "stable-id",
+      "evidence": [
+        {
+          "commit": "5483979e573f68435a7a68143557c121ca712408",
+          "oldId": "partner-house-1422",
+          "oldBuilderId": "partner-selection",
+          "area": 142.2,
+          "floors": 2,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "db847e3ae0a842c4f186948d5813236f100ab74d",
+          "oldId": "partner-house-1422",
+          "oldBuilderId": "partner-selection",
+          "area": 142.2,
+          "floors": 2,
+          "bedrooms": 3,
+          "bathrooms": 2
+        },
+        {
+          "commit": "b10616236f99a15bebdfbcd0689194e26d7c7fc0",
+          "oldId": "partner-house-1422",
+          "oldBuilderId": "partner-selection",
+          "area": 142.2,
+          "floors": 2,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/soyuz-105.html",
+      "to": "construction/projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla.html",
+      "projectId": "partner-house-1050",
+      "method": "partner-identity-and-dimensions",
+      "evidence": [
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "soyuz-105",
+          "oldBuilderId": "soyuz",
+          "area": 105,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/soyuz-107.html",
+      "to": "construction/projects/dom-pod-klyuch-107m2-prostornaya-kuhnya-gostinaya.html",
+      "projectId": "partner-house-1070",
+      "method": "partner-identity-and-dimensions",
+      "evidence": [
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "soyuz-107",
+          "oldBuilderId": "soyuz",
+          "area": 107,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/soyuz-109.html",
+      "to": "construction/projects/semeynyy-dom-pod-klyuch-109m2.html",
+      "projectId": "partner-house-1090",
+      "method": "partner-identity-and-dimensions",
+      "evidence": [
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "soyuz-109",
+          "oldBuilderId": "soyuz",
+          "area": 109,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/soyuz-111-1.html",
+      "to": "construction/projects/dom-pod-klyuch-111-1m2-tri-spalni.html",
+      "projectId": "partner-house-1111",
+      "method": "partner-identity-and-dimensions",
+      "evidence": [
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "soyuz-111-1",
+          "oldBuilderId": "soyuz",
+          "area": 111.1,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/soyuz-114-2.html",
+      "to": "construction/projects/dom-pod-klyuch-114-2m2-kuhnya-gostinaya.html",
+      "projectId": "partner-house-1142",
+      "method": "partner-identity-and-dimensions",
+      "evidence": [
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "soyuz-114-2",
+          "oldBuilderId": "soyuz",
+          "area": 114.2,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/soyuz-124.html",
+      "to": "construction/projects/prostornyy-dom-pod-klyuch-124m2.html",
+      "projectId": "partner-house-1240",
+      "method": "partner-identity-and-dimensions",
+      "evidence": [
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "soyuz-124",
+          "oldBuilderId": "soyuz",
+          "area": 124,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/soyuz-137.html",
+      "to": "construction/projects/dvukhetazhnyy-dom-pod-klyuch-137m2.html",
+      "projectId": "partner-house-1370",
+      "method": "partner-identity-and-dimensions",
+      "evidence": [
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "soyuz-137",
+          "oldBuilderId": "soyuz",
+          "area": 137,
+          "floors": 2,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/soyuz-142-2.html",
+      "to": "construction/projects/dvukhetazhnyy-semeynyy-dom-142-2m2.html",
+      "projectId": "partner-house-1422",
+      "method": "partner-identity-and-dimensions",
+      "evidence": [
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "soyuz-142-2",
+          "oldBuilderId": "soyuz",
+          "area": 142.2,
+          "floors": 2,
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/soyuz-69-9.html",
+      "to": "construction/projects/kompaktnyy-dom-pod-klyuch-69-9m2.html",
+      "projectId": "partner-house-0699",
+      "method": "partner-identity-and-dimensions",
+      "evidence": [
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "soyuz-69-9",
+          "oldBuilderId": "soyuz",
+          "area": 69.9,
+          "floors": 1,
+          "bedrooms": 2,
+          "bathrooms": 1
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/soyuz-75.html",
+      "to": "construction/projects/dom-pod-klyuch-75m2-dve-spalni.html",
+      "projectId": "partner-house-0750",
+      "method": "partner-identity-and-dimensions",
+      "evidence": [
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "soyuz-75",
+          "oldBuilderId": "soyuz",
+          "area": 75,
+          "floors": 1,
+          "bedrooms": 2,
+          "bathrooms": 1
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/soyuz-83-8.html",
+      "to": "construction/projects/dom-pod-klyuch-83-8m2-s-terrasoy.html",
+      "projectId": "partner-house-0838",
+      "method": "partner-identity-and-dimensions",
+      "evidence": [
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "soyuz-83-8",
+          "oldBuilderId": "soyuz",
+          "area": 83.8,
+          "floors": 1,
+          "bedrooms": 2,
+          "bathrooms": 1
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/soyuz-84.html",
+      "to": "construction/projects/semeynyy-dom-pod-klyuch-84m2.html",
+      "projectId": "partner-house-0840",
+      "method": "partner-identity-and-dimensions",
+      "evidence": [
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "soyuz-84",
+          "oldBuilderId": "soyuz",
+          "area": 84,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 1
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/soyuz-85.html",
+      "to": "construction/projects/dom-pod-klyuch-85m2-tri-spalni.html",
+      "projectId": "partner-house-0850",
+      "method": "partner-identity-and-dimensions",
+      "evidence": [
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "soyuz-85",
+          "oldBuilderId": "soyuz",
+          "area": 85,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 1
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/soyuz-90.html",
+      "to": "construction/projects/dom-pod-klyuch-90m2-dve-spalni.html",
+      "projectId": "partner-house-0900",
+      "method": "partner-identity-and-dimensions",
+      "evidence": [
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "soyuz-90",
+          "oldBuilderId": "soyuz",
+          "area": 90,
+          "floors": 1,
+          "bedrooms": 2,
+          "bathrooms": 1
+        }
+      ]
+    },
+    {
+      "from": "construction/projects/soyuz-99.html",
+      "to": "construction/projects/dom-pod-klyuch-99m2-tri-spalni.html",
+      "projectId": "partner-house-0990",
+      "method": "partner-identity-and-dimensions",
+      "evidence": [
+        {
+          "commit": "195e304457ee6c56b2f997b24ef98b13df8fde9c",
+          "oldId": "soyuz-99",
+          "oldBuilderId": "soyuz",
+          "area": 99,
+          "floors": 1,
+          "bedrooms": 3,
+          "bathrooms": 1
+        }
+      ]
+    }
+  ]
+}

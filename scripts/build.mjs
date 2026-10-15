@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
+import { renderLegacyRedirect, validateLegacyRedirects } from "../src/legacy-redirects.mjs";
 import {
   createContext,
   render404,
@@ -81,6 +82,7 @@ const constructionProjects = readJson("src/data/construction-projects.json");
 const teamLife = readJson("src/data/team-life.json");
 const pricing = readJson("src/data/pricing.json");
 const localZhk = readJson("src/data/zhk/aleksandrovskiy-park.json");
+const legacyRedirects = readJson("src/data/legacy-construction-urls.json");
 const ctx = createContext(site, { locations, locationContent, guides, pages, listings, projects, builders, team, teamLife, pricing, showcase, newbuilds, constructionProjects });
 const outputs = [];
 
@@ -112,6 +114,14 @@ publish("details.html", renderDetails(ctx));
 publish("privacy.html", renderPrivacy(ctx));
 publish("thanks.html", renderThanks(ctx));
 publish("404.html", render404(ctx));
+
+// Recreate historical addresses after every clean build, outside the sitemap.
+// Only canonical generated pages may be targets, so chains and loops are rejected.
+const redirectEntries = validateLegacyRedirects(legacyRedirects.entries, outputs, [
+  ...constructionProjects.items,
+  ...(constructionProjects.builtExamples || [])
+]);
+for (const entry of redirectEntries.values()) write(entry.from, renderLegacyRedirect(ctx, entry));
 
 const runtimeConfig = {
   basePath: ctx.base,
@@ -151,4 +161,4 @@ write(".nojekyll", "");
   }
 }
 
-console.log(`Built ${outputs.length} HTML pages in ${path.relative(root, dist)}.`);
+console.log(`Built ${outputs.length} canonical/technical HTML pages and ${redirectEntries.size} legacy redirects in ${path.relative(root, dist)}.`);

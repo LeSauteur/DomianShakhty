@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
+import { validateLegacyRedirects } from "../src/legacy-redirects.mjs";
 
 const root = path.resolve(process.cwd(), "dist");
 const config = JSON.parse(fs.readFileSync(path.resolve("site.config.json"), "utf8"));
@@ -50,6 +51,14 @@ function resolveAsset(src) {
 if (!fs.existsSync(root)) throw new Error("dist is missing; run npm run build first");
 visit(root);
 const failures = [];
+const legacyManifest = JSON.parse(fs.readFileSync("src/data/legacy-construction-urls.json", "utf8"));
+const constructionData = JSON.parse(fs.readFileSync("src/data/construction-projects.json", "utf8"));
+const legacyPaths = new Set(legacyManifest.entries.map(entry => entry.from));
+const canonicalFiles = htmlFiles.map(file => path.relative(root, file).replaceAll("\\", "/")).filter(file => !legacyPaths.has(file));
+const legacyByPath = validateLegacyRedirects(legacyManifest.entries, canonicalFiles, [...constructionData.items, ...(constructionData.builtExamples || [])]);
+for (const from of legacyByPath.keys()) {
+  if (!fs.existsSync(path.join(root, from))) failures.push(`${from}: legacy redirect was not generated`);
+}
 const inventory = JSON.parse(fs.readFileSync('src/data/listings.json','utf8'));
 const inventoryByPath = new Map(inventory.map(item => ['listings/'+item.id+'.html', item]));
 const builtExamples = JSON.parse(fs.readFileSync('src/data/construction-projects.json','utf8')).builtExamples || [];
@@ -60,6 +69,19 @@ const descriptions = new Map();
 for (const file of htmlFiles) {
   const relative = path.relative(root, file).replaceAll("\\", "/");
   const html = fs.readFileSync(file, "utf8");
+  const redirect = legacyByPath.get(relative);
+  if (redirect) {
+    const target = `${config.productionOrigin}/${redirect.to}`;
+    const destination = `${new URL(config.productionOrigin).pathname.replace(/\/$/u, "")}/${redirect.to}`;
+    const canonicals = matches(html, /<link\s+rel="canonical"\s+href="([^"]+)"/giu);
+    const refreshes = matches(html, /<meta\s+http-equiv="refresh"\s+content="([^"]+)"/giu);
+    if (canonicals.length !== 1 || canonicals[0][1] !== target) failures.push(`${relative}: legacy canonical does not match its target`);
+    if (refreshes.length !== 1 || refreshes[0][1] !== `0; url=${destination}`) failures.push(`${relative}: expected an immediate legacy redirect`);
+    if (!html.includes(`<a href="${destination}">`)) failures.push(`${relative}: legacy fallback link missing`);
+    if (!html.includes('name="robots" content="index,follow"') || /noindex|<script\b/iu.test(html)) failures.push(`${relative}: legacy redirect must work without JavaScript or noindex`);
+    if ((html.match(/<h1\b/giu) || []).length !== 1) failures.push(`${relative}: legacy page must have one heading`);
+    continue;
+  }
   const h1 = matches(html, /<h1\b[^>]*>([\s\S]*?)<\/h1>/giu);
   const title = html.match(/<title>([\s\S]*?)<\/title>/iu)?.[1]?.trim();
   const description = html.match(/<meta\s+name="description"\s+content="([^"]+)"/iu)?.[1]?.trim();
@@ -131,7 +153,7 @@ for (const file of [".nojekyll", "sitemap.xml", "favicon.ico", "manifest.webmani
 const sitemap = fs.existsSync(path.join(root, "sitemap.xml")) ? fs.readFileSync(path.join(root, "sitemap.xml"), "utf8") : "";
 const actualUrls = matches(sitemap, /<loc>([^<]+)<\/loc>/giu).map((match) => match[1]);
 const expectedUrls = htmlFiles.map((file) => path.relative(root, file).replaceAll("\\", "/"))
-  .filter((relative) => !["404.html", "thanks.html"].includes(relative))
+  .filter((relative) => !["404.html", "thanks.html"].includes(relative) && !legacyPaths.has(relative))
   .map((relative) => `${config.productionOrigin}${relative === "index.html" ? "/" : relative.endsWith("/index.html") ? `/${relative.slice(0, -"index.html".length)}` : `/${relative}`}`);
 if (actualUrls.length !== expectedUrls.length || new Set(actualUrls).size !== expectedUrls.length || expectedUrls.some((url) => !actualUrls.includes(url))) failures.push("sitemap.xml: routes do not match indexable pages");
 for (const provider of ["google", "yandex"]) {
@@ -144,4 +166,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`SEO audit passed: ${htmlFiles.length} pages, unique metadata, valid links/media and production indexation rules.`);
+console.log(`SEO audit passed: ${htmlFiles.length - legacyByPath.size} canonical/technical pages and ${legacyByPath.size} legacy redirects; valid metadata, links/media and production indexation rules.`);
