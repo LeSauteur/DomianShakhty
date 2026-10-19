@@ -113,3 +113,30 @@ test("expanded buyer blocks retain honest geography, sourced conditions and inve
     assert.ok(fact.sourceIds.length > 0);
   }
 });
+
+test("three buyer guides have original substance, editorial authorship, FAQs and dated official sources", () => {
+  const slugs = ["podrabotannye-territorii-shahty", "mezhevanie-pered-pokupkoy", "proverka-doma-s-gazom"];
+  const allGuides = json("src/data/guides.json");
+  for (const slug of slugs) {
+    const guide = allGuides.find(item => item.slug === slug);
+    assert.ok(words(guide.sections.flatMap(section => section.paragraphs).join(" ")) >= 600, slug);
+    assert.equal(guide.author, "Редакция офиса");
+    assert.equal(guide.reviewedBy, null);
+    assert.equal(guide.updatedAt, "2026-10-19");
+    assert.ok(guide.faq.length >= 5 && guide.faq.length <= 8);
+    assert.ok(guide.sources.length >= 2);
+    for (const source of guide.sources) {
+      assert.equal(source.checkedAt, "2026-10-19");
+      assert.match(new URL(source.url).hostname, /^(?:www\.)?(?:gursh\.ru|rosreestr\.tatarstan\.ru|rostovoblgaz\.ru)$/u);
+    }
+    const output = read(`dist/guides/${slug}.html`);
+    assert.match(output, /Автор: Редакция офиса/u);
+    assert.match(output, /id="guide-faq"/u);
+    assert.match(output, /"@type":"Article"/u);
+    assert.ok(sitemap.includes(`/guides/${slug}.html</loc>`));
+    for (const landing of ["houses.html", "lands.html", "kadastrovye-raboty.html"]) {
+      assert.ok(read(`dist/${landing}`).includes(`href="/guides/${slug}.html"`));
+      assert.ok(output.includes(`href="/${landing}"`));
+    }
+  }
+});

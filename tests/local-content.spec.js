@@ -33,3 +33,21 @@ for (const width of [390, 1440]) {
     expect(errors).toEqual([]);
   });
 }
+
+for (const width of [390, 1440]) {
+  test(`new practical guides keep author sources and FAQs readable at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 950 });
+    const errors = [];
+    page.on("pageerror", error => errors.push(error.message));
+    for (const slug of ["podrabotannye-territorii-shahty", "mezhevanie-pered-pokupkoy", "proverka-doma-s-gazom"]) {
+      await page.goto(`guides/${slug}.html`);
+      await expect(page.locator("h1")).toBeVisible();
+      await expect(page.locator(".guide-meta")).toContainText("Автор: Редакция офиса");
+      await expect(page.locator("#guide-faq details")).toHaveCount(6);
+      await page.locator("#guide-faq details").first().locator("summary").click();
+      await expect(page.locator("#guide-faq details").first()).toHaveAttribute("open", "");
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), slug).toBe(true);
+    }
+    expect(errors).toEqual([]);
+  });
+}
