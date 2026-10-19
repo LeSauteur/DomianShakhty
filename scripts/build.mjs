@@ -82,10 +82,11 @@ const newbuilds = readJson("src/data/newbuilds.json");
 const constructionProjects = readJson("src/data/construction-projects.json");
 const teamLife = readJson("src/data/team-life.json");
 const pricing = readJson("src/data/pricing.json");
+const rentalDraft = readJson("src/data/rental-draft.json");
 const localZhk = readJson("src/data/zhk/aleksandrovskiy-park.json");
 const localComplexes = fs.readdirSync(path.join(root, "src/data/zhk")).filter(file => file.endsWith(".json")).map(file => readJson(`src/data/zhk/${file}`));
 const legacyRedirects = readJson("src/data/legacy-construction-urls.json");
-const ctx = createContext(site, { locations, locationContent, guides, pages, listings, projects, builders, team, teamLife, pricing, showcase, newbuilds, constructionProjects, localComplexes });
+const ctx = createContext(site, { locations, locationContent, guides, pages, listings, projects, builders, team, teamLife, pricing, showcase, newbuilds, constructionProjects, localComplexes, rentalDraft });
 const outputs = [];
 
 function publish(relativePath, html) {
@@ -101,6 +102,7 @@ write("manifest.webmanifest", `${JSON.stringify({ name: site.displayName, short_
 publish("index.html", renderHome(ctx, guides));
 for (const page of pages.filter((item) => item.path !== "construction.html" && (item.slug !== "zhk-aleksandrovskiy-park" || localZhk.publish === true))) publish(page.path, renderCommercialPage(ctx, page));
 for (const complex of localComplexes.filter(item => item.publish === true && item.officeSells === true && item.page)) publish(complex.page.path, renderCommercialPage(ctx, complex.page));
+if (rentalDraft.publish === true && rentalDraft.officeRents === true) publish(rentalDraft.page.path, renderCommercialPage(ctx, rentalDraft.page));
 publish("newbuilds.html", renderNewbuilds(ctx));
 for (const item of newbuilds.items) publish(`newbuilds/${item.slug}.html`, renderNewbuild(ctx, item));
 publish("construction.html", renderConstruction(ctx));

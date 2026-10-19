@@ -51,6 +51,7 @@ function utilityNavigation(ctx) {
       ["Все территории", "locations/index.html", "locations"]
     ] },
     { key: "guides", label: "Полезные статьи", href: "guides/index.html" },
+    ...(ctx.rentalDraft?.publish === true && ctx.rentalDraft.officeRents === true ? [{ key: "arenda-kvartir-shakhty", label: "Аренда квартир", href: ctx.rentalDraft.page.path }] : []),
     { key: "company", label: "О компании", children: [
       ["Команда", "team/index.html", "team"],
       ["Мария Воронина", "team/maria-voronina.html", "maria-voronina"],

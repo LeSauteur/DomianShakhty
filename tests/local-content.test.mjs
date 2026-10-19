@@ -140,3 +140,21 @@ test("three buyer guides have original substance, editorial authorship, FAQs and
     }
   }
 });
+
+test("rental draft is reviewable but absent from output sitemap and navigation until service confirmation", () => {
+  const draft = json("src/data/rental-draft.json");
+  assert.equal(draft.publish, false);
+  assert.equal(draft.officeRents, null);
+  assert.ok(words(mainText(draft.page)) >= 600);
+  assert.equal(draft.page.sections.find(section => section.kind === "faq").items.length, 6);
+  assert.ok(!fs.existsSync(`dist/${draft.page.path}`));
+  assert.ok(!sitemap.includes(`/${draft.page.path}</loc>`));
+  assert.ok(!read("dist/index.html").includes(`href="/${draft.page.path}"`));
+  const data = { rentalDraft: draft, localComplexes: complexes, locations: json("src/data/locations.json"), team: json("src/data/team.json"), listings: json("src/data/listings.json") };
+  const disabled = renderCommercialPage(createContext(site, data), draft.page);
+  assert.ok(!disabled.includes('class="utility-nav__link" href="/arenda-kvartir-shakhty.html"'));
+  assert.match(disabled, /data-source-cta="rent_apartments_shakhty"/u);
+  const enabled = renderCommercialPage(createContext(site, { ...data, rentalDraft: { ...draft, publish: true, officeRents: true } }), draft.page);
+  assert.ok(enabled.includes(`href="/${draft.page.path}"`));
+  assert.equal((enabled.match(/<h1>/gu) || []).length, 1);
+});
