@@ -1,0 +1,134 @@
+{
+  "checkedAt": "2026-10-19",
+  "policy": "C8b: агентский текст; источники/даты/номера только в данных; неизвестные свойства пропускаются; публичные ссылки на источники сняты; подпись правообладателя изображения сохранена по C8.",
+  "rows": [
+    {
+      "path": "novostroyki-shakhty.html",
+      "publish": true,
+      "beforeWords": 637,
+      "words": 641,
+      "faq": 6
+    },
+    {
+      "path": "kvartiry-v-centre-shakhty.html",
+      "publish": true,
+      "beforeWords": 684,
+      "words": 692,
+      "faq": 6
+    },
+    {
+      "path": "zhk-aleksandrovskiy-park.html",
+      "publish": true,
+      "beforeWords": 397,
+      "words": 481,
+      "faq": 6
+    },
+    {
+      "path": "zhk-aleksandrovsk-grushevskiy-20.html",
+      "publish": false,
+      "beforeWords": 638,
+      "words": 643,
+      "faq": 6
+    },
+    {
+      "path": "zhk-artem-2.html",
+      "publish": false,
+      "beforeWords": 603,
+      "words": 608,
+      "faq": 6
+    },
+    {
+      "path": "zhk-artem.html",
+      "publish": false,
+      "beforeWords": 610,
+      "words": 613,
+      "faq": 6
+    },
+    {
+      "path": "zhk-krupskoy-45.html",
+      "publish": false,
+      "beforeWords": 607,
+      "words": 610,
+      "faq": 6
+    },
+    {
+      "path": "zhk-shakhtinskiy-67.html",
+      "publish": false,
+      "beforeWords": 620,
+      "words": 621,
+      "faq": 6
+    },
+    {
+      "path": "arenda-kvartir-shakhty.html",
+      "publish": false,
+      "beforeWords": 605,
+      "words": 649,
+      "faq": 6
+    },
+    {
+      "path": "guides/podrabotannye-territorii-shahty.html",
+      "publish": true,
+      "beforeWords": 620,
+      "words": 633,
+      "faq": 6
+    },
+    {
+      "path": "guides/mezhevanie-pered-pokupkoy.html",
+      "publish": true,
+      "beforeWords": 640,
+      "words": 647,
+      "faq": 6
+    },
+    {
+      "path": "guides/proverka-doma-s-gazom.html",
+      "publish": true,
+      "beforeWords": 638,
+      "words": 675,
+      "faq": 6
+    }
+  ],
+  "blocks": [
+    {
+      "path": "houses.html",
+      "block": "Дома на Майском и в других районах Шахт",
+      "beforeWords": 159,
+      "words": 203
+    },
+    {
+      "path": "houses.html",
+      "block": "house-gas-check",
+      "beforeWords": 149,
+      "words": 157
+    },
+    {
+      "path": "houses.html",
+      "block": "house-financing",
+      "beforeWords": 179,
+      "words": 181
+    },
+    {
+      "path": "lands.html",
+      "block": "izhs-plots",
+      "beforeWords": 80,
+      "words": 85
+    },
+    {
+      "path": "lands.html",
+      "block": "snt-plots",
+      "beforeWords": 88,
+      "words": 92
+    },
+    {
+      "path": "lands.html",
+      "block": "land-boundaries",
+      "beforeWords": 77,
+      "words": 92
+    },
+    {
+      "path": "apartments.html",
+      "block": "apartment-rooms",
+      "beforeWords": 213,
+      "words": 246
+    }
+  ]
+}

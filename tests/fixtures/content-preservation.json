@@ -44,5 +44,14 @@
     "sell.html",
     "valuation.html",
     "mortgage.html"
-  ]
+  ],
+  "guideSlugs": [
+    "kak-vybrat-dom-ot-zastroyshchika-v-shakhtah",
+    "chto-proverit-pered-pokupkoy-novogo-doma",
+    "gotovyy-dom-ili-stroitelstvo-po-proektu",
+    "dom-i-uchastok-chto-proverit",
+    "shakhty-novoshakhtinsk-ili-krasnyy-sulin",
+    "kak-podgotovit-nedvizhimost-k-prodazhe-v-shakhtah"
+  ],
+  "guidesHash": "9dc97a9c2051d4582007e9009af9399c920305653c6e77cea93032e8577f777b"
 }

@@ -16,7 +16,7 @@ for (const width of [390, 1440]) {
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), route).toBe(true);
       if (route === "novostroyki-shakhty.html") {
         await expect(page.locator("[data-local-complex]")).toHaveCount(6);
-        await expect(page.locator("[data-eis-building]")).toHaveCount(8);
+        await expect(page.locator("[data-local-building]")).toHaveCount(6);
         await expect(page.locator("main details")).toHaveCount(6);
         await expect(page.locator('[data-lead-form]')).toHaveAttribute("data-source-cta", "newbuilds_shakhty");
       }
@@ -35,7 +35,7 @@ for (const width of [390, 1440]) {
 }
 
 for (const width of [390, 1440]) {
-  test(`new practical guides keep author sources and FAQs readable at ${width}px`, async ({ page }) => {
+  test(`new practical guides keep agency copy and FAQs readable at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 950 });
     const errors = [];
     page.on("pageerror", error => errors.push(error.message));

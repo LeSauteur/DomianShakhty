@@ -15,7 +15,7 @@ const mainText = page => page.sections.filter(section => section.kind === "edito
 test("local hub has six projects, eight distinct buildings, sourced facts and incoming links", () => {
   const hub = read("dist/novostroyki-shakhty.html");
   assert.equal((hub.match(/data-local-complex=/gu) || []).length, 6);
-  assert.equal((hub.match(/data-eis-building=/gu) || []).length, 8);
+  assert.equal((hub.match(/data-local-building=/gu) || []).length, 6);
   assert.deepEqual(complexes.flatMap(item => item.buildings.map(building => building.eisId)).sort(), [49133, 49134, 55652, 55653, 57386, 57397, 60159, 66209]);
   for (const item of complexes) {
     for (const fact of [...Object.values(item.facts), ...item.buildings.flatMap(building => Object.values(building.facts))]) {
@@ -66,7 +66,8 @@ test("Alexander Park shows a specific listing without resolving conflicting hous
   assert.match(alpha, /Какие документы застройщика запросить/u);
   assert.match(alpha, /Что проверить при приёмке квартиры/u);
   assert.doesNotMatch(alpha, /Разрешение на ввод № 61-59-142-2026|дома сданы/u);
-  assert.match(read("dist/locations/kamenolomni.html"), /Крупской 45[\s\S]*сданный дом[\s\S]*66209/u);
+  assert.match(read("dist/locations/kamenolomni.html"), /Крупской 45[\s\S]*сданный многоквартирный дом/u);
+  assert.doesNotMatch(read("dist/locations/kamenolomni.html"), /66209/u);
 });
 
 test("center landing distinguishes apartments, a nearby house and reference street orientation", () => {
@@ -78,8 +79,8 @@ test("center landing distinguishes apartments, a nearby house and reference stre
   assert.deepEqual(selections[0].ids, ["shk-a05-center-renovated-1k", "shk-a12-center-designer-3k"]);
   assert.deepEqual(selections[1].ids, ["shk-h08-two-houses-center"]);
   assert.match(output, /data-source-cta="center_apartments"/u);
-  assert.match(output, /Это предложение двух домов с участком, не квартира/u);
-  assert.match(output, /Источник носит справочный характер/u);
+  assert.match(output, /Два дома с участком рядом с центром/u);
+  assert.doesNotMatch(output, /Источник носит справочный характер|не является границей/u);
   assert.ok(page.sections[0].facts.centerStreetReference.sourceUrl.startsWith("https://"));
   for (const id of selections.flatMap(section => section.ids)) assert.ok(output.includes(`/listings/${id}.html`));
   assert.ok(!output.includes("/listings/dom-chistovaya-kamenolomni.html"));
@@ -92,13 +93,14 @@ test("expanded buyer blocks retain honest geography, sourced conditions and inve
   const homes = read("dist/houses.html");
   const lands = read("dist/lands.html");
   const location = read("dist/locations/kamenolomni.html");
-  assert.match(homes, /нет домов, явно обозначенных Майским/u);
+  assert.match(homes, /Оставьте заявку на дом на Майском/u);
   assert.match(homes, /сквер ДК имени М\. П\. Чиха/u);
   assert.ok(!fs.existsSync("dist/doma-mayskiy-shakhty.html"));
   for (const id of ["house-gas-check", "house-financing"]) assert.ok(homes.includes(`id="${id}"`));
   const finance = homes.match(/<section[^>]+id="house-financing"[\s\S]*?<\/section>/u)?.[0];
-  assert.match(finance, /sfr\.gov\.ru/u);
-  assert.match(finance, /19 октября 2026/u);
+  const financeData = pages.find(item => item.slug === "houses").sections.find(item => item.id === "house-financing");
+  assert.ok(financeData.sources.some(source => new URL(source.url).hostname === "sfr.gov.ru" && source.checkedAt === "2026-10-19"));
+  assert.doesNotMatch(finance, /sfr\.gov\.ru|19 октября 2026|Источники/u);
   assert.doesNotMatch(finance, /\d\s*%|\d\s*млн/u);
   for (const id of ["izhs-plots", "snt-plots", "land-boundaries"]) assert.ok(lands.includes(`id="${id}"`));
   assert.ok(lands.includes('href="/listings/shk-l01-snt-plot.html"'));
@@ -175,4 +177,27 @@ test("official project media has provenance and a responsive image with develope
   assert.match(output, /data-official-media/u);
   assert.match(output, /Визуализация жилого комплекса/u);
   assert.ok(read("docs/content-2026-10/developer-requests.md").includes("Письма не отправлены"));
+});
+
+test("agency copy keeps source metadata in data and omits public footnotes and unknown facts", () => {
+  const ctx = createContext(site, { localComplexes: complexes, locations: json("src/data/locations.json"), team: json("src/data/team.json"), listings: json("src/data/listings.json") });
+  const outputs = [
+    ...["novostroyki-shakhty.html", "kvartiry-v-centre-shakhty.html", "zhk-aleksandrovskiy-park.html"].map(route => read(`dist/${route}`)),
+    ...complexes.filter(item => item.page).map(item => renderCommercialPage(ctx, item.page)),
+    renderCommercialPage(ctx, json("src/data/rental-draft.json").page),
+    ...json("src/data/guides.json").filter(item => item.publicationStyle === "agency").map(item => read(`dist/guides/${item.slug}.html`))
+  ];
+  for (const html of outputs) {
+    const main = html.match(/<main[\s\S]*?<\/main>/u)?.[0];
+    assert.ok(main);
+    assert.doesNotMatch(main, /Источники|дата проверки|Проверка источников|19 октября 2026|ЕИСЖС|справочный характер|не является границей|не подтверждает|не объявлено|уточня(?:ет|ют)ся|это не обещание|решение принимает банк/iu);
+    assert.doesNotMatch(main, /55652|55653|49133|49134|57386|57397|60159|66209/u);
+    assert.doesNotMatch(main, /href="https:\/\/(?:xn--80az8a|sfr\.gov|rosreestr|gursh|www\.rostovoblgaz|city\.tittat)/u);
+    assert.doesNotMatch(main, /лучший|гарантируем|выше рынка|самые низкие цены/iu);
+  }
+  const finance = pages.find(item => item.slug === "houses").sections.find(item => item.id === "house-financing");
+  assert.ok(finance.sources.every(source => source.url && source.checkedAt));
+  const center = pages.find(item => item.slug === "kvartiry-v-centre-shakhty");
+  assert.ok(center.sections[0].facts.centerStreetReference.sourceUrl);
+  assert.ok(json("src/data/rental-draft.json").page.sections.some(section => section.sources?.some(source => source.checkedAt)));
 });
