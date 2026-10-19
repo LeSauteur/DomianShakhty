@@ -1,0 +1,151 @@
+{
+  "base": "f1ea26209d699e101fc7eb7682002ff114b3c0c4",
+  "inventory": [
+    {
+      "name": "Центр",
+      "count": 3,
+      "listingIds": [
+        "shk-a05-center-renovated-1k",
+        "shk-a12-center-designer-3k",
+        "shk-h08-two-houses-center"
+      ]
+    },
+    {
+      "name": "Соцгородок",
+      "count": 1,
+      "listingIds": [
+        "shk-a09-sotsgorodok-2k"
+      ]
+    },
+    {
+      "name": "ХБК",
+      "count": 3,
+      "listingIds": [
+        "shk-a03-hbk-1k",
+        "shk-a07-hbk-brick-2k",
+        "shk-a11-hbk-family-3k"
+      ]
+    },
+    {
+      "name": "Олимпийский",
+      "count": 3,
+      "listingIds": [
+        "shk-a01-studio-olymp",
+        "shk-a04-olymp-1k-aogv",
+        "shk-a08-aogv-2k"
+      ]
+    },
+    {
+      "name": "Машиносчётная",
+      "count": 3,
+      "listingIds": [
+        "shk-a02-budget-1k",
+        "shk-a06-budget-2k",
+        "shk-a10-budget-3k"
+      ]
+    },
+    {
+      "name": "Артём",
+      "count": 2,
+      "listingIds": [
+        "shk-h03-artem-brick-house",
+        "shk-l03-artem-izhs"
+      ]
+    },
+    {
+      "name": "Фрунзе",
+      "count": 2,
+      "listingIds": [
+        "shk-h04-garage-house",
+        "shk-h05-large-modern-house"
+      ]
+    },
+    {
+      "name": "Город Будущего",
+      "count": 1,
+      "listingIds": [
+        "shk-l08-goroda-budushchego-plot"
+      ]
+    },
+    {
+      "name": "Южная",
+      "count": 1,
+      "listingIds": [
+        "shk-l02-budget-izhs"
+      ]
+    },
+    {
+      "name": "Даниловка",
+      "count": 1,
+      "listingIds": [
+        "shk-h01-renovation-house"
+      ]
+    },
+    {
+      "name": "Киреевка",
+      "count": 1,
+      "listingIds": [
+        "shk-h02-budget-house"
+      ]
+    },
+    {
+      "name": "Каменоломни",
+      "count": 2,
+      "listingIds": [
+        "dom-chistovaya-kamenolomni",
+        "shk-h07-two-houses-kamenolomni"
+      ]
+    },
+    {
+      "name": "Аюта",
+      "count": 0,
+      "listingIds": []
+    },
+    {
+      "name": "Майский",
+      "count": 0,
+      "listingIds": []
+    }
+  ],
+  "layouts": [
+    {
+      "width": 1440,
+      "overflow": false,
+      "mapWidth": 679.453125
+    },
+    {
+      "width": 1280,
+      "overflow": false,
+      "mapWidth": 674.890625
+    },
+    {
+      "width": 1024,
+      "overflow": false,
+      "mapWidth": 870
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "mapWidth": 736
+    },
+    {
+      "width": 375,
+      "overflow": false,
+      "mapWidth": 343
+    }
+  ],
+  "weight": {
+    "bytes": {
+      "html": 28053,
+      "assets/css/site.css": 16129,
+      "assets/js/site.js": 4595,
+      "officeLogo": 10193
+    },
+    "totalAddedBytes": 58970,
+    "desktopNetBytes": -51616,
+    "mobileNetBytes": 3098
+  },
+  "seoUnchanged": true,
+  "photoRequests": [],
+  "errors": []
+}

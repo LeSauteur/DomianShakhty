@@ -301,10 +301,10 @@ test("homepage uses the editorial composition with catalog offers", () => {
   assert.match(home, /data-home-request-builder/u);
   assert.match(home, /data-lead-compact/u);
   assert.match(home, /mailto:Babushkina_Mariya\.10@mail\.ru/u);
-  assert.match(home, /main-hero-mobile-600\.webp/u);
-  assert.match(home, /main-hero-720\.webp 720w,[^"]+main-hero-1200\.webp 1200w/u);
-  assert.match(home, /main-hero-mobile-600\.webp" media="\(max-width: 600px\)"/u);
-  assert.match(home, /fetchpriority="high"/u);
+  assert.match(home, /data-district-map/u);
+  assert.equal((home.match(/class="district-map__pin /gu) || []).length, 14);
+  assert.match(home, /district-map__office/u);
+  assert.doesNotMatch(home, /main-hero-[^" ]*\.webp/u);
   assert.doesNotMatch(home, /apartment-building-(?:640|960)\.webp/u);
   const officeSection = home.match(/<section class="section owner-section home-office"[\s\S]*?<\/section>/u)?.[0] || "";
   assert.match(officeSection, /class="owner-portrait"/u);
@@ -373,7 +373,7 @@ test("affected pages use responsive dimensions and loading priorities", () => {
     const html = read(file);
     assert.match(html, /<picture[\s\S]*?<source[^>]+srcset="[^"]+ [0-9]+w[^"]*"[^>]*>[^<]*<img[^>]+width="[0-9]+" height="[0-9]+"/u, file);
   }
-  assert.match(read("index.html"), /main-hero-1200\.webp[^>]+[^>]*loading="eager"[^>]+fetchpriority="high"/u);
+  assert.match(read("index.html"), /class="district-map__geometry"/u);
   assert.match(read("construction.html"), /modern-house-960\.webp[^>]+[^>]*loading="eager"[^>]+fetchpriority="high"/u);
   assert.match(read("commercial.html"), /commercial-street-retail-960\.webp[^>]+[^>]*loading="eager"[^>]+fetchpriority="high"/u);
   assert.match(read("garages-parking.html"), /residential-parking-960\.webp[^>]+[^>]*loading="eager"[^>]+fetchpriority="high"/u);
