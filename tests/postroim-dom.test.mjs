@@ -23,12 +23,12 @@ test("completed-object durations match source IDs on cards and detail pages", ()
       const card = html.match(new RegExp(`<article[^>]+data-built-example="${item.id}"[\\s\\S]*?</article>`, "u"))?.[0];
       assert.ok(card, item.id);
       assert.ok(card.includes(`Срок строительства — ${expectedDays[item.id]} дней · под ключ`), item.id);
-      assert.match(card, /Срок построенного объекта, не обещание для нового дома/u);
+      assert.match(card, /Построенный дом из портфолио компании/u);
     }
     const detail = read(`dist/construction/projects/${item.slug}.html`);
     assert.ok(detail.includes(`Срок строительства — ${expectedDays[item.id]} дней · под ключ`));
     assert.ok(detail.includes(`href="/${builderPath}"`));
-    assert.match(detail, /Срок построенного объекта, не обещание для нового дома/u);
+    assert.match(detail, /Построенный дом из портфолио компании/u);
   }
 });
 
@@ -37,7 +37,8 @@ test("builder has six linked examples, office attribution and incoming indexed l
   assert.match(builder, /data-source-cta="builder_postroim_dom"/u);
   assert.ok(builder.includes(`data-origin-page="${builderPath}"`));
   assert.match(builder, /Заявка поступает в офис Домиан на Маяковского, а не напрямую строителям/u);
-  assert.match(builder, /работает на участках в Шахтах[\s\S]*14 октября 2026/u);
+  assert.match(builder, /работает на участках в Шахтах/u);
+  assert.ok(data.builtExamples.every(item => item.serviceAreaConfirmedAt === "2026-10-14"));
   for (const text of ["Строительство домов", "Строительство по своему проекту", "Индивидуальное проектирование", "Что нужно для расчёта", "Участок", "Площадь", "Бюджет"]) assert.ok(builder.includes(text), text);
   for (const item of data.builtExamples) assert.ok(builder.includes(`href="/construction/projects/${item.slug}.html"`));
   for (const path of ["construction.html", "houses.html"]) assert.ok(read(`dist/${path}`).includes(`href="/${builderPath}"`));
@@ -47,14 +48,14 @@ test("builder has six linked examples, office attribution and incoming indexed l
   assert.doesNotMatch(builder, /"@type":"(?:Offer|Product)"|\d[\d\s]*\s₽|лучшие|гарантируем/iu);
 });
 
-test("all seven mortgage blocks use the dated fallback without unconfirmed numbers or external links", () => {
+test("all seven mortgage blocks invite a financing discussion without unsupported numbers", () => {
   for (const path of [builderPath, ...data.builtExamples.map(item => `construction/projects/${item.slug}.html`)]) {
     const section = read(`dist/${path}`).match(/<section[^>]+id="construction-family-mortgage"[\s\S]*?<\/section>/u)?.[0];
     assert.ok(section, path);
     assert.match(section, /Семейная ипотека на строительство дома/u);
-    assert.match(section, /19 октября 2026 года/u);
-    assert.match(section, /ставка и лимит для строительства дома не подтверждены/u);
-    assert.match(section, /Решение о выдаче кредита принимает банк/u);
+    assert.doesNotMatch(section, /Дата проверки|19 октября 2026/u);
+    assert.match(section, /Поможем обсудить строительство дома/u);
+    assert.match(section, /Подготовим вопросы по финансированию/u);
     assert.doesNotMatch(section, /%|\bмлн\b|href="https?:/u);
   }
 });

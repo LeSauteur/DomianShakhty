@@ -1,3 +1,4 @@
+import { publicCopy } from "../src/public-copy.mjs";
 import fs from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
@@ -144,8 +145,8 @@ const runtimeConfig = {
 };
 write("assets/js/site-config.js", `(function(){"use strict";window.DOMIAN_SITE_CONFIG=Object.freeze(${JSON.stringify(runtimeConfig)});}());\n`);
 
-writeJson("assets/data/listings.json", listings.filter((item) => item.verified === true));
-writeJson("assets/data/projects.json", projects.filter((item) => item.verified === true));
+writeJson("assets/data/listings.json", listings.filter((item) => item.verified === true).map(item => ({ ...item, description: publicCopy(item.description), features: (item.features || []).map(publicCopy) })));
+writeJson("assets/data/projects.json", projects.filter((item) => item.verified === true).map(item => ({ ...item, description: publicCopy(item.description) })));
 writeJson("assets/data/builders.json", builders.filter((item) => item.verified === true));
 writeJson("assets/data/locations.json", locations);
 writeJson("assets/data/team.json", team.filter((item) => item.verified === true));

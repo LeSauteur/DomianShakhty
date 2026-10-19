@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-19",
+  "scope": "Все собранные HTML, включая metadata/JSON-LD. Redirect и документы верификации посчитаны отдельно.",
+  "canonicalAndTechnicalPages": 191,
+  "verificationDocuments": 1,
+  "redirects": 41,
+  "existingCardOccurrencesByDataOrigin": {
+    "market_review": 178,
+    "office": 60
+  },
+  "counts": {
+    "marketBadge": 0,
+    "officeBadge": 0,
+    "oldCaveats": 0
+  },
+  "pagesWithMatches": [],
+  "sourceDataBaseline": "c255882",
+  "sourceDataUnchanged": true
+}

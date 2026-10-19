@@ -1,4 +1,5 @@
-const esc = (value = "") => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#39;");
+import { publicCopy } from "./public-copy.mjs";
+const esc = (value = "") => publicCopy(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#39;");
 
 export function contentFaq(ctx, section) {
   return `<section class="section construction-faq"${section.id ? ` id="${esc(section.id)}"` : ""}><div class="container faq-layout"><div><p class="eyebrow">Вопросы покупателей</p><h2>${esc(section.title || "Вопросы и ответы")}</h2>${section.intro ? `<p>${esc(section.intro)}</p>` : ""}</div><div class="faq-list">${section.items.map(([question, answer]) => `<details><summary>${esc(question)}<span aria-hidden="true">+</span></summary><p>${esc(answer)}</p></details>`).join("")}</div></div></section>`;

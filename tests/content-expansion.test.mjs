@@ -53,7 +53,8 @@ test("built examples cannot become available listings or offers", () => {
     assert.ok(fs.existsSync(item.mainImage.src));
     const page = html(`construction/projects/${item.slug}.html`);
     assert.ok(page.includes(item.location));
-    assert.match(page, /не как объект в продаже в Шахтах/u);
+    assert.match(page, /Построим Дом · построенный объект/u);
+    assert.match(page, /Посмотрите решение из портфолио компании/u);
     assert.doesNotMatch(page, /"@type":"Offer"|Горячее предложение/u);
   }
 });
