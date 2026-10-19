@@ -1,0 +1,220 @@
+{
+  "method": "Production origin is fulfilled from unmodified local dist. External scripts and POSTs stubbed. Production hostname exercises environment gates without analytics traffic.",
+  "noConsent": {
+    "ym": "undefined",
+    "tagRequests": 0,
+    "banner": 1
+  },
+  "accepted": {
+    "calls": [
+      [
+        112739000,
+        "init",
+        {
+          "clickmap": false,
+          "trackLinks": false,
+          "accurateTrackBounce": false,
+          "defer": true
+        }
+      ],
+      [
+        112739000,
+        "hit",
+        "https://xn--80aakqtid1b0a2a0b.xn--p1ai/"
+      ]
+    ],
+    "tags": 1
+  },
+  "clickEvents": [
+    {
+      "event": "phone_click",
+      "calls": [
+        [
+          112739000,
+          "reachGoal",
+          "phone_click",
+          {
+            "page_type": "home"
+          }
+        ]
+      ]
+    },
+    {
+      "event": "email_click",
+      "calls": [
+        [
+          112739000,
+          "reachGoal",
+          "phone_click",
+          {
+            "page_type": "home"
+          }
+        ],
+        [
+          112739000,
+          "reachGoal",
+          "email_click",
+          {
+            "page_type": "home"
+          }
+        ]
+      ]
+    },
+    {
+      "event": "telegram_click",
+      "calls": [
+        [
+          112739000,
+          "reachGoal",
+          "phone_click",
+          {
+            "page_type": "home"
+          }
+        ],
+        [
+          112739000,
+          "reachGoal",
+          "email_click",
+          {
+            "page_type": "home"
+          }
+        ],
+        [
+          112739000,
+          "reachGoal",
+          "telegram_click",
+          {
+            "page_type": "home"
+          }
+        ]
+      ]
+    },
+    {
+      "event": "max_click",
+      "calls": [
+        [
+          112739000,
+          "reachGoal",
+          "phone_click",
+          {
+            "page_type": "home"
+          }
+        ],
+        [
+          112739000,
+          "reachGoal",
+          "email_click",
+          {
+            "page_type": "home"
+          }
+        ],
+        [
+          112739000,
+          "reachGoal",
+          "telegram_click",
+          {
+            "page_type": "home"
+          }
+        ],
+        [
+          112739000,
+          "reachGoal",
+          "max_click",
+          {
+            "page_type": "home"
+          }
+        ]
+      ]
+    },
+    {
+      "event": "property_card_open",
+      "calls": [
+        [
+          112739000,
+          "reachGoal",
+          "phone_click",
+          {
+            "page_type": "home"
+          }
+        ],
+        [
+          112739000,
+          "reachGoal",
+          "email_click",
+          {
+            "page_type": "home"
+          }
+        ],
+        [
+          112739000,
+          "reachGoal",
+          "telegram_click",
+          {
+            "page_type": "home"
+          }
+        ],
+        [
+          112739000,
+          "reachGoal",
+          "max_click",
+          {
+            "page_type": "home"
+          }
+        ],
+        [
+          112739000,
+          "reachGoal",
+          "property_card_open",
+          {
+            "page_type": "home"
+          }
+        ]
+      ]
+    },
+    {
+      "event": "guide_to_catalog",
+      "calls": [
+        [
+          112739000,
+          "reachGoal",
+          "guide_to_catalog",
+          {
+            "page_type": "guide"
+          }
+        ],
+        [
+          112739000,
+          "reachGoal",
+          "guide_to_lead",
+          {
+            "page_type": "guide",
+            "source_cta": "Обсудить_проверку_дома"
+          }
+        ]
+      ]
+    }
+  ],
+  "formEvents": [
+    [
+      112739000,
+      "reachGoal",
+      "lead_form_submit_attempt",
+      {
+        "page_type": "service",
+        "source_cta": "sell"
+      }
+    ],
+    [
+      112739000,
+      "reachGoal",
+      "lead_form_success",
+      {
+        "page_type": "service"
+      }
+    ]
+  ],
+  "declined": {
+    "tagRequests": 0,
+    "ym": "undefined"
+  }
+}

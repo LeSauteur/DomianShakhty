@@ -1,0 +1,14 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.setContent: Execution context was destroyed, most likely because of a navigation
+Call log:
+  - setting frame content, waiting until "load"
+
+    at C:\SHAKHTY-audit-2026-10\_tools\audit\redirect-source.mjs:5:317 {
+  log: [ '  - setting frame content, waiting until "load"' ],
+  name: 'Error'
+}
+
+Node.js v24.14.0

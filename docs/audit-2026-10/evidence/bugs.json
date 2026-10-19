@@ -1,0 +1,44 @@
+[
+  {
+    "id": "B-001",
+    "marker": "FACT",
+    "section": "B",
+    "severity": "medium",
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/",
+    "viewport": "390/1440",
+    "steps": "Осмотреть form[data-lead-form][data-lead-compact]",
+    "expected": "Есть honeypot botcheck как в остальных формах",
+    "actual": "Поле botcheck отсутствует; 179 остальных форм его имеют",
+    "evidence": "evidence/forms.json file=index.html; src/templates.mjs:414",
+    "code": "src/templates.mjs:414",
+    "fix": "Добавить скрытый botcheck в короткую форму; сохранить отдельное согласие"
+  },
+  {
+    "id": "B-002",
+    "marker": "FACT",
+    "section": "B",
+    "severity": "medium",
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/mortgage.html",
+    "viewport": "1440",
+    "steps": "price=5000000; downPayment=1000000; rate=0; term=20",
+    "expected": "16667 ₽/мес либо явно обозначенная невозможность расчёта нулевой ставки",
+    "actual": "Введите ставку",
+    "evidence": "mortgage.csv, evidence/mortgage.json case 2",
+    "code": "assets/js/site.js:542",
+    "fix": "Поддержать P/n для ставки 0; отделить пустое поле от числового нуля"
+  },
+  {
+    "id": "B-003",
+    "marker": "FACT",
+    "section": "B",
+    "severity": "medium",
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/mortgage.html",
+    "viewport": "1440",
+    "steps": "price=1e100; downPayment=0; rate=1e100; term=1e100 (ввод/DOM input)",
+    "expected": "Ограничение допустимого диапазона и понятная ошибка",
+    "actual": "не число ₽ / мес.",
+    "evidence": "mortgage.csv, evidence/mortgage.json case 5",
+    "code": "assets/js/site.js:551",
+    "fix": "Ограничить диапазоны и проверять Number.isFinite(payment)"
+  }
+]

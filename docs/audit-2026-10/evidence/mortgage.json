@@ -1,0 +1,68 @@
+[
+  {
+    "values": {
+      "price": 5000000,
+      "downPayment": 1000000,
+      "rate": 6,
+      "term": 20
+    },
+    "expected": 28657,
+    "actual": "28 657 ₽ / мес.",
+    "difference": 0
+  },
+  {
+    "values": {
+      "price": 5000000,
+      "downPayment": 1000000,
+      "rate": 0,
+      "term": 20
+    },
+    "expected": 16667,
+    "actual": "Введите ставку",
+    "difference": -16667
+  },
+  {
+    "values": {
+      "price": 5000000,
+      "downPayment": 6000000,
+      "rate": 6,
+      "term": 20
+    },
+    "expected": "Проверить параметры",
+    "actual": "Проверьте параметры",
+    "difference": null
+  },
+  {
+    "values": {
+      "price": "",
+      "downPayment": "",
+      "rate": "",
+      "term": ""
+    },
+    "expected": "Проверить параметры",
+    "actual": "Введите ставку",
+    "difference": null
+  },
+  {
+    "values": {
+      "price": 1e+100,
+      "downPayment": 0,
+      "rate": 1e+100,
+      "term": 1e+100
+    },
+    "expected": "Отказ с понятным ограничением",
+    "actual": "не число ₽ / мес.",
+    "difference": null
+  },
+  {
+    "values": {
+      "price": 10000000,
+      "downPayment": 2000000,
+      "rate": 18,
+      "term": 30
+    },
+    "expected": 120567,
+    "actual": "120 567 ₽ / мес.",
+    "difference": 0
+  }
+]
