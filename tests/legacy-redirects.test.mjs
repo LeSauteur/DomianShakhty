@@ -41,7 +41,7 @@ test("the reported 85 m² URL resolves to the two-bathroom project, not the othe
 test("clean build emits immediate HTML redirects without adding legacy URLs to sitemap or navigation", () => {
   const sitemap = fs.readFileSync("dist/sitemap.xml", "utf8");
   const catalog = fs.readFileSync("dist/construction.html", "utf8");
-  assert.equal((sitemap.match(/<loc>/gu) || []).length, 183);
+  assert.equal((sitemap.match(/<loc>/gu) || []).length, 184);
   for (const entry of entries) {
     const html = fs.readFileSync(`dist/${entry.from}`, "utf8");
     const target = ctx.absolute(entry.to);

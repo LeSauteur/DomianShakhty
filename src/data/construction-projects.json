@@ -2808,7 +2808,9 @@
             "width": 1184
           }
         ]
-      }
+      },
+      "constructionDays": 180,
+      "pricePackage": "Под ключ"
     },
     {
       "id": "postroim-dom-rostov-stone-100-120",
@@ -2840,7 +2842,9 @@
             "width": 1184
           }
         ]
-      }
+      },
+      "constructionDays": 120,
+      "pricePackage": "Под ключ"
     },
     {
       "id": "postroim-dom-rostov-brick-110",
@@ -2872,7 +2876,9 @@
             "width": 1184
           }
         ]
-      }
+      },
+      "constructionDays": 180,
+      "pricePackage": "Под ключ"
     },
     {
       "id": "postroim-dom-rostov-brick-100-180",
@@ -2904,7 +2910,9 @@
             "width": 1184
           }
         ]
-      }
+      },
+      "constructionDays": 180,
+      "pricePackage": "Под ключ"
     },
     {
       "id": "postroim-dom-rostov-brick-100-90",
@@ -2936,7 +2944,9 @@
             "width": 1200
           }
         ]
-      }
+      },
+      "constructionDays": 90,
+      "pricePackage": "Под ключ"
     },
     {
       "id": "postroim-dom-rostov-stone-120",
@@ -2968,7 +2978,9 @@
             "width": 1200
           }
         ]
-      }
+      },
+      "constructionDays": 200,
+      "pricePackage": "Под ключ"
     }
   ]
 }

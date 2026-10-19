@@ -1,4 +1,4 @@
-import { editorialSection, officeLinksSection, pricingSection, builtExamplesSection, builtExampleBody } from "./editorial.mjs";
+import { editorialSection, officeLinksSection, pricingSection, builtExamplesSection, builtExampleBody, constructionBuilderBody } from "./editorial.mjs";
 import {
   NEARBY_AUTO_THRESHOLD,
   SEARCH_CATEGORIES,
@@ -655,7 +655,7 @@ function leadForm(ctx, form = {}) {
   const defaultPropertyType = form.propertyType || ({ apartment: "apartment", "apartment-secondary": "apartment", "apartment-newbuild": "apartment", house: "house", "house-new": "house", "house-secondary": "house", "house-builder": "house", land: "land", commercial: "commercial", "garage-parking": "garage-parking" })[form.type] || "";
   return `<section class="lead-section" id="lead-form-section"><div class="container lead-layout">
     <div><p class="eyebrow">${esc(form.kicker || "Короткий первый шаг")}</p><h2>${esc(form.title || "Обсудить задачу")}</h2><p>${esc(form.text || "Расскажите, что нужно решить.")}</p><div class="direct-contact"><span>Можно также связаться напрямую.</span><a href="${esc(directPhoneHref)}" data-analytics="phone_click">${esc(directPhone)}</a><a href="mailto:${esc(directEmail)}" data-analytics="email_click">${esc(directEmail)}</a></div></div>
-    <form class="lead-form" data-lead-form data-source-cta="${esc(form.type || "contact")}" data-origin-page="${esc(form.originPage || "")}"${form.territory ? ` data-default-territory="${esc(form.territory)}"` : ""} novalidate>
+    <form class="lead-form" data-lead-form data-source-cta="${esc(form.sourceCta || form.type || "contact")}" data-origin-page="${esc(form.originPage || "")}"${form.territory ? ` data-default-territory="${esc(form.territory)}"` : ""} novalidate>
       <div class="honeypot" aria-hidden="true"><label>Не заполняйте<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label></div>
       <input type="hidden" name="service" value="${esc(form.type || "service")}">
       <label>Имя<input name="name" type="text" autocomplete="name" minlength="2" required placeholder="Как к вам обращаться"></label>
@@ -990,10 +990,30 @@ export function renderConstruction(ctx) {
   return layout(ctx, page, body, { active: "construction", breadcrumbs: [{ label: "Главная", href: "" }, { label: "Дома", href: "houses.html" }, { label: "Строительство под ключ", href: page.path }] });
 }
 
+export function renderConstructionBuilder(ctx) {
+  const page = {
+    path: "construction/builders/postroim-dom.html",
+    pageType: "construction-builder",
+    title: "Построим Дом — строительство и построенные дома | Домиан Шахты",
+    description: "Компания «Построим Дом»: строительство домов в Ростовской области и на участках в Шахтах. Шесть построенных домов, направления работы и заявка в офис Домиан на Маяковского.",
+    h1: "Построим Дом: строительство домов в Ростовской области"
+  };
+  const body = constructionBuilderBody(ctx, catalogPicture) + leadForm(ctx, {
+    type: "house-builder",
+    sourceCta: "builder_postroim_dom",
+    goal: "consultation",
+    propertyType: "house",
+    originPage: page.path,
+    title: "Обсудить участок, площадь и бюджет",
+    text: "Заявка поступает в офис Домиан на Маяковского, а не напрямую строителям. Офис поможет подготовить исходные данные для обсуждения с компанией «Построим Дом»."
+  });
+  return layout(ctx, page, body, { active: "construction", breadcrumbs: [{ label: "Главная", href: "" }, { label: "Строительство домов", href: "construction.html" }, { label: "Построим Дом", href: page.path }] });
+}
+
 export function renderConstructionProject(ctx, item) {
   if (item.recordType === "built-object") {
     const page = { path: constructionProjectPath(item), pageType: "construction-project", title: `${item.title} — Построим Дом | Домиан Шахты`, description: `${item.title}: пример построенного объекта компании «Построим Дом». Фотография и характеристики; обсудите строительство на своём участке в Шахтах.`, h1: item.title };
-    const body = builtExampleBody(ctx, item, catalogPicture) + leadForm(ctx, { type: "house-builder", goal: "consultation", title: "Обсудить строительство на вашем участке", text: "Назовите адрес участка, желаемую площадь и комплектацию. Рассчитаем следующий шаг вместе со строительной компанией." });
+    const body = builtExampleBody(ctx, item, catalogPicture) + leadForm(ctx, { type: "house-builder", goal: "consultation", originPage: page.path, title: "Обсудить строительство на вашем участке", text: "Назовите адрес участка, желаемую площадь и бюджет. Заявка поступает в офис Домиан на Маяковского, а не напрямую строителям." });
     return layout(ctx, page, body, { active: "construction", breadcrumbs: [{ label: "Главная", href: "" }, { label: "Строительство", href: "construction.html" }, { label: item.title, href: page.path }] });
   }
   const price = constructionPrice(item);
