@@ -1,0 +1,18 @@
+[
+  {
+    "currentSrc": "http://127.0.0.1:4187/assets/images/zhk/aleksandrovskiy-park/official-render-650.webp",
+    "naturalWidth": 358,
+    "overflow": false,
+    "errors": [],
+    "renderedWidth": 358,
+    "viewportWidth": 390
+  },
+  {
+    "currentSrc": "http://127.0.0.1:4187/assets/images/zhk/aleksandrovskiy-park/official-render-1024.webp",
+    "naturalWidth": 1007,
+    "overflow": false,
+    "errors": [],
+    "renderedWidth": 1240,
+    "viewportWidth": 1440
+  }
+]

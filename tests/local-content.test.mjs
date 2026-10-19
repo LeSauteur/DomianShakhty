@@ -158,3 +158,21 @@ test("rental draft is reviewable but absent from output sitemap and navigation u
   assert.ok(enabled.includes(`href="/${draft.page.path}"`));
   assert.equal((enabled.match(/<h1>/gu) || []).length, 1);
 });
+
+test("official project media has provenance and a responsive image with developer credit", () => {
+  const page = pages.find(item => item.slug === "zhk-aleksandrovskiy-park");
+  const media = page.sections.find(item => item.kind === "official-media");
+  assert.equal(media.source.method, "official_website");
+  assert.equal(media.source.checkedAt, "2026-10-19");
+  assert.equal(new URL(media.source.url).hostname, "alexandrovskii-park.ru");
+  const registry = read("docs/content-2026-10/image-sources.csv");
+  for (const variant of media.image.srcset) {
+    assert.ok(fs.existsSync(variant.src));
+    assert.ok(registry.includes(variant.src));
+  }
+  const output = read(`dist/${page.path}`);
+  assert.ok(output.includes(media.caption));
+  assert.match(output, /data-official-media/u);
+  assert.match(output, /Визуализация жилого комплекса/u);
+  assert.ok(read("docs/content-2026-10/developer-requests.md").includes("Письма не отправлены"));
+});

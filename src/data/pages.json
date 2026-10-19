@@ -2372,6 +2372,38 @@
         "intro": ""
       },
       {
+        "kind": "official-media",
+        "title": "Архитектура Александровского парка",
+        "caption": "Изображение: ООО СЗ ЖК АЛЕКСАНДРОВСКИЙ ПАРК",
+        "description": "Визуализация жилого комплекса",
+        "image": {
+          "src": "assets/images/zhk/aleksandrovskiy-park/official-render-1024.webp",
+          "width": 1024,
+          "height": 683,
+          "alt": "Александровский парк: визуализация комплекса с высоты",
+          "srcset": [
+            {
+              "src": "assets/images/zhk/aleksandrovskiy-park/official-render-650.webp",
+              "width": 650
+            },
+            {
+              "src": "assets/images/zhk/aleksandrovskiy-park/official-render-1024.webp",
+              "width": 1024
+            },
+            {
+              "src": "assets/images/zhk/aleksandrovskiy-park/official-render-1536.webp",
+              "width": 1536
+            }
+          ]
+        },
+        "source": {
+          "url": "https://alexandrovskii-park.ru/архитектура/",
+          "checkedAt": "2026-10-19",
+          "owner": "ООО СЗ ЖК АЛЕКСАНДРОВСКИЙ ПАРК",
+          "method": "official_website"
+        }
+      },
+      {
         "kind": "editorial",
         "title": "Как выбрать квартиру в «Александровском парке»",
         "items": [

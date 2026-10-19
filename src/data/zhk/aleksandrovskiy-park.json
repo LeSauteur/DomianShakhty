@@ -31,9 +31,9 @@
         },
         "address": {
           "value": "Шахты, ул. Шевченко, 135-А",
-          "sourceUrl": "https://alexandrovskii-park.ru/",
-          "checkedAt": "2026-10-14",
-          "method": "existing_official_confirmation"
+          "sourceUrl": "https://alexandrovskii-park.ru/контакты/",
+          "checkedAt": "2026-10-19",
+          "method": "official_page"
         },
         "status": {
           "value": null,
@@ -71,9 +71,9 @@
         },
         "address": {
           "value": "Шахты, ул. Шевченко, 135-А",
-          "sourceUrl": "https://alexandrovskii-park.ru/",
-          "checkedAt": "2026-10-14",
-          "method": "existing_official_confirmation"
+          "sourceUrl": "https://alexandrovskii-park.ru/контакты/",
+          "checkedAt": "2026-10-19",
+          "method": "official_page"
         },
         "status": {
           "value": null,
@@ -125,9 +125,9 @@
     },
     "address": {
       "value": "Шахты, ул. Шевченко, 135-А",
-      "sourceUrl": "https://alexandrovskii-park.ru/",
-      "checkedAt": "2026-10-14",
-      "method": "existing_official_confirmation"
+      "sourceUrl": "https://alexandrovskii-park.ru/контакты/",
+      "checkedAt": "2026-10-19",
+      "method": "official_page"
     },
     "developer": {
       "value": "ООО СЗ ЖК АЛЕКСАНДРОВСКИЙ ПАРК",
@@ -139,18 +139,24 @@
       "value": null,
       "sourceUrl": "https://xn--80az8a.xn--d1aqf.xn--p1ai/новостройки/шахты/",
       "checkedAt": "2026-10-19",
-      "reason": "Класс требует согласования: рекламный снимок и ЕИСЖС различаются; сайт ЖК сегодня не прочитан."
+      "reason": "В переданном рекламном снимке бизнес, в ЕИСЖС комфорт; прочитанные страницы сайта застройщика не называют класс. Нужна актуальная декларация."
     }
   },
   "sourceReview": {
     "checkedAt": "2026-10-19",
     "directAccess": "403",
-    "developerWebsite": "timeout",
+    "developerWebsite": "HTTP 200: контакты и архитектура перечитаны 19.10.2026; исходный тайм-аут преодолён через обычный HTTP-клиент",
     "conflicts": [
       "55652: карточка содержит Сдан и разрешение №61-59-142-2026 от 14.09.2026; общий каталог — Строится, IV кв. 2026.",
       "55653: страница проверки — строительство; карточка/сведения застройщика могут показывать ввод. Не обобщать один корпус на другой.",
       "Класс: в предоставленном снимке бизнес, в ЕИСЖС комфорт; нужен актуальный официальный документ."
     ],
-    "url": "https://xn--80az8a.xn--d1aqf.xn--p1ai/новостройки/шахты/"
+    "url": "https://xn--80az8a.xn--d1aqf.xn--p1ai/новостройки/шахты/",
+    "developerContacts": {
+      "url": "https://alexandrovskii-park.ru/контакты/",
+      "checkedAt": "2026-10-19",
+      "email": "alexandrovskii-park@mail.ru",
+      "phone": "8 800 300-80-44"
+    }
   }
 }

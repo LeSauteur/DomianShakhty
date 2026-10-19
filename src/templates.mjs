@@ -634,6 +634,7 @@ function sectionHeading(section) {
 }
 
 function renderSection(ctx, section) {
+  if (section.kind === "official-media") return `<section class="section catalog-gallery" data-official-media><div class="container"><h2>${esc(section.title)}</h2><div class="catalog-gallery__grid"><figure class="is-wide">${catalogPicture(ctx, section.image, { sizes: "(max-width: 820px) calc(100vw - 32px), 70vw" })}<figcaption>${esc(section.description)}. ${esc(section.caption)}</figcaption></figure></div></div></section>`;
   if (section.kind === "listing-selection") return listingSelection(ctx, section, listingCard);
   if (section.kind === "faq") return contentFaq(ctx, section);
   if (section.kind === "local-newbuilds") return localComplexesSection(ctx, section);

@@ -51,3 +51,20 @@ for (const width of [390, 1440]) {
     expect(errors).toEqual([]);
   });
 }
+
+for (const width of [390, 1440]) {
+  test(`official project render loads its responsive source at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 950 });
+    const errors = [];
+    page.on("pageerror", error => errors.push(error.message));
+    page.on("console", message => { if (message.type() === "error") errors.push(message.text()); });
+    await page.goto("zhk-aleksandrovskiy-park.html");
+    const image = page.locator("[data-official-media] img");
+    await image.scrollIntoViewIfNeeded();
+    await expect.poll(() => image.evaluate(node => node.complete && node.naturalWidth > 0)).toBe(true);
+    expect(await image.evaluate(node => node.currentSrc)).toMatch(/official-render-(650|1024|1536)\.webp$/);
+    await expect(page.locator("[data-official-media] figcaption")).toContainText("Изображение: ООО СЗ ЖК АЛЕКСАНДРОВСКИЙ ПАРК");
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+    expect(errors).toEqual([]);
+  });
+}
