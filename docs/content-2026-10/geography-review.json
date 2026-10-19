@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-10-19",
+  "canonicalPages": 189,
+  "titleH1Failures": [],
+  "cityOnlySubstitutionGroups": 0,
+  "protectedFinancialData": [
+    {
+      "file": "src/data/listings.json",
+      "unchanged": true
+    },
+    {
+      "file": "src/data/construction-projects.json",
+      "unchanged": true
+    }
+  ],
+  "method": "Все sitemap URL; роль регионального каталога, комплексов других городов и завершённого портфолио учитывается отдельно. Абзацы main от 25 слов: различие только в перечисленных формах города, без header/footer и основного lead-form. Одинаковые общие служебные строки и разные названия проектов не объявляются доказанной каннибализацией."
+}
