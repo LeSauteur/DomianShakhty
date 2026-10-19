@@ -1,4 +1,4 @@
-import { contentFaq, localComplexesSection } from "./local-content.mjs";
+import { contentFaq, localComplexesSection, listingSelection } from "./local-content.mjs";
 import { editorialSection, officeLinksSection, pricingSection, builtExamplesSection, builtExampleBody, constructionBuilderBody } from "./editorial.mjs";
 import {
   NEARBY_AUTO_THRESHOLD,
@@ -633,8 +633,9 @@ function sectionHeading(section) {
 }
 
 function renderSection(ctx, section) {
+  if (section.kind === "listing-selection") return listingSelection(ctx, section, listingCard);
   if (section.kind === "faq") return contentFaq(ctx, section);
-  if (section.kind === "local-newbuilds") return localComplexesSection(ctx);
+  if (section.kind === "local-newbuilds") return localComplexesSection(ctx, section);
   if (section.kind === "editorial") return editorialSection(ctx, section);
   if (section.kind === "cards") return cardsSection(ctx, section);
   if (section.kind === "criteria") return criteriaSection(section);

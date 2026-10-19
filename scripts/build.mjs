@@ -100,6 +100,7 @@ write("manifest.webmanifest", `${JSON.stringify({ name: site.displayName, short_
 
 publish("index.html", renderHome(ctx, guides));
 for (const page of pages.filter((item) => item.path !== "construction.html" && (item.slug !== "zhk-aleksandrovskiy-park" || localZhk.publish === true))) publish(page.path, renderCommercialPage(ctx, page));
+for (const complex of localComplexes.filter(item => item.publish === true && item.officeSells === true && item.page)) publish(complex.page.path, renderCommercialPage(ctx, complex.page));
 publish("newbuilds.html", renderNewbuilds(ctx));
 for (const item of newbuilds.items) publish(`newbuilds/${item.slug}.html`, renderNewbuild(ctx, item));
 publish("construction.html", renderConstruction(ctx));
