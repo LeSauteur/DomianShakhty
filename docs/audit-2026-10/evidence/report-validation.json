@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-19T07:49:13.450Z",
+  "time": "2026-10-19T07:53:16.399Z",
   "checks": [
     {
       "name": "CSV column contract a11y-production.csv",
@@ -126,7 +126,7 @@
       "ok": true,
       "detail": {
         "rows": 24,
-        "columns": 8
+        "columns": 7
       }
     },
     {
@@ -417,8 +417,8 @@
       "name": "Only allowed paths changed",
       "ok": true,
       "detail": {
-        "tracked": 1603,
-        "untracked": 13,
+        "tracked": 1618,
+        "untracked": 1,
         "unexpected": []
       }
     },
