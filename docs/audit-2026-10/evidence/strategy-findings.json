@@ -1,0 +1,25 @@
+[
+  {
+    "id": "H-001",
+    "section": "H",
+    "marker": "INF",
+    "severity": "medium",
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/houses.html",
+    "issue": "Пересекающиеся хабы домов и geo требуют явного распределения намерений",
+    "evidence": "landing-map.csv; cannibalization.md; duplicates.csv",
+    "fix": "Развести покупку готового дома, вторичку, строительство и территорию; добавить внутренние ссылки, сохранить индексацию",
+    "code": "src/data/pages.json / src/data/location-content.json"
+  },
+  {
+    "id": "H-002",
+    "section": "H",
+    "marker": "HYP",
+    "severity": "medium",
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/",
+    "issue": "Для приоритизации отсутствуют полный Wordstat и позиции 07.10",
+    "evidence": "Приложенный запрос содержит только 79+13, ≈58 и ≈30; docs/owner/content-sources.md:23",
+    "fix": "Получить исходную выгрузку и query→URL из кабинетов; обновить карту без выдуманных частот",
+    "owner": true,
+    "code": "docs/owner / аналитика владельца"
+  }
+]
