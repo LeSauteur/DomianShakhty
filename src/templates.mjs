@@ -1,4 +1,5 @@
 import { publicCopy } from "./public-copy.mjs";
+import { renderDistrictMap } from "./district-map.mjs";
 import { contentFaq, localComplexesSection, listingSelection } from "./local-content.mjs";
 import { editorialSection, officeLinksSection, pricingSection, builtExamplesSection, builtExampleBody, constructionBuilderBody } from "./editorial.mjs";
 import {
@@ -310,7 +311,7 @@ function hero(ctx, page) {
     apartments: "premium-living",
     lands: "house-yard"
   })[page.slug || page.pageType];
-  const visual = page.person?.image
+  const visual = page.pageType === "home" ? renderDistrictMap(ctx) : page.person?.image
     ? `<div class="hero-agent" data-reveal>
         ${personPicture(ctx, page.person, "(max-width: 820px) calc(100vw - 32px), 40vw", { priority: true })}
         <div class="hero-agent__caption"><strong>${esc(page.person.shortName || page.person.name)}</strong><span>${esc(page.person.role)}</span></div>
@@ -726,7 +727,6 @@ function documentHead(ctx, page, breadcrumbsItems) {
   const canonical = ctx.absolute(page.path || "");
   const ogImage = ctx.absolute("assets/images/og.png");
   const robots = ["404.html", "thanks.html"].includes(page.path) ? "noindex,follow" : "index,follow";
-  const heroPreload = page.pageType === "home" ? '<link rel="preload" as="image" href="' + ctx.href("assets/images/editorial/main-hero-1200.webp") + '" imagesrcset="' + ctx.href("assets/images/editorial/main-hero-720.webp") + ' 720w, ' + ctx.href("assets/images/editorial/main-hero-1200.webp") + ' 1200w" imagesizes="(max-width: 820px) calc(100vw - 32px), 44vw" media="(min-width: 601px)"><link rel="preload" as="image" href="' + ctx.href("assets/images/editorial/main-hero-mobile-600.webp") + '" media="(max-width: 600px)">' : "";
   return `<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="${robots}">
@@ -754,7 +754,6 @@ function documentHead(ctx, page, breadcrumbsItems) {
   <meta name="twitter:title" content="${esc(page.title)}">
   <meta name="twitter:description" content="${esc(page.description)}">
   ${ogImage ? `<meta name="twitter:image" content="${ogImage}">` : ""}
-   ${heroPreload}
    <link rel="stylesheet" href="${ctx.href(`assets/css/site.css?v=${ctx.site.assetVersion}`)}">
   <script src="${ctx.href(`assets/js/site-config.js?v=${ctx.site.assetVersion}`)}" defer></script>
   <script src="${ctx.href(`assets/js/site.js?v=${ctx.site.assetVersion}`)}" defer></script>
@@ -780,7 +779,7 @@ export function renderCommercialPage(ctx, page) {
 }
 
 export function renderHome(ctx, guides) {
-  const page = { path: "", pageType: "home", title: "Агентство недвижимости Домиан в Шахтах — ул. Маяковского 18А", description: "Покупка, продажа и предварительная оценка квартир, домов, новостроек, участков, коммерческой недвижимости, гаражей и парковочных мест в Шахтах и рядом.", eyebrow: "Домиан · Шахты на Маяковского", h1: "Агентство недвижимости в Шахтах — офис Домиан на Маяковского", lead: "Квартиры, дома, участки и сопровождение сделки в Шахтах и рядом. Начните с локальных объектов или расскажите, что нужно подобрать.", primaryCta: { label: "Смотреть объекты в Шахтах", href: "#hot-offers" }, secondaryCta: { label: "Подобрать недвижимость", href: "#request" }, tertiaryCta: { label: "Продать недвижимость", href: "sell.html" }, geoLinks: true, heroImage: "main-hero", heroImageAlt: "Современная жилая недвижимость", heroMediaLabel: "Современная городская жизнь" };
+  const page = { path: "", pageType: "home", title: "Агентство недвижимости Домиан в Шахтах — ул. Маяковского 18А", description: "Покупка, продажа и предварительная оценка квартир, домов, новостроек, участков, коммерческой недвижимости, гаражей и парковочных мест в Шахтах и рядом.", eyebrow: "Домиан · Шахты на Маяковского", h1: "Агентство недвижимости в Шахтах — офис Домиан на Маяковского", lead: "Квартиры, дома, участки и сопровождение сделки в Шахтах и рядом. Выберите район на карте — покажем, что продаётся именно там.", primaryCta: { label: "Смотреть объекты в Шахтах", href: "#hot-offers" }, secondaryCta: { label: "Подобрать недвижимость", href: "#request" }, tertiaryCta: { label: "Продать недвижимость", href: "sell.html" }, geoLinks: true, heroImage: "main-hero", heroImageAlt: "Современная жилая недвижимость", heroMediaLabel: "Современная городская жизнь" };
   const body = `${hero(ctx, page)}${officeLinksSection(ctx, { home: true })}${homePropertySection(ctx)}${homeHotOffersSection(ctx)}${homeRequestSection(ctx)}${mortgageSection(ctx, { home: true })}${homeSellerSection(ctx)}${homeOfficeSection(ctx)}${teamLifeSection(ctx, { limit: 3, teaser: true })}${homeLocationsSection(ctx)}${homeFeaturedNewbuilds(ctx)}${homeFeaturedConstruction(ctx)}${editorialSection(ctx, { homeSection: "related-services", title: "Строительство и квартиры в новостройке Шахт", items: [{ title: "Построим Дом", paragraphs: ["Шесть построенных домов компании: фотографии, площадь и особенности. Обсудим строительство на вашем участке в Шахтах."], links: [{ label: "Посмотреть построенные дома", href: "construction.html#built-examples" }] }, { title: "Александровский парк", paragraphs: ["Наш офис продаёт квартиры в ЖК на Шевченко, 135-А. Уточним наличие, планировку и условия покупки."], links: [{ label: "Квартиры в ЖК", href: "zhk-aleksandrovskiy-park.html" }, { label: "Новостройки Шахт: сравнить комплексы", href: "novostroyki-shakhty.html" }] }, { title: "Кадастровые работы", paragraphs: ["Обсудите границы участка и документы на дом с Ольгой Черненко."], links: [{ label: "Межевание и кадастр", href: "kadastrovye-raboty.html" }] }] })}${homeExpertiseSection(ctx, guides)}${homeLeadForm(ctx)}`;
   return layout(ctx, page, body, { active: "" });
 }

@@ -897,6 +897,77 @@
     });
   }
 
+  function initDistrictMap() {
+    queryAll("[data-district-map]").forEach(function (root) {
+      var data = JSON.parse(root.querySelector("[data-district-data]").textContent);
+      root.dataset.enhanced = "true";
+      // Links remain useful without JavaScript; enhance them to native buttons.
+      queryAll(".district-map__chip", root).forEach(function (link) {
+        var button = document.createElement("button");
+        button.type = "button";
+        button.className = link.className;
+        button.dataset.district = link.dataset.district;
+        button.textContent = link.textContent;
+        link.replaceWith(button);
+      });
+      var activeKey = "center";
+      function show(key) {
+        var district = data[key];
+        if (!district) return;
+        activeKey = key;
+        queryAll("[data-district]", root).forEach(function (button) {
+          button.setAttribute("aria-pressed", String(button.dataset.district === key));
+        });
+        root.querySelector("[data-district-kicker]").textContent = district.kicker;
+        root.querySelector("[data-district-name]").textContent = district.name;
+        root.querySelector("[data-district-count]").textContent = district.countLabel;
+        root.querySelector("[data-district-text]").textContent = district.text;
+        var links = root.querySelector("[data-district-links]");
+        links.replaceChildren();
+        district.links.forEach(function (link) {
+          var anchor = document.createElement("a");
+          anchor.href = link.href;
+          anchor.textContent = link.label + " →";
+          links.appendChild(anchor);
+        });
+        root.querySelector("[data-district-cta]").textContent = district.cta;
+      }
+      root.addEventListener("click", function (event) {
+        var button = event.target.closest("[data-district]");
+        if (button) {
+          // Dense points share 44px touch areas. A pointer tap selects the
+          // nearest actual point; label clicks and keyboard activation keep
+          // their explicit district, regardless of overlapping hit boxes.
+          if (event.detail > 0 && button.matches(".district-map__pin") && !event.target.closest(".district-map__pin span")) {
+            var nearestDistance = Infinity;
+            queryAll(".district-map__pin", root).forEach(function (pin) {
+              var box = pin.getBoundingClientRect();
+              var distance = Math.hypot(event.clientX - box.x - box.width / 2, event.clientY - box.y - box.height / 2);
+              if (distance < nearestDistance) { nearestDistance = distance; button = pin; }
+            });
+          }
+          show(button.dataset.district);
+        }
+        if (event.target.closest("[data-district-cta]")) {
+          var districtName = data[activeKey].name;
+          var context = { territory: districtName, message: "Подберите недвижимость в районе «" + districtName + "».", source_cta: "hero_district_map", captured_at: Date.now() };
+          writeLeadContext(context);
+          applyLeadContext(context);
+          var requestForm = document.querySelector("[data-home-request-builder]");
+          if (requestForm && requestForm.elements.requestLocation) {
+            var select = requestForm.elements.requestLocation;
+            if (!Array.from(select.options).some(function (option) { return option.value === districtName; })) {
+              select.add(new Option(districtName, districtName));
+            }
+            select.value = districtName;
+          }
+        }
+      });
+      show(activeKey);
+    });
+  }
+
+  initDistrictMap();
   initReviewWidgets();
   persistAttribution();
   initMetrika();

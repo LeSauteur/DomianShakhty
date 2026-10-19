@@ -622,16 +622,12 @@ test("mobile local offers remain readable in one column", async ({ page }) => {
   expect(layout.scrollWidth).toBeLessThanOrEqual(layout.clientWidth + 1);
 });
 
-test("mobile hero keeps its caption off the photograph", async ({ page }) => {
+test("mobile hero shows the district map instead of the photograph", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("");
-  await expect(page.locator(".hero-media__caption")).toBeHidden();
-  const media = await page.locator(".hero-media").evaluate((node) => ({
-    paddingBottom: getComputedStyle(node).paddingBottom,
-    overflow: getComputedStyle(node).overflow
-  }));
-  expect(media.paddingBottom).toBe("8px");
-  expect(media.overflow).toBe("visible");
+  await expect(page.locator("[data-district-map]")).toBeVisible();
+  await expect(page.locator(".page-hero .hero-media")).toHaveCount(0);
+  await expect(page.locator(".district-map__chips")).toBeVisible();
 });
 
 test("new-build card uses the generated modern house instead of the panel facade", async ({ page }) => {
