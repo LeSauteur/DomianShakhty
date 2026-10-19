@@ -583,7 +583,7 @@
     article.dataset.format = item.format || "";
     article.innerHTML = '<span class="card-index">' + String(item.id || "").replace(/[<>]/gu, "") + '</span><h3></h3><p></p><a class="text-link" href="#lead-form-section">Уточнить вариант ↗</a>';
     article.querySelector("h3").textContent = item.title || "Подтверждённый проект";
-    article.querySelector("p").textContent = item.description || "Характеристики уточняются.";
+    article.querySelector("p").textContent = item.description || "Характеристики — уточните у агента.";
     article.querySelector("a").addEventListener("click", function () {
       track("project_open", { object_id: item.id || "", location: item.location || "" });
     });

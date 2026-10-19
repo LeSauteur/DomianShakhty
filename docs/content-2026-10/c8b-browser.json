@@ -1,0 +1,110 @@
+[
+  {
+    "path": "novostroyki-shakhty.html",
+    "viewportWidth": 390,
+    "status": 200,
+    "h1": 1,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "path": "kvartiry-v-centre-shakhty.html",
+    "viewportWidth": 390,
+    "status": 200,
+    "h1": 1,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "path": "zhk-aleksandrovskiy-park.html",
+    "viewportWidth": 390,
+    "status": 200,
+    "h1": 1,
+    "overflow": false,
+    "errors": [],
+    "media": {
+      "currentSrc": "http://127.0.0.1:4187/assets/images/zhk/aleksandrovskiy-park/official-render-650.webp",
+      "naturalWidth": 358,
+      "renderedWidth": 358,
+      "renderedHeight": 220
+    }
+  },
+  {
+    "path": "guides/podrabotannye-territorii-shahty.html",
+    "viewportWidth": 390,
+    "status": 200,
+    "h1": 1,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "path": "guides/mezhevanie-pered-pokupkoy.html",
+    "viewportWidth": 390,
+    "status": 200,
+    "h1": 1,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "path": "guides/proverka-doma-s-gazom.html",
+    "viewportWidth": 390,
+    "status": 200,
+    "h1": 1,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "path": "novostroyki-shakhty.html",
+    "viewportWidth": 1440,
+    "status": 200,
+    "h1": 1,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "path": "kvartiry-v-centre-shakhty.html",
+    "viewportWidth": 1440,
+    "status": 200,
+    "h1": 1,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "path": "zhk-aleksandrovskiy-park.html",
+    "viewportWidth": 1440,
+    "status": 200,
+    "h1": 1,
+    "overflow": false,
+    "errors": [],
+    "media": {
+      "currentSrc": "http://127.0.0.1:4187/assets/images/zhk/aleksandrovskiy-park/official-render-1536.webp",
+      "naturalWidth": 1240,
+      "renderedWidth": 1240,
+      "renderedHeight": 440
+    }
+  },
+  {
+    "path": "guides/podrabotannye-territorii-shahty.html",
+    "viewportWidth": 1440,
+    "status": 200,
+    "h1": 1,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "path": "guides/mezhevanie-pered-pokupkoy.html",
+    "viewportWidth": 1440,
+    "status": 200,
+    "h1": 1,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "path": "guides/proverka-doma-s-gazom.html",
+    "viewportWidth": 1440,
+    "status": 200,
+    "h1": 1,
+    "overflow": false,
+    "errors": []
+  }
+]

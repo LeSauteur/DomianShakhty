@@ -295,7 +295,7 @@ test("homepage uses the editorial composition with catalog offers", () => {
   assert.doesNotMatch(home, /class="new-homes-feature"/u);
   assert.match(home, /id="hot-offers"/u);
   assert.equal((home.match(/class="listing-card"/gu) || []).length, 6);
-  assert.match(home, /Объект (?:офиса|из обзора рынка)/u);
+  assert.doesNotMatch(home, /Объект (?:офиса|из обзора рынка)/u);
   assert.doesNotMatch(home, /Подтверждённый объект/u);
   assert.match(home, /data-mortgage-calculator data-page-type="home"/u);
   assert.match(home, /data-home-request-builder/u);
@@ -415,10 +415,7 @@ test("unconfirmed authorship and construction-company claims are absent", () => 
   for (const guide of fs.readdirSync(path.join(root, "guides")).filter((name) => name.endsWith(".html"))) {
     const html = read(`guides/${guide}`);
     assert.doesNotMatch(html, /Редактор:\s*Мария Воронина/u);
-    if (guide !== "index.html") {
-      assert.match(html, /Подготовлено на основе открытых источников/u);
-      assert.match(html, /Информационный материал · условия рынка могут меняться/u);
-    }
+    assert.doesNotMatch(html, /Подготовлено на основе открытых источников|Информационный материал · условия рынка могут меняться/u);
   }
 });
 

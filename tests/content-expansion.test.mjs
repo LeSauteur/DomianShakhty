@@ -22,6 +22,9 @@ test("existing inventory, protected people and established URLs remain unchanged
   for (const [key, value] of Object.entries(preservation.protectedConfig)) assert.deepEqual(site[key], value, key);
   for (const oldPath of preservation.pagePaths) assert.ok(pages.some(item => item.path === oldPath), oldPath);
   assert.equal(hash(construction.items), preservation.constructionItemsHash);
+  const legacyGuides = data("src/data/guides.json").filter(item => preservation.guideSlugs.includes(item.slug));
+  assert.equal(hash(legacyGuides), preservation.guidesHash);
+  for (const slug of preservation.guideSlugs) assert.ok(fs.existsSync(`dist/guides/${slug}.html`));
 });
 
 test("new landing pages are reachable, factual and included in the sitemap", () => {
@@ -33,9 +36,9 @@ test("new landing pages are reachable, factual and included in the sitemap", () 
   }
   assert.match(html("kadastrovye-raboty.html"), /Межевой план/u);
   assert.match(html("team/olga-chernenko.html"), /href="\/kadastrovye-raboty.html"/u);
-  assert.match(html("zhk-aleksandrovskiy-park.html"), /агентство недвижимости, а не застройщик/u);
-  assert.match(html("zhk-aleksandrovskiy-park.html"), /55652/u);
-  assert.match(html("zhk-aleksandrovskiy-park.html"), /55653/u);
+  assert.match(html("zhk-aleksandrovskiy-park.html"), /Наш офис продаёт квартиры/u);
+  assert.ok(data("src/data/zhk/aleksandrovskiy-park.json").buildings.some(item => item.eisId === 55652));
+  assert.ok(data("src/data/zhk/aleksandrovskiy-park.json").buildings.some(item => item.eisId === 55653));
   assert.doesNotMatch(html("zhk-aleksandrovskiy-park.html"), /IV кв\.|31\.12\.2026|дома сданы|"@type":"Offer"/u);
   assert.equal(data("src/data/zhk/aleksandrovskiy-park.json").officeSells, true);
 });
@@ -50,7 +53,8 @@ test("built examples cannot become available listings or offers", () => {
     assert.ok(fs.existsSync(item.mainImage.src));
     const page = html(`construction/projects/${item.slug}.html`);
     assert.ok(page.includes(item.location));
-    assert.match(page, /не как объект в продаже в Шахтах/u);
+    assert.match(page, /Построим Дом · построенный объект/u);
+    assert.match(page, /Посмотрите решение из портфолио компании/u);
     assert.doesNotMatch(page, /"@type":"Offer"|Горячее предложение/u);
   }
 });
@@ -77,7 +81,7 @@ test("only confirmed office details and prices are published", () => {
   assert.match(html("services.html"), /20\s000 ₽/u);
   assert.match(site.web3formsAccessKey, /^[a-f0-9-]{36}$/u);
   assert.match(home, /data-lead-form/u);
-  assert.equal((html("sitemap.xml").match(/<loc>/gu) || []).length, 184);
+  assert.equal((html("sitemap.xml").match(/<loc>/gu) || []).length, 189);
 });
 
 test('missing form key retains a working direct-contact fallback', () => {
