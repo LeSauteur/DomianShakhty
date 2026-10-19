@@ -87,3 +87,29 @@ test("center landing distinguishes apartments, a nearby house and reference stre
   assert.ok(read("dist/apartments.html").includes(`href="/${page.path}"`));
   assert.ok(output.includes('href="/apartments.html"'));
 });
+
+test("expanded buyer blocks retain honest geography, sourced conditions and inventory area examples", () => {
+  const homes = read("dist/houses.html");
+  const lands = read("dist/lands.html");
+  const location = read("dist/locations/kamenolomni.html");
+  assert.match(homes, /нет домов, явно обозначенных Майским/u);
+  assert.match(homes, /сквер ДК имени М\. П\. Чиха/u);
+  assert.ok(!fs.existsSync("dist/doma-mayskiy-shakhty.html"));
+  for (const id of ["house-gas-check", "house-financing"]) assert.ok(homes.includes(`id="${id}"`));
+  const finance = homes.match(/<section[^>]+id="house-financing"[\s\S]*?<\/section>/u)?.[0];
+  assert.match(finance, /sfr\.gov\.ru/u);
+  assert.match(finance, /19 октября 2026/u);
+  assert.doesNotMatch(finance, /\d\s*%|\d\s*млн/u);
+  for (const id of ["izhs-plots", "snt-plots", "land-boundaries"]) assert.ok(lands.includes(`id="${id}"`));
+  assert.ok(lands.includes('href="/listings/shk-l01-snt-plot.html"'));
+  assert.ok(lands.includes('href="/kadastrovye-raboty.html"'));
+  assert.match(location, /Покупка дома в Каменоломнях: два разных сценария/u);
+  assert.ok(location.includes('href="/listings/shk-h07-two-houses-kamenolomni.html"'));
+  const section = pages.find(item => item.slug === "apartments").sections.find(item => item.id === "apartment-rooms");
+  assert.equal(section.items.length, 3);
+  assert.deepEqual(section.facts.map(fact => fact.value), [{ rooms: 1, min: 32, max: 37 }, { rooms: 2, min: 42, max: 46 }, { rooms: 3, min: 58, max: 72 }]);
+  for (const fact of section.facts) {
+    assert.equal(fact.method, "inventory_examples_not_market_average");
+    assert.ok(fact.sourceIds.length > 0);
+  }
+});
