@@ -5,33 +5,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://rialt-info.ru/pokupka-doma/",
-    "title": "Покупка дома - Недвижимость Шахты. РиэлтиПокупка дома - Недвижимость Шахты. Риэлти",
-    "headings": [
-      "Поможем выгодно купить частный дом в Шахтах",
-      "Получите подборку домов под ваши цели и бюджет из закрытого каталога нашей компании",
-      "Акции и скидки от нашей компании",
-      "Самые горячие предложение в нашем городе",
-      "Каталог земельных участков ИЖС под строительство дома",
-      "Поможем вам получить минимальный процент по ипотеке и сэкономить до 300 тысяч рублей 95% людей даже и не догадываются, что так можно",
-      "и еще 3 аргумента почему вам стоит доверить решение вашего вопроса с недвижимостью именно нам",
-      "Уверены, и вы оцените наш подход",
-      "Сделка займет от 1 недели до 2 месяцевВсе, что требуется от вас — это связаться с нами. Остальное — берем на себя",
-      "Предоставляем отчёт о юридической чистоте каждого объекта",
-      "Наши услуги",
-      "О компании РИЭЛТИ",
-      "«Если вы знаете, как должен выглядеть ваш дом, мы точно знаем, как воплотить Ваше желание в реальность!»",
-      "Задаем высокий стандарт сервиса",
-      "5 ключевых причин обратиться к нам",
-      "Агентство недвижимости в Шахтах | Продажа, покупка и обмен жилья без риска",
-      "Рассчитайте ипотеку + получите подарки",
-      "Политика конфиденциальности"
-    ],
-    "controls": [
-      "Позвонить",
-      "WhatsApp",
-      "Ваше резюме",
-      "Фото проекта"
-    ],
     "structureFlags": {
       "faq": false,
       "calculator": false,
@@ -42,7 +15,9 @@
       "reviews": true,
       "cases": false,
       "filters": false
-    }
+    },
+    "capturedHeadingCount": 18,
+    "capturedControlLabelCount": 4
   },
   {
     "url": "https://rialt-info.ru/uslugi/",
@@ -50,33 +25,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://rialt-info.ru/uslugi/",
-    "title": "Участок - Недвижимость Шахты. РиэлтиУчасток - Недвижимость Шахты. Риэлти",
-    "headings": [
-      "Поможем выгодно купить земельный участок в Шахтах",
-      "Получите подборку участков под ваши цели и бюджет из закрытого каталога нашей компании",
-      "Акции и скидки от нашей компании",
-      "Каталог земельных участков ИЖС под строительство дома",
-      "Самые горячие предложение в нашем городе",
-      "Поможем вам получить минимальный процент по ипотеке и сэкономить до 300 тысяч рублей 95% людей даже и не догадываются, что так можно",
-      "и еще 3 аргумента почему вам стоит доверить решение вашего вопроса с недвижимостью именно нам",
-      "Уверены, и вы оцените наш подход",
-      "Сделка займет от 1 недели до 2 месяцевВсе, что требуется от вас — это связаться с нами. Остальное — берем на себя",
-      "Предоставляем отчёт о юридической чистоте каждого объекта",
-      "Наши услуги",
-      "О компании РИЭЛТИ",
-      "«Если вы знаете, как должен выглядеть ваш дом, мы точно знаем, как воплотить Ваше желание в реальность!»",
-      "Агентство недвижимости в Шахтах | Продажа, покупка и обмен жилья без риска",
-      "Рассчитайте ипотеку + получите подарки",
-      "Политика конфиденциальности",
-      "1. Определение терминов",
-      "2. Общие положения"
-    ],
-    "controls": [
-      "Позвонить",
-      "WhatsApp",
-      "Ваше резюме",
-      "Фото проекта"
-    ],
     "structureFlags": {
       "faq": false,
       "calculator": false,
@@ -87,7 +35,9 @@
       "reviews": true,
       "cases": false,
       "filters": false
-    }
+    },
+    "capturedHeadingCount": 18,
+    "capturedControlLabelCount": 4
   },
   {
     "url": "https://rialt-info.ru/pokupka-kvartiry/",
@@ -95,33 +45,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://rialt-info.ru/pokupka-kvartiry/",
-    "title": "Покупка квартиры - Недвижимость Шахты. РиэлтиПокупка квартиры - Недвижимость Шахты. Риэлти",
-    "headings": [
-      "Поможем выгодно купить квартиру в Шахтах с гарантией юридической чистоты сделки",
-      "Получите подборку квартир под ваши цели и бюджет из закрытого каталога нашей компании",
-      "Акции и скидки от нашей компании",
-      "Поможем вам получить минимальный процент по ипотеке и сэкономить до 300 тысяч рублей 95% людей даже и не догадываются, что так можно",
-      "и еще 3 аргумента почему вам стоит доверить решение вашего квартирного вопроса именно нам",
-      "Самые горячие предложение в нашем городе",
-      "Уверены, и вы оцените наш подход",
-      "Сделка займет от 1 недели до 2 месяцевВсе, что требуется от вас — это связаться с нами. Остальное — берем на себя",
-      "Перед покупкой квартиры нас часто спрашивают",
-      "Предоставляем отчёт о юридической чистоте каждого объекта",
-      "Наши услуги",
-      "О компании РИЭЛТИ",
-      "«Если вы знаете, как должен выглядеть ваш дом, мы точно знаем, как воплотить Ваше желание в реальность!»",
-      "Задаем высокий стандарт сервиса",
-      "5 ключевых причин обратиться к нам",
-      "Агентство недвижимости в Шахтах | Продажа, покупка и обмен жилья без риска",
-      "Рассчитайте ипотеку + получите подарки",
-      "Политика конфиденциальности"
-    ],
-    "controls": [
-      "Позвонить",
-      "WhatsApp",
-      "Ваше резюме",
-      "Фото проекта"
-    ],
     "structureFlags": {
       "faq": false,
       "calculator": false,
@@ -132,7 +55,9 @@
       "reviews": true,
       "cases": false,
       "filters": false
-    }
+    },
+    "capturedHeadingCount": 18,
+    "capturedControlLabelCount": 4
   },
   {
     "url": "https://shahty.jilfond.ru/base/prodaja/land/object-dom",
@@ -140,28 +65,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://shahty.jilfond.ru/base/prodaja/land/object-dom",
-    "title": "Продажа дом в Шахтах и Ростовской области - 24 варианта: цена, фото | Жилфонд - +7(903)4011404",
-    "headings": [
-      "Продажа домов в Шахтах и Ростовской области",
-      "Как купить дом на вторичном рынке в Шахтах и Ростовской области?",
-      "Как выбрать дом на вторичном рынке в Шахтах и Ростовской области на сайте Жилфонд?",
-      "Сколько стоит дом на вторичном рынке в Шахтах и Ростовской области?",
-      "Какая площадь дома на вторичном рынке в Шахтах и Ростовской области?"
-    ],
-    "controls": [
-      "Поиск",
-      "К",
-      "С",
-      "1",
-      "2",
-      "3",
-      "4+",
-      "Дача",
-      "Дом",
-      "Участок",
-      "Коттедж",
-      "Нет"
-    ],
     "structureFlags": {
       "faq": false,
       "calculator": true,
@@ -172,7 +75,9 @@
       "reviews": true,
       "cases": false,
       "filters": true
-    }
+    },
+    "capturedHeadingCount": 5,
+    "capturedControlLabelCount": 12
   },
   {
     "url": "https://shahty.jilfond.ru/stoimost-uslug",
@@ -180,13 +85,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://shahty.jilfond.ru/stoimost-uslug",
-    "title": "Стоимость услуг агентства недвижимости Жилфонд в Шахтах",
-    "headings": [
-      "Стоимость услуг агентства недвижимости «Жилфонд»"
-    ],
-    "controls": [
-      "Поиск"
-    ],
     "structureFlags": {
       "faq": false,
       "calculator": true,
@@ -197,7 +95,9 @@
       "reviews": true,
       "cases": false,
       "filters": false
-    }
+    },
+    "capturedHeadingCount": 1,
+    "capturedControlLabelCount": 1
   },
   {
     "url": "https://shahty.jilfond.ru/base/prodaja/two",
@@ -205,30 +105,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://shahty.jilfond.ru/base/prodaja/two",
-    "title": "Купить квартиру и комнату в Шахтах и Ростовской области - 21 вариант: цена, фото | Жилфонд - +7(903)4011404",
-    "headings": [
-      "Продажа квартир и комнат в Шахтах и Ростовской области",
-      "Посмотрите также",
-      "Поиск квартир в г. Шахты",
-      "Как купить квартиру и комнату на вторичном рынке в Шахтах и Ростовской области?",
-      "Как выбрать квартиру и комнату на вторичном рынке в Шахтах и Ростовской области на сайте Жилфонд?",
-      "Сколько стоит квартира и комната на вторичном рынке в Шахтах и Ростовской области?",
-      "Какая площадь квартиры и комнаты на вторичном рынке в Шахтах и Ростовской области?"
-    ],
-    "controls": [
-      "Поиск",
-      "К",
-      "С",
-      "1",
-      "2",
-      "3",
-      "4+",
-      "Дача",
-      "Дом",
-      "Участок",
-      "Коттедж",
-      "Нет"
-    ],
     "structureFlags": {
       "faq": false,
       "calculator": true,
@@ -239,7 +115,9 @@
       "reviews": true,
       "cases": false,
       "filters": true
-    }
+    },
+    "capturedHeadingCount": 7,
+    "capturedControlLabelCount": 12
   },
   {
     "url": "https://shahty.jilfond.ru/base/prodaja/land/object-uchastok",
@@ -247,28 +125,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://shahty.jilfond.ru/base/prodaja/land/object-uchastok",
-    "title": "Продажа земельный участок в Шахтах и Ростовской области - 13 вариантов: цена, фото | Жилфонд - +7(903)4011404",
-    "headings": [
-      "Продажа земельных участков в Шахтах и Ростовской области",
-      "Как купить участок на вторичном рынке в Шахтах и Ростовской области?",
-      "Как выбрать участок на вторичном рынке в Шахтах и Ростовской области на сайте Жилфонд?",
-      "Сколько стоит участок на вторичном рынке в Шахтах и Ростовской области?",
-      "Какая площадь участка на вторичном рынке в Шахтах и Ростовской области?"
-    ],
-    "controls": [
-      "Поиск",
-      "К",
-      "С",
-      "1",
-      "2",
-      "3",
-      "4+",
-      "Дача",
-      "Дом",
-      "Участок",
-      "Коттедж",
-      "Нет"
-    ],
     "structureFlags": {
       "faq": false,
       "calculator": true,
@@ -279,7 +135,9 @@
       "reviews": true,
       "cases": false,
       "filters": true
-    }
+    },
+    "capturedHeadingCount": 5,
+    "capturedControlLabelCount": 12
   },
   {
     "url": "https://chernika.io/objects?category=3&RealtyType%5B%5D=Дом",
@@ -287,22 +145,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://chernika.io/objects?category=3&RealtyType%5B%5D=%D0%94%D0%BE%D0%BC",
-    "title": "АН Черника",
-    "headings": [],
-    "controls": [
-      "Дом",
-      "Дача",
-      "Таунхаус",
-      "Коттедж",
-      "Участок",
-      "Часть дома",
-      "Фермерское хозяйство",
-      "Садоводство",
-      "Индивидуальное жилищное строительство",
-      "Земля промышленного назначения",
-      "Инвестпроект",
-      "Личное подсобное хозяйство"
-    ],
     "structureFlags": {
       "faq": false,
       "calculator": false,
@@ -313,7 +155,9 @@
       "reviews": false,
       "cases": false,
       "filters": true
-    }
+    },
+    "capturedHeadingCount": 0,
+    "capturedControlLabelCount": 12
   },
   {
     "url": "https://chernika.io/objects?category=1",
@@ -321,22 +165,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://chernika.io/objects?category=1",
-    "title": "АН Черника",
-    "headings": [],
-    "controls": [
-      "C",
-      "1",
-      "2",
-      "3",
-      "4+",
-      "Кирпичный",
-      "Монолитный",
-      "Панельный",
-      "Блочный",
-      "Деревянный",
-      "Монолитно-кирпичный",
-      "Раздельные"
-    ],
     "structureFlags": {
       "faq": false,
       "calculator": false,
@@ -347,7 +175,9 @@
       "reviews": false,
       "cases": false,
       "filters": true
-    }
+    },
+    "capturedHeadingCount": 0,
+    "capturedControlLabelCount": 12
   },
   {
     "url": "https://bkidon.ru/",
@@ -355,15 +185,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://bkidon.ru/",
-    "title": "Межевание земельных участков, кадастровые работы в г. Шахты и Ростовской области, межевание земли, оформление недвижимости - ООО Бюро Кадастровых Инженеров - г. Шахты",
-    "headings": [
-      ">> Показать все меню <<",
-      "Кадастровые и межевые работы",
-      "Сравните цены на наши услуги и cделайте правильный выбор!",
-      "Межевание и кадастровые работы",
-      "Мы используем cookie"
-    ],
-    "controls": [],
     "structureFlags": {
       "faq": false,
       "calculator": false,
@@ -374,7 +195,9 @@
       "reviews": false,
       "cases": true,
       "filters": false
-    }
+    },
+    "capturedHeadingCount": 5,
+    "capturedControlLabelCount": 0
   },
   {
     "url": "https://chernika.io/object/8088",
@@ -382,22 +205,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://chernika.io/object/8088",
-    "title": "АН Черника",
-    "headings": [],
-    "controls": [
-      "Стоимость недвижимости",
-      "Первоначальный взнос",
-      "Процентная ставка",
-      "Срок ипотеки",
-      "Как можно быстрее",
-      "8:00 - 9:00",
-      "9:00 - 10:00",
-      "10:00 - 11:00",
-      "11:00 - 12:00",
-      "12:00 - 13:00",
-      "13:00 - 14:00",
-      "14:00 - 15:00"
-    ],
     "structureFlags": {
       "faq": false,
       "calculator": true,
@@ -408,7 +215,9 @@
       "reviews": false,
       "cases": false,
       "filters": false
-    }
+    },
+    "capturedHeadingCount": 0,
+    "capturedControlLabelCount": 12
   },
   {
     "url": "https://bkidon.ru/prajs-list",
@@ -416,13 +225,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://bkidon.ru/prajs-list",
-    "title": "Перечень работ",
-    "headings": [
-      ">> Показать все меню <<",
-      "Перечень работ",
-      "Мы используем cookie"
-    ],
-    "controls": [],
     "structureFlags": {
       "faq": false,
       "calculator": false,
@@ -433,7 +235,9 @@
       "reviews": false,
       "cases": true,
       "filters": false
-    }
+    },
+    "capturedHeadingCount": 3,
+    "capturedControlLabelCount": 0
   },
   {
     "url": "https://chernika.io/objects?category=3&RealtyType%5B%5D=Участок",
@@ -441,24 +245,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://chernika.io/objects?category=3&RealtyType%5B%5D=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BE%D0%BA",
-    "title": "АН Черника",
-    "headings": [
-      "💰 Участок 12 соток у трассы М4 — готовая площадка под доходный объект."
-    ],
-    "controls": [
-      "Дом",
-      "Дача",
-      "Таунхаус",
-      "Коттедж",
-      "Участок",
-      "Часть дома",
-      "Фермерское хозяйство",
-      "Садоводство",
-      "Индивидуальное жилищное строительство",
-      "Земля промышленного назначения",
-      "Инвестпроект",
-      "Личное подсобное хозяйство"
-    ],
     "structureFlags": {
       "faq": false,
       "calculator": false,
@@ -469,7 +255,9 @@
       "reviews": false,
       "cases": false,
       "filters": true
-    }
+    },
+    "capturedHeadingCount": 1,
+    "capturedControlLabelCount": 12
   },
   {
     "url": "https://bkidon.ru/mezhevoj-plan-na-utochnenie-sushchestvuyushchego-zemelnogo-uchastka",
@@ -477,20 +265,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://bkidon.ru/mezhevoj-plan-na-utochnenie-sushchestvuyushchego-zemelnogo-uchastka",
-    "title": "Межевой план на уточнение существующего земельного участка - г. Тольятти, Ставропольский район",
-    "headings": [
-      ">> Показать все меню <<",
-      "Межевой план на уточнение существующего земельного участка - г. Шахты",
-      "Для чего нужны кадастровые работы по уточнению земельного участка?",
-      "В каких случаях необходима услуга уточнения земельного участка:",
-      "Мы используем cookie"
-    ],
-    "controls": [
-      "Имя:",
-      "Телефон:",
-      "Текст сообщения:",
-      "Я согласен(на) с политикой конфиденциальности и даю согласие на обрабо"
-    ],
     "structureFlags": {
       "faq": false,
       "calculator": false,
@@ -501,7 +275,9 @@
       "reviews": false,
       "cases": true,
       "filters": false
-    }
+    },
+    "capturedHeadingCount": 5,
+    "capturedControlLabelCount": 4
   },
   {
     "url": "https://bkidon.ru/tekhnicheskij-plan-zdaniya-podgotovka-plana",
@@ -509,19 +285,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://bkidon.ru/tekhnicheskij-plan-zdaniya-podgotovka-plana",
-    "title": "Технический план здания - подготовка плана в Тольятти",
-    "headings": [
-      ">> Показать все меню <<",
-      "Технический план здания - подготовка плана в г. Шахты",
-      "Для чего нужен технический план здания?",
-      "Мы используем cookie"
-    ],
-    "controls": [
-      "Имя:",
-      "Телефон:",
-      "Текст сообщения:",
-      "Я согласен(на) с политикой конфиденциальности и даю согласие на обрабо"
-    ],
     "structureFlags": {
       "faq": false,
       "calculator": false,
@@ -532,7 +295,9 @@
       "reviews": false,
       "cases": true,
       "filters": false
-    }
+    },
+    "capturedHeadingCount": 4,
+    "capturedControlLabelCount": 4
   },
   {
     "url": "https://rusrealtys.ru/kadastrovye-uslugi-v-gorodah/80-shahty.html",
@@ -540,15 +305,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://rusrealtys.ru/kadastrovye-uslugi-v-gorodah/80-shahty.html",
-    "title": "����������� ������ � ������  ",
-    "headings": [
-      "����������� ������ � ������",
-      "�������� ����������� ����� (�����) � ������",
-      "��������� ����������� ����� � ������"
-    ],
-    "controls": [
-      "��������, ����������, ���� ������"
-    ],
     "structureFlags": {
       "faq": false,
       "calculator": false,
@@ -559,7 +315,9 @@
       "reviews": false,
       "cases": false,
       "filters": false
-    }
+    },
+    "capturedHeadingCount": 3,
+    "capturedControlLabelCount": 1
   },
   {
     "url": "https://www.remospro.ru/catalog/prodazha_domov_rabochiy_pos_kamenolomni_rostovskaya_oblast.html",
@@ -567,26 +325,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://www.remospro.ru/catalog/prodazha_domov_rabochiy_pos_kamenolomni_rostovskaya_oblast.html",
-    "title": "Купить дом рп. Каменоломни, Ростовская область - 14 объявлений",
-    "headings": [
-      "Продажа домов рп. Каменоломни, Ростовская область",
-      "Ростовская область. Специалисты по недвижимости.",
-      "Объявления рядом"
-    ],
-    "controls": [
-      "Жилая",
-      "Загородная",
-      "Коммерческая",
-      "Гараж",
-      "Квартиру",
-      "Комнату",
-      "Долю в квартире",
-      "Дом",
-      "Таунхаус",
-      "Часть дома",
-      "Земельный участок",
-      "Офис"
-    ],
     "structureFlags": {
       "faq": false,
       "calculator": false,
@@ -597,7 +335,9 @@
       "reviews": false,
       "cases": false,
       "filters": true
-    }
+    },
+    "capturedHeadingCount": 3,
+    "capturedControlLabelCount": 12
   },
   {
     "url": "https://postroim-dom-rostov.ru/",
@@ -605,22 +345,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://postroim-dom-rostov.ru/",
-    "title": "Построим Дом – Настоящий кирпичный дом в Ростове-на-Дону и области от 43 000 ₽/м² – Главная",
-    "headings": [],
-    "controls": [
-      "Каталог проектов + объяснение технологии",
-      "Хочу расчёт своего проекта по технологии (если уже есть план/картинка/",
-      "Хочу записаться на встречу и посмотреть построенные дома",
-      "Пока выбираю — хочу понять бюджет и варианты",
-      "80 м²",
-      "100 м²",
-      "125 м²",
-      "145 м²",
-      "200 м²",
-      "225 м²",
-      "Не знаю — хочу подобрать",
-      "Наличные"
-    ],
     "structureFlags": {
       "faq": false,
       "calculator": false,
@@ -631,7 +355,9 @@
       "reviews": false,
       "cases": false,
       "filters": false
-    }
+    },
+    "capturedHeadingCount": 0,
+    "capturedControlLabelCount": 12
   },
   {
     "url": "https://alexandrovskii-park.ru/",
@@ -639,9 +365,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://alexandrovskii-park.ru/",
-    "title": "Александровский Парк | ЖК в Шахтах",
-    "headings": [],
-    "controls": [],
     "structureFlags": {
       "faq": false,
       "calculator": false,
@@ -652,7 +375,9 @@
       "reviews": false,
       "cases": false,
       "filters": false
-    }
+    },
+    "capturedHeadingCount": 0,
+    "capturedControlLabelCount": 0
   },
   {
     "url": "https://2gis.ru/shakhty/firm/70000001105836319",
@@ -660,11 +385,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://2gis.ru/shakhty/firm/70000001105836319",
-    "title": "Домиан на карте, Агентства недвижимости, риэлторские услуги, Шахты — 2ГИС",
-    "headings": [
-      "Домиан"
-    ],
-    "controls": [],
     "structureFlags": {
       "faq": false,
       "calculator": false,
@@ -680,21 +400,27 @@
       " рекламаООО «Хэдхантер».Смотреть ↗Улица Маяковского, 18аШахты, Ростовская область, 346504Показать на картеОткры",
       "тоСегодня c 09:00 до 18:00+7‒918‒507... Показать телефонСмотреть подработку н",
       "а hh.ru — рекламаВКонтактеКомпания давно не обновляла данныеНашли ошибку в данных?​Это моя компания​Реклама в 2ГИ"
-    ]
+    ],
+    "capturedHeadingCount": 1,
+    "capturedControlLabelCount": 0
   },
   {
     "url": "https://domrfbank.ru/mortgage/programs/family-mortgage/",
     "checked": "2026-10-19T07:28:04.229Z",
     "method": "read-only GET, no forms/cookies/login",
     "error": "TypeError: fetch failed",
-    "status": "UNK"
+    "status": "UNK",
+    "capturedHeadingCount": 0,
+    "capturedControlLabelCount": 0
   },
   {
     "url": "https://жильё-просто.рф/",
     "checked": "2026-10-19T07:28:04.055Z",
     "method": "read-only GET, no forms/cookies/login",
     "error": "TypeError: fetch failed",
-    "status": "UNK"
+    "status": "UNK",
+    "capturedHeadingCount": 0,
+    "capturedControlLabelCount": 0
   },
   {
     "url": "https://sfr.gov.ru/grazhdanam/semyam_s_detmi/materinskij_kapital/zhile/",
@@ -702,13 +428,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://sfr.gov.ru/grazhdanam/semyam_s_detmi/materinskij_kapital/zhile/",
-    "title": "Как направить материнский капитал на улучшение жилищных условий",
-    "headings": [
-      "Как направить материнский капитал на улучшение жилищных условий",
-      "Основная информация",
-      "Правая панель"
-    ],
-    "controls": [],
     "structureFlags": {
       "faq": false,
       "calculator": false,
@@ -719,7 +438,9 @@
       "reviews": true,
       "cases": false,
       "filters": false
-    }
+    },
+    "capturedHeadingCount": 3,
+    "capturedControlLabelCount": 0
   },
   {
     "url": "https://agencies.domclick.ru/agency/353404",
@@ -727,17 +448,6 @@
     "method": "read-only GET, no forms/cookies/login",
     "status": 200,
     "finalUrl": "https://agencies.domclick.ru/agency/353404",
-    "title": "АН Домиан Шахты на Маяковского в Москве - агентство недвижимости, отзывы, контакты, объекты недвижимости, риэлторы агентства - Домклик",
-    "headings": [
-      "АН Домиан Шахты на Маяковского",
-      "Отзывы клиентов СберБанка",
-      "В команде 17 риелторов",
-      "1 офис",
-      "Агентства недвижимости в Москве"
-    ],
-    "controls": [
-      "ФИО риелтора"
-    ],
     "structureFlags": {
       "faq": false,
       "calculator": true,
@@ -755,6 +465,8 @@
       "ений8 объявлений121 офисДомиан Шахты на МаяковскогоРостовская обл, г Шахты, ул Маяковского, д 18аОбъявления аге",
       "ЕЛЬАН ЭтоПоказать ещёАН Домиан Шахты на МаяковскогоИНН 262810552536, ИП Воронина Мария Петровна, Ростовская обл",
       ", г Новочеркасск51 год 10 мес.на Домклик24 сделкиза 12 месяцев560 объявлений"
-    ]
+    ],
+    "capturedHeadingCount": 5,
+    "capturedControlLabelCount": 1
   }
 ]

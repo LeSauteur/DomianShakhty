@@ -1112,7 +1112,9 @@
       "mobile-drawer",
       "main-content"
     ],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -3060,7 +3062,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 572,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -4342,7 +4346,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 369,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -5652,7 +5658,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 552,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -6921,7 +6929,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 2,
+    "incomingSources": 2,
+    "incoming": 4,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -8328,7 +8338,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 3,
+    "incomingSources": 3,
+    "incoming": 5,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -9587,7 +9599,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 3,
+    "incomingSources": 3,
+    "incoming": 5,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -10978,7 +10992,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 3,
+    "incomingSources": 3,
+    "incoming": 5,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -12237,7 +12253,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 3,
+    "incomingSources": 3,
+    "incoming": 5,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -13506,7 +13524,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 2,
+    "incomingSources": 2,
+    "incoming": 4,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -14775,7 +14795,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 3,
+    "incomingSources": 3,
+    "incoming": 7,
+    "dataUpdatedAt": "май 2026",
     "depth": 1
   },
   {
@@ -16044,7 +16066,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 2,
+    "incomingSources": 2,
+    "incoming": 4,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -17313,7 +17337,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 3,
+    "incomingSources": 3,
+    "incoming": 7,
+    "dataUpdatedAt": "май 2026",
     "depth": 1
   },
   {
@@ -18672,7 +18698,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 4,
+    "incomingSources": 4,
+    "incoming": 8,
+    "dataUpdatedAt": "UNK",
     "depth": 1
   },
   {
@@ -19941,7 +19969,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 2,
+    "incomingSources": 2,
+    "incoming": 4,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -21268,7 +21298,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 3,
+    "incomingSources": 3,
+    "incoming": 5,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -22537,7 +22569,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 3,
+    "incomingSources": 3,
+    "incoming": 7,
+    "dataUpdatedAt": "май 2026",
     "depth": 1
   },
   {
@@ -23806,7 +23840,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 2,
+    "incomingSources": 2,
+    "incoming": 4,
+    "dataUpdatedAt": "май 2026",
     "depth": 2
   },
   {
@@ -25065,7 +25101,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 3,
+    "incomingSources": 3,
+    "incoming": 5,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -26324,7 +26362,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 3,
+    "incomingSources": 3,
+    "incoming": 5,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -27583,7 +27623,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 4,
+    "incomingSources": 4,
+    "incoming": 8,
+    "dataUpdatedAt": "UNK",
     "depth": 1
   },
   {
@@ -27627,7 +27669,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -27671,7 +27715,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -27715,7 +27761,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -27759,7 +27807,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -27803,7 +27853,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -27847,7 +27899,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -27891,7 +27945,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -29150,7 +29206,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 3,
+    "incomingSources": 3,
+    "incoming": 5,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -30409,7 +30467,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 3,
+    "incomingSources": 3,
+    "incoming": 5,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -30453,7 +30513,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -30497,7 +30559,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -30541,7 +30605,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -30585,7 +30651,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -31844,7 +31912,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 3,
+    "incomingSources": 3,
+    "incoming": 5,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -33113,7 +33183,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 3,
+    "incomingSources": 3,
+    "incoming": 7,
+    "dataUpdatedAt": "UNK",
     "depth": 1
   },
   {
@@ -34382,7 +34454,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 2,
+    "incomingSources": 2,
+    "incoming": 4,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -34426,7 +34500,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -34470,7 +34546,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -34514,7 +34592,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -34558,7 +34638,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -34602,7 +34684,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -34646,7 +34730,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -34690,7 +34776,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -34734,7 +34822,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -34778,7 +34868,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -34822,7 +34914,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -34866,7 +34960,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -34910,7 +35006,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -34954,7 +35052,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -34998,7 +35098,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -35042,7 +35144,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -36335,7 +36439,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-10-14",
     "depth": 2
   },
   {
@@ -37628,7 +37734,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-10-14",
     "depth": 2
   },
   {
@@ -38921,7 +39029,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-10-14",
     "depth": 2
   },
   {
@@ -40214,7 +40324,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-10-14",
     "depth": 2
   },
   {
@@ -41507,7 +41619,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-10-14",
     "depth": 2
   },
   {
@@ -42800,7 +42914,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-10-14",
     "depth": 2
   },
   {
@@ -44059,7 +44175,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 3,
+    "incomingSources": 3,
+    "incoming": 5,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -45328,7 +45446,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 2,
+    "incomingSources": 2,
+    "incoming": 4,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -46587,7 +46707,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 3,
+    "incomingSources": 3,
+    "incoming": 5,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -47846,7 +47968,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 3,
+    "incomingSources": 3,
+    "incoming": 5,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -47890,7 +48014,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -47934,7 +48060,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -47978,7 +48106,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -48022,7 +48152,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -48066,7 +48198,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -48110,7 +48244,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -48154,7 +48290,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -48198,7 +48336,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -48242,7 +48382,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -48286,7 +48428,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -48330,7 +48474,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -48374,7 +48520,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -48418,7 +48566,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -48462,7 +48612,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -48506,7 +48658,9 @@
       }
     ],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -51079,7 +51233,9 @@
       "built-examples",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 445,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -52365,7 +52521,9 @@
       "main-content",
       "office-discovery-title"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 927,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -53501,7 +53659,9 @@
       "mobile-drawer",
       "main-content"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 552,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -54803,7 +54963,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 552,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -54827,7 +54989,9 @@
     "og": {},
     "headings": [],
     "ids": [],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -56127,7 +56291,9 @@
       "handover",
       "lead-form-section"
     ],
-    "incoming": 4,
+    "incomingSources": 4,
+    "incoming": 7,
+    "dataUpdatedAt": "2026-08-19",
     "depth": 1
   },
   {
@@ -57441,7 +57607,9 @@
       "contract",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 13,
+    "dataUpdatedAt": "2026-08-19",
     "depth": 2
   },
   {
@@ -58722,7 +58890,9 @@
       "decision",
       "lead-form-section"
     ],
-    "incoming": 4,
+    "incomingSources": 4,
+    "incoming": 7,
+    "dataUpdatedAt": "2026-08-19",
     "depth": 1
   },
   {
@@ -60056,7 +60226,9 @@
       "guide-list",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 565,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -61356,7 +61528,9 @@
       "showings",
       "lead-form-section"
     ],
-    "incoming": 3,
+    "incomingSources": 3,
+    "incoming": 5,
+    "dataUpdatedAt": "2026-08-19",
     "depth": 2
   },
   {
@@ -62670,7 +62844,9 @@
       "compare",
       "lead-form-section"
     ],
-    "incoming": 3,
+    "incomingSources": 3,
+    "incoming": 5,
+    "dataUpdatedAt": "2026-08-19",
     "depth": 1
   },
   {
@@ -63994,7 +64170,9 @@
       "table",
       "lead-form-section"
     ],
-    "incoming": 5,
+    "incomingSources": 5,
+    "incoming": 10,
+    "dataUpdatedAt": "2026-08-19",
     "depth": 2
   },
   {
@@ -65862,7 +66040,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 568,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -68299,7 +68479,9 @@
       "team-life",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 1104,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 0
   },
   {
@@ -69617,7 +69799,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 382,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -71373,7 +71557,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 574,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -72625,7 +72811,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-08-27",
     "depth": 1
   },
   {
@@ -73857,7 +74045,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 8,
+    "incomingSources": 8,
+    "incoming": 24,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 1
   },
   {
@@ -75089,7 +75279,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 8,
+    "incomingSources": 8,
+    "incoming": 24,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 1
   },
   {
@@ -76321,7 +76513,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 2
   },
   {
@@ -77553,7 +77747,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 2
   },
   {
@@ -78785,7 +78981,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 2
   },
   {
@@ -80017,7 +80215,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 2
   },
   {
@@ -81249,7 +81449,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 2
   },
   {
@@ -82481,7 +82683,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 2
   },
   {
@@ -83713,7 +83917,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 2
   },
   {
@@ -84945,7 +85151,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 2
   },
   {
@@ -86177,7 +86385,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 2
   },
   {
@@ -87409,7 +87619,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 2
   },
   {
@@ -88641,7 +88853,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 8,
+    "incomingSources": 8,
+    "incoming": 24,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 2
   },
   {
@@ -89885,7 +90099,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-27",
     "depth": 2
   },
   {
@@ -91117,7 +91333,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 8,
+    "incomingSources": 8,
+    "incoming": 24,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 1
   },
   {
@@ -92349,7 +92567,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 2
   },
   {
@@ -93581,7 +93801,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 2
   },
   {
@@ -94813,7 +95035,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 2
   },
   {
@@ -96045,7 +96269,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 2
   },
   {
@@ -97277,7 +97503,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 2
   },
   {
@@ -98515,7 +98743,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-27",
     "depth": 2
   },
   {
@@ -99759,7 +99989,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-27",
     "depth": 2
   },
   {
@@ -101021,7 +101253,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-27",
     "depth": 2
   },
   {
@@ -102253,7 +102487,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 1
   },
   {
@@ -103485,7 +103721,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 7,
+    "incomingSources": 7,
+    "incoming": 21,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 1
   },
   {
@@ -104717,7 +104955,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 6,
+    "incomingSources": 6,
+    "incoming": 18,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 2
   },
   {
@@ -105949,7 +106189,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 6,
+    "incomingSources": 6,
+    "incoming": 18,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 2
   },
   {
@@ -107181,7 +107423,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 6,
+    "incomingSources": 6,
+    "incoming": 18,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 2
   },
   {
@@ -108413,7 +108657,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 6,
+    "incomingSources": 6,
+    "incoming": 18,
+    "dataUpdatedAt": "2026-09-17",
     "depth": 2
   },
   {
@@ -109617,7 +109863,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 6,
+    "incomingSources": 6,
+    "incoming": 18,
+    "dataUpdatedAt": "2026-09-27",
     "depth": 2
   },
   {
@@ -110843,7 +111091,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 6,
+    "incomingSources": 6,
+    "incoming": 18,
+    "dataUpdatedAt": "2026-09-27",
     "depth": 2
   },
   {
@@ -112047,7 +112297,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 6,
+    "incomingSources": 6,
+    "incoming": 18,
+    "dataUpdatedAt": "2026-09-27",
     "depth": 2
   },
   {
@@ -113251,7 +113503,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 6,
+    "incomingSources": 6,
+    "incoming": 18,
+    "dataUpdatedAt": "2026-09-27",
     "depth": 2
   },
   {
@@ -115973,7 +116227,9 @@
       "location-search",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 371,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -117298,7 +117554,9 @@
       "locations",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 374,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -120042,7 +120300,9 @@
       "location-search",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 374,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -122764,7 +123024,9 @@
       "location-search",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 371,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -125486,7 +125748,9 @@
       "location-search",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 371,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -128208,7 +128472,9 @@
       "location-search",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 371,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -129547,7 +129813,9 @@
       "mortgage-calculator",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 560,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -130869,7 +131137,9 @@
       "main-content",
       "lead-form-section"
     ],
+    "incomingSources": 1,
     "incoming": 1,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 3
   },
   {
@@ -132110,7 +132380,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -133367,7 +133639,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 2,
+    "incomingSources": 2,
+    "incoming": 6,
+    "dataUpdatedAt": "2026-07-13",
     "depth": 1
   },
   {
@@ -134650,7 +134924,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 2,
+    "incomingSources": 2,
+    "incoming": 6,
+    "dataUpdatedAt": "2026-07-16",
     "depth": 1
   },
   {
@@ -135911,7 +136187,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 2,
+    "incomingSources": 2,
+    "incoming": 6,
+    "dataUpdatedAt": "2026-07-16",
     "depth": 1
   },
   {
@@ -137152,7 +137430,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -138393,7 +138673,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -139634,7 +139916,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -140875,7 +141159,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -142116,7 +142402,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -143357,7 +143645,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -144618,7 +144908,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-07-16",
     "depth": 2
   },
   {
@@ -145879,7 +146171,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-07-16",
     "depth": 2
   },
   {
@@ -147120,7 +147414,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -148361,7 +148657,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -149618,7 +149916,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-07-13",
     "depth": 2
   },
   {
@@ -150859,7 +151159,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -152100,7 +152402,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -153341,7 +153645,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -154602,7 +154908,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-07-16",
     "depth": 2
   },
   {
@@ -155843,7 +156151,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -157100,7 +157410,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-07-13",
     "depth": 2
   },
   {
@@ -158373,7 +158685,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 2,
+    "incomingSources": 2,
+    "incoming": 6,
+    "dataUpdatedAt": "2026-07-13",
     "depth": 1
   },
   {
@@ -159630,7 +159944,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-07-13",
     "depth": 2
   },
   {
@@ -160887,7 +161203,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-07-13",
     "depth": 2
   },
   {
@@ -162128,7 +162446,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -163389,7 +163709,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-07-16",
     "depth": 2
   },
   {
@@ -164650,7 +164972,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-07-16",
     "depth": 2
   },
   {
@@ -165907,7 +166231,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-07-13",
     "depth": 2
   },
   {
@@ -167180,7 +167506,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-07-13",
     "depth": 2
   },
   {
@@ -168421,7 +168749,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -169662,7 +169992,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -170903,7 +171235,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -172144,7 +172478,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -173385,7 +173721,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -174626,7 +174964,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -175867,7 +176207,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -177108,7 +177450,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -178391,7 +178735,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-07-16",
     "depth": 2
   },
   {
@@ -179632,7 +179978,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -180873,7 +181221,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -182114,7 +182464,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -183355,7 +183707,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -184596,7 +184950,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -185837,7 +186193,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -187078,7 +187436,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -188319,7 +188679,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -189560,7 +189922,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -190801,7 +191165,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -192042,7 +192408,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -193283,7 +193651,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -194524,7 +194894,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -195785,7 +196157,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-07-16",
     "depth": 2
   },
   {
@@ -197026,7 +197400,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -198267,7 +198643,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -199508,7 +199886,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -200765,7 +201145,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-07-13",
     "depth": 2
   },
   {
@@ -202026,7 +202408,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-07-16",
     "depth": 2
   },
   {
@@ -203267,7 +203651,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -204508,7 +204894,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -205749,7 +206137,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -206990,7 +207380,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -208231,7 +208623,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -209472,7 +209866,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -210729,7 +211125,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 2,
+    "incomingSources": 2,
+    "incoming": 6,
+    "dataUpdatedAt": "2026-07-13",
     "depth": 1
   },
   {
@@ -211970,7 +212368,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -213211,7 +213611,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -214452,7 +214854,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -215693,7 +216097,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -216934,7 +217340,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -218175,7 +218583,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -219416,7 +219826,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -220657,7 +221069,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -221914,7 +222328,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 2,
+    "incomingSources": 2,
+    "incoming": 6,
+    "dataUpdatedAt": "2026-07-13",
     "depth": 1
   },
   {
@@ -223155,7 +223571,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-07-13",
     "depth": 2
   },
   {
@@ -224396,7 +224814,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-07-13",
     "depth": 2
   },
   {
@@ -225637,7 +226057,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-07-13",
     "depth": 2
   },
   {
@@ -226878,7 +227300,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "2026-07-13",
     "depth": 2
   },
   {
@@ -228119,7 +228543,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 1,
+    "incomingSources": 1,
+    "incoming": 3,
+    "dataUpdatedAt": "UNK",
     "depth": 2
   },
   {
@@ -232544,7 +232970,9 @@
       "newbuild-catalog",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 895,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -233710,7 +234138,9 @@
       "mobile-drawer",
       "main-content"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 364,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -235512,7 +235942,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 371,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -237154,7 +237586,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 369,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -238486,7 +238920,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 933,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -239813,7 +240249,9 @@
       "service-prices",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 372,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -241298,7 +241736,9 @@
       "team-life",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 562,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -242567,7 +243007,9 @@
       "agent-expertise",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 555,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -243873,7 +244315,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 555,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -245156,7 +245600,9 @@
       "agent-expertise",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 556,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -246431,7 +246877,9 @@
       "agent-expertise",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 555,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -247537,7 +247985,9 @@
       "mobile-drawer",
       "main-content"
     ],
+    "incomingSources": 0,
     "incoming": 0,
+    "dataUpdatedAt": "UNK",
     "depth": null
   },
   {
@@ -248819,7 +249269,9 @@
       "main-content",
       "lead-form-section"
     ],
-    "incoming": 184,
+    "incomingSources": 184,
+    "incoming": 557,
+    "dataUpdatedAt": "2026-10-14 (редакция страницы, не проверка объекта)",
     "depth": 1
   },
   {
@@ -250134,7 +250586,9 @@
       "main-content",
       "lead-form-section"
     ],
+    "incomingSources": 2,
     "incoming": 2,
+    "dataUpdatedAt": "2026-10-14 (подтверждение владельца, не статус домов)",
     "depth": 1
   }
 ]

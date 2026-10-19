@@ -19,7 +19,7 @@
     },
     "expected": 16667,
     "actual": "Введите ставку",
-    "difference": -16667
+    "difference": null
   },
   {
     "values": {

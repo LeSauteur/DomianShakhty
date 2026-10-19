@@ -54,5 +54,19 @@
     "evidence": "consent-overlaps.csv; evidence/consent-recheck.json; screenshots/cookie-overlay-profile-390.png",
     "code": "assets/css/site.css .analytics-consent; assets/js/site.js initAnalyticsConsent",
     "fix": "Согласовать размещение/размер баннера и резерв пространства; проверить его вместе с drawer/CTA на всех размерах. Не убирать выбор и не включать аналитику по умолчанию"
+  },
+  {
+    "id": "B-005",
+    "section": "B",
+    "marker": "FACT",
+    "severity": "medium",
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/",
+    "viewport": "общий обработчик всех форм",
+    "steps": "normalizePhone(\"0000000000\") и normalizePhone(\"+7abc9991234567\")",
+    "expected": "Отказ для буквенного/явно пустого по смыслу номера; понятная ошибка поля",
+    "actual": "Возвращаются +70000000000 и +79991234567; форматирующей маски при вводе нет",
+    "evidence": "evidence/phone-normalization.json; assets/js/form-handler.js:15",
+    "code": "assets/js/form-handler.js:15",
+    "fix": "Отделить допустимое форматирование от букв/невозможных значений; сохранять явно указанный международный префикс, добавить независимые граничные тесты"
   }
 ]
