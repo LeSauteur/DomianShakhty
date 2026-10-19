@@ -77,7 +77,7 @@ test("only confirmed office details and prices are published", () => {
   assert.match(html("services.html"), /20\s000 ₽/u);
   assert.match(site.web3formsAccessKey, /^[a-f0-9-]{36}$/u);
   assert.match(home, /data-lead-form/u);
-  assert.equal((html("sitemap.xml").match(/<loc>/gu) || []).length, 185);
+  assert.equal((html("sitemap.xml").match(/<loc>/gu) || []).length, 186);
 });
 
 test('missing form key retains a working direct-contact fallback', () => {

@@ -68,3 +68,22 @@ test("Alexander Park shows a specific listing without resolving conflicting hous
   assert.doesNotMatch(alpha, /Разрешение на ввод № 61-59-142-2026|дома сданы/u);
   assert.match(read("dist/locations/kamenolomni.html"), /Крупской 45[\s\S]*сданный дом[\s\S]*66209/u);
 });
+
+test("center landing distinguishes apartments, a nearby house and reference street orientation", () => {
+  const page = pages.find(item => item.path === "kvartiry-v-centre-shakhty.html");
+  const output = read(`dist/${page.path}`);
+  assert.ok(words(mainText(page)) >= 600);
+  assert.equal(page.sections.find(section => section.kind === "faq").items.length, 6);
+  const selections = page.sections.filter(section => section.kind === "listing-selection");
+  assert.deepEqual(selections[0].ids, ["shk-a05-center-renovated-1k", "shk-a12-center-designer-3k"]);
+  assert.deepEqual(selections[1].ids, ["shk-h08-two-houses-center"]);
+  assert.match(output, /data-source-cta="center_apartments"/u);
+  assert.match(output, /Это предложение двух домов с участком, не квартира/u);
+  assert.match(output, /Источник носит справочный характер/u);
+  assert.ok(page.sections[0].facts.centerStreetReference.sourceUrl.startsWith("https://"));
+  for (const id of selections.flatMap(section => section.ids)) assert.ok(output.includes(`/listings/${id}.html`));
+  assert.ok(!output.includes("/listings/dom-chistovaya-kamenolomni.html"));
+  assert.ok(sitemap.includes(`/${page.path}</loc>`));
+  assert.ok(read("dist/apartments.html").includes(`href="/${page.path}"`));
+  assert.ok(output.includes('href="/apartments.html"'));
+});

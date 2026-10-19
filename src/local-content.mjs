@@ -18,5 +18,5 @@ export function localComplexesSection(ctx, { slug } = {}) {
 
 export function listingSelection(ctx, section, renderCard) {
   const items = (section.ids || []).map(id => ctx.listings.find(item => item.id === id && item.verified === true)).filter(Boolean);
-  return `<section class="section"><div class="container"><div class="section-heading"><div><p class="eyebrow">Карточки офиса</p><h2>${esc(section.title)}</h2></div><p>${esc(section.intro || "Наличие и параметры предложений уточняются перед просмотром.")}</p></div><div class="listing-grid">${items.map(item => renderCard(ctx, item)).join("")}</div></div></section>`;
+  return `<section class="section"${section.id ? ` id="${esc(section.id)}"` : ""}><div class="container"><div class="section-heading"><div><p class="eyebrow">Карточки офиса</p><h2>${esc(section.title)}</h2></div><p>${esc(section.intro || "Наличие и параметры предложений уточняются перед просмотром.")}</p></div><div class="listing-grid">${items.map(item => renderCard(ctx, item)).join("")}</div></div></section>`;
 }
