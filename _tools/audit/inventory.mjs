@@ -7,6 +7,7 @@ const sm=new Map(sitemap('url').map((i,e)=>[[sitemap(e).find('loc').text(),sitem
 const pages=files.filter(f=>f.endsWith('.html')).map(file=>{
  const rel=path.relative('dist',file).replaceAll('\\','/'),url=site.productionOrigin+'/'+rel.replace(/(^|\/)index\.html$/,'$1'),html=fs.readFileSync(file,'utf8'),$=load(html);
  const main=$('main').clone();main.find('[data-site-header],footer,nav,script,style,.breadcrumbs').remove();
+ main.find('*').prepend(' ').append(' ');
  const text=main.text().replace(/\s+/g,' ').trim();const canonical=$('link[rel=canonical]').attr('href')||'';
  const links=$('a[href]').map((i,e)=>{let u;try{u=new URL($(e).attr('href'),url)}catch{return null}return {href:u.href,text:$(e).text().trim(),internal:u.origin===site.productionOrigin,path:u.pathname,hash:u.hash,raw:$(e).attr('href'),blank:$(e).attr('target')==='_blank',rel:$(e).attr('rel')||''};}).get();
  const schemas=$('script[type="application/ld+json"]').map((i,e)=>{try{return {value:JSON.parse($(e).text())}}catch(err){return {error:String(err)}}}).get();
@@ -21,6 +22,8 @@ const assets=files.filter(f=>!f.endsWith('.html')).map(f=>({file:path.relative('
 csv('asset-inventory.csv',['url','bytes'],assets.map(a=>[site.productionOrigin+'/'+a.file,a.bytes]));
 csv('top-30-files.csv',['file','bytes'],[...files].map(f=>[f.replaceAll('\\','/'),fs.statSync(f).size]).sort((a,b)=>b[1]-a[1]).slice(0,30));
 json('evidence/pages.json',pages);json('evidence/assets.json',assets);
-md('PROGRESS.md',`# Полный аудит, октябрь 2026\n\nБаза: b10b812c4417907098b1681d364201e04819f622 (origin/main, 19.10.2026).\nВетка: codex/full-audit-2026-10. Только docs/audit-2026-10 и _tools/audit. PR без merge.\n\nПорядок: A инвентаризация; B браузер/интерактив; C a11y; D скорость; E SEO; F контент; G UX; H посадочные и план; I локальное SEO; J инженерия; K безопасность; L итог.\nFACT — воспроизводимо; OBS — внешнее наблюдение с датой; INF — вывод; HYP — гипотеза; UNK — нет данных.\nПервый незакрытый раздел — первая буква без трёх строк ниже.\n`);
-progress('A',`${pages.length} HTML, ${pages.filter(p=>p.sitemap).length} в sitemap, ${pages.filter(p=>p.refresh).length} redirect, ${assets.length} остальных файлов; статический граф ссылок и основной текст`,0,'не подтверждены даты отдельных страниц: lastmod общий из конфигурации; это отмечено в методике');
+if(process.env.AUDIT_REGENERATE!=='1'){
+ md('PROGRESS.md',`# Полный аудит, октябрь 2026\n\nБаза: b10b812c4417907098b1681d364201e04819f622 (origin/main, 19.10.2026).\nВетка: codex/full-audit-2026-10. Только docs/audit-2026-10 и _tools/audit. PR без merge.\n\nПорядок: A инвентаризация; B браузер/интерактив; C a11y; D скорость; E SEO; F контент; G UX; H посадочные и план; I локальное SEO; J инженерия; K безопасность; L итог.\nFACT — воспроизводимо; OBS — внешнее наблюдение с датой; INF — вывод; HYP — гипотеза; UNK — нет данных.\nПервый незакрытый раздел — первая буква без трёх строк ниже.\n`);
+ progress('A',`${pages.length} HTML, ${pages.filter(p=>p.sitemap).length} в sitemap, ${pages.filter(p=>p.refresh).length} redirect, ${assets.length} остальных файлов; статический граф ссылок и основной текст`,0,'не подтверждены даты отдельных страниц: lastmod общий из конфигурации; это отмечено в методике');
+}
 console.log({pages:pages.length,indexed:pages.filter(p=>p.sitemap).length,redirects:pages.filter(p=>p.refresh).length,assets:assets.length,types:[...new Set(pages.map(p=>p.type))]});
