@@ -40,5 +40,19 @@
     "evidence": "mortgage.csv, evidence/mortgage.json case 5",
     "code": "assets/js/site.js:551",
     "fix": "Ограничить диапазоны и проверять Number.isFinite(payment)"
+  },
+  {
+    "id": "B-004",
+    "marker": "FACT",
+    "section": "B",
+    "severity": "medium",
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/team/maria-voronina.html",
+    "viewport": "390/768/1440 — affected combinations in consent-overlaps.csv",
+    "steps": "Новый посетитель без выбора consent; открыть профиль 390×844 либо затронутые URL/viewport из таблицы",
+    "expected": "Баннер выбора не перекрывает H1/CTA/фильтр первого экрана",
+    "actual": "Подтверждено 91 сочетание URL/viewport на 86 страницах; центр элементов перекрыт analytics-consent. После «Отказаться» перекрытий 0",
+    "evidence": "consent-overlaps.csv; evidence/consent-recheck.json; screenshots/cookie-overlay-profile-390.png",
+    "code": "assets/css/site.css .analytics-consent; assets/js/site.js initAnalyticsConsent",
+    "fix": "Согласовать размещение/размер баннера и резерв пространства; проверить его вместе с drawer/CTA на всех размерах. Не убирать выбор и не включать аналитику по умолчанию"
   }
 ]

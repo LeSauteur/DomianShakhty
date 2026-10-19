@@ -31,5 +31,17 @@
     "evidence": "evidence/dead-code-candidates.json; evidence/dead-code-references.txt",
     "fix": "Проверить маршруты вызова и удалить/активировать только в отдельной задаче с QA",
     "code": "src/templates.mjs:461"
+  },
+  {
+    "id": "J-004",
+    "section": "J",
+    "marker": "OBS",
+    "severity": "high",
+    "url": "https://github.com/LeSauteur/DomianShakhty/settings/rules",
+    "issue": "QA запускается на PR, но серверное требование проверок для main не настроено",
+    "evidence": "evidence/main-protection.txt: Branch not protected (404); evidence/main-effective-rules.json=[]; evidence/repo-rulesets.json=[]",
+    "fix": "Владельцу настроить правило PR и обязательный успешный QA для main; настройки в этом аудите не менять",
+    "owner": true,
+    "code": "GitHub repository rules / branch protection"
   }
 ]

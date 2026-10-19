@@ -1,10 +1,12 @@
 import fs from 'node:fs';
 import {chromium} from '@playwright/test';
 import {out,read,json,csv} from './lib.mjs';
-const pages=read(out+'/evidence/pages.json'), base='http://127.0.0.1:4186/';
+const production=process.env.AUDIT_PRODUCTION==='1';
+const pages=read(out+'/evidence/pages.json'), base=production?'https://xn--80aakqtid1b0a2a0b.xn--p1ai/':'http://127.0.0.1:4186/';
+const browserDir=out+'/evidence/'+(production?'browser-production':'browser');
 const browser=await chromium.launch({headless:true});
 const axe=fs.readFileSync('_tools/audit/runtime/node_modules/axe-core/axe.min.js','utf8');
-fs.mkdirSync(out+'/screenshots',{recursive:true});fs.mkdirSync(out+'/evidence/browser',{recursive:true});
+fs.mkdirSync(out+'/screenshots',{recursive:true});fs.mkdirSync(browserDir,{recursive:true});
 const representatives=new Map();for(const p of pages)if(!representatives.has(p.type))representatives.set(p.type,p.file);
 representatives.set('catalog','apartments.html');representatives.set('service','kadastrovye-raboty.html');
 let jobs=pages.flatMap(p=>[390,768,1440].map(width=>({p,width})));if(process.env.AUDIT_RESUME==='1')jobs=jobs.filter(({p,width})=>{const f=out+`/evidence/browser/${p.file.replaceAll('/','__')}-${width}.json`;if(!fs.existsSync(f))return true;const r=read(f);return r.exception||(width!==768&&!r.axe);});if(process.env.AUDIT_OCCLUSION==='1')jobs=jobs.filter(({p,width})=>read(out+`/evidence/browser/${p.file.replaceAll('/','__')}-${width}.json`).dom?.occluded.length);let cursor=0,done=0;
@@ -34,15 +36,15 @@ async function worker(){const context=await browser.newContext({reducedMotion:'r
   });
   const menu=page.locator('[data-menu-toggle]');if(await menu.isVisible().catch(()=>false)){await menu.focus();await page.keyboard.press('Enter');await page.waitForTimeout(30);record.menu={open:await menu.getAttribute('aria-expanded')==='true',focusInside:await page.evaluate(()=>!!document.activeElement.closest('#mobile-drawer'))};await page.keyboard.press('Escape');record.menu.closed=await menu.getAttribute('aria-expanded')==='false';record.menu.focusReturned=await menu.evaluate(e=>e===document.activeElement);}
   if(width!==768&&!record.axe){await page.addScriptTag({content:axe});record.axe=await page.evaluate(async()=>{const r=await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}});return {violations:r.violations.map(v=>({id:v.id,impact:v.impact,description:v.description,help:v.help,helpUrl:v.helpUrl,nodes:v.nodes.map(n=>({target:n.target,html:n.html,failureSummary:n.failureSummary}))})),incomplete:r.incomplete.map(v=>({id:v.id,nodes:v.nodes.length})),passes:r.passes.map(v=>v.id)};});}
-  if(width!==768&&representatives.get(p.type)===p.file){await page.screenshot({path:out+`/screenshots/${p.type}-${width}.png`,fullPage:true,timeout:15000});}
+  if(width!==768&&representatives.get(p.type)===p.file){await page.screenshot({path:out+`/screenshots/${production ? 'production-' : ''}${p.type}-${width}.png`,fullPage:true,timeout:15000});}
  }catch(e){record.exception=String(e)}finally{page.off('console',onConsole);page.off('pageerror',onError);page.off('requestfailed',onFailed);page.off('response',onResponse);}
- fs.writeFileSync(out+`/evidence/browser/${p.file.replaceAll('/','__')}-${width}.json`,JSON.stringify(record));
+ fs.writeFileSync(browserDir+`/${p.file.replaceAll('/','__')}-${width}.json`,JSON.stringify(record));
  if(++done%20===0)console.log(`${done}/${jobs.length}`);
  }await context.close();}
 await Promise.all(Array.from({length:Number(process.env.AUDIT_WORKERS||4)},worker));await browser.close();
-const rows=fs.readdirSync(out+'/evidence/browser').filter(f=>f.endsWith('.json')).map(f=>read(out+'/evidence/browser/'+f));
-csv('browser-checks.csv',['url','viewport','status','final_url','overflow','broken_images','console_errors','failed_requests','http_errors','overlap_candidates','missing_anchors','menu','exception'],rows.map(r=>[r.url,r.width,r.status,r.finalUrl,r.dom?r.dom.scrollWidth>r.dom.clientWidth:'UNK',JSON.stringify(r.dom?.brokenImages),JSON.stringify(r.errors),JSON.stringify(r.failed),JSON.stringify(r.httpErrors),JSON.stringify(r.dom?.occluded),JSON.stringify(r.dom?.missingAnchors),JSON.stringify(r.menu),r.exception]));
+const rows=fs.readdirSync(browserDir).filter(f=>f.endsWith('.json')).map(f=>read(browserDir+'/'+f));
+csv(production?'browser-production-checks.csv':'browser-checks.csv',['url','viewport','status','final_url','overflow','broken_images','console_errors','failed_requests','http_errors','overlap_candidates','missing_anchors','menu','exception'],rows.map(r=>[r.url,r.width,r.status,r.finalUrl,r.dom?r.dom.scrollWidth>r.dom.clientWidth:'UNK',JSON.stringify(r.dom?.brokenImages),JSON.stringify(r.errors),JSON.stringify(r.failed),JSON.stringify(r.httpErrors),JSON.stringify(r.dom?.occluded),JSON.stringify(r.dom?.missingAnchors),JSON.stringify(r.menu),r.exception]));
 const groups=new Map();for(const r of rows)for(const v of r.axe?.violations||[]){const type=pages.find(p=>p.file===r.file)?.type,key=type+'|'+v.id;const g=groups.get(key)||{type,id:v.id,impact:v.impact,urls:new Set(),widths:new Set(),nodes:[],help:v.help,description:v.description,helpUrl:v.helpUrl};g.urls.add(r.url);g.widths.add(r.width);g.nodes.push(...v.nodes.map(n=>({url:r.url,...n})));groups.set(key,g);}
-json('evidence/a11y-groups.json',[...groups.values()].map(g=>({...g,urls:[...g.urls],widths:[...g.widths]})));
-csv('a11y.csv',['id','маркер','шаблон','правило','серьёзность_axe','страниц','viewport','url_пример','селектор','нарушение','доказательство'],[...groups.values()].map((g,i)=>['C-'+String(i+1).padStart(3,'0'),'FACT',g.type,g.id,g.impact,g.urls.size,[...g.widths].join(','),[...g.urls][0],g.nodes[0]?.target.join(' '),g.nodes[0]?.failureSummary,'evidence/browser/ + evidence/a11y-groups.json; '+g.helpUrl]));
+json(production?'evidence/a11y-production-groups.json':'evidence/a11y-groups.json',[...groups.values()].map(g=>({...g,urls:[...g.urls],widths:[...g.widths]})));
+csv(production?'a11y-production.csv':'a11y.csv',['id','маркер','шаблон','правило','серьёзность_axe','страниц','viewport','url_пример','селектор','нарушение','доказательство'],[...groups.values()].map((g,i)=>['C-'+String(i+1).padStart(3,'0'),'FACT',g.type,g.id,g.impact,g.urls.size,[...g.widths].join(','),[...g.urls][0],g.nodes[0]?.target.join(' '),g.nodes[0]?.failureSummary,'evidence/browser/ + evidence/a11y-groups.json; '+g.helpUrl]));
 console.log({scans:rows.length,exceptions:rows.filter(r=>r.exception).length,axe:rows.filter(r=>r.axe).length,groups:groups.size});
