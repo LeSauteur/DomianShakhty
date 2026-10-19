@@ -83,8 +83,9 @@ const constructionProjects = readJson("src/data/construction-projects.json");
 const teamLife = readJson("src/data/team-life.json");
 const pricing = readJson("src/data/pricing.json");
 const localZhk = readJson("src/data/zhk/aleksandrovskiy-park.json");
+const localComplexes = fs.readdirSync(path.join(root, "src/data/zhk")).filter(file => file.endsWith(".json")).map(file => readJson(`src/data/zhk/${file}`));
 const legacyRedirects = readJson("src/data/legacy-construction-urls.json");
-const ctx = createContext(site, { locations, locationContent, guides, pages, listings, projects, builders, team, teamLife, pricing, showcase, newbuilds, constructionProjects });
+const ctx = createContext(site, { locations, locationContent, guides, pages, listings, projects, builders, team, teamLife, pricing, showcase, newbuilds, constructionProjects, localComplexes });
 const outputs = [];
 
 function publish(relativePath, html) {

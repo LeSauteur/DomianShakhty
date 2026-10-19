@@ -1,0 +1,252 @@
+{
+  "checkedAt": "2026-10-19",
+  "deployRun": 39222599261,
+  "checks": [
+    {
+      "route": "/",
+      "width": 390,
+      "status": 200,
+      "h1": "Агентство недвижимости в Шахтах — офис Домиан на Маяковского",
+      "overflow": false,
+      "images": []
+    },
+    {
+      "route": "construction/builders/postroim-dom.html",
+      "width": 390,
+      "status": 200,
+      "h1": "Построим Дом: строительство домов в Ростовской области",
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-konstantinovsk-110/facade-640.webp",
+          "width": 358
+        },
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-konstantinovsk-110/facade-640.webp",
+          "width": 358
+        },
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-rostov-stone-100-120/facade-640.webp",
+          "width": 358
+        },
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-rostov-brick-110/facade-640.webp",
+          "width": 358
+        },
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-rostov-brick-100-180/facade-640.webp",
+          "width": 358
+        },
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-rostov-brick-100-90/facade-640.webp",
+          "width": 358
+        },
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-rostov-stone-120/facade-640.webp",
+          "width": 358
+        }
+      ]
+    },
+    {
+      "route": "construction/projects/postroim-dom-konstantinovsk-110.html",
+      "width": 390,
+      "status": 200,
+      "h1": "Каменный дом 110 м² в Константиновске",
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-konstantinovsk-110/facade-640.webp",
+          "width": 358
+        }
+      ]
+    },
+    {
+      "route": "construction/projects/postroim-dom-rostov-stone-100-120.html",
+      "width": 390,
+      "status": 200,
+      "h1": "Каменный дом 100 м² с двухскатной крышей",
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-rostov-stone-100-120/facade-640.webp",
+          "width": 358
+        }
+      ]
+    },
+    {
+      "route": "construction/projects/postroim-dom-rostov-brick-110.html",
+      "width": 390,
+      "status": 200,
+      "h1": "Кирпичный дом 110 м² с высоким цоколем",
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-rostov-brick-110/facade-640.webp",
+          "width": 358
+        }
+      ]
+    },
+    {
+      "route": "construction/projects/postroim-dom-rostov-brick-100-180.html",
+      "width": 390,
+      "status": 200,
+      "h1": "Кирпичный дом 100 м² с тремя спальнями",
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-rostov-brick-100-180/facade-640.webp",
+          "width": 358
+        }
+      ]
+    },
+    {
+      "route": "construction/projects/postroim-dom-rostov-brick-100-90.html",
+      "width": 390,
+      "status": 200,
+      "h1": "Кирпичный дом 100 м² для вытянутого участка",
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-rostov-brick-100-90/facade-640.webp",
+          "width": 358
+        }
+      ]
+    },
+    {
+      "route": "construction/projects/postroim-dom-rostov-stone-120.html",
+      "width": 390,
+      "status": 200,
+      "h1": "Каменный дом 120 м² с террасой",
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-rostov-stone-120/facade-640.webp",
+          "width": 358
+        }
+      ]
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "status": 200,
+      "h1": "Агентство недвижимости в Шахтах — офис Домиан на Маяковского",
+      "overflow": false,
+      "images": []
+    },
+    {
+      "route": "construction/builders/postroim-dom.html",
+      "width": 1440,
+      "status": 200,
+      "h1": "Построим Дом: строительство домов в Ростовской области",
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-konstantinovsk-110/facade.webp",
+          "width": 748
+        },
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-konstantinovsk-110/facade-640.webp",
+          "width": 446
+        },
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-rostov-stone-100-120/facade-640.webp",
+          "width": 446
+        },
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-rostov-brick-110/facade-640.webp",
+          "width": 446
+        },
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-rostov-brick-100-180/facade-640.webp",
+          "width": 446
+        },
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-rostov-brick-100-90/facade-640.webp",
+          "width": 446
+        },
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-rostov-stone-120/facade-640.webp",
+          "width": 446
+        }
+      ]
+    },
+    {
+      "route": "construction/projects/postroim-dom-konstantinovsk-110.html",
+      "width": 1440,
+      "status": 200,
+      "h1": "Каменный дом 110 м² в Константиновске",
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-konstantinovsk-110/facade.webp",
+          "width": 748
+        }
+      ]
+    },
+    {
+      "route": "construction/projects/postroim-dom-rostov-stone-100-120.html",
+      "width": 1440,
+      "status": 200,
+      "h1": "Каменный дом 100 м² с двухскатной крышей",
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-rostov-stone-100-120/facade.webp",
+          "width": 748
+        }
+      ]
+    },
+    {
+      "route": "construction/projects/postroim-dom-rostov-brick-110.html",
+      "width": 1440,
+      "status": 200,
+      "h1": "Кирпичный дом 110 м² с высоким цоколем",
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-rostov-brick-110/facade.webp",
+          "width": 748
+        }
+      ]
+    },
+    {
+      "route": "construction/projects/postroim-dom-rostov-brick-100-180.html",
+      "width": 1440,
+      "status": 200,
+      "h1": "Кирпичный дом 100 м² с тремя спальнями",
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-rostov-brick-100-180/facade.webp",
+          "width": 748
+        }
+      ]
+    },
+    {
+      "route": "construction/projects/postroim-dom-rostov-brick-100-90.html",
+      "width": 1440,
+      "status": 200,
+      "h1": "Кирпичный дом 100 м² для вытянутого участка",
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-rostov-brick-100-90/facade.webp",
+          "width": 748
+        }
+      ]
+    },
+    {
+      "route": "construction/projects/postroim-dom-rostov-stone-120.html",
+      "width": 1440,
+      "status": 200,
+      "h1": "Каменный дом 120 м² с террасой",
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/construction-projects/postroim-dom-rostov-stone-120/facade.webp",
+          "width": 748
+        }
+      ]
+    }
+  ]
+}

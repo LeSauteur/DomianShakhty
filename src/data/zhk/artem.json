@@ -1,0 +1,132 @@
+{
+  "slug": "artem",
+  "publish": false,
+  "officeSells": null,
+  "name": "Артём",
+  "hubOrder": 4,
+  "address": "Шахты, пер. Бродского, 8 и 10",
+  "developer": "ООО СЗ РБС",
+  "housingClass": "Типовой",
+  "hubDescription": "Два дома с отдельными карточками ЕИСЖС: 49133 и 49134. В каталоге оба указаны как сданные. Номер дома нужен для сопоставления площади, документов и конкретной квартиры; общее название комплекса этого не заменяет.",
+  "facts": {
+    "name": {
+      "value": "Артём",
+      "sourceUrl": "https://xn--80az8a.xn--d1aqf.xn--p1ai/новостройки/от-застройщика-сз-рбс/шахты/",
+      "checkedAt": "2026-10-19",
+      "method": "official_search_snapshot"
+    },
+    "address": {
+      "value": "Шахты, пер. Бродского, 8 и 10",
+      "sourceUrl": "https://xn--80az8a.xn--d1aqf.xn--p1ai/новостройки/от-застройщика-сз-рбс/шахты/",
+      "checkedAt": "2026-10-19",
+      "method": "official_search_snapshot"
+    },
+    "developer": {
+      "value": "ООО СЗ РБС",
+      "sourceUrl": "https://xn--80az8a.xn--d1aqf.xn--p1ai/новостройки/от-застройщика-сз-рбс/шахты/",
+      "checkedAt": "2026-10-19",
+      "method": "official_search_snapshot"
+    },
+    "housingClass": {
+      "value": "Типовой",
+      "sourceUrl": "https://xn--80az8a.xn--d1aqf.xn--p1ai/новостройки/от-застройщика-сз-рбс/шахты/",
+      "checkedAt": "2026-10-19",
+      "method": "official_search_snapshot"
+    }
+  },
+  "buildings": [
+    {
+      "eisId": 49133,
+      "sourceUrl": "https://xn--80az8a.xn--d1aqf.xn--p1ai/сервисы/каталог-новостроек/объект/49133",
+      "address": "Шахты, пер. Бродского, 8",
+      "status": "Сдан",
+      "commissioningDate": "III квартал 2025 года",
+      "declaration": {
+        "number": "61-001425",
+        "publicationDate": "2025-12-11",
+        "url": null,
+        "sourceUrl": "https://xn--80az8a.xn--d1aqf.xn--p1ai/сервисы/каталог-новостроек/объект/49133",
+        "checkedAt": "2026-10-19",
+        "note": "Номер/дата размещения известны только там, где видны в официальной карточке; сам PDF не получен. Прямая ссылка не придумана."
+      },
+      "facts": {
+        "eisId": {
+          "value": 49133,
+          "sourceUrl": "https://xn--80az8a.xn--d1aqf.xn--p1ai/новостройки/от-застройщика-сз-рбс/шахты/",
+          "checkedAt": "2026-10-19",
+          "method": "official_search_snapshot"
+        },
+        "address": {
+          "value": "Шахты, пер. Бродского, 8",
+          "sourceUrl": "https://xn--80az8a.xn--d1aqf.xn--p1ai/новостройки/от-застройщика-сз-рбс/шахты/",
+          "checkedAt": "2026-10-19",
+          "method": "official_search_snapshot"
+        },
+        "status": {
+          "value": "Сдан",
+          "sourceUrl": "https://xn--80az8a.xn--d1aqf.xn--p1ai/новостройки/от-застройщика-сз-рбс/шахты/",
+          "checkedAt": "2026-10-19",
+          "method": "official_search_snapshot"
+        },
+        "commissioningDate": {
+          "value": "III квартал 2025 года",
+          "sourceUrl": "https://xn--80az8a.xn--d1aqf.xn--p1ai/новостройки/от-застройщика-сз-рбс/шахты/",
+          "checkedAt": "2026-10-19",
+          "method": "official_search_snapshot",
+          "meaning": "Период ввода по каталогу; не точная дата разрешения"
+        }
+      }
+    },
+    {
+      "eisId": 49134,
+      "sourceUrl": "https://xn--80az8a.xn--d1aqf.xn--p1ai/сервисы/каталог-новостроек/объект/49134",
+      "address": "Шахты, пер. Бродского, 10",
+      "status": "Сдан",
+      "commissioningDate": "III квартал 2025 года",
+      "declaration": {
+        "number": "61-001426",
+        "publicationDate": "2025-08-06",
+        "url": null,
+        "sourceUrl": "https://xn--80az8a.xn--d1aqf.xn--p1ai/сервисы/каталог-новостроек/объект/49134",
+        "checkedAt": "2026-10-19",
+        "note": "Номер/дата размещения известны только там, где видны в официальной карточке; сам PDF не получен. Прямая ссылка не придумана."
+      },
+      "facts": {
+        "eisId": {
+          "value": 49134,
+          "sourceUrl": "https://xn--80az8a.xn--d1aqf.xn--p1ai/новостройки/от-застройщика-сз-рбс/шахты/",
+          "checkedAt": "2026-10-19",
+          "method": "official_search_snapshot"
+        },
+        "address": {
+          "value": "Шахты, пер. Бродского, 10",
+          "sourceUrl": "https://xn--80az8a.xn--d1aqf.xn--p1ai/новостройки/от-застройщика-сз-рбс/шахты/",
+          "checkedAt": "2026-10-19",
+          "method": "official_search_snapshot"
+        },
+        "status": {
+          "value": "Сдан",
+          "sourceUrl": "https://xn--80az8a.xn--d1aqf.xn--p1ai/новостройки/от-застройщика-сз-рбс/шахты/",
+          "checkedAt": "2026-10-19",
+          "method": "official_search_snapshot"
+        },
+        "commissioningDate": {
+          "value": "III квартал 2025 года",
+          "sourceUrl": "https://xn--80az8a.xn--d1aqf.xn--p1ai/новостройки/от-застройщика-сз-рбс/шахты/",
+          "checkedAt": "2026-10-19",
+          "method": "official_search_snapshot",
+          "meaning": "Период ввода по каталогу; не точная дата разрешения"
+        }
+      }
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://xn--80az8a.xn--d1aqf.xn--p1ai/новостройки/от-застройщика-сз-рбс/шахты/",
+      "checkedAt": "2026-10-19",
+      "method": "official_search_snapshot",
+      "supports": "Адрес, застройщик, класс и карточки домов"
+    }
+  ],
+  "notes": "Прямое чтение ЕИСЖС заблокировано 403. Данные прочитаны в индексированном представлении официальных страниц. Свежая редакция декларации и документы ввода запрошены владельцу; цены, наличие и ипотечные условия не переносились."
+}
