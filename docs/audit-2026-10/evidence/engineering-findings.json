@@ -1,0 +1,35 @@
+[
+  {
+    "id": "J-001",
+    "section": "J",
+    "marker": "FACT",
+    "severity": "medium",
+    "url": "repository:tests",
+    "issue": "Текущий зелёный QA не покрывает выявленные границы калькулятора, начальный фокус и полный axe",
+    "evidence": "evidence/qa.txt (56 static, 90 browser PASS); B-001…B-003/C-023; test-specs.csv",
+    "fix": "Добавить регрессии по спецификациям перед исправлением; не отключать старые проверки",
+    "code": "tests/site.spec.js / tests/*.test.mjs"
+  },
+  {
+    "id": "J-002",
+    "section": "J",
+    "marker": "INF",
+    "severity": "low",
+    "url": "repository:assets",
+    "issue": "29 ассетов не имеют буквальных ссылок в сгенерированных файлах",
+    "evidence": "unreferenced-assets.csv; поиск учитывает srcset/CSS/JSON/JS",
+    "fix": "Разобрать использование и назначение, оптимизировать копирование после проверки; защищённые портреты не трогать",
+    "code": "assets / scripts/build.mjs"
+  },
+  {
+    "id": "J-003",
+    "section": "J",
+    "marker": "HYP",
+    "severity": "low",
+    "url": "repository:src/templates.mjs",
+    "issue": "Шесть внутренних функций имеют только объявление и выглядят неиспользуемыми",
+    "evidence": "evidence/dead-code-candidates.json; evidence/dead-code-references.txt",
+    "fix": "Проверить маршруты вызова и удалить/активировать только в отдельной задаче с QA",
+    "code": "src/templates.mjs:461"
+  }
+]

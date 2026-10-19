@@ -1,0 +1,6 @@
+src\templates.mjs:461:function quickFilterSection(ctx) {
+src\templates.mjs:486:function showcaseSection(ctx) {
+src\templates.mjs:505:function propertyDirectionsSection(ctx) {
+src\templates.mjs:524:function homeScenariosSection(ctx) {
+src\templates.mjs:539:function sellerSection(ctx) {
+src\templates.mjs:546:function faqSection() {
