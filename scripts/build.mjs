@@ -15,6 +15,7 @@ import {
   renderNewbuild,
   renderNewbuilds,
   renderConstruction,
+  renderConstructionBuilder,
   renderConstructionProject,
   renderListing,
   renderLocation,
@@ -101,6 +102,7 @@ for (const page of pages.filter((item) => item.path !== "construction.html" && (
 publish("newbuilds.html", renderNewbuilds(ctx));
 for (const item of newbuilds.items) publish(`newbuilds/${item.slug}.html`, renderNewbuild(ctx, item));
 publish("construction.html", renderConstruction(ctx));
+publish("construction/builders/postroim-dom.html", renderConstructionBuilder(ctx));
 for (const item of [...constructionProjects.items, ...(constructionProjects.builtExamples || [])]) publish(`construction/projects/${item.slug}.html`, renderConstructionProject(ctx, item));
 for (const listing of listings.filter((item) => item.verified === true)) publish(`listings/${listing.id}.html`, renderListing(ctx, listing));
 publish("locations/index.html", renderLocationsIndex(ctx));
