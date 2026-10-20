@@ -182,7 +182,8 @@ test("public output omits removed social channels and uses the updated review st
     .filter((file) => /\.(?:html|js|json|xml|txt)$/u.test(file));
   for (const file of publicTextFiles) {
     const contents = read(file);
-    assert.doesNotMatch(contents, /whatsapp|wa\.me/iu, file);
+    const contactContents = contents.replace(/<div class="listing-share"[\s\S]*?<\/div>/gu, "");
+    assert.doesNotMatch(contactContents, /whatsapp|wa\.me/iu, file);
     assert.doesNotMatch(contents, /instagram|instagram\.com/iu, file);
     assert.doesNotMatch(contents, /Требует проверки/iu, file);
   }

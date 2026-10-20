@@ -121,6 +121,16 @@
   }
 
   function fillPayload(form) {
+    if (form.hasAttribute("data-viewing-form") && form.elements.message) {
+      var date = form.elements.viewing_date.value;
+      var time = form.elements.viewing_time.value;
+      var message = form.elements.message;
+      var previous = message.dataset.viewingComment || "";
+      if (previous) message.value = message.value.replace(previous, "").trim();
+      var comment = "Просмотр: " + date + ", время: " + time + ".";
+      message.value = (message.value.trim() + "\n" + comment).trim();
+      message.dataset.viewingComment = comment;
+    }
     var utm = attribution();
     var context = leadContext();
     hidden(form, "access_key", config.web3formsAccessKey || "");
@@ -135,8 +145,9 @@
     hidden(form, "market_context", form.elements.market ? form.elements.market.value : "");
     hidden(form, "territory_context", form.elements.territory ? form.elements.territory.value : "");
     hidden(form, "origin_page", form.getAttribute("data-origin-page") || window.location.pathname);
-    hidden(form, "source_cta", context.source_cta || form.getAttribute("data-source-cta") || "form");
-    if (context.criteria) hidden(form, "lead_context", context.criteria);
+    var ownContext = form.hasAttribute("data-viewing-form") || form.hasAttribute("data-catalog-alert");
+    hidden(form, "source_cta", (ownContext ? "" : context.source_cta) || form.getAttribute("data-source-cta") || "form");
+    if (context.criteria && !ownContext) hidden(form, "lead_context", context.criteria);
     utmKeys.forEach(function (key) { if (utm[key]) hidden(form, key, utm[key]); });
   }
 

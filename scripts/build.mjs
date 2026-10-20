@@ -58,6 +58,7 @@ site.assetVersion = createHash("sha256")
   .update(fs.readFileSync(path.join(root, "assets/css/site.css")))
   .update(fs.readFileSync(path.join(root, "assets/js/site.js")))
   .update(fs.readFileSync(path.join(root, "assets/js/form-handler.js")))
+  .update(fs.readFileSync(path.join(root, "assets/js/listing-pump.js")))
   .digest("hex")
   .slice(0, 12);
 if (site.web3formsAccessKey === "test-only-placeholder") throw new Error("Test-only Web3Forms key cannot be published");

@@ -349,6 +349,7 @@
   function applyLeadContext(context) {
     if (!context || typeof context !== "object") return;
     queryAll("form[data-lead-form]").forEach(function (form) {
+      if (form.hasAttribute("data-viewing-form") || form.hasAttribute("data-catalog-alert")) return;
       var service = form.elements.service;
       var goal = form.elements.goal;
       var propertyType = form.elements.property_type;
@@ -991,7 +992,12 @@
           }
         }
       });
-      show(activeKey);
+      function restoreDistrict() {
+        var key = new URLSearchParams(window.location.hash.slice(1)).get("district");
+        show(data[key] ? key : "center");
+      }
+      window.addEventListener("hashchange", restoreDistrict);
+      restoreDistrict();
     });
   }
 
