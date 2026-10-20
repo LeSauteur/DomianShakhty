@@ -286,7 +286,7 @@ test("all core property directions have useful public pages and navigation entry
 
 test("homepage uses the editorial composition with catalog offers", () => {
   const home = read("index.html");
-  assert.equal((home.match(/<section\b/gu) || []).length, 15);
+  assert.equal((home.match(/<section\b/gu) || []).length, 21);
   assert.equal((home.match(/class="home-property-card"/gu) || []).length, 3);
   assert.match(home, /<h1>Агентство недвижимости в Шахтах — офис Домиан на Маяковского<\/h1>/u);
   assert.match(home, /Смотреть объекты в Шахтах/u);
@@ -294,7 +294,7 @@ test("homepage uses the editorial composition with catalog offers", () => {
   assert.match(home, /Продать недвижимость/u);
   assert.doesNotMatch(home, /class="new-homes-feature"/u);
   assert.match(home, /id="hot-offers"/u);
-  assert.equal((home.match(/class="listing-card"/gu) || []).length, 6);
+  assert.equal((home.match(/class="listing-card"/gu) || []).length, 15);
   assert.doesNotMatch(home, /Объект (?:офиса|из обзора рынка)/u);
   assert.doesNotMatch(home, /Подтверждённый объект/u);
   assert.match(home, /data-mortgage-calculator data-page-type="home"/u);
@@ -310,7 +310,7 @@ test("homepage uses the editorial composition with catalog offers", () => {
   assert.match(officeSection, /class="owner-portrait"/u);
   assert.match(officeSection, /maria-voronina-960\.webp/u);
   assert.doesNotMatch(officeSection, /assets\/images\/office\/office-interior/u);
-  const order = ["property", "hot-offers", "request", "mortgage", "seller", "team", "team-life", "locations", "newbuilds", "construction", "expertise", "lead"].map((name) => home.indexOf(`data-home-section="${name}"`));
+  const order = ["buyer-paths", "new-objects", "specials", "quick-search", "reviews", "services", "process", "rules", "team", "team-life", "property", "newbuilds", "construction", "mortgage", "seller", "locations", "expertise", "faq", "request", "lead"].map((name) => home.indexOf(`data-home-section="${name}"`));
   assert.ok(order.every((position) => position >= 0));
   assert.deepEqual(order, order.slice().sort((a, b) => a - b));
 });

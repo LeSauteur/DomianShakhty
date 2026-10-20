@@ -530,7 +530,7 @@ test("homepage prioritizes local property, request and mortgage sections", async
   await expect(page.locator("[data-mortgage-calculator]")).toHaveCount(1);
   await expect(page.locator("[data-showcase-card]")).toHaveCount(0);
   const sections = await page.locator("main > section").evaluateAll((nodes) => nodes.map((node) => node.getAttribute("data-home-section") || "hero"));
-  expect(sections).toEqual(["hero", "reviews", "property", "hot-offers", "request", "mortgage", "seller", "team", "team-life", "locations", "newbuilds", "construction", "related-services", "expertise", "lead"]);
+  expect(sections).toEqual(["hero", "buyer-paths", "new-objects", "specials", "quick-search", "reviews", "services", "process", "rules", "team", "team-life", "property", "newbuilds", "construction", "mortgage", "seller", "locations", "expertise", "faq", "request", "lead"]);
 });
 
 test("homepage catalog showcases stay compact, truthful and link to imported details", async ({ page }) => {
