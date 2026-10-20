@@ -433,49 +433,36 @@
 
   function initHomeRequestBuilder() {
     queryAll("[data-home-request-builder]").forEach(function (form) {
-      var status = form.querySelector("[data-home-request-status]");
       var typeField = form.elements.requestType;
-      var phoneField = form.elements.requestPhone;
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
+      function updateContext() {
         var values = new FormData(form);
         var type = String(values.get("requestType") || "");
-        var phone = String(values.get("requestPhone") || "");
-        var digits = phone.replace(/\D/gu, "");
-        if (!type) {
-          if (status) { status.hidden = false; status.textContent = "Выберите тип недвижимости."; }
-          if (typeField) typeField.focus();
-          return;
-        }
-        if (phoneField && (digits.length < 10 || digits.length > 15)) {
-          if (status) { status.hidden = false; status.textContent = "Проверьте номер телефона: нужно от 10 до 15 цифр."; }
-          if (phoneField) phoneField.focus();
-          return;
-        }
         var location = String(values.get("requestLocation") || "");
         var budget = String(values.get("requestBudget") || "");
         var typeLabel = typeField.options[typeField.selectedIndex].text;
         var summary = ["Тип: " + typeLabel, location ? "Территория: " + location : "Несколько территорий", budget ? "Бюджет: " + budget : "Бюджет: обсудить"].join("; ");
         var context = {
-          page_type: document.body.dataset.pageType || "home",
-          source_cta: "Подбор под запрос",
-          service: serviceForCategory(type),
-          goal: "buy",
-          property_type: propertyTypeForCategory(type),
-          territory: location,
-          criteria: summary,
-          message: "Критерии подбора: " + summary + ".",
-          captured_at: Date.now()
+          page_type: "home", source_cta: "Подбор под запрос",
+          service: serviceForCategory(type), goal: "buy",
+          property_type: propertyTypeForCategory(type), territory: location,
+          criteria: summary, message: "Критерии подбора: " + summary + ".", captured_at: Date.now()
         };
         writeLeadContext(context);
-        applyLeadContext(context);
-        var compact = document.querySelector("form[data-lead-compact]");
-        if (compact && compact.elements.phone) compact.elements.phone.value = phone;
-        if (status) { status.hidden = false; status.textContent = compact ? "Запрос собран. Телефон перенесён в финальную форму — подтвердите согласие." : "Критерии собраны. Свяжитесь с офисом напрямую, чтобы обсудить актуальные варианты."; }
-        track("catalog_filter_use", { filter_name: "home_request", filter_value: type, page_type: "home" });
-        var lead = document.getElementById("lead-form-section");
-        if (lead) lead.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
-      });
+        ["service", "goal", "property_type", "territory", "message"].forEach(function (name) {
+          form.elements[name].value = context[name] || "";
+        });
+      }
+      form.addEventListener("change", updateContext);
+      // Prepare criteria before the shared form handler validates and sends this form.
+      form.addEventListener("submit", function (event) {
+        updateContext();
+        if (typeField.value) track("catalog_filter_use", { filter_name: "home_request", filter_value: typeField.value, page_type: "home" });
+        if (!form.hasAttribute("data-lead-form")) {
+          event.preventDefault();
+          var status = form.querySelector("[data-home-request-status]");
+          if (status) { status.hidden = false; status.textContent = "Критерии собраны. Свяжитесь с офисом напрямую, чтобы обсудить актуальные варианты."; }
+        }
+      }, true);
     });
   }
 
@@ -541,9 +528,11 @@
       var term = Number(values.get("term"));
       var principal = price - down;
       if (!Number.isFinite(rate) || rate <= 0) {
-        result.textContent = "Введите ставку";
+        result.dataset.state = "empty";
+        result.textContent = "Укажите ставку — посчитаем платёж";
         return;
       }
+      delete result.dataset.state;
       if (![price, down, term, principal].every(Number.isFinite) || price <= 0 || down < 0 || principal <= 0 || term <= 0) {
         result.textContent = "Проверьте параметры";
         return;

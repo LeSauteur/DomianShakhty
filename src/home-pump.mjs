@@ -4,7 +4,7 @@ import { QUICK_FILTERS, filterCatalog, newestListings } from './catalog-pump.mjs
 import { categoryForListing } from './listing-search.mjs';
 const esc = value => String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;');
 const money = value => `${Number(value).toLocaleString('ru-RU')} ₽`;
-const heading = (title, text = '') => `<div class="section-heading"><div><p class="eyebrow">Домиан · Шахты</p><h2>${title}</h2></div>${text ? `<p>${text}</p>` : ''}</div>`;
+const heading = (title, text = '') => `<div class="section-heading"><div><h2>${title}</h2></div>${text ? `<p>${text}</p>` : ''}</div>`;
 const section = (key, title, content, text = '') => `<section class="section pump-section" data-home-section="${key}" id="home-${key}"><div class="container">${heading(title, text)}${content}</div></section>`;
 
 export function homeBuyerPaths(ctx) {
@@ -22,14 +22,17 @@ export function homeNewest(ctx, card) {
   const items = newestListings(ctx.listings);
   return `<section class="section home-hot-offers" id="hot-offers" data-home-section="new-objects"><div class="container">${heading('Новые объекты', 'Последние обновлённые предложения офиса. Выберите вариант и договоритесь о просмотре.')}<div class="home-hot-offers__grid listing-grid">${items.map(item => card(ctx, item)).join('')}</div></div></section>`;
 }
-export function homeSpecials(ctx, card) {
+export function homeSpecials(ctx, card, complexCard) {
   const available = newestListings(ctx.listings, ctx.listings.length);
+  const apartmentsInNewbuilds = available.filter(i => i.type === 'apartment-newbuild');
+  const complexes = (ctx.newbuilds?.items || []).filter(i => i.completeness?.state === 'complete' && i.cover?.src);
+  const newbuilds = [...apartmentsInNewbuilds, ...complexes].slice(0, 3);
   const groups = [
     ['apartments', 'Квартиры', available.filter(i => categoryForListing(i) === 'apartments' && i.type !== 'apartment-newbuild'), 'apartments.html'],
-    ['houses-land', 'Дома и участки', [...available.filter(i => categoryForListing(i) === 'houses').slice(0, 2), ...available.filter(i => categoryForListing(i) === 'lands').slice(0, 2)], 'catalog.html?type=houses'],
-    ['newbuilds', 'Новостройки', available.filter(i => i.type === 'apartment-newbuild'), 'novostroyki-shakhty.html']
+    ['houses-land', 'Дома и участки', [...available.filter(i => categoryForListing(i) === 'houses').slice(0, 2), ...available.filter(i => categoryForListing(i) === 'lands').slice(0, 1)], 'catalog.html?type=houses'],
+    ['newbuilds', 'Новостройки', newbuilds, 'novostroyki-shakhty.html']
   ];
-  return section('specials', 'Специальные предложения', `<div data-pump-tabs><div class="pump-tabs" role="tablist" aria-label="Тип недвижимости">${groups.map(([key, label], i) => `<button type="button" role="tab" id="tab-${key}" aria-controls="panel-${key}" aria-selected="${i === 0}">${label}</button>`).join('')}</div>${groups.map(([key, label, items, href]) => `<div id="panel-${key}" role="tabpanel" aria-labelledby="tab-${key}" tabindex="0"><h3 class="pump-panel-title">${label}</h3><div class="listing-grid pump-cards">${items.slice(0, 4).map(item => card(ctx, item)).join('')}</div><a class="text-link" href="${ctx.href(href)}">Смотреть раздел ↗</a>${key === 'houses-land' ? `<a class="text-link" href="${ctx.href('lands.html')}">Все участки ↗</a>` : ''}</div>`).join('')}</div>`, 'Несколько вариантов из каталога для сравнения по цене, площади и расположению.');
+  return section('specials', 'Специальные предложения', `<div data-pump-tabs><div class="pump-tabs" role="tablist" aria-label="Тип недвижимости">${groups.map(([key, label], i) => `<button type="button" role="tab" id="tab-${key}" aria-controls="panel-${key}" aria-selected="${i === 0}">${label}</button>`).join('')}</div>${groups.map(([key, label, items, href]) => `<div id="panel-${key}" role="tabpanel" aria-labelledby="tab-${key}" tabindex="0"><div class="listing-grid pump-cards">${items.slice(0, 3).map(item => item.type ? card(ctx, item) : complexCard(ctx, item)).join('')}</div><a class="text-link" href="${ctx.href(href)}">Смотреть раздел ↗</a>${key === 'houses-land' ? `<a class="text-link" href="${ctx.href('lands.html')}">Все участки ↗</a>` : ''}</div>`).join('')}</div>`, 'Несколько вариантов из каталога для сравнения по цене, площади и расположению.');
 }
 export function homeQuickSearch(ctx) {
   const tiles = QUICK_FILTERS.map(f => ({ ...f, count: filterCatalog(ctx.listings, { quick: f.key }).length })).filter(f => f.count >= 2);
@@ -39,7 +42,7 @@ export function homeServices(ctx) {
   const price = (ctx.pricing || pricing).items.find(i => i.id === 'legal');
   const items = [
     ['Юридическое сопровождение', Number.isFinite(price?.value) ? `${money(price.value)} · оплачивает покупатель` : 'Обсудим состав работ', 'services.html#service-prices'],
-    ['Ипотека', 'Поможем подобрать программу и банк.', 'mortgage.html'],
+    ['Ипотека', 'Рассчитайте платёж по своей ставке и обсудите программу с агентом.', 'mortgage.html'],
     ['Оценка недвижимости', 'Обсудим характеристики и бюджет продажи.', 'valuation.html'],
     ['Кадастровые работы', 'Межевание, границы и документы на объект.', 'kadastrovye-raboty.html'],
     ['Строительство с «Построим Дом»', 'Подберём проект и обсудим смету для вашего участка.', 'construction/builders/postroim-dom.html']

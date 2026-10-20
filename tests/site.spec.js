@@ -424,6 +424,7 @@ test("compact home lead redirects only after provider success", async ({ page })
   await page.route("https://api.web3forms.com/submit", async (route) => { await route.fulfill({ status: 200, contentType: "application/json", body: '{"success":true}' }); });
   await page.goto("");
   const form = page.locator("form[data-lead-compact]");
+  await form.locator('select[name="requestType"]').selectOption("apartment");
   await form.locator('input[name="phone"]').fill("8 918 000-00-00");
   await form.locator('input[name="privacy_consent"]').check();
   await form.locator('button[type="submit"]').click();
@@ -499,38 +500,68 @@ test("qa=1 and localhost keep analytics disabled", async ({ page }) => {
   await expect(page.locator('script[src*="mc.yandex.ru"], script[src*="googletagmanager.com"]')).toHaveCount(0);
 });
 
-test("mortgage calculator uses the visitor's rate", async ({ page }) => {
-  for (const url of ["mortgage.html", ""]) {
-    await page.goto(url);
-    await page.locator('input[name="rate"]').fill("20");
-    await expect(page.locator("[data-mortgage-result]")).toContainText("₽ / мес.");
-  }
+test("mortgage calculator keeps the empty-rate hint small and calculates from the visitor's rate", async ({ page }) => {
+  await page.goto("mortgage.html");
+  const result = page.locator("[data-mortgage-result]");
+  await expect(result).toHaveText("Укажите ставку — посчитаем платёж");
+  expect(await result.evaluate(node => parseFloat(getComputedStyle(node).fontSize))).toBeLessThanOrEqual(18);
+  await page.locator('input[name="rate"]').fill("20");
+  await expect(result).toHaveText("67 953 ₽ / мес.");
+  await expect(result).not.toHaveAttribute("data-state", "empty");
+  await page.locator('input[name="rate"]').fill("");
+  await expect(result).toHaveText("Укажите ставку — посчитаем платёж");
+  await expect(result).toHaveAttribute("data-state", "empty");
 });
 
-test("home request builder transfers criteria into the lead form", async ({ page }) => {
+test("the single home request form sends criteria, validates consent and preserves fields after rejection", async ({ page }) => {
+  const requests = [];
+  let accepted = false;
+  await page.route("https://api.web3forms.com/submit", async route => {
+    requests.push(route.request().postData());
+    await route.fulfill({ status: accepted ? 200 : 400, contentType: "application/json", body: JSON.stringify({ success: accepted }) });
+  });
   await page.goto("");
   const builder = page.locator("[data-home-request-builder]");
+  await expect(page.locator('form[data-lead-form]')).toHaveCount(1);
+  const consent = builder.locator('input[name="privacy_consent"]');
+  expect((await consent.boundingBox()).width).toBeLessThanOrEqual(20);
   await builder.locator('select[name="requestType"]').selectOption("apartment");
   await builder.locator('select[name="requestLocation"]').selectOption({ label: "Каменоломни" });
   await builder.locator('select[name="requestBudget"]').selectOption({ label: "4–7 млн ₽" });
-  await builder.locator('input[name="requestPhone"]').fill("8 918 123-45-67");
+  await builder.locator('select[name="requestLocation"]').selectOption('');
+  await expect(builder.locator('input[name="territory"]')).toHaveValue('');
+  await builder.locator('select[name="requestLocation"]').selectOption({ label: "Каменоломни" });
+  await builder.locator('input[name="phone"]').fill("8 918 123-45-67");
   await builder.getByRole("button", { name: "Получить актуальную подборку" }).click();
-  await expect(builder.locator("[data-home-request-status]")).toContainText("Телефон перенесён");
-  await expect(page.locator('form[data-lead-compact] input[name="phone"]')).toHaveValue("8 918 123-45-67");
-  const context = await page.evaluate(() => JSON.parse(sessionStorage.getItem("domian_lead_context")));
-  expect(context.property_type).toBe("apartment");
-  expect(context.territory).toBe("Каменоломни");
-  expect(context.criteria).toContain("4–7 млн ₽");
+  await expect(builder.locator("[data-form-status]")).toContainText("Проверьте отмеченные поля");
+  expect(requests).toHaveLength(0);
+  await builder.locator('input[name="privacy_consent"]').check();
+  await builder.getByRole("button", { name: "Получить актуальную подборку" }).click();
+  await expect(builder.locator("[data-form-status]")).toContainText("Сервис не подтвердил отправку");
+  expect(requests).toHaveLength(1);
+  expect(requests[0]).toContain("Каменоломни");
+  expect(requests[0]).toContain("4–7 млн ₽");
+  expect(requests[0]).toContain("+79181234567");
+  await expect(builder.locator('select[name="requestType"]')).toHaveValue("apartment");
+  await expect(builder.locator('select[name="requestLocation"]')).toHaveValue("Каменоломни");
+  await expect(builder.locator('select[name="requestBudget"]')).toHaveValue("4–7 млн ₽");
+  accepted = true;
+  await builder.getByRole("button", { name: "Получить актуальную подборку" }).click();
+  await expect(page).toHaveURL(/thanks\.html/u);
+  expect(requests).toHaveLength(2);
 });
 
-test("homepage prioritizes local property, request and mortgage sections", async ({ page }) => {
+test("homepage keeps one request form and links to the separate mortgage calculator", async ({ page }) => {
   await page.goto("");
-  await expect(page.locator(".home-property-card")).toHaveCount(3);
+  await expect(page.locator(".home-property-card")).toHaveCount(0);
   await expect(page.locator(".new-homes-feature")).toHaveCount(0);
-  await expect(page.locator("[data-mortgage-calculator]")).toHaveCount(1);
+  await expect(page.locator("[data-mortgage-calculator]")).toHaveCount(0);
+  await expect(page.locator('[data-home-section="services"] a[href="/mortgage.html"]')).toBeVisible();
   await expect(page.locator("[data-showcase-card]")).toHaveCount(0);
-  const sections = await page.locator("main > section").evaluateAll((nodes) => nodes.map((node) => node.getAttribute("data-home-section") || "hero"));
-  expect(sections).toEqual(["hero", "buyer-paths", "new-objects", "specials", "quick-search", "reviews", "services", "process", "rules", "team", "team-life", "property", "newbuilds", "construction", "mortgage", "seller", "locations", "expertise", "faq", "request", "lead"]);
+  const sections = await page.locator("main > section").evaluateAll(nodes => nodes.map(node => node.getAttribute("data-home-section") || "hero"));
+  expect(sections).toEqual(["hero", "buyer-paths", "new-objects", "specials", "quick-search", "reviews", "services", "process", "rules", "team", "team-life", "newbuilds", "construction", "seller", "locations", "expertise", "faq", "request"]);
+  await expect(page.locator('[data-home-section="newbuilds"] .editorial-card')).toHaveCount(3);
+  await expect(page.locator('.home-newbuilds-benefit')).toHaveText("Подбор новостройки бесплатно — за вас платит застройщик");
 });
 
 test("homepage catalog showcases stay compact, truthful and link to imported details", async ({ page }) => {
@@ -540,6 +571,21 @@ test("homepage catalog showcases stay compact, truthful and link to imported det
     await expect(page.locator("[data-home-newbuild]")).toHaveCount(0);
     await expect(page.locator('[data-home-section="newbuilds"] a[href="/zhk-aleksandrovskiy-park.html"]')).toBeVisible();
     await expect(page.locator("[data-home-construction]")).toHaveCount(6);
+    const projectStyles = await page.locator('[data-home-construction]').evaluateAll(cards => cards.map(card => ({
+      slug: card.dataset.homeConstruction,
+      fit: getComputedStyle(card.querySelector('img')).objectFit,
+      padding: getComputedStyle(card.querySelector('img')).padding,
+      underline: getComputedStyle(card.querySelector('h3 a')).textDecorationLine
+    })));
+    expect(projectStyles.every(style => style.underline === 'none')).toBe(true);
+    const photo = projectStyles.find(style => style.slug === 'dom-pod-klyuch-75m2-dve-spalni');
+    expect(photo.fit).toBe('cover');
+    expect(photo.padding).toBe('0px');
+    expect(projectStyles.find(style => style.slug === 'dom-pod-klyuch-99m2-tri-spalni').fit).toBe('contain');
+    if (viewport.width === 1440) {
+      const rows = await page.locator('[data-home-section="newbuilds"] .editorial-card').evaluateAll(cards => cards.map(card => card.getBoundingClientRect().top));
+      expect(new Set(rows).size).toBe(1);
+    }
     const layout = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
     expect(layout.scroll).toBeLessThanOrEqual(layout.client + 1);
     const firstConstruction = page.locator("[data-home-construction]").first();
@@ -581,14 +627,14 @@ test("desktop local offers form a balanced three-column grid", async ({ page }) 
   expect(layout.scrollWidth).toBeLessThanOrEqual(layout.clientWidth + 1);
 });
 
-test("mobile property cards form a two-column grid without horizontal scrolling", async ({ page }) => {
-  await page.setViewportSize({ width: 400, height: 824 });
+test("mobile buyer directions remain usable without duplicate property tiles", async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 824 });
   await page.goto("");
-  const grid = page.locator(".home-property__grid");
+  const grid = page.locator("[data-home-section='buyer-paths'] .pump-paths");
   await grid.scrollIntoViewIfNeeded();
   const layout = await grid.evaluate((node) => {
     const gridRect = node.getBoundingClientRect();
-    const cards = [...node.querySelectorAll(".home-property-card")].map((card) => card.getBoundingClientRect());
+    const cards = [...node.querySelectorAll("a")].map((card) => card.getBoundingClientRect());
     return {
       display: getComputedStyle(node).display,
       columns: getComputedStyle(node).gridTemplateColumns.split(" ").length,
@@ -598,7 +644,7 @@ test("mobile property cards form a two-column grid without horizontal scrolling"
     };
   });
   expect(layout.display).toBe("grid");
-  expect(layout.columns).toBe(2);
+  expect(layout.columns).toBe(1);
   expect(layout.scrollWidth).toBeLessThanOrEqual(layout.clientWidth + 1);
   expect(layout.cardsInside).toBe(true);
 });

@@ -11,7 +11,12 @@ test('special offer tabs support click and keyboard navigation', async ({ page }
   await expect(page.locator('#panel-apartments')).toBeHidden();
   await page.keyboard.press('ArrowRight');
   await expect(tabs.getByRole('tab', { name: 'Новостройки', exact: true })).toHaveAttribute('aria-selected', 'true');
+  for (const key of ['apartments', 'houses-land', 'newbuilds']) {
+    await expect(page.locator('#panel-' + key + ' .pump-cards > article')).toHaveCount(3);
+    await expect(page.locator('#panel-' + key + ' h3.pump-panel-title')).toHaveCount(0);
+  }
   await expect(page.locator('#panel-newbuilds .listing-card')).toHaveCount(1);
+  await expect(page.locator('#panel-newbuilds .product-card')).toHaveCount(2);
 });
 test('quick search URLs hydrate catalog and reset cleanly', async ({ page }) => {
   for (const f of QUICK_FILTERS) {
