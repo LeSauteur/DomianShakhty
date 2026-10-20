@@ -95,7 +95,7 @@ export function createContext(site, data) {
 
 function brand(ctx) {
   return `<a class="brand" href="${ctx.href("")}">
-    <span class="brand__mark" aria-hidden="true">Д</span>
+    <img class="brand__mark" src="${ctx.href("assets/brand/domian-d.svg")}" width="34" height="36" alt="Домиан">
     <span class="brand__copy"><strong>Домиан</strong><small>Шахты · Маяковского 18А</small></span>
   </a>`;
 }
@@ -368,7 +368,7 @@ function homeHotOffersSection(ctx) {
     ...available.filter((item) => listingCategory(item) === "land").slice(0, 2)
   ];
   if (!items.length) return "";
-  return `<section class="section home-hot-offers" id="hot-offers" data-home-section="hot-offers"><div class="container"><div class="section-heading"><div><p class="eyebrow">Предложения в Шахтах</p><h2>Квартиры, дома и участки</h2></div><p>Предложения из каталога офиса. Наличие, цену и комплектацию уточняем перед просмотром.</p></div><div class="home-hot-offers__grid listing-grid" data-reveal-group>${items.map((item) => listingCard(ctx, item)).join("")}</div></div></section>`;
+  return `<section class="section home-hot-offers" id="hot-offers" data-home-section="hot-offers"><div class="container"><div class="section-heading"><div><p class="eyebrow">Предложения в Шахтах</p><h2>Свежие предложения в Шахтах</h2></div><p>Выберите квартиру, дом или участок и запишитесь на просмотр.</p></div><div class="home-hot-offers__grid listing-grid" data-reveal-group>${items.map((item) => listingCard(ctx, item)).join("")}</div></div></section>`;
 }
 
 function homeRequestSection(ctx) {
@@ -390,7 +390,7 @@ function homeLocationsSection(ctx) {
 
 function homeExpertiseSection(ctx, guides) {
   const items = guides.slice(0, 3);
-  return `<section class="section home-expertise" data-home-section="expertise"><div class="container">${sectionHeading({ kicker: "Локальная экспертиза", title: "Решения начинаются с контекста", intro: `Срез и материалы актуальны на ${formatDate(ctx.site.updatedAt)} Публичные объявления не равны уникальным объектам или завершённым сделкам.` })}<div class="home-expertise__grid">${items.map((guide, index) => `<a href="${ctx.href(`guides/${guide.slug}.html`)}"><span>${String(index + 1).padStart(2, "0")}</span><h3>${esc(guide.title)}</h3><p>${esc(guide.answer)}</p><strong>Читать материал ↗</strong></a>`).join("")}</div><a class="text-link" href="${ctx.href("guides/index.html")}">Все полезные материалы ↗</a></div></section>`;
+  return `<section class="section home-expertise" data-home-section="expertise"><div class="container">${sectionHeading({ kicker: "Локальная экспертиза", title: "Полезно перед покупкой", intro: "Разберитесь в документах, районах и расходах до выбора объекта." })}<div class="home-expertise__grid">${items.map((guide, index) => `<a href="${ctx.href(`guides/${guide.slug}.html`)}"><span>${String(index + 1).padStart(2, "0")}</span><h3>${esc(guide.title)}</h3><p>${esc(guide.answer)}</p><strong>Читать материал ↗</strong></a>`).join("")}</div><a class="text-link" href="${ctx.href("guides/index.html")}">Все полезные материалы ↗</a></div></section>`;
 }
 
 function teamLifePicture(ctx, item, sizes) {
@@ -922,9 +922,8 @@ function homeNewbuildCard(ctx, item) {
 }
 
 function homeFeaturedNewbuilds(ctx) {
-  const items = selectFeaturedNewbuilds(ctx.newbuilds?.items || []);
-  if (!items.length) return "";
-  return `<section class="section home-catalog-showcase home-catalog-showcase--newbuilds" data-home-section="newbuilds"><div class="container"><div class="home-catalog-showcase__heading"><div><p class="eyebrow">Новостройки</p><h2>Жилые комплексы с проверенными данными</h2></div><p>Шесть проектов с полными карточками и локальными фотографиями. Город указан отдельно; цены показываются только при подтверждённом статусе.</p></div><div class="home-catalog-grid" data-reveal-group>${items.map((item) => homeNewbuildCard(ctx, item)).join("")}</div><a class="button button--ghost home-catalog-showcase__all" href="${ctx.href("newbuilds.html")}">Смотреть все 78 новостроек</a></div></section>`;
+  const local = (ctx.localComplexes || []).find(item => item.slug === "aleksandrovskiy-park" && item.publish === true && item.officeSells === true);
+  return `<section class="section home-catalog-showcase home-catalog-showcase--newbuilds" data-home-section="newbuilds"><div class="container">${sectionHeading({ kicker: "Квартиры в новых домах", title: "Новостройки", intro: "Начните с Шахт: сравните адреса и планировки, обсудите покупку с нашим офисом." })}<div class="editorial-grid">${local ? `<article class="editorial-card"><p class="eyebrow">Шахты · Шевченко, 135-А</p><h3>${esc(local.name)}</h3><p>Подберём квартиру в комплексе под ваши планы и бюджет.</p><a class="text-link" href="${ctx.href("zhk-aleksandrovskiy-park.html")}">Квартиры в Александровском парке ↗</a></article>` : ""}<article class="editorial-card"><p class="eyebrow">Местный рынок</p><h3>Новостройки Шахт</h3><p>Сравните комплексы и выберите расположение для будущего дома.</p><a class="text-link" href="${ctx.href("novostroyki-shakhty.html")}">Смотреть новостройки Шахт ↗</a></article></div><a class="text-link" href="${ctx.href("newbuilds.html")}">Новостройки Ростова и области ↗</a></div></section>`;
 }
 
 function constructionFeatureScore(item) {

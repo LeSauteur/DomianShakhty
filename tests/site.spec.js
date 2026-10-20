@@ -537,15 +537,11 @@ test("homepage catalog showcases stay compact, truthful and link to imported det
   for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
     await page.setViewportSize(viewport);
     await page.goto("");
-    await expect(page.locator("[data-home-newbuild]")).toHaveCount(6);
+    await expect(page.locator("[data-home-newbuild]")).toHaveCount(0);
+    await expect(page.locator('[data-home-section="newbuilds"] a[href="/zhk-aleksandrovskiy-park.html"]')).toBeVisible();
     await expect(page.locator("[data-home-construction]")).toHaveCount(6);
     const layout = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
     expect(layout.scroll).toBeLessThanOrEqual(layout.client + 1);
-    const firstNewbuild = page.locator("[data-home-newbuild]").first();
-    await firstNewbuild.scrollIntoViewIfNeeded();
-    await expect(firstNewbuild.locator("img")).toBeVisible();
-    await expect.poll(() => firstNewbuild.locator("img").evaluate((image) => image.naturalWidth)).toBeGreaterThan(0);
-    await expect(firstNewbuild.locator('.home-catalog-card__cta')).toHaveAttribute("href", /\/newbuilds\/.+\.html$/u);
     const firstConstruction = page.locator("[data-home-construction]").first();
     await firstConstruction.scrollIntoViewIfNeeded();
     await expect(firstConstruction.locator("img")).toBeVisible();

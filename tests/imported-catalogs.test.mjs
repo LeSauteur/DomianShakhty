@@ -200,7 +200,9 @@ test("homepage features only complete newbuilds and never promotes archived cons
   const home = readDist("index.html");
   const newbuildSlugs = [...home.matchAll(/data-home-newbuild="([^"]+)"/gu)].map((match) => match[1]);
   const constructionSlugs = [...home.matchAll(/data-home-construction="([^"]+)"/gu)].map((match) => match[1]);
-  assert.equal(newbuildSlugs.length, 6);
+  assert.equal(newbuildSlugs.length, 0);
+  assert.match(home, /Новостройки Шахт/u);
+  assert.ok(home.indexOf('href="/zhk-aleksandrovskiy-park.html"', home.indexOf('data-home-section="newbuilds"')) < home.indexOf('Новостройки Ростова и области'));
   assert.equal(constructionSlugs.length, 6);
   for (const slug of newbuildSlugs) {
     const item = newbuilds.items.find((candidate) => candidate.slug === slug);
@@ -218,6 +220,6 @@ test("homepage features only complete newbuilds and never promotes archived cons
       if (Number.isFinite(item?.price)) assert.doesNotMatch(card, new RegExp(String(item.price), "u"), slug);
     }
   }
-  assert.match(home, /Смотреть все 78 новостроек/u);
+  assert.match(home, /Новостройки Ростова и области/u);
   assert.match(home, /Все 26 проектов/u);
 });
