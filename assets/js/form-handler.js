@@ -54,7 +54,7 @@
     var name = form.elements.name;
     var phone = form.elements.phone;
     var goal = form.elements.goal;
-    var propertyType = form.elements.property_type;
+    var propertyType = form.elements.requestType || form.elements.property_type;
     var consent = form.elements.privacy_consent;
     var first = null;
     [name, phone, goal, propertyType, consent].forEach(function (field) { if (field) clearError(field); });
@@ -72,7 +72,7 @@
       if (goal) error(goal, "Выберите цель обращения.");
       first = first || goal;
     }
-    if (!compact && (!propertyType || !propertyType.value)) {
+    if ((!compact || form.hasAttribute("data-home-request-builder")) && (!propertyType || !propertyType.value)) {
       if (propertyType) error(propertyType, "Выберите тип недвижимости.");
       first = first || propertyType;
     }

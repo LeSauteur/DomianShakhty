@@ -7143,3 +7143,47 @@ body[data-page-type="home"] .page-hero__layout { grid-template-columns:minmax(0,
 .catalog-scenarios{margin:28px 0}.catalog-alert{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:start;gap:32px;margin:48px 0;padding:32px;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--paper-mint)}.catalog-alert h3{font:clamp(1.8rem,3vw,2.8rem)/1.12 var(--serif);margin:14px 0}.catalog-alert p{line-height:1.7}.catalog-alert .lead-form{padding:26px;min-width:0}.catalog-alert form>label{min-width:0}.catalog-alert input,.catalog-alert select,.catalog-alert textarea{min-width:0;max-width:100%}
 [data-product-catalog=inventory] .listing-card__media{display:block;aspect-ratio:4/3;min-height:0;height:auto;overflow:hidden}[data-product-catalog=inventory] .listing-card__media picture{display:block;height:100%}[data-product-catalog=inventory] .listing-card__media img{width:100%;height:100%;object-fit:cover}[data-product-catalog=inventory] .listing-card__body>p:not(.listing-card__location){display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
 @media(max-width:760px){.catalog-alert{grid-template-columns:1fr;padding:20px;gap:20px}.catalog-alert .lead-form{padding:20px}.catalog-scenarios{grid-template-columns:1fr}}
+
+/* Homepage rhythm and its single request form. Other pages keep their spacing. */
+body[data-page-type="home"] main > [data-home-section] {
+  padding-bottom: calc(var(--section-space) / 2);
+}
+body[data-page-type="home"] main > [data-home-section]:not(.home-request) {
+  padding-top: calc(var(--section-space) / 2);
+}
+.home-newbuilds-benefit {
+  display: inline-block;
+  margin: 0 0 24px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  background: var(--champagne-soft);
+  color: var(--ink);
+  font-weight: 750;
+}
+.home-catalog-showcase--newbuilds .editorial-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 900px) {
+  .home-catalog-showcase--newbuilds .editorial-grid { grid-template-columns: 1fr; }
+}
+.home-catalog-card h3 a { text-decoration: none; }
+.home-request__form label.consent {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: flex-start;
+}
+.home-request__form label.consent input {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+}
+.home-request__form label.consent span { min-width: 0; }
+.home-request__form [data-form-status] { grid-column: 1 / -1; }
+.mortgage-result strong[data-state="empty"] {
+  margin-block: 10px;
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
