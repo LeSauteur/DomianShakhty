@@ -56,6 +56,7 @@ const site = readJson("site.config.json");
 site.assetVersion = createHash("sha256")
   .update(fs.readFileSync(path.join(root, "site.config.json")))
   .update(fs.readFileSync(path.join(root, "assets/css/site.css")))
+  .update(fs.readFileSync(path.join(root, "assets/css/listing-pump.css")))
   .update(fs.readFileSync(path.join(root, "assets/js/site.js")))
   .update(fs.readFileSync(path.join(root, "assets/js/form-handler.js")))
   .update(fs.readFileSync(path.join(root, "assets/js/listing-pump.js")))

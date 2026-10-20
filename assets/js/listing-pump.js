@@ -51,7 +51,7 @@
       var loan = Number(fields.cost.value) - Number(fields.down.value);
       result.hidden = !valid || loan <= 0; result.textContent = '';
       note.hidden = !result.hidden;
-      if (result.hidden) { note.textContent = 'Введите взнос, срок и ставку в пределах полей.'; return; }
+      if (result.hidden) { note.textContent = 'Проверьте взнос, срок и ставку.'; return; }
       var months = Number(fields.years.value) * 12;
       var rate = Number(fields.rate.value) / 1200;
       var payment = rate === 0 ? loan / months : loan * rate / (-Math.expm1(-months * Math.log1p(rate)));

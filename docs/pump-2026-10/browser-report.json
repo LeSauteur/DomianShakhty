@@ -1,0 +1,80 @@
+[
+  {
+    "name": "home",
+    "width": 1440,
+    "scroll": 1440,
+    "client": 1440,
+    "portrait": [
+      "http://127.0.0.1:4173/assets/images/maria-voronina-640.webp"
+    ],
+    "broken": [],
+    "errors": []
+  },
+  {
+    "name": "listing",
+    "width": 1440,
+    "scroll": 1440,
+    "client": 1440,
+    "portrait": [],
+    "hero": "http://127.0.0.1:4173/assets/images/listings/shk-a05-center-renovated-1k/hero.webp",
+    "broken": [],
+    "errors": []
+  },
+  {
+    "name": "collection",
+    "width": 1440,
+    "scroll": 1440,
+    "client": 1440,
+    "portrait": [],
+    "broken": [],
+    "errors": []
+  },
+  {
+    "name": "empty-catalog",
+    "width": 1440,
+    "scroll": 1440,
+    "client": 1440,
+    "portrait": [],
+    "broken": [],
+    "errors": []
+  },
+  {
+    "name": "home",
+    "width": 375,
+    "scroll": 375,
+    "client": 375,
+    "portrait": [
+      "http://127.0.0.1:4173/assets/images/maria-voronina-360.webp"
+    ],
+    "broken": [],
+    "errors": []
+  },
+  {
+    "name": "listing",
+    "width": 375,
+    "scroll": 375,
+    "client": 375,
+    "portrait": [],
+    "hero": "http://127.0.0.1:4173/assets/images/listings/shk-a05-center-renovated-1k/hero.webp",
+    "broken": [],
+    "errors": []
+  },
+  {
+    "name": "collection",
+    "width": 375,
+    "scroll": 375,
+    "client": 375,
+    "portrait": [],
+    "broken": [],
+    "errors": []
+  },
+  {
+    "name": "empty-catalog",
+    "width": 375,
+    "scroll": 375,
+    "client": 375,
+    "portrait": [],
+    "broken": [],
+    "errors": []
+  }
+]

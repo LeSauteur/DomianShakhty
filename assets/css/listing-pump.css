@@ -14,3 +14,4 @@
 [data-similar-listings] .pump-cards{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media(max-width:1000px){.payment-calculator{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.payment-calculator{grid-template-columns:1fr;padding:22px}.viewing-days [data-viewing-days]{grid-template-columns:repeat(2,minmax(0,1fr))}.listing-questions{flex-direction:column}.listing-questions button{width:100%;text-align:left}.listing-code{font-size:1.25rem}.listing-share{gap:14px}[data-similar-listings] .pump-cards{grid-template-columns:1fr}}
+.listing-detail__hero .listing-code{color:var(--paper-mint)}.listing-detail__hero .listing-unit-price{color:var(--paper-mint)}

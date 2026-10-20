@@ -1,0 +1,15 @@
+import { SCENARIOS, filterCatalog } from './catalog-pump.mjs';
+import districts from './data/district-map.json' with { type: 'json' };
+const esc = value => String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;');
+export function catalogScenarios(items) {
+  return SCENARIOS.map(s => ({ ...s, count: filterCatalog(items, { scenario: s.key }).length })).filter(s => s.count >= 3);
+}
+export function scenarioTiles(items) {
+  const scenarios = catalogScenarios(items);
+  return scenarios.length ? `<nav class="pump-quick catalog-scenarios" aria-label="Подборки по сценарию">${scenarios.map(s => `<a href="?scenario=${s.key}" data-scenario-link="${s.key}"><strong>${s.label}</strong><span>${s.count} объектов ↗</span></a>`).join('')}</nav>` : '';
+}
+export function catalogAlert(ctx, defaultType = '') {
+  if (!ctx.site.web3formsAccessKey) return `<div class="catalog-alert" id="catalog-alert"><h3>Сообщите, когда появится</h3><a class="button button--primary" href="${ctx.site.phoneHref}">Позвонить в офис</a></div>`;
+  const types = [['apartment', 'Квартира'], ['house', 'Дом'], ['land', 'Участок'], ['commercial', 'Коммерция'], ['garage-parking', 'Гараж или парковка']];
+  return `<div class="catalog-alert" id="catalog-alert"><div><p class="eyebrow">Нужного варианта пока нет?</p><h3>Сообщите, когда появится</h3><p>Оставьте тип недвижимости, район и бюджет. Свяжемся, когда сможем предложить подходящий объект.</p></div><form class="lead-form" data-lead-form data-lead-compact data-catalog-alert data-source-cta="catalog_notify" novalidate><div class="honeypot" aria-hidden="true"><label>Не заполняйте<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label></div><input type="hidden" name="service" value="catalog_notify"><input type="hidden" name="goal" value="buy"><label>Тип недвижимости<select name="property_type" required>${types.map(([key, label]) => `<option value="${key}"${defaultType === key ? ' selected' : ''}>${label}</option>`).join('')}</select></label><label>Район<select name="territory"><option value="">Любой район</option>${districts.districts.map(d => `<option value="${esc(d.name)}" data-key="${d.key}">${esc(d.name)}</option>`).join('')}</select></label><label>Бюджет до, ₽<input name="notify_budget" type="number" min="1" step="1" inputmode="numeric" placeholder="Обсудить"></label><label>Телефон<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="+7 999 123-45-67"></label><label class="lead-form__message">Что ещё важно<textarea name="message" rows="2" placeholder="Например, этаж или сроки переезда"></textarea></label><label class="consent"><input name="privacy_consent" type="checkbox" required><span>Согласен(на) на обработку данных по <a href="${ctx.href('privacy.html')}">политике</a>.</span></label><p class="form-status" data-form-status role="status" hidden></p><button class="button button--primary" type="submit">Сообщить о подходящем объекте</button></form></div>`;
+}

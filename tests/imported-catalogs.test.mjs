@@ -143,7 +143,7 @@ test("partner house cards are anonymized and use the supplied presentation value
   assert.ok(partnerItems.filter((item) => !builtExamples.includes(item)).every((item) => item.gallery.length === 0 && item.mainImage.src.includes("/plan-")));
   const catalog = readDist("construction.html");
   assert.match(catalog, /от 4\s545\s947 ₽/u);
-  assert.match(catalog, /от 21\s804 ₽\/мес\./u);
+  assert.doesNotMatch(catalog, /product-card__payment|₽\/мес\./u);
   assert.doesNotMatch(catalog, /Союз Застройщиков|soyuz-|souz-zastroi/iu);
   const builtPage = readDist("construction/projects/dom-pod-klyuch-83-8m2-s-terrasoy.html");
   assert.match(builtPage, /Примеры близкого архитектурного профиля/u);

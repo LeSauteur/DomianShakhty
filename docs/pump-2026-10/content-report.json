@@ -1,0 +1,77 @@
+{
+  "html": {
+    "before": 102646,
+    "after": 115779
+  },
+  "sharedAssets": [
+    {
+      "path": "assets/css/site.css",
+      "before": 142631,
+      "after": 156210
+    },
+    {
+      "path": "assets/js/site.js",
+      "before": 47870,
+      "after": 53216
+    },
+    {
+      "path": "assets/js/form-handler.js",
+      "before": 10819,
+      "after": 12820
+    }
+  ],
+  "quick": [
+    {
+      "label": "До 2,5 млн",
+      "count": 13
+    },
+    {
+      "label": "С ремонтом",
+      "count": 10
+    },
+    {
+      "label": "Своё газовое отопление",
+      "count": 8
+    },
+    {
+      "label": "Кирпичный дом",
+      "count": 5
+    },
+    {
+      "label": "Участки ИЖС",
+      "count": 5
+    },
+    {
+      "label": "Рядом с центром",
+      "count": 3
+    }
+  ],
+  "scenarios": [
+    {
+      "label": "Первая квартира",
+      "count": 6
+    },
+    {
+      "label": "С ремонтом — заезжай и живи",
+      "count": 10
+    },
+    {
+      "label": "Для семьи",
+      "count": 13
+    },
+    {
+      "label": "Земля под свой дом",
+      "count": 5
+    }
+  ],
+  "newest": [
+    "shk-a14-renovated-2k-43",
+    "shk-h07-two-houses-kamenolomni",
+    "shk-h08-two-houses-center",
+    "shk-h09-renovated-76",
+    "shk-l07-corner-12-sot",
+    "shk-l08-goroda-budushchego-plot"
+  ],
+  "inventory": 34,
+  "growth": 34059
+}

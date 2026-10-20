@@ -874,6 +874,15 @@
         });
         if (count) count.textContent = String(visible.length);
         if (empty) empty.hidden = visible.length > 0;
+        var alertForm = root.closest(".catalog-shell")?.querySelector("[data-catalog-alert]");
+        if (alertForm) {
+          var types = { apartments: "apartment", houses: "house", lands: "land", commercial: "commercial", parking: "garage-parking" };
+          var districtOption = Array.from(alertForm.elements.territory.options).find(function (o) { return o.dataset.key === field("district"); });
+          [["property_type", types[field("type")] || alertForm.elements.property_type.dataset.initialType], ["territory", districtOption ? districtOption.value : ""], ["notify_budget", field("priceMax")]].forEach(function (pair) {
+            var control = alertForm.elements[pair[0]];
+            if (control && control.dataset.manual !== "true" && pair[1] != null) control.value = pair[1];
+          });
+        }
         if (announce) {
           track("catalog_filter_use", {
             filter_name: root.dataset.productCatalog || "product_catalog",
@@ -883,6 +892,13 @@
         }
       }
 
+      var alertForm = root.closest(".catalog-shell")?.querySelector("[data-catalog-alert]");
+      if (alertForm) {
+        alertForm.elements.property_type.dataset.initialType = alertForm.elements.property_type.value;
+        ["property_type", "territory", "notify_budget"].forEach(function (key) {
+          alertForm.elements[key].addEventListener("input", function () { this.dataset.manual = "true"; });
+        });
+      }
       if (root.dataset.productCatalog === "inventory") {
         function restore() {
           var params = new URLSearchParams(window.location.search);
@@ -993,8 +1009,9 @@
         }
       });
       function restoreDistrict() {
-        var key = new URLSearchParams(window.location.hash.slice(1)).get("district");
-        show(data[key] ? key : "center");
+        var params = new URLSearchParams(window.location.hash.slice(1));
+        var key = params.get("district");
+        if (params.has("district") || !window.location.hash) show(data[key] ? key : "center");
       }
       window.addEventListener("hashchange", restoreDistrict);
       restoreDistrict();

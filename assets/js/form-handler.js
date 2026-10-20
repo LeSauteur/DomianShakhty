@@ -76,6 +76,10 @@
       if (propertyType) error(propertyType, "Выберите тип недвижимости.");
       first = first || propertyType;
     }
+    var budget = form.elements.notify_budget;
+    if (budget && budget.value && !budget.checkValidity()) {
+      error(budget, "Укажите бюджет больше нуля."); first = first || budget;
+    }
     if (!consent || !consent.checked) {
       if (consent) error(consent, "Нужно подтвердить согласие.");
       first = first || consent;
@@ -130,6 +134,17 @@
       var comment = "Просмотр: " + date + ", время: " + time + ".";
       message.value = (message.value.trim() + "\n" + comment).trim();
       message.dataset.viewingComment = comment;
+    }
+    if (form.hasAttribute("data-catalog-alert") && form.elements.message) {
+      var type = form.elements.property_type;
+      var district = form.elements.territory;
+      var budget = form.elements.notify_budget;
+      var message = form.elements.message;
+      var previous = message.dataset.notifyComment || "";
+      if (previous) message.value = message.value.replace(previous, "").trim();
+      var criteria = "Сообщите, когда появится. Тип: " + type.options[type.selectedIndex].text + "; район: " + (district.value || "любой") + "; бюджет до: " + (budget.value ? Number(budget.value).toLocaleString("ru-RU") + " ₽" : "обсудить") + ".";
+      message.value = (message.value.trim() + "\n" + criteria).trim();
+      message.dataset.notifyComment = criteria;
     }
     var utm = attribution();
     var context = leadContext();

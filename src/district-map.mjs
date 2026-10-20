@@ -57,7 +57,7 @@ export function renderDistrictMap(ctx) {
   const initial = districts.find(d => d.key === "center");
   const data = Object.fromEntries(districts.map(d => [d.key, {
     name: d.name, count: d.count, countLabel: countLabel(d.count), kicker: d.kicker,
-    text: d.count ? d.text : d.textEmpty, links: d.links.map(link => ({ ...link, href: ctx.href(link.href) })),
+    text: d.count ? d.text : d.textEmpty, links: [...d.links, { label: "Все объекты в районе", href: `catalog.html?district=${d.key}` }].map(link => ({ ...link, href: ctx.href(link.href) })),
     cta: d.count ? "Подобрать в этом районе" : "Оставить запрос"
   }]));
   const current = data.center;

@@ -438,7 +438,7 @@ test("lead analytics never receives entered personal data", async ({ page }) => 
     window.DOMIAN_ANALYTICS_TEST_HOOK = (name, params) => window.__domianEvents.push({ name, params });
   });
   await page.goto("commercial.html#lead-form-section");
-  const form = page.locator("form[data-lead-form]");
+  const form = page.locator("#lead-form-section form[data-lead-form]");
   await form.locator('input[name="name"]').fill("Анна Проверка");
   await form.locator('input[name="phone"]').fill("8 918 123-45-67");
   await form.locator('input[name="privacy_consent"]').check();

@@ -27,6 +27,8 @@ test('district hash opens the correct map district and survives hash navigation'
   await expect(page.locator('[data-district-name]')).toHaveText('ХБК');
   await page.evaluate(() => { location.hash = 'district=artem'; });
   await expect(page.locator('[data-district-name]')).toHaveText('Артём');
+  await page.evaluate(() => { location.hash = "request"; });
+  await expect(page.locator("[data-district-name]")).toHaveText("Артём");
 });
 test('listing payment stays absent without a rate and validates entered terms', async ({ page }) => {
   await page.goto('listings/shk-a05-center-renovated-1k.html');

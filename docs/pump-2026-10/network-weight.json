@@ -1,0 +1,630 @@
+[
+  {
+    "name": "before",
+    "width": 1440,
+    "total": 3802813,
+    "assets": [
+      {
+        "path": "/",
+        "bytes": 102630
+      },
+      {
+        "path": "/assets/css/site.css",
+        "bytes": 142631
+      },
+      {
+        "path": "/assets/brand/domian-d.svg",
+        "bytes": 2418
+      },
+      {
+        "path": "/assets/images/editorial/category-apartments-640.webp",
+        "bytes": 37988
+      },
+      {
+        "path": "/assets/js/site-config.js",
+        "bytes": 395
+      },
+      {
+        "path": "/assets/js/site.js",
+        "bytes": 47870
+      },
+      {
+        "path": "/assets/images/editorial/category-houses-640.webp",
+        "bytes": 58586
+      },
+      {
+        "path": "/assets/images/editorial/land-plot-izhs-640.webp",
+        "bytes": 77072
+      },
+      {
+        "path": "/assets/images/listings/shk-a01-studio-olymp/hero.webp",
+        "bytes": 88296
+      },
+      {
+        "path": "/assets/images/listings/shk-a02-budget-1k/hero.webp",
+        "bytes": 110350
+      },
+      {
+        "path": "/assets/images/listings/kamenolomni-house-hero-640.webp",
+        "bytes": 79170
+      },
+      {
+        "path": "/assets/images/listings/shk-h01-renovation-house/hero.webp",
+        "bytes": 384592
+      },
+      {
+        "path": "/assets/images/listings/shk-l01-snt-plot/hero.webp",
+        "bytes": 420358
+      },
+      {
+        "path": "/assets/images/listings/shk-l02-budget-izhs/hero.webp",
+        "bytes": 247522
+      },
+      {
+        "path": "/assets/js/form-handler.js",
+        "bytes": 10819
+      },
+      {
+        "path": "/assets/images/editorial/mortgage-housing-720.webp",
+        "bytes": 44342
+      },
+      {
+        "path": "/assets/images/editorial/sell-property-cta-960.webp",
+        "bytes": 22010
+      },
+      {
+        "path": "/assets/images/maria-voronina-640.webp",
+        "bytes": 56786
+      },
+      {
+        "path": "/assets/images/editorial/regional-apartment-street-640.webp",
+        "bytes": 60910
+      },
+      {
+        "path": "/assets/images/editorial/apartment-block-neighborhood-640.webp",
+        "bytes": 86352
+      },
+      {
+        "path": "/assets/images/team-life/training-game-640.webp",
+        "bytes": 56868
+      },
+      {
+        "path": "/assets/images/team-life/network-conference-640.webp",
+        "bytes": 63514
+      },
+      {
+        "path": "/assets/images/team-life/team-evening-640.webp",
+        "bytes": 66456
+      },
+      {
+        "path": "/assets/images/editorial/kamenolomni-entry-sign-640.webp",
+        "bytes": 43188
+      },
+      {
+        "path": "/assets/images/editorial/novoshakhtinsk-entry-sign-640.webp",
+        "bytes": 54468
+      },
+      {
+        "path": "/assets/images/editorial/ayuta-entry-sign-640.webp",
+        "bytes": 50838
+      },
+      {
+        "path": "/assets/images/editorial/krasny-sulin-entry-sign-640.webp",
+        "bytes": 71730
+      },
+      {
+        "path": "/assets/images/newbuilds/akvatoriya/cover-640.webp",
+        "bytes": 66394
+      },
+      {
+        "path": "/assets/images/newbuilds/suvorovskiy/cover-640.webp",
+        "bytes": 31058
+      },
+      {
+        "path": "/assets/images/newbuilds/5-element-aske/cover-640.webp",
+        "bytes": 114140
+      },
+      {
+        "path": "/assets/images/newbuilds/gray/cover-640.webp",
+        "bytes": 178596
+      },
+      {
+        "path": "/assets/images/newbuilds/zapadnye-allei/cover-640.webp",
+        "bytes": 124070
+      },
+      {
+        "path": "/assets/images/newbuilds/academia/cover-640.webp",
+        "bytes": 122232
+      },
+      {
+        "path": "/assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-640.webp",
+        "bytes": 108708
+      },
+      {
+        "path": "/assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/built-example-02.webp",
+        "bytes": 238832
+      },
+      {
+        "path": "/assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni/facade-640.webp",
+        "bytes": 41678
+      },
+      {
+        "path": "/assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-640.webp",
+        "bytes": 124404
+      },
+      {
+        "path": "/assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-640.webp",
+        "bytes": 141432
+      },
+      {
+        "path": "/assets/images/construction-projects/dom-pod-klyuch-99m2-tri-spalni/plan-640.webp",
+        "bytes": 23110
+      }
+    ]
+  },
+  {
+    "name": "after",
+    "width": 1440,
+    "total": 3289780,
+    "assets": [
+      {
+        "path": "/",
+        "bytes": 115779
+      },
+      {
+        "path": "/assets/css/site.css",
+        "bytes": 156210
+      },
+      {
+        "path": "/assets/brand/domian-d.svg",
+        "bytes": 2418
+      },
+      {
+        "path": "/assets/js/site-config.js",
+        "bytes": 395
+      },
+      {
+        "path": "/assets/js/site.js",
+        "bytes": 53216
+      },
+      {
+        "path": "/assets/images/listings/shk-a14-renovated-2k-43/hero.webp",
+        "bytes": 76500
+      },
+      {
+        "path": "/assets/images/listings/shk-h08-two-houses-center/hero.webp",
+        "bytes": 130848
+      },
+      {
+        "path": "/assets/images/listings/shk-h09-renovated-76/hero.webp",
+        "bytes": 328226
+      },
+      {
+        "path": "/assets/images/listings/shk-l07-corner-12-sot/hero.webp",
+        "bytes": 157580
+      },
+      {
+        "path": "/assets/images/listings/shk-l08-goroda-budushchego-plot/hero.webp",
+        "bytes": 364898
+      },
+      {
+        "path": "/assets/images/listings/shk-h07-two-houses-kamenolomni/hero.webp",
+        "bytes": 69594
+      },
+      {
+        "path": "/assets/js/form-handler.js",
+        "bytes": 12820
+      },
+      {
+        "path": "/assets/images/listings/shk-a01-studio-olymp/hero.webp",
+        "bytes": 88296
+      },
+      {
+        "path": "/assets/images/listings/shk-a02-budget-1k/hero.webp",
+        "bytes": 110350
+      },
+      {
+        "path": "/assets/images/listings/shk-a03-hbk-1k/hero.webp",
+        "bytes": 93378
+      },
+      {
+        "path": "/assets/images/maria-voronina-640.webp",
+        "bytes": 56786
+      },
+      {
+        "path": "/assets/images/team-life/training-game-640.webp",
+        "bytes": 56868
+      },
+      {
+        "path": "/assets/images/team-life/network-conference-640.webp",
+        "bytes": 63514
+      },
+      {
+        "path": "/assets/images/team-life/team-evening-640.webp",
+        "bytes": 66456
+      },
+      {
+        "path": "/assets/images/editorial/category-apartments-640.webp",
+        "bytes": 37988
+      },
+      {
+        "path": "/assets/images/editorial/category-houses-640.webp",
+        "bytes": 58586
+      },
+      {
+        "path": "/assets/images/editorial/land-plot-izhs-640.webp",
+        "bytes": 77072
+      },
+      {
+        "path": "/assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-640.webp",
+        "bytes": 108708
+      },
+      {
+        "path": "/assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/built-example-02.webp",
+        "bytes": 238832
+      },
+      {
+        "path": "/assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni/facade-640.webp",
+        "bytes": 41678
+      },
+      {
+        "path": "/assets/images/construction-projects/dom-pod-klyuch-99m2-tri-spalni/plan-640.webp",
+        "bytes": 23110
+      },
+      {
+        "path": "/assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-640.webp",
+        "bytes": 141432
+      },
+      {
+        "path": "/assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-640.webp",
+        "bytes": 124404
+      },
+      {
+        "path": "/assets/images/editorial/mortgage-housing-720.webp",
+        "bytes": 44342
+      },
+      {
+        "path": "/assets/images/editorial/sell-property-cta-960.webp",
+        "bytes": 22010
+      },
+      {
+        "path": "/assets/images/editorial/apartment-block-neighborhood-640.webp",
+        "bytes": 86352
+      },
+      {
+        "path": "/assets/images/editorial/kamenolomni-entry-sign-640.webp",
+        "bytes": 43188
+      },
+      {
+        "path": "/assets/images/editorial/novoshakhtinsk-entry-sign-640.webp",
+        "bytes": 54468
+      },
+      {
+        "path": "/assets/images/editorial/regional-apartment-street-640.webp",
+        "bytes": 60910
+      },
+      {
+        "path": "/assets/images/editorial/ayuta-entry-sign-640.webp",
+        "bytes": 50838
+      },
+      {
+        "path": "/assets/images/editorial/krasny-sulin-entry-sign-640.webp",
+        "bytes": 71730
+      }
+    ]
+  },
+  {
+    "name": "before",
+    "width": 375,
+    "total": 3770833,
+    "assets": [
+      {
+        "path": "/",
+        "bytes": 102630
+      },
+      {
+        "path": "/assets/css/site.css",
+        "bytes": 142631
+      },
+      {
+        "path": "/assets/brand/domian-d.svg",
+        "bytes": 2418
+      },
+      {
+        "path": "/assets/images/editorial/category-apartments-640.webp",
+        "bytes": 37988
+      },
+      {
+        "path": "/assets/images/editorial/category-houses-640.webp",
+        "bytes": 58586
+      },
+      {
+        "path": "/assets/js/site-config.js",
+        "bytes": 395
+      },
+      {
+        "path": "/assets/js/site.js",
+        "bytes": 47870
+      },
+      {
+        "path": "/assets/images/editorial/land-plot-izhs-640.webp",
+        "bytes": 77072
+      },
+      {
+        "path": "/assets/js/form-handler.js",
+        "bytes": 10819
+      },
+      {
+        "path": "/assets/images/listings/shk-a01-studio-olymp/hero.webp",
+        "bytes": 88296
+      },
+      {
+        "path": "/assets/images/listings/shk-a02-budget-1k/hero.webp",
+        "bytes": 110350
+      },
+      {
+        "path": "/assets/images/listings/kamenolomni-house-hero-640.webp",
+        "bytes": 79170
+      },
+      {
+        "path": "/assets/images/listings/shk-h01-renovation-house/hero.webp",
+        "bytes": 384592
+      },
+      {
+        "path": "/assets/images/listings/shk-l01-snt-plot/hero.webp",
+        "bytes": 420358
+      },
+      {
+        "path": "/assets/images/listings/shk-l02-budget-izhs/hero.webp",
+        "bytes": 247522
+      },
+      {
+        "path": "/assets/images/editorial/mortgage-housing-720.webp",
+        "bytes": 44342
+      },
+      {
+        "path": "/assets/images/editorial/sell-property-cta-960.webp",
+        "bytes": 22010
+      },
+      {
+        "path": "/assets/images/maria-voronina-360.webp",
+        "bytes": 24806
+      },
+      {
+        "path": "/assets/images/team-life/team-evening-640.webp",
+        "bytes": 66456
+      },
+      {
+        "path": "/assets/images/team-life/network-conference-640.webp",
+        "bytes": 63514
+      },
+      {
+        "path": "/assets/images/team-life/training-game-640.webp",
+        "bytes": 56868
+      },
+      {
+        "path": "/assets/images/editorial/apartment-block-neighborhood-640.webp",
+        "bytes": 86352
+      },
+      {
+        "path": "/assets/images/editorial/regional-apartment-street-640.webp",
+        "bytes": 60910
+      },
+      {
+        "path": "/assets/images/editorial/kamenolomni-entry-sign-640.webp",
+        "bytes": 43188
+      },
+      {
+        "path": "/assets/images/editorial/novoshakhtinsk-entry-sign-640.webp",
+        "bytes": 54468
+      },
+      {
+        "path": "/assets/images/editorial/krasny-sulin-entry-sign-640.webp",
+        "bytes": 71730
+      },
+      {
+        "path": "/assets/images/editorial/ayuta-entry-sign-640.webp",
+        "bytes": 50838
+      },
+      {
+        "path": "/assets/images/newbuilds/akvatoriya/cover-640.webp",
+        "bytes": 66394
+      },
+      {
+        "path": "/assets/images/newbuilds/suvorovskiy/cover-640.webp",
+        "bytes": 31058
+      },
+      {
+        "path": "/assets/images/newbuilds/academia/cover-640.webp",
+        "bytes": 122232
+      },
+      {
+        "path": "/assets/images/newbuilds/zapadnye-allei/cover-640.webp",
+        "bytes": 124070
+      },
+      {
+        "path": "/assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-640.webp",
+        "bytes": 108708
+      },
+      {
+        "path": "/assets/images/newbuilds/5-element-aske/cover-640.webp",
+        "bytes": 114140
+      },
+      {
+        "path": "/assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/built-example-02.webp",
+        "bytes": 238832
+      },
+      {
+        "path": "/assets/images/newbuilds/gray/cover-640.webp",
+        "bytes": 178596
+      },
+      {
+        "path": "/assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni/facade-640.webp",
+        "bytes": 41678
+      },
+      {
+        "path": "/assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-640.webp",
+        "bytes": 124404
+      },
+      {
+        "path": "/assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-640.webp",
+        "bytes": 141432
+      },
+      {
+        "path": "/assets/images/construction-projects/dom-pod-klyuch-99m2-tri-spalni/plan-640.webp",
+        "bytes": 23110
+      }
+    ]
+  },
+  {
+    "name": "after",
+    "width": 375,
+    "total": 3257800,
+    "assets": [
+      {
+        "path": "/",
+        "bytes": 115779
+      },
+      {
+        "path": "/assets/css/site.css",
+        "bytes": 156210
+      },
+      {
+        "path": "/assets/brand/domian-d.svg",
+        "bytes": 2418
+      },
+      {
+        "path": "/assets/js/site-config.js",
+        "bytes": 395
+      },
+      {
+        "path": "/assets/js/site.js",
+        "bytes": 53216
+      },
+      {
+        "path": "/assets/images/listings/shk-a14-renovated-2k-43/hero.webp",
+        "bytes": 76500
+      },
+      {
+        "path": "/assets/js/form-handler.js",
+        "bytes": 12820
+      },
+      {
+        "path": "/assets/images/listings/shk-h07-two-houses-kamenolomni/hero.webp",
+        "bytes": 69594
+      },
+      {
+        "path": "/assets/images/listings/shk-h08-two-houses-center/hero.webp",
+        "bytes": 130848
+      },
+      {
+        "path": "/assets/images/listings/shk-h09-renovated-76/hero.webp",
+        "bytes": 328226
+      },
+      {
+        "path": "/assets/images/listings/shk-l07-corner-12-sot/hero.webp",
+        "bytes": 157580
+      },
+      {
+        "path": "/assets/images/listings/shk-l08-goroda-budushchego-plot/hero.webp",
+        "bytes": 364898
+      },
+      {
+        "path": "/assets/images/listings/shk-a01-studio-olymp/hero.webp",
+        "bytes": 88296
+      },
+      {
+        "path": "/assets/images/listings/shk-a02-budget-1k/hero.webp",
+        "bytes": 110350
+      },
+      {
+        "path": "/assets/images/listings/shk-a03-hbk-1k/hero.webp",
+        "bytes": 93378
+      },
+      {
+        "path": "/assets/images/maria-voronina-360.webp",
+        "bytes": 24806
+      },
+      {
+        "path": "/assets/images/team-life/team-evening-640.webp",
+        "bytes": 66456
+      },
+      {
+        "path": "/assets/images/team-life/network-conference-640.webp",
+        "bytes": 63514
+      },
+      {
+        "path": "/assets/images/team-life/training-game-640.webp",
+        "bytes": 56868
+      },
+      {
+        "path": "/assets/images/editorial/category-apartments-640.webp",
+        "bytes": 37988
+      },
+      {
+        "path": "/assets/images/editorial/category-houses-640.webp",
+        "bytes": 58586
+      },
+      {
+        "path": "/assets/images/editorial/land-plot-izhs-640.webp",
+        "bytes": 77072
+      },
+      {
+        "path": "/assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-640.webp",
+        "bytes": 108708
+      },
+      {
+        "path": "/assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/built-example-02.webp",
+        "bytes": 238832
+      },
+      {
+        "path": "/assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni/facade-640.webp",
+        "bytes": 41678
+      },
+      {
+        "path": "/assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-640.webp",
+        "bytes": 124404
+      },
+      {
+        "path": "/assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-640.webp",
+        "bytes": 141432
+      },
+      {
+        "path": "/assets/images/construction-projects/dom-pod-klyuch-99m2-tri-spalni/plan-640.webp",
+        "bytes": 23110
+      },
+      {
+        "path": "/assets/images/editorial/mortgage-housing-720.webp",
+        "bytes": 44342
+      },
+      {
+        "path": "/assets/images/editorial/sell-property-cta-960.webp",
+        "bytes": 22010
+      },
+      {
+        "path": "/assets/images/editorial/regional-apartment-street-640.webp",
+        "bytes": 60910
+      },
+      {
+        "path": "/assets/images/editorial/apartment-block-neighborhood-640.webp",
+        "bytes": 86352
+      },
+      {
+        "path": "/assets/images/editorial/kamenolomni-entry-sign-640.webp",
+        "bytes": 43188
+      },
+      {
+        "path": "/assets/images/editorial/novoshakhtinsk-entry-sign-640.webp",
+        "bytes": 54468
+      },
+      {
+        "path": "/assets/images/editorial/ayuta-entry-sign-640.webp",
+        "bytes": 50838
+      },
+      {
+        "path": "/assets/images/editorial/krasny-sulin-entry-sign-640.webp",
+        "bytes": 71730
+      }
+    ]
+  }
+]
