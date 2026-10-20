@@ -1,3 +1,9 @@
+import { catalogScenarios, scenarioTiles, catalogAlert } from "./catalog-extras.mjs";
+import { listingNumbers, listingQuestions, districtLink, listingCalculator, listingShare, viewingForm } from "./listing-pump.mjs";
+import { similarListings } from "./catalog-pump.mjs";
+import { homeBuyerPaths, homeNewest, homeSpecials, homeQuickSearch, homeServices, homeProcess, homeRules, homeFaq, homePending } from "./home-pump.mjs";
+import { quickKeys, scenarioKeys, districtFor, QUICK_FILTERS, SCENARIOS } from "./catalog-pump.mjs";
+import districtConfig from "./data/district-map.json" with { type: "json" };
 import { publicCopy } from "./public-copy.mjs";
 import { renderDistrictMap } from "./district-map.mjs";
 import { contentFaq, localComplexesSection, listingSelection } from "./local-content.mjs";
@@ -95,7 +101,7 @@ export function createContext(site, data) {
 
 function brand(ctx) {
   return `<a class="brand" href="${ctx.href("")}">
-    <span class="brand__mark" aria-hidden="true">Д</span>
+    <img class="brand__mark" src="${ctx.href("assets/brand/domian-d.svg")}" width="34" height="36" alt="Домиан">
     <span class="brand__copy"><strong>Домиан</strong><small>Шахты · Маяковского 18А</small></span>
   </a>`;
 }
@@ -238,7 +244,7 @@ function visibleListings(ctx) {
 }
 
 function listingCard(ctx, item, { hot = false, searchScope = "", filterable = false } = {}) {
-  const payment = (item.features || []).find((feature) => feature.startsWith("Ориентир по платежу"));
+  const payment = null;
   const location = ctx.locations.find((candidate) => candidate.slug === item.location);
   const cardFacts = [
     Number.isFinite(item.area) ? `${String(item.area).replace(".", ",")} м²` : null,
@@ -246,7 +252,7 @@ function listingCard(ctx, item, { hot = false, searchScope = "", filterable = fa
     Number.isFinite(item.landArea) ? `${String(item.landArea).replace(".", ",")} сот.` : null
   ].filter(Boolean);
   const factsMarkup = cardFacts.length ? `<ul class="listing-card__facts">${cardFacts.map((fact) => `<li>${esc(fact)}</li>`).join("")}</ul>` : "";
-  const filterAttributes = filterable ? ` data-product-card data-city="${esc(item.location)}" data-rooms="${esc(item.rooms ?? "")}" data-search="${esc([item.title, item.address, item.description].join(" ").toLocaleLowerCase("ru-RU"))}"` : "";
+  const filterAttributes = filterable ? ` data-product-card data-listing-id="${esc(item.id)}" data-price="${item.price ?? ""}" data-type="${categoryForListing(item)}" data-quick="${quickKeys(item).join(" ")}" data-scenarios="${scenarioKeys(item).join(" ")}" data-district-key="${districtFor(item)}" data-city="${esc(item.location)}" data-rooms="${esc(item.rooms ?? "")}" data-search="${esc([item.title, item.address, item.description].join(" ").toLocaleLowerCase("ru-RU"))}"` : "";
   const badge = item.verifiedAt && item.verifiedBy ? "Подтверждённый объект" : null;
   const searchAttributes = searchScope ? ` data-location-listing data-search-scope="${esc(searchScope)}" data-listing-id="${esc(item.id)}" data-listing-location="${esc(item.location)}" data-listing-category="${esc(categoryForListing(item))}" data-listing-price="${Number.isFinite(item.price) ? esc(item.price) : ""}"` : "";
   return `<article class="listing-card${hot ? " listing-card--hot" : ""}"${searchAttributes}${filterAttributes} data-reveal>
@@ -368,7 +374,7 @@ function homeHotOffersSection(ctx) {
     ...available.filter((item) => listingCategory(item) === "land").slice(0, 2)
   ];
   if (!items.length) return "";
-  return `<section class="section home-hot-offers" id="hot-offers" data-home-section="hot-offers"><div class="container"><div class="section-heading"><div><p class="eyebrow">Предложения в Шахтах</p><h2>Квартиры, дома и участки</h2></div><p>Предложения из каталога офиса. Наличие, цену и комплектацию уточняем перед просмотром.</p></div><div class="home-hot-offers__grid listing-grid" data-reveal-group>${items.map((item) => listingCard(ctx, item)).join("")}</div></div></section>`;
+  return `<section class="section home-hot-offers" id="hot-offers" data-home-section="hot-offers"><div class="container"><div class="section-heading"><div><p class="eyebrow">Предложения в Шахтах</p><h2>Свежие предложения в Шахтах</h2></div><p>Выберите квартиру, дом или участок и запишитесь на просмотр.</p></div><div class="home-hot-offers__grid listing-grid" data-reveal-group>${items.map((item) => listingCard(ctx, item)).join("")}</div></div></section>`;
 }
 
 function homeRequestSection(ctx) {
@@ -390,7 +396,7 @@ function homeLocationsSection(ctx) {
 
 function homeExpertiseSection(ctx, guides) {
   const items = guides.slice(0, 3);
-  return `<section class="section home-expertise" data-home-section="expertise"><div class="container">${sectionHeading({ kicker: "Локальная экспертиза", title: "Решения начинаются с контекста", intro: `Срез и материалы актуальны на ${formatDate(ctx.site.updatedAt)} Публичные объявления не равны уникальным объектам или завершённым сделкам.` })}<div class="home-expertise__grid">${items.map((guide, index) => `<a href="${ctx.href(`guides/${guide.slug}.html`)}"><span>${String(index + 1).padStart(2, "0")}</span><h3>${esc(guide.title)}</h3><p>${esc(guide.answer)}</p><strong>Читать материал ↗</strong></a>`).join("")}</div><a class="text-link" href="${ctx.href("guides/index.html")}">Все полезные материалы ↗</a></div></section>`;
+  return `<section class="section home-expertise" data-home-section="expertise"><div class="container">${sectionHeading({ kicker: "Локальная экспертиза", title: "Полезно перед покупкой", intro: "Разберитесь в документах, районах и расходах до выбора объекта." })}<div class="home-expertise__grid">${items.map((guide, index) => `<a href="${ctx.href(`guides/${guide.slug}.html`)}"><span>${String(index + 1).padStart(2, "0")}</span><h3>${esc(guide.title)}</h3><p>${esc(guide.answer)}</p><strong>Читать материал ↗</strong></a>`).join("")}</div><a class="text-link" href="${ctx.href("guides/index.html")}">Все полезные материалы ↗</a></div></section>`;
 }
 
 function teamLifePicture(ctx, item, sizes) {
@@ -574,12 +580,12 @@ function catalogSection(ctx, section) {
     "garage-parking": "garage-parking"
   })[showcaseTypes[0]] || "";
   const defaultMarket = showcaseTypes.some((type) => ["apartment-secondary", "secondary-house"].includes(type)) ? "secondary" : (showcaseTypes.some((type) => ["apartment-newbuild", "new-house", "builder-house"].includes(type)) ? "primary" : "");
-  const listingResult = realListings.length ? `<div data-product-catalog="inventory"><form class="product-filters inventory-filters" data-product-filters role="search"><label><span>Район или адрес</span><input type="search" name="query" placeholder="Например, центр, Майский или Артём"></label><label><span>Территория</span><select name="city"><option value="">Все территории</option>${[...new Set(realListings.map((item) => item.location))].map((slug) => `<option value="${esc(slug)}">${esc(ctx.locations.find((location) => location.slug === slug)?.name || slug)}</option>`).join("")}</select></label>${defaultType === "apartment" ? `<label><span>Комнатность</span><select name="rooms"><option value="">Любая</option><option value="0">Студия</option><option value="1">1 комната</option><option value="2">2 комнаты</option><option value="3plus">3 и более</option></select></label>` : ""}<button class="button button--ghost" type="reset">Сбросить</button></form><p class="catalog-count">В каталоге: <strong data-product-count>${realListings.length}</strong>. Актуальность и условия уточняем перед просмотром.</p><div class="listing-grid" data-reveal-group>${realListings.map((item) => listingCard(ctx, item, { filterable: true })).join("")}</div><p data-product-empty hidden>По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.</p></div>` : `<div class="catalog-honesty"><span aria-hidden="true">↗</span><div><h3>${esc(section.emptyTitle)}</h3><p>${esc(section.emptyText)}</p></div></div>`;
+  const listingResult = realListings.length ? `<div data-product-catalog="inventory"><form class="product-filters inventory-filters" data-product-filters role="search"><label><span>Район или адрес</span><input type="search" name="query" placeholder="Например, центр, Майский или Артём"></label><label><span>Территория</span><select name="city"><option value="">Все территории</option>${[...new Set(realListings.map((item) => item.location))].map((slug) => `<option value="${esc(slug)}">${esc(ctx.locations.find((location) => location.slug === slug)?.name || slug)}</option>`).join("")}</select></label>${defaultType === "apartment" ? `<label><span>Комнатность</span><select name="rooms"><option value="">Любая</option><option value="0">Студия</option><option value="1">1 комната</option><option value="2">2 комнаты</option><option value="3plus">3 и более</option></select></label>` : ""}<label><span>Подборка</span><select name="scenario"><option value="">Все предложения</option>${catalogScenarios(realListings).map(s => `<option value="${s.key}">${s.label}</option>`).join("")}</select></label><label><span>Тип недвижимости</span><select name="type"><option value="">Все типы</option>${Object.entries(SEARCH_CATEGORIES).filter(([key]) => key !== "all").map(([key, label]) => `<option value="${key}">${label}</option>`).join("")}</select></label><label><span>Быстрый поиск</span><select name="quick"><option value="">Все варианты</option>${QUICK_FILTERS.map(f => `<option value="${f.key}">${f.label}</option>`).join("")}</select></label><label><span>Район на карте</span><select name="district"><option value="">Все районы</option>${districtConfig.districts.map(d => `<option value="${d.key}">${esc(d.name)}</option>`).join("")}</select></label><label><span>Цена до, ₽</span><input type="number" name="priceMax" min="0" step="1" inputmode="numeric"></label><button class="button button--ghost" type="reset">Сбросить</button></form><p class="catalog-count">В каталоге: <strong data-product-count>${realListings.length}</strong> объектов. Выберите вариант и договоритесь о просмотре.</p><div class="listing-grid" data-reveal-group>${realListings.map((item) => listingCard(ctx, item, { filterable: true })).join("")}</div><p data-product-empty hidden>По выбранным фильтрам предложений нет. <a href="#catalog-alert">Сообщите, когда появится</a> — оставьте ваш запрос ниже.</p></div>` : `<div class="catalog-honesty"><span aria-hidden="true">↗</span><div><h3>${esc(section.emptyTitle)}</h3><p>${esc(section.emptyText)}</p></div></div>`;
   return `<section class="section section--stone"><div class="container">
-    ${sectionHeading(section)}
+    ${sectionHeading(section)}${scenarioTiles(realListings)}
     <div class="catalog-shell">
       ${requestBuilder(ctx, { defaultType, defaultMarket, compact: true })}
-      ${listingResult}
+      ${listingResult}${catalogAlert(ctx, defaultType)}
       <div class="catalog-directions"><p class="eyebrow">${realListings.length ? "Другие направления" : "Направления подбора"}</p></div>
       ${showcaseGrid(ctx, items)}
       <div class="catalog-followup"><p>Расскажите о приоритетах — офис уточнит актуальные варианты и предложит следующий шаг.</p><a class="button button--primary" href="#lead-form-section" data-lead-category="${esc(showcaseTypes[0] || defaultType)}">${esc(section.cta)}</a></div>
@@ -758,6 +764,7 @@ function documentHead(ctx, page, breadcrumbsItems) {
   <script src="${ctx.href(`assets/js/site-config.js?v=${ctx.site.assetVersion}`)}" defer></script>
   <script src="${ctx.href(`assets/js/site.js?v=${ctx.site.assetVersion}`)}" defer></script>
   <script src="${ctx.href(`assets/js/form-handler.js?v=${ctx.site.assetVersion}`)}" defer></script>
+  ${page.pageType === "listing" ? `<link rel="stylesheet" href="${ctx.href(`assets/css/listing-pump.css?v=${ctx.site.assetVersion}`)}"><script src="${ctx.href(`assets/js/listing-pump.js?v=${ctx.site.assetVersion}`)}" defer></script>` : ""}
   ${schemaFor(ctx, page, breadcrumbsItems)}`;
 }
 
@@ -780,7 +787,7 @@ export function renderCommercialPage(ctx, page) {
 
 export function renderHome(ctx, guides) {
   const page = { path: "", pageType: "home", title: "Агентство недвижимости Домиан в Шахтах — ул. Маяковского 18А", description: "Покупка, продажа и предварительная оценка квартир, домов, новостроек, участков, коммерческой недвижимости, гаражей и парковочных мест в Шахтах и рядом.", eyebrow: "Домиан · Шахты на Маяковского", h1: "Агентство недвижимости в Шахтах — офис Домиан на Маяковского", lead: "Квартиры, дома, участки и сопровождение сделки в Шахтах и рядом. Выберите район на карте — покажем, что продаётся именно там.", primaryCta: { label: "Смотреть объекты в Шахтах", href: "#hot-offers" }, secondaryCta: { label: "Подобрать недвижимость", href: "#request" }, tertiaryCta: { label: "Продать недвижимость", href: "sell.html" }, geoLinks: true, heroImage: "main-hero", heroImageAlt: "Современная жилая недвижимость", heroMediaLabel: "Современная городская жизнь" };
-  const body = `${hero(ctx, page)}${officeLinksSection(ctx, { home: true })}${homePropertySection(ctx)}${homeHotOffersSection(ctx)}${homeRequestSection(ctx)}${mortgageSection(ctx, { home: true })}${homeSellerSection(ctx)}${homeOfficeSection(ctx)}${teamLifeSection(ctx, { limit: 3, teaser: true })}${homeLocationsSection(ctx)}${homeFeaturedNewbuilds(ctx)}${homeFeaturedConstruction(ctx)}${editorialSection(ctx, { homeSection: "related-services", title: "Строительство и квартиры в новостройке Шахт", items: [{ title: "Построим Дом", paragraphs: ["Шесть построенных домов компании: фотографии, площадь и особенности. Обсудим строительство на вашем участке в Шахтах."], links: [{ label: "Посмотреть построенные дома", href: "construction.html#built-examples" }] }, { title: "Александровский парк", paragraphs: ["Наш офис продаёт квартиры в ЖК на Шевченко, 135-А. Уточним наличие, планировку и условия покупки."], links: [{ label: "Квартиры в ЖК", href: "zhk-aleksandrovskiy-park.html" }, { label: "Новостройки Шахт: сравнить комплексы", href: "novostroyki-shakhty.html" }] }, { title: "Кадастровые работы", paragraphs: ["Обсудите границы участка и документы на дом с Ольгой Черненко."], links: [{ label: "Межевание и кадастр", href: "kadastrovye-raboty.html" }] }] })}${homeExpertiseSection(ctx, guides)}${homeLeadForm(ctx)}`;
+  const body = `${hero(ctx, page)}${homeBuyerPaths(ctx)}${homeNewest(ctx, listingCard)}${homeSpecials(ctx, listingCard)}${homeQuickSearch(ctx)}${officeLinksSection(ctx, { home: true })}${homeServices(ctx)}${homeProcess()}${homeRules()}${homeOfficeSection(ctx)}${teamLifeSection(ctx, { limit: 3, teaser: true })}${homePending(ctx)}${homePropertySection(ctx)}${homeFeaturedNewbuilds(ctx)}${homeFeaturedConstruction(ctx)}${mortgageSection(ctx, { home: true })}${homeSellerSection(ctx)}${homeLocationsSection(ctx)}${homeExpertiseSection(ctx, guides)}${homeFaq(ctx)}${homeRequestSection(ctx)}${homeLeadForm(ctx)}`;
   return layout(ctx, page, body, { active: "" });
 }
 
@@ -872,11 +879,9 @@ function constructionPrice(item) {
   return { value: `от ${formatPrice(item.price)}`, note: item.priceDate ? `Комплектация «${item.pricePackage || "уточняется"}» · ориентир на ${item.priceDate}` : `Комплектация «${item.pricePackage || "уточняется"}» · нужна актуализация` };
 }
 
-function constructionMonthlyPayment(item) {
-  if (!Number.isFinite(item.monthlyPayment)) return "";
-  const terms = [Number.isFinite(item.mortgageRateFrom) ? `ставка от ${item.mortgageRateFrom}%` : "", Number.isFinite(item.downPaymentPercentFrom) ? `взнос от ${item.downPaymentPercentFrom}%` : ""].filter(Boolean).join(", ");
-  return `от ${formatPrice(item.monthlyPayment)}/мес. по предварительному расчёту${terms ? ` (${terms})` : ""}`;
-}
+// Archived finance terms remain in source data. Only visitor-entered rates
+// produce payment amounts in the public UI.
+function constructionMonthlyPayment() { return ""; }
 
 function constructionCard(ctx, item) {
   const price = constructionPrice(item);
@@ -922,9 +927,8 @@ function homeNewbuildCard(ctx, item) {
 }
 
 function homeFeaturedNewbuilds(ctx) {
-  const items = selectFeaturedNewbuilds(ctx.newbuilds?.items || []);
-  if (!items.length) return "";
-  return `<section class="section home-catalog-showcase home-catalog-showcase--newbuilds" data-home-section="newbuilds"><div class="container"><div class="home-catalog-showcase__heading"><div><p class="eyebrow">Новостройки</p><h2>Жилые комплексы с проверенными данными</h2></div><p>Шесть проектов с полными карточками и локальными фотографиями. Город указан отдельно; цены показываются только при подтверждённом статусе.</p></div><div class="home-catalog-grid" data-reveal-group>${items.map((item) => homeNewbuildCard(ctx, item)).join("")}</div><a class="button button--ghost home-catalog-showcase__all" href="${ctx.href("newbuilds.html")}">Смотреть все 78 новостроек</a></div></section>`;
+  const local = (ctx.localComplexes || []).find(item => item.slug === "aleksandrovskiy-park" && item.publish === true && item.officeSells === true);
+  return `<section class="section home-catalog-showcase home-catalog-showcase--newbuilds" data-home-section="newbuilds"><div class="container">${sectionHeading({ kicker: "Квартиры в новых домах", title: "Новостройки", intro: "Начните с Шахт: сравните адреса и планировки, обсудите покупку с нашим офисом." })}<div class="editorial-grid">${local ? `<article class="editorial-card"><p class="eyebrow">Шахты · Шевченко, 135-А</p><h3>${esc(local.name)}</h3><p>Подберём квартиру в комплексе под ваши планы и бюджет.</p><a class="text-link" href="${ctx.href("zhk-aleksandrovskiy-park.html")}">Квартиры в Александровском парке ↗</a></article>` : ""}<article class="editorial-card"><p class="eyebrow">Местный рынок</p><h3>Новостройки Шахт</h3><p>Сравните комплексы и выберите расположение для будущего дома.</p><a class="text-link" href="${ctx.href("novostroyki-shakhty.html")}">Смотреть новостройки Шахт ↗</a></article></div><a class="text-link" href="${ctx.href("newbuilds.html")}">Новостройки Ростова и области ↗</a></div></section>`;
 }
 
 function constructionFeatureScore(item) {
@@ -1151,11 +1155,12 @@ export function renderListing(ctx, listing) {
     ["Статус", { available: "В продаже", reserved: "Забронирован", sold: "Продан" }[listing.status] || listing.status]
   ].filter(([, value]) => value);
   const factList = facts.map(([label, value]) => `<li><span>${esc(label)}</span><strong>${esc(value)}</strong></li>`).join("");
-  const featureList = (listing.features || []).map((feature) => `<li>${esc(feature)}</li>`).join("");
+  const featureList = (listing.features || []).filter(feature => !feature.startsWith("Ориентир по платежу")).map((feature) => `<li>${esc(feature)}</li>`).join("");
   const gallery = (listing.gallery || []).map((image, index) => `<figure class="listing-gallery__item${index === 0 ? " listing-gallery__item--wide" : ""}">${listingPicture(ctx, image, { className: "listing-gallery__picture", sizes: index === 0 ? "(max-width: 760px) calc(100vw - 32px), 62vw" : "(max-width: 760px) calc(100vw - 32px), 38vw" })}</figure>`).join("");
   const gallerySection = gallery ? `<section class="section section--stone listing-gallery"><div class="container"><div class="section-heading"><div><p class="eyebrow">Фотографии объекта</p><h2>Галерея</h2></div></div><div class="listing-gallery__grid">${gallery}</div></div></section>` : "";
-  const legacyFinance = listing.id === "dom-chistovaya-kamenolomni" ? `<section class="section listing-finance"><div class="container listing-finance__layout"><div><p class="eyebrow">Варианты покупки</p><h2>Ипотечный сценарий рассчитывается под семью</h2></div><div><p><strong>Ориентир по платежу — от 27 000 ₽ в месяц.</strong> Итог зависит от срока, ставки, первоначального взноса, страхования и решения банка.</p><p>Семейная ипотека может подойти семье с ребёнком до семи лет. Для семей с двумя несовершеннолетними детьми действуют дополнительные территориальные условия программы. Стандартные условия предусматривают первоначальный взнос; вариант без собственных средств на старте возможен только через отдельно применимый инструмент и после одобрения банка.</p><a class="text-link" href="https://government.ru/sanctions_measures/measure/52/" target="_blank" rel="noopener noreferrer">Актуальные условия программы на сайте Правительства РФ ↗</a></div></div></section>` : "";
-  const body = `<article class="listing-detail"><header class="listing-detail__hero"><div class="container listing-detail__hero-layout"><div class="listing-detail__copy"><p class="eyebrow">${esc(section.label)} · ${esc(listing.status === "available" ? "В продаже" : "Статус объекта")}</p><h1>${esc(listing.title)}</h1><p class="listing-detail__address">${esc(listing.address || "Шахты")}</p><div class="listing-detail__price">${formatPrice(listing.price)}</div><p>${esc(listing.description || "")}</p><div class="hero-actions"><a class="button button--primary" href="#lead-form-section">Записаться на просмотр</a><a class="button button--ghost" href="${ctx.site.phoneHref}" data-analytics="phone_click">Позвонить</a></div></div><div class="listing-detail__media">${listingPicture(ctx, listing.image, { priority: true, sizes: "(max-width: 820px) calc(100vw - 32px), 52vw" })}<span>Обновлено ${formatDate(listing.updatedAt)}</span></div></div></header><section class="section listing-detail__facts"><div class="container listing-detail__facts-layout"><div><p class="eyebrow">Характеристики</p><h2>Об объекте</h2><ul>${factList}</ul></div><ul>${featureList}</ul></div></section>${gallerySection}${legacyFinance}</article>${leadForm(ctx, { type: listing.type, goal: "buy", propertyType: isLand ? "land" : isApartment ? "apartment" : "house", market: isNewbuild ? "primary" : "secondary", originPage: page.path, title: `Записаться на просмотр: ${listing.title}`, text: "Оставьте телефон, чтобы согласовать просмотр объекта." })}`;
+  const similar = similarListings(ctx.listings, listing);
+  const related = similar.length ? `<section class="section" data-similar-listings><div class="container"><div class="section-heading"><div><p class="eyebrow">Сравните варианты</p><h2>Похожие объекты</h2></div></div><div class="listing-grid pump-cards">${similar.map(item => listingCard(ctx, item)).join("")}</div></div></section>` : "";
+  const body = `<article class="listing-detail"><header class="listing-detail__hero"><div class="container listing-detail__hero-layout"><div class="listing-detail__copy"><p class="eyebrow">${esc(section.label)} · ${esc(listing.status === "available" ? "В продаже" : "Статус объекта")}</p><h1>${esc(listing.title)}</h1><p class="listing-detail__address">${esc(listing.address || "Шахты")}</p><div class="listing-detail__price">${formatPrice(listing.price)}</div>${listingNumbers(listing)}${listingQuestions(listing)}<p>${esc(listing.description || "")}</p><div class="hero-actions"><a class="button button--primary" href="#lead-form-section">Записаться на просмотр</a><a class="button button--ghost" href="${ctx.site.phoneHref}" data-analytics="phone_click">Позвонить</a></div></div><div class="listing-detail__media">${listingPicture(ctx, listing.image, { priority: true, sizes: "(max-width: 820px) calc(100vw - 32px), 52vw" })}</div></div></header><section class="section listing-detail__facts"><div class="container listing-detail__facts-layout"><div><p class="eyebrow">Характеристики</p><h2>Об объекте</h2><ul>${factList}</ul></div><ul>${featureList}</ul></div></section>${gallerySection}${listingCalculator(listing)}<div class="container">${districtLink(ctx, listing)}${listingShare(ctx, listing)}</div></article>${ctx.site.web3formsAccessKey ? viewingForm(ctx, listing) : leadForm(ctx, { type: listing.type, goal: "buy", propertyType: isLand ? "land" : isApartment ? "apartment" : "house", market: isNewbuild ? "primary" : "secondary", originPage: page.path, title: `Записаться на просмотр: ${listing.title}`, text: "Оставьте телефон, чтобы согласовать просмотр объекта." })}${related}`;
   return layout(ctx, page, body, { active: section.active, breadcrumbs: [{ label: "Главная", href: "" }, { label: section.label, href: section.href }, { label: listing.title, href: page.path }] });
 }
 

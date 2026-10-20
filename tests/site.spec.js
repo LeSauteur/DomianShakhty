@@ -438,7 +438,7 @@ test("lead analytics never receives entered personal data", async ({ page }) => 
     window.DOMIAN_ANALYTICS_TEST_HOOK = (name, params) => window.__domianEvents.push({ name, params });
   });
   await page.goto("commercial.html#lead-form-section");
-  const form = page.locator("form[data-lead-form]");
+  const form = page.locator("#lead-form-section form[data-lead-form]");
   await form.locator('input[name="name"]').fill("Анна Проверка");
   await form.locator('input[name="phone"]').fill("8 918 123-45-67");
   await form.locator('input[name="privacy_consent"]').check();
@@ -530,22 +530,18 @@ test("homepage prioritizes local property, request and mortgage sections", async
   await expect(page.locator("[data-mortgage-calculator]")).toHaveCount(1);
   await expect(page.locator("[data-showcase-card]")).toHaveCount(0);
   const sections = await page.locator("main > section").evaluateAll((nodes) => nodes.map((node) => node.getAttribute("data-home-section") || "hero"));
-  expect(sections).toEqual(["hero", "reviews", "property", "hot-offers", "request", "mortgage", "seller", "team", "team-life", "locations", "newbuilds", "construction", "related-services", "expertise", "lead"]);
+  expect(sections).toEqual(["hero", "buyer-paths", "new-objects", "specials", "quick-search", "reviews", "services", "process", "rules", "team", "team-life", "property", "newbuilds", "construction", "mortgage", "seller", "locations", "expertise", "faq", "request", "lead"]);
 });
 
 test("homepage catalog showcases stay compact, truthful and link to imported details", async ({ page }) => {
   for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
     await page.setViewportSize(viewport);
     await page.goto("");
-    await expect(page.locator("[data-home-newbuild]")).toHaveCount(6);
+    await expect(page.locator("[data-home-newbuild]")).toHaveCount(0);
+    await expect(page.locator('[data-home-section="newbuilds"] a[href="/zhk-aleksandrovskiy-park.html"]')).toBeVisible();
     await expect(page.locator("[data-home-construction]")).toHaveCount(6);
     const layout = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
     expect(layout.scroll).toBeLessThanOrEqual(layout.client + 1);
-    const firstNewbuild = page.locator("[data-home-newbuild]").first();
-    await firstNewbuild.scrollIntoViewIfNeeded();
-    await expect(firstNewbuild.locator("img")).toBeVisible();
-    await expect.poll(() => firstNewbuild.locator("img").evaluate((image) => image.naturalWidth)).toBeGreaterThan(0);
-    await expect(firstNewbuild.locator('.home-catalog-card__cta')).toHaveAttribute("href", /\/newbuilds\/.+\.html$/u);
     const firstConstruction = page.locator("[data-home-construction]").first();
     await firstConstruction.scrollIntoViewIfNeeded();
     await expect(firstConstruction.locator("img")).toBeVisible();

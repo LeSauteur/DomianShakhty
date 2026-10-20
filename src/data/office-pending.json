@@ -1,0 +1,12 @@
+{
+  "stats": { "publish": false, "years": null, "deals": null },
+  "banks": { "publish": false, "items": [] },
+  "certificates": { "publish": false, "items": [] },
+  "messengers": { "publish": false, "max": "", "telegram": "" },
+  "faq": [
+    { "id": "price", "publish": true, "question": "Сколько стоят ваши услуги?" },
+    { "id": "mortgage", "publish": true, "question": "Работаете ли с ипотекой?" },
+    { "id": "capital", "publish": false, "question": "Работаете с материнским капиталом?", "answer": "" },
+    { "id": "timing", "publish": false, "question": "Сколько длится сделка?", "answer": "" }
+  ]
+}

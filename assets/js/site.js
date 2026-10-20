@@ -349,6 +349,7 @@
   function applyLeadContext(context) {
     if (!context || typeof context !== "object") return;
     queryAll("form[data-lead-form]").forEach(function (form) {
+      if (form.hasAttribute("data-viewing-form") || form.hasAttribute("data-catalog-alert")) return;
       var service = form.elements.service;
       var goal = form.elements.goal;
       var propertyType = form.elements.property_type;
@@ -857,7 +858,12 @@
           && (!builder || card.dataset.builder === builder)
           && (!floors || card.dataset.floors === floors)
           && (!rooms || (rooms === "3plus" ? Number(card.dataset.rooms) >= 3 : card.dataset.rooms === rooms))
-          && inArea;
+          && inArea
+          && (!field("type") || card.dataset.type === field("type"))
+          && (!field("quick") || (card.dataset.quick || "").split(" ").includes(field("quick")))
+          && (!field("district") || card.dataset.districtKey === field("district"))
+          && (!field("scenario") || (card.dataset.scenarios || "").split(" ").includes(field("scenario")))
+          && (!field("priceMax") || (card.dataset.price && Number(card.dataset.price) <= Number(field("priceMax"))));
       }
 
       function apply(announce) {
@@ -868,6 +874,15 @@
         });
         if (count) count.textContent = String(visible.length);
         if (empty) empty.hidden = visible.length > 0;
+        var alertForm = root.closest(".catalog-shell")?.querySelector("[data-catalog-alert]");
+        if (alertForm) {
+          var types = { apartments: "apartment", houses: "house", lands: "land", commercial: "commercial", parking: "garage-parking" };
+          var districtOption = Array.from(alertForm.elements.territory.options).find(function (o) { return o.dataset.key === field("district"); });
+          [["property_type", types[field("type")] || alertForm.elements.property_type.dataset.initialType], ["territory", districtOption ? districtOption.value : ""], ["notify_budget", field("priceMax")]].forEach(function (pair) {
+            var control = alertForm.elements[pair[0]];
+            if (control && control.dataset.manual !== "true" && pair[1] != null) control.value = pair[1];
+          });
+        }
         if (announce) {
           track("catalog_filter_use", {
             filter_name: root.dataset.productCatalog || "product_catalog",
@@ -877,6 +892,36 @@
         }
       }
 
+      var alertForm = root.closest(".catalog-shell")?.querySelector("[data-catalog-alert]");
+      if (alertForm) {
+        alertForm.elements.property_type.dataset.initialType = alertForm.elements.property_type.value;
+        ["property_type", "territory", "notify_budget"].forEach(function (key) {
+          alertForm.elements[key].addEventListener("input", function () { this.dataset.manual = "true"; });
+        });
+      }
+      if (root.dataset.productCatalog === "inventory") {
+        function restore() {
+          var params = new URLSearchParams(window.location.search);
+          ["type", "quick", "district", "scenario", "priceMax", "query", "city", "rooms"].forEach(function (key) {
+            var control = form.elements[key];
+            if (!control) return;
+            control.value = params.get(key) || "";
+          });
+          apply(false);
+        }
+        function save() {
+          var url = new URL(window.location.href);
+          ["type", "quick", "district", "scenario", "priceMax", "query", "city", "rooms"].forEach(function (key) {
+            if (field(key)) url.searchParams.set(key, field(key)); else url.searchParams.delete(key);
+          });
+          window.history.replaceState(null, "", url.pathname + url.search + url.hash);
+        }
+        restore();
+        window.addEventListener("popstate", restore);
+        form.addEventListener("input", save);
+        form.addEventListener("change", save);
+        form.addEventListener("reset", function () { window.setTimeout(save, 0); });
+      }
       form.addEventListener("input", function () { apply(false); });
       form.addEventListener("change", function () { apply(true); });
       form.addEventListener("reset", function () { window.setTimeout(function () { apply(true); }, 0); });
@@ -963,10 +1008,39 @@
           }
         }
       });
-      show(activeKey);
+      function restoreDistrict() {
+        var params = new URLSearchParams(window.location.hash.slice(1));
+        var key = params.get("district");
+        if (params.has("district") || !window.location.hash) show(data[key] ? key : "center");
+      }
+      window.addEventListener("hashchange", restoreDistrict);
+      restoreDistrict();
     });
   }
 
+  function initPumpTabs() {
+    queryAll("[data-pump-tabs]").forEach(function (root) {
+      var tabs = queryAll('[role="tab"]', root);
+      function select(index, focus) {
+        tabs.forEach(function (tab, i) {
+          tab.setAttribute("aria-selected", String(i === index));
+          tab.tabIndex = i === index ? 0 : -1;
+          document.getElementById(tab.getAttribute("aria-controls")).hidden = i !== index;
+        });
+        if (focus) tabs[index].focus();
+      }
+      tabs.forEach(function (tab, index) {
+        tab.addEventListener("click", function () { select(index, false); });
+        tab.addEventListener("keydown", function (event) {
+          var next = event.key === "ArrowRight" ? (index + 1) % tabs.length : event.key === "ArrowLeft" ? (index + tabs.length - 1) % tabs.length : event.key === "Home" ? 0 : event.key === "End" ? tabs.length - 1 : -1;
+          if (next >= 0) { event.preventDefault(); select(next, true); }
+        });
+      });
+      select(0, false);
+    });
+  }
+
+  initPumpTabs();
   initDistrictMap();
   initReviewWidgets();
   persistAttribution();

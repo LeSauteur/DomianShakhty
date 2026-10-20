@@ -1,0 +1,17 @@
+.listing-code{font:700 1.35rem var(--sans);letter-spacing:.04em;color:var(--mint-deep);margin:10px 0}
+.listing-unit-price{font:1.1rem var(--sans);color:var(--ink-soft);margin:8px 0 24px}
+.listing-questions{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}.listing-questions>div{display:flex;flex-direction:column;gap:8px}
+.listing-questions button,.listing-share button{border:1px solid var(--line);border-radius:var(--radius-sm);padding:12px 14px;background:var(--paper-mint);color:var(--ink-deep);font:600 .95rem var(--sans);cursor:pointer}
+.listing-questions button:hover,.listing-share button:hover{background:var(--paper-deep)}.listing-questions a{font-size:.85rem}
+.viewing-days{border:0;padding:0;margin:0 0 12px;grid-column:1/-1;min-width:0}.viewing-days legend{font-weight:700;margin-bottom:12px}
+[data-viewing-days]{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+[data-viewing-date]{min-height:64px;padding:10px;border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--surface);color:var(--ink);font:600 .9rem var(--sans);cursor:pointer;line-height:1.5}
+[data-viewing-date][aria-pressed=true]{background:var(--mint-deep);color:var(--surface);border-color:var(--mint-deep)}
+.payment-calculator{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding:30px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--paper-mint)}
+.payment-calculator label{display:flex;flex-direction:column;gap:10px;font-weight:650;font-size:.9rem;min-width:0}.payment-calculator input{width:100%;min-width:0;padding:14px 12px;border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--surface);font:1rem var(--sans);color:var(--ink)}
+.payment-calculator input[readonly]{background:var(--paper)}.payment-calculator output{grid-column:1/-1;font:2rem var(--serif);color:var(--ink-deep)}.payment-calculator [data-payment-note]{grid-column:1/-1;color:var(--ink-soft);font-size:.95rem;margin:0}
+.listing-share{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:24px 0 60px}.listing-share a{font-size:.95rem;font-weight:650}.listing-share [data-copy-status]{width:100%;font-size:.9rem;overflow-wrap:anywhere}
+[data-similar-listings] .pump-cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:1000px){.payment-calculator{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.payment-calculator{grid-template-columns:1fr;padding:22px}.viewing-days [data-viewing-days]{grid-template-columns:repeat(2,minmax(0,1fr))}.listing-questions{flex-direction:column}.listing-questions button{width:100%;text-align:left}.listing-code{font-size:1.25rem}.listing-share{gap:14px}[data-similar-listings] .pump-cards{grid-template-columns:1fr}}
+.listing-detail__hero .listing-code{color:var(--paper-mint)}.listing-detail__hero .listing-unit-price{color:var(--paper-mint)}

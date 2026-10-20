@@ -56,8 +56,10 @@ const site = readJson("site.config.json");
 site.assetVersion = createHash("sha256")
   .update(fs.readFileSync(path.join(root, "site.config.json")))
   .update(fs.readFileSync(path.join(root, "assets/css/site.css")))
+  .update(fs.readFileSync(path.join(root, "assets/css/listing-pump.css")))
   .update(fs.readFileSync(path.join(root, "assets/js/site.js")))
   .update(fs.readFileSync(path.join(root, "assets/js/form-handler.js")))
+  .update(fs.readFileSync(path.join(root, "assets/js/listing-pump.js")))
   .digest("hex")
   .slice(0, 12);
 if (site.web3formsAccessKey === "test-only-placeholder") throw new Error("Test-only Web3Forms key cannot be published");
@@ -98,7 +100,7 @@ function publish(relativePath, html) {
 safeResetDist();
 fs.cpSync(path.join(root, "assets"), path.join(dist, "assets"), { recursive: true });
 fs.copyFileSync(path.join(root, "favicon.ico"), path.join(dist, "favicon.ico"));
-write("manifest.webmanifest", `${JSON.stringify({ name: site.displayName, short_name: site.brand, start_url: `${ctx.base}/`, display: "browser", background_color: "#f7f9f7", theme_color: "#29383a", icons: [{ src: `${ctx.base}/assets/icons/apple-touch-icon.png`, sizes: "180x180", type: "image/png" }] }, null, 2)}\n`);
+write("manifest.webmanifest", `${JSON.stringify({ name: site.displayName, short_name: site.brand, start_url: `${ctx.base}/`, display: "browser", background_color: "#f7f9f7", theme_color: "#29383a", icons: [192, 512].map(size => ({ src: `${ctx.base}/assets/icons/icon-${size}.png`, sizes: `${size}x${size}`, type: "image/png" })) }, null, 2)}\n`);
 
 publish("index.html", renderHome(ctx, guides));
 for (const page of pages.filter((item) => item.path !== "construction.html" && (item.slug !== "zhk-aleksandrovskiy-park" || localZhk.publish === true))) publish(page.path, renderCommercialPage(ctx, page));

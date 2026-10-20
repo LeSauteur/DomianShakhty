@@ -72,7 +72,10 @@ test("confirmation badge and Offer require both verification date and responsibl
 test("only confirmed office details and prices are published", () => {
   const home = html("index.html");
   assert.match(home, /10:00–19:00/u);
-  assert.match(home, /5 октября 2026 года/u);
+  assert.doesNotMatch(home, /Данные на|5 октября 2026 года|уточните график/u);
+  assert.match(home, /5,0/u);
+  assert.match(home, /52 оценки · 39 отзывов/u);
+  assert.match(home, /Хорошее место/u);
   assert.match(home, /6252687869/u);
   assert.match(home, /data-src="https:\/\/yandex.ru\/maps-reviews-widget\/6252687869\?comments"/u);
   assert.doesNotMatch(home, /<iframe[^>]+\ssrc=/u);
@@ -81,7 +84,7 @@ test("only confirmed office details and prices are published", () => {
   assert.match(html("services.html"), /20\s000 ₽/u);
   assert.match(site.web3formsAccessKey, /^[a-f0-9-]{36}$/u);
   assert.match(home, /data-lead-form/u);
-  assert.equal((html("sitemap.xml").match(/<loc>/gu) || []).length, 189);
+  assert.equal((html("sitemap.xml").match(/<loc>/gu) || []).length, 190);
 });
 
 test('missing form key retains a working direct-contact fallback', () => {
