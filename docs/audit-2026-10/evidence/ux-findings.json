@@ -1,0 +1,24 @@
+[
+  {
+    "id": "G-001",
+    "section": "G",
+    "marker": "FACT",
+    "severity": "medium",
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/construction/projects/bolshoy-dvukhetazhnyy-dom-416-6m2.html",
+    "issue": "На 43 коммерческих страницах CTA основного контента не попадает в первый экран 390",
+    "evidence": "ux-pages.csv CTA_390 пуст; конкретные viewport записи browser/",
+    "fix": "Поднять полезное действие рядом с H1, сохранить объём контента",
+    "code": "src/templates.mjs hero layouts"
+  },
+  {
+    "id": "G-002",
+    "section": "G",
+    "marker": "INF",
+    "severity": "low",
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/builder-houses.html",
+    "issue": "На 119 страницах не выделено конкретное преимущество обращения к офису",
+    "evidence": "ux-pages.csv why_us=UNK; факты/характеристики сами по себе не объясняют роль агентства",
+    "fix": "Добавить 2–3 проверяемых действия офиса по задаче, ответственного специалиста и согласуемый результат; без превосходных обещаний",
+    "code": "src/templates.mjs / src/data"
+  }
+]

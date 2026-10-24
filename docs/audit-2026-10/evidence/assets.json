@@ -1,0 +1,3058 @@
+[
+  {
+    "file": ".nojekyll",
+    "bytes": 0
+  },
+  {
+    "file": "assets/css/site.css",
+    "bytes": 140589
+  },
+  {
+    "file": "assets/data/builders.json",
+    "bytes": 3
+  },
+  {
+    "file": "assets/data/listings.json",
+    "bytes": 74877
+  },
+  {
+    "file": "assets/data/locations.json",
+    "bytes": 12448
+  },
+  {
+    "file": "assets/data/projects.json",
+    "bytes": 3
+  },
+  {
+    "file": "assets/data/showcase.json",
+    "bytes": 4656
+  },
+  {
+    "file": "assets/data/team.json",
+    "bytes": 8645
+  },
+  {
+    "file": "assets/icons/apple-touch-icon.png",
+    "bytes": 15263
+  },
+  {
+    "file": "assets/icons/favicon.svg",
+    "bytes": 255
+  },
+  {
+    "file": "assets/images/construction-projects/bolshoy-dvukhetazhnyy-dom-416-6m2/facade-2-425.webp",
+    "bytes": 21024
+  },
+  {
+    "file": "assets/images/construction-projects/bolshoy-dvukhetazhnyy-dom-416-6m2/facade-635.webp",
+    "bytes": 35464
+  },
+  {
+    "file": "assets/images/construction-projects/bolshoy-dvukhetazhnyy-dom-416-6m2/plan-640.webp",
+    "bytes": 86272
+  },
+  {
+    "file": "assets/images/construction-projects/bolshoy-dvukhetazhnyy-dom-416-6m2/plan-668.webp",
+    "bytes": 59986
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/built-example-01.webp",
+    "bytes": 60012
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/built-example-02.webp",
+    "bytes": 95436
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/built-example-03.webp",
+    "bytes": 325524
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/built-example-04.webp",
+    "bytes": 323522
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/built-example-05.webp",
+    "bytes": 351044
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/built-example-06.webp",
+    "bytes": 302450
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/built-example-07.webp",
+    "bytes": 372534
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/built-example-08.webp",
+    "bytes": 313132
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/built-example-09.webp",
+    "bytes": 357100
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/built-example-10.webp",
+    "bytes": 344232
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/plan-1005.webp",
+    "bytes": 31582
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/plan-640.webp",
+    "bytes": 28686
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-105m2-tri-spalni-dva-sanuzla/plan-960.webp",
+    "bytes": 50244
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-107m2-prostornaya-kuhnya-gostinaya/plan-1125.webp",
+    "bytes": 35658
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-107m2-prostornaya-kuhnya-gostinaya/plan-640.webp",
+    "bytes": 25534
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-107m2-prostornaya-kuhnya-gostinaya/plan-960.webp",
+    "bytes": 47138
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/built-example-01.webp",
+    "bytes": 251940
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/built-example-02.webp",
+    "bytes": 175416
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/built-example-03.webp",
+    "bytes": 178946
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/built-example-04.webp",
+    "bytes": 41824
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/built-example-05.webp",
+    "bytes": 190996
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/built-example-06.webp",
+    "bytes": 40062
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/built-example-07.webp",
+    "bytes": 193420
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/built-example-08.webp",
+    "bytes": 181364
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/built-example-09.webp",
+    "bytes": 119108
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-111-1m2-tri-spalni/plan-615.webp",
+    "bytes": 15298
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-114-2m2-kuhnya-gostinaya/plan-640.webp",
+    "bytes": 24686
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-114-2m2-kuhnya-gostinaya/plan-641.webp",
+    "bytes": 15970
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/facade-1200.webp",
+    "bytes": 193112
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/facade-2-1200.webp",
+    "bytes": 170956
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/facade-2-640.webp",
+    "bytes": 89206
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/facade-2-960.webp",
+    "bytes": 182114
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/facade-640.webp",
+    "bytes": 107748
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/facade-960.webp",
+    "bytes": 210212
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/plan-1262.webp",
+    "bytes": 126564
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/plan-640.webp",
+    "bytes": 89074
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-115m2-kuhnya-i-gostinaya/plan-960.webp",
+    "bytes": 160854
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-1200.webp",
+    "bytes": 252628
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-2-1200.webp",
+    "bytes": 224674
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-2-640.webp",
+    "bytes": 106442
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-2-960.webp",
+    "bytes": 223916
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-640.webp",
+    "bytes": 124404
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/facade-960.webp",
+    "bytes": 250760
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/plan-1344.webp",
+    "bytes": 119722
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/plan-640.webp",
+    "bytes": 76436
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-116m2-prostornaya-kuhnya-gostinaya/plan-960.webp",
+    "bytes": 139706
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/facade-1200.webp",
+    "bytes": 242536
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/facade-2-1200.webp",
+    "bytes": 255424
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/facade-2-640.webp",
+    "bytes": 132344
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/facade-2-960.webp",
+    "bytes": 266770
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/facade-640.webp",
+    "bytes": 127544
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/facade-960.webp",
+    "bytes": 261320
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/plan-1440.webp",
+    "bytes": 278810
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/plan-640.webp",
+    "bytes": 77988
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-128m2-kuhnya-gostinaya-39m2/plan-960.webp",
+    "bytes": 149962
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-1200.webp",
+    "bytes": 275550
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-2-1200.webp",
+    "bytes": 273598
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-2-640.webp",
+    "bytes": 137942
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-2-960.webp",
+    "bytes": 279720
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-640.webp",
+    "bytes": 141432
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/facade-960.webp",
+    "bytes": 281626
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/plan-1313.webp",
+    "bytes": 131758
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/plan-640.webp",
+    "bytes": 85394
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-130m2-garderobnaya-kotelnaya/plan-960.webp",
+    "bytes": 160228
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/built-example-01.webp",
+    "bytes": 184428
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/built-example-02.webp",
+    "bytes": 238832
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/built-example-03.webp",
+    "bytes": 68368
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/built-example-04.webp",
+    "bytes": 288954
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/built-example-05.webp",
+    "bytes": 198380
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/built-example-06.webp",
+    "bytes": 223566
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/built-example-07.webp",
+    "bytes": 225390
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/plan-1104.webp",
+    "bytes": 24108
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/plan-640.webp",
+    "bytes": 20310
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-75m2-dve-spalni/plan-960.webp",
+    "bytes": 35538
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/facade-1200.webp",
+    "bytes": 182688
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/facade-2-1200.webp",
+    "bytes": 161372
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/facade-2-640.webp",
+    "bytes": 92394
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/facade-2-960.webp",
+    "bytes": 178706
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/facade-640.webp",
+    "bytes": 92346
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/facade-960.webp",
+    "bytes": 190460
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/plan-640.webp",
+    "bytes": 93200
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/plan-960.webp",
+    "bytes": 171300
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-80m2-tri-spalni/plan-986.webp",
+    "bytes": 91198
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-83-8m2-s-terrasoy/built-example-01.webp",
+    "bytes": 228084
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-83-8m2-s-terrasoy/built-example-02.webp",
+    "bytes": 187766
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-83-8m2-s-terrasoy/built-example-03.webp",
+    "bytes": 244232
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-83-8m2-s-terrasoy/built-example-04.webp",
+    "bytes": 260310
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-83-8m2-s-terrasoy/built-example-05.webp",
+    "bytes": 242456
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-83-8m2-s-terrasoy/plan-640.webp",
+    "bytes": 23306
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-83-8m2-s-terrasoy/plan-820.webp",
+    "bytes": 19704
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-1200.webp",
+    "bytes": 197040
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-2-1200.webp",
+    "bytes": 171680
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-2-640.webp",
+    "bytes": 92748
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-2-960.webp",
+    "bytes": 183592
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-640.webp",
+    "bytes": 108708
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/facade-960.webp",
+    "bytes": 206460
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/plan-1440.webp",
+    "bytes": 200638
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/plan-640.webp",
+    "bytes": 63330
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-dva-sanuzla/plan-960.webp",
+    "bytes": 114422
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/facade-1200.webp",
+    "bytes": 181634
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/facade-2-1200.webp",
+    "bytes": 216726
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/facade-2-640.webp",
+    "bytes": 104476
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/facade-2-960.webp",
+    "bytes": 221760
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/facade-640.webp",
+    "bytes": 95436
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/facade-960.webp",
+    "bytes": 191002
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/plan-1120.webp",
+    "bytes": 119142
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/plan-640.webp",
+    "bytes": 100368
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-kuhnya-gostinaya/plan-960.webp",
+    "bytes": 184490
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-tri-spalni/plan-1059.webp",
+    "bytes": 29218
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-tri-spalni/plan-640.webp",
+    "bytes": 24544
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-85m2-tri-spalni/plan-960.webp",
+    "bytes": 42620
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-90m2-dve-spalni/plan-640.webp",
+    "bytes": 33776
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-90m2-dve-spalni/plan-806.webp",
+    "bytes": 27222
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-99m2-tri-spalni/plan-1210.webp",
+    "bytes": 32364
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-99m2-tri-spalni/plan-640.webp",
+    "bytes": 23110
+  },
+  {
+    "file": "assets/images/construction-projects/dom-pod-klyuch-99m2-tri-spalni/plan-960.webp",
+    "bytes": 40236
+  },
+  {
+    "file": "assets/images/construction-projects/dvukhetazhnyy-dom-pod-klyuch-137m2/plan-640.webp",
+    "bytes": 27044
+  },
+  {
+    "file": "assets/images/construction-projects/dvukhetazhnyy-dom-pod-klyuch-137m2/plan-679.webp",
+    "bytes": 17122
+  },
+  {
+    "file": "assets/images/construction-projects/dvukhetazhnyy-semeynyy-dom-142-2m2/plan-640.webp",
+    "bytes": 23102
+  },
+  {
+    "file": "assets/images/construction-projects/dvukhetazhnyy-semeynyy-dom-142-2m2/plan-748.webp",
+    "bytes": 18022
+  },
+  {
+    "file": "assets/images/construction-projects/kompaktnyy-dom-pod-klyuch-69-9m2/plan-640.webp",
+    "bytes": 22200
+  },
+  {
+    "file": "assets/images/construction-projects/kompaktnyy-dom-pod-klyuch-69-9m2/plan-772.webp",
+    "bytes": 17482
+  },
+  {
+    "file": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni/facade-2-640.webp",
+    "bytes": 56618
+  },
+  {
+    "file": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni/facade-2-690.webp",
+    "bytes": 45808
+  },
+  {
+    "file": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni/facade-640.webp",
+    "bytes": 41678
+  },
+  {
+    "file": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni/facade-690.webp",
+    "bytes": 30456
+  },
+  {
+    "file": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-161m2-dve-spalni/plan-415.webp",
+    "bytes": 9994
+  },
+  {
+    "file": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-217m2/facade-2-465.webp",
+    "bytes": 22552
+  },
+  {
+    "file": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-217m2/facade-640.webp",
+    "bytes": 29094
+  },
+  {
+    "file": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-217m2/facade-655.webp",
+    "bytes": 18732
+  },
+  {
+    "file": "assets/images/construction-projects/odnoetazhnyy-dom-pod-klyuch-217m2/plan-445.webp",
+    "bytes": 27830
+  },
+  {
+    "file": "assets/images/construction-projects/postroim-dom-konstantinovsk-110/facade-640.webp",
+    "bytes": 54804
+  },
+  {
+    "file": "assets/images/construction-projects/postroim-dom-konstantinovsk-110/facade.webp",
+    "bytes": 184620
+  },
+  {
+    "file": "assets/images/construction-projects/postroim-dom-rostov-brick-100-180/facade-640.webp",
+    "bytes": 63850
+  },
+  {
+    "file": "assets/images/construction-projects/postroim-dom-rostov-brick-100-180/facade.webp",
+    "bytes": 233120
+  },
+  {
+    "file": "assets/images/construction-projects/postroim-dom-rostov-brick-100-90/facade-640.webp",
+    "bytes": 64494
+  },
+  {
+    "file": "assets/images/construction-projects/postroim-dom-rostov-brick-100-90/facade.webp",
+    "bytes": 232924
+  },
+  {
+    "file": "assets/images/construction-projects/postroim-dom-rostov-brick-110/facade-640.webp",
+    "bytes": 61150
+  },
+  {
+    "file": "assets/images/construction-projects/postroim-dom-rostov-brick-110/facade.webp",
+    "bytes": 204958
+  },
+  {
+    "file": "assets/images/construction-projects/postroim-dom-rostov-stone-100-120/facade-640.webp",
+    "bytes": 71748
+  },
+  {
+    "file": "assets/images/construction-projects/postroim-dom-rostov-stone-100-120/facade.webp",
+    "bytes": 245244
+  },
+  {
+    "file": "assets/images/construction-projects/postroim-dom-rostov-stone-120/facade-640.webp",
+    "bytes": 71114
+  },
+  {
+    "file": "assets/images/construction-projects/postroim-dom-rostov-stone-120/facade.webp",
+    "bytes": 271338
+  },
+  {
+    "file": "assets/images/construction-projects/prostornyy-dom-pod-klyuch-124m2/plan-1140.webp",
+    "bytes": 42872
+  },
+  {
+    "file": "assets/images/construction-projects/prostornyy-dom-pod-klyuch-124m2/plan-640.webp",
+    "bytes": 30070
+  },
+  {
+    "file": "assets/images/construction-projects/prostornyy-dom-pod-klyuch-124m2/plan-960.webp",
+    "bytes": 55264
+  },
+  {
+    "file": "assets/images/construction-projects/prostornyy-dvukhetazhnyy-dom-337m2/facade-2-380.webp",
+    "bytes": 10858
+  },
+  {
+    "file": "assets/images/construction-projects/prostornyy-dvukhetazhnyy-dom-337m2/facade-640.webp",
+    "bytes": 43606
+  },
+  {
+    "file": "assets/images/construction-projects/prostornyy-dvukhetazhnyy-dom-337m2/facade-765.webp",
+    "bytes": 36016
+  },
+  {
+    "file": "assets/images/construction-projects/prostornyy-dvukhetazhnyy-dom-337m2/plan-390.webp",
+    "bytes": 21412
+  },
+  {
+    "file": "assets/images/construction-projects/semeynyy-dom-pod-klyuch-109m2/plan-1092.webp",
+    "bytes": 43234
+  },
+  {
+    "file": "assets/images/construction-projects/semeynyy-dom-pod-klyuch-109m2/plan-640.webp",
+    "bytes": 33782
+  },
+  {
+    "file": "assets/images/construction-projects/semeynyy-dom-pod-klyuch-109m2/plan-960.webp",
+    "bytes": 59840
+  },
+  {
+    "file": "assets/images/construction-projects/semeynyy-dom-pod-klyuch-84m2/plan-576.webp",
+    "bytes": 12208
+  },
+  {
+    "file": "assets/images/editorial/apartment-block-neighborhood-640.webp",
+    "bytes": 86352
+  },
+  {
+    "file": "assets/images/editorial/apartment-block-neighborhood-960.webp",
+    "bytes": 182182
+  },
+  {
+    "file": "assets/images/editorial/apartment-open-plan-640.webp",
+    "bytes": 47232
+  },
+  {
+    "file": "assets/images/editorial/apartment-open-plan-960.webp",
+    "bytes": 98824
+  },
+  {
+    "file": "assets/images/editorial/apartments-editorial-640.webp",
+    "bytes": 35358
+  },
+  {
+    "file": "assets/images/editorial/apartments-editorial-960.webp",
+    "bytes": 72298
+  },
+  {
+    "file": "assets/images/editorial/architecture-detail-480.webp",
+    "bytes": 36128
+  },
+  {
+    "file": "assets/images/editorial/architecture-detail-800.webp",
+    "bytes": 87798
+  },
+  {
+    "file": "assets/images/editorial/ayuta-entry-sign-640.webp",
+    "bytes": 50838
+  },
+  {
+    "file": "assets/images/editorial/ayuta-entry-sign-960.webp",
+    "bytes": 107034
+  },
+  {
+    "file": "assets/images/editorial/ayuta-railway-station-640.webp",
+    "bytes": 70770
+  },
+  {
+    "file": "assets/images/editorial/ayuta-railway-station-960.webp",
+    "bytes": 147476
+  },
+  {
+    "file": "assets/images/editorial/category-apartments-640.webp",
+    "bytes": 37988
+  },
+  {
+    "file": "assets/images/editorial/category-apartments-960.webp",
+    "bytes": 76400
+  },
+  {
+    "file": "assets/images/editorial/category-commercial-640.webp",
+    "bytes": 62872
+  },
+  {
+    "file": "assets/images/editorial/category-commercial-960.webp",
+    "bytes": 130714
+  },
+  {
+    "file": "assets/images/editorial/category-houses-640.webp",
+    "bytes": 58586
+  },
+  {
+    "file": "assets/images/editorial/category-houses-960.webp",
+    "bytes": 125262
+  },
+  {
+    "file": "assets/images/editorial/category-land-640.webp",
+    "bytes": 66792
+  },
+  {
+    "file": "assets/images/editorial/category-land-960.webp",
+    "bytes": 142572
+  },
+  {
+    "file": "assets/images/editorial/category-new-buildings-640.webp",
+    "bytes": 68564
+  },
+  {
+    "file": "assets/images/editorial/category-new-buildings-960.webp",
+    "bytes": 144920
+  },
+  {
+    "file": "assets/images/editorial/category-parking-640.webp",
+    "bytes": 47172
+  },
+  {
+    "file": "assets/images/editorial/category-parking-960.webp",
+    "bytes": 108258
+  },
+  {
+    "file": "assets/images/editorial/client-meeting-640.webp",
+    "bytes": 28842
+  },
+  {
+    "file": "assets/images/editorial/client-meeting-960.webp",
+    "bytes": 49092
+  },
+  {
+    "file": "assets/images/editorial/commercial-space-640.webp",
+    "bytes": 29168
+  },
+  {
+    "file": "assets/images/editorial/commercial-space-960.webp",
+    "bytes": 56788
+  },
+  {
+    "file": "assets/images/editorial/commercial-street-retail-640.webp",
+    "bytes": 66250
+  },
+  {
+    "file": "assets/images/editorial/commercial-street-retail-960.webp",
+    "bytes": 135524
+  },
+  {
+    "file": "assets/images/editorial/detached-brick-house-640.webp",
+    "bytes": 64428
+  },
+  {
+    "file": "assets/images/editorial/detached-brick-house-960.webp",
+    "bytes": 132298
+  },
+  {
+    "file": "assets/images/editorial/family-house-640.webp",
+    "bytes": 46900
+  },
+  {
+    "file": "assets/images/editorial/family-house-960.webp",
+    "bytes": 94380
+  },
+  {
+    "file": "assets/images/editorial/feature-new-homes-1200.webp",
+    "bytes": 138010
+  },
+  {
+    "file": "assets/images/editorial/feature-new-homes-720.webp",
+    "bytes": 63360
+  },
+  {
+    "file": "assets/images/editorial/garage-row-640.webp",
+    "bytes": 72668
+  },
+  {
+    "file": "assets/images/editorial/garage-row-960.webp",
+    "bytes": 158230
+  },
+  {
+    "file": "assets/images/editorial/hero-house-1200.webp",
+    "bytes": 126792
+  },
+  {
+    "file": "assets/images/editorial/hero-house-720.webp",
+    "bytes": 61942
+  },
+  {
+    "file": "assets/images/editorial/hero-modern-city-living-1200.webp",
+    "bytes": 252616
+  },
+  {
+    "file": "assets/images/editorial/hero-modern-city-living-720.webp",
+    "bytes": 103990
+  },
+  {
+    "file": "assets/images/editorial/hero-modern-city-living-mobile-600.webp",
+    "bytes": 109240
+  },
+  {
+    "file": "assets/images/editorial/house-dark-cta-1440.webp",
+    "bytes": 42318
+  },
+  {
+    "file": "assets/images/editorial/house-dark-cta-960.webp",
+    "bytes": 21808
+  },
+  {
+    "file": "assets/images/editorial/house-yard-640.webp",
+    "bytes": 84766
+  },
+  {
+    "file": "assets/images/editorial/house-yard-960.webp",
+    "bytes": 192456
+  },
+  {
+    "file": "assets/images/editorial/kamenolomni-entry-sign-640.webp",
+    "bytes": 43188
+  },
+  {
+    "file": "assets/images/editorial/kamenolomni-entry-sign-960.webp",
+    "bytes": 96118
+  },
+  {
+    "file": "assets/images/editorial/keys-handover-640.webp",
+    "bytes": 11326
+  },
+  {
+    "file": "assets/images/editorial/keys-handover-960.webp",
+    "bytes": 18958
+  },
+  {
+    "file": "assets/images/editorial/krasny-sulin-entry-sign-640.webp",
+    "bytes": 71730
+  },
+  {
+    "file": "assets/images/editorial/krasny-sulin-entry-sign-960.webp",
+    "bytes": 147694
+  },
+  {
+    "file": "assets/images/editorial/land-plot-izhs-640.webp",
+    "bytes": 77072
+  },
+  {
+    "file": "assets/images/editorial/land-plot-izhs-960.webp",
+    "bytes": 174128
+  },
+  {
+    "file": "assets/images/editorial/land-plots-640.webp",
+    "bytes": 50464
+  },
+  {
+    "file": "assets/images/editorial/land-plots-960.webp",
+    "bytes": 110206
+  },
+  {
+    "file": "assets/images/editorial/main-hero-1200.webp",
+    "bytes": 110586
+  },
+  {
+    "file": "assets/images/editorial/main-hero-720.webp",
+    "bytes": 48020
+  },
+  {
+    "file": "assets/images/editorial/main-hero-mobile-600.webp",
+    "bytes": 55872
+  },
+  {
+    "file": "assets/images/editorial/modern-apartment-house-640.webp",
+    "bytes": 74956
+  },
+  {
+    "file": "assets/images/editorial/modern-apartment-house-960.webp",
+    "bytes": 155038
+  },
+  {
+    "file": "assets/images/editorial/modern-house-640.webp",
+    "bytes": 50392
+  },
+  {
+    "file": "assets/images/editorial/modern-house-960.webp",
+    "bytes": 106240
+  },
+  {
+    "file": "assets/images/editorial/mortgage-housing-1200.webp",
+    "bytes": 106866
+  },
+  {
+    "file": "assets/images/editorial/mortgage-housing-720.webp",
+    "bytes": 44342
+  },
+  {
+    "file": "assets/images/editorial/neighborhood-1200.webp",
+    "bytes": 177634
+  },
+  {
+    "file": "assets/images/editorial/neighborhood-720.webp",
+    "bytes": 74166
+  },
+  {
+    "file": "assets/images/editorial/neighborhood-private-sector-640.webp",
+    "bytes": 56262
+  },
+  {
+    "file": "assets/images/editorial/neighborhood-private-sector-960.webp",
+    "bytes": 128782
+  },
+  {
+    "file": "assets/images/editorial/new-buildings-640.webp",
+    "bytes": 52036
+  },
+  {
+    "file": "assets/images/editorial/new-buildings-960.webp",
+    "bytes": 100020
+  },
+  {
+    "file": "assets/images/editorial/newbuild-green-640.webp",
+    "bytes": 74022
+  },
+  {
+    "file": "assets/images/editorial/newbuild-green-960.webp",
+    "bytes": 164294
+  },
+  {
+    "file": "assets/images/editorial/novoshakhtinsk-entry-sign-640.webp",
+    "bytes": 54468
+  },
+  {
+    "file": "assets/images/editorial/novoshakhtinsk-entry-sign-960.webp",
+    "bytes": 113400
+  },
+  {
+    "file": "assets/images/editorial/premium-living-640.webp",
+    "bytes": 27034
+  },
+  {
+    "file": "assets/images/editorial/premium-living-960.webp",
+    "bytes": 54408
+  },
+  {
+    "file": "assets/images/editorial/real-land-plot-1200.webp",
+    "bytes": 138024
+  },
+  {
+    "file": "assets/images/editorial/real-land-plot-720.webp",
+    "bytes": 52412
+  },
+  {
+    "file": "assets/images/editorial/regional-apartment-street-640.webp",
+    "bytes": 60910
+  },
+  {
+    "file": "assets/images/editorial/regional-apartment-street-960.webp",
+    "bytes": 133274
+  },
+  {
+    "file": "assets/images/editorial/residential-parking-640.webp",
+    "bytes": 70822
+  },
+  {
+    "file": "assets/images/editorial/residential-parking-960.webp",
+    "bytes": 153560
+  },
+  {
+    "file": "assets/images/editorial/sale-interior-1200.webp",
+    "bytes": 71130
+  },
+  {
+    "file": "assets/images/editorial/sale-interior-720.webp",
+    "bytes": 27412
+  },
+  {
+    "file": "assets/images/editorial/secondary-apartment-640.webp",
+    "bytes": 33684
+  },
+  {
+    "file": "assets/images/editorial/secondary-apartment-960.webp",
+    "bytes": 67280
+  },
+  {
+    "file": "assets/images/editorial/secondary-apartment-interior-1440.webp",
+    "bytes": 264682
+  },
+  {
+    "file": "assets/images/editorial/secondary-apartment-interior-640.webp",
+    "bytes": 49556
+  },
+  {
+    "file": "assets/images/editorial/secondary-apartment-interior-960.webp",
+    "bytes": 117108
+  },
+  {
+    "file": "assets/images/editorial/secondary-houses-street-640.webp",
+    "bytes": 53316
+  },
+  {
+    "file": "assets/images/editorial/secondary-houses-street-960.webp",
+    "bytes": 120776
+  },
+  {
+    "file": "assets/images/editorial/sell-property-cta-1440.webp",
+    "bytes": 41902
+  },
+  {
+    "file": "assets/images/editorial/sell-property-cta-960.webp",
+    "bytes": 22010
+  },
+  {
+    "file": "assets/images/editorial/seller-valuation-640.webp",
+    "bytes": 27116
+  },
+  {
+    "file": "assets/images/editorial/seller-valuation-960.webp",
+    "bytes": 50784
+  },
+  {
+    "file": "assets/images/editorial/suburban-house-640.webp",
+    "bytes": 37966
+  },
+  {
+    "file": "assets/images/editorial/suburban-house-960.webp",
+    "bytes": 73170
+  },
+  {
+    "file": "assets/images/editorial/warehouse-loading-yard-640.webp",
+    "bytes": 58796
+  },
+  {
+    "file": "assets/images/editorial/warehouse-loading-yard-960.webp",
+    "bytes": 124998
+  },
+  {
+    "file": "assets/images/listings/kamenolomni-house-garden-1200.webp",
+    "bytes": 306760
+  },
+  {
+    "file": "assets/images/listings/kamenolomni-house-garden-640.webp",
+    "bytes": 90390
+  },
+  {
+    "file": "assets/images/listings/kamenolomni-house-hero-1200.webp",
+    "bytes": 261332
+  },
+  {
+    "file": "assets/images/listings/kamenolomni-house-hero-640.webp",
+    "bytes": 79170
+  },
+  {
+    "file": "assets/images/listings/kamenolomni-house-interior-main-1200.webp",
+    "bytes": 121264
+  },
+  {
+    "file": "assets/images/listings/kamenolomni-house-interior-main-640.webp",
+    "bytes": 40938
+  },
+  {
+    "file": "assets/images/listings/kamenolomni-house-layout-1200.webp",
+    "bytes": 93240
+  },
+  {
+    "file": "assets/images/listings/kamenolomni-house-layout-640.webp",
+    "bytes": 39190
+  },
+  {
+    "file": "assets/images/listings/kamenolomni-house-rear-1200.webp",
+    "bytes": 305256
+  },
+  {
+    "file": "assets/images/listings/kamenolomni-house-rear-640.webp",
+    "bytes": 93148
+  },
+  {
+    "file": "assets/images/listings/kamenolomni-house-windows-1200.webp",
+    "bytes": 136702
+  },
+  {
+    "file": "assets/images/listings/kamenolomni-house-windows-640.webp",
+    "bytes": 56674
+  },
+  {
+    "file": "assets/images/listings/shk-a01-studio-olymp/01.webp",
+    "bytes": 116226
+  },
+  {
+    "file": "assets/images/listings/shk-a01-studio-olymp/02.webp",
+    "bytes": 129414
+  },
+  {
+    "file": "assets/images/listings/shk-a01-studio-olymp/03.webp",
+    "bytes": 109936
+  },
+  {
+    "file": "assets/images/listings/shk-a01-studio-olymp/04.webp",
+    "bytes": 80224
+  },
+  {
+    "file": "assets/images/listings/shk-a01-studio-olymp/hero.webp",
+    "bytes": 88296
+  },
+  {
+    "file": "assets/images/listings/shk-a02-budget-1k/01.webp",
+    "bytes": 135558
+  },
+  {
+    "file": "assets/images/listings/shk-a02-budget-1k/02.webp",
+    "bytes": 63014
+  },
+  {
+    "file": "assets/images/listings/shk-a02-budget-1k/03.webp",
+    "bytes": 96858
+  },
+  {
+    "file": "assets/images/listings/shk-a02-budget-1k/04.webp",
+    "bytes": 358630
+  },
+  {
+    "file": "assets/images/listings/shk-a02-budget-1k/hero.webp",
+    "bytes": 110350
+  },
+  {
+    "file": "assets/images/listings/shk-a03-hbk-1k/01.webp",
+    "bytes": 100526
+  },
+  {
+    "file": "assets/images/listings/shk-a03-hbk-1k/02.webp",
+    "bytes": 67518
+  },
+  {
+    "file": "assets/images/listings/shk-a03-hbk-1k/03.webp",
+    "bytes": 84338
+  },
+  {
+    "file": "assets/images/listings/shk-a03-hbk-1k/04.webp",
+    "bytes": 177888
+  },
+  {
+    "file": "assets/images/listings/shk-a03-hbk-1k/hero.webp",
+    "bytes": 93378
+  },
+  {
+    "file": "assets/images/listings/shk-a04-olymp-1k-aogv/01.webp",
+    "bytes": 135380
+  },
+  {
+    "file": "assets/images/listings/shk-a04-olymp-1k-aogv/02.webp",
+    "bytes": 109252
+  },
+  {
+    "file": "assets/images/listings/shk-a04-olymp-1k-aogv/03.webp",
+    "bytes": 79392
+  },
+  {
+    "file": "assets/images/listings/shk-a04-olymp-1k-aogv/04.webp",
+    "bytes": 72568
+  },
+  {
+    "file": "assets/images/listings/shk-a04-olymp-1k-aogv/hero.webp",
+    "bytes": 106782
+  },
+  {
+    "file": "assets/images/listings/shk-a05-center-renovated-1k/01.webp",
+    "bytes": 126088
+  },
+  {
+    "file": "assets/images/listings/shk-a05-center-renovated-1k/02.webp",
+    "bytes": 131968
+  },
+  {
+    "file": "assets/images/listings/shk-a05-center-renovated-1k/03.webp",
+    "bytes": 98494
+  },
+  {
+    "file": "assets/images/listings/shk-a05-center-renovated-1k/04.webp",
+    "bytes": 335970
+  },
+  {
+    "file": "assets/images/listings/shk-a05-center-renovated-1k/hero.webp",
+    "bytes": 130116
+  },
+  {
+    "file": "assets/images/listings/shk-a06-budget-2k/01.webp",
+    "bytes": 125974
+  },
+  {
+    "file": "assets/images/listings/shk-a06-budget-2k/02.webp",
+    "bytes": 109136
+  },
+  {
+    "file": "assets/images/listings/shk-a06-budget-2k/03.webp",
+    "bytes": 89210
+  },
+  {
+    "file": "assets/images/listings/shk-a06-budget-2k/04.webp",
+    "bytes": 99216
+  },
+  {
+    "file": "assets/images/listings/shk-a06-budget-2k/hero.webp",
+    "bytes": 130692
+  },
+  {
+    "file": "assets/images/listings/shk-a07-hbk-brick-2k/01.webp",
+    "bytes": 167650
+  },
+  {
+    "file": "assets/images/listings/shk-a07-hbk-brick-2k/02.webp",
+    "bytes": 134586
+  },
+  {
+    "file": "assets/images/listings/shk-a07-hbk-brick-2k/03.webp",
+    "bytes": 134142
+  },
+  {
+    "file": "assets/images/listings/shk-a07-hbk-brick-2k/04.webp",
+    "bytes": 337432
+  },
+  {
+    "file": "assets/images/listings/shk-a07-hbk-brick-2k/hero.webp",
+    "bytes": 160242
+  },
+  {
+    "file": "assets/images/listings/shk-a08-aogv-2k/01.webp",
+    "bytes": 105134
+  },
+  {
+    "file": "assets/images/listings/shk-a08-aogv-2k/02.webp",
+    "bytes": 82670
+  },
+  {
+    "file": "assets/images/listings/shk-a08-aogv-2k/03.webp",
+    "bytes": 72958
+  },
+  {
+    "file": "assets/images/listings/shk-a08-aogv-2k/04.webp",
+    "bytes": 83278
+  },
+  {
+    "file": "assets/images/listings/shk-a08-aogv-2k/hero.webp",
+    "bytes": 107852
+  },
+  {
+    "file": "assets/images/listings/shk-a09-sotsgorodok-2k/01.webp",
+    "bytes": 147308
+  },
+  {
+    "file": "assets/images/listings/shk-a09-sotsgorodok-2k/02.webp",
+    "bytes": 125052
+  },
+  {
+    "file": "assets/images/listings/shk-a09-sotsgorodok-2k/03.webp",
+    "bytes": 92998
+  },
+  {
+    "file": "assets/images/listings/shk-a09-sotsgorodok-2k/04.webp",
+    "bytes": 100402
+  },
+  {
+    "file": "assets/images/listings/shk-a09-sotsgorodok-2k/hero.webp",
+    "bytes": 154752
+  },
+  {
+    "file": "assets/images/listings/shk-a10-budget-3k/01.webp",
+    "bytes": 146666
+  },
+  {
+    "file": "assets/images/listings/shk-a10-budget-3k/02.webp",
+    "bytes": 149080
+  },
+  {
+    "file": "assets/images/listings/shk-a10-budget-3k/03.webp",
+    "bytes": 129548
+  },
+  {
+    "file": "assets/images/listings/shk-a10-budget-3k/04.webp",
+    "bytes": 111532
+  },
+  {
+    "file": "assets/images/listings/shk-a10-budget-3k/hero.webp",
+    "bytes": 138676
+  },
+  {
+    "file": "assets/images/listings/shk-a11-hbk-family-3k/01.webp",
+    "bytes": 146534
+  },
+  {
+    "file": "assets/images/listings/shk-a11-hbk-family-3k/02.webp",
+    "bytes": 162166
+  },
+  {
+    "file": "assets/images/listings/shk-a11-hbk-family-3k/03.webp",
+    "bytes": 142570
+  },
+  {
+    "file": "assets/images/listings/shk-a11-hbk-family-3k/04.webp",
+    "bytes": 94078
+  },
+  {
+    "file": "assets/images/listings/shk-a11-hbk-family-3k/hero.webp",
+    "bytes": 129076
+  },
+  {
+    "file": "assets/images/listings/shk-a12-center-designer-3k/01.webp",
+    "bytes": 162330
+  },
+  {
+    "file": "assets/images/listings/shk-a12-center-designer-3k/02.webp",
+    "bytes": 162466
+  },
+  {
+    "file": "assets/images/listings/shk-a12-center-designer-3k/03.webp",
+    "bytes": 104500
+  },
+  {
+    "file": "assets/images/listings/shk-a12-center-designer-3k/04.webp",
+    "bytes": 127218
+  },
+  {
+    "file": "assets/images/listings/shk-a12-center-designer-3k/hero.webp",
+    "bytes": 148458
+  },
+  {
+    "file": "assets/images/listings/shk-a13-aleksandrovskiy-park/01.webp",
+    "bytes": 354744
+  },
+  {
+    "file": "assets/images/listings/shk-a13-aleksandrovskiy-park/02.webp",
+    "bytes": 173688
+  },
+  {
+    "file": "assets/images/listings/shk-a13-aleksandrovskiy-park/03.webp",
+    "bytes": 123522
+  },
+  {
+    "file": "assets/images/listings/shk-a13-aleksandrovskiy-park/04.webp",
+    "bytes": 325844
+  },
+  {
+    "file": "assets/images/listings/shk-a13-aleksandrovskiy-park/hero.webp",
+    "bytes": 262006
+  },
+  {
+    "file": "assets/images/listings/shk-a14-renovated-2k-43/01.webp",
+    "bytes": 86286
+  },
+  {
+    "file": "assets/images/listings/shk-a14-renovated-2k-43/02.webp",
+    "bytes": 113316
+  },
+  {
+    "file": "assets/images/listings/shk-a14-renovated-2k-43/03.webp",
+    "bytes": 53002
+  },
+  {
+    "file": "assets/images/listings/shk-a14-renovated-2k-43/04.webp",
+    "bytes": 138292
+  },
+  {
+    "file": "assets/images/listings/shk-a14-renovated-2k-43/05.webp",
+    "bytes": 130794
+  },
+  {
+    "file": "assets/images/listings/shk-a14-renovated-2k-43/06.webp",
+    "bytes": 124436
+  },
+  {
+    "file": "assets/images/listings/shk-a14-renovated-2k-43/hero.webp",
+    "bytes": 76500
+  },
+  {
+    "file": "assets/images/listings/shk-h01-renovation-house/01.webp",
+    "bytes": 386946
+  },
+  {
+    "file": "assets/images/listings/shk-h01-renovation-house/02.webp",
+    "bytes": 140616
+  },
+  {
+    "file": "assets/images/listings/shk-h01-renovation-house/03.webp",
+    "bytes": 155196
+  },
+  {
+    "file": "assets/images/listings/shk-h01-renovation-house/04.webp",
+    "bytes": 427470
+  },
+  {
+    "file": "assets/images/listings/shk-h01-renovation-house/hero.webp",
+    "bytes": 384592
+  },
+  {
+    "file": "assets/images/listings/shk-h02-budget-house/01.webp",
+    "bytes": 193396
+  },
+  {
+    "file": "assets/images/listings/shk-h02-budget-house/02.webp",
+    "bytes": 172482
+  },
+  {
+    "file": "assets/images/listings/shk-h02-budget-house/03.webp",
+    "bytes": 158326
+  },
+  {
+    "file": "assets/images/listings/shk-h02-budget-house/04.webp",
+    "bytes": 454260
+  },
+  {
+    "file": "assets/images/listings/shk-h02-budget-house/hero.webp",
+    "bytes": 373492
+  },
+  {
+    "file": "assets/images/listings/shk-h03-artem-brick-house/01.webp",
+    "bytes": 178818
+  },
+  {
+    "file": "assets/images/listings/shk-h03-artem-brick-house/02.webp",
+    "bytes": 150644
+  },
+  {
+    "file": "assets/images/listings/shk-h03-artem-brick-house/03.webp",
+    "bytes": 153870
+  },
+  {
+    "file": "assets/images/listings/shk-h03-artem-brick-house/04.webp",
+    "bytes": 383152
+  },
+  {
+    "file": "assets/images/listings/shk-h03-artem-brick-house/hero.webp",
+    "bytes": 240436
+  },
+  {
+    "file": "assets/images/listings/shk-h04-garage-house/01.webp",
+    "bytes": 114688
+  },
+  {
+    "file": "assets/images/listings/shk-h04-garage-house/02.webp",
+    "bytes": 113314
+  },
+  {
+    "file": "assets/images/listings/shk-h04-garage-house/03.webp",
+    "bytes": 126762
+  },
+  {
+    "file": "assets/images/listings/shk-h04-garage-house/04.webp",
+    "bytes": 236552
+  },
+  {
+    "file": "assets/images/listings/shk-h04-garage-house/hero.webp",
+    "bytes": 237236
+  },
+  {
+    "file": "assets/images/listings/shk-h05-large-modern-house/01.webp",
+    "bytes": 152154
+  },
+  {
+    "file": "assets/images/listings/shk-h05-large-modern-house/02.webp",
+    "bytes": 108762
+  },
+  {
+    "file": "assets/images/listings/shk-h05-large-modern-house/03.webp",
+    "bytes": 144966
+  },
+  {
+    "file": "assets/images/listings/shk-h05-large-modern-house/04.webp",
+    "bytes": 318150
+  },
+  {
+    "file": "assets/images/listings/shk-h05-large-modern-house/hero.webp",
+    "bytes": 286536
+  },
+  {
+    "file": "assets/images/listings/shk-h06-city-designer-house/01.webp",
+    "bytes": 186516
+  },
+  {
+    "file": "assets/images/listings/shk-h06-city-designer-house/02.webp",
+    "bytes": 144510
+  },
+  {
+    "file": "assets/images/listings/shk-h06-city-designer-house/03.webp",
+    "bytes": 163892
+  },
+  {
+    "file": "assets/images/listings/shk-h06-city-designer-house/04.webp",
+    "bytes": 174918
+  },
+  {
+    "file": "assets/images/listings/shk-h06-city-designer-house/hero.webp",
+    "bytes": 231386
+  },
+  {
+    "file": "assets/images/listings/shk-h07-two-houses-kamenolomni/01.webp",
+    "bytes": 40492
+  },
+  {
+    "file": "assets/images/listings/shk-h07-two-houses-kamenolomni/02.webp",
+    "bytes": 70312
+  },
+  {
+    "file": "assets/images/listings/shk-h07-two-houses-kamenolomni/03.webp",
+    "bytes": 46960
+  },
+  {
+    "file": "assets/images/listings/shk-h07-two-houses-kamenolomni/04.webp",
+    "bytes": 239050
+  },
+  {
+    "file": "assets/images/listings/shk-h07-two-houses-kamenolomni/05.webp",
+    "bytes": 168842
+  },
+  {
+    "file": "assets/images/listings/shk-h07-two-houses-kamenolomni/hero.webp",
+    "bytes": 69594
+  },
+  {
+    "file": "assets/images/listings/shk-h08-two-houses-center/01.webp",
+    "bytes": 97138
+  },
+  {
+    "file": "assets/images/listings/shk-h08-two-houses-center/02.webp",
+    "bytes": 113498
+  },
+  {
+    "file": "assets/images/listings/shk-h08-two-houses-center/03.webp",
+    "bytes": 125144
+  },
+  {
+    "file": "assets/images/listings/shk-h08-two-houses-center/04.webp",
+    "bytes": 125682
+  },
+  {
+    "file": "assets/images/listings/shk-h08-two-houses-center/05.webp",
+    "bytes": 124176
+  },
+  {
+    "file": "assets/images/listings/shk-h08-two-houses-center/06.webp",
+    "bytes": 123260
+  },
+  {
+    "file": "assets/images/listings/shk-h08-two-houses-center/hero.webp",
+    "bytes": 130848
+  },
+  {
+    "file": "assets/images/listings/shk-h09-renovated-76/01.webp",
+    "bytes": 256602
+  },
+  {
+    "file": "assets/images/listings/shk-h09-renovated-76/02.webp",
+    "bytes": 198720
+  },
+  {
+    "file": "assets/images/listings/shk-h09-renovated-76/03.webp",
+    "bytes": 221340
+  },
+  {
+    "file": "assets/images/listings/shk-h09-renovated-76/04.webp",
+    "bytes": 183788
+  },
+  {
+    "file": "assets/images/listings/shk-h09-renovated-76/05.webp",
+    "bytes": 227026
+  },
+  {
+    "file": "assets/images/listings/shk-h09-renovated-76/06.webp",
+    "bytes": 163378
+  },
+  {
+    "file": "assets/images/listings/shk-h09-renovated-76/07.webp",
+    "bytes": 165336
+  },
+  {
+    "file": "assets/images/listings/shk-h09-renovated-76/08.webp",
+    "bytes": 214842
+  },
+  {
+    "file": "assets/images/listings/shk-h09-renovated-76/09.webp",
+    "bytes": 191032
+  },
+  {
+    "file": "assets/images/listings/shk-h09-renovated-76/hero.webp",
+    "bytes": 328226
+  },
+  {
+    "file": "assets/images/listings/shk-l01-snt-plot/01.webp",
+    "bytes": 422032
+  },
+  {
+    "file": "assets/images/listings/shk-l01-snt-plot/02.webp",
+    "bytes": 409040
+  },
+  {
+    "file": "assets/images/listings/shk-l01-snt-plot/03.webp",
+    "bytes": 371776
+  },
+  {
+    "file": "assets/images/listings/shk-l01-snt-plot/04.webp",
+    "bytes": 440508
+  },
+  {
+    "file": "assets/images/listings/shk-l01-snt-plot/hero.webp",
+    "bytes": 420358
+  },
+  {
+    "file": "assets/images/listings/shk-l02-budget-izhs/01.webp",
+    "bytes": 288696
+  },
+  {
+    "file": "assets/images/listings/shk-l02-budget-izhs/02.webp",
+    "bytes": 288964
+  },
+  {
+    "file": "assets/images/listings/shk-l02-budget-izhs/03.webp",
+    "bytes": 258346
+  },
+  {
+    "file": "assets/images/listings/shk-l02-budget-izhs/04.webp",
+    "bytes": 316982
+  },
+  {
+    "file": "assets/images/listings/shk-l02-budget-izhs/hero.webp",
+    "bytes": 247522
+  },
+  {
+    "file": "assets/images/listings/shk-l03-artem-izhs/01.webp",
+    "bytes": 324828
+  },
+  {
+    "file": "assets/images/listings/shk-l03-artem-izhs/02.webp",
+    "bytes": 359478
+  },
+  {
+    "file": "assets/images/listings/shk-l03-artem-izhs/03.webp",
+    "bytes": 319854
+  },
+  {
+    "file": "assets/images/listings/shk-l03-artem-izhs/04.webp",
+    "bytes": 362630
+  },
+  {
+    "file": "assets/images/listings/shk-l03-artem-izhs/hero.webp",
+    "bytes": 330536
+  },
+  {
+    "file": "assets/images/listings/shk-l04-peripheral-large-plot/01.webp",
+    "bytes": 299522
+  },
+  {
+    "file": "assets/images/listings/shk-l04-peripheral-large-plot/02.webp",
+    "bytes": 290390
+  },
+  {
+    "file": "assets/images/listings/shk-l04-peripheral-large-plot/03.webp",
+    "bytes": 253780
+  },
+  {
+    "file": "assets/images/listings/shk-l04-peripheral-large-plot/04.webp",
+    "bytes": 298034
+  },
+  {
+    "file": "assets/images/listings/shk-l04-peripheral-large-plot/hero.webp",
+    "bytes": 269022
+  },
+  {
+    "file": "assets/images/listings/shk-l05-serviced-city-plot/01.webp",
+    "bytes": 383958
+  },
+  {
+    "file": "assets/images/listings/shk-l05-serviced-city-plot/02.webp",
+    "bytes": 310932
+  },
+  {
+    "file": "assets/images/listings/shk-l05-serviced-city-plot/03.webp",
+    "bytes": 235300
+  },
+  {
+    "file": "assets/images/listings/shk-l05-serviced-city-plot/04.webp",
+    "bytes": 339944
+  },
+  {
+    "file": "assets/images/listings/shk-l05-serviced-city-plot/hero.webp",
+    "bytes": 277678
+  },
+  {
+    "file": "assets/images/listings/shk-l06-regular-city-plot/01.webp",
+    "bytes": 317088
+  },
+  {
+    "file": "assets/images/listings/shk-l06-regular-city-plot/02.webp",
+    "bytes": 275370
+  },
+  {
+    "file": "assets/images/listings/shk-l06-regular-city-plot/03.webp",
+    "bytes": 293496
+  },
+  {
+    "file": "assets/images/listings/shk-l06-regular-city-plot/04.webp",
+    "bytes": 314918
+  },
+  {
+    "file": "assets/images/listings/shk-l06-regular-city-plot/hero.webp",
+    "bytes": 307308
+  },
+  {
+    "file": "assets/images/listings/shk-l07-corner-12-sot/hero.webp",
+    "bytes": 157580
+  },
+  {
+    "file": "assets/images/listings/shk-l08-goroda-budushchego-plot/01.webp",
+    "bytes": 396572
+  },
+  {
+    "file": "assets/images/listings/shk-l08-goroda-budushchego-plot/02.webp",
+    "bytes": 450076
+  },
+  {
+    "file": "assets/images/listings/shk-l08-goroda-budushchego-plot/03.webp",
+    "bytes": 330526
+  },
+  {
+    "file": "assets/images/listings/shk-l08-goroda-budushchego-plot/hero.webp",
+    "bytes": 364898
+  },
+  {
+    "file": "assets/images/listings/shk-l09-serviced-8-sot/hero.webp",
+    "bytes": 328120
+  },
+  {
+    "file": "assets/images/listings/shk-l10-flat-6-sot/hero.webp",
+    "bytes": 154306
+  },
+  {
+    "file": "assets/images/maria-smolina-360.webp",
+    "bytes": 25120
+  },
+  {
+    "file": "assets/images/maria-smolina-640.webp",
+    "bytes": 51510
+  },
+  {
+    "file": "assets/images/maria-smolina-960.webp",
+    "bytes": 85122
+  },
+  {
+    "file": "assets/images/maria-smolina-original.png",
+    "bytes": 2093769
+  },
+  {
+    "file": "assets/images/maria-voronina-360.webp",
+    "bytes": 24806
+  },
+  {
+    "file": "assets/images/maria-voronina-640.webp",
+    "bytes": 56786
+  },
+  {
+    "file": "assets/images/maria-voronina-960.webp",
+    "bytes": 95706
+  },
+  {
+    "file": "assets/images/maria-voronina-original.png",
+    "bytes": 2366084
+  },
+  {
+    "file": "assets/images/newbuilds/1799/89fd7ffeae2ededfbbe31157c186989fceb2edc4-320.webp",
+    "bytes": 20312
+  },
+  {
+    "file": "assets/images/newbuilds/5-element-aske/boulevard-01-1440.webp",
+    "bytes": 410060
+  },
+  {
+    "file": "assets/images/newbuilds/5-element-aske/boulevard-01-640.webp",
+    "bytes": 103592
+  },
+  {
+    "file": "assets/images/newbuilds/5-element-aske/boulevard-01-960.webp",
+    "bytes": 209718
+  },
+  {
+    "file": "assets/images/newbuilds/5-element-aske/courtyard-01-1440.webp",
+    "bytes": 380664
+  },
+  {
+    "file": "assets/images/newbuilds/5-element-aske/courtyard-01-640.webp",
+    "bytes": 109096
+  },
+  {
+    "file": "assets/images/newbuilds/5-element-aske/courtyard-01-960.webp",
+    "bytes": 210686
+  },
+  {
+    "file": "assets/images/newbuilds/5-element-aske/cover-1440.webp",
+    "bytes": 407804
+  },
+  {
+    "file": "assets/images/newbuilds/5-element-aske/cover-640.webp",
+    "bytes": 114140
+  },
+  {
+    "file": "assets/images/newbuilds/5-element-aske/cover-960.webp",
+    "bytes": 219888
+  },
+  {
+    "file": "assets/images/newbuilds/academia/aerial-01-1080.webp",
+    "bytes": 252848
+  },
+  {
+    "file": "assets/images/newbuilds/academia/aerial-01-640.webp",
+    "bytes": 173300
+  },
+  {
+    "file": "assets/images/newbuilds/academia/aerial-01-960.webp",
+    "bytes": 330582
+  },
+  {
+    "file": "assets/images/newbuilds/academia/cover-1440.webp",
+    "bytes": 526372
+  },
+  {
+    "file": "assets/images/newbuilds/academia/cover-640.webp",
+    "bytes": 122232
+  },
+  {
+    "file": "assets/images/newbuilds/academia/cover-960.webp",
+    "bytes": 255484
+  },
+  {
+    "file": "assets/images/newbuilds/academia/exterior-01-1080.webp",
+    "bytes": 93136
+  },
+  {
+    "file": "assets/images/newbuilds/academia/exterior-01-640.webp",
+    "bytes": 71780
+  },
+  {
+    "file": "assets/images/newbuilds/academia/exterior-01-960.webp",
+    "bytes": 127320
+  },
+  {
+    "file": "assets/images/newbuilds/academia/floorplan-1-room-1440.webp",
+    "bytes": 52900
+  },
+  {
+    "file": "assets/images/newbuilds/academia/floorplan-1-room-640.webp",
+    "bytes": 19704
+  },
+  {
+    "file": "assets/images/newbuilds/academia/floorplan-1-room-960.webp",
+    "bytes": 32522
+  },
+  {
+    "file": "assets/images/newbuilds/academia/floorplan-2-room-1440.webp",
+    "bytes": 27078
+  },
+  {
+    "file": "assets/images/newbuilds/academia/floorplan-2-room-640.webp",
+    "bytes": 9632
+  },
+  {
+    "file": "assets/images/newbuilds/academia/floorplan-2-room-960.webp",
+    "bytes": 16146
+  },
+  {
+    "file": "assets/images/newbuilds/academia/floorplan-3-room-1440.webp",
+    "bytes": 40344
+  },
+  {
+    "file": "assets/images/newbuilds/academia/floorplan-3-room-640.webp",
+    "bytes": 14546
+  },
+  {
+    "file": "assets/images/newbuilds/academia/floorplan-3-room-960.webp",
+    "bytes": 24364
+  },
+  {
+    "file": "assets/images/newbuilds/akvatoriya/courtyard-01-1440.webp",
+    "bytes": 459410
+  },
+  {
+    "file": "assets/images/newbuilds/akvatoriya/courtyard-01-640.webp",
+    "bytes": 109328
+  },
+  {
+    "file": "assets/images/newbuilds/akvatoriya/courtyard-01-960.webp",
+    "bytes": 227398
+  },
+  {
+    "file": "assets/images/newbuilds/akvatoriya/cover-1440.webp",
+    "bytes": 288618
+  },
+  {
+    "file": "assets/images/newbuilds/akvatoriya/cover-640.webp",
+    "bytes": 66394
+  },
+  {
+    "file": "assets/images/newbuilds/akvatoriya/cover-960.webp",
+    "bytes": 141398
+  },
+  {
+    "file": "assets/images/newbuilds/akvatoriya/waterside-01-1440.webp",
+    "bytes": 266054
+  },
+  {
+    "file": "assets/images/newbuilds/akvatoriya/waterside-01-640.webp",
+    "bytes": 60978
+  },
+  {
+    "file": "assets/images/newbuilds/akvatoriya/waterside-01-960.webp",
+    "bytes": 127354
+  },
+  {
+    "file": "assets/images/newbuilds/aviator/e07e59fa55457d7d8f871c3d6eb9c6ffa911b4d3-320.webp",
+    "bytes": 23412
+  },
+  {
+    "file": "assets/images/newbuilds/azov-grad/829a14f2c49a68e543a80b861c0b0f5a19595f9f-320.webp",
+    "bytes": 26518
+  },
+  {
+    "file": "assets/images/newbuilds/botanika-botanika/686b30a823aab88106120cacc8104173adae581e-320.webp",
+    "bytes": 13088
+  },
+  {
+    "file": "assets/images/newbuilds/brusnika/eadfde13a50bab1827ea8b5e96f97d6c4a2c81ce-240.webp",
+    "bytes": 22390
+  },
+  {
+    "file": "assets/images/newbuilds/bulgakov/070b9151e17a20fa2698d2f34609529bf8edbacf-320.webp",
+    "bytes": 17140
+  },
+  {
+    "file": "assets/images/newbuilds/dom-rezidenciya-sobranie/f18c9a9d15e1d965a17dd7f70f6f13ea13775301-320.webp",
+    "bytes": 19402
+  },
+  {
+    "file": "assets/images/newbuilds/donskoy/5bf2b39a20a66a4bd5d191c3c29c3c20e99995d1-320.webp",
+    "bytes": 19360
+  },
+  {
+    "file": "assets/images/newbuilds/donskoy-arbat/courtyard-01-1440.webp",
+    "bytes": 527008
+  },
+  {
+    "file": "assets/images/newbuilds/donskoy-arbat/courtyard-01-640.webp",
+    "bytes": 113192
+  },
+  {
+    "file": "assets/images/newbuilds/donskoy-arbat/courtyard-01-960.webp",
+    "bytes": 238708
+  },
+  {
+    "file": "assets/images/newbuilds/donskoy-arbat/cover-1440.webp",
+    "bytes": 348534
+  },
+  {
+    "file": "assets/images/newbuilds/donskoy-arbat/cover-640.webp",
+    "bytes": 84346
+  },
+  {
+    "file": "assets/images/newbuilds/donskoy-arbat/cover-960.webp",
+    "bytes": 171026
+  },
+  {
+    "file": "assets/images/newbuilds/donskoy-arbat/exterior-01-1440.webp",
+    "bytes": 510122
+  },
+  {
+    "file": "assets/images/newbuilds/donskoy-arbat/exterior-01-640.webp",
+    "bytes": 102080
+  },
+  {
+    "file": "assets/images/newbuilds/donskoy-arbat/exterior-01-960.webp",
+    "bytes": 223662
+  },
+  {
+    "file": "assets/images/newbuilds/donskoy-arbat-2/aerial-01-1440.webp",
+    "bytes": 666078
+  },
+  {
+    "file": "assets/images/newbuilds/donskoy-arbat-2/aerial-01-640.webp",
+    "bytes": 144924
+  },
+  {
+    "file": "assets/images/newbuilds/donskoy-arbat-2/aerial-01-960.webp",
+    "bytes": 317894
+  },
+  {
+    "file": "assets/images/newbuilds/donskoy-arbat-2/cover-1440.webp",
+    "bytes": 391404
+  },
+  {
+    "file": "assets/images/newbuilds/donskoy-arbat-2/cover-640.webp",
+    "bytes": 95348
+  },
+  {
+    "file": "assets/images/newbuilds/donskoy-arbat-2/cover-960.webp",
+    "bytes": 192788
+  },
+  {
+    "file": "assets/images/newbuilds/donskoy-arbat-2/parking-01-1280.webp",
+    "bytes": 248712
+  },
+  {
+    "file": "assets/images/newbuilds/donskoy-arbat-2/parking-01-640.webp",
+    "bytes": 99384
+  },
+  {
+    "file": "assets/images/newbuilds/donskoy-arbat-2/parking-01-960.webp",
+    "bytes": 214200
+  },
+  {
+    "file": "assets/images/newbuilds/dva-kapitana/2f4508759bea5a9ab8a9611657fd92465b427d79-320.webp",
+    "bytes": 22450
+  },
+  {
+    "file": "assets/images/newbuilds/dvizhenie-61/courtyard-01-1400.webp",
+    "bytes": 280134
+  },
+  {
+    "file": "assets/images/newbuilds/dvizhenie-61/courtyard-01-640.webp",
+    "bytes": 103142
+  },
+  {
+    "file": "assets/images/newbuilds/dvizhenie-61/courtyard-01-960.webp",
+    "bytes": 201774
+  },
+  {
+    "file": "assets/images/newbuilds/dvizhenie-61/cover-1440.webp",
+    "bytes": 512130
+  },
+  {
+    "file": "assets/images/newbuilds/dvizhenie-61/cover-640.webp",
+    "bytes": 113500
+  },
+  {
+    "file": "assets/images/newbuilds/dvizhenie-61/cover-960.webp",
+    "bytes": 244568
+  },
+  {
+    "file": "assets/images/newbuilds/dvizhenie-61/exterior-01-1440.webp",
+    "bytes": 442858
+  },
+  {
+    "file": "assets/images/newbuilds/dvizhenie-61/exterior-01-640.webp",
+    "bytes": 99870
+  },
+  {
+    "file": "assets/images/newbuilds/dvizhenie-61/exterior-01-960.webp",
+    "bytes": 211514
+  },
+  {
+    "file": "assets/images/newbuilds/eko-kvartal-novyy-gorizont/88cb5cd23e85aedd7f78528bff814468f2623902-305.webp",
+    "bytes": 49070
+  },
+  {
+    "file": "assets/images/newbuilds/estet/7dc0303f9e1ee7637137170b0009c57931485d10-320.webp",
+    "bytes": 18406
+  },
+  {
+    "file": "assets/images/newbuilds/flora/64d4cab6bebc13945f50041df302e5cd4677667f-318.webp",
+    "bytes": 40008
+  },
+  {
+    "file": "assets/images/newbuilds/four-premiers/aerial-01-1440.webp",
+    "bytes": 525452
+  },
+  {
+    "file": "assets/images/newbuilds/four-premiers/aerial-01-640.webp",
+    "bytes": 116432
+  },
+  {
+    "file": "assets/images/newbuilds/four-premiers/aerial-01-960.webp",
+    "bytes": 249282
+  },
+  {
+    "file": "assets/images/newbuilds/four-premiers/courtyard-01-1440.webp",
+    "bytes": 532080
+  },
+  {
+    "file": "assets/images/newbuilds/four-premiers/courtyard-01-640.webp",
+    "bytes": 109608
+  },
+  {
+    "file": "assets/images/newbuilds/four-premiers/courtyard-01-960.webp",
+    "bytes": 245780
+  },
+  {
+    "file": "assets/images/newbuilds/four-premiers/cover-1440.webp",
+    "bytes": 464232
+  },
+  {
+    "file": "assets/images/newbuilds/four-premiers/cover-640.webp",
+    "bytes": 102696
+  },
+  {
+    "file": "assets/images/newbuilds/four-premiers/cover-960.webp",
+    "bytes": 218570
+  },
+  {
+    "file": "assets/images/newbuilds/frame-freym/d033872d771d914b30bd7010642b09b2b40bd8d3-262.webp",
+    "bytes": 20682
+  },
+  {
+    "file": "assets/images/newbuilds/gorod-u-reki/courtyard-01-1421.webp",
+    "bytes": 310336
+  },
+  {
+    "file": "assets/images/newbuilds/gorod-u-reki/courtyard-01-640.webp",
+    "bytes": 117396
+  },
+  {
+    "file": "assets/images/newbuilds/gorod-u-reki/courtyard-01-960.webp",
+    "bytes": 235140
+  },
+  {
+    "file": "assets/images/newbuilds/gorod-u-reki/cover-1422.webp",
+    "bytes": 194966
+  },
+  {
+    "file": "assets/images/newbuilds/gorod-u-reki/cover-640.webp",
+    "bytes": 71006
+  },
+  {
+    "file": "assets/images/newbuilds/gorod-u-reki/cover-960.webp",
+    "bytes": 148212
+  },
+  {
+    "file": "assets/images/newbuilds/gorod-u-reki/exterior-01-1440.webp",
+    "bytes": 397158
+  },
+  {
+    "file": "assets/images/newbuilds/gorod-u-reki/exterior-01-640.webp",
+    "bytes": 103220
+  },
+  {
+    "file": "assets/images/newbuilds/gorod-u-reki/exterior-01-960.webp",
+    "bytes": 203026
+  },
+  {
+    "file": "assets/images/newbuilds/gray/courtyard-01-1440.webp",
+    "bytes": 428312
+  },
+  {
+    "file": "assets/images/newbuilds/gray/courtyard-01-640.webp",
+    "bytes": 93426
+  },
+  {
+    "file": "assets/images/newbuilds/gray/courtyard-01-960.webp",
+    "bytes": 201320
+  },
+  {
+    "file": "assets/images/newbuilds/gray/courtyard-02-1280.webp",
+    "bytes": 150238
+  },
+  {
+    "file": "assets/images/newbuilds/gray/courtyard-02-640.webp",
+    "bytes": 79492
+  },
+  {
+    "file": "assets/images/newbuilds/gray/courtyard-02-960.webp",
+    "bytes": 151396
+  },
+  {
+    "file": "assets/images/newbuilds/gray/cover-1440.webp",
+    "bytes": 620978
+  },
+  {
+    "file": "assets/images/newbuilds/gray/cover-640.webp",
+    "bytes": 178596
+  },
+  {
+    "file": "assets/images/newbuilds/gray/cover-960.webp",
+    "bytes": 350244
+  },
+  {
+    "file": "assets/images/newbuilds/gray/floorplan-01-1358.webp",
+    "bytes": 78492
+  },
+  {
+    "file": "assets/images/newbuilds/gray/floorplan-01-640.webp",
+    "bytes": 53922
+  },
+  {
+    "file": "assets/images/newbuilds/gray/floorplan-01-960.webp",
+    "bytes": 87960
+  },
+  {
+    "file": "assets/images/newbuilds/gray/floorplan-02-1000.webp",
+    "bytes": 18708
+  },
+  {
+    "file": "assets/images/newbuilds/gray/floorplan-02-640.webp",
+    "bytes": 19020
+  },
+  {
+    "file": "assets/images/newbuilds/gray/floorplan-02-960.webp",
+    "bytes": 34640
+  },
+  {
+    "file": "assets/images/newbuilds/green-park/cover-1422.webp",
+    "bytes": 277836
+  },
+  {
+    "file": "assets/images/newbuilds/green-park/cover-640.webp",
+    "bytes": 93832
+  },
+  {
+    "file": "assets/images/newbuilds/green-park/cover-960.webp",
+    "bytes": 203286
+  },
+  {
+    "file": "assets/images/newbuilds/green-park/exterior-01-1440.webp",
+    "bytes": 567202
+  },
+  {
+    "file": "assets/images/newbuilds/green-park/exterior-01-640.webp",
+    "bytes": 141630
+  },
+  {
+    "file": "assets/images/newbuilds/green-park/exterior-01-960.webp",
+    "bytes": 291562
+  },
+  {
+    "file": "assets/images/newbuilds/green-park/exterior-02-1440.webp",
+    "bytes": 913130
+  },
+  {
+    "file": "assets/images/newbuilds/green-park/exterior-02-640.webp",
+    "bytes": 203074
+  },
+  {
+    "file": "assets/images/newbuilds/green-park/exterior-02-960.webp",
+    "bytes": 439668
+  },
+  {
+    "file": "assets/images/newbuilds/grinside/courtyard-01-1440.webp",
+    "bytes": 348876
+  },
+  {
+    "file": "assets/images/newbuilds/grinside/courtyard-01-640.webp",
+    "bytes": 84596
+  },
+  {
+    "file": "assets/images/newbuilds/grinside/courtyard-01-960.webp",
+    "bytes": 171496
+  },
+  {
+    "file": "assets/images/newbuilds/grinside/cover-500.webp",
+    "bytes": 45224
+  },
+  {
+    "file": "assets/images/newbuilds/grinside/lobby-01-1440.webp",
+    "bytes": 108180
+  },
+  {
+    "file": "assets/images/newbuilds/grinside/lobby-01-640.webp",
+    "bytes": 26700
+  },
+  {
+    "file": "assets/images/newbuilds/grinside/lobby-01-960.webp",
+    "bytes": 56206
+  },
+  {
+    "file": "assets/images/newbuilds/ilovayskiy/468fa3cd6b10a57f6c6e04eecc4f4451fa9c5af5-240.webp",
+    "bytes": 17892
+  },
+  {
+    "file": "assets/images/newbuilds/kristall-2/aerial-01-1440.webp",
+    "bytes": 444112
+  },
+  {
+    "file": "assets/images/newbuilds/kristall-2/aerial-01-640.webp",
+    "bytes": 99186
+  },
+  {
+    "file": "assets/images/newbuilds/kristall-2/aerial-01-960.webp",
+    "bytes": 213584
+  },
+  {
+    "file": "assets/images/newbuilds/kristall-2/cover-1440.webp",
+    "bytes": 311098
+  },
+  {
+    "file": "assets/images/newbuilds/kristall-2/cover-640.webp",
+    "bytes": 71912
+  },
+  {
+    "file": "assets/images/newbuilds/kristall-2/cover-960.webp",
+    "bytes": 151046
+  },
+  {
+    "file": "assets/images/newbuilds/kristall-2/exterior-01-1422.webp",
+    "bytes": 260352
+  },
+  {
+    "file": "assets/images/newbuilds/kristall-2/exterior-01-640.webp",
+    "bytes": 88346
+  },
+  {
+    "file": "assets/images/newbuilds/kristall-2/exterior-01-960.webp",
+    "bytes": 191034
+  },
+  {
+    "file": "assets/images/newbuilds/legenda-rostova/aerial-01-1440.webp",
+    "bytes": 536052
+  },
+  {
+    "file": "assets/images/newbuilds/legenda-rostova/aerial-01-640.webp",
+    "bytes": 112020
+  },
+  {
+    "file": "assets/images/newbuilds/legenda-rostova/aerial-01-960.webp",
+    "bytes": 246352
+  },
+  {
+    "file": "assets/images/newbuilds/legenda-rostova/cover-1440.webp",
+    "bytes": 424686
+  },
+  {
+    "file": "assets/images/newbuilds/legenda-rostova/cover-640.webp",
+    "bytes": 91528
+  },
+  {
+    "file": "assets/images/newbuilds/legenda-rostova/cover-960.webp",
+    "bytes": 196152
+  },
+  {
+    "file": "assets/images/newbuilds/legenda-rostova/exterior-01-1440.webp",
+    "bytes": 498138
+  },
+  {
+    "file": "assets/images/newbuilds/legenda-rostova/exterior-01-640.webp",
+    "bytes": 105704
+  },
+  {
+    "file": "assets/images/newbuilds/legenda-rostova/exterior-01-960.webp",
+    "bytes": 229676
+  },
+  {
+    "file": "assets/images/newbuilds/leventsovka-park/courtyard-01-1440.webp",
+    "bytes": 265758
+  },
+  {
+    "file": "assets/images/newbuilds/leventsovka-park/courtyard-01-640.webp",
+    "bytes": 118914
+  },
+  {
+    "file": "assets/images/newbuilds/leventsovka-park/courtyard-01-960.webp",
+    "bytes": 227334
+  },
+  {
+    "file": "assets/images/newbuilds/leventsovka-park/cover-1440.webp",
+    "bytes": 274756
+  },
+  {
+    "file": "assets/images/newbuilds/leventsovka-park/cover-640.webp",
+    "bytes": 86172
+  },
+  {
+    "file": "assets/images/newbuilds/leventsovka-park/cover-960.webp",
+    "bytes": 157244
+  },
+  {
+    "file": "assets/images/newbuilds/leventsovka-park/exterior-01-1440.webp",
+    "bytes": 257336
+  },
+  {
+    "file": "assets/images/newbuilds/leventsovka-park/exterior-01-640.webp",
+    "bytes": 103660
+  },
+  {
+    "file": "assets/images/newbuilds/leventsovka-park/exterior-01-960.webp",
+    "bytes": 205108
+  },
+  {
+    "file": "assets/images/newbuilds/levoberezhe/cover-1440.webp",
+    "bytes": 515344
+  },
+  {
+    "file": "assets/images/newbuilds/levoberezhe/cover-640.webp",
+    "bytes": 120064
+  },
+  {
+    "file": "assets/images/newbuilds/levoberezhe/cover-960.webp",
+    "bytes": 255630
+  },
+  {
+    "file": "assets/images/newbuilds/levoberezhe/exterior-01-1440.webp",
+    "bytes": 266962
+  },
+  {
+    "file": "assets/images/newbuilds/levoberezhe/exterior-01-640.webp",
+    "bytes": 65972
+  },
+  {
+    "file": "assets/images/newbuilds/levoberezhe/exterior-01-960.webp",
+    "bytes": 137504
+  },
+  {
+    "file": "assets/images/newbuilds/levoberezhe/floorplan-01-640.webp",
+    "bytes": 42304
+  },
+  {
+    "file": "assets/images/newbuilds/levoberezhe/floorplan-01-797.webp",
+    "bytes": 34022
+  },
+  {
+    "file": "assets/images/newbuilds/levoberezhe/floorplan-02-640.webp",
+    "bytes": 80040
+  },
+  {
+    "file": "assets/images/newbuilds/levoberezhe/floorplan-02-858.webp",
+    "bytes": 72220
+  },
+  {
+    "file": "assets/images/newbuilds/levoberezhe/floorplan-03-1440.webp",
+    "bytes": 105422
+  },
+  {
+    "file": "assets/images/newbuilds/levoberezhe/floorplan-03-640.webp",
+    "bytes": 37776
+  },
+  {
+    "file": "assets/images/newbuilds/levoberezhe/floorplan-03-960.webp",
+    "bytes": 64552
+  },
+  {
+    "file": "assets/images/newbuilds/lime-city-laym-siti/31c569da52aea3077954025ac1512287d8149504-320.webp",
+    "bytes": 21520
+  },
+  {
+    "file": "assets/images/newbuilds/luna/2d916abe4ee1fb3cf2063a4f2d9f7a873dd32fa9-320.webp",
+    "bytes": 22936
+  },
+  {
+    "file": "assets/images/newbuilds/manhetten-2-0-novaya-vysota/ec204fe6bfbfe2b065594d862bc9cdd42b8addb5-310.webp",
+    "bytes": 42296
+  },
+  {
+    "file": "assets/images/newbuilds/mechta/afca66db36b3d0ceabde6b1bfdbff69cd2dd4ab7-426.webp",
+    "bytes": 33676
+  },
+  {
+    "file": "assets/images/newbuilds/mikrorayon-pribrezhnyy/d490c1a35f8f688c280455d53e0be1b5f99317b9-360.webp",
+    "bytes": 29132
+  },
+  {
+    "file": "assets/images/newbuilds/na-shkolnoy/639c570858889c4dbc2ce18583d0e2f9f0b7b96e-320.webp",
+    "bytes": 21770
+  },
+  {
+    "file": "assets/images/newbuilds/nasledie/d33b3a2c4a52a4a34eede84fd5232ea754b5b42a-320.webp",
+    "bytes": 30316
+  },
+  {
+    "file": "assets/images/newbuilds/nord-premer/fada71ea408dd0066df40294acecadf99cb422de-320.webp",
+    "bytes": 23464
+  },
+  {
+    "file": "assets/images/newbuilds/oktyabr-park/courtyard-01-1280.webp",
+    "bytes": 246038
+  },
+  {
+    "file": "assets/images/newbuilds/oktyabr-park/courtyard-01-640.webp",
+    "bytes": 96914
+  },
+  {
+    "file": "assets/images/newbuilds/oktyabr-park/courtyard-01-960.webp",
+    "bytes": 206078
+  },
+  {
+    "file": "assets/images/newbuilds/oktyabr-park/cover-1440.webp",
+    "bytes": 557304
+  },
+  {
+    "file": "assets/images/newbuilds/oktyabr-park/cover-640.webp",
+    "bytes": 115688
+  },
+  {
+    "file": "assets/images/newbuilds/oktyabr-park/cover-960.webp",
+    "bytes": 255256
+  },
+  {
+    "file": "assets/images/newbuilds/oktyabr-park/exterior-01-1280.webp",
+    "bytes": 242844
+  },
+  {
+    "file": "assets/images/newbuilds/oktyabr-park/exterior-01-640.webp",
+    "bytes": 97554
+  },
+  {
+    "file": "assets/images/newbuilds/oktyabr-park/exterior-01-960.webp",
+    "bytes": 201930
+  },
+  {
+    "file": "assets/images/newbuilds/oktyabr-park/floorplan-1-room-640.webp",
+    "bytes": 55754
+  },
+  {
+    "file": "assets/images/newbuilds/oktyabr-park/floorplan-1-room-700.webp",
+    "bytes": 38812
+  },
+  {
+    "file": "assets/images/newbuilds/oktyabr-park/floorplan-2-room-640.webp",
+    "bytes": 55046
+  },
+  {
+    "file": "assets/images/newbuilds/oktyabr-park/floorplan-2-room-700.webp",
+    "bytes": 38642
+  },
+  {
+    "file": "assets/images/newbuilds/oktyabr-park/floorplan-studio-640.webp",
+    "bytes": 32494
+  },
+  {
+    "file": "assets/images/newbuilds/oktyabr-park/floorplan-studio-700.webp",
+    "bytes": 22222
+  },
+  {
+    "file": "assets/images/newbuilds/orion/e22584fab20ba01ad7bb88c8a9b2273b656c327e-320.webp",
+    "bytes": 22164
+  },
+  {
+    "file": "assets/images/newbuilds/palmira-2-0/42223f4d294913eaa028730072c7730a1ec2ede4-320.webp",
+    "bytes": 28574
+  },
+  {
+    "file": "assets/images/newbuilds/panorama-na-teatralnom/1474f43729b5b51d9ceeb7b758d28a52fa4ae0f9-320.webp",
+    "bytes": 18818
+  },
+  {
+    "file": "assets/images/newbuilds/park-pleven/7b14a72eee335f829040a1af6493dc18d0631ac1-259.webp",
+    "bytes": 38684
+  },
+  {
+    "file": "assets/images/newbuilds/platovskiy/f3098237f847c479009e211d737f152d5ceefa1d-320.webp",
+    "bytes": 30926
+  },
+  {
+    "file": "assets/images/newbuilds/pridone/c7a2c21b2960e5f95e754a5eb69abab963da2088-320.webp",
+    "bytes": 24156
+  },
+  {
+    "file": "assets/images/newbuilds/prityazhenie/ea873aec5083a7ebe207df8e6c8958ba04c91ee2-320.webp",
+    "bytes": 23704
+  },
+  {
+    "file": "assets/images/newbuilds/proyavlenie/fa7d6a6ec2dfaa644392c1863b96b7447c4dbd33-320.webp",
+    "bytes": 14442
+  },
+  {
+    "file": "assets/images/newbuilds/puls/78e4e5d3141f6c196324d37d040029d6048acfc5-320.webp",
+    "bytes": 18772
+  },
+  {
+    "file": "assets/images/newbuilds/rechnoy-zhemchug/70c9c26314087715107569532104642a2c3f8f3a-320.webp",
+    "bytes": 28486
+  },
+  {
+    "file": "assets/images/newbuilds/regata/eab4ca961abb7e78caaf14e43ed27535353bf243-320.webp",
+    "bytes": 15516
+  },
+  {
+    "file": "assets/images/newbuilds/rezidencii-bereg/111aa1a213f37d4ad86d1f2261d2274796bf5bc9-320.webp",
+    "bytes": 10922
+  },
+  {
+    "file": "assets/images/newbuilds/rivera/c8877bb0ce45650e2d615a5908b9d785ec07d1d4-320.webp",
+    "bytes": 19446
+  },
+  {
+    "file": "assets/images/newbuilds/royal-towers/aerial-01-1440.webp",
+    "bytes": 525338
+  },
+  {
+    "file": "assets/images/newbuilds/royal-towers/aerial-01-640.webp",
+    "bytes": 118104
+  },
+  {
+    "file": "assets/images/newbuilds/royal-towers/aerial-01-960.webp",
+    "bytes": 251414
+  },
+  {
+    "file": "assets/images/newbuilds/royal-towers/cover-1440.webp",
+    "bytes": 359904
+  },
+  {
+    "file": "assets/images/newbuilds/royal-towers/cover-640.webp",
+    "bytes": 87616
+  },
+  {
+    "file": "assets/images/newbuilds/royal-towers/cover-960.webp",
+    "bytes": 181178
+  },
+  {
+    "file": "assets/images/newbuilds/royal-towers/view-01-1440.webp",
+    "bytes": 308162
+  },
+  {
+    "file": "assets/images/newbuilds/royal-towers/view-01-640.webp",
+    "bytes": 70564
+  },
+  {
+    "file": "assets/images/newbuilds/royal-towers/view-01-960.webp",
+    "bytes": 148486
+  },
+  {
+    "file": "assets/images/newbuilds/serdce-rostova-2/77d9c9e9ff1b2de8c9c63966c92dee3a58e7dca8-320.webp",
+    "bytes": 21762
+  },
+  {
+    "file": "assets/images/newbuilds/severnyy-bulvar/939c9b29ea9abe49d0086ecd8034b6ad67d8496c-245.webp",
+    "bytes": 25610
+  },
+  {
+    "file": "assets/images/newbuilds/sirenevyy-kvartal/0cdaa4ea8bf3d30116184a87ebe652ff6c528ff6-320.webp",
+    "bytes": 26808
+  },
+  {
+    "file": "assets/images/newbuilds/siyanie/courtyard-01-1440.webp",
+    "bytes": 360230
+  },
+  {
+    "file": "assets/images/newbuilds/siyanie/courtyard-01-640.webp",
+    "bytes": 93802
+  },
+  {
+    "file": "assets/images/newbuilds/siyanie/courtyard-01-960.webp",
+    "bytes": 182292
+  },
+  {
+    "file": "assets/images/newbuilds/siyanie/cover-1440.webp",
+    "bytes": 767576
+  },
+  {
+    "file": "assets/images/newbuilds/siyanie/cover-640.webp",
+    "bytes": 156328
+  },
+  {
+    "file": "assets/images/newbuilds/siyanie/cover-960.webp",
+    "bytes": 345690
+  },
+  {
+    "file": "assets/images/newbuilds/siyanie/exterior-01-1440.webp",
+    "bytes": 218986
+  },
+  {
+    "file": "assets/images/newbuilds/siyanie/exterior-01-640.webp",
+    "bytes": 63522
+  },
+  {
+    "file": "assets/images/newbuilds/siyanie/exterior-01-960.webp",
+    "bytes": 123360
+  },
+  {
+    "file": "assets/images/newbuilds/smartpolet/cover-1440.webp",
+    "bytes": 111332
+  },
+  {
+    "file": "assets/images/newbuilds/smartpolet/cover-640.webp",
+    "bytes": 40144
+  },
+  {
+    "file": "assets/images/newbuilds/smartpolet/cover-960.webp",
+    "bytes": 69252
+  },
+  {
+    "file": "assets/images/newbuilds/smartpolet/exterior-01-1440.webp",
+    "bytes": 177820
+  },
+  {
+    "file": "assets/images/newbuilds/smartpolet/exterior-01-640.webp",
+    "bytes": 55052
+  },
+  {
+    "file": "assets/images/newbuilds/smartpolet/exterior-01-960.webp",
+    "bytes": 98760
+  },
+  {
+    "file": "assets/images/newbuilds/smartpolet/exterior-02-1440.webp",
+    "bytes": 188474
+  },
+  {
+    "file": "assets/images/newbuilds/smartpolet/exterior-02-640.webp",
+    "bytes": 62454
+  },
+  {
+    "file": "assets/images/newbuilds/smartpolet/exterior-02-960.webp",
+    "bytes": 110718
+  },
+  {
+    "file": "assets/images/newbuilds/sokol-grad/48fdf01982fb56f5c4bfd0b5c3bc6c276b47420a-308.webp",
+    "bytes": 34382
+  },
+  {
+    "file": "assets/images/newbuilds/sokolniki/b0597f458b973191626e6a12ff28c682de0a0a27-320.webp",
+    "bytes": 33784
+  },
+  {
+    "file": "assets/images/newbuilds/sosedi/673141827fe40c83e847934c65fc719c90b87d50-320.webp",
+    "bytes": 28236
+  },
+  {
+    "file": "assets/images/newbuilds/sostoyanie/8b9043226e30f1e2448891d82b009d6ea077cc83-402.webp",
+    "bytes": 35890
+  },
+  {
+    "file": "assets/images/newbuilds/sozvezdie-rostov-na-donu/4b8c505d5d3e1c1c5a281902313212c52fc70d5f-240.webp",
+    "bytes": 19776
+  },
+  {
+    "file": "assets/images/newbuilds/stolicyno/93646a3dd93beed5ca618c3fd35880ec1725e869-320.webp",
+    "bytes": 22316
+  },
+  {
+    "file": "assets/images/newbuilds/suvorovskiy/cover-1440.webp",
+    "bytes": 119060
+  },
+  {
+    "file": "assets/images/newbuilds/suvorovskiy/cover-640.webp",
+    "bytes": 31058
+  },
+  {
+    "file": "assets/images/newbuilds/suvorovskiy/cover-960.webp",
+    "bytes": 61844
+  },
+  {
+    "file": "assets/images/newbuilds/suvorovskiy/district-01-1440.webp",
+    "bytes": 95090
+  },
+  {
+    "file": "assets/images/newbuilds/suvorovskiy/district-01-640.webp",
+    "bytes": 34116
+  },
+  {
+    "file": "assets/images/newbuilds/suvorovskiy/district-01-960.webp",
+    "bytes": 62930
+  },
+  {
+    "file": "assets/images/newbuilds/suvorovskiy/district-02-1440.webp",
+    "bytes": 66366
+  },
+  {
+    "file": "assets/images/newbuilds/suvorovskiy/district-02-640.webp",
+    "bytes": 22444
+  },
+  {
+    "file": "assets/images/newbuilds/suvorovskiy/district-02-960.webp",
+    "bytes": 39050
+  },
+  {
+    "file": "assets/images/newbuilds/teatral/d712cfd95b21d328a075021019c61a473cafc9d8-360.webp",
+    "bytes": 29902
+  },
+  {
+    "file": "assets/images/newbuilds/temp/dd7b0fc317a4a7ea067a5724c81387fbae05f95f-320.webp",
+    "bytes": 31436
+  },
+  {
+    "file": "assets/images/newbuilds/truda-12-3/889ad83594e645c0b03f8044943c185bded48dcc-320.webp",
+    "bytes": 21496
+  },
+  {
+    "file": "assets/images/newbuilds/v53/69816ad6d1e446dbcd3bbb3c5cbd1ab7a409798b-240.webp",
+    "bytes": 19868
+  },
+  {
+    "file": "assets/images/newbuilds/vishnevyy-sad/3009ebeede73572ab06e8bfc178e58bf1f79b020-320.webp",
+    "bytes": 31494
+  },
+  {
+    "file": "assets/images/newbuilds/vysota/192d19e3e241b2c1a790935057a44547f4a827e5-320.webp",
+    "bytes": 18832
+  },
+  {
+    "file": "assets/images/newbuilds/vysotka/25b42888175e22d15f736c1fe01ff84072748d7c-320.webp",
+    "bytes": 30766
+  },
+  {
+    "file": "assets/images/newbuilds/yantarnyy/a4000af3d9cb62e4b79c7cb7fb419b7c16f909cf-320.webp",
+    "bytes": 20064
+  },
+  {
+    "file": "assets/images/newbuilds/zapadnye-allei/cover-1440.webp",
+    "bytes": 507530
+  },
+  {
+    "file": "assets/images/newbuilds/zapadnye-allei/cover-640.webp",
+    "bytes": 124070
+  },
+  {
+    "file": "assets/images/newbuilds/zapadnye-allei/cover-960.webp",
+    "bytes": 249390
+  },
+  {
+    "file": "assets/images/newbuilds/zapadnye-allei/interior-01-1440.webp",
+    "bytes": 75804
+  },
+  {
+    "file": "assets/images/newbuilds/zapadnye-allei/interior-01-640.webp",
+    "bytes": 19698
+  },
+  {
+    "file": "assets/images/newbuilds/zapadnye-allei/interior-01-960.webp",
+    "bytes": 40202
+  },
+  {
+    "file": "assets/images/newbuilds/zapadnye-allei/interior-02-1440.webp",
+    "bytes": 80032
+  },
+  {
+    "file": "assets/images/newbuilds/zapadnye-allei/interior-02-640.webp",
+    "bytes": 20882
+  },
+  {
+    "file": "assets/images/newbuilds/zapadnye-allei/interior-02-960.webp",
+    "bytes": 41172
+  },
+  {
+    "file": "assets/images/newbuilds/zhk-belyy-angel-rostov/cover-user-640.webp",
+    "bytes": 90446
+  },
+  {
+    "file": "assets/images/newbuilds/zhk-belyy-angel-rostov/cover-user-960.webp",
+    "bytes": 180054
+  },
+  {
+    "file": "assets/images/newbuilds/zhk-belyy-angel-rostov/cover-user-978.webp",
+    "bytes": 156300
+  },
+  {
+    "file": "assets/images/newbuilds/zhk-ekaterininskiy-rostov/cover-user-1200.webp",
+    "bytes": 279908
+  },
+  {
+    "file": "assets/images/newbuilds/zhk-ekaterininskiy-rostov/cover-user-640.webp",
+    "bytes": 142974
+  },
+  {
+    "file": "assets/images/newbuilds/zhk-ekaterininskiy-rostov/cover-user-960.webp",
+    "bytes": 290904
+  },
+  {
+    "file": "assets/images/newbuilds/zhk-krasnyy-aksay-rostov/cover-user-1280.webp",
+    "bytes": 126956
+  },
+  {
+    "file": "assets/images/newbuilds/zhk-krasnyy-aksay-rostov/cover-user-640.webp",
+    "bytes": 68022
+  },
+  {
+    "file": "assets/images/newbuilds/zhk-krasnyy-aksay-rostov/cover-user-960.webp",
+    "bytes": 135092
+  },
+  {
+    "file": "assets/images/newbuilds/zhk-lenina-46-rostov/cover-user-640.webp",
+    "bytes": 73332
+  },
+  {
+    "file": "assets/images/newbuilds/zhk-lenina-46-rostov/cover-user-800.webp",
+    "bytes": 66402
+  },
+  {
+    "file": "assets/images/newbuilds/zvezda-stolicy-2/dc03587b12885e0c95ac83dec12d04936a629088-320.webp",
+    "bytes": 18064
+  },
+  {
+    "file": "assets/images/office/office-facade-1200.webp",
+    "bytes": 210914
+  },
+  {
+    "file": "assets/images/office/office-facade-640.webp",
+    "bytes": 67336
+  },
+  {
+    "file": "assets/images/office/office-interior-1200.webp",
+    "bytes": 109176
+  },
+  {
+    "file": "assets/images/office/office-interior-640.webp",
+    "bytes": 37368
+  },
+  {
+    "file": "assets/images/office/office-staircase-1200.webp",
+    "bytes": 128120
+  },
+  {
+    "file": "assets/images/office/office-staircase-640.webp",
+    "bytes": 45576
+  },
+  {
+    "file": "assets/images/office/office-waiting-area-1200.webp",
+    "bytes": 101388
+  },
+  {
+    "file": "assets/images/office/office-waiting-area-640.webp",
+    "bytes": 32320
+  },
+  {
+    "file": "assets/images/og.png",
+    "bytes": 1442705
+  },
+  {
+    "file": "assets/images/olga-chernenko-360.webp",
+    "bytes": 43342
+  },
+  {
+    "file": "assets/images/olga-chernenko-640.webp",
+    "bytes": 105914
+  },
+  {
+    "file": "assets/images/olga-chernenko-960.webp",
+    "bytes": 203756
+  },
+  {
+    "file": "assets/images/olga-chernenko-original.webp",
+    "bytes": 193738
+  },
+  {
+    "file": "assets/images/team-life/network-conference-1200.webp",
+    "bytes": 141538
+  },
+  {
+    "file": "assets/images/team-life/network-conference-640.webp",
+    "bytes": 63514
+  },
+  {
+    "file": "assets/images/team-life/red-evening-640.webp",
+    "bytes": 31458
+  },
+  {
+    "file": "assets/images/team-life/team-evening-1200.webp",
+    "bytes": 155262
+  },
+  {
+    "file": "assets/images/team-life/team-evening-640.webp",
+    "bytes": 66456
+  },
+  {
+    "file": "assets/images/team-life/team-outdoors-1200.webp",
+    "bytes": 123510
+  },
+  {
+    "file": "assets/images/team-life/team-outdoors-640.webp",
+    "bytes": 57814
+  },
+  {
+    "file": "assets/images/team-life/team-trip-1200.webp",
+    "bytes": 175040
+  },
+  {
+    "file": "assets/images/team-life/team-trip-640.webp",
+    "bytes": 63638
+  },
+  {
+    "file": "assets/images/team-life/themed-evening-1200.webp",
+    "bytes": 101248
+  },
+  {
+    "file": "assets/images/team-life/themed-evening-640.webp",
+    "bytes": 46054
+  },
+  {
+    "file": "assets/images/team-life/training-game-1200.webp",
+    "bytes": 122004
+  },
+  {
+    "file": "assets/images/team-life/training-game-640.webp",
+    "bytes": 56868
+  },
+  {
+    "file": "assets/images/yana-efimchenko-360.webp",
+    "bytes": 35630
+  },
+  {
+    "file": "assets/images/yana-efimchenko-640.webp",
+    "bytes": 78062
+  },
+  {
+    "file": "assets/images/yana-efimchenko-960.webp",
+    "bytes": 138522
+  },
+  {
+    "file": "assets/images/yana-efimchenko-original.png",
+    "bytes": 3441297
+  },
+  {
+    "file": "assets/js/form-handler.js",
+    "bytes": 11056
+  },
+  {
+    "file": "assets/js/site-config.js",
+    "bytes": 411
+  },
+  {
+    "file": "assets/js/site.js",
+    "bytes": 45172
+  },
+  {
+    "file": "favicon.ico",
+    "bytes": 11817
+  },
+  {
+    "file": "manifest.webmanifest",
+    "bytes": 341
+  },
+  {
+    "file": "robots.txt",
+    "bytes": 83
+  },
+  {
+    "file": "sitemap.xml",
+    "bytes": 23306
+  }
+]
