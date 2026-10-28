@@ -67,7 +67,7 @@ test("territories use the owner-approved order everywhere", () => {
   for (const key of ["regional-apartment-street", "kamenolomni-entry-sign", "novoshakhtinsk-entry-sign", "ayuta-entry-sign", "krasny-sulin-entry-sign"]) {
     assert.match(home, new RegExp(`data-editorial-image="${key}"`, "u"), key);
   }
-  assert.match(home, /data-editorial-image="apartment-block-neighborhood"/u);
+  assert.match(home, /data-editorial-image="shakhty-brand-soft-daylight"/u);
 });
 
 test("homepage hero exposes real territory links from central data", () => {
@@ -325,7 +325,8 @@ test("editorial image pack is complete and mapped to the intended blocks", () =>
     "secondary-apartment": [640, 960], "commercial-space": [640, 960],
     "family-house": [640, 960], "real-land-plot": [720, 1200],
     "neighborhood": [720, 1200], "sell-property-cta": [960, 1440],
-    "house-dark-cta": [960, 1440], "architecture-detail": [480, 800]
+    "house-dark-cta": [960, 1440], "architecture-detail": [480, 800],
+    "apartment-block-neighborhood": [640, 960]
   };
   const newVariants = {
     "garage-row": [640, 960],
@@ -343,7 +344,7 @@ test("editorial image pack is complete and mapped to the intended blocks", () =>
     "ayuta-railway-station": [640, 960],
     "secondary-houses-street": [640, 960],
     "neighborhood-private-sector": [640, 960],
-    "apartment-block-neighborhood": [640, 960]
+    "shakhty-brand-soft-daylight": [720, 1200, 1672]
   };
   for (const [key, widths] of Object.entries({ ...establishedVariants, ...newVariants })) {
     for (const width of widths) assert.ok(fs.existsSync(path.join(root, "assets/images/editorial/" + key + "-" + width + ".webp")), key + "-" + width);
@@ -365,7 +366,7 @@ test("editorial image pack is complete and mapped to the intended blocks", () =>
   assert.match(read("sell.html"), /sale-interior-1200\.webp/u);
   assert.match(read("guides/index.html"), /architecture-detail-800\.webp/u);
   assert.match(read("construction.html"), /assets\/images\/construction-projects\//u);
-  assert.match(read("index.html"), /apartment-block-neighborhood-960\.webp/u);
+  assert.match(read("index.html"), /shakhty-brand-soft-daylight-1672\.webp/u);
   assert.match(read("index.html"), /sell-property-cta-1440\.webp/u);
 });
 
