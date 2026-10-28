@@ -181,7 +181,8 @@ const editorialImages = {
   "ayuta-railway-station": { widths: [640, 960], width: 960, height: 720 },
   "secondary-houses-street": { widths: [640, 960], width: 960, height: 720 },
   "neighborhood-private-sector": { widths: [640, 960], width: 960, height: 720 },
-  "apartment-block-neighborhood": { widths: [640, 960], width: 960, height: 720 }
+  "apartment-block-neighborhood": { widths: [640, 960], width: 960, height: 720 },
+  "shakhty-brand-soft-daylight": { widths: [720, 1200, 1672], width: 1672, height: 941 }
 };
 
 function editorialImage(ctx, key, alt, { className = "", sizes = "(max-width: 760px) calc(100vw - 32px), 50vw", priority = false } = {}) {
@@ -376,9 +377,9 @@ function homeSellerSection(ctx) {
 }
 
 function homeLocationsSection(ctx) {
-  return `<section class="section home-locations" data-home-section="locations"><div class="container"><div class="home-locations__heading"><div><p class="eyebrow">Территории</p><h2>Шахты и соседние территории</h2></div><p>Сравниваем конкретные адреса, маршруты и параметры недвижимости в каждой локации.</p></div><div class="home-locations__layout"><div class="home-locations__media">${editorialImage(ctx, "apartment-block-neighborhood", "Городская улица с современной многоквартирной застройкой", { sizes: "(max-width: 820px) calc(100vw - 32px), 42vw" })}</div><div class="home-locations__grid">${ctx.locations.map((location, index) => {
+  return `<section class="section home-locations" data-home-section="locations"><div class="container"><div class="home-locations__heading"><div><p class="eyebrow">Территории</p><h2>Шахты и соседние территории</h2></div><p>Сравниваем конкретные адреса, маршруты и параметры недвижимости в каждой локации.</p></div><div class="home-locations__layout"><figure class="home-locations__illustration"><div class="home-locations__media">${editorialImage(ctx, "shakhty-brand-soft-daylight", "Фирменная художественная иллюстрация: объёмная надпись «ШАХТЫ», красное сердце, здания и логотип «Домиан»", { sizes: "(max-width: 820px) calc(100vw - 32px), (max-width: 1288px) calc(100vw - 48px), 1240px" })}</div><figcaption>Фирменная художественная иллюстрация «Домиан · Шахты»</figcaption></figure><div class="home-locations__grid">${ctx.locations.map((location, index) => {
     const media = locationMedia[location.slug];
-    return `<a class="home-location-card" href="${ctx.href(`locations/${location.slug}.html`)}">${editorialImage(ctx, media.card, media.cardAlt, { className: "home-location-card__media", sizes: "(max-width: 600px) 46vw, (max-width: 820px) 47vw, 18vw" })}<i class="home-location-card__veil" aria-hidden="true"></i><span>${String(index + 1).padStart(2, "0")}</span><strong>${esc(location.name)}</strong><small>${esc(location.administrativeName)}</small><b aria-hidden="true">↗</b></a>`;
+    return `<a class="home-location-card" href="${ctx.href(`locations/${location.slug}.html`)}">${editorialImage(ctx, media.card, media.cardAlt, { className: "home-location-card__media", sizes: `${index === ctx.locations.length - 1 ? "(max-width: 600px) calc(100vw - 32px), " : "(max-width: 379px) calc(100vw - 32px), (max-width: 600px) calc((100vw - 32px) / 2), "}(max-width: 820px) calc((100vw - 32px) / 3), (max-width: 1220px) calc((100vw - 48px) / 3), (max-width: 1288px) calc((100vw - 48px) / 5), 248px` })}<i class="home-location-card__veil" aria-hidden="true"></i><span>${String(index + 1).padStart(2, "0")}</span><strong>${esc(location.name)}</strong><small>${esc(location.administrativeName)}</small><b aria-hidden="true">↗</b></a>`;
   }).join("")}</div></div></div></section>`;
 }
 
