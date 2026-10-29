@@ -1,0 +1,31 @@
+{
+  menu: {
+    active: {
+      tag: 'BUTTON',
+      text: '',
+      html: '<button class="menu-toggle" type="button" aria-label="Закрыть меню" aria-expanded="true" aria-controls="mobile-drawer" data-menu-toggle=""><span></span><span></span></button>'
+    },
+    inside: false,
+    candidates: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object]
+    ],
+    afterTab: {
+      tag: 'A',
+      text: '\n    Д\n    ДомианШахты · Маяковского 18А\n  ',
+      inside: true
+    }
+  },
+  focus: {
+    html: '<a class="button button--primary" href="#hot-offers">Смотреть объекты в Шахтах</a>',
+    outline: 'rgb(86, 105, 97) solid 3px',
+    outlineOffset: '4px',
+    boxShadow: 'none',
+    focusVisible: true
+  },
+  anchors: 391,
+  anchorFailures: 0
+}

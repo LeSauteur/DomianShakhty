@@ -1,0 +1,196 @@
+
+> domian-shakhty-static-site@1.0.0 qa
+> npm test && npm run seo:audit && npm run donor:audit && npm run test:browser
+
+
+> domian-shakhty-static-site@1.0.0 test
+> npm run build && node --test tests/*.test.mjs
+
+
+> domian-shakhty-static-site@1.0.0 build
+> node scripts/build.mjs
+
+Built 185 canonical/technical HTML pages and 41 legacy redirects in dist.
+✔ existing inventory, protected people and established URLs remain unchanged (222.5571ms)
+✔ new landing pages are reachable, factual and included in the sitemap (22.1412ms)
+✔ built examples cannot become available listings or offers (14.0911ms)
+✔ confirmation badge and Offer require both verification date and responsible person (82.3211ms)
+✔ only confirmed office details and prices are published (23.7393ms)
+✔ missing form key retains a working direct-contact fallback (11.2345ms)
+✔ import manifest and catalog counts remain exact (3.3696ms)
+✔ newbuild truthfulness states and prices are preserved (3.1257ms)
+✔ construction projects remain separate from secondary inventory (5.9178ms)
+✔ published concrete inventory count is exact and separate from catalogs (3.2644ms)
+✔ construction cards use unique customer-facing house titles (9.1073ms)
+✔ construction project URLs are neutral and customer-facing (152.9428ms)
+✔ public catalog pages omit internal source and presentation notes (647.634ms)
+✔ construction pages do not expose builders, internal codes or source labels (69.7248ms)
+✔ partner house cards are anonymized and use the supplied presentation values (21.4495ms)
+✔ all imported responsive media is local WebP and exists (126.8719ms)
+✔ catalog and detail pages are generated with production SEO (865.1933ms)
+✔ homepage features only complete newbuilds and never promotes archived construction prices (8.617ms)
+✔ all 41 historical project URLs map directly to the same 26 current projects (30.3909ms)
+✔ the reported 85 m² URL resolves to the two-bathroom project, not the other 85 m² house (0.3496ms)
+✔ clean build emits immediate HTML redirects without adding legacy URLs to sitemap or navigation (208.365ms)
+✔ redirect manifest rejects duplicate paths, overwritten pages, off-site targets and chains (4.7363ms)
+✔ redirect URLs respect the configured production base and do not depend on JavaScript (0.8154ms)
+✔ listing types map to explicit user categories (1.6872ms)
+✔ local result thresholds 0, 1, 5 and 6 control automatic nearby output (1.0294ms)
+✔ unavailable, unverified, sold and demo inventory is excluded (8.2105ms)
+✔ active price limits exclude unknown prices and invalid ranges are explicit (0.5569ms)
+✔ Ayuta is local to Shakhty, but Shakhty expands from Ayuta without duplicates (1.2763ms)
+✔ type and price filters apply equally to local and nearby results (0.9406ms)
+✔ duplicate ids are removed within local, within nearby and across both scopes (17.2617ms)
+✔ nearby order follows neighbors and stays stable inside each territory (0.5444ms)
+✔ production publishes indexable pages and required files (67.7843ms)
+✔ critical styles and scripts use one content-derived cache version (6.3378ms)
+✔ unverified inventory and builders never enter public feeds (5.192ms)
+✔ showcase stays separate from real inventory and contains no fabricated offer data (33.2755ms)
+✔ territories use the owner-approved order everywhere (7.2262ms)
+✔ homepage hero exposes real territory links from central data (8.1712ms)
+✔ two-level navigation publishes the full desktop and mobile contract (3.451ms)
+✔ all five location pages contain useful search, editorial content, guides, FAQ and a preserved territory (49.7404ms)
+✔ rendered nearby cards follow the configured neighbor order (56.3018ms)
+✔ runtime config and search verification match configured services (28.4179ms)
+✔ confirmed social channels and Maria's responsive portrait are published from central data (22.2446ms)
+✔ public output omits removed social channels and uses the updated review status label (1373.068ms)
+✔ team page keeps the owner first and publishes both agent profiles (15.6213ms)
+✔ legal details are confined to the details page (374.8492ms)
+✔ every generated page has exactly one h1 (691.7038ms)
+✔ all core property directions have useful public pages and navigation entry points (6.3073ms)
+✔ homepage uses the editorial composition with catalog offers (3.1154ms)
+✔ editorial image pack is complete and mapped to the intended blocks (720.2345ms)
+✔ affected pages use responsive dimensions and loading priorities (42.2611ms)
+✔ secondary apartment imagery includes a sharp desktop source (6.8638ms)
+✔ direction pages remain honest and expose configured forms and direct contacts (600.5397ms)
+✔ unconfirmed authorship and construction-company claims are absent (20.4604ms)
+✔ listing schema expands types without breaking legacy values (41.3732ms)
+✔ production rendering keeps the Pages base and adds canonical entity metadata (38.3462ms)
+✔ team publishes Yana Efimchenko and the team life gallery (17.4503ms)
+ℹ tests 56
+ℹ suites 0
+ℹ pass 56
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6330.2118
+
+> domian-shakhty-static-site@1.0.0 seo:audit
+> node _tools/seo-audit.mjs
+
+SEO audit passed: 185 canonical/technical pages and 41 legacy redirects; valid metadata, links/media and production indexation rules.
+
+> domian-shakhty-static-site@1.0.0 donor:audit
+> node _tools/donor-leak-audit.mjs
+
+Donor-leak audit passed: no donor brands, cities or project names reached public source/output.
+
+> domian-shakhty-static-site@1.0.0 test:browser
+> node tests/build-browser-fixture.mjs && playwright test && npm run build
+
+Built 185 canonical/technical HTML pages and 41 legacy redirects in dist.
+[WebServer] (node:5908) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 90 tests using 1 worker
+
+(node:11944) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\content-expansion.spec.js:7:1 › inventory filters combine district, territory and rooms and reset cleanly (3.8s)
+  ok  2 tests\content-expansion.spec.js:26:1 › official review widget only loads after the visitor requests it (806ms)
+  ok  3 tests\content-expansion.spec.js:36:3 › expanded pages fit and new house media loads at 1440px (9.6s)
+  ok  4 tests\content-expansion.spec.js:36:3 › expanded pages fit and new house media loads at 390px (3.7s)
+  ok  5 tests\legacy-redirects.spec.js:6:1 › every legacy URL reaches its exact canonical destination after the browser fixture rebuild (11.3s)
+  ok  6 tests\legacy-redirects.spec.js:18:3 › redirects without JavaScript › all four historical URL families work on mobile without script redirects (1.4s)
+  ok  7 tests\site.spec.js:44:3 › home renders without client errors (1.1s)
+  ok  8 tests\site.spec.js:44:3 › construction.html renders without client errors (712ms)
+  ok  9 tests\site.spec.js:44:3 › construction/projects/dom-pod-klyuch-80m2-tri-spalni.html renders without client errors (459ms)
+  ok 10 tests\site.spec.js:44:3 › apartments.html renders without client errors (694ms)
+  ok 11 tests\site.spec.js:44:3 › newbuilds.html renders without client errors (669ms)
+  ok 12 tests\site.spec.js:44:3 › newbuilds/dvizhenie-61.html renders without client errors (367ms)
+  ok 13 tests\site.spec.js:44:3 › newbuilds/manhetten-2-0-novaya-vysota.html renders without client errors (423ms)
+  ok 14 tests\site.spec.js:44:3 › new-build-apartments.html renders without client errors (531ms)
+  ok 15 tests\site.spec.js:44:3 › commercial.html renders without client errors (793ms)
+  ok 16 tests\site.spec.js:44:3 › garages-parking.html renders without client errors (627ms)
+  ok 17 tests\site.spec.js:44:3 › locations/shakhty.html renders without client errors (671ms)
+  ok 18 tests\site.spec.js:44:3 › locations/kamenolomni.html renders without client errors (950ms)
+  ok 19 tests\site.spec.js:44:3 › locations/novoshakhtinsk.html renders without client errors (636ms)
+  ok 20 tests\site.spec.js:44:3 › locations/ayutinskiy.html renders without client errors (663ms)
+  ok 21 tests\site.spec.js:44:3 › locations/krasnyy-sulin.html renders without client errors (682ms)
+  ok 22 tests\site.spec.js:44:3 › listings/dom-chistovaya-kamenolomni.html renders without client errors (608ms)
+  ok 23 tests\site.spec.js:44:3 › listings/shk-a02-budget-1k.html renders without client errors (501ms)
+  ok 24 tests\site.spec.js:44:3 › listings/shk-a03-hbk-1k.html renders without client errors (870ms)
+  ok 25 tests\site.spec.js:44:3 › listings/shk-a13-aleksandrovskiy-park.html renders without client errors (605ms)
+  ok 26 tests\site.spec.js:44:3 › listings/shk-h03-artem-brick-house.html renders without client errors (548ms)
+  ok 27 tests\site.spec.js:44:3 › listings/shk-l06-regular-city-plot.html renders without client errors (958ms)
+  ok 28 tests\site.spec.js:44:3 › listings/shk-h07-two-houses-kamenolomni.html renders without client errors (756ms)
+  ok 29 tests\site.spec.js:44:3 › listings/shk-h08-two-houses-center.html renders without client errors (744ms)
+  ok 30 tests\site.spec.js:44:3 › listings/shk-a14-renovated-2k-43.html renders without client errors (1.0s)
+  ok 31 tests\site.spec.js:44:3 › listings/shk-h09-renovated-76.html renders without client errors (511ms)
+  ok 32 tests\site.spec.js:44:3 › listings/shk-l08-goroda-budushchego-plot.html renders without client errors (797ms)
+  ok 33 tests\site.spec.js:44:3 › guides/kak-vybrat-dom-ot-zastroyshchika-v-shakhtah.html renders without client errors (917ms)
+  ok 34 tests\site.spec.js:44:3 › team/index.html renders without client errors (921ms)
+  ok 35 tests\site.spec.js:44:3 › team/maria-voronina.html renders without client errors (629ms)
+  ok 36 tests\site.spec.js:44:3 › team/olga-chernenko.html renders without client errors (595ms)
+  ok 37 tests\site.spec.js:44:3 › team/maria-smolina.html renders without client errors (640ms)
+  ok 38 tests\site.spec.js:44:3 › team/yana-efimchenko.html renders without client errors (733ms)
+  ok 39 tests\site.spec.js:44:3 › contacts.html renders without client errors (679ms)
+  ok 40 tests\site.spec.js:44:3 › details.html renders without client errors (445ms)
+  ok 41 tests\site.spec.js:44:3 › privacy.html renders without client errors (449ms)
+  ok 42 tests\site.spec.js:59:1 › new listing hero images load without overflow on desktop and mobile (5.6s)
+  ok 43 tests\site.spec.js:75:1 › valuation hero text and actions stay inside narrow mobile viewports (1.6s)
+  ok 44 tests\site.spec.js:92:1 › mobile drawer opens, traps focus and closes with Escape (2.1s)
+  ok 45 tests\site.spec.js:117:1 › desktop navigation menu exposes aria state, closes with Escape and restores focus (1.4s)
+  ok 46 tests\site.spec.js:131:1 › location search persists filters, restores history and carries territory into the form (2.3s)
+  ok 47 tests\site.spec.js:160:1 › location lead context survives reload, follows filters and preserves a manual comment (7.2s)
+  ok 48 tests\site.spec.js:193:1 › navigation switches to the drawer before narrow-desktop overflow (1.3s)
+  ok 49 tests\site.spec.js:202:1 › location pages keep search controls, imagery and content usable across target widths (9.7s)
+  ok 50 tests\site.spec.js:225:1 › all desktop location searches fit their primary controls inside the first viewport (6.5s)
+  ok 51 tests\site.spec.js:245:1 › confirmed social links emit allowlisted events without PII (974ms)
+  ok 52 tests\site.spec.js:272:1 › Maria portrait is responsive, dimensioned and loads on trust pages (2.3s)
+  ok 53 tests\site.spec.js:291:1 › team cards and agent portraits fit desktop and mobile without overflow (5.4s)
+  ok 54 tests\site.spec.js:333:1 › profile portraits preserve the full image and captions stay below it (5.3s)
+  ok 55 tests\site.spec.js:353:1 › Olga profile opens with her portrait and keeps expertise compact on mobile (811ms)
+  ok 56 tests\site.spec.js:377:1 › Maria Smolina profile uses her portrait, direct contacts and full expertise (630ms)
+  ok 57 tests\site.spec.js:394:1 › contacts stay concise and action-first on mobile (727ms)
+  ok 58 tests\site.spec.js:408:1 › lead form validates locally and handles provider rejection (3.7s)
+  ok 59 tests\site.spec.js:423:1 › compact home lead redirects only after provider success (3.9s)
+  ok 60 tests\site.spec.js:434:1 › lead analytics never receives entered personal data (2.6s)
+  ok 61 tests\site.spec.js:452:1 › Metrika and GA4 preserve advertising attribution but omit personal URL parameters (1.1s)
+  ok 62 tests\site.spec.js:487:1 › qa=1 and localhost keep analytics disabled (1.2s)
+  ok 63 tests\site.spec.js:502:1 › mortgage calculator uses the visitor's rate (1.2s)
+  ok 64 tests\site.spec.js:510:1 › home request builder transfers criteria into the lead form (2.5s)
+  ok 65 tests\site.spec.js:526:1 › homepage prioritizes local property, request and mortgage sections (596ms)
+  ok 66 tests\site.spec.js:536:1 › homepage catalog showcases stay compact, truthful and link to imported details (1.9s)
+  ok 67 tests\site.spec.js:558:1 › desktop local offers form a balanced three-column grid (723ms)
+  ok 68 tests\site.spec.js:588:1 › mobile property cards form a two-column grid without horizontal scrolling (689ms)
+  ok 69 tests\site.spec.js:610:1 › mobile local offers remain readable in one column (768ms)
+  ok 70 tests\site.spec.js:625:1 › mobile hero keeps its caption off the photograph (538ms)
+  ok 71 tests\site.spec.js:637:1 › new-build card uses the generated modern house instead of the panel facade (1.4s)
+  ok 72 tests\site.spec.js:646:1 › territories keep the approved order and short Ayuta label (573ms)
+  ok 73 tests\site.spec.js:651:1 › construction catalog exposes only build-to-order projects (2.9s)
+  ok 74 tests\site.spec.js:678:1 › catalog detail hero images keep a bounded aspect ratio (1.2s)
+  ok 75 tests\site.spec.js:701:1 › matched built-house galleries load full-resolution photos without layout overflow (9.3s)
+  ok 76 tests\site.spec.js:733:1 › core direction pages have no horizontal overflow or overlapping headings (8.4s)
+  ok 77 tests\site.spec.js:749:1 › newbuild and construction filters update the catalog without hiding missing-data truth (3.3s)
+  ok 78 tests\site.spec.js:774:1 › primary customer journeys fit all requested audit viewports (17.6s)
+  ok 79 tests\site.spec.js:794:1 › catalog imagery loads responsive WebP at required viewports (10.9s)
+  ok 80 tests\site.spec.js:811:1 › desktop contact actions stay below their heading without overlap (979ms)
+  ok 81 tests\site.spec.js:838:3 › responsive smoke: mobile-320 (1.0s)
+  ok 82 tests\site.spec.js:838:3 › responsive smoke: mobile-360 (1.7s)
+  ok 83 tests\site.spec.js:838:3 › responsive smoke: mobile-390 (2.0s)
+  ok 84 tests\site.spec.js:838:3 › responsive smoke: mobile-430 (1.4s)
+  ok 85 tests\site.spec.js:838:3 › responsive smoke: tablet-768 (1.1s)
+  ok 86 tests\site.spec.js:838:3 › responsive smoke: tablet-1024 (1.2s)
+  ok 87 tests\site.spec.js:838:3 › responsive smoke: desktop-1366 (1.3s)
+  ok 88 tests\site.spec.js:838:3 › responsive smoke: desktop-1440 (1.3s)
+  ok 89 tests\site.spec.js:838:3 › responsive smoke: desktop-1904 (984ms)
+  ok 90 tests\site.spec.js:838:3 › responsive smoke: landscape (792ms)
+
+  90 passed (3.4m)
+
+> domian-shakhty-static-site@1.0.0 build
+> node scripts/build.mjs
+
+Built 185 canonical/technical HTML pages and 41 legacy redirects in dist.

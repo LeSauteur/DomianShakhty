@@ -1,0 +1,38 @@
+[
+  {
+    "file": "src/templates.mjs",
+    "name": "quickFilterSection",
+    "line": 461,
+    "status": "HYP: only declaration in generator/template/editorial files; inspect imports and dynamic references before removal"
+  },
+  {
+    "file": "src/templates.mjs",
+    "name": "showcaseSection",
+    "line": 486,
+    "status": "HYP: only declaration in generator/template/editorial files; inspect imports and dynamic references before removal"
+  },
+  {
+    "file": "src/templates.mjs",
+    "name": "propertyDirectionsSection",
+    "line": 505,
+    "status": "HYP: only declaration in generator/template/editorial files; inspect imports and dynamic references before removal"
+  },
+  {
+    "file": "src/templates.mjs",
+    "name": "homeScenariosSection",
+    "line": 524,
+    "status": "HYP: only declaration in generator/template/editorial files; inspect imports and dynamic references before removal"
+  },
+  {
+    "file": "src/templates.mjs",
+    "name": "sellerSection",
+    "line": 539,
+    "status": "HYP: only declaration in generator/template/editorial files; inspect imports and dynamic references before removal"
+  },
+  {
+    "file": "src/templates.mjs",
+    "name": "faqSection",
+    "line": 546,
+    "status": "HYP: only declaration in generator/template/editorial files; inspect imports and dynamic references before removal"
+  }
+]

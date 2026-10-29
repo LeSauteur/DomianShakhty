@@ -1,0 +1,442 @@
+{
+  "time": "2026-10-19T07:53:16.399Z",
+  "checks": [
+    {
+      "name": "CSV column contract a11y-production.csv",
+      "ok": true,
+      "detail": {
+        "rows": 23,
+        "columns": 11
+      }
+    },
+    {
+      "name": "CSV column contract a11y.csv",
+      "ok": true,
+      "detail": {
+        "rows": 23,
+        "columns": 10
+      }
+    },
+    {
+      "name": "CSV column contract advertising-flags.csv",
+      "ok": true,
+      "detail": {
+        "rows": 61,
+        "columns": 4
+      }
+    },
+    {
+      "name": "CSV column contract anchor-scroll.csv",
+      "ok": true,
+      "detail": {
+        "rows": 391,
+        "columns": 6
+      }
+    },
+    {
+      "name": "CSV column contract anchor-texts.csv",
+      "ok": true,
+      "detail": {
+        "rows": 3823,
+        "columns": 3
+      }
+    },
+    {
+      "name": "CSV column contract asset-inventory.csv",
+      "ok": true,
+      "detail": {
+        "rows": 764,
+        "columns": 2
+      }
+    },
+    {
+      "name": "CSV column contract browser-checks.csv",
+      "ok": true,
+      "detail": {
+        "rows": 681,
+        "columns": 13
+      }
+    },
+    {
+      "name": "CSV column contract browser-production-checks.csv",
+      "ok": true,
+      "detail": {
+        "rows": 681,
+        "columns": 13
+      }
+    },
+    {
+      "name": "CSV column contract bugs.csv",
+      "ok": true,
+      "detail": {
+        "rows": 5,
+        "columns": 9
+      }
+    },
+    {
+      "name": "CSV column contract competitors.csv",
+      "ok": true,
+      "detail": {
+        "rows": 16,
+        "columns": 4
+      }
+    },
+    {
+      "name": "CSV column contract consent-overlaps.csv",
+      "ok": true,
+      "detail": {
+        "rows": 91,
+        "columns": 5
+      }
+    },
+    {
+      "name": "CSV column contract contact-links.csv",
+      "ok": true,
+      "detail": {
+        "rows": 185,
+        "columns": 7
+      }
+    },
+    {
+      "name": "CSV column contract content-findings.csv",
+      "ok": true,
+      "detail": {
+        "rows": 142,
+        "columns": 6
+      }
+    },
+    {
+      "name": "CSV column contract content-plan-index.csv",
+      "ok": true,
+      "detail": {
+        "rows": 18,
+        "columns": 6
+      }
+    },
+    {
+      "name": "CSV column contract duplicates.csv",
+      "ok": true,
+      "detail": {
+        "rows": 1046,
+        "columns": 6
+      }
+    },
+    {
+      "name": "CSV column contract external-sources.csv",
+      "ok": true,
+      "detail": {
+        "rows": 24,
+        "columns": 7
+      }
+    },
+    {
+      "name": "CSV column contract filters.csv",
+      "ok": true,
+      "detail": {
+        "rows": 89,
+        "columns": 11
+      }
+    },
+    {
+      "name": "CSV column contract findings.csv",
+      "ok": true,
+      "detail": {
+        "rows": 244,
+        "columns": 9
+      }
+    },
+    {
+      "name": "CSV column contract forms.csv",
+      "ok": true,
+      "detail": {
+        "rows": 180,
+        "columns": 13
+      }
+    },
+    {
+      "name": "CSV column contract http-variants.csv",
+      "ok": true,
+      "detail": {
+        "rows": 14,
+        "columns": 5
+      }
+    },
+    {
+      "name": "CSV column contract images-no-dimensions.csv",
+      "ok": true,
+      "detail": {
+        "rows": 0,
+        "columns": 2
+      }
+    },
+    {
+      "name": "CSV column contract landing-map.csv",
+      "ok": true,
+      "detail": {
+        "rows": 30,
+        "columns": 9
+      }
+    },
+    {
+      "name": "CSV column contract listings-audit.csv",
+      "ok": true,
+      "detail": {
+        "rows": 34,
+        "columns": 21
+      }
+    },
+    {
+      "name": "CSV column contract live-http.csv",
+      "ok": true,
+      "detail": {
+        "rows": 1000,
+        "columns": 8
+      }
+    },
+    {
+      "name": "CSV column contract mortgage.csv",
+      "ok": true,
+      "detail": {
+        "rows": 6,
+        "columns": 4
+      }
+    },
+    {
+      "name": "CSV column contract nap-pages.csv",
+      "ok": true,
+      "detail": {
+        "rows": 185,
+        "columns": 11
+      }
+    },
+    {
+      "name": "CSV column contract nap-profiles.csv",
+      "ok": true,
+      "detail": {
+        "rows": 6,
+        "columns": 10
+      }
+    },
+    {
+      "name": "CSV column contract oversized-images.csv",
+      "ok": true,
+      "detail": {
+        "rows": 882,
+        "columns": 7
+      }
+    },
+    {
+      "name": "CSV column contract page-inventory.csv",
+      "ok": true,
+      "detail": {
+        "rows": 227,
+        "columns": 23
+      }
+    },
+    {
+      "name": "CSV column contract performance.csv",
+      "ok": true,
+      "detail": {
+        "rows": 12,
+        "columns": 9
+      }
+    },
+    {
+      "name": "CSV column contract photo-file-inventory.csv",
+      "ok": true,
+      "detail": {
+        "rows": 168,
+        "columns": 9
+      }
+    },
+    {
+      "name": "CSV column contract public-json-fields.csv",
+      "ok": true,
+      "detail": {
+        "rows": 6,
+        "columns": 4
+      }
+    },
+    {
+      "name": "CSV column contract redirects.csv",
+      "ok": true,
+      "detail": {
+        "rows": 41,
+        "columns": 7
+      }
+    },
+    {
+      "name": "CSV column contract repeated-paragraphs.csv",
+      "ok": true,
+      "detail": {
+        "rows": 69,
+        "columns": 3
+      }
+    },
+    {
+      "name": "CSV column contract seo-technical.csv",
+      "ok": true,
+      "detail": {
+        "rows": 62,
+        "columns": 8
+      }
+    },
+    {
+      "name": "CSV column contract spelling-candidates.csv",
+      "ok": true,
+      "detail": {
+        "rows": 205,
+        "columns": 5
+      }
+    },
+    {
+      "name": "CSV column contract test-specs.csv",
+      "ok": true,
+      "detail": {
+        "rows": 12,
+        "columns": 5
+      }
+    },
+    {
+      "name": "CSV column contract third-party.csv",
+      "ok": true,
+      "detail": {
+        "rows": 2,
+        "columns": 3
+      }
+    },
+    {
+      "name": "CSV column contract top-30-files.csv",
+      "ok": true,
+      "detail": {
+        "rows": 30,
+        "columns": 2
+      }
+    },
+    {
+      "name": "CSV column contract unreferenced-assets.csv",
+      "ok": true,
+      "detail": {
+        "rows": 29,
+        "columns": 3
+      }
+    },
+    {
+      "name": "CSV column contract ux-pages.csv",
+      "ok": true,
+      "detail": {
+        "rows": 174,
+        "columns": 13
+      }
+    },
+    {
+      "name": "Inventory complete",
+      "ok": true,
+      "detail": {
+        "pages": 227,
+        "sitemap": 183
+      }
+    },
+    {
+      "name": "183 sitemap URLs HTTP 200",
+      "ok": true,
+      "detail": 183
+    },
+    {
+      "name": "41 direct redirect targets",
+      "ok": true,
+      "detail": 41
+    },
+    {
+      "name": "browser 681 completed",
+      "ok": true,
+      "detail": 681
+    },
+    {
+      "name": "browser healthy render",
+      "ok": true,
+      "detail": {
+        "console": 0,
+        "http": 0
+      }
+    },
+    {
+      "name": "browser 454 axe",
+      "ok": true,
+      "detail": 454
+    },
+    {
+      "name": "browser-production 681 completed",
+      "ok": true,
+      "detail": 681
+    },
+    {
+      "name": "browser-production healthy render",
+      "ok": true,
+      "detail": {
+        "console": 0,
+        "http": 0
+      }
+    },
+    {
+      "name": "browser-production 454 axe",
+      "ok": true,
+      "detail": 454
+    },
+    {
+      "name": "180 forms safe results",
+      "ok": true,
+      "detail": 180
+    },
+    {
+      "name": "89 filter cases",
+      "ok": true,
+      "detail": 89
+    },
+    {
+      "name": "34 owner CSV exact matches",
+      "ok": true,
+      "detail": 34
+    },
+    {
+      "name": "82 redirect sources axe",
+      "ok": true,
+      "detail": 82
+    },
+    {
+      "name": "91 consent overlaps attributed and recoverable",
+      "ok": true,
+      "detail": 91
+    },
+    {
+      "name": "Unique evidence-backed finding IDs",
+      "ok": true,
+      "detail": 244
+    },
+    {
+      "name": "Only allowed paths changed",
+      "ok": true,
+      "detail": {
+        "tracked": 1618,
+        "untracked": 1,
+        "unexpected": []
+      }
+    },
+    {
+      "name": "Local Markdown links resolve",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "versions": {
+    "node": "v24.14.0",
+    "platform": "win32",
+    "architecture": "x64",
+    "playwright": "1.62.1",
+    "lighthouse": "13.4.1",
+    "axe-core": "4.14.0",
+    "cheerio": "1.2.0",
+    "nspell": "2.1.5",
+    "dictionary-ru": "3.0.0"
+  }
+}
