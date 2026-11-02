@@ -313,5 +313,59 @@
     "id": "shk-l10-flat-6-sot",
     "status": "done",
     "files": ["hero.webp"]
+  },
+  {
+    "id": "shk-a15-hbk-1k-37",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp",
+      "07.webp",
+      "08.webp",
+      "09.webp"
+    ]
+  },
+  {
+    "id": "shk-a16-2k-50-individual",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp",
+      "07.webp",
+      "08.webp",
+      "09.webp",
+      "10.webp",
+      "11.webp",
+      "12.webp",
+      "13.webp"
+    ]
+  },
+  {
+    "id": "shk-a17-kalinina-31a-2k",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp",
+      "07.webp",
+      "08.webp",
+      "09.webp",
+      "10.webp",
+      "11.webp"
+    ]
   }
 ]

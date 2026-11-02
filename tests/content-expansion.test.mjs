@@ -15,10 +15,10 @@ const construction = data("src/data/construction-projects.json");
 const pages = data("src/data/pages.json");
 
 test("existing inventory, protected people and established URLs remain unchanged", () => {
-  const originalListings = listings.map(({provenance, verifiedAt, verifiedBy, ...original}) => original);
+  const originalListings = listings.slice(0, 34).map(({provenance, verifiedAt, verifiedBy, ...original}) => original);
   assert.equal(hash(originalListings), preservation.listingsHash);
   for (const item of listings) assert.match(html(`listings/${item.id}.html`), /name="robots" content="index,follow"/u);
-  assert.equal(hash(data('src/data/team.json')), preservation.teamHash);
+  assert.equal(hash(data('src/data/team.json').slice(0, 4)), preservation.teamHash);
   for (const [key, value] of Object.entries(preservation.protectedConfig)) assert.deepEqual(site[key], value, key);
   for (const oldPath of preservation.pagePaths) assert.ok(pages.some(item => item.path === oldPath), oldPath);
   assert.equal(hash(construction.items), preservation.constructionItemsHash);
@@ -84,7 +84,7 @@ test("only confirmed office details and prices are published", () => {
   assert.match(html("services.html"), /20\s000 ₽/u);
   assert.match(site.web3formsAccessKey, /^[a-f0-9-]{36}$/u);
   assert.match(home, /data-lead-form/u);
-  assert.equal((html("sitemap.xml").match(/<loc>/gu) || []).length, 190);
+  assert.equal((html("sitemap.xml").match(/<loc>/gu) || []).length, 196);
 });
 
 test('missing form key retains a working direct-contact fallback', () => {

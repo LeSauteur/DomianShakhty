@@ -427,9 +427,9 @@ test("listing schema expands types without breaking legacy values", () => {
   for (const legacy of ["new-house", "resale-house", "apartment", "land", "project"]) assert.ok(types.includes(legacy));
   for (const added of ["apartment-secondary", "apartment-newbuild", "house-new", "house-secondary", "house-builder", "commercial", "garage", "parking-space"]) assert.ok(types.includes(added));
   const listings = JSON.parse(fs.readFileSync("src/data/listings.json", "utf8"));
-  assert.equal(listings.length, 34);
+  assert.equal(listings.length, 37);
   assert.equal(new Set(listings.map((item) => item.id)).size, listings.length);
-  assert.equal(listings.filter((item) => item.id.startsWith("shk-")).length, 33);
+  assert.equal(listings.filter((item) => item.id.startsWith("shk-")).length, 36);
   assert.ok(listings.every((item) => item.verified === true));
   assert.equal(listings[0].price, 5670000);
   assert.equal(listings[0].location, "kamenolomni");
@@ -438,15 +438,15 @@ test("listing schema expands types without breaking legacy values", () => {
     for (const image of [item.image, ...(item.gallery || [])]) assert.ok(fs.existsSync(path.join(root, image.src)), image.src);
   }
   const mediaManifest = JSON.parse(fs.readFileSync("src/data/listing-media-manifest.json", "utf8"));
-  assert.equal(mediaManifest.length, 33);
-  assert.equal(mediaManifest.filter((item) => item.status === "done").length, 33);
+  assert.equal(mediaManifest.length, 36);
+  assert.equal(mediaManifest.filter((item) => item.status === "done").length, 36);
   assert.equal(mediaManifest.filter((item) => item.status === "pending").length, 0);
   for (const item of mediaManifest.filter((entry) => entry.status === "done")) {
     assert.equal(item.files[0], "hero.webp");
     assert.equal(new Set(item.files).size, item.files.length);
     for (const file of item.files) assert.ok(fs.existsSync(path.join(root, "assets/images/listings", item.id, file)));
   }
-  const newListings = listings.slice(-8);
+  const newListings = listings.slice(26, 34);
   assert.deepEqual(newListings.map((item) => item.id), [
     "shk-h07-two-houses-kamenolomni",
     "shk-h08-two-houses-center",

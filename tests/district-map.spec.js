@@ -8,7 +8,7 @@ test("district picker works with mouse, keyboard and mobile chips without remote
   await page.goto("");
   await page.locator('.district-map__pin[data-district="hbk"]').click();
   await expect(page.locator("[data-district-name]")).toHaveText("ХБК");
-  await expect(page.locator("[data-district-count]")).toHaveText("3 объекта в каталоге");
+  await expect(page.locator("[data-district-count]")).toHaveText("4 объекта в каталоге");
   const kamen = page.locator('.district-map__pin[data-district="kamen"]');
   await kamen.focus();
   await page.keyboard.press("Enter");
