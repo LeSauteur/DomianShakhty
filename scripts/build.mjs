@@ -4,6 +4,7 @@ import path from "node:path";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { renderLegacyRedirect, validateLegacyRedirects } from "../src/legacy-redirects.mjs";
+import { EVENING_HOME_PATH, renderEveningHome } from "../src/evening-home.mjs";
 import {
   createContext,
   render404,
@@ -123,6 +124,13 @@ publish("details.html", renderDetails(ctx));
 publish("privacy.html", renderPrivacy(ctx));
 publish("thanks.html", renderThanks(ctx));
 publish("404.html", render404(ctx));
+
+// Isolated design review: deliberately outside the production sitemap/navigation.
+const eveningVersion = createHash("sha256")
+  .update(fs.readFileSync(path.join(root, "assets/css/evening-home.css")))
+  .update(fs.readFileSync(path.join(root, "assets/js/evening-home.js")))
+  .digest("hex").slice(0, 12);
+write(EVENING_HOME_PATH, renderEveningHome(ctx, eveningVersion));
 
 // Recreate historical addresses after every clean build, outside the sitemap.
 // Only canonical generated pages may be targets, so chains and loops are rejected.

@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
 import { validateLegacyRedirects } from "../src/legacy-redirects.mjs";
+import { EVENING_HOME_PATH } from "../src/evening-home.mjs";
 
 const root = path.resolve(process.cwd(), "dist");
 const config = JSON.parse(fs.readFileSync(path.resolve("site.config.json"), "utf8"));
@@ -101,13 +102,14 @@ for (const file of htmlFiles) {
   if (listing && (!listing.verifiedAt || !listing.verifiedBy) && /"@type":"Offer"/u.test(html)) failures.push(relative + ': unconfirmed Offer');
   if (builtPaths.has(relative) && /"@type":"(?:Product|Offer)"/u.test(html)) failures.push(relative + ': portfolio example treated as an offer');
   if (/"@type":"(?:AggregateRating|Review)"|"aggregateRating"/u.test(html)) failures.push(relative + ': third-party review schema');
-  const technical = ["404.html", "thanks.html"].includes(relative);
+  const technical = ["404.html", "thanks.html", EVENING_HOME_PATH].includes(relative);
   const route = relative === "index.html" ? "/" : relative.endsWith("/index.html") ? `/${relative.slice(0, -"index.html".length)}` : `/${relative}`;
   const canonical = `${config.productionOrigin}${route}`;
   if (robots.toLowerCase() !== (technical ? "noindex,follow" : "index,follow")) failures.push(`${relative}: incorrect robots directive`);
   if (canonicals.length !== 1 || canonicals[0][1] !== canonical) failures.push(`${relative}: incorrect canonical`);
   if (!html.includes(`<meta property="og:url" content="${canonical}">`)) failures.push(`${relative}: incorrect og:url`);
-  if (!html.includes(`<meta property="og:image" content="${config.productionOrigin}/assets/images/og.png">`)) failures.push(`${relative}: incorrect og:image`);
+  const ogImage = relative === EVENING_HOME_PATH ? "assets/images/editorial/house-dark-cta-1440.webp" : "assets/images/og.png";
+  if (!html.includes(`<meta property="og:image" content="${config.productionOrigin}/${ogImage}">`)) failures.push(`${relative}: incorrect og:image`);
   if (/prelaunch|demo|data:,/iu.test(html)) failures.push(`${relative}: launch placeholder in HTML`);
   if (!html.includes(`${base}/favicon.ico`) || !html.includes(`${base}/manifest.webmanifest`)) failures.push(`${relative}: site icons missing`);
 
@@ -153,7 +155,7 @@ for (const file of [".nojekyll", "sitemap.xml", "favicon.ico", "manifest.webmani
 const sitemap = fs.existsSync(path.join(root, "sitemap.xml")) ? fs.readFileSync(path.join(root, "sitemap.xml"), "utf8") : "";
 const actualUrls = matches(sitemap, /<loc>([^<]+)<\/loc>/giu).map((match) => match[1]);
 const expectedUrls = htmlFiles.map((file) => path.relative(root, file).replaceAll("\\", "/"))
-  .filter((relative) => !["404.html", "thanks.html"].includes(relative) && !legacyPaths.has(relative))
+  .filter((relative) => !["404.html", "thanks.html", EVENING_HOME_PATH].includes(relative) && !legacyPaths.has(relative))
   .map((relative) => `${config.productionOrigin}${relative === "index.html" ? "/" : relative.endsWith("/index.html") ? `/${relative.slice(0, -"index.html".length)}` : `/${relative}`}`);
 if (actualUrls.length !== expectedUrls.length || new Set(actualUrls).size !== expectedUrls.length || expectedUrls.some((url) => !actualUrls.includes(url))) failures.push("sitemap.xml: routes do not match indexable pages");
 for (const provider of ["google", "yandex"]) {
