@@ -235,7 +235,28 @@
       "Подготовка объекта к продаже: грамотная презентация и акцент на преимуществах для покупателей",
       "Организация и сопровождение сделки — от первых обращений и показов до подготовки документов и завершения сделки",
       "Защита ваших интересов на переговорах и помощь в получении выгодных условий продажи"
-    ]
+    ],
+    "image": {
+      "original": "assets/images/inessa-kovaleva-original.png",
+      "fallback": "assets/images/inessa-kovaleva-640.webp",
+      "width": 640,
+      "height": 800,
+      "srcset": [
+        {
+          "src": "assets/images/inessa-kovaleva-360.webp",
+          "width": 360
+        },
+        {
+          "src": "assets/images/inessa-kovaleva-640.webp",
+          "width": 640
+        },
+        {
+          "src": "assets/images/inessa-kovaleva-960.webp",
+          "width": 960
+        }
+      ],
+      "alt": "Ковалёва Инесса Сергеевна, агент по недвижимости Домиан на Маяковского"
+    }
   },
   {
     "office": "Домиан · Шахты на Маяковского",

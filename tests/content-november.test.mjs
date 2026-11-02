@@ -18,10 +18,13 @@ test('November apartments keep the supplied prices, photos and office provenance
   assert.equal(listings[2].address, 'Шахты, ул. Калинина, 31А');
 });
 
-test('new specialists expose their own contacts without invented email or portrait', () => {
+test('new specialists expose their own contacts and supplied portraits without invented email', () => {
   const inessa = html('team/inessa-kovaleva.html');
   for (const contact of ['tel:+79613300933', 'tel:+79001219244', 'mailto:innakovaleva75@mail.ru']) assert.ok(inessa.includes(contact));
-  assert.match(inessa, /class="person-initials"/u);
+  assert.match(inessa, /inessa-kovaleva-360.webp/u);
+  assert.match(inessa, /inessa-kovaleva-640.webp/u);
+  assert.match(inessa, /inessa-kovaleva-960.webp/u);
+  assert.doesNotMatch(inessa, /class="person-initials"/u);
   const roman = html('team/roman-roslyakov.html');
   assert.ok(roman.includes('tel:+79001889888'));
   assert.ok(roman.includes('mailto:rrb@mail.ru'));
