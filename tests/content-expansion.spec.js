@@ -8,14 +8,14 @@ test("inventory filters combine district, territory and rooms and reset cleanly"
   await page.goto("apartments.html");
   const catalog = page.locator('[data-product-catalog="inventory"]');
   const cards = catalog.locator("[data-product-card]");
-  await expect(cards).toHaveCount(14);
+  await expect(cards).toHaveCount(17);
   await catalog.locator('[name="rooms"]').selectOption("2");
   for (const card of await catalog.locator("[data-product-card]:visible").all()) await expect(card).toHaveAttribute("data-rooms", "2");
   await catalog.locator('[name="query"]').fill("неизвестный район без объектов");
   await expect(catalog.locator("[data-product-count]")).toHaveText("0");
   await expect(catalog.locator("[data-product-empty]")).toBeVisible();
   await catalog.getByRole("button", { name: "Сбросить" }).click();
-  await expect(catalog.locator("[data-product-count]")).toHaveText("14");
+  await expect(catalog.locator("[data-product-count]")).toHaveText("17");
   await page.goto("houses.html");
   const houses = page.locator('[data-product-catalog="inventory"]');
   await houses.locator('[name="city"]').selectOption("kamenolomni");

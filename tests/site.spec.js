@@ -35,6 +35,12 @@ const representativePages = [
   "team/olga-chernenko.html",
   "team/maria-smolina.html",
   "team/yana-efimchenko.html",
+  "team/inessa-kovaleva.html",
+  "team/roman-roslyakov.html",
+  "team/vladimir-starchak.html",
+  "listings/shk-a15-hbk-1k-37.html",
+  "listings/shk-a16-2k-50-individual.html",
+  "listings/shk-a17-kalinina-31a-2k.html",
   "contacts.html",
   "details.html",
   "privacy.html"
@@ -294,7 +300,7 @@ test("team cards and agent portraits fit desktop and mobile without overflow", a
     await page.setViewportSize(viewport);
     await page.goto("team/index.html");
     const cards = page.locator(".team-card");
-    await expect(cards).toHaveCount(4);
+    await expect(cards).toHaveCount(7);
     await expect(cards.nth(0)).toHaveAttribute("data-team-member", "maria-voronina");
     await expect(cards.nth(1)).toHaveAttribute("data-team-member", "olga-chernenko");
     await expect(cards.nth(2)).toHaveAttribute("data-team-member", "maria-smolina");

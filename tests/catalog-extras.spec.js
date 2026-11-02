@@ -11,11 +11,11 @@ test('scenario links open actual catalog selections and stay filtered after relo
  }
  await page.reload();await expect(page.locator('[data-product-filters] [name="scenario"]')).toHaveValue('own-land');
 });
-test('district card leads to the same three HBK objects in catalog',async({page})=>{
+test('district card leads to the same four HBK objects in catalog',async({page})=>{
  await page.goto('/#district=hbk');
  await page.locator('[data-district-links]').getByRole('link',{name:'Все объекты в районе'}).click();
  await expect(page).toHaveURL(/catalog\.html\?district=hbk/u);
- await expect(page.locator('[data-product-card]:visible')).toHaveCount(3);
+ await expect(page.locator('[data-product-card]:visible')).toHaveCount(4);
  const ids=await page.locator('[data-product-card]:visible').evaluateAll(ns=>ns.map(n=>n.dataset.listingId));
  expect(ids.sort()).toEqual(filterCatalog(listings,{district:'hbk'}).map(i=>i.id).sort());
 });
