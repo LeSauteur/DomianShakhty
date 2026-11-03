@@ -38,5 +38,10 @@ test('new specialists expose their own contacts and supplied portraits without i
   const person = [...vladimir.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].flatMap(match => JSON.parse(match[1])['@graph'] || []).find(item => item['@type'] === 'Person');
   assert.ok(person);
   assert.equal(person.email, undefined);
-  assert.match(html('team/index.html'), /7 специалистов/u);
+  const ksenia = html('team/ksenia-tsygankova.html');
+  for (const contact of ['tel:+79895227655', 'mailto:ksenj79@yandex.ru']) assert.ok(ksenia.includes(contact));
+  assert.match(ksenia, /Цыганкова Ксения Петровна/u);
+  assert.match(ksenia, /Вся Ростовская область/u);
+  assert.match(ksenia, /ksenia-tsygankova-640.webp/u);
+  assert.match(html('team/index.html'), /8 специалистов/u);
 });
