@@ -14,7 +14,9 @@ test('November apartments keep the supplied prices, photos and office provenance
     assert.match(html(`listings/${item.id}.html`), /Олеся Григорян/u);
   }
   assert.equal(listings[1].address, 'Шахты');
-  assert.match(listings[1].description, /7,5 м².*7 м²/u);
+  assert.match(listings[1].descriptionOriginal, /7,5 м².*7 м²/u);
+  assert.doesNotMatch(listings[1].description, /7,5 м²|кухня 7|площадь кухни/iu);
+  assert.deepEqual(listings[1].contentIssues,[{field:'kitchenArea',values:[7,7.5],reason:'conflicting_source_values'}]);
   assert.equal(listings[2].address, 'Шахты, ул. Калинина, 31А');
 });
 

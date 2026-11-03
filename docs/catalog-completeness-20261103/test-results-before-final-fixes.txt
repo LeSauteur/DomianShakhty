@@ -1,0 +1,16 @@
+Первый проход до последних исправлений. После исправлений НЕ повторялся.
+✖ existing inventory, protected people and established URLs remain unchanged (6.9172ms)
+✖ November apartments keep the supplied prices, photos and office provenance (13.846ms)
+✖ property description formatting preserves original records and technical facts (10.7959ms)
+ℹ tests 89
+ℹ suites 0
+ℹ pass 86
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4629.3799
+✖ failing tests:
+✖ existing inventory, protected people and established URLs remain unchanged (6.9172ms)
+✖ November apartments keep the supplied prices, photos and office provenance (13.846ms)
+✖ property description formatting preserves original records and technical facts (10.7959ms)

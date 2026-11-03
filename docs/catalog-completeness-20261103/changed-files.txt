@@ -1,0 +1,15 @@
+CODEX_HANDOFF.md
+docs/catalog-completeness-20261103/SEO_AEO_UPDATE.md
+docs/catalog-completeness-20261103/TASK.md
+docs/catalog-completeness-20261103/changed-files.txt
+docs/catalog-completeness-20261103/test-results-before-final-fixes.txt
+scripts/build.mjs
+scripts/update-listing-publication.mjs
+src/data/listing.schema.json
+src/data/listings.json
+src/listing-publication.mjs
+src/templates.mjs
+tests/content-expansion.test.mjs
+tests/content-november.test.mjs
+tests/fixtures/listing-publication-20261103.json
+tests/public-copy.test.mjs
