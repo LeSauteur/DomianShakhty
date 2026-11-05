@@ -1,11 +1,12 @@
 export const PUBLICATION_DATE = '2026-11-03';
+export const CONTENT_UPDATED_AT = '2026-11-05';
 export const ACTIVE_LABEL = 'Актуально';
 export const OWNER_APPROVAL = Object.freeze({
   date: PUBLICATION_DATE, basis: 'owner-decision', scope: 'continued-publication',
   note: 'Решение владельца от 03.11.2026 о сохранении всех опубликованных объявлений; не индивидуальный осмотр или независимая проверка.'
 });
 export function publicationApproval(item) {
-  return {...item,status:'available',statusLabel:ACTIVE_LABEL,pageUpdatedAt:PUBLICATION_DATE,
+  return {...item,status:'available',statusLabel:ACTIVE_LABEL,pageUpdatedAt:CONTENT_UPDATED_AT,
     verifiedAt:item.verifiedAt||PUBLICATION_DATE,
     verifiedBy:item.verifiedBy||'Решение владельца от 03.11.2026: подтверждение дальнейшей публикации, не осмотр объекта',
     publicationApproval:{...OWNER_APPROVAL}};

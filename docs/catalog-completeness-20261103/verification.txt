@@ -1,0 +1,16 @@
+05.11.2026 — локальный QA, публикации нет
+Команда: npm run qa
+Exit: 0
+Built 199 canonical/technical HTML pages and 41 legacy redirects in dist.
+ℹ tests 92
+ℹ pass 92
+ℹ fail 0
+ℹ skipped 0
+SEO audit passed: 200 canonical/technical pages and 41 legacy redirects; valid metadata, links/media and production indexation rules.
+Donor-leak audit passed: no donor brands, cities or project names reached public source/output.
+Built 199 canonical/technical HTML pages and 41 legacy redirects in dist.
+  122 passed (4.4m)
+Built 199 canonical/technical HTML pages and 41 legacy redirects in dist.
+Дополнительно: npx playwright test tests/listing-publication.spec.js — 2 passed
+Итого browser: 124 passed
+Git diff --check относительно 9b719f3: PASS
