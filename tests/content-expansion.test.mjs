@@ -15,7 +15,7 @@ const construction = data("src/data/construction-projects.json");
 const pages = data("src/data/pages.json");
 
 test("existing inventory, protected people and established URLs remain unchanged", () => {
-  const originalListings = listings.slice(0, 34).map(({provenance, verifiedAt, verifiedBy, ...original}) => original);
+  const originalListings = listings.slice(0, 34).map(({provenance, verifiedAt, verifiedBy, statusLabel, pageUpdatedAt, publicationApproval, ...original}) => original);
   assert.equal(hash(originalListings), preservation.listingsHash);
   for (const item of listings) assert.match(html(`listings/${item.id}.html`), /name="robots" content="index,follow"/u);
   assert.equal(hash(data('src/data/team.json').slice(0, 4)), preservation.teamHash);

@@ -8,6 +8,7 @@ test("every legacy URL reaches its exact canonical destination after the browser
   for (const entry of entries) {
     await page.goto(entry.from);
     await expect(page).toHaveURL(new URL(entry.to, base).href);
+    await page.waitForLoadState("load");
     await expect(page.locator("h1")).toBeVisible();
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `https://xn--80aakqtid1b0a2a0b.xn--p1ai/${entry.to}`);
   }
@@ -21,6 +22,8 @@ test.describe("redirects without JavaScript", () => {
       const entry = entries.find(entry => entry.from.split("/").pop().startsWith(prefix));
       await page.goto(entry.from);
       await expect(page).toHaveURL(new URL(entry.to, base).href);
+      await page.waitForLoadState("load");
+      await page.evaluate(async () => { await document.fonts.ready; });
       await expect(page.locator("h1")).toBeVisible();
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
     }
