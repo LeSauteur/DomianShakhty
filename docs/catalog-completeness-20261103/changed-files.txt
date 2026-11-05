@@ -14,6 +14,7 @@ src/templates.mjs
 tests/content-expansion.test.mjs
 tests/content-november.test.mjs
 tests/fixtures/listing-publication-20261103.json
+tests/legacy-redirects.spec.js
 tests/listing-publication.spec.js
 tests/listing-publication.test.mjs
 tests/public-copy.test.mjs
