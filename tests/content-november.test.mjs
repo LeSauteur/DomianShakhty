@@ -23,9 +23,9 @@ test('November apartments keep the supplied prices, photos and office provenance
 test('new specialists expose their own contacts and supplied portraits without invented email', () => {
   const inessa = html('team/inessa-kovaleva.html');
   for (const contact of ['tel:+79613300933', 'tel:+79001219244', 'mailto:innakovaleva75@mail.ru']) assert.ok(inessa.includes(contact));
-  assert.match(inessa, /inessa-kovaleva-360.webp/u);
-  assert.match(inessa, /inessa-kovaleva-640.webp/u);
-  assert.match(inessa, /inessa-kovaleva-960.webp/u);
+  assert.match(inessa, /inessa-kovaleva-20261106-360.webp/u);
+  assert.match(inessa, /inessa-kovaleva-20261106-640.webp/u);
+  assert.match(inessa, /inessa-kovaleva-20261106-960.webp/u);
   assert.doesNotMatch(inessa, /class="person-initials"/u);
   const roman = html('team/roman-roslyakov.html');
   assert.ok(roman.includes('tel:+79001889888'));
@@ -45,5 +45,9 @@ test('new specialists expose their own contacts and supplied portraits without i
   assert.match(ksenia, /Цыганкова Ксения Петровна/u);
   assert.match(ksenia, /Вся Ростовская область/u);
   assert.match(ksenia, /ksenia-tsygankova-640.webp/u);
-  assert.match(html('team/index.html'), /8 специалистов/u);
+  const elena = html('team/elena-salnikova.html');
+  for (const contact of ['tel:+79043454119', 'mailto:salnikova.80@list.ru']) assert.ok(elena.includes(contact));
+  assert.match(elena, /Сальникова Елена Ивановна/u);
+  assert.match(elena, /elena-salnikova-640.webp/u);
+  assert.match(html('team/index.html'), /9 специалистов/u);
 });
