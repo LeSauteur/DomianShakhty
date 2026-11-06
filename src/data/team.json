@@ -237,21 +237,21 @@
       "Защита ваших интересов на переговорах и помощь в получении выгодных условий продажи"
     ],
     "image": {
-      "original": "assets/images/inessa-kovaleva-original.png",
-      "fallback": "assets/images/inessa-kovaleva-640.webp",
+      "original": "assets/images/inessa-kovaleva-20261106-original.png",
+      "fallback": "assets/images/inessa-kovaleva-20261106-640.webp",
       "width": 640,
       "height": 800,
       "srcset": [
         {
-          "src": "assets/images/inessa-kovaleva-360.webp",
+          "src": "assets/images/inessa-kovaleva-20261106-360.webp",
           "width": 360
         },
         {
-          "src": "assets/images/inessa-kovaleva-640.webp",
+          "src": "assets/images/inessa-kovaleva-20261106-640.webp",
           "width": 640
         },
         {
-          "src": "assets/images/inessa-kovaleva-960.webp",
+          "src": "assets/images/inessa-kovaleva-20261106-960.webp",
           "width": 960
         }
       ],
@@ -462,6 +462,65 @@
         }
       ],
       "alt": "Цыганкова Ксения Петровна, эксперт по недвижимости Домиан на Маяковского"
+    }
+  },
+  {
+    "id": "elena-salnikova",
+    "slug": "elena-salnikova",
+    "name": "Сальникова Елена Ивановна",
+    "shortName": "Елена Сальникова",
+    "firstName": "Елена",
+    "nameDative": "Елене",
+    "nameInstrumental": "Еленой",
+    "nameGenitive": "Елены",
+    "initials": "ЕС",
+    "role": "Эксперт в сфере недвижимости в АН Домиан на Маяковского",
+    "office": "Домиан · Шахты на Маяковского",
+    "city": "Шахты",
+    "phone": "+7 (904) 345-41-19",
+    "phoneHref": "tel:+79043454119",
+    "email": "salnikova.80@list.ru",
+    "lead": "Профессиональный подход и внимание к каждой детали сделки. Чёткое понимание потребностей каждого клиента и успешная реализация всех пожеланий.",
+    "directions": [
+      "Дома",
+      "Земельные участки",
+      "Строительство домов"
+    ],
+    "serviceAreas": [
+      "Шахты"
+    ],
+    "heroFacts": [
+      "дома · земельные участки",
+      "строительство домов",
+      "офис на Маяковского"
+    ],
+    "skills": [
+      "Профессиональный подход и внимание к каждой детали сделки",
+      "Умение быстро анализировать рынок и предлагать оптимальные варианты",
+      "Чёткое понимание потребностей каждого клиента и успешная реализация всех пожеланий",
+      "Постоянное развитие и стремление совершенствовать свою работу"
+    ],
+    "verified": true,
+    "image": {
+      "original": "assets/images/elena-salnikova-original.png",
+      "fallback": "assets/images/elena-salnikova-640.webp",
+      "width": 640,
+      "height": 800,
+      "srcset": [
+        {
+          "src": "assets/images/elena-salnikova-360.webp",
+          "width": 360
+        },
+        {
+          "src": "assets/images/elena-salnikova-640.webp",
+          "width": 640
+        },
+        {
+          "src": "assets/images/elena-salnikova-960.webp",
+          "width": 960
+        }
+      ],
+      "alt": "Сальникова Елена Ивановна, эксперт по недвижимости Домиан на Маяковского"
     }
   }
 ]
