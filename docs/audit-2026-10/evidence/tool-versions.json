@@ -1,0 +1,11 @@
+{
+  "node": "v24.14.0",
+  "platform": "win32",
+  "architecture": "x64",
+  "playwright": "1.62.1",
+  "lighthouse": "13.4.1",
+  "axe-core": "4.14.0",
+  "cheerio": "1.2.0",
+  "nspell": "2.1.5",
+  "dictionary-ru": "3.0.0"
+}

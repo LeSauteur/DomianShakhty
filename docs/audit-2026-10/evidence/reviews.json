@@ -1,0 +1,8 @@
+{
+  "before": null,
+  "dataSrc": "https://yandex.ru/maps-reviews-widget/6252687869?comments",
+  "after": "https://yandex.ru/maps-reviews-widget/6252687869?comments",
+  "route": [
+    "https://yandex.ru/maps/?rtext=~47.700263,40.204406&rtt=auto"
+  ]
+}

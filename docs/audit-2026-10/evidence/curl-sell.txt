@@ -1,0 +1,32 @@
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+
+  0      0   0      0   0      0      0      0           00:01              0
+  0  29673   0      0   0      0      0      0           00:01              0
+  0  29673   0      0   0      0      0      0           00:01              0
+  0  29673   0      0   0      0      0      0           00:01              0
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 29673
+Server: GitHub.com
+Content-Type: text/html; charset=utf-8
+x-origin-cache: HIT
+Last-Modified: Thu, 15 Oct 2026 15:06:09 GMT
+Access-Control-Allow-Origin: *
+ETag: "6ad0ebe1-73e9"
+expires: Mon, 19 Oct 2026 07:20:25 GMT
+Cache-Control: max-age=600
+x-proxy-cache: MISS
+X-GitHub-Request-Id: 628A:A60D6:6F30032:7041AC3:6AD5C261
+x-github-edge-region: fra
+Accept-Ranges: bytes
+Age: 0
+Date: Mon, 19 Oct 2026 07:10:25 GMT
+Via: 1.1 varnish
+X-Served-By: cache-fra-eddf8230180-FRA
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792393825.129334,VS0,VE121
+Vary: Accept-Encoding
+X-Fastly-Request-ID: ee42235da1acc0f69de2cd9f6fe6070c7a6642d7
+

@@ -1,0 +1,5 @@
+
+> domian-shakhty-static-site@1.0.0 build
+> node scripts/build.mjs
+
+Built 185 canonical/technical HTML pages and 41 legacy redirects in dist.

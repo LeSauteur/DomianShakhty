@@ -1,0 +1,7 @@
+﻿"file";"bytes";"keys";"review_keys"
+"dist/assets/data/builders.json";"3";"";""
+"dist/assets/data/listings.json";"74877";"id|type|format|verified|title|location|address|price|status|description|features|updatedAt|image|src|alt|width|height|gallery|provenance|verifiedAt|verifiedBy|area|rooms|floors|material|builder|landArea";"provenance|verifiedBy"
+"dist/assets/data/locations.json";"12448";"slug|name|namePrepositional|nameGenitive|neighbors|administrativeName|kicker|title|intro|context|houseScenario|idealFor|checks|types|relatedGuide";""
+"dist/assets/data/projects.json";"3";"";""
+"dist/assets/data/showcase.json";"4656";"id|category|categoryLabel|title|text|image|imageAlt";""
+"dist/assets/data/team.json";"8645";"id|slug|name|role|initials|phone|phoneHref|email|office|city|verified|image|alt|original|fallback|width|height|srcset|src|shortName|firstName|nameDative|nameInstrumental|nameGenitive|maxPhone|directions|serviceAreas|skills|heroFacts|secondaryPhone|secondaryPhoneHref|lead";"original"

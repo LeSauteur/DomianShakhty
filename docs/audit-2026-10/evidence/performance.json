@@ -1,0 +1,41 @@
+[
+  {
+    "file": "locations/kamenolomni.html",
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/kamenolomni.html",
+    "performance": 92,
+    "lcp": 2206.626,
+    "cls": 0,
+    "tbt": 249.00000000000023,
+    "bytes": 404020,
+    "requests": 12,
+    "fetchTime": "2026-10-19T07:21:12.201Z",
+    "version": "13.4.1",
+    "warnings": []
+  },
+  {
+    "file": "locations/kamenolomni.html",
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/kamenolomni.html",
+    "performance": 99,
+    "lcp": 1945.2803,
+    "cls": 0,
+    "tbt": 0,
+    "bytes": 403604,
+    "requests": 12,
+    "fetchTime": "2026-10-19T07:21:32.124Z",
+    "version": "13.4.1",
+    "warnings": []
+  },
+  {
+    "file": "locations/kamenolomni.html",
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/kamenolomni.html",
+    "performance": 99,
+    "lcp": 2036.5129,
+    "cls": 0,
+    "tbt": 18,
+    "bytes": 364877,
+    "requests": 12,
+    "fetchTime": "2026-10-19T07:21:47.685Z",
+    "version": "13.4.1",
+    "warnings": []
+  }
+]

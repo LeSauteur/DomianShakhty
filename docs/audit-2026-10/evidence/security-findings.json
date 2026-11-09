@@ -1,0 +1,13 @@
+[
+  {
+    "id": "K-001",
+    "section": "K",
+    "marker": "FACT",
+    "severity": "low",
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/data/listings.json",
+    "issue": "Публичный JSON передаёт служебные provenance и verifiedBy",
+    "evidence": "public-json-fields.csv; build.mjs пишет исходные listing целиком; verifiedBy сейчас null",
+    "fix": "Определить явный публичный DTO; переносить только поля потребителей. Это минимизация публикации, не обнаруженный секрет",
+    "code": "scripts/build.mjs:136"
+  }
+]

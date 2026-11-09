@@ -1,0 +1,308 @@
+[
+  {
+    "id": "dom-chistovaya-kamenolomni",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 5670000,
+    "priceCsv": "5670000"
+  },
+  {
+    "id": "shk-a01-studio-olymp",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 2160000,
+    "priceCsv": "2160000"
+  },
+  {
+    "id": "shk-a02-budget-1k",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 2120000,
+    "priceCsv": "2120000"
+  },
+  {
+    "id": "shk-a03-hbk-1k",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 2790000,
+    "priceCsv": "2790000"
+  },
+  {
+    "id": "shk-a04-olymp-1k-aogv",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 3060000,
+    "priceCsv": "3060000"
+  },
+  {
+    "id": "shk-a05-center-renovated-1k",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 3680000,
+    "priceCsv": "3680000"
+  },
+  {
+    "id": "shk-a06-budget-2k",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 2880000,
+    "priceCsv": "2880000"
+  },
+  {
+    "id": "shk-a07-hbk-brick-2k",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 3220000,
+    "priceCsv": "3220000"
+  },
+  {
+    "id": "shk-a08-aogv-2k",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 3960000,
+    "priceCsv": "3960000"
+  },
+  {
+    "id": "shk-a09-sotsgorodok-2k",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 4410000,
+    "priceCsv": "4410000"
+  },
+  {
+    "id": "shk-a10-budget-3k",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 2900000,
+    "priceCsv": "2900000"
+  },
+  {
+    "id": "shk-a11-hbk-family-3k",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 4030000,
+    "priceCsv": "4030000"
+  },
+  {
+    "id": "shk-a12-center-designer-3k",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 7920000,
+    "priceCsv": "7920000"
+  },
+  {
+    "id": "shk-a13-aleksandrovskiy-park",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 4800000,
+    "priceCsv": "4800000"
+  },
+  {
+    "id": "shk-h01-renovation-house",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 1140000,
+    "priceCsv": "1140000"
+  },
+  {
+    "id": "shk-h02-budget-house",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 1910000,
+    "priceCsv": "1910000"
+  },
+  {
+    "id": "shk-h03-artem-brick-house",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 4440000,
+    "priceCsv": "4440000"
+  },
+  {
+    "id": "shk-h04-garage-house",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 5280000,
+    "priceCsv": "5280000"
+  },
+  {
+    "id": "shk-h05-large-modern-house",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 6570000,
+    "priceCsv": "6570000"
+  },
+  {
+    "id": "shk-h06-city-designer-house",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 8090000,
+    "priceCsv": "8090000"
+  },
+  {
+    "id": "shk-l01-snt-plot",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 390000,
+    "priceCsv": "390000"
+  },
+  {
+    "id": "shk-l02-budget-izhs",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 610000,
+    "priceCsv": "610000"
+  },
+  {
+    "id": "shk-l03-artem-izhs",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 830000,
+    "priceCsv": "830000"
+  },
+  {
+    "id": "shk-l04-peripheral-large-plot",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 770000,
+    "priceCsv": "770000"
+  },
+  {
+    "id": "shk-l05-serviced-city-plot",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 2370000,
+    "priceCsv": "2370000"
+  },
+  {
+    "id": "shk-l06-regular-city-plot",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 2830000,
+    "priceCsv": "2830000"
+  },
+  {
+    "id": "shk-h07-two-houses-kamenolomni",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 5100000,
+    "priceCsv": "5100000"
+  },
+  {
+    "id": "shk-h08-two-houses-center",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 5500000,
+    "priceCsv": "5500000"
+  },
+  {
+    "id": "shk-a14-renovated-2k-43",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 5650000,
+    "priceCsv": "5650000"
+  },
+  {
+    "id": "shk-h09-renovated-76",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 3200000,
+    "priceCsv": "3200000"
+  },
+  {
+    "id": "shk-l07-corner-12-sot",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 1500000,
+    "priceCsv": "1500000"
+  },
+  {
+    "id": "shk-l08-goroda-budushchego-plot",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 2130000,
+    "priceCsv": "2130000"
+  },
+  {
+    "id": "shk-l09-serviced-8-sot",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 1400000,
+    "priceCsv": "1400000"
+  },
+  {
+    "id": "shk-l10-flat-6-sot",
+    "inCsv": true,
+    "title": true,
+    "address": true,
+    "price": true,
+    "priceField": 900000,
+    "priceCsv": "900000"
+  }
+]

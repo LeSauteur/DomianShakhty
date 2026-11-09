@@ -1,0 +1,2316 @@
+[
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "query",
+    "value": "audit-no-results-20261019",
+    "baseline": {
+      "visible": 14,
+      "count": "14",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 14,
+      "count": "14",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "query",
+    "value": "центр",
+    "baseline": {
+      "visible": 14,
+      "count": "14",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "after": {
+      "visible": 2,
+      "count": "2",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 14,
+      "count": "14",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "city",
+    "value": "shakhty",
+    "baseline": {
+      "visible": 14,
+      "count": "14",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "after": {
+      "visible": 14,
+      "count": "14",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 14,
+      "count": "14",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "rooms",
+    "value": "0",
+    "baseline": {
+      "visible": 14,
+      "count": "14",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "after": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 14,
+      "count": "14",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "rooms",
+    "value": "1",
+    "baseline": {
+      "visible": 14,
+      "count": "14",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "after": {
+      "visible": 5,
+      "count": "5",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 14,
+      "count": "14",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "rooms",
+    "value": "2",
+    "baseline": {
+      "visible": 14,
+      "count": "14",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "after": {
+      "visible": 5,
+      "count": "5",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 14,
+      "count": "14",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "rooms",
+    "value": "3plus",
+    "baseline": {
+      "visible": 14,
+      "count": "14",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "after": {
+      "visible": 3,
+      "count": "3",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 14,
+      "count": "14",
+      "url": "http://127.0.0.1:4186/apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/construction.html",
+    "kind": "product",
+    "root": 0,
+    "field": "query",
+    "value": "audit-no-results-20261019",
+    "baseline": {
+      "visible": 26,
+      "count": "26",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "countCorrect": true,
+    "emptyText": "Проектов по фильтрам не найденоИзмените диапазон или передайте задачу для индивидуального разбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 26,
+      "count": "26",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/construction.html",
+    "kind": "product",
+    "root": 0,
+    "field": "query",
+    "value": "центр",
+    "baseline": {
+      "visible": 26,
+      "count": "26",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "countCorrect": true,
+    "emptyText": "Проектов по фильтрам не найденоИзмените диапазон или передайте задачу для индивидуального разбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 26,
+      "count": "26",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/construction.html",
+    "kind": "product",
+    "root": 0,
+    "field": "area",
+    "value": "0-89.99",
+    "baseline": {
+      "visible": 26,
+      "count": "26",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "after": {
+      "visible": 8,
+      "count": "8",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "countCorrect": true,
+    "emptyText": "Проектов по фильтрам не найденоИзмените диапазон или передайте задачу для индивидуального разбора.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 26,
+      "count": "26",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/construction.html",
+    "kind": "product",
+    "root": 0,
+    "field": "area",
+    "value": "90-129.99",
+    "baseline": {
+      "visible": 26,
+      "count": "26",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "after": {
+      "visible": 11,
+      "count": "11",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "countCorrect": true,
+    "emptyText": "Проектов по фильтрам не найденоИзмените диапазон или передайте задачу для индивидуального разбора.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 26,
+      "count": "26",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/construction.html",
+    "kind": "product",
+    "root": 0,
+    "field": "area",
+    "value": "130-9999",
+    "baseline": {
+      "visible": 26,
+      "count": "26",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "after": {
+      "visible": 7,
+      "count": "7",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "countCorrect": true,
+    "emptyText": "Проектов по фильтрам не найденоИзмените диапазон или передайте задачу для индивидуального разбора.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 26,
+      "count": "26",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/construction.html",
+    "kind": "product",
+    "root": 0,
+    "field": "floors",
+    "value": "1",
+    "baseline": {
+      "visible": 26,
+      "count": "26",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "after": {
+      "visible": 22,
+      "count": "22",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "countCorrect": true,
+    "emptyText": "Проектов по фильтрам не найденоИзмените диапазон или передайте задачу для индивидуального разбора.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 26,
+      "count": "26",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/construction.html",
+    "kind": "product",
+    "root": 0,
+    "field": "floors",
+    "value": "2",
+    "baseline": {
+      "visible": 26,
+      "count": "26",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "after": {
+      "visible": 4,
+      "count": "4",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "countCorrect": true,
+    "emptyText": "Проектов по фильтрам не найденоИзмените диапазон или передайте задачу для индивидуального разбора.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 26,
+      "count": "26",
+      "url": "http://127.0.0.1:4186/construction.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/houses.html",
+    "kind": "product",
+    "root": 0,
+    "field": "query",
+    "value": "audit-no-results-20261019",
+    "baseline": {
+      "visible": 10,
+      "count": "10",
+      "url": "http://127.0.0.1:4186/houses.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/houses.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 10,
+      "count": "10",
+      "url": "http://127.0.0.1:4186/houses.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/houses.html",
+    "kind": "product",
+    "root": 0,
+    "field": "query",
+    "value": "центр",
+    "baseline": {
+      "visible": 10,
+      "count": "10",
+      "url": "http://127.0.0.1:4186/houses.html"
+    },
+    "after": {
+      "visible": 6,
+      "count": "6",
+      "url": "http://127.0.0.1:4186/houses.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 10,
+      "count": "10",
+      "url": "http://127.0.0.1:4186/houses.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/houses.html",
+    "kind": "product",
+    "root": 0,
+    "field": "city",
+    "value": "kamenolomni",
+    "baseline": {
+      "visible": 10,
+      "count": "10",
+      "url": "http://127.0.0.1:4186/houses.html"
+    },
+    "after": {
+      "visible": 2,
+      "count": "2",
+      "url": "http://127.0.0.1:4186/houses.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 10,
+      "count": "10",
+      "url": "http://127.0.0.1:4186/houses.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/houses.html",
+    "kind": "product",
+    "root": 0,
+    "field": "city",
+    "value": "shakhty",
+    "baseline": {
+      "visible": 10,
+      "count": "10",
+      "url": "http://127.0.0.1:4186/houses.html"
+    },
+    "after": {
+      "visible": 8,
+      "count": "8",
+      "url": "http://127.0.0.1:4186/houses.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 10,
+      "count": "10",
+      "url": "http://127.0.0.1:4186/houses.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/lands.html",
+    "kind": "product",
+    "root": 0,
+    "field": "query",
+    "value": "audit-no-results-20261019",
+    "baseline": {
+      "visible": 10,
+      "count": "10",
+      "url": "http://127.0.0.1:4186/lands.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/lands.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 10,
+      "count": "10",
+      "url": "http://127.0.0.1:4186/lands.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/lands.html",
+    "kind": "product",
+    "root": 0,
+    "field": "query",
+    "value": "центр",
+    "baseline": {
+      "visible": 10,
+      "count": "10",
+      "url": "http://127.0.0.1:4186/lands.html"
+    },
+    "after": {
+      "visible": 2,
+      "count": "2",
+      "url": "http://127.0.0.1:4186/lands.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 10,
+      "count": "10",
+      "url": "http://127.0.0.1:4186/lands.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/lands.html",
+    "kind": "product",
+    "root": 0,
+    "field": "city",
+    "value": "shakhty",
+    "baseline": {
+      "visible": 10,
+      "count": "10",
+      "url": "http://127.0.0.1:4186/lands.html"
+    },
+    "after": {
+      "visible": 10,
+      "count": "10",
+      "url": "http://127.0.0.1:4186/lands.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 10,
+      "count": "10",
+      "url": "http://127.0.0.1:4186/lands.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/ayutinskiy.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "apartments",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html?type=apartments"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Аюте доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/ayutinskiy.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "houses",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html?type=houses"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Аюте доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/ayutinskiy.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "lands",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html?type=lands"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Аюте доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/ayutinskiy.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "commercial",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html?type=commercial"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Аюте доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/ayutinskiy.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "parking",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html?type=parking"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Аюте доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/ayutinskiy.html",
+    "kind": "location",
+    "root": 0,
+    "field": "priceMin",
+    "value": "999999999",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html?priceMin=999999999"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Аюте доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/ayutinskiy.html",
+    "kind": "location",
+    "root": 0,
+    "field": "priceMax",
+    "value": "999999999",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html?priceMax=999999999"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Аюте доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/ayutinskiy.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/kamenolomni.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "apartments",
+    "baseline": {
+      "visible": 2,
+      "count": "2",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html?type=apartments"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Каменоломнях доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 2,
+      "count": "2",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/kamenolomni.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "houses",
+    "baseline": {
+      "visible": 2,
+      "count": "2",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html"
+    },
+    "after": {
+      "visible": 2,
+      "count": "2",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html?type=houses"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Каменоломнях доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 2,
+      "count": "2",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/kamenolomni.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "lands",
+    "baseline": {
+      "visible": 2,
+      "count": "2",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html?type=lands"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Каменоломнях доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 2,
+      "count": "2",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/kamenolomni.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "commercial",
+    "baseline": {
+      "visible": 2,
+      "count": "2",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html?type=commercial"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Каменоломнях доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 2,
+      "count": "2",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/kamenolomni.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "parking",
+    "baseline": {
+      "visible": 2,
+      "count": "2",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html?type=parking"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Каменоломнях доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 2,
+      "count": "2",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/kamenolomni.html",
+    "kind": "location",
+    "root": 0,
+    "field": "priceMin",
+    "value": "999999999",
+    "baseline": {
+      "visible": 2,
+      "count": "2",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html?priceMin=999999999"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Каменоломнях доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 2,
+      "count": "2",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/kamenolomni.html",
+    "kind": "location",
+    "root": 0,
+    "field": "priceMax",
+    "value": "999999999",
+    "baseline": {
+      "visible": 2,
+      "count": "2",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html"
+    },
+    "after": {
+      "visible": 2,
+      "count": "2",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html?priceMax=999999999"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Каменоломнях доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 2,
+      "count": "2",
+      "url": "http://127.0.0.1:4186/locations/kamenolomni.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/krasnyy-sulin.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "apartments",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html?type=apartments"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Красном Сулине доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/krasnyy-sulin.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "houses",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html?type=houses"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Красном Сулине доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/krasnyy-sulin.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "lands",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html?type=lands"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Красном Сулине доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/krasnyy-sulin.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "commercial",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html?type=commercial"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Красном Сулине доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/krasnyy-sulin.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "parking",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html?type=parking"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Красном Сулине доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/krasnyy-sulin.html",
+    "kind": "location",
+    "root": 0,
+    "field": "priceMin",
+    "value": "999999999",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html?priceMin=999999999"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Красном Сулине доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/krasnyy-sulin.html",
+    "kind": "location",
+    "root": 0,
+    "field": "priceMax",
+    "value": "999999999",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html?priceMax=999999999"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Красном Сулине доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/krasnyy-sulin.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/novoshakhtinsk.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "apartments",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html?type=apartments"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Новошахтинске доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/novoshakhtinsk.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "houses",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html?type=houses"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Новошахтинске доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/novoshakhtinsk.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "lands",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html?type=lands"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Новошахтинске доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/novoshakhtinsk.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "commercial",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html?type=commercial"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Новошахтинске доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/novoshakhtinsk.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "parking",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html?type=parking"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Новошахтинске доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/novoshakhtinsk.html",
+    "kind": "location",
+    "root": 0,
+    "field": "priceMin",
+    "value": "999999999",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html?priceMin=999999999"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Новошахтинске доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/novoshakhtinsk.html",
+    "kind": "location",
+    "root": 0,
+    "field": "priceMax",
+    "value": "999999999",
+    "baseline": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html?priceMax=999999999"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Новошахтинске доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/novoshakhtinsk.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/shakhty.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "apartments",
+    "baseline": {
+      "visible": 32,
+      "count": "32",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html"
+    },
+    "after": {
+      "visible": 14,
+      "count": "14",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html?type=apartments"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Шахтах доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 32,
+      "count": "32",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/shakhty.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "houses",
+    "baseline": {
+      "visible": 32,
+      "count": "32",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html"
+    },
+    "after": {
+      "visible": 8,
+      "count": "8",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html?type=houses"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Шахтах доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 32,
+      "count": "32",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/shakhty.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "lands",
+    "baseline": {
+      "visible": 32,
+      "count": "32",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html"
+    },
+    "after": {
+      "visible": 10,
+      "count": "10",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html?type=lands"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Шахтах доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 32,
+      "count": "32",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/shakhty.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "commercial",
+    "baseline": {
+      "visible": 32,
+      "count": "32",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html?type=commercial"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Шахтах доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 32,
+      "count": "32",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/shakhty.html",
+    "kind": "location",
+    "root": 0,
+    "field": "type",
+    "value": "parking",
+    "baseline": {
+      "visible": 32,
+      "count": "32",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html?type=parking"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Шахтах доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 32,
+      "count": "32",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/shakhty.html",
+    "kind": "location",
+    "root": 0,
+    "field": "priceMin",
+    "value": "999999999",
+    "baseline": {
+      "visible": 32,
+      "count": "32",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html?priceMin=999999999"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Шахтах доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 32,
+      "count": "32",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/locations/shakhty.html",
+    "kind": "location",
+    "root": 0,
+    "field": "priceMax",
+    "value": "999999999",
+    "baseline": {
+      "visible": 32,
+      "count": "32",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html"
+    },
+    "after": {
+      "visible": 32,
+      "count": "32",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html?priceMax=999999999"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным критериям в Шахтах доступных объектов каталога сейчас нет. Можно проверить предложения рядом или передать критерии для актуального подбора.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 32,
+      "count": "32",
+      "url": "http://127.0.0.1:4186/locations/shakhty.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/new-build-apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "query",
+    "value": "audit-no-results-20261019",
+    "baseline": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/new-build-apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "query",
+    "value": "центр",
+    "baseline": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/new-build-apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "city",
+    "value": "shakhty",
+    "baseline": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "after": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/new-build-apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "rooms",
+    "value": "0",
+    "baseline": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/new-build-apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "rooms",
+    "value": "1",
+    "baseline": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "after": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/new-build-apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "rooms",
+    "value": "2",
+    "baseline": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/new-build-apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "rooms",
+    "value": "3plus",
+    "baseline": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/new-build-apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/newbuilds.html",
+    "kind": "product",
+    "root": 0,
+    "field": "query",
+    "value": "audit-no-results-20261019",
+    "baseline": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По этим условиям комплексов не найденоСбросьте часть фильтров или передайте критерии — офис уточнит доступные варианты.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/newbuilds.html",
+    "kind": "product",
+    "root": 0,
+    "field": "query",
+    "value": "центр",
+    "baseline": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По этим условиям комплексов не найденоСбросьте часть фильтров или передайте критерии — офис уточнит доступные варианты.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/newbuilds.html",
+    "kind": "product",
+    "root": 0,
+    "field": "city",
+    "value": "Азов",
+    "baseline": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "after": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По этим условиям комплексов не найденоСбросьте часть фильтров или передайте критерии — офис уточнит доступные варианты.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/newbuilds.html",
+    "kind": "product",
+    "root": 0,
+    "field": "city",
+    "value": "Аксай",
+    "baseline": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "after": {
+      "visible": 4,
+      "count": "4",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По этим условиям комплексов не найденоСбросьте часть фильтров или передайте критерии — офис уточнит доступные варианты.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/newbuilds.html",
+    "kind": "product",
+    "root": 0,
+    "field": "city",
+    "value": "Батайск",
+    "baseline": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "after": {
+      "visible": 7,
+      "count": "7",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По этим условиям комплексов не найденоСбросьте часть фильтров или передайте критерии — офис уточнит доступные варианты.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/newbuilds.html",
+    "kind": "product",
+    "root": 0,
+    "field": "city",
+    "value": "посёлок Койсуг",
+    "baseline": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "after": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По этим условиям комплексов не найденоСбросьте часть фильтров или передайте критерии — офис уточнит доступные варианты.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/newbuilds.html",
+    "kind": "product",
+    "root": 0,
+    "field": "city",
+    "value": "посёлок Темерницкий",
+    "baseline": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "after": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По этим условиям комплексов не найденоСбросьте часть фильтров или передайте критерии — офис уточнит доступные варианты.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/newbuilds.html",
+    "kind": "product",
+    "root": 0,
+    "field": "city",
+    "value": "Ростов-на-Дону",
+    "baseline": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "after": {
+      "visible": 63,
+      "count": "63",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По этим условиям комплексов не найденоСбросьте часть фильтров или передайте критерии — офис уточнит доступные варианты.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/newbuilds.html",
+    "kind": "product",
+    "root": 0,
+    "field": "city",
+    "value": "unknown",
+    "baseline": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "after": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По этим условиям комплексов не найденоСбросьте часть фильтров или передайте критерии — офис уточнит доступные варианты.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/newbuilds.html",
+    "kind": "product",
+    "root": 0,
+    "field": "status",
+    "value": "building",
+    "baseline": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "after": {
+      "visible": 9,
+      "count": "9",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По этим условиям комплексов не найденоСбросьте часть фильтров или передайте критерии — офис уточнит доступные варианты.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/newbuilds.html",
+    "kind": "product",
+    "root": 0,
+    "field": "status",
+    "value": "ready",
+    "baseline": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "after": {
+      "visible": 38,
+      "count": "38",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По этим условиям комплексов не найденоСбросьте часть фильтров или передайте критерии — офис уточнит доступные варианты.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/newbuilds.html",
+    "kind": "product",
+    "root": 0,
+    "field": "status",
+    "value": "clarify",
+    "baseline": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "after": {
+      "visible": 31,
+      "count": "31",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По этим условиям комплексов не найденоСбросьте часть фильтров или передайте критерии — офис уточнит доступные варианты.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/newbuilds.html",
+    "kind": "product",
+    "root": 0,
+    "field": "completeness",
+    "value": "complete",
+    "baseline": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "after": {
+      "visible": 20,
+      "count": "20",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По этим условиям комплексов не найденоСбросьте часть фильтров или передайте критерии — офис уточнит доступные варианты.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/newbuilds.html",
+    "kind": "product",
+    "root": 0,
+    "field": "completeness",
+    "value": "partial",
+    "baseline": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "after": {
+      "visible": 5,
+      "count": "5",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По этим условиям комплексов не найденоСбросьте часть фильтров или передайте критерии — офис уточнит доступные варианты.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/newbuilds.html",
+    "kind": "product",
+    "root": 0,
+    "field": "completeness",
+    "value": "needs_review",
+    "baseline": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "after": {
+      "visible": 53,
+      "count": "53",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По этим условиям комплексов не найденоСбросьте часть фильтров или передайте критерии — офис уточнит доступные варианты.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 78,
+      "count": "78",
+      "url": "http://127.0.0.1:4186/newbuilds.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/secondary-apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "query",
+    "value": "audit-no-results-20261019",
+    "baseline": {
+      "visible": 13,
+      "count": "13",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 13,
+      "count": "13",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/secondary-apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "query",
+    "value": "центр",
+    "baseline": {
+      "visible": 13,
+      "count": "13",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "after": {
+      "visible": 2,
+      "count": "2",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 13,
+      "count": "13",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/secondary-apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "city",
+    "value": "shakhty",
+    "baseline": {
+      "visible": 13,
+      "count": "13",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "after": {
+      "visible": 13,
+      "count": "13",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 13,
+      "count": "13",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/secondary-apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "rooms",
+    "value": "0",
+    "baseline": {
+      "visible": 13,
+      "count": "13",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "after": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 13,
+      "count": "13",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/secondary-apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "rooms",
+    "value": "1",
+    "baseline": {
+      "visible": 13,
+      "count": "13",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "after": {
+      "visible": 4,
+      "count": "4",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 13,
+      "count": "13",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/secondary-apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "rooms",
+    "value": "2",
+    "baseline": {
+      "visible": 13,
+      "count": "13",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "after": {
+      "visible": 5,
+      "count": "5",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 13,
+      "count": "13",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/secondary-apartments.html",
+    "kind": "product",
+    "root": 0,
+    "field": "rooms",
+    "value": "3plus",
+    "baseline": {
+      "visible": 13,
+      "count": "13",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "after": {
+      "visible": 3,
+      "count": "3",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 13,
+      "count": "13",
+      "url": "http://127.0.0.1:4186/secondary-apartments.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/secondary-houses.html",
+    "kind": "product",
+    "root": 0,
+    "field": "query",
+    "value": "audit-no-results-20261019",
+    "baseline": {
+      "visible": 9,
+      "count": "9",
+      "url": "http://127.0.0.1:4186/secondary-houses.html"
+    },
+    "after": {
+      "visible": 0,
+      "count": "0",
+      "url": "http://127.0.0.1:4186/secondary-houses.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": true,
+    "reset": {
+      "visible": 9,
+      "count": "9",
+      "url": "http://127.0.0.1:4186/secondary-houses.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/secondary-houses.html",
+    "kind": "product",
+    "root": 0,
+    "field": "query",
+    "value": "центр",
+    "baseline": {
+      "visible": 9,
+      "count": "9",
+      "url": "http://127.0.0.1:4186/secondary-houses.html"
+    },
+    "after": {
+      "visible": 5,
+      "count": "5",
+      "url": "http://127.0.0.1:4186/secondary-houses.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 9,
+      "count": "9",
+      "url": "http://127.0.0.1:4186/secondary-houses.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/secondary-houses.html",
+    "kind": "product",
+    "root": 0,
+    "field": "city",
+    "value": "kamenolomni",
+    "baseline": {
+      "visible": 9,
+      "count": "9",
+      "url": "http://127.0.0.1:4186/secondary-houses.html"
+    },
+    "after": {
+      "visible": 1,
+      "count": "1",
+      "url": "http://127.0.0.1:4186/secondary-houses.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 9,
+      "count": "9",
+      "url": "http://127.0.0.1:4186/secondary-houses.html"
+    },
+    "resetCorrect": true
+  },
+  {
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/secondary-houses.html",
+    "kind": "product",
+    "root": 0,
+    "field": "city",
+    "value": "shakhty",
+    "baseline": {
+      "visible": 9,
+      "count": "9",
+      "url": "http://127.0.0.1:4186/secondary-houses.html"
+    },
+    "after": {
+      "visible": 8,
+      "count": "8",
+      "url": "http://127.0.0.1:4186/secondary-houses.html"
+    },
+    "countCorrect": true,
+    "emptyText": "По выбранным фильтрам предложений нет. Измените критерии или свяжитесь с офисом.",
+    "emptyVisible": false,
+    "reset": {
+      "visible": 9,
+      "count": "9",
+      "url": "http://127.0.0.1:4186/secondary-houses.html"
+    },
+    "resetCorrect": true
+  }
+]

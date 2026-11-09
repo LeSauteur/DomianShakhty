@@ -1,0 +1,24 @@
+[
+  {
+    "id": "D-001",
+    "section": "D",
+    "marker": "FACT",
+    "severity": "low",
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/assets/images/og.png",
+    "issue": "OG PNG по-прежнему весит 1 442 705 байт",
+    "evidence": "top-30-files.csv; asset-inventory.csv; src/templates.mjs:718",
+    "fix": "Сжать PNG или подготовить JPEG/WebP с проверкой социальных превью; согласованно обновить метаданные и тесты",
+    "code": "assets/images/og.png / src/templates.mjs:718"
+  },
+  {
+    "id": "D-002",
+    "section": "D",
+    "marker": "INF",
+    "severity": "low",
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/apartments.html",
+    "issue": "Часть изображений загружается с шириной более 2× отображаемой при DPR=1",
+    "evidence": "oversized-images.csv: 882 записей; currentSrc/natural/rendered в browser/*.json",
+    "fix": "Для повторяющихся карточек добавить srcset/sizes; сохранить оригинал для галереи, измерить сетевую экономию",
+    "code": "src/templates.mjs listingCard/picture"
+  }
+]

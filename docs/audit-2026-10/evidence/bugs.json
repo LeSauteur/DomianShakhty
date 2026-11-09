@@ -1,0 +1,72 @@
+[
+  {
+    "id": "B-001",
+    "marker": "FACT",
+    "section": "B",
+    "severity": "medium",
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/",
+    "viewport": "390/1440",
+    "steps": "Осмотреть form[data-lead-form][data-lead-compact]",
+    "expected": "Есть honeypot botcheck как в остальных формах",
+    "actual": "Поле botcheck отсутствует; 179 остальных форм его имеют",
+    "evidence": "evidence/forms.json file=index.html; src/templates.mjs:414",
+    "code": "src/templates.mjs:414",
+    "fix": "Добавить скрытый botcheck в короткую форму; сохранить отдельное согласие"
+  },
+  {
+    "id": "B-002",
+    "marker": "FACT",
+    "section": "B",
+    "severity": "medium",
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/mortgage.html",
+    "viewport": "1440",
+    "steps": "price=5000000; downPayment=1000000; rate=0; term=20",
+    "expected": "16667 ₽/мес либо явно обозначенная невозможность расчёта нулевой ставки",
+    "actual": "Введите ставку",
+    "evidence": "mortgage.csv, evidence/mortgage.json case 2",
+    "code": "assets/js/site.js:542",
+    "fix": "Поддержать P/n для ставки 0; отделить пустое поле от числового нуля"
+  },
+  {
+    "id": "B-003",
+    "marker": "FACT",
+    "section": "B",
+    "severity": "medium",
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/mortgage.html",
+    "viewport": "1440",
+    "steps": "price=1e100; downPayment=0; rate=1e100; term=1e100 (ввод/DOM input)",
+    "expected": "Ограничение допустимого диапазона и понятная ошибка",
+    "actual": "не число ₽ / мес.",
+    "evidence": "mortgage.csv, evidence/mortgage.json case 5",
+    "code": "assets/js/site.js:551",
+    "fix": "Ограничить диапазоны и проверять Number.isFinite(payment)"
+  },
+  {
+    "id": "B-004",
+    "marker": "FACT",
+    "section": "B",
+    "severity": "medium",
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/team/maria-voronina.html",
+    "viewport": "390/768/1440 — affected combinations in consent-overlaps.csv",
+    "steps": "Новый посетитель без выбора consent; открыть профиль 390×844 либо затронутые URL/viewport из таблицы",
+    "expected": "Баннер выбора не перекрывает H1/CTA/фильтр первого экрана",
+    "actual": "Подтверждено 91 сочетание URL/viewport на 86 страницах; центр элементов перекрыт analytics-consent. После «Отказаться» перекрытий 0",
+    "evidence": "consent-overlaps.csv; evidence/consent-recheck.json; screenshots/cookie-overlay-profile-390.png",
+    "code": "assets/css/site.css .analytics-consent; assets/js/site.js initAnalyticsConsent",
+    "fix": "Согласовать размещение/размер баннера и резерв пространства; проверить его вместе с drawer/CTA на всех размерах. Не убирать выбор и не включать аналитику по умолчанию"
+  },
+  {
+    "id": "B-005",
+    "section": "B",
+    "marker": "FACT",
+    "severity": "medium",
+    "url": "https://xn--80aakqtid1b0a2a0b.xn--p1ai/",
+    "viewport": "общий обработчик всех форм",
+    "steps": "normalizePhone(\"0000000000\") и normalizePhone(\"+7abc9991234567\")",
+    "expected": "Отказ для буквенного/явно пустого по смыслу номера; понятная ошибка поля",
+    "actual": "Возвращаются +70000000000 и +79991234567; форматирующей маски при вводе нет",
+    "evidence": "evidence/phone-normalization.json; assets/js/form-handler.js:15",
+    "code": "assets/js/form-handler.js:15",
+    "fix": "Отделить допустимое форматирование от букв/невозможных значений; сохранять явно указанный международный префикс, добавить независимые граничные тесты"
+  }
+]

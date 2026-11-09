@@ -1,0 +1,17 @@
+{
+  noConsent: { ym: 'undefined', tagRequests: 0, banner: 1 },
+  accepted: { calls: [ [Array], [Array] ], tags: 1 },
+  clickEvents: [
+    [ 'phone_click', true ],
+    [ 'email_click', true ],
+    [ 'telegram_click', true ],
+    [ 'max_click', true ],
+    [ 'property_card_open', true ],
+    [ 'guide_to_catalog', true ]
+  ],
+  formEvents: [
+    [ 112739000, 'reachGoal', 'lead_form_submit_attempt', [Object] ],
+    [ 112739000, 'reachGoal', 'lead_form_success', [Object] ]
+  ],
+  declined: { tagRequests: 0, ym: 'undefined' }
+}
