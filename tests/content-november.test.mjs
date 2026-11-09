@@ -49,5 +49,11 @@ test('new specialists expose their own contacts and supplied portraits without i
   for (const contact of ['tel:+79043454119', 'mailto:salnikova.80@list.ru']) assert.ok(elena.includes(contact));
   assert.match(elena, /Сальникова Елена Ивановна/u);
   assert.match(elena, /elena-salnikova-640.webp/u);
-  assert.match(html('team/index.html'), /9 специалистов/u);
+  const dmitry = html('team/dmitry-shevchenko.html');
+  for (const contact of ['tel:+79001215017', 'mailto:79081818800@yandex.ru']) assert.ok(dmitry.includes(contact));
+  assert.match(dmitry, /Дмитрий Шевченко/u);
+  assert.match(dmitry, /Новостройки по всей России/u);
+  assert.match(dmitry, /эскроу-счётом/u);
+  assert.match(dmitry, /dmitry-shevchenko-640\.webp/u);
+  assert.match(html('team/index.html'), /10 специалистов/u);
 });
