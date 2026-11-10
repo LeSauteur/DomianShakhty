@@ -568,9 +568,30 @@ test("homepage keeps one request form and links to the separate mortgage calcula
   await expect(page.locator('[data-home-section="services"] a[href="/mortgage.html"]')).toBeVisible();
   await expect(page.locator("[data-showcase-card]")).toHaveCount(0);
   const sections = await page.locator("main > section").evaluateAll(nodes => nodes.map(node => node.getAttribute("data-home-section") || "hero"));
-  expect(sections).toEqual(["hero", "buyer-paths", "new-objects", "specials", "quick-search", "reviews", "services", "process", "rules", "team", "team-life", "newbuilds", "construction", "seller", "locations", "expertise", "faq", "request"]);
+  expect(sections).toEqual(["hero", "quick-search", "new-objects", "newbuilds", "buyer-paths", "construction", "specials", "reviews", "services", "process", "rules", "team", "team-life", "seller", "locations", "expertise", "faq", "request"]);
   await expect(page.locator('[data-home-section="newbuilds"] .editorial-card')).toHaveCount(3);
   await expect(page.locator('.home-newbuilds-benefit')).toHaveText("Подбор новостройки бесплатно — за вас платит застройщик");
+});
+
+test("homepage quick search opens the filtered inventory at its results", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("");
+  const search = page.getByRole("search", { name: "Быстрый подбор" });
+  await search.getByLabel("Тип недвижимости").selectOption("apartments");
+  await search.getByLabel("Территория").selectOption("shakhty");
+  await search.getByLabel("Бюджет до, ₽").fill("4000000");
+  await search.getByRole("button", { name: "Показать объекты" }).click();
+  const url = new URL(page.url());
+  expect(url.pathname).toBe("/catalog.html");
+  expect(url.hash).toBe("#catalog-results");
+  expect(Object.fromEntries(url.searchParams)).toEqual({ type: "apartments", city: "shakhty", priceMax: "4000000" });
+  const inventory = page.locator("#catalog-results");
+  await expect(inventory.locator("[name=city]")).toHaveValue("shakhty");
+  const cards = await inventory.locator("[data-product-card]:not([hidden])").evaluateAll(nodes =>
+    nodes.map(({ dataset }) => ({ type: dataset.type, city: dataset.city, price: Number(dataset.price) }))
+  );
+  expect(cards.length).toBeGreaterThan(0);
+  expect(cards.every(card => card.type === "apartments" && card.city === "shakhty" && card.price <= 4000000)).toBe(true);
 });
 
 test("homepage catalog showcases stay compact, truthful and link to imported details", async ({ page }) => {
@@ -591,9 +612,13 @@ test("homepage catalog showcases stay compact, truthful and link to imported det
     expect(photo.fit).toBe('cover');
     expect(photo.padding).toBe('0px');
     expect(projectStyles.find(style => style.slug === 'dom-pod-klyuch-99m2-tri-spalni').fit).toBe('contain');
+    const render = page.locator(".home-newbuilds-feature img");
+    await render.scrollIntoViewIfNeeded();
+    await expect.poll(() => render.evaluate(img => img.complete && img.naturalWidth > 0 && img.currentSrc.includes("official-render-"))).toBe(true);
     if (viewport.width === 1440) {
       const rows = await page.locator('[data-home-section="newbuilds"] .editorial-card').evaluateAll(cards => cards.map(card => card.getBoundingClientRect().top));
-      expect(new Set(rows).size).toBe(1);
+      expect(rows[0]).toBeLessThan(rows[1]);
+      expect(rows[1]).toBe(rows[2]);
     }
     const layout = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
     expect(layout.scroll).toBeLessThanOrEqual(layout.client + 1);
@@ -631,8 +656,8 @@ test("desktop local offers form a balanced three-column grid", async ({ page }) 
   expect(layout.columns).toBe(3);
   expect(layout.cards).toHaveLength(6);
   expect(layout.cards.every((card) => card.width > 350)).toBe(true);
-  expect(layout.cards.every((card) => card.height < 850)).toBe(true);
-  expect(layout.cards.every((card) => card.mediaWidth > 350)).toBe(true);
+  expect(layout.cards.every((card) => card.height < 300)).toBe(true);
+  expect(layout.cards.every((card) => card.mediaWidth > 120 && card.mediaWidth < card.width / 2)).toBe(true);
   expect(layout.scrollWidth).toBeLessThanOrEqual(layout.clientWidth + 1);
 });
 

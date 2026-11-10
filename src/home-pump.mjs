@@ -1,7 +1,7 @@
 import pricing from "./data/pricing.json" with { type: "json" };
 import pending from './data/office-pending.json' with { type: 'json' };
 import { QUICK_FILTERS, filterCatalog, newestListings } from './catalog-pump.mjs';
-import { categoryForListing } from './listing-search.mjs';
+import { categoryForListing, SEARCH_CATEGORIES } from './listing-search.mjs';
 const esc = value => String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;');
 const money = value => `${Number(value).toLocaleString('ru-RU')} ₽`;
 const heading = (title, text = '') => `<div class="section-heading"><div><h2>${title}</h2></div>${text ? `<p>${text}</p>` : ''}</div>`;
@@ -20,10 +20,14 @@ export function homeBuyerPaths(ctx) {
 }
 export function homeNewest(ctx, card) {
   const items = newestListings(ctx.listings);
-  return `<section class="section home-hot-offers" id="hot-offers" data-home-section="new-objects"><div class="container">${heading('Новые объекты', 'Последние обновлённые предложения офиса. Выберите вариант и договоритесь о просмотре.')}<div class="home-hot-offers__grid listing-grid">${items.map(item => card(ctx, item)).join('')}</div></div></section>`;
+  return `<section class="section home-hot-offers" id="hot-offers" data-home-section="new-objects"><div class="container">
+    <div class="section-heading"><div><h2>Новые объекты</h2><p>Последние обновлённые предложения офиса.</p></div><a class="text-link" href="${ctx.href('catalog.html#catalog-results')}">Все объекты ↗</a></div>
+    <div class="home-hot-offers__grid listing-grid">${items.map(item => card(ctx, item, { compact: true })).join('')}</div>
+  </div></section>`;
 }
 export function homeSpecials(ctx, card, complexCard) {
-  const available = newestListings(ctx.listings, ctx.listings.length);
+  const recentIds = new Set(newestListings(ctx.listings).map(item => item.id));
+  const available = newestListings(ctx.listings, ctx.listings.length).filter(item => !recentIds.has(item.id));
   const apartmentsInNewbuilds = available.filter(i => i.type === 'apartment-newbuild');
   const complexes = (ctx.newbuilds?.items || []).filter(i => i.completeness?.state === 'complete' && i.cover?.src);
   const newbuilds = [...apartmentsInNewbuilds, ...complexes].slice(0, 3);
@@ -36,7 +40,19 @@ export function homeSpecials(ctx, card, complexCard) {
 }
 export function homeQuickSearch(ctx) {
   const tiles = QUICK_FILTERS.map(f => ({ ...f, count: filterCatalog(ctx.listings, { quick: f.key }).length })).filter(f => f.count >= 2);
-  return section('quick-search', 'Быстрый поиск', `<div class="pump-quick">${tiles.map(f => `<a data-quick-link="${f.key}" href="${ctx.href(`catalog.html?quick=${f.key}`)}"><strong>${f.label}</strong><span>${f.count} объектов ↗</span></a>`).join('')}</div>`);
+  const types = Object.entries(SEARCH_CATEGORIES).filter(([key]) => key !== 'all');
+  return `<section class="home-quick-search" id="home-quick-search" data-home-section="quick-search" aria-labelledby="home-quick-search-title">
+    <div class="container">
+      <form class="home-quick-search__form" action="${ctx.href('catalog.html#catalog-results')}" method="get" role="search" aria-labelledby="home-quick-search-title">
+        <h2 id="home-quick-search-title">Быстрый подбор</h2>
+        <label><span>Тип недвижимости</span><select name="type"><option value="">Любой тип</option>${types.map(([key, label]) => `<option value="${key}">${esc(label)}</option>`).join('')}</select></label>
+        <label><span>Территория</span><select name="city"><option value="">Все территории</option>${ctx.locations.map(location => `<option value="${esc(location.slug)}">${esc(location.name)}</option>`).join('')}</select></label>
+        <label><span>Бюджет до, ₽</span><input name="priceMax" type="number" min="1" step="1" inputmode="numeric" placeholder="Любой бюджет"></label>
+        <button class="button button--primary" type="submit">Показать объекты <span aria-hidden="true">↗</span></button>
+      </form>
+      ${tiles.length ? `<details class="home-quick-search__presets"><summary>Готовые подборки</summary><div class="pump-quick">${tiles.map(f => `<a data-quick-link="${f.key}" href="${ctx.href(`catalog.html?quick=${f.key}#catalog-results`)}"><strong>${f.label}</strong><span>${f.count} объектов ↗</span></a>`).join('')}</div></details>` : ''}
+    </div>
+  </section>`;
 }
 export function homeServices(ctx) {
   const price = (ctx.pricing || pricing).items.find(i => i.id === 'legal');

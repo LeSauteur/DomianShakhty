@@ -280,7 +280,7 @@ test("all core property directions have useful public pages and navigation entry
   for (const label of ["Квартиры", "Дома", "Участки", "Коммерческая недвижимость", "Гаражи и парковка"]) {
     assert.match(home, new RegExp(`mobile-drawer__group[\\s\\S]*${label}`, "u"));
   }
-  assert.match(home, /<h1>Агентство недвижимости в Шахтах/u);
+  assert.match(home, /<h1>Недвижимость в Шахтах<\/h1>/u);
   assert.match(home, /Вторичный рынок и новостройки/u);
   assert.ok(home.indexOf('data-home-section="buyer-paths"') < home.indexOf('data-home-section="construction"'), "buyer directions must appear before construction");
 });
@@ -289,8 +289,8 @@ test("homepage uses the editorial composition with catalog offers", () => {
   const home = read("index.html");
   assert.equal((home.match(/<section\b/gu) || []).length, 18);
   assert.equal((home.match(/class="home-property-card"/gu) || []).length, 0);
-  assert.match(home, /<h1>Агентство недвижимости в Шахтах — офис Домиан на Маяковского<\/h1>/u);
-  assert.match(home, /Смотреть объекты в Шахтах/u);
+  assert.match(home, /<h1>Недвижимость в Шахтах<\/h1>/u);
+  assert.match(home, /href="#hot-offers">Смотреть объекты</u);
   assert.match(home, /Подобрать недвижимость/u);
   assert.match(home, /Продать недвижимость/u);
   assert.doesNotMatch(home, /class="new-homes-feature"/u);
@@ -311,7 +311,7 @@ test("homepage uses the editorial composition with catalog offers", () => {
   assert.match(officeSection, /class="owner-portrait"/u);
   assert.match(officeSection, /maria-voronina-960\.webp/u);
   assert.doesNotMatch(officeSection, /assets\/images\/office\/office-interior/u);
-  const order = ["buyer-paths", "new-objects", "specials", "quick-search", "reviews", "services", "process", "rules", "team", "team-life", "newbuilds", "construction", "seller", "locations", "expertise", "faq", "request"].map((name) => home.indexOf(`data-home-section="${name}"`));
+  const order = ["quick-search", "new-objects", "newbuilds", "buyer-paths", "construction", "specials", "reviews", "services", "process", "rules", "team", "team-life", "seller", "locations", "expertise", "faq", "request"].map((name) => home.indexOf(`data-home-section="${name}"`));
   assert.ok(order.every((position) => position >= 0));
   assert.deepEqual(order, order.slice().sort((a, b) => a - b));
 });

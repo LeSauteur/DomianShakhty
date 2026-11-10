@@ -25,6 +25,8 @@ test('newest objects use dates, exclude unavailable/unverified listings and sort
   assert.deepEqual(newestListings(source).map(i => i.id), ['a', 'b']);
   const section = home().match(/data-home-section="new-objects"[\s\S]*?<\/section>/u)[0];
   assert.deepEqual([...section.matchAll(/class="listing-card__media" href="\/listings\/([^"/]+)\.html"/gu)].map(m => m[1]), newestListings(listings).map(i => i.id));
+  const specials = home().match(/data-home-section="specials"[\s\S]*?<\/section>/u)[0];
+  for (const item of newestListings(listings)) assert.ok(!specials.includes(`/listings/${item.id}.html`), item.id);
 });
 test('unconfirmed office blocks and answers are absent from dist, templates can publish confirmed data', () => {
   assert.equal(homePending({}), '');
