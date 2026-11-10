@@ -2976,6 +2976,7 @@
     "sections": [
       {
         "kind": "catalog",
+        "anchor": "catalog-results",
         "title": "Квартиры, дома и участки",
         "intro": "Фильтруйте предложения по вашему запросу.",
         "showcaseTypes": [],
