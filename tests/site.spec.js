@@ -41,6 +41,9 @@ const representativePages = [
   "team/ksenia-tsygankova.html",
   "team/elena-salnikova.html",
   "team/dmitry-shevchenko.html",
+  "team/olesya-grigoryan.html",
+  "listings/shk-h10-stone-house-31.html",
+  "listings/shk-h11-cottage-50.html",
   "listings/shk-a15-hbk-1k-37.html",
   "listings/shk-a16-2k-50-individual.html",
   "listings/shk-a17-kalinina-31a-2k.html",
@@ -68,7 +71,7 @@ for (const pathname of representativePages) {
 test("new listing hero images load without overflow on desktop and mobile", async ({ page }) => {
   for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
     await page.setViewportSize(viewport);
-    for (const id of ["shk-a02-budget-1k", "shk-a03-hbk-1k", "shk-h03-artem-brick-house", "shk-l06-regular-city-plot", "shk-h07-two-houses-kamenolomni", "shk-h08-two-houses-center", "shk-a14-renovated-2k-43", "shk-h09-renovated-76", "shk-l08-goroda-budushchego-plot"]) {
+    for (const id of ["shk-a02-budget-1k", "shk-a03-hbk-1k", "shk-h03-artem-brick-house", "shk-l06-regular-city-plot", "shk-h07-two-houses-kamenolomni", "shk-h08-two-houses-center", "shk-a14-renovated-2k-43", "shk-h09-renovated-76", "shk-l08-goroda-budushchego-plot", "shk-h10-stone-house-31", "shk-h11-cottage-50"]) {
       await page.goto(`listings/${id}.html`);
       const hero = page.locator(".listing-detail__media img");
       await expect(hero).toBeVisible();
@@ -303,7 +306,7 @@ test("team cards and agent portraits fit desktop and mobile without overflow", a
     await page.setViewportSize(viewport);
     await page.goto("team/index.html");
     const cards = page.locator(".team-card");
-    await expect(cards).toHaveCount(10);
+    await expect(cards).toHaveCount(11);
     await expect(cards.nth(0)).toHaveAttribute("data-team-member", "maria-voronina");
     await expect(cards.nth(1)).toHaveAttribute("data-team-member", "olga-chernenko");
     await expect(cards.nth(2)).toHaveAttribute("data-team-member", "maria-smolina");

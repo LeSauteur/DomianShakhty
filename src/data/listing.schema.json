@@ -24,6 +24,7 @@
     "descriptionOriginal": { "type": "string" },
     "featuresOriginal": { "type": "array", "items": {"type":"string"} },
     "contentIssues": { "type": "array", "items": {"type":"object"} },
+    "agentId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
     "id": {
       "type": "string",
       "pattern": "^[a-z0-9-]+$"
