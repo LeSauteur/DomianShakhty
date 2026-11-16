@@ -2586,5 +2586,244 @@
       "scope": "continued-publication",
       "note": "Решение владельца от 03.11.2026 о сохранении всех опубликованных объявлений; не индивидуальный осмотр или независимая проверка."
     }
+  },
+  {
+    "type": "house-secondary",
+    "format": "secondary",
+    "location": "shakhty",
+    "address": "Шахты",
+    "verified": true,
+    "status": "available",
+    "updatedAt": "2026-11-16",
+    "pageUpdatedAt": "2026-11-16",
+    "statusLabel": "Актуально",
+    "provenance": "office",
+    "verifiedAt": "2026-11-16",
+    "verifiedBy": "Пользователь: описание, фотографии и запрос на публикацию от 16.11.2026",
+    "agentId": "olesya-grigoryan",
+    "rooms": 2,
+    "id": "shk-h10-stone-house-31",
+    "title": "Каменный дом 31 м² с участком 6 соток в Шахтах",
+    "price": 2800000,
+    "area": 31,
+    "landArea": 6,
+    "material": "Камень, облицовка кирпичом",
+    "description": "Уютный каменный дом площадью 31 м², обложенный кирпичом. В доме 2 комнаты, санузел, новый газовый котёл и кондиционер. Во дворе находится летняя отапливаемая кухня со всеми коммуникациями. Участок 6 соток — хватит места для сада, огорода, детской площадки или мангальной зоны. Есть место для заезда автомобиля.",
+    "features": [
+      "2 комнаты",
+      "Санузел в доме",
+      "Новый газовый котёл",
+      "Кондиционер",
+      "Летняя отапливаемая кухня со всеми коммуникациями",
+      "Участок 6 соток",
+      "Место для заезда автомобиля"
+    ],
+    "image": {
+      "src": "assets/images/listings/shk-h10-stone-house-31/hero.webp",
+      "alt": "Кирпичная облицовка каменного дома 31 м² в Шахтах",
+      "width": 768,
+      "height": 1024
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-h10-stone-house-31/01.webp",
+        "alt": "Двор и ворота для заезда автомобиля",
+        "width": 768,
+        "height": 1024
+      },
+      {
+        "src": "assets/images/listings/shk-h10-stone-house-31/02.webp",
+        "alt": "Комната дома с окном и кондиционером",
+        "width": 768,
+        "height": 1024
+      },
+      {
+        "src": "assets/images/listings/shk-h10-stone-house-31/03.webp",
+        "alt": "Вторая комната дома",
+        "width": 768,
+        "height": 1024
+      },
+      {
+        "src": "assets/images/listings/shk-h10-stone-house-31/04.webp",
+        "alt": "Санузел дома",
+        "width": 768,
+        "height": 1024
+      },
+      {
+        "src": "assets/images/listings/shk-h10-stone-house-31/05.webp",
+        "alt": "Кухонная зона дома",
+        "width": 768,
+        "height": 1024
+      },
+      {
+        "src": "assets/images/listings/shk-h10-stone-house-31/06.webp",
+        "alt": "Газовый котёл и коммуникации",
+        "width": 768,
+        "height": 1024
+      },
+      {
+        "src": "assets/images/listings/shk-h10-stone-house-31/07.webp",
+        "alt": "Обеденная зона",
+        "width": 768,
+        "height": 1024
+      },
+      {
+        "src": "assets/images/listings/shk-h10-stone-house-31/08.webp",
+        "alt": "Помещение летней кухни",
+        "width": 768,
+        "height": 1024
+      },
+      {
+        "src": "assets/images/listings/shk-h10-stone-house-31/09.webp",
+        "alt": "Плита и окно в летней кухне",
+        "width": 768,
+        "height": 1024
+      },
+      {
+        "src": "assets/images/listings/shk-h10-stone-house-31/10.webp",
+        "alt": "Подсобное помещение",
+        "width": 768,
+        "height": 1024
+      }
+    ]
+  },
+  {
+    "type": "house-secondary",
+    "format": "secondary",
+    "location": "shakhty",
+    "address": "Шахты",
+    "verified": true,
+    "status": "available",
+    "updatedAt": "2026-11-16",
+    "pageUpdatedAt": "2026-11-16",
+    "statusLabel": "Актуально",
+    "provenance": "office",
+    "verifiedAt": "2026-11-16",
+    "verifiedBy": "Пользователь: описание, фотографии и запрос на публикацию от 16.11.2026",
+    "agentId": "olesya-grigoryan",
+    "rooms": 2,
+    "id": "shk-h11-cottage-50",
+    "title": "Коттедж 50 м² с участком 10 соток и гаражом в Шахтах",
+    "price": 2150000,
+    "area": 50,
+    "landArea": 10,
+    "description": "Коттедж площадью 50 м², 2 комнаты. Индивидуальное отопление: установлен двухконтурный котёл, в 2026 году установлен новый газовый счётчик. Металлопластиковые окна, стены подготовлены под поклейку обоев. Просторный санузел: есть место для стиральной машины и установки душевой кабины. Вместительная кухня 16 м². На территории есть летняя кухня, требующая ремонта; её также можно переоборудовать под хозяйственную постройку. К дому прикреплён земельный участок 10 соток — место для теплиц или мангальной зоны с бассейном. Есть отдельный гараж и заезд для автомобиля на придомовой территории. Рядом остановка общественного транспорта, 2 школы, детский сад, училище, спортивный комплекс «Артемовец», больница, магазины и пункты выдачи заказов. По всем вопросам звоните — с удовольствием организуем показ.",
+    "features": [
+      "2 комнаты",
+      "Кухня 16 м²",
+      "Индивидуальное отопление, двухконтурный котёл",
+      "Новый газовый счётчик установлен в 2026 году",
+      "Металлопластиковые окна",
+      "Стены подготовлены под поклейку обоев",
+      "Просторный санузел",
+      "Летняя кухня требует ремонта; возможно переоборудование в хозпостройку",
+      "Участок 10 соток",
+      "Отдельный гараж и заезд для автомобиля",
+      "Рядом школы, детский сад, больница и спорткомплекс «Артемовец»"
+    ],
+    "image": {
+      "src": "assets/images/listings/shk-h11-cottage-50/hero.webp",
+      "alt": "Фасад коттеджа 50 м² и двор в Шахтах",
+      "width": 1000,
+      "height": 750
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-h11-cottage-50/01.webp",
+        "alt": "Двор и постройка на территории",
+        "width": 1000,
+        "height": 750
+      },
+      {
+        "src": "assets/images/listings/shk-h11-cottage-50/02.webp",
+        "alt": "Ворота гаража",
+        "width": 1000,
+        "height": 750
+      },
+      {
+        "src": "assets/images/listings/shk-h11-cottage-50/03.webp",
+        "alt": "Земельный участок при коттедже",
+        "width": 1000,
+        "height": 750
+      },
+      {
+        "src": "assets/images/listings/shk-h11-cottage-50/04.webp",
+        "alt": "Постройка во дворе коттеджа",
+        "width": 1000,
+        "height": 750
+      },
+      {
+        "src": "assets/images/listings/shk-h11-cottage-50/05.webp",
+        "alt": "Участок и ограждение",
+        "width": 1000,
+        "height": 750
+      },
+      {
+        "src": "assets/images/listings/shk-h11-cottage-50/06.webp",
+        "alt": "Комната со стенами под поклейку обоев",
+        "width": 1000,
+        "height": 750
+      },
+      {
+        "src": "assets/images/listings/shk-h11-cottage-50/07.webp",
+        "alt": "Второй ракурс комнаты",
+        "width": 1000,
+        "height": 750
+      },
+      {
+        "src": "assets/images/listings/shk-h11-cottage-50/08.webp",
+        "alt": "Комната с диваном",
+        "width": 1000,
+        "height": 750
+      },
+      {
+        "src": "assets/images/listings/shk-h11-cottage-50/09.webp",
+        "alt": "Комната и проход",
+        "width": 1000,
+        "height": 750
+      },
+      {
+        "src": "assets/images/listings/shk-h11-cottage-50/10.webp",
+        "alt": "Просторная кухня с зоной отдыха",
+        "width": 1000,
+        "height": 750
+      },
+      {
+        "src": "assets/images/listings/shk-h11-cottage-50/11.webp",
+        "alt": "Кухня и кухонный гарнитур",
+        "width": 1000,
+        "height": 750
+      },
+      {
+        "src": "assets/images/listings/shk-h11-cottage-50/12.webp",
+        "alt": "Кухня с окном",
+        "width": 1000,
+        "height": 750
+      },
+      {
+        "src": "assets/images/listings/shk-h11-cottage-50/13.webp",
+        "alt": "Кухня и проход в соседнее помещение",
+        "width": 1000,
+        "height": 750
+      },
+      {
+        "src": "assets/images/listings/shk-h11-cottage-50/14.webp",
+        "alt": "Двухконтурный газовый котёл и счётчик",
+        "width": 750,
+        "height": 1000
+      },
+      {
+        "src": "assets/images/listings/shk-h11-cottage-50/15.webp",
+        "alt": "Просторный санузел",
+        "width": 1000,
+        "height": 750
+      },
+      {
+        "src": "assets/images/listings/shk-h11-cottage-50/16.webp",
+        "alt": "Санузел с ванной и унитазом",
+        "width": 1000,
+        "height": 750
+      }
+    ]
   }
 ]

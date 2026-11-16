@@ -603,5 +603,67 @@
       ],
       "alt": "Дмитрий Шевченко, эксперт по недвижимости Домиан на Маяковского"
     }
+  },
+  {
+    "id": "olesya-grigoryan",
+    "slug": "olesya-grigoryan",
+    "name": "Григорян Олеся",
+    "shortName": "Олеся Григорян",
+    "firstName": "Олеся",
+    "nameDative": "Олесе",
+    "nameInstrumental": "Олесей",
+    "nameGenitive": "Олеси",
+    "initials": "ОГ",
+    "role": "Эксперт по недвижимости",
+    "phone": "+7 (900) 121-37-07",
+    "phoneHref": "tel:+79001213707",
+    "secondaryPhone": "+7 (928) 101-62-77",
+    "secondaryPhoneHref": "tel:+79281016277",
+    "email": "olesya_eurobereg@mail.ru",
+    "office": "Домиан · Шахты на Маяковского, 18А",
+    "city": "Шахты",
+    "verified": true,
+    "lead": "Помогаю комплексно решить жилищный вопрос: купить, продать или построить дом. Моя задача — сделать процесс понятным, безопасным и выгодным для вас.",
+    "directions": [
+      "Вторичная недвижимость",
+      "Новостройки",
+      "Земельные участки",
+      "ИЖС"
+    ],
+    "serviceAreas": [
+      "Шахты"
+    ],
+    "skills": [
+      "Проверка юридической чистоты объекта и надёжности застройщика",
+      "Подбор ипотечной программы под вашу задачу",
+      "Сопровождение покупки, продажи или строительства дома",
+      "Ведение сделки от первой консультации до получения ключей"
+    ],
+    "heroFacts": [
+      "вторичный рынок · новостройки",
+      "участки · ИЖС",
+      "Шахты, Маяковского 18А"
+    ],
+    "image": {
+      "original": "assets/images/olesya-grigoryan-original.png",
+      "fallback": "assets/images/olesya-grigoryan-640.webp",
+      "width": 640,
+      "height": 918,
+      "alt": "Олеся Григорян, эксперт по недвижимости Домиан в Шахтах",
+      "srcset": [
+        {
+          "src": "assets/images/olesya-grigoryan-360.webp",
+          "width": 360
+        },
+        {
+          "src": "assets/images/olesya-grigoryan-640.webp",
+          "width": 640
+        },
+        {
+          "src": "assets/images/olesya-grigoryan-960.webp",
+          "width": 960
+        }
+      ]
+    }
   }
 ]

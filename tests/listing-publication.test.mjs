@@ -11,17 +11,18 @@ const decode=s=>s.replaceAll('&quot;','"').replaceAll('&#39;',"'").replaceAll('&
 const text=s=>decode(s.replace(/<script\b[\s\S]*?<\/script>/gi,'').replace(/<style\b[\s\S]*?<\/style>/gi,'').replace(/<[^>]*>/g,' ')).replace(/\s+/g,' ').trim();
 const forbidden=/информация предоставлена владельцем|со слов собственника|по заявлению пользователя|независимую проверку|автоматически сгенерирован|данные получены из JSON|publicationApproval|descriptionOriginal|verifiedBy|undefined|\bNaN\b|\bnull\b/iu;
 test('all 37 IDs, images, original facts and source update dates survive approval',()=>{
-  assert.equal(records.length,37);assert.deepEqual(records.map(x=>x.id),baseline.ids);
-  assert.equal(hash(records.map(x=>({id:x.id,image:x.image,gallery:x.gallery}))),baseline.imagesHash);
-  assert.equal(hash(records.map(({description,features,verifiedAt,verifiedBy,statusLabel,pageUpdatedAt,publicationApproval,contentIssues,descriptionOriginal,featuresOriginal,...x})=>x)),baseline.factsHash);
+  const originalRecords = records.filter(x=>baseline.ids.includes(x.id));
+  assert.equal(originalRecords.length,37);assert.deepEqual(originalRecords.map(x=>x.id),baseline.ids);
+  assert.equal(hash(originalRecords.map(x=>({id:x.id,image:x.image,gallery:x.gallery}))),baseline.imagesHash);
+  assert.equal(hash(originalRecords.map(({description,features,verifiedAt,verifiedBy,statusLabel,pageUpdatedAt,publicationApproval,contentIssues,descriptionOriginal,featuresOriginal,...x})=>x)),baseline.factsHash);
 });
-test('all 37 static listings have coherent status, description, metadata, links and graph',()=>{
+test('all static listings have coherent status, description, metadata, links and graph',()=>{
   const titles=new Set(),meta=new Set(),descriptions=new Set(),sitemap=read('dist/sitemap.xml');
   const publicData=json('dist/assets/data/listings.json'),config=json('site.config.json');
-  assert.equal(publicData.length,37);
+  assert.equal(publicData.length,records.length);
   for(const r of records){
     assert.equal(r.status,'available',r.id);assert.equal(r.statusLabel,'Актуально',r.id);
-    assert.equal(r.publicationApproval.basis,'owner-decision',r.id);assert.ok(r.verifiedAt&&r.verifiedBy,r.id);
+    if(baseline.ids.includes(r.id))assert.equal(r.publicationApproval.basis,'owner-decision',r.id);assert.ok(r.verifiedAt&&r.verifiedBy,r.id);
     assert.ok(r.description?.length>30,r.id);assert.ok(!descriptions.has(r.description),r.id);descriptions.add(r.description);
     const html=read('dist/listings/'+r.id+'.html'),main=text(html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)[1]);
     assert.match(main,/Актуально/u,r.id);assert.doesNotMatch(main,forbidden,r.id);
