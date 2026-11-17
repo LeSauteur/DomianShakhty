@@ -315,7 +315,7 @@ test("team cards and agent portraits fit desktop and mobile without overflow", a
     await page.setViewportSize(viewport);
     await page.goto("team/index.html");
     const cards = page.locator(".team-card");
-    await expect(cards).toHaveCount(11);
+    await expect(cards).toHaveCount(12);
     await expect(cards.nth(0)).toHaveAttribute("data-team-member", "maria-voronina");
     await expect(cards.nth(1)).toHaveAttribute("data-team-member", "olga-chernenko");
     await expect(cards.nth(2)).toHaveAttribute("data-team-member", "maria-smolina");
@@ -335,7 +335,7 @@ test("team cards and agent portraits fit desktop and mobile without overflow", a
     for (const image of await cards.locator("img").all()) {
       await image.scrollIntoViewIfNeeded();
       await expect.poll(() => image.evaluate((node) => node.naturalWidth)).toBeGreaterThan(0);
-      const dimensions = await image.evaluate((node) => ({ width: node.clientWidth, height: node.clientHeight, ratio: node.naturalHeight / node.naturalWidth }));
+      const dimensions = await image.evaluate((node) => ({ width: node.getBoundingClientRect().width, height: node.getBoundingClientRect().height, ratio: node.naturalHeight / node.naturalWidth }));
       expect(Math.abs(dimensions.height - dimensions.width * dimensions.ratio)).toBeLessThanOrEqual(1);
     }
     const olga = cards.nth(1).locator('img[alt*="Черненко Ольга"]');

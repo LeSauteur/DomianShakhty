@@ -3735,5 +3735,210 @@
         "height": 1600
       }
     ]
+  },
+  {
+    "id": "shk-a21-artem-3k-renovated",
+    "type": "apartment-secondary",
+    "format": "secondary",
+    "title": "3-комнатная квартира с евроремонтом на Артёме",
+    "location": "shakhty",
+    "address": "Шахты, посёлок Артём, ул. Искра, 59",
+    "rooms": 3,
+    "material": "Кирпич",
+    "description": "Трёхкомнатная квартира с евроремонтом в кирпичном доме в посёлке Артём, на улице Искра, 59. Четвёртый этаж пятиэтажного дома. Заменены проводка и газовые коммуникации, установлены новые счётчики воды и газа. В доме установлен тепловой счётчик. Квартира тёплая и уютная. Остаются кухонный гарнитур и вся техника. В пешей доступности детский сад, две школы, поликлиника, магазины и рынок. Один взрослый собственник, обременений нет.",
+    "features": [
+      "3 комнаты",
+      "4 этаж из 5",
+      "Кирпичный дом",
+      "Евроремонт",
+      "Новая проводка и газовые коммуникации",
+      "Новые счётчики воды и газа",
+      "Общедомовой тепловой счётчик",
+      "Кухонный гарнитур и техника остаются",
+      "Один взрослый собственник, без обременений"
+    ],
+    "agentId": "olesya-semutenko",
+    "verified": true,
+    "status": "available",
+    "statusLabel": "Актуально",
+    "provenance": "office",
+    "verifiedAt": "2026-11-17",
+    "verifiedBy": "Пользователь: письма Семутенко Олеси от 17.11.2026 и запрос на публикацию",
+    "updatedAt": "2026-11-17",
+    "pageUpdatedAt": "2026-11-17",
+    "image": {
+      "src": "assets/images/listings/shk-a21-artem-3k-renovated/hero.webp",
+      "alt": "3-комнатная квартира с евроремонтом на Артёме: основная фотография",
+      "width": 1200,
+      "height": 1600
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-a21-artem-3k-renovated/01.webp",
+        "alt": "3-комнатная квартира с евроремонтом на Артёме: фотография 2",
+        "width": 1260,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-a21-artem-3k-renovated/02.webp",
+        "alt": "3-комнатная квартира с евроремонтом на Артёме: фотография 3",
+        "width": 1264,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-a21-artem-3k-renovated/03.webp",
+        "alt": "3-комнатная квартира с евроремонтом на Артёме: фотография 4",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-a21-artem-3k-renovated/04.webp",
+        "alt": "3-комнатная квартира с евроремонтом на Артёме: фотография 5",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-a21-artem-3k-renovated/05.webp",
+        "alt": "3-комнатная квартира с евроремонтом на Артёме: фотография 6",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-a21-artem-3k-renovated/06.webp",
+        "alt": "3-комнатная квартира с евроремонтом на Артёме: фотография 7",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-a21-artem-3k-renovated/07.webp",
+        "alt": "3-комнатная квартира с евроремонтом на Артёме: фотография 8",
+        "width": 1267,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-a21-artem-3k-renovated/08.webp",
+        "alt": "3-комнатная квартира с евроремонтом на Артёме: фотография 9",
+        "width": 1200,
+        "height": 1600
+      }
+    ],
+    "price": 4900000
+  },
+  {
+    "id": "shk-l11-internatsionalny-15",
+    "type": "land",
+    "format": "land",
+    "title": "Участок 15 соток с водой и светом в Интернациональном",
+    "location": "internatsionalny",
+    "address": "Посёлок Интернациональный, Октябрьский район",
+    "landArea": 15,
+    "price": 1800000,
+    "description": "Земельный участок 15 соток в посёлке Интернациональный Октябрьского района. Фасад 30 метров. На участок заведены вода и электричество. Участок чистый, расчистка не требуется — можно готовиться к строительству дома. Есть кирпичные душ и туалет, а также бытовка длиной 7 метров. Территория активно развивается.",
+    "features": [
+      "Участок 15 соток",
+      "Фасад 30 м",
+      "Вода и электричество заведены на участок",
+      "Участок расчищен",
+      "Кирпичные душ и туалет",
+      "Бытовка длиной 7 м"
+    ],
+    "agentId": "olesya-semutenko",
+    "verified": true,
+    "status": "available",
+    "statusLabel": "Актуально",
+    "provenance": "office",
+    "verifiedAt": "2026-11-17",
+    "verifiedBy": "Пользователь: письма Семутенко Олеси от 17.11.2026 и запрос на публикацию",
+    "updatedAt": "2026-11-17",
+    "pageUpdatedAt": "2026-11-17",
+    "image": {
+      "src": "assets/images/listings/shk-l11-internatsionalny-15/hero.webp",
+      "alt": "Участок 15 соток с водой и светом в Интернациональном: основная фотография",
+      "width": 960,
+      "height": 720
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-l11-internatsionalny-15/01.webp",
+        "alt": "Участок 15 соток с водой и светом в Интернациональном: фотография 2",
+        "width": 960,
+        "height": 720
+      },
+      {
+        "src": "assets/images/listings/shk-l11-internatsionalny-15/02.webp",
+        "alt": "Участок 15 соток с водой и светом в Интернациональном: фотография 3",
+        "width": 960,
+        "height": 720
+      },
+      {
+        "src": "assets/images/listings/shk-l11-internatsionalny-15/03.webp",
+        "alt": "Участок 15 соток с водой и светом в Интернациональном: фотография 4",
+        "width": 960,
+        "height": 720
+      },
+      {
+        "src": "assets/images/listings/shk-l11-internatsionalny-15/04.webp",
+        "alt": "Участок 15 соток с водой и светом в Интернациональном: фотография 5",
+        "width": 960,
+        "height": 720
+      },
+      {
+        "src": "assets/images/listings/shk-l11-internatsionalny-15/05.webp",
+        "alt": "Участок 15 соток с водой и светом в Интернациональном: фотография 6",
+        "width": 960,
+        "height": 720
+      },
+      {
+        "src": "assets/images/listings/shk-l11-internatsionalny-15/06.webp",
+        "alt": "Участок 15 соток с водой и светом в Интернациональном: фотография 7",
+        "width": 960,
+        "height": 720
+      },
+      {
+        "src": "assets/images/listings/shk-l11-internatsionalny-15/07.webp",
+        "alt": "Участок 15 соток с водой и светом в Интернациональном: фотография 8",
+        "width": 960,
+        "height": 720
+      },
+      {
+        "src": "assets/images/listings/shk-l11-internatsionalny-15/08.webp",
+        "alt": "Участок 15 соток с водой и светом в Интернациональном: фотография 9",
+        "width": 960,
+        "height": 720
+      }
+    ]
+  },
+  {
+    "id": "shk-l12-internatsionalny-8",
+    "type": "land",
+    "format": "land",
+    "title": "Участок 8 соток с фасадом 24 м в Интернациональном",
+    "location": "internatsionalny",
+    "address": "Посёлок Интернациональный, Октябрьский район",
+    "landArea": 8,
+    "price": 750000,
+    "description": "Земельный участок площадью 8 соток в посёлке Интернациональный Октябрьского района. Фасад 24 метра, коммуникации проходят по меже. Место для строительства нового дома. Организуем показ и ответим на вопросы об участке.",
+    "features": [
+      "Участок 8 соток",
+      "Фасад 24 м",
+      "Коммуникации по меже",
+      "Для строительства дома"
+    ],
+    "agentId": "olesya-semutenko",
+    "verified": true,
+    "status": "available",
+    "statusLabel": "Актуально",
+    "provenance": "office",
+    "verifiedAt": "2026-11-17",
+    "verifiedBy": "Пользователь: письма Семутенко Олеси от 17.11.2026 и запрос на публикацию",
+    "updatedAt": "2026-11-17",
+    "pageUpdatedAt": "2026-11-17",
+    "image": {
+      "src": "assets/images/listings/shk-l12-internatsionalny-8/hero.webp",
+      "alt": "Участок 8 соток с фасадом 24 м в Интернациональном: основная фотография",
+      "width": 810,
+      "height": 540
+    },
+    "gallery": []
   }
 ]

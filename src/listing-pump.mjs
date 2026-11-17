@@ -2,7 +2,7 @@ import pending from './data/office-pending.json' with { type: 'json' };
 import { listingCode, unitPrice, districtFor } from './catalog-pump.mjs';
 const esc = value => String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;');
 const money = value => `${Number(value).toLocaleString('ru-RU')} ₽`;
-export const objectContext = item => `Объект ${listingCode(item)}, ${item.title}, ${money(item.price)}.`;
+export const objectContext = item => `Объект ${listingCode(item)}, ${item.title}, ${Number.isFinite(item.price) ? money(item.price) : 'Цена по запросу'}.`;
 
 export function listingNumbers(item) {
   const unit = unitPrice(item);

@@ -608,5 +608,42 @@
       "01.webp",
       "02.webp"
     ]
+  },
+  {
+    "id": "shk-a21-artem-3k-renovated",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp",
+      "07.webp",
+      "08.webp"
+    ]
+  },
+  {
+    "id": "shk-l11-internatsionalny-15",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp",
+      "07.webp",
+      "08.webp"
+    ]
+  },
+  {
+    "id": "shk-l12-internatsionalny-8",
+    "status": "done",
+    "files": [
+      "hero.webp"
+    ]
   }
 ]
