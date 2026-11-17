@@ -1,3 +1,5 @@
+import { buildPromoAssets } from '../src/promo-render.mjs';
+import { promoPath, shortKey, renderShortLink } from '../src/promo.mjs';
 import { publicCopy } from "../src/public-copy.mjs";
 import { publicListing } from '../src/listing-publication.mjs';
 import fs from "node:fs";
@@ -21,6 +23,7 @@ import {
   renderConstructionBuilder,
   renderConstructionProject,
   renderListing,
+  renderPromo,
   renderLocation,
   renderLocationsIndex,
   renderPerson,
@@ -62,6 +65,9 @@ site.assetVersion = createHash("sha256")
   .update(fs.readFileSync(path.join(root, "assets/js/site.js")))
   .update(fs.readFileSync(path.join(root, "assets/js/form-handler.js")))
   .update(fs.readFileSync(path.join(root, "assets/js/listing-pump.js")))
+  .update(fs.readFileSync(path.join(root, "assets/css/promo.css")))
+  .update(fs.readFileSync(path.join(root, "assets/js/promo.js")))
+  .update(fs.readFileSync(path.join(root, "assets/js/listing-contact.js")))
   .digest("hex")
   .slice(0, 12);
 if (site.web3formsAccessKey === "test-only-placeholder") throw new Error("Test-only Web3Forms key cannot be published");
@@ -72,6 +78,7 @@ if (process.env.DOMIAN_BROWSER_TEST_FIXTURE === "1") {
   site.googleVerification = { meta: "test-google", file: "googlefixture.html", content: "google-site-verification: googlefixture.html" };
   site.yandexVerification = { meta: "test-yandex", file: "yandexfixture.html", content: "test-yandex" };
 }
+if (!site.listingContact?.name || !/^tel:\+7\d{10}$/u.test(site.listingContact.phoneHref || "")) throw new Error("Configure the default listing administrator contact");
 const productionUrl = new URL(site.productionOrigin);
 if (productionUrl.protocol !== "https:" || productionUrl.search || productionUrl.hash || site.productionOrigin.endsWith("/")) throw new Error("productionOrigin must be an HTTPS URL without query, hash or trailing slash");
 const locations = readJson("src/data/locations.json");
@@ -104,6 +111,7 @@ fs.cpSync(path.join(root, "assets"), path.join(dist, "assets"), { recursive: tru
 fs.copyFileSync(path.join(root, "favicon.ico"), path.join(dist, "favicon.ico"));
 write("manifest.webmanifest", `${JSON.stringify({ name: site.displayName, short_name: site.brand, start_url: `${ctx.base}/`, display: "browser", background_color: "#f7f9f7", theme_color: "#29383a", icons: [192, 512].map(size => ({ src: `${ctx.base}/assets/icons/icon-${size}.png`, sizes: `${size}x${size}`, type: "image/png" })) }, null, 2)}\n`);
 
+ctx.promoById = await buildPromoAssets(ctx, root, dist, listings);
 publish("index.html", renderHome(ctx, guides));
 for (const page of pages.filter((item) => item.path !== "construction.html" && (item.slug !== "zhk-aleksandrovskiy-park" || localZhk.publish === true))) publish(page.path, renderCommercialPage(ctx, page));
 for (const complex of localComplexes.filter(item => item.publish === true && item.officeSells === true && item.page)) publish(complex.page.path, renderCommercialPage(ctx, complex.page));
@@ -114,6 +122,10 @@ publish("construction.html", renderConstruction(ctx));
 publish("construction/builders/postroim-dom.html", renderConstructionBuilder(ctx));
 for (const item of [...constructionProjects.items, ...(constructionProjects.builtExamples || [])]) publish(`construction/projects/${item.slug}.html`, renderConstructionProject(ctx, item));
 for (const listing of listings.filter((item) => item.verified === true)) publish(`listings/${listing.id}.html`, renderListing(ctx, listing));
+for (const listing of listings.filter(item => item.verified === true)) {
+  write(promoPath(listing), renderPromo(ctx, ctx.promoById.get(listing.id)));
+  write(`s/${shortKey(listing)}.html`, renderShortLink(ctx, listing));
+}
 publish("locations/index.html", renderLocationsIndex(ctx));
 for (const location of locations) publish(`locations/${location.slug}.html`, renderLocation(ctx, location));
 publish("guides/index.html", renderGuidesIndex(ctx, guides));
@@ -144,7 +156,6 @@ for (const entry of redirectEntries.values()) write(entry.from, renderLegacyRedi
 const runtimeConfig = {
   basePath: ctx.base,
   analyticsTestMode: process.env.DOMIAN_BROWSER_TEST_FIXTURE === "1",
-  metrikaId: site.metrikaId,
   ga4Id: site.ga4Id,
   web3formsAccessKey: site.web3formsAccessKey,
   endpoint: "https://api.web3forms.com/submit",

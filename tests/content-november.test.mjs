@@ -72,9 +72,10 @@ test('November 16 houses keep supplied facts and link the responsible specialist
     const page = html(`listings/${id}.html`);
     assert.match(page, /data-listing-agent="olesya-grigoryan"/u);
     assert.match(page, /href="[^"\s]*team\/olesya-grigoryan.html"/u);
-    for (const contact of ['tel:+79001213707', 'tel:+79281016277', 'mailto:olesya_eurobereg@mail.ru']) assert.ok(page.includes(contact));
-    assert.match(page.match(/class="hero-actions">([\s\S]*?)<\/div>/u)[1], /tel:\+79001213707/u);
-    assert.match(page.match(/id="lead-form-section">([\s\S]*?)<form/u)[1], /tel:\+79001213707/u);
+    assert.ok(page.includes('tel:+79188504488'));
+    for (const contact of ['tel:+79001213707', 'tel:+79281016277', 'mailto:olesya_eurobereg@mail.ru']) assert.ok(!page.includes(contact));
+    assert.match(page.match(/class="hero-actions">([\s\S]*?)<\/div>/u)[1], /tel:\+79188504488/u);
+    assert.match(page.match(/id="lead-form-section">([\s\S]*?)<form/u)[1], /tel:\+79188504488/u);
   }
   const profile = html('team/olesya-grigoryan.html');
   assert.match(profile, /olesya-grigoryan-640.webp/u);
