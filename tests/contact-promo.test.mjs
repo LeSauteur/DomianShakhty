@@ -16,7 +16,7 @@ const manifest = id => { const folder = `dist/assets/promo/${id}`; const version
 test('each local listing has two correctly sized images, an exact contact, and decodable QR codes', async () => {
   for (const item of records) {
     const model = manifest(item.id);
-    assert.equal(model.price, `${item.price.toLocaleString('ru-RU')} ₽`, item.id);
+    assert.equal(model.price, Number.isFinite(item.price) ? `${item.price.toLocaleString('ru-RU')} ₽` : 'Цена по запросу', item.id);
     assert.equal(model.canonical, `${site.productionOrigin}/listings/${item.id}.html`);
     assert.ok(fs.existsSync(`dist/promo/${item.id}.html`));
     assert.equal(model.contact.phone, site.listingContact.phone);

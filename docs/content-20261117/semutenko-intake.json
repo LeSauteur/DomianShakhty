@@ -1,0 +1,122 @@
+[
+  {
+    "id": "shk-a21-artem-3k-renovated",
+    "sourceDate": "2026-11-17",
+    "sourceTime": "13:22",
+    "price": 4900000,
+    "photos": [
+      {
+        "sourceName": "IMG_20261116_155240_317.jpg",
+        "sha256": "4762bc123cc2d47c39dfa59ebc12f177a553a57912406ad72fcc246c06e82891",
+        "publishedName": "hero.webp"
+      },
+      {
+        "sourceName": "IMG_20261116_155207_129.jpg",
+        "sha256": "d117a793025d2c84c8e3f0e0e9c1093833efeafca154762658226eeaaea52c10",
+        "publishedName": "01.webp"
+      },
+      {
+        "sourceName": "IMG_20261116_155207_179.jpg",
+        "sha256": "58bf4766dea8b3c4a8084ae496705195b8ad73e90d5d0ff6d65e7da03f4880dc",
+        "publishedName": "02.webp"
+      },
+      {
+        "sourceName": "IMG_20261116_155207_193.jpg",
+        "sha256": "54939900dcec270525be678c8d1ce1844f1001c85fb71baf98364547b2a0c0a2",
+        "publishedName": "03.webp"
+      },
+      {
+        "sourceName": "IMG_20261116_155240_105.jpg",
+        "sha256": "6b67a75cc2b0fa7bd41bfed975225cd7d2f14d37e82a83cae9e4f937adb47a0c",
+        "publishedName": "04.webp"
+      },
+      {
+        "sourceName": "IMG_20261116_155240_111.jpg",
+        "sha256": "54939900dcec270525be678c8d1ce1844f1001c85fb71baf98364547b2a0c0a2",
+        "publishedName": "05.webp"
+      },
+      {
+        "sourceName": "IMG_20261116_155240_192.jpg",
+        "sha256": "30a871653b9bacf04aa4d650fb73804583c32d5413ba95cf969ff22959c18065",
+        "publishedName": "06.webp"
+      },
+      {
+        "sourceName": "IMG_20261116_155240_209.jpg",
+        "sha256": "8ba62e97dd4ae9150ee957bbfb68ee8d5549fbe5fbcef9c894af9f5fe3fae97b",
+        "publishedName": "07.webp"
+      },
+      {
+        "sourceName": "IMG_20261116_155240_342.jpg",
+        "sha256": "8d8332e5a80f7e18e81a41630f781f07ed20cdc8d230befa297d4b1627f76ff3",
+        "publishedName": "08.webp"
+      }
+    ],
+    "priceAndAddressCorrection": "Уточнение пользователя со слов агента 17.11.2026: 4 900 000 ₽, ул. Искра, 59"
+  },
+  {
+    "id": "shk-l11-internatsionalny-15",
+    "sourceDate": "2026-11-17",
+    "sourceTime": "13:44",
+    "price": 1800000,
+    "photos": [
+      {
+        "sourceName": "IMG_20261117_133643_645.jpg",
+        "sha256": "e4f0010814c3b39a2a11fc135f66b9902337fb319da3e60c35c11855b7a73eef",
+        "publishedName": "hero.webp"
+      },
+      {
+        "sourceName": "IMG_20261117_133640_289.jpg",
+        "sha256": "05cd97d86ea565619d2768564263c26deab9b35da83e28f0d63d948477f14ced",
+        "publishedName": "01.webp"
+      },
+      {
+        "sourceName": "IMG_20261117_133643_572.jpg",
+        "sha256": "0608f2987c1d7f669d812f2dc53cefbcf4a5f6c9f1a0eb6f72c62f596419b26c",
+        "publishedName": "02.webp"
+      },
+      {
+        "sourceName": "IMG_20261117_133643_638.jpg",
+        "sha256": "dbf28fa39fe882ad33d3ceba28b5196472510c1ea81ca79005341359c50b5b1f",
+        "publishedName": "03.webp"
+      },
+      {
+        "sourceName": "IMG_20261117_133643_663.jpg",
+        "sha256": "e89714162aab4003cac35b1513fc23163c6b93948ebfd8cb487d67e469fd106e",
+        "publishedName": "04.webp"
+      },
+      {
+        "sourceName": "IMG_20261117_133643_771.jpg",
+        "sha256": "1f886a616cf2ea277efeb1d07e043f74b08ff65650fdc8ea6b132db2cb43fc3c",
+        "publishedName": "05.webp"
+      },
+      {
+        "sourceName": "IMG_20261117_133643_777.jpg",
+        "sha256": "d7d06cc2d315138c30e1a24a5c1ee46df1a06bd68a49cecfb8c155a91d2043be",
+        "publishedName": "06.webp"
+      },
+      {
+        "sourceName": "IMG_20261117_133643_817.jpg",
+        "sha256": "dc547cad9913e75e74aefec9111f831d1affa6bcf5e01d31f36360eef76b343b",
+        "publishedName": "07.webp"
+      },
+      {
+        "sourceName": "IMG_20261117_133643_897.jpg",
+        "sha256": "657601e2fc84b86d7f7b9165738b428b78a71c2775144008908bf170cc7d7c1c",
+        "publishedName": "08.webp"
+      }
+    ]
+  },
+  {
+    "id": "shk-l12-internatsionalny-8",
+    "sourceDate": "2026-11-17",
+    "sourceTime": "13:49",
+    "price": 750000,
+    "photos": [
+      {
+        "sourceName": "f772770c65861c500f69b051517d5e7d5925e64ce69f458ac00b1dab860aa2bf.jpg",
+        "sha256": "71ddbcb99dbeb9b916fd89330b6b00a2141cfaabc140f0f23955f082ed97b1de",
+        "publishedName": "hero.webp"
+      }
+    ]
+  }
+]
