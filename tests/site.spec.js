@@ -2,6 +2,14 @@ import { expect, test } from "@playwright/test";
 
 const localOrigin = `http://127.0.0.1:${process.env.PLAYWRIGHT_PORT || 43173}`;
 
+
+async function enableTestAnalytics(page) {
+  const runtime = { basePath: "", analyticsTestMode: true, ga4Id: "G-TEST123456", web3formsAccessKey: "test-only-placeholder", endpoint: "https://api.web3forms.com/submit", redirectUrl: "/thanks.html", phoneHref: "tel:+79185071000", phoneLabel: "+7-918-507-10-00" };
+  await page.route("**/assets/js/site-config.js*", route => route.fulfill({contentType: "text/javascript", body: `window.DOMIAN_SITE_CONFIG=${JSON.stringify(runtime)}`}));
+  await page.route("https://www.googletagmanager.com/**", route => route.fulfill({contentType: "text/javascript", body: ""}));
+  await page.addInitScript(() => localStorage.setItem('domian_analytics_consent', 'accepted'));
+}
+
 const representativePages = [
   "",
   "construction.html",
@@ -255,6 +263,7 @@ test("all desktop location searches fit their primary controls inside the first 
 });
 
 test("confirmed social links emit allowlisted events without PII", async ({ page }) => {
+  await enableTestAnalytics(page);
   const events = [];
   await page.addInitScript(() => {
     window.DOMIAN_ANALYTICS_TEST_HOOK = (name, params) => window.__domianEvents.push({ name, params });
@@ -446,6 +455,7 @@ test("compact home lead redirects only after provider success", async ({ page })
 
 test("lead analytics never receives entered personal data", async ({ page }) => {
   await page.route("https://api.web3forms.com/submit", async (route) => { await route.fulfill({ status: 400, contentType: "application/json", body: '{"success":false}' }); });
+  await enableTestAnalytics(page);
   await page.addInitScript(() => {
     window.__domianEvents = [];
     window.DOMIAN_ANALYTICS_TEST_HOOK = (name, params) => window.__domianEvents.push({ name, params });
@@ -462,7 +472,7 @@ test("lead analytics never receives entered personal data", async ({ page }) => 
   expect(payload).not.toContain("123-45-67");
 });
 
-test("Metrika and GA4 preserve advertising attribution but omit personal URL parameters", async ({ page }) => {
+test("GA4 preserves advertising attribution but omits personal URL parameters", async ({ page }) => {
   const runtime = { basePath: "", analyticsTestMode: true, metrikaId: "12345678", ga4Id: "G-TEST123456", web3formsAccessKey: null };
   await page.route("**/assets/js/site-config.js*", (route) => route.fulfill({ contentType: "text/javascript", body: `window.DOMIAN_SITE_CONFIG=Object.freeze(${JSON.stringify(runtime)});` }));
   await page.route("https://mc.yandex.ru/**", (route) => route.fulfill({ contentType: "text/javascript", body: "" }));
@@ -472,11 +482,11 @@ test("Metrika and GA4 preserve advertising attribution but omit personal URL par
   expect(await page.locator('script[src*="mc.yandex.ru"], script[src*="googletagmanager.com"]').count()).toBe(0);
   await page.locator("[data-analytics-accept]").click();
   await expect(page.locator(".analytics-consent")).toHaveCount(0);
-  expect(await page.locator('script[src*="mc.yandex.ru"]').count()).toBe(1);
+  expect(await page.locator('script[src*="mc.yandex.ru"]').count()).toBe(0);
   expect(await page.locator('script[src*="googletagmanager.com"]').count()).toBe(1);
   await page.evaluate(() => window.domianTrack("phone_click", { page_type: "home", phone: "+7 918 123-45-67" }));
-  const calls = await page.evaluate(() => JSON.stringify({ ym: window.ym.a || [], ga: window.dataLayer || [] }));
-  expect(calls).toContain("reachGoal");
+  const calls = await page.evaluate(() => JSON.stringify({ ga: window.dataLayer || [], ym: typeof window.ym }));
+  expect(calls).not.toContain("reachGoal");
   expect(calls).toContain("phone_click");
   expect(calls).toContain("page_view");
   expect(calls).toContain("utm_source");

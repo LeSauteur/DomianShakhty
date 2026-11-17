@@ -1,0 +1,603 @@
+[
+  {
+    "id": "shk-h12-brick-house-repair",
+    "sourceDate": "2026-11-16",
+    "sourceTime": "11:12",
+    "priceSource": "1,950млн",
+    "price": 1950000,
+    "archive": "Gmail (8).zip",
+    "photos": [
+      {
+        "sourceName": "2030.jpg",
+        "sha256": "dd48d077a1a2c6e6e3902626b394ad37ddc4b2a1ae75790103b6dd5829d36233",
+        "publishedName": "hero.webp"
+      },
+      {
+        "sourceName": "2032.jpg",
+        "sha256": "396da7f2bc7b352f5d90822a4fb845aa75e390d4129763e0377bdc32d2f2059c",
+        "publishedName": "01.webp"
+      },
+      {
+        "sourceName": "2031.jpg",
+        "sha256": "96c512f09c6d812bfad547d643fc0133ce28c700d6457b6608fa5c36a343f2e2",
+        "publishedName": "02.webp"
+      },
+      {
+        "sourceName": "2034.jpg",
+        "sha256": "0f9594ece115fe343cec554ceca617ede91f7eaa69003eb437f3e95b09b4a6f8",
+        "publishedName": "03.webp"
+      },
+      {
+        "sourceName": "2036.jpg",
+        "sha256": "cadadf5e0323528337ba1440cc5af219caf26aa8c4a92d9c4a7f06b4d54b12d2",
+        "publishedName": "04.webp"
+      },
+      {
+        "sourceName": "2038.jpg",
+        "sha256": "c209bf610a0bc7b1d6ebc299a4ad03daeff5bafcc66f695074186dadfb8e2ea7",
+        "publishedName": "05.webp"
+      },
+      {
+        "sourceName": "2037.jpg",
+        "sha256": "373769ad894407e1de20bf478085809d6df1937cf41b00aef54120bd50287442",
+        "publishedName": "06.webp"
+      },
+      {
+        "sourceName": "2040.jpg",
+        "sha256": "22c8b4d1f7ab22476431b5ae49ff2347b31177c305c136dd99e20a7803811620",
+        "publishedName": "07.webp"
+      },
+      {
+        "sourceName": "2041.jpg",
+        "sha256": "f75f028c471995bd9ca75539b55d9734be9dcff85a24f1c3b69c837cf419be10",
+        "publishedName": "08.webp"
+      },
+      {
+        "sourceName": "2043.jpg",
+        "sha256": "2044072ce3c3d895fa19d062cf162be2ccde14379bf16d76cd0b5ec24902b9e4",
+        "publishedName": "09.webp"
+      }
+    ]
+  },
+  {
+    "id": "shk-h13-krasina-brick-58",
+    "sourceDate": "2026-11-16",
+    "sourceTime": "11:18; цена уточнена в 11:20",
+    "priceSource": "2,6 млн (уточнение)",
+    "price": 2600000,
+    "archive": "Gmail (9).zip",
+    "photos": [
+      {
+        "sourceName": "830.jpg",
+        "sha256": "0f7337223bca0a09af82dcff9d12664115970a19cfe69080d9f3e8bc6c0f459e",
+        "publishedName": "hero.webp"
+      },
+      {
+        "sourceName": "790.jpg",
+        "sha256": "bdd529fed0d490451de35fd304cc5104e4bb194e3af9e87b7c269ca93659bfa8",
+        "publishedName": "01.webp"
+      },
+      {
+        "sourceName": "806.jpg",
+        "sha256": "70081f648e6d11a26321f97b48a11ba0332d56741386ef60f7bb3b8922c079b4",
+        "publishedName": "02.webp"
+      },
+      {
+        "sourceName": "808.jpg",
+        "sha256": "4fe4abb773a3aedb64c4d493ade08d0d54e78ce43e34f6c8a74c315407784460",
+        "publishedName": "03.webp"
+      },
+      {
+        "sourceName": "809.jpg",
+        "sha256": "f5adfc272b2111bb4153eac6c75462903c40062b299d02f3c7988f113a505e5a",
+        "publishedName": "04.webp"
+      },
+      {
+        "sourceName": "799.jpg",
+        "sha256": "590cc753e4c1c57ec7b6706cf431381c8e51c465c27b19f4e5493c32b2ba1cbd",
+        "publishedName": "05.webp"
+      },
+      {
+        "sourceName": "798.jpg",
+        "sha256": "7dacf62f9b7c28f43bb787e801cba834507fba0cd83981962aa195bc7ee69129",
+        "publishedName": "06.webp"
+      },
+      {
+        "sourceName": "1290.jpg",
+        "sha256": "bfde3a6c2f58ae0f81327cccca587858869488877757496f1d575f5141a339e5",
+        "publishedName": "07.webp"
+      },
+      {
+        "sourceName": "794.jpg",
+        "sha256": "b573072dfa63b3c7345c85fbf32a205376f761b35ce2d9543c7971b2ddeff3e2",
+        "publishedName": "08.webp"
+      },
+      {
+        "sourceName": "1288.jpg",
+        "sha256": "d5b6490bfb2cb7fbee88ff8f3f417d404bd96ba793bdf6d17e215aad786d67f8",
+        "publishedName": "09.webp"
+      },
+      {
+        "sourceName": "792.jpg",
+        "sha256": "510273822afa3d8167d76c31eb1c131db2ccb758f789b4fdceba9adae168f461",
+        "publishedName": "10.webp"
+      },
+      {
+        "sourceName": "1289.jpg",
+        "sha256": "4b73a7e70662b5d8377fcda0372d46ac0493897d24ff4e88804e084875e2fddf",
+        "publishedName": "11.webp"
+      }
+    ]
+  },
+  {
+    "id": "shk-a18-gorod-budushchego-4k-100",
+    "sourceDate": "2026-11-16",
+    "sourceTime": "11:26",
+    "priceSource": "8,5 млн",
+    "price": 8500000,
+    "archive": "Gmail (10).zip",
+    "photos": [
+      {
+        "sourceName": "2062.jpg",
+        "sha256": "586e6565b1971e0f150853f7e70b3e6dc9dbef021359d36f835aacb4013716dd",
+        "publishedName": "hero.webp"
+      },
+      {
+        "sourceName": "2064.jpg",
+        "sha256": "1e986707c4e7a5d97e9021a75384213b7620a1075ebd0371fce4c98f8a506f74",
+        "publishedName": "01.webp"
+      },
+      {
+        "sourceName": "2065.jpg",
+        "sha256": "d351a9222bf7324c7431caf8ea6c832c4cb97436f165df9217c53fa7441e6023",
+        "publishedName": "02.webp"
+      },
+      {
+        "sourceName": "2068.jpg",
+        "sha256": "4d490e531b53b531668ff74d19d9aa9a66285123c3317a65ae1ae53371a2304e",
+        "publishedName": "03.webp"
+      },
+      {
+        "sourceName": "2067.jpg",
+        "sha256": "566dc49b09cf3d389a0b97037e34b60ffa40593c5a4ef2413dc48951002ec385",
+        "publishedName": "04.webp"
+      },
+      {
+        "sourceName": "2063.jpg",
+        "sha256": "6c2450bfcdea2ec33ac2bc656257f28dfbd0a27d72e4c7666646616379ac8057",
+        "publishedName": "05.webp"
+      },
+      {
+        "sourceName": "2075.jpg",
+        "sha256": "0ec7473918f54cc8763da4f6d91df920b676ae1d51fd0556dd2727bc2a005cfc",
+        "publishedName": "06.webp"
+      },
+      {
+        "sourceName": "2072.jpg",
+        "sha256": "3c68c6b2d79f42cd33cfe0eb51f4ae24bf06bc55957900c4edc797d46d7f889b",
+        "publishedName": "07.webp"
+      },
+      {
+        "sourceName": "2069.jpg",
+        "sha256": "ce00f80dfe244e37fd4879ebdeec1235068eec51106d7911ababf4232ea75f9f",
+        "publishedName": "08.webp"
+      },
+      {
+        "sourceName": "2070.jpg",
+        "sha256": "b85c7427c831cd73632f0b2e41185b08efb59419ddadd949922c35da94df3f24",
+        "publishedName": "09.webp"
+      },
+      {
+        "sourceName": "2071.jpg",
+        "sha256": "4405c7fda34fa516c611df2d98ba6118a4b629146f09419acd443b48af770a07",
+        "publishedName": "10.webp"
+      },
+      {
+        "sourceName": "2056.jpg",
+        "sha256": "ba9336913e3cce152722aafe54c6cdfdf58a94f66ce4ca98238d035b8cf73715",
+        "publishedName": "11.webp"
+      },
+      {
+        "sourceName": "2053.jpg",
+        "sha256": "a0c0aa50bbf11d4c6b5cc48b0f4e3c818f753a97b70c1995704b2bb3a730fcaa",
+        "publishedName": "12.webp"
+      },
+      {
+        "sourceName": "2054.jpg",
+        "sha256": "15f2c4f5cb782695ec8b8caba2f438cb71f66e4690ca48ecf3038a9d5f3ca869",
+        "publishedName": "13.webp"
+      },
+      {
+        "sourceName": "2055.jpg",
+        "sha256": "fdb21729d0142a84f9380b73f8edd2f2829971c4b7353c46cc02c4e4c858f1ce",
+        "publishedName": "14.webp"
+      },
+      {
+        "sourceName": "2058.jpg",
+        "sha256": "2dcb048210a3ce61acda826fd51b6290ab36515652b4629bfa21dea6fa54e2b6",
+        "publishedName": "15.webp"
+      },
+      {
+        "sourceName": "2057.jpg",
+        "sha256": "f6fe66ae1a935501c79523217609a342c033aa209844166e271768822aa05719",
+        "publishedName": "16.webp"
+      },
+      {
+        "sourceName": "2060.jpg",
+        "sha256": "a4fdd1b0d85449c97743b8d1e608c959f23ae316a381c9c5977a210e0903538a",
+        "publishedName": "17.webp"
+      },
+      {
+        "sourceName": "2059.jpg",
+        "sha256": "3bf06edae411d9e98bf13915e15dd0abbef6ad943bd63e44425a5785f570c235",
+        "publishedName": "18.webp"
+      }
+    ]
+  },
+  {
+    "id": "shk-a19-yuzhnaya-2k-heating",
+    "sourceDate": "2026-11-16",
+    "sourceTime": "11:39",
+    "priceSource": "3,650 млн",
+    "price": 3650000,
+    "archive": "Gmail (11).zip",
+    "photos": [
+      {
+        "sourceName": "2180.jpg",
+        "sha256": "6d74ee5caf9596491fe339915ed8915028d34f5aa0b5fdab1e4c5b2d06f70ed1",
+        "publishedName": "hero.webp"
+      },
+      {
+        "sourceName": "2182.jpg",
+        "sha256": "c04446b1b8edb99468058bd11db14796ad240f881f3728983fa0b1934f96b1f8",
+        "publishedName": "01.webp"
+      },
+      {
+        "sourceName": "2176.jpg",
+        "sha256": "454de68799f76f6abbc786650f5572578a885219f7318c7be09a8853636b5d68",
+        "publishedName": "02.webp"
+      },
+      {
+        "sourceName": "2189.jpg",
+        "sha256": "79d21971652950c8679f06e6d82b88584194167fe96178ac700778ea0b084d93",
+        "publishedName": "03.webp"
+      },
+      {
+        "sourceName": "2187.jpg",
+        "sha256": "442c396764fd2d8cf3b1e559a9be453d2b54150f4d86a3eb0f42d7b7fd2d4ac8",
+        "publishedName": "04.webp"
+      },
+      {
+        "sourceName": "2186.jpg",
+        "sha256": "b2353ffd3dca893ff43652eb4275a865eb7ad7fccb7d2fe8046c48c7333fa6f0",
+        "publishedName": "05.webp"
+      },
+      {
+        "sourceName": "2188.jpg",
+        "sha256": "6a169fd14451f336309b00562bca149b872c793d5b0648ff4ea501db2c920265",
+        "publishedName": "06.webp"
+      },
+      {
+        "sourceName": "2184.jpg",
+        "sha256": "982201615a8397f1a276840860b1403811006ec8173d59f24cdf9ac0c481a98f",
+        "publishedName": "07.webp"
+      },
+      {
+        "sourceName": "2185.jpg",
+        "sha256": "efe085885e11b4fe571a972a7d76f58f2fea3c7ceb6f52e15813c043ce259b3c",
+        "publishedName": "08.webp"
+      },
+      {
+        "sourceName": "2181.jpg",
+        "sha256": "a527dfa7396380dec70437b07dbfd1e81dda778664079ecdfc004d5ec8f932fe",
+        "publishedName": "09.webp"
+      },
+      {
+        "sourceName": "2179.jpg",
+        "sha256": "3c6d68cbedb073b77d4438a5a931fb5dccdd64bdf6d4a62a18da8e5777552699",
+        "publishedName": "10.webp"
+      }
+    ]
+  },
+  {
+    "id": "shk-a20-dvorets-sporta-2k",
+    "sourceDate": "2026-11-16",
+    "sourceTime": "11:44",
+    "priceSource": "4,3 млн",
+    "price": 4300000,
+    "archive": "Gmail (12).zip",
+    "photos": [
+      {
+        "sourceName": "6714.jpg",
+        "sha256": "ff860135bdbcb5354c4a3b3f00b55eeecb0d7c3f14efdd6b42a60e639afb7cc0",
+        "publishedName": "hero.webp"
+      },
+      {
+        "sourceName": "6716.jpg",
+        "sha256": "141489b45e46ab30357b8af1695ed4eee26a7acbf178fd46bc213a550498ab19",
+        "publishedName": "01.webp"
+      },
+      {
+        "sourceName": "6718.jpg",
+        "sha256": "1827722b2db2df61319319a1947d74d30d9f17eb5eb2a7babf319ac3729b1de3",
+        "publishedName": "02.webp"
+      },
+      {
+        "sourceName": "6717.jpg",
+        "sha256": "20c243a78bbc276f3735a362f3483bc7268360d070a4f829b1fca20d098df4f2",
+        "publishedName": "03.webp"
+      },
+      {
+        "sourceName": "6719.jpg",
+        "sha256": "3cbb4eab94360a67346f15ff3db6d6bbb76b2a165a77db416048d57784411804",
+        "publishedName": "04.webp"
+      },
+      {
+        "sourceName": "6715.jpg",
+        "sha256": "56a0f8177c72f45a691c858e3f256bb055986a4508bb227da1f4a1d4cb718788",
+        "publishedName": "05.webp"
+      }
+    ]
+  },
+  {
+    "id": "shk-h14-whitebox-three-bedrooms",
+    "sourceDate": "2026-11-16",
+    "sourceTime": "11:55",
+    "priceSource": "6,9 млн",
+    "price": 6900000,
+    "archive": "Gmail (13).zip",
+    "photos": [
+      {
+        "sourceName": "2551.jpg",
+        "sha256": "4f9c10955bb5ca9b55a420c19385ba8815ec89a4ef4df6c81bbe7316e12ab7a5",
+        "publishedName": "hero.webp"
+      },
+      {
+        "sourceName": "2554.jpg",
+        "sha256": "63688a90ac91e9361ea2a6108f80abcaed6410e83cd29a93977a110d83cf45f7",
+        "publishedName": "01.webp"
+      },
+      {
+        "sourceName": "2556.jpg",
+        "sha256": "7633d9fdf3b2424f7dfdba8521009813f42ee4a56889ebea707890ef5d372064",
+        "publishedName": "02.webp"
+      },
+      {
+        "sourceName": "2558.jpg",
+        "sha256": "6dc0bc53117dfa0405a32eaa2a440a1a8d447e4e0a77137bad1b97e217b10238",
+        "publishedName": "03.webp"
+      },
+      {
+        "sourceName": "2557.jpg",
+        "sha256": "ad8c8461d2324e0a6058d3022e3d3cd9624a8d994e6a8e10fab5c2fe4331b199",
+        "publishedName": "04.webp"
+      },
+      {
+        "sourceName": "2555.jpg",
+        "sha256": "2ede04d38441ed466e34c18b07e615ba1e172fac38bc9223c437977d64571e03",
+        "publishedName": "05.webp"
+      },
+      {
+        "sourceName": "2563.jpg",
+        "sha256": "d790fa9d771e3c2c9a064c11d20b957f1b195d49d3ee06f9263221ad0ebb395d",
+        "publishedName": "06.webp"
+      },
+      {
+        "sourceName": "2564.jpg",
+        "sha256": "2b3084386b9893e5f3d4e1140b272b882545c8dbf58c9d73a2dc0a42878e5119",
+        "publishedName": "07.webp"
+      },
+      {
+        "sourceName": "2565.jpg",
+        "sha256": "2a07a1857f17b4ee28e064ef7cea53eb532a264bc509d8bd1a95835ee57a2a37",
+        "publishedName": "08.webp"
+      },
+      {
+        "sourceName": "2569.jpg",
+        "sha256": "0dfb1a9725e161254c272ee9236f618052cd1f82db29889628540d675eaab549",
+        "publishedName": "09.webp"
+      },
+      {
+        "sourceName": "2575.jpg",
+        "sha256": "1a5035c413dcc4d78474729a29627ff19a8795f26d5d58f7beb0e64a28ad7426",
+        "publishedName": "10.webp"
+      },
+      {
+        "sourceName": "2579.jpg",
+        "sha256": "75e94925e1f3a2539c3027878f65164d9ad490f860eb94e9216e5aa11d649407",
+        "publishedName": "11.webp"
+      },
+      {
+        "sourceName": "2582.jpg",
+        "sha256": "d4a937c0d05156e91cfabfed427a0c122cc8594d4d0e5856afcdc7688d52ef84",
+        "publishedName": "12.webp"
+      },
+      {
+        "sourceName": "2581.jpg",
+        "sha256": "7f1a12bd9387cc1f3af7e8b5c6fd4fa1744358dfa5bfe580d55559f771af1b45",
+        "publishedName": "13.webp"
+      },
+      {
+        "sourceName": "2592.jpg",
+        "sha256": "97b41f180aae565e8f8f3c9b01a05d58e43c85ee927b0bce12d71b6f157b2f6b",
+        "publishedName": "14.webp"
+      },
+      {
+        "sourceName": "5515.jpg",
+        "sha256": "5e53ad9c7d18c7c0b0ddbbb701f4afea6ea4edf1bce71a881ec2c86b0364764c",
+        "publishedName": "15.webp"
+      }
+    ],
+    "financeNote": "В письме: акция «Строй сейчас, плати потом», платёж 36 000 ₽/месяц и начало платежей после получения ключей. Исходные параметры кредита не указаны; безусловный платёж не опубликован."
+  },
+  {
+    "id": "shk-h15-razdorskaya-don-dacha",
+    "sourceDate": "2026-11-16",
+    "sourceTime": "12:09",
+    "priceSource": "6,7млн",
+    "price": 6700000,
+    "archive": "Gmail (4).zip",
+    "photos": [
+      {
+        "sourceName": "1878.jpg",
+        "sha256": "aa4c09289ef52c8935a8ee4bb45a37ba67d7fad7325307b3643892f28b20e2f5",
+        "publishedName": "hero.webp"
+      },
+      {
+        "sourceName": "1883.jpg",
+        "sha256": "88d7965428b19d26ddaf6f4992a02d648e97ad281588ac3786ca39567894363f",
+        "publishedName": "01.webp"
+      },
+      {
+        "sourceName": "1211.jpg",
+        "sha256": "5aa38e597793b741b9e12ceee37f82204f3b8614ad4ca91dc736762d19978e07",
+        "publishedName": "02.webp"
+      },
+      {
+        "sourceName": "1879.jpg",
+        "sha256": "19278980f01b22bd5fa743523386b3675eab20aa17f4edfcf79c5abcdb7207f0",
+        "publishedName": "03.webp"
+      },
+      {
+        "sourceName": "1880.jpg",
+        "sha256": "4ece49adf51a12d94bf9a2468c7e61c82892c4f5c4b2694c0e79d02f63695509",
+        "publishedName": "04.webp"
+      },
+      {
+        "sourceName": "1881.jpg",
+        "sha256": "b35b27a8ebb51159e438c6a7b9924a3956ff6ba1d696dd7570baedd6d9da087f",
+        "publishedName": "05.webp"
+      },
+      {
+        "sourceName": "1202.jpg",
+        "sha256": "c929093c95c192588e4b19b3c8ad387ee80a61ce8bc65af59af1931d06c587cf",
+        "publishedName": "06.webp"
+      },
+      {
+        "sourceName": "1882.jpg",
+        "sha256": "167ffd210dcbba5a964400e68a3f77d3324c2f44b0c3c673eced925bfd7e136a",
+        "publishedName": "07.webp"
+      },
+      {
+        "sourceName": "1886.jpg",
+        "sha256": "725495aa6b6015d2611f77898cb04eb92bcdb4f3046a71357ed8509127c01a2a",
+        "publishedName": "08.webp"
+      },
+      {
+        "sourceName": "1884.jpg",
+        "sha256": "19c87e8f7ab9a00cd02518be1b0175d41a882373836db6ce411a510e9a22d10e",
+        "publishedName": "09.webp"
+      },
+      {
+        "sourceName": "1885.jpg",
+        "sha256": "9eb0c0c20a39965466061677dc1356dd4e8415f665b5783abfd5305c58607597",
+        "publishedName": "10.webp"
+      },
+      {
+        "sourceName": "1195.jpg",
+        "sha256": "c10ec0596d8e3da23023311e5d6d7b50777d07bb0d3756c9cba8b9507ad44501",
+        "publishedName": "11.webp"
+      },
+      {
+        "sourceName": "1197.jpg",
+        "sha256": "256a96d14f81143725b29b1e23f8b61340f4b3f895800d9f81c3e00b66c63596",
+        "publishedName": "12.webp"
+      },
+      {
+        "sourceName": "1249.jpg",
+        "sha256": "7ea128f191ed0a16fc2485b60720d9bc0d45f45da7ae0e1eb43db7a39b0c649a",
+        "publishedName": "13.webp"
+      },
+      {
+        "sourceName": "1250.jpg",
+        "sha256": "72bf7a992e2c6dd70968b75557f858f0c2c4bc0cd085af3e2c87ec9bb2bdc5d3",
+        "publishedName": "14.webp"
+      }
+    ]
+  },
+  {
+    "id": "shk-h16-sobor-two-storey-house",
+    "sourceDate": "2026-11-16",
+    "sourceTime": "12:18",
+    "priceSource": "12,9 млн",
+    "price": 12900000,
+    "archive": "Gmail (14).zip",
+    "photos": [
+      {
+        "sourceName": "1603.jpg",
+        "sha256": "561aa176c98866bb0a7ef7ea2801563825205f2ec3db897700bfd1927a99d088",
+        "publishedName": "hero.webp"
+      },
+      {
+        "sourceName": "1521.jpg",
+        "sha256": "1818554053a67e3041b5a485e9294a682c3e11698eb64f39dd3e617d216f5c7d",
+        "publishedName": "01.webp"
+      },
+      {
+        "sourceName": "1522.jpg",
+        "sha256": "5a80bf7fc4afafcf5e73dafa05911725ddc10f8ca87cc9ded4e9d8415e8225dc",
+        "publishedName": "02.webp"
+      },
+      {
+        "sourceName": "1523.jpg",
+        "sha256": "19b64c710f62c8314b2ae473e4eaa040d19a76872730e4cd991f3121597fb967",
+        "publishedName": "03.webp"
+      },
+      {
+        "sourceName": "1526.jpg",
+        "sha256": "99d8395cf0c86779f87652e18b09f5cb95525d6f394170ccc3150f34a0f2d0b8",
+        "publishedName": "04.webp"
+      },
+      {
+        "sourceName": "1525.jpg",
+        "sha256": "b9f245630c921288732cd09cb8b3fd464bfb2e04f7e6940aef2c69d7d61a01e5",
+        "publishedName": "05.webp"
+      },
+      {
+        "sourceName": "1524.jpg",
+        "sha256": "1b639948df5692e09fa0b35cdc42ba7f59e574b883bca1f9e94f6052a589bbce",
+        "publishedName": "06.webp"
+      },
+      {
+        "sourceName": "1528.jpg",
+        "sha256": "0ca560aa8add6bac59a924fb6b758ccbb205025dab0c27a07722529ba0ce20d0",
+        "publishedName": "07.webp"
+      },
+      {
+        "sourceName": "1541.jpg",
+        "sha256": "811ac05ccf69a6c97e5787bba357f3469ec9cc265b8d48cc160c7fed360e3d5a",
+        "publishedName": "08.webp"
+      },
+      {
+        "sourceName": "1546.jpg",
+        "sha256": "7740fe46bd73353e69b43b279ac3297b35f603810b8cada3de58023c2a0f9414",
+        "publishedName": "09.webp"
+      }
+    ]
+  },
+  {
+    "id": "shk-c01-center-building-repair",
+    "sourceDate": "2026-11-16",
+    "sourceTime": "12:26",
+    "priceSource": "7,5млн",
+    "price": 7500000,
+    "archive": "Gmail (5).zip",
+    "photos": [
+      {
+        "sourceName": "843.jpg",
+        "sha256": "e558f32f787510778e1f78d91f98e8c185e767051255b6a85ed53a79668331ec",
+        "publishedName": "hero.webp"
+      },
+      {
+        "sourceName": "842.jpg",
+        "sha256": "e417627ec264420443ea49f69982954f6238e75b9638ef075caf718661eba396",
+        "publishedName": "01.webp"
+      },
+      {
+        "sourceName": "845.jpg",
+        "sha256": "5d74e323edafa11f4baeb1ce208f0d71a2536be38b8e9096aa8171dfb2758709",
+        "publishedName": "02.webp"
+      }
+    ]
+  }
+]

@@ -2825,5 +2825,915 @@
         "height": 750
       }
     ]
+  },
+  {
+    "id": "shk-h12-brick-house-repair",
+    "price": 1950000,
+    "type": "house-secondary",
+    "format": "secondary",
+    "title": "Кирпичный дом с четырьмя комнатами и летней кухней",
+    "address": "Шахты",
+    "rooms": 4,
+    "material": "Кирпич",
+    "description": "Кирпичный дом с четырьмя комнатами. Требуется ремонт. Все удобства находятся в летней кухне, которая отапливается от котла. Подключены вода, газ и центральная канализация. Земля в собственности, межевание проведено. Двор асфальтирован. На участке летняя кухня площадью 22,4 м², гараж 15,9 м² и два сарая площадью 16,9 и 3,9 м². Возможность покупки в ипотеку обсуждается индивидуально.",
+    "features": [
+      "4 комнаты",
+      "Все удобства в отапливаемой летней кухне",
+      "Вода, газ, центральная канализация",
+      "Земля в собственности, межевание проведено",
+      "Асфальтированный двор",
+      "Летняя кухня 22,4 м²",
+      "Гараж 15,9 м²",
+      "Два сарая: 16,9 и 3,9 м²",
+      "Требуется ремонт"
+    ],
+    "location": "shakhty",
+    "verified": true,
+    "status": "available",
+    "statusLabel": "Актуально",
+    "agentId": "olesya-grigoryan",
+    "updatedAt": "2026-11-17",
+    "pageUpdatedAt": "2026-11-17",
+    "provenance": "office",
+    "verifiedAt": "2026-11-17",
+    "verifiedBy": "Пользователь: письма Олеси Григорян от 16.11.2026 и запрос на добавление от 17.11.2026",
+    "image": {
+      "src": "assets/images/listings/shk-h12-brick-house-repair/hero.webp",
+      "alt": "Кирпичный дом с четырьмя комнатами и летней кухней: основная фотография",
+      "width": 1600,
+      "height": 1200
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-h12-brick-house-repair/01.webp",
+        "alt": "Кирпичный дом с четырьмя комнатами и летней кухней: фотография 2",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h12-brick-house-repair/02.webp",
+        "alt": "Кирпичный дом с четырьмя комнатами и летней кухней: фотография 3",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h12-brick-house-repair/03.webp",
+        "alt": "Кирпичный дом с четырьмя комнатами и летней кухней: фотография 4",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h12-brick-house-repair/04.webp",
+        "alt": "Кирпичный дом с четырьмя комнатами и летней кухней: фотография 5",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h12-brick-house-repair/05.webp",
+        "alt": "Кирпичный дом с четырьмя комнатами и летней кухней: фотография 6",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h12-brick-house-repair/06.webp",
+        "alt": "Кирпичный дом с четырьмя комнатами и летней кухней: фотография 7",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h12-brick-house-repair/07.webp",
+        "alt": "Кирпичный дом с четырьмя комнатами и летней кухней: фотография 8",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h12-brick-house-repair/08.webp",
+        "alt": "Кирпичный дом с четырьмя комнатами и летней кухней: фотография 9",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h12-brick-house-repair/09.webp",
+        "alt": "Кирпичный дом с четырьмя комнатами и летней кухней: фотография 10",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  {
+    "id": "shk-h13-krasina-brick-58",
+    "price": 2600000,
+    "type": "house-secondary",
+    "format": "secondary",
+    "title": "Кирпичный дом 58 м² с участком 6 соток на Красина",
+    "address": "Шахты, посёлок Красина, район Кадетского корпуса",
+    "area": 58,
+    "landArea": 6,
+    "rooms": 4,
+    "material": "Кирпич",
+    "description": "Кирпичный дом площадью 58 м² в посёлке Красина, в районе Кадетского корпуса. Без трещин и стяжек. В доме четыре комнаты и дополнительные помещения для организации санузла и котельной. Установлены металлопластиковые окна, проведены свет, газ и вода, внутри находится газовый котёл. Требуется ремонт. Земельный участок 6 соток. Во дворе построены новый сарай и туалет.",
+    "features": [
+      "4 комнаты",
+      "Без трещин и стяжек",
+      "Дополнительные помещения под санузел и котельную",
+      "Металлопластиковые окна",
+      "Свет, газ, вода",
+      "Газовый котёл в доме",
+      "Новый сарай и туалет во дворе",
+      "Требуется ремонт"
+    ],
+    "location": "shakhty",
+    "verified": true,
+    "status": "available",
+    "statusLabel": "Актуально",
+    "agentId": "olesya-grigoryan",
+    "updatedAt": "2026-11-17",
+    "pageUpdatedAt": "2026-11-17",
+    "provenance": "office",
+    "verifiedAt": "2026-11-17",
+    "verifiedBy": "Пользователь: письма Олеси Григорян от 16.11.2026 и запрос на добавление от 17.11.2026",
+    "image": {
+      "src": "assets/images/listings/shk-h13-krasina-brick-58/hero.webp",
+      "alt": "Кирпичный дом 58 м² с участком 6 соток на Красина: основная фотография",
+      "width": 1600,
+      "height": 1200
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-h13-krasina-brick-58/01.webp",
+        "alt": "Кирпичный дом 58 м² с участком 6 соток на Красина: фотография 2",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-h13-krasina-brick-58/02.webp",
+        "alt": "Кирпичный дом 58 м² с участком 6 соток на Красина: фотография 3",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h13-krasina-brick-58/03.webp",
+        "alt": "Кирпичный дом 58 м² с участком 6 соток на Красина: фотография 4",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h13-krasina-brick-58/04.webp",
+        "alt": "Кирпичный дом 58 м² с участком 6 соток на Красина: фотография 5",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-h13-krasina-brick-58/05.webp",
+        "alt": "Кирпичный дом 58 м² с участком 6 соток на Красина: фотография 6",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h13-krasina-brick-58/06.webp",
+        "alt": "Кирпичный дом 58 м² с участком 6 соток на Красина: фотография 7",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h13-krasina-brick-58/07.webp",
+        "alt": "Кирпичный дом 58 м² с участком 6 соток на Красина: фотография 8",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h13-krasina-brick-58/08.webp",
+        "alt": "Кирпичный дом 58 м² с участком 6 соток на Красина: фотография 9",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h13-krasina-brick-58/09.webp",
+        "alt": "Кирпичный дом 58 м² с участком 6 соток на Красина: фотография 10",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h13-krasina-brick-58/10.webp",
+        "alt": "Кирпичный дом 58 м² с участком 6 соток на Красина: фотография 11",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-h13-krasina-brick-58/11.webp",
+        "alt": "Кирпичный дом 58 м² с участком 6 соток на Красина: фотография 12",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  {
+    "id": "shk-a18-gorod-budushchego-4k-100",
+    "price": 8500000,
+    "type": "apartment-secondary",
+    "format": "secondary",
+    "title": "4-комнатная квартира 100 м² в районе Города Будущего",
+    "address": "Шахты, район Города Будущего",
+    "area": 100,
+    "rooms": 4,
+    "description": "4-комнатная квартира площадью 100 м² в районе Города Будущего: две квартиры, 1- и 2-комнатная, объединены в одну. Свежий ремонт и индивидуальное отопление. Просторная кухня, кабинет, который можно использовать как спальню, две лоджии и два санузла. Комнаты изолированные. Остаются мебель и техника, кроме телевизора. Рядом детский сад, школа, аптеки, магазины, Город Будущего, медицинский центр и остановка общественного транспорта. За дополнительную плату доступны два гаража в этой же локации. Долгов и обременений нет.",
+    "features": [
+      "Индивидуальное отопление",
+      "Свежий ремонт",
+      "Изолированные комнаты",
+      "Кабинет можно использовать как спальню",
+      "Две лоджии и два санузла",
+      "Мебель и техника остаются, кроме телевизора",
+      "Два гаража доступны за дополнительную плату",
+      "Долгов и обременений нет"
+    ],
+    "location": "shakhty",
+    "verified": true,
+    "status": "available",
+    "statusLabel": "Актуально",
+    "agentId": "olesya-grigoryan",
+    "updatedAt": "2026-11-17",
+    "pageUpdatedAt": "2026-11-17",
+    "provenance": "office",
+    "verifiedAt": "2026-11-17",
+    "verifiedBy": "Пользователь: письма Олеси Григорян от 16.11.2026 и запрос на добавление от 17.11.2026",
+    "image": {
+      "src": "assets/images/listings/shk-a18-gorod-budushchego-4k-100/hero.webp",
+      "alt": "4-комнатная квартира 100 м² в районе Города Будущего: основная фотография",
+      "width": 1280,
+      "height": 960
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-a18-gorod-budushchego-4k-100/01.webp",
+        "alt": "4-комнатная квартира 100 м² в районе Города Будущего: фотография 2",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a18-gorod-budushchego-4k-100/02.webp",
+        "alt": "4-комнатная квартира 100 м² в районе Города Будущего: фотография 3",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a18-gorod-budushchego-4k-100/03.webp",
+        "alt": "4-комнатная квартира 100 м² в районе Города Будущего: фотография 4",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a18-gorod-budushchego-4k-100/04.webp",
+        "alt": "4-комнатная квартира 100 м² в районе Города Будущего: фотография 5",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a18-gorod-budushchego-4k-100/05.webp",
+        "alt": "4-комнатная квартира 100 м² в районе Города Будущего: фотография 6",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a18-gorod-budushchego-4k-100/06.webp",
+        "alt": "4-комнатная квартира 100 м² в районе Города Будущего: фотография 7",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a18-gorod-budushchego-4k-100/07.webp",
+        "alt": "4-комнатная квартира 100 м² в районе Города Будущего: фотография 8",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a18-gorod-budushchego-4k-100/08.webp",
+        "alt": "4-комнатная квартира 100 м² в районе Города Будущего: фотография 9",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a18-gorod-budushchego-4k-100/09.webp",
+        "alt": "4-комнатная квартира 100 м² в районе Города Будущего: фотография 10",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a18-gorod-budushchego-4k-100/10.webp",
+        "alt": "4-комнатная квартира 100 м² в районе Города Будущего: фотография 11",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a18-gorod-budushchego-4k-100/11.webp",
+        "alt": "4-комнатная квартира 100 м² в районе Города Будущего: фотография 12",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a18-gorod-budushchego-4k-100/12.webp",
+        "alt": "4-комнатная квартира 100 м² в районе Города Будущего: фотография 13",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a18-gorod-budushchego-4k-100/13.webp",
+        "alt": "4-комнатная квартира 100 м² в районе Города Будущего: фотография 14",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a18-gorod-budushchego-4k-100/14.webp",
+        "alt": "4-комнатная квартира 100 м² в районе Города Будущего: фотография 15",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a18-gorod-budushchego-4k-100/15.webp",
+        "alt": "4-комнатная квартира 100 м² в районе Города Будущего: фотография 16",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a18-gorod-budushchego-4k-100/16.webp",
+        "alt": "4-комнатная квартира 100 м² в районе Города Будущего: фотография 17",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a18-gorod-budushchego-4k-100/17.webp",
+        "alt": "4-комнатная квартира 100 м² в районе Города Будущего: фотография 18",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a18-gorod-budushchego-4k-100/18.webp",
+        "alt": "4-комнатная квартира 100 м² в районе Города Будущего: фотография 19",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  {
+    "id": "shk-a19-yuzhnaya-2k-heating",
+    "price": 3650000,
+    "type": "apartment-secondary",
+    "format": "secondary",
+    "title": "2-комнатная квартира с индивидуальным отоплением на Южной",
+    "address": "Шахты, посёлок Южная",
+    "rooms": 2,
+    "description": "Тёплая неугловая 2-комнатная квартира с индивидуальным отоплением в посёлке Южная. Просторная кухня 8 м². Балкон с панорамным остеклением, в квартире заменена проводка. Остаются мебель и техника. Рядом школа, детские сады, поликлиники, магазины, аптеки и остановка общественного транспорта.",
+    "features": [
+      "Индивидуальное отопление",
+      "Неугловая квартира",
+      "Кухня 8 м²",
+      "Балкон с панорамным остеклением",
+      "Заменена проводка",
+      "Мебель и техника остаются",
+      "Рядом школа, детские сады и остановка"
+    ],
+    "location": "shakhty",
+    "verified": true,
+    "status": "available",
+    "statusLabel": "Актуально",
+    "agentId": "olesya-grigoryan",
+    "updatedAt": "2026-11-17",
+    "pageUpdatedAt": "2026-11-17",
+    "provenance": "office",
+    "verifiedAt": "2026-11-17",
+    "verifiedBy": "Пользователь: письма Олеси Григорян от 16.11.2026 и запрос на добавление от 17.11.2026",
+    "image": {
+      "src": "assets/images/listings/shk-a19-yuzhnaya-2k-heating/hero.webp",
+      "alt": "2-комнатная квартира с индивидуальным отоплением на Южной: основная фотография",
+      "width": 1280,
+      "height": 722
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-a19-yuzhnaya-2k-heating/01.webp",
+        "alt": "2-комнатная квартира с индивидуальным отоплением на Южной: фотография 2",
+        "width": 720,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a19-yuzhnaya-2k-heating/02.webp",
+        "alt": "2-комнатная квартира с индивидуальным отоплением на Южной: фотография 3",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "src": "assets/images/listings/shk-a19-yuzhnaya-2k-heating/03.webp",
+        "alt": "2-комнатная квартира с индивидуальным отоплением на Южной: фотография 4",
+        "width": 720,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a19-yuzhnaya-2k-heating/04.webp",
+        "alt": "2-комнатная квартира с индивидуальным отоплением на Южной: фотография 5",
+        "width": 540,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a19-yuzhnaya-2k-heating/05.webp",
+        "alt": "2-комнатная квартира с индивидуальным отоплением на Южной: фотография 6",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "src": "assets/images/listings/shk-a19-yuzhnaya-2k-heating/06.webp",
+        "alt": "2-комнатная квартира с индивидуальным отоплением на Южной: фотография 7",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "src": "assets/images/listings/shk-a19-yuzhnaya-2k-heating/07.webp",
+        "alt": "2-комнатная квартира с индивидуальным отоплением на Южной: фотография 8",
+        "width": 540,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a19-yuzhnaya-2k-heating/08.webp",
+        "alt": "2-комнатная квартира с индивидуальным отоплением на Южной: фотография 9",
+        "width": 1280,
+        "height": 722
+      },
+      {
+        "src": "assets/images/listings/shk-a19-yuzhnaya-2k-heating/09.webp",
+        "alt": "2-комнатная квартира с индивидуальным отоплением на Южной: фотография 10",
+        "width": 540,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a19-yuzhnaya-2k-heating/10.webp",
+        "alt": "2-комнатная квартира с индивидуальным отоплением на Южной: фотография 11",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  },
+  {
+    "id": "shk-a20-dvorets-sporta-2k",
+    "price": 4300000,
+    "type": "apartment-secondary",
+    "format": "secondary",
+    "title": "2-комнатная квартира с ремонтом у Дворца Спорта",
+    "address": "Шахты, район Дворца Спорта",
+    "rooms": 2,
+    "description": "2-комнатная квартира с индивидуальным отоплением в районе Дворца Спорта. Второй этаж, высота потолков 2,8 м. Выполнен свежий ремонт, установлены газовый котёл Ferroli и кондиционер. Остаётся мебель. Во дворе за квартирой закреплена летняя кухня, также есть подвал. Дом после капитального ремонта. В шаговой доступности школы, детские сады, поликлиники, парк культуры и отдыха, магазины, аптеки, рынок, пункты выдачи заказов и остановка общественного транспорта.",
+    "features": [
+      "2 этаж",
+      "Потолки 2,8 м",
+      "Индивидуальное отопление, котёл Ferroli",
+      "Свежий ремонт",
+      "Кондиционер",
+      "Мебель остаётся",
+      "Закреплённая летняя кухня и подвал",
+      "Дом после капитального ремонта"
+    ],
+    "location": "shakhty",
+    "verified": true,
+    "status": "available",
+    "statusLabel": "Актуально",
+    "agentId": "olesya-grigoryan",
+    "updatedAt": "2026-11-17",
+    "pageUpdatedAt": "2026-11-17",
+    "provenance": "office",
+    "verifiedAt": "2026-11-17",
+    "verifiedBy": "Пользователь: письма Олеси Григорян от 16.11.2026 и запрос на добавление от 17.11.2026",
+    "image": {
+      "src": "assets/images/listings/shk-a20-dvorets-sporta-2k/hero.webp",
+      "alt": "2-комнатная квартира с ремонтом у Дворца Спорта: основная фотография",
+      "width": 720,
+      "height": 960
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-a20-dvorets-sporta-2k/01.webp",
+        "alt": "2-комнатная квартира с ремонтом у Дворца Спорта: фотография 2",
+        "width": 720,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a20-dvorets-sporta-2k/02.webp",
+        "alt": "2-комнатная квартира с ремонтом у Дворца Спорта: фотография 3",
+        "width": 720,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a20-dvorets-sporta-2k/03.webp",
+        "alt": "2-комнатная квартира с ремонтом у Дворца Спорта: фотография 4",
+        "width": 720,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a20-dvorets-sporta-2k/04.webp",
+        "alt": "2-комнатная квартира с ремонтом у Дворца Спорта: фотография 5",
+        "width": 720,
+        "height": 960
+      },
+      {
+        "src": "assets/images/listings/shk-a20-dvorets-sporta-2k/05.webp",
+        "alt": "2-комнатная квартира с ремонтом у Дворца Спорта: фотография 6",
+        "width": 1080,
+        "height": 1115
+      }
+    ]
+  },
+  {
+    "id": "shk-h14-whitebox-three-bedrooms",
+    "price": 6900000,
+    "type": "house-new",
+    "format": "newbuild",
+    "title": "Дом с тремя спальнями и отделкой white-box на 4 сотках",
+    "address": "Шахты",
+    "landArea": 4,
+    "bedrooms": 3,
+    "description": "Дом от аккредитованного застройщика с предчистовой отделкой white-box. Цена включает участок 4 сотки и заведённые коммуникации, комиссия агентству не предусмотрена. В доме три спальни, кухня-гостиная, санузел и котельная. Выполнена ручная штукатурка стен под маяк, установлены металлопластиковые окна REHAU и утеплённая входная дверь с терморазрывом, сделаны разводка сантехники и тёплый пол с выводами под радиаторы. Расчёты через эскроу-счёт — по условиям договора. Возможность семейной ипотеки и начала платежей после получения ключей уточняется при индивидуальном расчёте; также возможна покупка за наличный расчёт.",
+    "features": [
+      "Три спальни и кухня-гостиная",
+      "Предчистовая отделка white-box",
+      "Участок 4 сотки и коммуникации входят в цену",
+      "Без комиссии агентству",
+      "Ручная штукатурка стен под маяк",
+      "Окна REHAU",
+      "Тёплый пол с выводами под радиаторы",
+      "Разводка сантехники",
+      "Входная дверь с терморазрывом",
+      "Семейная ипотека — при соответствии условиям программы и одобрении банка"
+    ],
+    "location": "shakhty",
+    "verified": true,
+    "status": "available",
+    "statusLabel": "Актуально",
+    "agentId": "olesya-grigoryan",
+    "updatedAt": "2026-11-17",
+    "pageUpdatedAt": "2026-11-17",
+    "provenance": "office",
+    "verifiedAt": "2026-11-17",
+    "verifiedBy": "Пользователь: письма Олеси Григорян от 16.11.2026 и запрос на добавление от 17.11.2026",
+    "image": {
+      "src": "assets/images/listings/shk-h14-whitebox-three-bedrooms/hero.webp",
+      "alt": "Дом с тремя спальнями и отделкой white-box на 4 сотках: основная фотография",
+      "width": 750,
+      "height": 1000
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-h14-whitebox-three-bedrooms/01.webp",
+        "alt": "Дом с тремя спальнями и отделкой white-box на 4 сотках: фотография 2",
+        "width": 612,
+        "height": 816
+      },
+      {
+        "src": "assets/images/listings/shk-h14-whitebox-three-bedrooms/02.webp",
+        "alt": "Дом с тремя спальнями и отделкой white-box на 4 сотках: фотография 3",
+        "width": 612,
+        "height": 816
+      },
+      {
+        "src": "assets/images/listings/shk-h14-whitebox-three-bedrooms/03.webp",
+        "alt": "Дом с тремя спальнями и отделкой white-box на 4 сотках: фотография 4",
+        "width": 612,
+        "height": 816
+      },
+      {
+        "src": "assets/images/listings/shk-h14-whitebox-three-bedrooms/04.webp",
+        "alt": "Дом с тремя спальнями и отделкой white-box на 4 сотках: фотография 5",
+        "width": 612,
+        "height": 816
+      },
+      {
+        "src": "assets/images/listings/shk-h14-whitebox-three-bedrooms/05.webp",
+        "alt": "Дом с тремя спальнями и отделкой white-box на 4 сотках: фотография 6",
+        "width": 612,
+        "height": 816
+      },
+      {
+        "src": "assets/images/listings/shk-h14-whitebox-three-bedrooms/06.webp",
+        "alt": "Дом с тремя спальнями и отделкой white-box на 4 сотках: фотография 7",
+        "width": 612,
+        "height": 816
+      },
+      {
+        "src": "assets/images/listings/shk-h14-whitebox-three-bedrooms/07.webp",
+        "alt": "Дом с тремя спальнями и отделкой white-box на 4 сотках: фотография 8",
+        "width": 612,
+        "height": 816
+      },
+      {
+        "src": "assets/images/listings/shk-h14-whitebox-three-bedrooms/08.webp",
+        "alt": "Дом с тремя спальнями и отделкой white-box на 4 сотках: фотография 9",
+        "width": 612,
+        "height": 816
+      },
+      {
+        "src": "assets/images/listings/shk-h14-whitebox-three-bedrooms/09.webp",
+        "alt": "Дом с тремя спальнями и отделкой white-box на 4 сотках: фотография 10",
+        "width": 612,
+        "height": 816
+      },
+      {
+        "src": "assets/images/listings/shk-h14-whitebox-three-bedrooms/10.webp",
+        "alt": "Дом с тремя спальнями и отделкой white-box на 4 сотках: фотография 11",
+        "width": 612,
+        "height": 816
+      },
+      {
+        "src": "assets/images/listings/shk-h14-whitebox-three-bedrooms/11.webp",
+        "alt": "Дом с тремя спальнями и отделкой white-box на 4 сотках: фотография 12",
+        "width": 612,
+        "height": 816
+      },
+      {
+        "src": "assets/images/listings/shk-h14-whitebox-three-bedrooms/12.webp",
+        "alt": "Дом с тремя спальнями и отделкой white-box на 4 сотках: фотография 13",
+        "width": 612,
+        "height": 816
+      },
+      {
+        "src": "assets/images/listings/shk-h14-whitebox-three-bedrooms/13.webp",
+        "alt": "Дом с тремя спальнями и отделкой white-box на 4 сотках: фотография 14",
+        "width": 612,
+        "height": 816
+      },
+      {
+        "src": "assets/images/listings/shk-h14-whitebox-three-bedrooms/14.webp",
+        "alt": "Дом с тремя спальнями и отделкой white-box на 4 сотках: фотография 15",
+        "width": 612,
+        "height": 816
+      },
+      {
+        "src": "assets/images/listings/shk-h14-whitebox-three-bedrooms/15.webp",
+        "alt": "Дом с тремя спальнями и отделкой white-box на 4 сотках: фотография 16",
+        "width": 597,
+        "height": 802
+      }
+    ]
+  },
+  {
+    "id": "shk-h15-razdorskaya-don-dacha",
+    "price": 6700000,
+    "type": "house-secondary",
+    "format": "secondary",
+    "title": "Дача на первой береговой линии Дона в Раздорской",
+    "address": "Станица Раздорская, первая береговая линия реки Дон",
+    "location": "razdorskaya",
+    "floors": 2,
+    "rooms": 4,
+    "description": "Дача на первой береговой линии реки Дон в станице Раздорской. Двухэтажный дом с газовым котлом, четырьмя комнатами, кухней и столовой. Санузел находится в доме, есть кладовая для хранения консервации. На территории гараж, баня, требующая ремонта, и вспомогательное сооружение. Два заезда во двор, помещаются четыре автомобиля. На участке растут плодовые деревья. Тихие и спокойные соседи. Подходит для отдыха и круглогодичного проживания.",
+    "features": [
+      "Первая береговая линия Дона",
+      "Двухэтажный дом",
+      "4 комнаты, кухня и столовая",
+      "Газовый котёл",
+      "Санузел в доме",
+      "Кладовая для консервации",
+      "Гараж",
+      "Баня требует ремонта",
+      "Два заезда во двор, место для четырёх автомобилей",
+      "Плодовые деревья"
+    ],
+    "verified": true,
+    "status": "available",
+    "statusLabel": "Актуально",
+    "agentId": "olesya-grigoryan",
+    "updatedAt": "2026-11-17",
+    "pageUpdatedAt": "2026-11-17",
+    "provenance": "office",
+    "verifiedAt": "2026-11-17",
+    "verifiedBy": "Пользователь: письма Олеси Григорян от 16.11.2026 и запрос на добавление от 17.11.2026",
+    "image": {
+      "src": "assets/images/listings/shk-h15-razdorskaya-don-dacha/hero.webp",
+      "alt": "Дача на первой береговой линии Дона в Раздорской: основная фотография",
+      "width": 1600,
+      "height": 1200
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-h15-razdorskaya-don-dacha/01.webp",
+        "alt": "Дача на первой береговой линии Дона в Раздорской: фотография 2",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-h15-razdorskaya-don-dacha/02.webp",
+        "alt": "Дача на первой береговой линии Дона в Раздорской: фотография 3",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h15-razdorskaya-don-dacha/03.webp",
+        "alt": "Дача на первой береговой линии Дона в Раздорской: фотография 4",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h15-razdorskaya-don-dacha/04.webp",
+        "alt": "Дача на первой береговой линии Дона в Раздорской: фотография 5",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-h15-razdorskaya-don-dacha/05.webp",
+        "alt": "Дача на первой береговой линии Дона в Раздорской: фотография 6",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h15-razdorskaya-don-dacha/06.webp",
+        "alt": "Дача на первой береговой линии Дона в Раздорской: фотография 7",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h15-razdorskaya-don-dacha/07.webp",
+        "alt": "Дача на первой береговой линии Дона в Раздорской: фотография 8",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h15-razdorskaya-don-dacha/08.webp",
+        "alt": "Дача на первой береговой линии Дона в Раздорской: фотография 9",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h15-razdorskaya-don-dacha/09.webp",
+        "alt": "Дача на первой береговой линии Дона в Раздорской: фотография 10",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-h15-razdorskaya-don-dacha/10.webp",
+        "alt": "Дача на первой береговой линии Дона в Раздорской: фотография 11",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h15-razdorskaya-don-dacha/11.webp",
+        "alt": "Дача на первой береговой линии Дона в Раздорской: фотография 12",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-h15-razdorskaya-don-dacha/12.webp",
+        "alt": "Дача на первой береговой линии Дона в Раздорской: фотография 13",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-h15-razdorskaya-don-dacha/13.webp",
+        "alt": "Дача на первой береговой линии Дона в Раздорской: фотография 14",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h15-razdorskaya-don-dacha/14.webp",
+        "alt": "Дача на первой береговой линии Дона в Раздорской: фотография 15",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  {
+    "id": "shk-h16-sobor-two-storey-house",
+    "price": 12900000,
+    "type": "house-secondary",
+    "format": "secondary",
+    "title": "Двухэтажный кирпичный дом на 9 сотках у Собора",
+    "address": "Шахты, центральная часть города, район Собора",
+    "floors": 2,
+    "landArea": 9,
+    "material": "Кирпич",
+    "description": "Двухэтажный кирпичный дом в тихом районе центральной части Шахт, в районе Собора. Участок 9 соток, фасад 20 м. На первом этаже находятся санузел, просторная светлая кухня, зал, гостиная и спальня, есть подсобные помещения для хранения вещей. На втором этаже две спальни с гардеробными. В доме вместительный погреб. Установлены металлические ворота. Рядом школа, детский сад, аптеки и магазины.",
+    "features": [
+      "Два этажа",
+      "Кирпичный дом",
+      "Участок 9 соток, фасад 20 м",
+      "Две спальни с гардеробными на втором этаже",
+      "Просторная кухня",
+      "Подсобные помещения",
+      "Вместительный погреб",
+      "Металлические ворота",
+      "Центральная часть города, район Собора"
+    ],
+    "location": "shakhty",
+    "verified": true,
+    "status": "available",
+    "statusLabel": "Актуально",
+    "agentId": "olesya-grigoryan",
+    "updatedAt": "2026-11-17",
+    "pageUpdatedAt": "2026-11-17",
+    "provenance": "office",
+    "verifiedAt": "2026-11-17",
+    "verifiedBy": "Пользователь: письма Олеси Григорян от 16.11.2026 и запрос на добавление от 17.11.2026",
+    "image": {
+      "src": "assets/images/listings/shk-h16-sobor-two-storey-house/hero.webp",
+      "alt": "Двухэтажный кирпичный дом на 9 сотках у Собора: основная фотография",
+      "width": 1200,
+      "height": 1600
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-h16-sobor-two-storey-house/01.webp",
+        "alt": "Двухэтажный кирпичный дом на 9 сотках у Собора: фотография 2",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-h16-sobor-two-storey-house/02.webp",
+        "alt": "Двухэтажный кирпичный дом на 9 сотках у Собора: фотография 3",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-h16-sobor-two-storey-house/03.webp",
+        "alt": "Двухэтажный кирпичный дом на 9 сотках у Собора: фотография 4",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-h16-sobor-two-storey-house/04.webp",
+        "alt": "Двухэтажный кирпичный дом на 9 сотках у Собора: фотография 5",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-h16-sobor-two-storey-house/05.webp",
+        "alt": "Двухэтажный кирпичный дом на 9 сотках у Собора: фотография 6",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-h16-sobor-two-storey-house/06.webp",
+        "alt": "Двухэтажный кирпичный дом на 9 сотках у Собора: фотография 7",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-h16-sobor-two-storey-house/07.webp",
+        "alt": "Двухэтажный кирпичный дом на 9 сотках у Собора: фотография 8",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/images/listings/shk-h16-sobor-two-storey-house/08.webp",
+        "alt": "Двухэтажный кирпичный дом на 9 сотках у Собора: фотография 9",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-h16-sobor-two-storey-house/09.webp",
+        "alt": "Двухэтажный кирпичный дом на 9 сотках у Собора: фотография 10",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  {
+    "id": "shk-c01-center-building-repair",
+    "price": 7500000,
+    "type": "commercial",
+    "format": "commercial-premises",
+    "title": "Коммерческое здание под ремонт в центре Шахт",
+    "address": "Шахты, центр города",
+    "landArea": 3,
+    "description": "Здание под ремонт в центре Шахт. Объект переведён в коммерческую недвижимость, участок 3 сотки. Центральная локация позволяет рассмотреть разные варианты использования; подходящий вид деятельности и требования к помещению уточняются перед покупкой. По всем вопросам обращайтесь — организуем показ.",
+    "features": [
+      "Центр города",
+      "Объект переведён в коммерческую недвижимость",
+      "Участок 3 сотки",
+      "Здание требует ремонта"
+    ],
+    "location": "shakhty",
+    "verified": true,
+    "status": "available",
+    "statusLabel": "Актуально",
+    "agentId": "olesya-grigoryan",
+    "updatedAt": "2026-11-17",
+    "pageUpdatedAt": "2026-11-17",
+    "provenance": "office",
+    "verifiedAt": "2026-11-17",
+    "verifiedBy": "Пользователь: письма Олеси Григорян от 16.11.2026 и запрос на добавление от 17.11.2026",
+    "image": {
+      "src": "assets/images/listings/shk-c01-center-building-repair/hero.webp",
+      "alt": "Коммерческое здание под ремонт в центре Шахт: основная фотография",
+      "width": 1600,
+      "height": 1200
+    },
+    "gallery": [
+      {
+        "src": "assets/images/listings/shk-c01-center-building-repair/01.webp",
+        "alt": "Коммерческое здание под ремонт в центре Шахт: фотография 2",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/images/listings/shk-c01-center-building-repair/02.webp",
+        "alt": "Коммерческое здание под ремонт в центре Шахт: фотография 3",
+        "width": 1200,
+        "height": 1600
+      }
+    ]
   }
 ]

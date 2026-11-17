@@ -32,10 +32,10 @@ test('all static listings have coherent status, description, metadata, links and
     assert.ok(!meta.has(description),r.id+' duplicate meta');meta.add(description);
     const url=config.productionOrigin+'/listings/'+r.id+'.html';
     assert.ok(html.includes('rel="canonical" href="'+url+'"'),r.id);assert.ok(sitemap.includes('<loc>'+url+'</loc>'),r.id);
-    assert.ok(html.includes('href="'+config.phoneHref+'"'),r.id);
+    assert.ok(html.includes('href="'+config.listingContact.phoneHref+'"'),r.id);
     const nodes=[...html.matchAll(/type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap(m=>JSON.parse(m[1])['@graph']||[]);
     const listing=nodes.find(n=>n['@type']==='RealEstateListing'),offer=nodes.find(n=>n['@type']==='Offer');
-    assert.ok(listing&&offer,r.id);assert.equal(offer.price,r.price,r.id);assert.equal(offer.itemOffered['@type'],r.type==='land'?'Place':r.type.startsWith('apartment')?'Apartment':'House',r.id);
+    assert.ok(listing&&offer,r.id);assert.equal(offer.price,r.price,r.id);assert.equal(offer.itemOffered['@type'],['land','commercial'].includes(r.type)?'Place':r.type.startsWith('apartment')?'Apartment':'House',r.id);
     const item=publicData.find(x=>x.id===r.id);assert.deepEqual(item,publicListing(r,publicCopy),r.id);
     assert.ok(main.includes(item.description.replace(/\s+/g,' ').trim()),r.id+' static description');
     assert.equal(offer.itemOffered.description,item.description,r.id);

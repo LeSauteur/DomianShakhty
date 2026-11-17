@@ -1,3 +1,6 @@
+import { listingAgent, listingContact, phoneControl } from './listing-contact.mjs';
+import { promoPage } from './promo-page.mjs';
+import { promoPath } from './promo.mjs';
 import { catalogScenarios, scenarioTiles, catalogAlert } from "./catalog-extras.mjs";
 import { ACTIVE_LABEL, listingFacts } from './listing-publication.mjs';
 import { listingNumbers, listingQuestions, districtLink, listingCalculator, listingShare, viewingForm } from "./listing-pump.mjs";
@@ -277,7 +280,7 @@ function header(ctx, active) {
       <div class="site-header__top">
         ${brand(ctx)}
         <nav class="utility-nav" aria-label="Навигация по офису">${navigationItems(ctx, utilityNavigation(ctx), active)}</nav>
-        <div class="header-actions"><a class="header-phone" href="${ctx.site.phoneHref}" data-analytics="phone_click"><span>Позвонить</span><strong>${esc(ctx.site.phone)}</strong></a><a class="button button--primary header-cta" href="${ctx.href("sell.html")}">Продать объект</a><button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-drawer" data-menu-toggle><span></span><span></span></button></div>
+        <div class="header-actions">${ctx.currentListing ? `<span class="listing-header-contact">${phoneControl(ctx, ctx.currentListing, listingAgent(ctx, ctx.currentListing), "header")}</span>` : `<a class="header-phone" href="${ctx.site.phoneHref}" data-analytics="phone_click"><span>Позвонить</span><strong>${esc(ctx.site.phone)}</strong></a>`}<a class="button button--primary header-cta" href="${ctx.href("sell.html")}">Продать объект</a><button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-drawer" data-menu-toggle><span></span><span></span></button></div>
       </div>
       <nav class="category-nav" aria-label="Виды недвижимости">${navigationItems(ctx, primaryNavigation, active)}</nav>
     </div>
@@ -286,7 +289,7 @@ function header(ctx, active) {
     <div class="mobile-drawer__panel" role="dialog" aria-modal="true" aria-label="Меню сайта">
       <div class="mobile-drawer__top">${brand(ctx)}<button class="icon-button mobile-drawer__close" type="button" aria-label="Закрыть меню" data-drawer-close>×</button></div>
       <nav class="mobile-drawer__nav" aria-label="Мобильная навигация"><div class="mobile-drawer__group"><span>Недвижимость</span>${navigationItems(ctx, primaryNavigation, active, true)}</div><div class="mobile-drawer__group"><span>Офис и материалы</span>${navigationItems(ctx, utilityNavigation(ctx), active, true)}</div><a class="button button--primary mobile-drawer__sell" href="${ctx.href("sell.html")}">Продать объект</a></nav>
-      <div class="mobile-drawer__contact"><a class="button button--primary" href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a><span>${esc(ctx.site.address)}</span>${socialLinks(ctx, "social-links social-links--drawer")}</div>
+      <div class="mobile-drawer__contact">${ctx.currentListing ? phoneControl(ctx, ctx.currentListing, listingAgent(ctx, ctx.currentListing), "mobile_menu") : `<a class="button button--primary" href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a>`}<a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a><span>${esc(ctx.site.address)}</span>${socialLinks(ctx, "social-links social-links--drawer")}</div>
     </div>
   </div>`;
 }
@@ -298,7 +301,7 @@ function footer(ctx) {
       <div><h2>Недвижимость</h2><a href="${ctx.href("apartments.html")}">Квартиры</a><a href="${ctx.href("houses.html")}">Дома</a><a href="${ctx.href("lands.html")}">Участки</a><a href="${ctx.href("commercial.html")}">Коммерческая</a><a href="${ctx.href("garages-parking.html")}">Гаражи и парковка</a></div>
       <div><h2>Клиентам</h2><a href="${ctx.href("sell.html")}">Продать</a><a href="${ctx.href("valuation.html")}">Оценка</a><a href="${ctx.href("mortgage.html")}">Ипотечный сценарий</a><a href="${ctx.href("guides/index.html")}">Полезные материалы</a></div>
       <div><h2>Офис</h2><a href="${ctx.href("team/index.html")}">Команда</a><a href="${ctx.href("team/maria-voronina.html")}">Мария Воронина</a><a href="${ctx.href("team/olga-chernenko.html")}">Ольга Черненко</a><a href="${ctx.href("team/maria-smolina.html")}">Мария Смолина</a><a href="${ctx.href("team/yana-efimchenko.html")}">Яна Ефимченко</a><a href="${ctx.href("contacts.html")}">Контакты</a><a href="${ctx.href("details.html")}">Реквизиты</a><a href="${ctx.href("privacy.html")}">Обработка данных</a></div>
-      <address><h2>Связаться</h2><a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a><a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a><span>${esc(ctx.site.address)} · этаж 2</span>${ctx.site.officeHours ? `<span>${esc(ctx.site.officeHours.label)}</span>` : ""}${ctx.site.maps ? `<a href="${esc(ctx.site.maps.yandex.url)}" target="_blank" rel="noopener noreferrer">Оставить отзыв в Яндекс Картах</a>` : ""}${socialLinks(ctx, "social-links social-links--footer")}</address>
+      <address><h2>Связаться</h2>${ctx.currentListing ? phoneControl(ctx, ctx.currentListing, listingAgent(ctx, ctx.currentListing), "footer") : `<a href="${ctx.site.phoneHref}" data-analytics="phone_click">${esc(ctx.site.phone)}</a>`}<a href="mailto:${esc(ctx.site.email)}" data-analytics="email_click">${esc(ctx.site.email)}</a><span>${esc(ctx.site.address)} · этаж 2</span>${ctx.site.officeHours ? `<span>${esc(ctx.site.officeHours.label)}</span>` : ""}${ctx.site.maps ? `<a href="${esc(ctx.site.maps.yandex.url)}" target="_blank" rel="noopener noreferrer">Оставить отзыв в Яндекс Картах</a>` : ""}${socialLinks(ctx, "social-links social-links--footer")}</address>
     </div>
     <div class="container footer-bottom"><span>© ${new Date().getFullYear()} ${esc(ctx.site.displayName)}</span><span>Обсудите подбор и условия покупки с офисом Домиан на Маяковского</span></div>
   </footer>`;
@@ -647,13 +650,14 @@ function leadForm(ctx, form = {}) {
   const directPhoneHref = form.phoneHref || ctx.site.phoneHref;
   const directEmail = form.email === false ? null : form.email || ctx.site.email;
   const directSocials = form.socials === false ? "" : socialLinks(ctx);
-  if (!ctx.site.web3formsAccessKey) return `<section class="lead-section" id="lead-form-section"><div class="container lead-layout"><div><p class="eyebrow">${esc(form.kicker || "Связаться с офисом")}</p><h2>${esc(form.title || "Обсудить задачу")}</h2><p>${esc(form.text || "Расскажите, что нужно решить.")}</p></div><div class="direct-contact"><a href="${esc(directPhoneHref)}" data-analytics="phone_click">${esc(directPhone)}</a>${directEmail ? `<a href="mailto:${esc(directEmail)}" data-analytics="email_click">${esc(directEmail)}</a>` : ""}${directSocials}</div></div></section>`;
+  const directPhoneMarkup = form.phoneMarkup || `<a href="${esc(directPhoneHref)}" data-analytics="phone_click">${esc(directPhone)}</a>`;
+  if (!ctx.site.web3formsAccessKey) return `<section class="lead-section" id="lead-form-section"><div class="container lead-layout"><div><p class="eyebrow">${esc(form.kicker || "Связаться с офисом")}</p><h2>${esc(form.title || "Обсудить задачу")}</h2><p>${esc(form.text || "Расскажите, что нужно решить.")}</p></div><div class="direct-contact">${directPhoneMarkup}${directEmail ? `<a href="mailto:${esc(directEmail)}" data-analytics="email_click">${esc(directEmail)}</a>` : ""}${directSocials}</div></div></section>`;
   const goals = [["buy", "Купить"], ["sell", "Продать"], ["valuation", "Предварительно оценить"], ["consultation", "Обсудить другую задачу"]];
   const locationOptions = ctx.locations.map((location) => `<option value="${esc(location.name)}"${location.name === form.territory ? " selected" : ""}>${esc(location.name)}</option>`).join("");
   const defaultGoal = form.goal || ({ sell: "sell", valuation: "valuation" })[form.type] || "buy";
   const defaultPropertyType = form.propertyType || ({ apartment: "apartment", "apartment-secondary": "apartment", "apartment-newbuild": "apartment", house: "house", "house-new": "house", "house-secondary": "house", "house-builder": "house", land: "land", commercial: "commercial", "garage-parking": "garage-parking" })[form.type] || "";
   return `<section class="lead-section" id="lead-form-section"><div class="container lead-layout">
-    <div><p class="eyebrow">${esc(form.kicker || "Короткий первый шаг")}</p><h2>${esc(form.title || "Обсудить задачу")}</h2><p>${esc(form.text || "Расскажите, что нужно решить.")}</p><div class="direct-contact"><span>Можно также связаться напрямую.</span><a href="${esc(directPhoneHref)}" data-analytics="phone_click">${esc(directPhone)}</a>${directEmail ? `<a href="mailto:${esc(directEmail)}" data-analytics="email_click">${esc(directEmail)}</a>` : ""}</div></div>
+    <div><p class="eyebrow">${esc(form.kicker || "Короткий первый шаг")}</p><h2>${esc(form.title || "Обсудить задачу")}</h2><p>${esc(form.text || "Расскажите, что нужно решить.")}</p><div class="direct-contact"><span>Можно также связаться напрямую.</span>${directPhoneMarkup}${directEmail ? `<a href="mailto:${esc(directEmail)}" data-analytics="email_click">${esc(directEmail)}</a>` : ""}</div></div>
     <form class="lead-form" data-lead-form data-source-cta="${esc(form.sourceCta || form.type || "contact")}" data-origin-page="${esc(form.originPage || "")}"${form.territory ? ` data-default-territory="${esc(form.territory)}"` : ""} novalidate>
       <div class="honeypot" aria-hidden="true"><label>Не заполняйте<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label></div>
       <input type="hidden" name="service" value="${esc(form.type || "service")}">
@@ -699,7 +703,7 @@ function schemaFor(ctx, page, breadcrumbsItems) {
     if (page.author) article.author = { "@type": "Organization", name: page.author };
     nodes.push(article);
   } else if (page.pageType === "listing" && page.listing?.verifiedAt && page.listing?.verifiedBy) {
-    const listingType = page.listing.type.startsWith("apartment") || page.listing.type === "apartment" ? "Apartment" : page.listing.type === "land" ? "Place" : "House";
+    const listingType = page.listing.type.startsWith("apartment") || page.listing.type === "apartment" ? "Apartment" : ["land", "commercial"].includes(page.listing.type) ? "Place" : "House";
     const locality=ctx.locations.find(location=>location.slug===page.listing.location)?.name;
     const property={ "@type": listingType, '@id':ctx.absolute(page.path)+'#property', name: page.listing.title, description: page.listing.description, address: { "@type": "PostalAddress", ...(page.listing.address?{streetAddress:page.listing.address}:{}), ...(locality?{addressLocality:locality}:{}), addressRegion: "Ростовская область", addressCountry: "RU" }, image: [page.listing.image, ...(page.listing.gallery || [])].filter((image) => image?.src).map((image) => ctx.absolute(image.src)) };
     if(Number.isFinite(page.listing.area)&&listingType!=='Place')property.floorSize={'@type':'QuantitativeValue',value:page.listing.area,unitCode:'MTK'};
@@ -722,8 +726,8 @@ function schemaFor(ctx, page, breadcrumbsItems) {
 
 function documentHead(ctx, page, breadcrumbsItems) {
   const canonical = ctx.absolute(page.path || "");
-  const ogImage = ctx.absolute("assets/images/og.png");
-  const robots = ["404.html", "thanks.html"].includes(page.path) ? "noindex,follow" : "index,follow";
+  const ogImage = ctx.absolute(page.ogImage || "assets/images/og.png");
+  const robots = page.noindex || ["404.html", "thanks.html"].includes(page.path) ? "noindex,follow" : "index,follow";
   return `<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="${robots}">
@@ -744,9 +748,9 @@ function documentHead(ctx, page, breadcrumbsItems) {
   <meta property="og:description" content="${esc(page.description)}">
   <meta property="og:url" content="${canonical}">
   ${ogImage ? `<meta property="og:image" content="${ogImage}">
-  <meta property="og:image:width" content="1536">
-  <meta property="og:image:height" content="1024">
-  <meta property="og:image:alt" content="Домиан Шахты — недвижимость в жемчужной, мятной, шалфейной и шампанской палитре">` : ""}
+  <meta property="og:image:width" content="${page.ogWidth || 1536}">
+  <meta property="og:image:height" content="${page.ogHeight || 1024}">
+  <meta property="og:image:alt" content="${esc(page.ogAlt || "Домиан Шахты — недвижимость в жемчужной, мятной, шалфейной и шампанской палитре")}">` : ""}
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${esc(page.title)}">
   <meta name="twitter:description" content="${esc(page.description)}">
@@ -756,16 +760,20 @@ function documentHead(ctx, page, breadcrumbsItems) {
   <script src="${ctx.href(`assets/js/site.js?v=${ctx.site.assetVersion}`)}" defer></script>
   <script src="${ctx.href(`assets/js/form-handler.js?v=${ctx.site.assetVersion}`)}" defer></script>
   ${page.pageType === "listing" ? `<link rel="stylesheet" href="${ctx.href(`assets/css/listing-pump.css?v=${ctx.site.assetVersion}`)}"><script src="${ctx.href(`assets/js/listing-pump.js?v=${ctx.site.assetVersion}`)}" defer></script>` : ""}
+  ${["listing", "promo"].includes(page.pageType) ? `<link rel="stylesheet" href="${ctx.href(`assets/css/promo.css?v=${ctx.site.assetVersion}`)}">` : ""}
+  ${page.pageType === "listing" ? `<script src="${ctx.href(`assets/js/listing-contact.js?v=${ctx.site.assetVersion}`)}" defer></script>` : ""}
+  ${page.pageType === "promo" ? `<script src="${ctx.href(`assets/js/promo.js?v=${ctx.site.assetVersion}`)}" defer></script>` : ""}
   ${schemaFor(ctx, page, breadcrumbsItems)}`;
 }
 
 function layout(ctx, page, body, { active = "", breadcrumbs: crumbs = [] } = {}) {
-  return `<!doctype html><html lang="ru"><head>${documentHead(ctx, page, crumbs)}</head><body data-page-type="${esc(page.pageType || "standard")}">
+  const shellCtx = page.listing ? { ...ctx, currentListing: page.listing } : ctx;
+  return `<!doctype html><html lang="ru"><head>${documentHead(ctx, page, crumbs)}</head><body data-page-type="${esc(page.pageType || "standard")}"${page.listing ? ` data-listing-object-id="${esc(page.listing.id)}"` : ""}>
   <a class="skip-link" href="#main-content">Перейти к содержанию</a>
-  ${header(ctx, active)}
+  ${header(shellCtx, active)}
   ${breadcrumbs(ctx, crumbs)}
   <main id="main-content">${body}</main>
-  ${footer(ctx)}
+  ${footer(shellCtx)}
   </body></html>`;
 }
 
@@ -1152,15 +1160,20 @@ export function renderGuide(ctx, guide) {
 }
 
 export function renderListing(ctx, listing) {
-  const agent = ctx.team.find(person => person.id === listing.agentId && person.verified === true);
-  const contactCtx = agent ? { ...ctx, site: { ...ctx.site, phone: agent.phone, phoneHref: agent.phoneHref } } : ctx;
-  const agentContact = agent ? `<section class="section" data-listing-agent="${esc(agent.id)}"><div class="container profile-summary"><div><p class="eyebrow">Специалист по объекту</p><h2><a href="${ctx.href(`team/${agent.slug || agent.id}.html`)}">${esc(agent.shortName || agent.name)}</a></h2><p>${esc(agent.role)}</p></div><dl class="profile-facts"><div><dt>Телефон</dt><dd><a href="${esc(agent.phoneHref)}" data-analytics="phone_click">${esc(agent.phone)}</a></dd></div>${agent.secondaryPhone ? `<div><dt>Второй телефон</dt><dd><a href="${esc(agent.secondaryPhoneHref)}" data-analytics="phone_click">${esc(agent.secondaryPhone)}</a></dd></div>` : ""}${agent.email ? `<div><dt>Email</dt><dd><a href="mailto:${esc(agent.email)}" data-analytics="email_click">${esc(agent.email)}</a></dd></div>` : ""}</dl></div></section>` : "";
+  const agent = listingAgent(ctx, listing);
+  const administrator = listingContact(ctx);
+  const contactCtx = { ...ctx, site: { ...ctx.site, phone: administrator.phone, phoneHref: administrator.phoneHref } };
+  const agentContact = `<section class="section" data-listing-contact="administrator"${agent ? ` data-listing-agent="${esc(agent.id)}"` : ''}><div class="container profile-summary"><div><p class="eyebrow">Запись на просмотр</p><h2>${esc(administrator.name)}</h2><p>${esc(administrator.role)}</p>${agent ? `<p>Объект ведёт <a href="${ctx.href(`team/${agent.slug || agent.id}.html`)}">${esc(agent.shortName || agent.name)}</a></p>` : ''}</div><dl class="profile-facts"><div><dt>Телефон администратора</dt><dd>${phoneControl(ctx, listing, agent, "contact_block")}</dd></div></dl></div></section>`;
   const isApartment = ["apartment", "apartment-secondary", "apartment-newbuild"].includes(listing.type);
   const isLand = listing.type === "land";
+  const isCommercial = listing.type === "commercial";
   const isNewbuild = listing.type === "apartment-newbuild";
-  const section = isLand ? { label: "Участки", href: "lands.html", active: "lands" } : isApartment ? { label: isNewbuild ? "Квартиры в новостройках" : "Квартиры", href: isNewbuild ? "new-build-apartments.html" : "apartments.html", active: "apartments" } : { label: "Дома", href: "houses.html", active: "houses" };
+  const section = isCommercial ? { label: "Коммерческая недвижимость", href: "commercial.html", active: "commercial" } : isLand ? { label: "Участки", href: "lands.html", active: "lands" } : isApartment ? { label: isNewbuild ? "Квартиры в новостройках" : "Квартиры", href: isNewbuild ? "new-build-apartments.html" : "apartments.html", active: "apartments" } : { label: "Дома", href: "houses.html", active: "houses" };
   const description = shortDescription(listing.description);
   const page = { path: listingPath(listing), pageType: "listing", listing, title: `${listing.title} — ${Number.isFinite(listing.price)?formatPrice(listing.price):'Цена по запросу'} | Домиан`, description, h1: listing.title };
+  const promo = ctx.promoById?.get(listing.id);
+  if (promo) Object.assign(page, { ogImage: promo.assets.post, ogWidth: 1080, ogHeight: 1350, ogAlt: listing.title });
+  else if (listing.image?.src) Object.assign(page, { ogImage: listing.image.src, ogWidth: listing.image.width, ogHeight: listing.image.height, ogAlt: listing.title });
   const extra=listingFacts(listing);
   const roomLabel = listing.rooms === 0 ? "Студия" : Number.isInteger(listing.rooms) ? `${listing.rooms}-комнатная` : null;
   const facts = [
@@ -1179,8 +1192,13 @@ export function renderListing(ctx, listing) {
   const similar = similarListings(ctx.listings, listing);
   const related = similar.length ? `<section class="section" data-similar-listings><div class="container"><div class="section-heading"><div><p class="eyebrow">Сравните варианты</p><h2>Похожие объекты</h2></div></div><div class="listing-grid pump-cards">${similar.map(item => listingCard(ctx, item)).join("")}</div></div></section>` : "";
   const fullDescription = listing.description?.length > 300 ? `<section class="section listing-description"><div class="container"><h2>Подробнее об объекте</h2><div>${listing.description.split(/(?<=[.!?])\s+(?=[А-ЯЁA-Z])/u).map(paragraph => `<p>${esc(paragraph)}</p>`).join("")}</div></div></section>` : "";
-  const body = `<article class="listing-detail"><header class="listing-detail__hero"><div class="container listing-detail__hero-layout"><div class="listing-detail__copy"><p class="eyebrow">${esc(section.label)} · ${esc(listing.status === "available" ? ACTIVE_LABEL : "Статус объекта")}</p><h1>${esc(listing.title)}</h1><p class="listing-detail__address">${esc(listing.address || "Шахты")}</p><div class="listing-detail__price">${formatPrice(listing.price)}</div>${listingNumbers(listing)}${listingQuestions(listing)}<p>${esc(fullDescription ? description : listing.description || "")}</p><div class="hero-actions"><a class="button button--primary" href="#lead-form-section">Записаться на просмотр</a><a class="button button--ghost" href="${contactCtx.site.phoneHref}" data-analytics="phone_click">Позвонить</a></div></div><div class="listing-detail__media">${listingPicture(ctx, listing.image, { priority: true, sizes: "(max-width: 820px) calc(100vw - 32px), 52vw" })}</div></div></header><section class="section listing-detail__facts"><div class="container listing-detail__facts-layout"><div><p class="eyebrow">Характеристики</p><h2>Об объекте</h2><ul>${factList}</ul></div><ul>${featureList}</ul></div></section>${fullDescription}${agentContact}${gallerySection}${listingCalculator(listing)}<div class="container">${districtLink(ctx, listing)}${listingShare(ctx, listing)}</div></article>${ctx.site.web3formsAccessKey ? viewingForm(contactCtx, listing) : leadForm(ctx, { type: listing.type, goal: "buy", propertyType: isLand ? "land" : isApartment ? "apartment" : "house", market: isNewbuild ? "primary" : "secondary", originPage: page.path, title: `Записаться на просмотр: ${listing.title}`, text: "Оставьте телефон, чтобы согласовать просмотр объекта.", ...(agent ? { phone: agent.phone, phoneHref: agent.phoneHref, email: agent.email, socials: false } : {}) })}${related}`;
+  const body = `<article class="listing-detail"><header class="listing-detail__hero"><div class="container listing-detail__hero-layout"><div class="listing-detail__copy"><p class="eyebrow">${esc(section.label)} · ${esc(listing.status === "available" ? ACTIVE_LABEL : "Статус объекта")}</p><h1>${esc(listing.title)}</h1><p class="listing-detail__address">${esc(listing.address || "Шахты")}</p><div class="listing-detail__price">${Number.isFinite(listing.price) ? formatPrice(listing.price) : "Цена по запросу"}</div>${listingNumbers(listing)}${listingQuestions(listing)}<p>${esc(fullDescription ? description : listing.description || "")}</p><div class="hero-actions"><a class="button button--primary" href="#lead-form-section">Записаться на просмотр</a>${phoneControl(ctx, listing, agent, "hero")}</div></div><div class="listing-detail__media">${listingPicture(ctx, listing.image, { priority: true, sizes: "(max-width: 820px) calc(100vw - 32px), 52vw" })}</div></div></header><section class="section listing-detail__facts"><div class="container listing-detail__facts-layout"><div><p class="eyebrow">Характеристики</p><h2>Об объекте</h2><ul>${factList}</ul></div><ul>${featureList}</ul></div></section>${fullDescription}${agentContact}<div class="container listing-promo-link"><a class="button button--ghost" href="${ctx.href(promoPath(listing))}">Рекламный комплект <span aria-hidden="true">↗</span></a></div>${gallerySection}${Number.isFinite(listing.price) ? listingCalculator(listing) : ""}<div class="container">${districtLink(ctx, listing)}${listingShare(ctx, listing)}</div></article>${ctx.site.web3formsAccessKey ? viewingForm(contactCtx, listing, { phoneMarkup: phoneControl(ctx, listing, agent, "viewing_form") }) : leadForm(ctx, { type: listing.type, goal: "buy", propertyType: isCommercial ? "commercial" : isLand ? "land" : isApartment ? "apartment" : "house", market: isNewbuild ? "primary" : "secondary", originPage: page.path, title: `Записаться на просмотр: ${listing.title}`, text: "Оставьте телефон, чтобы согласовать просмотр объекта.", phone: administrator.phone, phoneHref: administrator.phoneHref, phoneMarkup: phoneControl(ctx, listing, agent, "viewing_form"), email: false, socials: false })}${related}`;
   return layout(ctx, page, body, { active: section.active, breadcrumbs: [{ label: "Главная", href: "" }, { label: section.label, href: section.href }, { label: listing.title, href: page.path }] });
+}
+
+export function renderPromo(ctx, model) {
+  const { page, body } = promoPage(ctx, model);
+  return layout(ctx, page, body, { breadcrumbs: [{ label: "Главная", href: "" }, { label: model.title, href: `listings/${model.id}.html` }, { label: "Рекламный комплект", href: page.path }] });
 }
 
 function teamMemberCard(ctx, person, index) {
@@ -1261,7 +1279,7 @@ export function renderPrivacy(ctx) {
     ["4. Передача обращения", ctx.site.web3formsAccessKey ? "При отправке формы сведения передаются сервису Web3Forms для доставки обращения оператору. До использования формы ознакомьтесь с её условиями обработки данных." : "Пока форма отправки не подключена, обращайтесь к оператору по телефону, email или через указанные мессенджеры."],
     ["5. Внешние сервисы", "Перед включением обработчика заявок и аналитики оператор проверяет условия сервисов, место хранения данных, применимость требований о локализации и необходимость отдельного согласия. Сведения о фактически включённых сервисах должны поддерживаться в актуальном состоянии."],
     ["6. Срок и прекращение обработки", "Данные хранятся не дольше, чем требуется для цели обращения или исполнения обязанностей по закону. Пользователь вправе отозвать согласие и запросить сведения об обработке по контактам оператора."],
-    ["7. Аналитика", ctx.site.metrikaId || ctx.site.ga4Id ? `После отдельного согласия посетителя сайт может использовать ${[ctx.site.metrikaId ? "Яндекс Метрику" : "", ctx.site.ga4Id ? "Google Analytics 4" : ""].filter(Boolean).join(" и ")} и их аналитические cookies. Отказ не мешает пользоваться сайтом; в события не передаются имя, телефон, email и текст обращения.` : "Счётчики аналитики сейчас не подключены. При их включении посетителю предлагается отдельный выбор; отказ не мешает пользоваться сайтом."],
+    ["7. Аналитика", ctx.site.ga4Id ? `После отдельного согласия посетителя сайт может использовать Google Analytics 4 и их аналитические cookies. Отказ не мешает пользоваться сайтом; в события не передаются имя, телефон, email и текст обращения.` : "Счётчики аналитики сейчас не подключены. При их включении посетителю предлагается отдельный выбор; отказ не мешает пользоваться сайтом."],
     ["8. Безопасность", "Оператор принимает необходимые правовые, организационные и технические меры для защиты персональных данных. Сайт не передаёт содержимое формы в аналитику."],
     ["9. Обновления", "Актуальная версия размещается на этой странице. Дата публикации: 19 августа 2026 года." ]
   ];

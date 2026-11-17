@@ -167,6 +167,7 @@
   }
 
   function providerError(category) {
+    if (category === "config" && document.body.dataset.pageType === "listing") return "Форма пока не подключена. Свяжитесь с администратором через кнопку «Показать телефон».";
     var messages = {
       config: "Форма пока не подключена. Позвоните по номеру " + (config.phoneLabel || "офиса") + " или напишите на " + (config.email || "email офиса") + ".",
       offline: "Нет подключения к интернету. Данные остались в полях — используйте телефон или email.",

@@ -1,0 +1,12 @@
+{
+  "totalBytes": 125452927,
+  "files": 234,
+  "byFilename": {
+    "manifest.json": 150161,
+    "post-overlay.png": 3842741,
+    "post.png": 40321966,
+    "qr.png": 471257,
+    "story-overlay.png": 4397775,
+    "story.png": 76269027
+  }
+}

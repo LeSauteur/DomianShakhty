@@ -277,42 +277,87 @@
   {
     "id": "shk-h07-two-houses-kamenolomni",
     "status": "done",
-    "files": ["hero.webp", "01.webp", "02.webp", "03.webp", "04.webp", "05.webp"]
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp"
+    ]
   },
   {
     "id": "shk-h08-two-houses-center",
     "status": "done",
-    "files": ["hero.webp", "01.webp", "02.webp", "03.webp", "04.webp", "05.webp", "06.webp"]
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp"
+    ]
   },
   {
     "id": "shk-a14-renovated-2k-43",
     "status": "done",
-    "files": ["hero.webp", "01.webp", "02.webp", "03.webp", "04.webp", "05.webp", "06.webp"]
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp"
+    ]
   },
   {
     "id": "shk-h09-renovated-76",
     "status": "done",
-    "files": ["hero.webp", "01.webp", "02.webp", "03.webp", "04.webp", "05.webp", "06.webp", "07.webp", "08.webp", "09.webp"]
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp",
+      "07.webp",
+      "08.webp",
+      "09.webp"
+    ]
   },
   {
     "id": "shk-l07-corner-12-sot",
     "status": "done",
-    "files": ["hero.webp"]
+    "files": [
+      "hero.webp"
+    ]
   },
   {
     "id": "shk-l08-goroda-budushchego-plot",
     "status": "done",
-    "files": ["hero.webp", "01.webp", "02.webp", "03.webp"]
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp"
+    ]
   },
   {
     "id": "shk-l09-serviced-8-sot",
     "status": "done",
-    "files": ["hero.webp"]
+    "files": [
+      "hero.webp"
+    ]
   },
   {
     "id": "shk-l10-flat-6-sot",
     "status": "done",
-    "files": ["hero.webp"]
+    "files": [
+      "hero.webp"
+    ]
   },
   {
     "id": "shk-a15-hbk-1k-37",
@@ -406,6 +451,162 @@
       "14.webp",
       "15.webp",
       "16.webp"
+    ]
+  },
+  {
+    "id": "shk-h12-brick-house-repair",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp",
+      "07.webp",
+      "08.webp",
+      "09.webp"
+    ]
+  },
+  {
+    "id": "shk-h13-krasina-brick-58",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp",
+      "07.webp",
+      "08.webp",
+      "09.webp",
+      "10.webp",
+      "11.webp"
+    ]
+  },
+  {
+    "id": "shk-a18-gorod-budushchego-4k-100",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp",
+      "07.webp",
+      "08.webp",
+      "09.webp",
+      "10.webp",
+      "11.webp",
+      "12.webp",
+      "13.webp",
+      "14.webp",
+      "15.webp",
+      "16.webp",
+      "17.webp",
+      "18.webp"
+    ]
+  },
+  {
+    "id": "shk-a19-yuzhnaya-2k-heating",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp",
+      "07.webp",
+      "08.webp",
+      "09.webp",
+      "10.webp"
+    ]
+  },
+  {
+    "id": "shk-a20-dvorets-sporta-2k",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp"
+    ]
+  },
+  {
+    "id": "shk-h14-whitebox-three-bedrooms",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp",
+      "07.webp",
+      "08.webp",
+      "09.webp",
+      "10.webp",
+      "11.webp",
+      "12.webp",
+      "13.webp",
+      "14.webp",
+      "15.webp"
+    ]
+  },
+  {
+    "id": "shk-h15-razdorskaya-don-dacha",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp",
+      "07.webp",
+      "08.webp",
+      "09.webp",
+      "10.webp",
+      "11.webp",
+      "12.webp",
+      "13.webp",
+      "14.webp"
+    ]
+  },
+  {
+    "id": "shk-h16-sobor-two-storey-house",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp",
+      "07.webp",
+      "08.webp",
+      "09.webp"
+    ]
+  },
+  {
+    "id": "shk-c01-center-building-repair",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp"
     ]
   }
 ]

@@ -2,12 +2,12 @@
   "use strict";
 
   var config = window.DOMIAN_SITE_CONFIG || {};
-  var allowedAnalyticsKeys = ["page_type", "object_type", "object_id", "location", "source_section", "source_cta", "interaction", "filter_name", "filter_value"];
+  var allowedAnalyticsKeys = ["page_type", "object_type", "object_id", "location", "source_section", "source_cta", "interaction", "filter_name", "filter_value", "agent_id", "office_id", "placement", "event_type", "format", "contact_id", "contact_role"];
   var allowedAttributionKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "yclid", "gclid"];
   var allowedEvents = [
     "catalog_filter_use", "property_card_open", "construction_interest", "project_open",
     "guide_to_catalog", "guide_to_lead", "location_to_construction", "map_click",
-    "phone_click", "email_click", "telegram_click", "max_click",
+    "phone_click", "phone_reveal", "promo_open", "promo_download", "promo_copy_text", "promo_copy_link", "promo_qr_download", "email_click", "telegram_click", "max_click",
     "lead_form_view", "lead_form_open",
     "lead_form_submit_attempt", "lead_form_success", "lead_form_error", "mortgage_interaction"
   ];
@@ -19,7 +19,7 @@
   function analyticsEnvironmentBlocked() {
     var host = (window.location.hostname || "").toLowerCase();
     var qa = new URLSearchParams(window.location.search || "").get("qa") === "1";
-    return (!config.metrikaId && !config.ga4Id) || (!config.analyticsTestMode && (host === "localhost" || host === "::1" || /^127(?:\.\d+){3}$/u.test(host))) || qa;
+    return (!config.ga4Id) || (!config.analyticsTestMode && (host === "localhost" || host === "::1" || /^127(?:\.\d+){3}$/u.test(host))) || qa;
   }
 
   function analyticsDisabled() {
@@ -53,13 +53,12 @@
 
   function track(name, params) {
     if (allowedEvents.indexOf(name) === -1) return;
+    if (window.DOMIAN_ANALYTICS_DISABLED) return;
     var safe = cleanParams(params || {});
     try {
       if (typeof window.DOMIAN_ANALYTICS_TEST_HOOK === "function") {
         window.DOMIAN_ANALYTICS_TEST_HOOK(name, safe);
       }
-      if (window.DOMIAN_ANALYTICS_DISABLED) return;
-      if (config.metrikaId && typeof window.ym === "function") window.ym(config.metrikaId, "reachGoal", name, safe);
       if (config.ga4Id && typeof window.gtag === "function") window.gtag("event", name, safe);
     } catch (_error) {
       // Analytics never interrupts the site.
@@ -67,19 +66,6 @@
   }
 
   window.domianTrack = track;
-
-  function initMetrika() {
-    var script;
-    if (window.DOMIAN_ANALYTICS_DISABLED || typeof window.ym === "function") return;
-    window.ym = function () { (window.ym.a = window.ym.a || []).push(arguments); };
-    window.ym.l = Date.now();
-    script = document.createElement("script");
-    script.async = true;
-    script.src = "https://mc.yandex.ru/metrika/tag.js?id=" + encodeURIComponent(config.metrikaId);
-    document.head.appendChild(script);
-    window.ym(config.metrikaId, "init", { clickmap: false, trackLinks: false, accurateTrackBounce: false, defer: true });
-    window.ym(config.metrikaId, "hit", analyticsPageUrl());
-  }
 
   function initGa4() {
     if (window.DOMIAN_ANALYTICS_DISABLED || !config.ga4Id || typeof window.gtag === "function") return;
@@ -111,8 +97,8 @@
       notice.remove();
       if (accepted) {
         window.DOMIAN_ANALYTICS_DISABLED = false;
-        initMetrika();
         initGa4();
+        window.dispatchEvent(new Event("domian:analytics-ready"));
       }
     });
   }
@@ -489,7 +475,14 @@
     document.addEventListener("click", function (event) {
       var link = event.target.closest("a[href]");
       var explicit = event.target.closest("[data-analytics]");
-      if (explicit) track(explicit.getAttribute("data-analytics"), { page_type: document.body.dataset.pageType || "" });
+      if (explicit) {
+        var scope = explicit.closest('[data-object-id]');
+        var eventName = explicit.getAttribute('data-analytics');
+        var details = { page_type: document.body.dataset.pageType || "" };
+        if (scope) Object.assign(details, { object_id: scope.dataset.objectId, agent_id: scope.dataset.agentId, office_id: scope.dataset.officeId, placement: scope.dataset.placement, event_type: eventName, contact_id: scope.dataset.contactId, contact_role: scope.dataset.contactRole });
+        if (!scope && eventName === 'phone_click' && document.body.dataset.listingObjectId) Object.assign(details, { object_id: document.body.dataset.listingObjectId, placement: explicit.closest('header') ? 'header' : explicit.closest('footer') ? 'footer' : 'page', event_type: eventName });
+        track(eventName, details);
+      }
       if (!link) return;
       var href = link.getAttribute("href") || "";
       var category = link.getAttribute("data-lead-category") || "";
@@ -1033,7 +1026,6 @@
   initDistrictMap();
   initReviewWidgets();
   persistAttribution();
-  initMetrika();
   initGa4();
   initAnalyticsConsent();
   initThanks();

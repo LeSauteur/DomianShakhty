@@ -149,7 +149,7 @@ test("rendered nearby cards follow the configured neighbor order", () => {
 
 test("runtime config and search verification match configured services", () => {
   const source = read("assets/js/site-config.js");
-  assert.match(source, /"metrikaId":112739000/u);
+  assert.doesNotMatch(source, /metrikaId/u);
   assert.match(source, /"ga4Id":null/u);
   assert.ok(source.includes(`"web3formsAccessKey":${JSON.stringify(config.web3formsAccessKey)}`));
   assert.match(read("index.html"), /<meta name="yandex-verification" content="33fe62fd5bdcd26a">/u);
@@ -218,7 +218,7 @@ test("team page keeps the owner first and publishes both agent profiles", () => 
   assert.match(olgaLead, /Связаться с Ольгой/u);
   assert.doesNotMatch(olgaLead, /Babushkina_Mariya\.10@mail\.ru/u);
   const listing = read("listings/shk-a01-studio-olymp.html");
-  assert.match(listing, /tel:\+79185071000/u);
+  assert.match(listing, /tel:\+79188504488/u);
   assert.match(listing, /mailto:Babushkina_Mariya\.10@mail\.ru/u);
   assert.doesNotMatch(listing, /mailto:olyaka2004@yandex\.ru/u);
   for (const width of [360, 640, 960]) assert.ok(fs.existsSync(path.join(root, `assets/images/olga-chernenko-${width}.webp`)));
@@ -401,7 +401,7 @@ test("direction pages remain honest and expose configured forms and direct conta
     assert.match(html, /data-lead-form/u, page.path);
     assert.match(html, /id="lead-form-section"[\s\S]*mailto:/u, page.path);
   }
-  for (const file of ["commercial.html", "garages-parking.html"]) {
+  for (const file of ["garages-parking.html"]) {
     assert.doesNotMatch(read(file), /class="listing-card/u);
     assert.match(read(file), /class="catalog-honesty"/u);
   }
@@ -427,9 +427,9 @@ test("listing schema expands types without breaking legacy values", () => {
   for (const legacy of ["new-house", "resale-house", "apartment", "land", "project"]) assert.ok(types.includes(legacy));
   for (const added of ["apartment-secondary", "apartment-newbuild", "house-new", "house-secondary", "house-builder", "commercial", "garage", "parking-space"]) assert.ok(types.includes(added));
   const listings = JSON.parse(fs.readFileSync("src/data/listings.json", "utf8"));
-  assert.equal(listings.length, 39);
+  assert.equal(listings.length, 48);
   assert.equal(new Set(listings.map((item) => item.id)).size, listings.length);
-  assert.equal(listings.filter((item) => item.id.startsWith("shk-")).length, 38);
+  assert.equal(listings.filter((item) => item.id.startsWith("shk-")).length, 47);
   assert.ok(listings.every((item) => item.verified === true));
   assert.equal(listings[0].price, 5670000);
   assert.equal(listings[0].location, "kamenolomni");
@@ -438,8 +438,8 @@ test("listing schema expands types without breaking legacy values", () => {
     for (const image of [item.image, ...(item.gallery || [])]) assert.ok(fs.existsSync(path.join(root, image.src)), image.src);
   }
   const mediaManifest = JSON.parse(fs.readFileSync("src/data/listing-media-manifest.json", "utf8"));
-  assert.equal(mediaManifest.length, 38);
-  assert.equal(mediaManifest.filter((item) => item.status === "done").length, 38);
+  assert.equal(mediaManifest.length, 47);
+  assert.equal(mediaManifest.filter((item) => item.status === "done").length, 47);
   assert.equal(mediaManifest.filter((item) => item.status === "pending").length, 0);
   for (const item of mediaManifest.filter((entry) => entry.status === "done")) {
     assert.equal(item.files[0], "hero.webp");
