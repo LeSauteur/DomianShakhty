@@ -70,6 +70,6 @@ test('GA4 is the only analytics transport and every new action is allowlisted', 
   const runtime = fs.readFileSync('dist/assets/js/site-config.js', 'utf8');
   const source = fs.readFileSync('assets/js/site.js', 'utf8');
   assert.doesNotMatch(runtime, /metrikaId/u); assert.doesNotMatch(source, /mc\.yandex|reachGoal|window\.ym/u);
-  assert.match(runtime, /"ga4Id":null/u);
+  assert.ok(runtime.includes(`"ga4Id":${JSON.stringify(site.ga4Id)}`));
   for (const name of ['phone_reveal', 'phone_click', 'promo_open', 'promo_download', 'promo_copy_text', 'promo_copy_link', 'promo_qr_download']) assert.ok(source.includes(`"${name}"`));
 });

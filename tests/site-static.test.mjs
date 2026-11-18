@@ -150,7 +150,7 @@ test("rendered nearby cards follow the configured neighbor order", () => {
 test("runtime config and search verification match configured services", () => {
   const source = read("assets/js/site-config.js");
   assert.doesNotMatch(source, /metrikaId/u);
-  assert.match(source, /"ga4Id":null/u);
+  assert.ok(source.includes(`"ga4Id":${JSON.stringify(config.ga4Id)}`));
   assert.ok(source.includes(`"web3formsAccessKey":${JSON.stringify(config.web3formsAccessKey)}`));
   assert.match(read("index.html"), /<meta name="yandex-verification" content="33fe62fd5bdcd26a">/u);
   assert.equal(read("googlea9952ce6911e1672.html"), "google-site-verification: googlea9952ce6911e1672.html");

@@ -477,7 +477,7 @@ test("GA4 preserves advertising attribution but omits personal URL parameters", 
   await page.route("**/assets/js/site-config.js*", (route) => route.fulfill({ contentType: "text/javascript", body: `window.DOMIAN_SITE_CONFIG=Object.freeze(${JSON.stringify(runtime)});` }));
   await page.route("https://mc.yandex.ru/**", (route) => route.fulfill({ contentType: "text/javascript", body: "" }));
   await page.route("https://www.googletagmanager.com/**", (route) => route.fulfill({ contentType: "text/javascript", body: "" }));
-  await page.goto("?utm_source=yandex&utm_medium=cpc&yclid=12345&phone=79181234567&random=secret");
+  await page.goto("?utm_source=yandex&utm_medium=cpc&yclid=12345&phone=79181234567&random=secret", { referer: 'https://referrer.example/landing?email=private@example.com&phone=79181234567' });
   await expect(page.locator(".analytics-consent")).toBeVisible();
   expect(await page.locator('script[src*="mc.yandex.ru"], script[src*="googletagmanager.com"]').count()).toBe(0);
   await page.locator("[data-analytics-accept]").click();
@@ -497,6 +497,12 @@ test("GA4 preserves advertising attribution but omits personal URL parameters", 
   expect(calls).not.toContain("random");
   expect(calls).not.toContain("secret");
   expect(calls).not.toContain("123-45-67");
+  const gaConfig = await page.evaluate(() => (window.dataLayer || []).map(args => Array.from(args)).find(args => args[0] === 'config'));
+  expect(gaConfig[2].send_page_view).toBe(false);
+  expect(gaConfig[2].page_location).toContain('utm_source=yandex');
+  expect(gaConfig[2].page_location).not.toContain('phone');
+  expect(gaConfig[2].page_referrer).toBe('https://referrer.example/landing');
+  expect(calls).not.toContain('private@example.com');
   const attribution = await page.evaluate(() => ({
     utmSource: sessionStorage.getItem("domian_utm_source"),
     utmMedium: sessionStorage.getItem("domian_utm_medium"),
