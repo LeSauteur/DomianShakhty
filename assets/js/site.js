@@ -51,6 +51,14 @@
     return safe;
   }
 
+  function analyticsReferrerUrl() {
+    if (!document.referrer) return "";
+    try {
+      var referrer = new URL(document.referrer);
+      return referrer.origin + referrer.pathname;
+    } catch (_error) { return ""; }
+  }
+
   function track(name, params) {
     if (allowedEvents.indexOf(name) === -1) return;
     if (window.DOMIAN_ANALYTICS_DISABLED) return;
@@ -72,7 +80,7 @@
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
     window.gtag("js", new Date());
-    window.gtag("config", config.ga4Id, { send_page_view: false });
+    window.gtag("config", config.ga4Id, { send_page_view: false, page_location: analyticsPageUrl(), page_referrer: analyticsReferrerUrl() });
     var script = document.createElement("script");
     script.async = true;
     script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(config.ga4Id);
