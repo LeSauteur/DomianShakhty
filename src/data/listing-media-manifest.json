@@ -727,5 +727,51 @@
       "07.webp",
       "08.webp"
     ]
+  },
+  {
+    "id": "shk-h18-kamenolomni-pochtovy-123",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp",
+      "07.webp",
+      "08.webp",
+      "09.webp",
+      "10.webp",
+      "11.webp",
+      "12.webp",
+      "13.webp",
+      "14.webp"
+    ]
+  },
+  {
+    "id": "shk-h19-melikhovskaya-transportnik-don",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp",
+      "07.webp"
+    ]
+  },
+  {
+    "id": "shk-a25-batayskiy-2d-1k-32",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
   }
 ]
