@@ -2320,7 +2320,8 @@
       "basis": "owner-decision",
       "scope": "continued-publication",
       "note": "Решение владельца от 03.11.2026 о сохранении всех опубликованных объявлений; не индивидуальный осмотр или независимая проверка."
-    }
+    },
+    "agentId": "olesya-grigoryan"
   },
   {
     "id": "shk-a16-2k-50-individual",
@@ -2351,8 +2352,8 @@
     "status": "available",
     "updatedAt": "2026-11-02",
     "image": {
-      "src": "assets/images/listings/shk-a16-2k-50-individual/hero.webp",
-      "alt": "Просторная жилая комната с выходом на лоджию — 50 м², Шахты",
+      "src": "assets/images/listings/shk-a16-2k-50-individual/04.webp",
+      "alt": "Кухня с обеденной зоной — 50 м², Шахты",
       "width": 612,
       "height": 816
     },
@@ -2376,8 +2377,8 @@
         "height": 816
       },
       {
-        "src": "assets/images/listings/shk-a16-2k-50-individual/04.webp",
-        "alt": "Кухня с обеденной зоной — 50 м², Шахты",
+        "src": "assets/images/listings/shk-a16-2k-50-individual/hero.webp",
+        "alt": "Просторная жилая комната с выходом на лоджию — 50 м², Шахты",
         "width": 612,
         "height": 816
       },
@@ -2471,7 +2472,8 @@
         ],
         "reason": "conflicting_source_values"
       }
-    ]
+    ],
+    "agentId": "olesya-grigoryan"
   },
   {
     "id": "shk-a17-kalinina-31a-2k",
@@ -2502,8 +2504,8 @@
     "status": "available",
     "updatedAt": "2026-11-02",
     "image": {
-      "src": "assets/images/listings/shk-a17-kalinina-31a-2k/hero.webp",
-      "alt": "Просторная гостиная с выходом на лоджию — 51 м², Шахты, ул. Калинина, 31А",
+      "src": "assets/images/listings/shk-a17-kalinina-31a-2k/04.webp",
+      "alt": "Кухня с обеденной зоной — 51 м², Шахты, ул. Калинина, 31А",
       "width": 1000,
       "height": 750
     },
@@ -2527,8 +2529,8 @@
         "height": 750
       },
       {
-        "src": "assets/images/listings/shk-a17-kalinina-31a-2k/04.webp",
-        "alt": "Кухня с обеденной зоной — 51 м², Шахты, ул. Калинина, 31А",
+        "src": "assets/images/listings/shk-a17-kalinina-31a-2k/hero.webp",
+        "alt": "Просторная гостиная с выходом на лоджию — 51 м², Шахты, ул. Калинина, 31А",
         "width": 1000,
         "height": 750
       },
@@ -2585,7 +2587,8 @@
       "basis": "owner-decision",
       "scope": "continued-publication",
       "note": "Решение владельца от 03.11.2026 о сохранении всех опубликованных объявлений; не индивидуальный осмотр или независимая проверка."
-    }
+    },
+    "agentId": "olesya-grigoryan"
   },
   {
     "type": "house-secondary",
