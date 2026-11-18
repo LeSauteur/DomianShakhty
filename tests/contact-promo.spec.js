@@ -41,9 +41,9 @@ test('unassigned objects default to hidden administrator and specialist profiles
   await page.locator('[data-placement="hero"] [data-phone-reveal]').click();
   await expect(page.locator('.listing-detail__copy a[href="' + phone + '"]')).toBeVisible();
   await page.goto('team/olesya-grigoryan.html');
-  await expect(page.locator('.profile-facts a[href="tel:+79001213707"]')).toBeVisible();
+  await expect(page.locator('.profile-facts a[href="tel:+79001213704"]')).toBeVisible();
   await page.goto('team/');
-  await expect(page.locator('[data-team-member="olesya-grigoryan"] a[href="tel:+79001213707"]')).toBeVisible();
+  await expect(page.locator('[data-team-member="olesya-grigoryan"] a[href="tel:+79001213704"]')).toBeVisible();
 });
 
 test('declined analytics never sends contact or promo events, while features still work', async ({ page }) => {

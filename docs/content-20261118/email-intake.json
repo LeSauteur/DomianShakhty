@@ -1,0 +1,291 @@
+[
+  {
+    "id": "shk-a22-keldysha-7a-2k",
+    "agentId": "natalya-panchenko",
+    "sourceMessageId": "1a1eb2ecc9a50d15",
+    "sourceDate": "2026-11-17",
+    "price": 2750000,
+    "photos": [
+      {
+        "originalName": "image_18 (3).jpeg",
+        "sourceSha256": "864ea208ce5620996488527315a0f01cc9f49579a1f90ec8dc93f454013f2622",
+        "publishedName": "hero.webp"
+      },
+      {
+        "originalName": "image_20 (3).jpeg",
+        "sourceSha256": "c09bcbb35de0ca865345f19e632fed8527f43093c0de393d8bde4a34d9b8b77e",
+        "publishedName": "01.webp"
+      },
+      {
+        "originalName": "image_8 (13).jpeg",
+        "sourceSha256": "b7aa2a1794f0946a7aa1c8bf638ae5109d454b0e74c3c77a833dd3d1c7dce13f",
+        "publishedName": "02.webp"
+      },
+      {
+        "originalName": "image_13 (6).jpeg",
+        "sourceSha256": "bd697306e5b9d12edff65b8a29b00845e0aabb3d88cd14f2ccb53271f6dd0841",
+        "publishedName": "03.webp"
+      },
+      {
+        "originalName": "image_10 (10).jpeg",
+        "sourceSha256": "02fd3dec9ea587c268460560736fbcbc4df7a0856506733d157e13bbcbb5ce42",
+        "publishedName": "04.webp"
+      },
+      {
+        "originalName": "image_9 (11).jpeg",
+        "sourceSha256": "19cf79638a497c4eeef1d0b1bea2e0cfe8605ae5ee39530455851aea293f3224",
+        "publishedName": "05.webp"
+      },
+      {
+        "originalName": "image_25 (2).jpeg",
+        "sourceSha256": "9fa9d809338c2e0cfcbc891953224c8d9746c176d4224780bc03f3e37ffc1836",
+        "publishedName": "06.webp"
+      },
+      {
+        "originalName": "image_16 (6).jpeg",
+        "sourceSha256": "32a47867d0f51f52c1ebaf50dc1db605fd6f7ad1043d52ea7ea61d3d546fd8ef",
+        "publishedName": "07.webp"
+      },
+      {
+        "originalName": "image_26 (2).jpeg",
+        "sourceSha256": "023d8d30e8c250369104e028389e63263fe71f742188d54e6b71907f99387ffc",
+        "publishedName": "08.webp"
+      },
+      {
+        "originalName": "IMG_20261023_132246.jpg",
+        "sourceSha256": "b142e9b03957e95b8af81fbf576e3fc095da276639879805cef23d98e601cf31",
+        "publishedName": "09.webp"
+      }
+    ]
+  },
+  {
+    "id": "shk-l13-dostoevskogo-10",
+    "agentId": "natalya-panchenko",
+    "sourceMessageId": "1a1eb2258c929935",
+    "sourceDate": "2026-11-17",
+    "price": 700000,
+    "photos": [
+      {
+        "originalName": "5d964b8d726c4265a0dc1f05e8672fd1.webp",
+        "sourceSha256": "772d70bd223d1f906772835429cde9367dfb176e4f29347dad92b3647cf9d58c",
+        "publishedName": "hero.webp"
+      }
+    ]
+  },
+  {
+    "id": "shk-h17-gazetny-90",
+    "agentId": "natalya-panchenko",
+    "sourceMessageId": "1a1eb1687c2dc071",
+    "sourceDate": "2026-11-17",
+    "price": 5490000,
+    "photos": [
+      {
+        "originalName": "image_3 (4).jpeg",
+        "sourceSha256": "e15659b1a319793f3089c430686408daa87434349e092eaf5dfaac49b0826650",
+        "publishedName": "hero.webp"
+      },
+      {
+        "originalName": "image_4 (4).jpeg",
+        "sourceSha256": "b47b73d8fcde2c8b0c893f1541dd2cc87535fb4fc6b5bd67fb94f1033ae63bd5",
+        "publishedName": "01.webp"
+      },
+      {
+        "originalName": "image_5 (4).jpeg",
+        "sourceSha256": "543623dab25c945281fca9640096ad542b91aa40f90122e67caa3187dd7cac77",
+        "publishedName": "02.webp"
+      },
+      {
+        "originalName": "image_6 (4).jpeg",
+        "sourceSha256": "c9956fbce2c06e8b5e9f1148a7c1a266cf101b531c8c886e79bb2bd08018fda5",
+        "publishedName": "03.webp"
+      },
+      {
+        "originalName": "image_7 (3).jpeg",
+        "sourceSha256": "8434b4f6f8b8e1d61a7afcee605b17f75521e41007f33fbd5060361e27181c85",
+        "publishedName": "04.webp"
+      },
+      {
+        "originalName": "image_9 (3).jpeg",
+        "sourceSha256": "cf8c9831d122c77b75cece8c9653eb62b36642452a9c431275c2b20263493eb6",
+        "publishedName": "05.webp"
+      },
+      {
+        "originalName": "image_10 (3).jpeg",
+        "sourceSha256": "36e4d4f891e4c02780ce301065ed5eb12ee225097775b4e92df267fcbb915302",
+        "publishedName": "06.webp"
+      },
+      {
+        "originalName": "image_11 (2).jpeg",
+        "sourceSha256": "f11c25566b1f52d870f7fbfd73c9481c7c9a173344f5de4b7bb6f12797b000ec",
+        "publishedName": "07.webp"
+      },
+      {
+        "originalName": "image_20 (1).jpeg",
+        "sourceSha256": "992cce64262032891e3fc4b3fedf20c78e3949531a131d5af6256b225f9ff8ca",
+        "publishedName": "08.webp"
+      },
+      {
+        "originalName": "image_21 (1).jpeg",
+        "sourceSha256": "38c3d13f01b254cd02d5f2bc59c3f61f7bda297f08bd60549d0c4675a8840f85",
+        "publishedName": "09.webp"
+      },
+      {
+        "originalName": "image_18 (1).jpeg",
+        "sourceSha256": "e85decb64248e24ae3c7cef6c1ec9ef4dff76e78c895442718a99202aa852e0c",
+        "publishedName": "10.webp"
+      },
+      {
+        "originalName": "image_17 (1).jpeg",
+        "sourceSha256": "b8c74ecffa40def1f3e8a3fea3c8d872d0eb39ae6c259b737576a82b28fa51ec",
+        "publishedName": "11.webp"
+      }
+    ]
+  },
+  {
+    "id": "shk-a23-kharkovskaya-251-2k",
+    "agentId": "natalya-panchenko",
+    "sourceMessageId": "1a1eb054dc847d15",
+    "sourceDate": "2026-11-17",
+    "price": 3600000,
+    "photos": [
+      {
+        "originalName": "IMG_20261029_152529_636.jpg",
+        "sourceSha256": "8cbfd5a5546822dc96ceff2fa0a22e34d51c2b6e1c57dbea4856316176d00b98",
+        "publishedName": "hero.webp"
+      },
+      {
+        "originalName": "IMG_20261029_153614_725.jpg",
+        "sourceSha256": "7eb18f05f4ebb7f27f86df90c0b5d804966f5e9aed4565ad5f8aeadf3f908514",
+        "publishedName": "01.webp"
+      },
+      {
+        "originalName": "IMG20261027162456.jpg",
+        "sourceSha256": "44459fc2c910ec6e7751905bc42b3a3b3d3cb23782d6a0372da1db000d7e61b8",
+        "publishedName": "02.webp"
+      },
+      {
+        "originalName": "IMG_20261029_160442.jpg",
+        "sourceSha256": "3eece9960016d680136dc92a3a8ccaed7f08a99eb11d6a26976a976335ac66c2",
+        "publishedName": "03.webp"
+      },
+      {
+        "originalName": "IMG_20261029_160433.jpg",
+        "sourceSha256": "8f753c44b978840afcfa41f1acd784557ef7728d9110128a986bc6b3f155307e",
+        "publishedName": "04.webp"
+      },
+      {
+        "originalName": "IMG_20261029_155819.jpg",
+        "sourceSha256": "c85a38e0fe6ac6a26a8d1ec0d761f57de28d8a1450398d4d71f7a4cb74037e3a",
+        "publishedName": "05.webp"
+      },
+      {
+        "originalName": "IMG_20261029_152529_645.jpg",
+        "sourceSha256": "92ebbb4d56e5d405478853f88a01c40509f43fb4289aa723f1cbd9fbfacc9d56",
+        "publishedName": "06.webp"
+      },
+      {
+        "originalName": "IMG20261027162625.jpg",
+        "sourceSha256": "4ab47ae4a82cd7c1c673bc2a5df6f5c4aa0bf9763e3a9e9a772e49c845f8f35b",
+        "publishedName": "07.webp"
+      }
+    ]
+  },
+  {
+    "id": "shk-a24-mayskiy-4k-66",
+    "agentId": "olesya-semutenko",
+    "sourceMessageId": "1a1e9e9b40e0c249",
+    "sourceDate": "2026-11-17",
+    "price": 3600000,
+    "photos": [
+      {
+        "originalName": "IMG_20261117_172738_022.jpg",
+        "sourceSha256": "9c4562522d131bb17b1184e654fc1f68f0a907d5951cf61695c40989aed7e9fd",
+        "publishedName": "hero.webp"
+      },
+      {
+        "originalName": "IMG_20261117_172738_075.jpg",
+        "sourceSha256": "5c20fba33ea21c24ad169087df026c9997ec6252df2913d557d3371773356297",
+        "publishedName": "01.webp"
+      },
+      {
+        "originalName": "IMG_20261117_172738_035.jpg",
+        "sourceSha256": "76400876a2aabb19408829850a1ef21dc10b31c81c57f9a5dd64e8358ce541fa",
+        "publishedName": "02.webp"
+      },
+      {
+        "originalName": "IMG_20261117_172738_051.jpg",
+        "sourceSha256": "8eae5714c7704609127c1daf2e22abcbce8c481f779ba4070a35989b86717495",
+        "publishedName": "03.webp"
+      },
+      {
+        "originalName": "IMG_20261117_172738_109.jpg",
+        "sourceSha256": "46cc3c879fb892de256b661b6d2d6e9f34f7a834351c9499139803d21ab34542",
+        "publishedName": "04.webp"
+      },
+      {
+        "originalName": "IMG_20261117_172737_981.jpg",
+        "sourceSha256": "e1369d95bd785b24edd89ff14b2e48ad2b6f83773927916c6a86f3b9e4d3adbd",
+        "publishedName": "05.webp"
+      }
+    ]
+  },
+  {
+    "id": "shk-c02-virgo-hotel-m4",
+    "agentId": "yana-efimchenko",
+    "sourceMessageId": "1a1ed848b1d5ebfe",
+    "sourceDate": "2026-11-18",
+    "price": 400000000,
+    "photos": [
+      {
+        "originalName": "IMG_4134.jpeg",
+        "sourceSha256": "a9466aa9fea6dfbb736f2d5576a1fb30fe6094c21a18a0095e11bee162b9421b",
+        "publishedName": "hero.webp"
+      },
+      {
+        "originalName": "76841AB1-D267-45D6-8615-F0E920DF2AFB.webp",
+        "sourceSha256": "b8451ed64111761cd2e518971c7f846c0f5fb95ca7205a8e08f5d0ed7a0e9e84",
+        "publishedName": "01.webp"
+      },
+      {
+        "originalName": "505783D4-FAEE-4584-A87B-D85C7B86FCE6.webp",
+        "sourceSha256": "149bdf661e948e7c96148743cd9230f7f314f327383bdb6f8288804492d34e6a",
+        "publishedName": "02.webp"
+      },
+      {
+        "originalName": "D373DE57-5B8C-42E7-86BD-CC0475D7A092.webp",
+        "sourceSha256": "37f62edd918a41cea2bbd047849c443762fdf5281f25a9c4cf29ad1873c38d4f",
+        "publishedName": "03.webp"
+      },
+      {
+        "originalName": "949309F9-81CE-42A8-9FAD-B8908C9C64C2.webp",
+        "sourceSha256": "2eb18aace3e07c65b038e7ce1526fc8a6b97cd354608c2ea6ec06f61c1b3a454",
+        "publishedName": "04.webp"
+      },
+      {
+        "originalName": "A4434E45-D4EA-44E4-8C59-2E68931BE5D3.webp",
+        "sourceSha256": "5d935eea8259c28387b6f58f9d0277a8a57a5a95bcdfc7dac4afa40aa2806bbc",
+        "publishedName": "05.webp"
+      },
+      {
+        "originalName": "3C221653-E354-4105-A463-C16CCFFF99D7.webp",
+        "sourceSha256": "b71f1f6318e7210625b4ff01f46917bc5e37aa4ab7dac38928c7c82bd2d6d34f",
+        "publishedName": "06.webp"
+      },
+      {
+        "originalName": "1C7F4CBA-F658-4DD2-9550-64665645F972.webp",
+        "sourceSha256": "e4326ef0e14adfa209db08a993f510ff5184b327baaa961ce102cff791644a6d",
+        "publishedName": "07.webp"
+      },
+      {
+        "originalName": "IMG_4130.jpeg",
+        "sourceSha256": "5d35bff1e064dac204f1c08c749fdeb2d9c95d615f323ecd2716921959105b2b",
+        "publishedName": "08.webp"
+      }
+    ],
+    "addressSource": "https://virgo-hotel.ru/contacts/",
+    "sourceDiscrepanciesReportedToUser": [
+      "Номерной фонд: письмо 60, официальный сайт 47",
+      "Звёздность 4★ в письме не подтверждена"
+    ]
+  }
+]

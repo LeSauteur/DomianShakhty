@@ -427,9 +427,9 @@ test("listing schema expands types without breaking legacy values", () => {
   for (const legacy of ["new-house", "resale-house", "apartment", "land", "project"]) assert.ok(types.includes(legacy));
   for (const added of ["apartment-secondary", "apartment-newbuild", "house-new", "house-secondary", "house-builder", "commercial", "garage", "parking-space"]) assert.ok(types.includes(added));
   const listings = JSON.parse(fs.readFileSync("src/data/listings.json", "utf8"));
-  assert.equal(listings.length, 51);
+  assert.equal(listings.length, 57);
   assert.equal(new Set(listings.map((item) => item.id)).size, listings.length);
-  assert.equal(listings.filter((item) => item.id.startsWith("shk-")).length, 50);
+  assert.equal(listings.filter((item) => item.id.startsWith("shk-")).length, 56);
   assert.ok(listings.every((item) => item.verified === true));
   assert.equal(listings[0].price, 5670000);
   assert.equal(listings[0].location, "kamenolomni");
@@ -438,8 +438,8 @@ test("listing schema expands types without breaking legacy values", () => {
     for (const image of [item.image, ...(item.gallery || [])]) assert.ok(fs.existsSync(path.join(root, image.src)), image.src);
   }
   const mediaManifest = JSON.parse(fs.readFileSync("src/data/listing-media-manifest.json", "utf8"));
-  assert.equal(mediaManifest.length, 50);
-  assert.equal(mediaManifest.filter((item) => item.status === "done").length, 50);
+  assert.equal(mediaManifest.length, 56);
+  assert.equal(mediaManifest.filter((item) => item.status === "done").length, 56);
   assert.equal(mediaManifest.filter((item) => item.status === "pending").length, 0);
   for (const item of mediaManifest.filter((entry) => entry.status === "done")) {
     assert.equal(item.files[0], "hero.webp");

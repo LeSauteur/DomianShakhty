@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
+import { maskApprovedHotelRoute } from './approved-donor-content.mjs';
 
 const roots = ["assets", "src", "scripts", "tests", "dist"];
 const ignored = new Set(["RESEARCH_SHAKHTY.md", "RESEARCH_BUILDERS.md"]);
@@ -21,6 +22,7 @@ const approvedCity = "Новочеркасск";
 const approvedHeroFact = "Шахты, Новочеркасск и окрестности до 30 км";
 
 function sourceForDonorCheck(file, source) {
+  source = maskApprovedHotelRoute(file, source);
   if (file === "src/data/team.json" || file === "dist/assets/data/team.json") {
     const people = JSON.parse(source);
     const dmitry = people.find((person) => person.id === "dmitry-shevchenko" && person.verified === true);
