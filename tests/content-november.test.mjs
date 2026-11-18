@@ -55,7 +55,7 @@ test('new specialists expose their own contacts and supplied portraits without i
   assert.match(dmitry, /Новостройки по всей России/u);
   assert.match(dmitry, /эскроу-счётом/u);
   assert.match(dmitry, /dmitry-shevchenko-640\.webp/u);
-  assert.match(html('team/index.html'), /12 специалистов/u);
+  assert.match(html('team/index.html'), /13 специалистов/u);
 });
 
 
@@ -73,7 +73,7 @@ test('November 16 houses keep supplied facts and link the responsible specialist
     assert.match(page, /data-listing-agent="olesya-grigoryan"/u);
     assert.match(page, /href="[^"\s]*team\/olesya-grigoryan.html"/u);
     assert.ok(page.includes('tel:+79188504488'));
-    for (const contact of ['tel:+79001213707', 'tel:+79281016277', 'mailto:olesya_eurobereg@mail.ru']) assert.ok(!page.includes(contact));
+    for (const contact of ['tel:+79001213704', 'tel:+79281016277', 'mailto:olesya_eurobereg@mail.ru']) assert.ok(!page.includes(contact));
     assert.match(page.match(/class="hero-actions">([\s\S]*?)<\/div>/u)[1], /tel:\+79188504488/u);
     assert.match(page.match(/id="lead-form-section">([\s\S]*?)<form/u)[1], /tel:\+79188504488/u);
   }

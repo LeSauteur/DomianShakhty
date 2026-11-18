@@ -32,8 +32,8 @@ export const newestListings = (listings, limit = 6) => listings.filter(isAvailab
 
 // Keep the type in the spoken code: apartment 05 and house 05 must differ.
 export function listingCode(item) {
-  const match = item.id.match(/^shk-([ahl])(\d+)/u);
-  return match ? `Ш-${{ a: 'К', h: 'Д', l: 'У' }[match[1]]}${match[2]}` : item.id === 'dom-chistovaya-kamenolomni' ? 'Ш-КМ01' : `Ш-${item.id}`;
+  const match = item.id.match(/^shk-([ahcl])(\d+)/u);
+  return match ? `Ш-${{ a: 'К', h: 'Д', c: 'КО', l: 'У' }[match[1]]}${match[2]}` : item.id === 'dom-chistovaya-kamenolomni' ? 'Ш-КМ01' : `Ш-${item.id}`;
 }
 export function unitPrice(item) {
   if (!Number.isFinite(item.price) || item.price <= 0) return null;

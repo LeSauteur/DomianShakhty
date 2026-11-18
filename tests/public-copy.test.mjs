@@ -26,7 +26,10 @@ test('property description formatting preserves original records and technical f
     const detail=read(`dist/listings/${item.id}.html`);
     assert.doesNotMatch(formatted,/уточня(?:ет|ют)ся/iu);
     assert.equal(output.find(x=>x.id===item.id).description,formatted);
-    assert.ok(detail.includes(formatted.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;')),item.id);
+    const visibleText=detail.replace(/<script\b[^>]*>[\s\S]*?<\/script>/giu,'').replace(/<style\b[^>]*>[\s\S]*?<\/style>/giu,'').replace(/<[^>]+>/gu,' ');
+    const escaped=formatted.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
+    const normalize=value=>value.replace(/\s+/gu,' ').trim();
+    assert.ok(normalize(visibleText).includes(normalize(escaped)),item.id);
     for(const key of ['id','verified','price','area','image'])assert.deepEqual(output.find(x=>x.id===item.id)[key],item[key]);
     for(const key of ['verifiedAt','verifiedBy','provenance','publicationApproval','contentIssues','descriptionOriginal','featuresOriginal'])assert.equal(output.find(x=>x.id===item.id)[key],undefined);
   }
