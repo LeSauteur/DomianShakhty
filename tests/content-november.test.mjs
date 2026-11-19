@@ -55,7 +55,7 @@ test('new specialists expose their own contacts and supplied portraits without i
   assert.match(dmitry, /Новостройки по всей России/u);
   assert.match(dmitry, /эскроу-счётом/u);
   assert.match(dmitry, /dmitry-shevchenko-640\.webp/u);
-  assert.match(html('team/index.html'), /13 специалистов/u);
+  assert.match(html('team/index.html'), /14 специалистов/u);
 });
 
 

@@ -7085,6 +7085,25 @@ body[data-page-type="team"] #team-members {
   margin-top: clamp(20px, 3vw, 32px);
 }
 
+.team-life__item a { display: block; }
+.team-life__item a:focus-visible { outline: 3px solid var(--champagne); outline-offset: -4px; }
+.team-life__item figcaption { pointer-events: none; }
+.team-life__highlights { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; padding: 0; margin: 32px 0; list-style: none; }
+.team-life__highlights li { padding: 24px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
+.team-life__highlights strong { display: block; font: 400 clamp(24px,3vw,36px)/1.2 var(--serif); }
+.team-life__highlights span { display: block; margin-top: 10px; color: var(--muted); }
+.team-life__more { margin-top: 24px; }
+.team-life__more summary { width: fit-content; max-width: 100%; padding: 14px 0; font-weight: 600; cursor: pointer; }
+.team-life__more .team-life__grid { margin-top: 20px; }
+.team-life__recruit { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 32px; padding: clamp(24px,4vw,48px); margin-top: 40px; background: var(--paper-mint); border-radius: var(--radius-lg); border: 1px solid var(--line); }
+.team-life__recruit h3 { margin: 0 0 16px; font: 400 clamp(28px,4vw,42px)/1.15 var(--serif); }
+.team-life__recruit p { max-width: 720px; }
+.team-life__recruit-actions { display: grid; gap: 20px; justify-items: start; }
+@media (max-width: 760px) {
+  .team-life__highlights, .team-life__recruit { grid-template-columns: 1fr; }
+  .team-life__highlights { gap: 12px; }
+}
+
 @media (max-width: 760px) {
   .team-life__grid--teaser {
     grid-template-columns: 1fr;

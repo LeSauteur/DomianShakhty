@@ -1,0 +1,32 @@
+[
+  {
+    "key": "team-marina",
+    "source": "43169363-e66f-4336-8a65-b47cb9fa34ec",
+    "sha256": "3cf773e020561620271cc3f6ac4f74bc21af49db289d0681309c3130f2b003b2"
+  },
+  {
+    "key": "team-boat",
+    "source": "af3c9fa7-d42e-434f-bffb-409627c01159",
+    "sha256": "d96a1a231860fefca03b926f0fa1a9d1ca99c6b76c98589891d955f63f0925f1"
+  },
+  {
+    "key": "team-diving",
+    "source": "757a1b7a-b4bd-42ad-a6a2-03babf678bee",
+    "sha256": "050d3ef076823a26b5623f1f3bc03c009988526f409abaf790c0c36e4afb91bd"
+  },
+  {
+    "key": "team-divers",
+    "source": "e817232c-cffd-49e6-bd77-1618e55af4b5",
+    "sha256": "e16d354c998c04e6a2d55689dc4bade78bb61cfb7451ba6c48b855bb7ca1f56e"
+  },
+  {
+    "key": "team-seaside",
+    "source": "aedc97eb-5186-4d83-a2b9-b39a8120bfd8",
+    "sha256": "99ff8a32a5bbe4e7a2523f20f8b8a11ab39bbae168b37e6e84fb184a2ddb4638"
+  },
+  {
+    "key": "team-egypt",
+    "source": "f8d02970-5cb1-4e83-996a-994591592c56",
+    "sha256": "4be069c1b246e07f439f398ef96ed6415bd328efeb4c5af6803a4f5c0387ec0a"
+  }
+]
