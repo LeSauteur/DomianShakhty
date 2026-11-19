@@ -151,16 +151,16 @@ test("desktop navigation menu exposes aria state, closes with Escape and restore
 test("location search persists filters, restores history and carries territory into the form", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("locations/kamenolomni.html");
-  await expect(page.locator("[data-local-count]")).toHaveText("2");
+  await expect(page.locator("[data-local-count]")).toHaveText("4");
   const localCards = page.locator('[data-search-scope="local"]');
-  await expect(localCards).toHaveCount(2);
+  await expect(localCards).toHaveCount(4);
   await expect(localCards.first()).toBeVisible();
   await page.locator('[data-location-type="apartments"]').click();
   await expect(page).toHaveURL(/type=apartments/u);
   await expect(page.locator("[data-local-count]")).toHaveText("0");
   await page.locator('[data-location-type="houses"]').click();
   await expect(page).toHaveURL(/type=houses/u);
-  await expect(page.locator("[data-local-count]")).toHaveText("2");
+  await expect(page.locator("[data-local-count]")).toHaveText("3");
   await page.goBack();
   await expect(page.locator("[data-local-count]")).toHaveText("0");
   await expect(page.locator('select[name="type"]')).toHaveValue("apartments");
@@ -315,7 +315,7 @@ test("team cards and agent portraits fit desktop and mobile without overflow", a
     await page.setViewportSize(viewport);
     await page.goto("team/index.html");
     const cards = page.locator(".team-card");
-    await expect(cards).toHaveCount(13);
+    await expect(cards).toHaveCount(14);
     await expect(cards.nth(0)).toHaveAttribute("data-team-member", "maria-voronina");
     await expect(cards.nth(1)).toHaveAttribute("data-team-member", "olga-chernenko");
     await expect(cards.nth(2)).toHaveAttribute("data-team-member", "maria-smolina");

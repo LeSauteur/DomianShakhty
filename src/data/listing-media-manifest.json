@@ -643,7 +643,8 @@
     "id": "shk-l12-internatsionalny-8",
     "status": "done",
     "files": [
-      "hero.webp"
+      "hero.webp",
+      "cover-20261119.webp"
     ]
   },
   {
@@ -772,6 +773,13 @@
       "02.webp",
       "03.webp",
       "04.webp"
+    ]
+  },
+  {
+    "id": "shk-l14-kamenolomni-6-sot",
+    "status": "done",
+    "files": [
+      "hero.webp"
     ]
   }
 ]

@@ -65,19 +65,19 @@ test("construction projects remain separate from secondary inventory", () => {
   }
   const existingListings = readJson("src/data/listings.json");
   assert.deepEqual(existingListings[0] && { id: existingListings[0].id, price: existingListings[0].price, verified: existingListings[0].verified }, { id: "dom-chistovaya-kamenolomni", price: 5670000, verified: true });
-  assert.equal(existingListings.length, 60);
+  assert.equal(existingListings.length, 61);
 });
 
 test("published concrete inventory count is exact and separate from catalogs", () => {
   const existingListings = readJson("src/data/listings.json");
   const available = existingListings.filter((item) => item.verified === true && item.status === "available");
-  assert.equal(available.length, 60);
+  assert.equal(available.length, 61);
   assert.deepEqual(countBy(available, (item) => item.type), {
     "house-new": 2,
     "apartment-secondary": 24,
     "apartment-newbuild": 1,
     "house-secondary": 18,
-    land: 13,
+    land: 14,
     commercial: 2
   });
   assert.equal(newbuilds.items.length, 78);

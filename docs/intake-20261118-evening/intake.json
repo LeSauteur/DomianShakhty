@@ -5,8 +5,8 @@
     "sourceMessageId": "1a1eeda88100d016",
     "from": "\"ксения цыганкова\" <ksenj79@yandex.ru>",
     "sourceDate": "Wed, 18 Nov 2026 16:30:44 +0300",
-    "price": null,
-    "priceStatus": "requested-publish-without-price",
+    "price": 7600000,
+    "priceStatus": "confirmed-by-agent-in-max",
     "photos": [
       {
         "originalName": "IMG_20260624_132841.png",
@@ -83,7 +83,8 @@
         "sourceSha256": "5b7462c5c7c03415aaa84f9337994dbd17021d43885c707dda01a941f746a9d1",
         "publishedName": "14.webp"
       }
-    ]
+    ],
+    "priceSource": "Скриншот пользователя от 19.11.2026: Ксения, сообщения 17:48 — Каменоломни 7.600.000, Мелиховская 3.600.000"
   },
   {
     "id": "shk-h19-melikhovskaya-transportnik-don",
@@ -91,8 +92,8 @@
     "sourceMessageId": "1a1eedfeb1e1e7ce",
     "from": "\"ксения цыганкова\" <ksenj79@yandex.ru>",
     "sourceDate": "Wed, 18 Nov 2026 16:36:36 +0300",
-    "price": null,
-    "priceStatus": "requested-publish-without-price",
+    "price": 3600000,
+    "priceStatus": "confirmed-by-agent-in-max",
     "photos": [
       {
         "originalName": "IMG_20260628_195333.png",
@@ -134,7 +135,8 @@
         "sourceSha256": "ad5947d3ba916342e6aeaee230676f639d8c1a515274299a1e38c479bd205b59",
         "publishedName": "07.webp"
       }
-    ]
+    ],
+    "priceSource": "Скриншот пользователя от 19.11.2026: Ксения, сообщения 17:48 — Каменоломни 7.600.000, Мелиховская 3.600.000"
   },
   {
     "id": "shk-a25-batayskiy-2d-1k-32",
