@@ -5,12 +5,12 @@ import { districtInventory } from '../src/district-map.mjs';
 import { objectContext } from '../src/listing-pump.mjs';
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const listings=read('src/data/listings.json');
-test('Semutenko profile, five unique objects and administrator defaults retain source facts',()=>{
+test('Semutenko profile, seven unique objects and administrator defaults retain source facts',()=>{
  const agent=read('src/data/team.json').find(x=>x.id==='olesya-semutenko');
  assert.equal(agent.phoneHref,'tel:+79895152487');assert.equal(agent.email,'o-lesye@mail.ru');
- const items=listings.filter(x=>x.agentId===agent.id);assert.equal(items.length,5);
- assert.deepEqual(items.map(x=>x.price),[4900000,1800000,750000,3600000,900000]);
- assert.deepEqual(items.map(x=>x.gallery.length+1),[9,9,1,6,1]);
+ const items=listings.filter(x=>x.agentId===agent.id);assert.equal(items.length,7);
+ assert.deepEqual(items.map(x=>x.price),[4900000,1800000,750000,3600000,900000,1100000,9000000]);
+ assert.deepEqual(items.map(x=>x.gallery.length+1),[9,9,1,6,1,4,12]);
  assert.equal(items[0].area,undefined);assert.equal(items[0].rooms,3);
  assert.match(objectContext({...items[0],price:undefined}),/Цена по запросу/u);
  const page=fs.readFileSync(`dist/listings/${items[0].id}.html`,'utf8');
@@ -21,7 +21,7 @@ test('Semutenko profile, five unique objects and administrator defaults retain s
 });
 test('map includes the new Artem apartment and the Yuzhnaya settlement address, excluding external plots',()=>{
  const districts=districtInventory(listings);const artem=districts.find(x=>x.key==='artem');const yuzh=districts.find(x=>x.key==='yuzh');
- assert.equal(artem.count,3);assert.ok(artem.listingIds.includes('shk-a21-artem-3k-renovated'));
+ assert.equal(artem.count,4);assert.ok(artem.listingIds.includes('shk-a21-artem-3k-renovated'));
  assert.equal(yuzh.count,2);assert.ok(yuzh.listingIds.includes('shk-a19-yuzhnaya-2k-heating'));
  const mapped=districts.flatMap(x=>x.listingIds);assert.ok(!mapped.includes('shk-l11-internatsionalny-15'));assert.ok(!mapped.includes('shk-l12-internatsionalny-8'));
 });

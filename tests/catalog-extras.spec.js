@@ -44,7 +44,7 @@ test('empty catalog offers notification; criteria and manual comment reach mocke
 test('all district counters agree with visible catalog results including newly added objects',async({page})=>{
  await page.goto('');
  const districts=await page.locator('[data-district-data]').evaluate(node=>JSON.parse(node.textContent));
- expect(districts.artem.count).toBe(3);expect(districts.yuzh.count).toBe(2);
+ expect(districts.artem.count).toBe(4);expect(districts.yuzh.count).toBe(2);
  for(const [key,district] of Object.entries(districts)){
   await page.goto('catalog.html?district='+key);
   await expect(page.locator('[data-product-card]:visible')).toHaveCount(district.count);

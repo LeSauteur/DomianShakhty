@@ -151,16 +151,16 @@ test("desktop navigation menu exposes aria state, closes with Escape and restore
 test("location search persists filters, restores history and carries territory into the form", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("locations/kamenolomni.html");
-  await expect(page.locator("[data-local-count]")).toHaveText("4");
+  await expect(page.locator("[data-local-count]")).toHaveText("5");
   const localCards = page.locator('[data-search-scope="local"]');
-  await expect(localCards).toHaveCount(4);
+  await expect(localCards).toHaveCount(5);
   await expect(localCards.first()).toBeVisible();
   await page.locator('[data-location-type="apartments"]').click();
   await expect(page).toHaveURL(/type=apartments/u);
   await expect(page.locator("[data-local-count]")).toHaveText("0");
   await page.locator('[data-location-type="houses"]').click();
   await expect(page).toHaveURL(/type=houses/u);
-  await expect(page.locator("[data-local-count]")).toHaveText("3");
+  await expect(page.locator("[data-local-count]")).toHaveText("4");
   await page.goBack();
   await expect(page.locator("[data-local-count]")).toHaveText("0");
   await expect(page.locator('select[name="type"]')).toHaveValue("apartments");
@@ -862,16 +862,15 @@ test("newbuild and construction filters update the catalog without hiding missin
   await expect(page.locator("main")).toContainText(/Предварительный ориентир|Расчёт по запросу|Комплектация/u);
 });
 
-test("primary customer journeys fit all requested audit viewports", async ({ page }) => {
-  const paths = ["", "apartments.html", "listings/shk-a01-studio-olymp.html", "houses.html", "lands.html", "newbuilds.html", "construction.html", "sell.html", "valuation.html", "services.html", "team/index.html", "contacts.html"];
-  const viewports = [
+for (const viewport of [
     { width: 360, height: 800 },
     { width: 390, height: 844 },
     { width: 412, height: 915 },
     { width: 1366, height: 768 },
     { width: 1440, height: 900 }
-  ];
-  for (const viewport of viewports) {
+  ]) {
+  test(`primary customer journeys fit the ${viewport.width}px audit viewport`, async ({ page }) => {
+    const paths = ["", "apartments.html", "listings/shk-a01-studio-olymp.html", "houses.html", "lands.html", "newbuilds.html", "construction.html", "sell.html", "valuation.html", "services.html", "team/index.html", "contacts.html"];
     await page.setViewportSize(viewport);
     for (const pathname of paths) {
       await page.goto(pathname);
@@ -879,8 +878,8 @@ test("primary customer journeys fit all requested audit viewports", async ({ pag
       const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
       expect(dimensions.scroll, `${pathname || "home"} at ${viewport.width}px`).toBeLessThanOrEqual(dimensions.client + 1);
     }
-  }
-});
+  });
+}
 
 test("catalog imagery loads responsive WebP at required viewports", async ({ page }) => {
   const paths = ["newbuilds.html", "newbuilds/leventsovka-park.html", "newbuilds/manhetten-2-0-novaya-vysota.html", "construction.html", "construction/projects/dom-pod-klyuch-80m2-tri-spalni.html"];

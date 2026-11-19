@@ -1,0 +1,232 @@
+[
+  {
+    "id": "shk-h20-chelyuskina-55",
+    "agentId": "ksenia-tsygankova",
+    "price": 1600000,
+    "sourceMessageId": "1a1f3ef0ba3f3fb3",
+    "from": "\"ксения цыганкова\" <ksenj79@yandex.ru>",
+    "date": "Thu, 19 Nov 2026 16:11:07 +0300",
+    "photos": [
+      {
+        "originalName": "IMG_20260716_095530.png",
+        "sourceSha256": "1a92b523ca98f4d9006384974f34b99b19368a24f1e537941cdc62a84e1eb363",
+        "publishedName": "hero.webp"
+      },
+      {
+        "originalName": "IMG_20260716_095520.png",
+        "sourceSha256": "ef0bc6ea09fc7a777e82815bd4904827d407710b019ae9b1791cabee23185606",
+        "publishedName": "01.webp"
+      },
+      {
+        "originalName": "IMG_20260716_095525.png",
+        "sourceSha256": "fa46d7663c313106f970fd3ea6017c122afbf499ef35dc382b49dd7dda872563",
+        "publishedName": "02.webp"
+      },
+      {
+        "originalName": "IMG_20260716_095537.png",
+        "sourceSha256": "1915f8972093586a8d40da811315a9d226078e4a6f7d3715c7bb52e36a7fe0d6",
+        "publishedName": "03.webp"
+      },
+      {
+        "originalName": "IMG_20260716_095544.png",
+        "sourceSha256": "1378111fb325644729e6e67632e298ddbc7cac1de9c9d579a537a038fe671137",
+        "publishedName": "04.webp"
+      },
+      {
+        "originalName": "IMG_20260716_095546.png",
+        "sourceSha256": "3147fd94665e17ffefba709aebcb967a31ebfc66946cd7a044f262769c9dbd50",
+        "publishedName": "05.webp"
+      },
+      {
+        "originalName": "IMG_20260716_095549.png",
+        "sourceSha256": "c9ef59de7de71a3f2062fd555c675b6f56f0ad509c6310697c5fb12d3cac9cb3",
+        "publishedName": "06.webp"
+      },
+      {
+        "originalName": "IMG_20260716_095552.png",
+        "sourceSha256": "3b71de64f5d7ddf70df81a8c985cbdbfda0a181f590447c594b0686759ac716f",
+        "publishedName": "07.webp"
+      },
+      {
+        "originalName": "IMG_20260716_095554.png",
+        "sourceSha256": "daa231481cabb8da69898645faf383b31c0b31ea0fa38bd1a995d8f77f023012",
+        "publishedName": "08.webp"
+      }
+    ]
+  },
+  {
+    "id": "shk-a26-kalinina-34a-18",
+    "agentId": "ksenia-tsygankova",
+    "price": 1000000,
+    "sourceMessageId": "1a1f3ea61f770aca",
+    "from": "\"ксения цыганкова\" <ksenj79@yandex.ru>",
+    "date": "Thu, 19 Nov 2026 16:06:22 +0300",
+    "photos": [
+      {
+        "originalName": "IMG_20260911_115900.jpg",
+        "sourceSha256": "29567493a12f6cd19470f99fa03422564c4f215501f0ccffeb06029f24bae09c",
+        "publishedName": "hero.webp"
+      },
+      {
+        "originalName": "IMG_20260911_115827.jpg",
+        "sourceSha256": "8d8917dc6c5583558e621229d279d9cfcf5d72179f8e40fd54bf96bf12316628",
+        "publishedName": "01.webp"
+      },
+      {
+        "originalName": "IMG_20260911_115831.jpg",
+        "sourceSha256": "7facbf2e5b40748f474e0be641c2d6ce81402c8fb8ca8d13aac0763c898d7310",
+        "publishedName": "02.webp"
+      },
+      {
+        "originalName": "IMG_20260911_115836.jpg",
+        "sourceSha256": "5fa0be311a95451a622efb25a46e38daa1a38a909857c2afe2354805ff1974a9",
+        "publishedName": "03.webp"
+      },
+      {
+        "originalName": "IMG_20260911_115839.jpg",
+        "sourceSha256": "aafe393fbbdcf14638b542d9911b7bc5dcdfdba7403460b00c54bab2cdc0967e",
+        "publishedName": "04.webp"
+      },
+      {
+        "originalName": "IMG_20260911_115841.jpg",
+        "sourceSha256": "217a7e1eed1a2f815eb5306bcc77bc722903f35eb7bd020d9bda6858a1b2fb08",
+        "publishedName": "05.webp"
+      },
+      {
+        "originalName": "IMG_20260911_115843.jpg",
+        "sourceSha256": "bdda4d1d326fc5798127efba032669491bc3f8e9ee523a09c4f2754041c39483",
+        "publishedName": "06.webp"
+      },
+      {
+        "originalName": "IMG_20260911_115845.jpg",
+        "sourceSha256": "404e142398bfc7224c95d2ccbc876a36d26769b42cc24455306d40b8477d160b",
+        "publishedName": "07.webp"
+      },
+      {
+        "originalName": "IMG_20260911_115848.jpg",
+        "sourceSha256": "22fb039ac2c973e727df80c8157e1559d4de123440c6dc3fee5e4cb7d596a1ce",
+        "publishedName": "08.webp"
+      },
+      {
+        "originalName": "IMG_20260911_115850.jpg",
+        "sourceSha256": "6af6f4882dc25bbb43d65b3872060518cdeb3fabbc7a16ba9fa7e21f3e51aab2",
+        "publishedName": "09.webp"
+      },
+      {
+        "originalName": "IMG_20260911_115856.jpg",
+        "sourceSha256": "c409d891db67b5bc8a078a32216c92289425f6374cd348876847a3ebe728999c",
+        "publishedName": "10.webp"
+      },
+      {
+        "originalName": "IMG_20260911_115858.jpg",
+        "sourceSha256": "723eb508a1fd42e25c42f10a4b588a88c555cd3ada077788b4e3a8adbec14b70",
+        "publishedName": "11.webp"
+      },
+      {
+        "originalName": "IMG_20260911_115904.jpg",
+        "sourceSha256": "99bfaef72d813dec97a97254ad1fe8da3350ea122dbba1aa8aa1cb937a97a07a",
+        "publishedName": "12.webp"
+      }
+    ]
+  },
+  {
+    "id": "shk-l15-pulnogo-4-sot",
+    "agentId": "olesya-semutenko",
+    "price": 1100000,
+    "sourceMessageId": "1a1f3837c47a976b",
+    "from": "\"олеся левковец\" <o-lesye@mail.ru>",
+    "date": "Thu, 19 Nov 2026 14:13:55 +0300",
+    "photos": [
+      {
+        "originalName": "IMG_20261119_140538_989.jpg",
+        "sourceSha256": "9a1469c9901a6e8efe83cfd21dfe61f029f4df90810bd991c3779626ebded498",
+        "publishedName": "hero.webp"
+      },
+      {
+        "originalName": "IMG_20261119_140538_975.jpg",
+        "sourceSha256": "0e17c0b078491e3bdc1796aa34ab9c5ed95c7f742360afdcac8976a32e21b71a",
+        "publishedName": "01.webp"
+      },
+      {
+        "originalName": "IMG_20261119_140539_208.jpg",
+        "sourceSha256": "c8d711f71bc2f6d36cd2fb8b26c4e5540a49ea419014107d865a7468270f9d8c",
+        "publishedName": "02.webp"
+      },
+      {
+        "originalName": "IMG_20261119_140539_093.jpg",
+        "sourceSha256": "7dea64e9f5be6f6ff7949e303e44c2b6740d4230d7198af67c6e5d180a621887",
+        "publishedName": "03.webp"
+      }
+    ]
+  },
+  {
+    "id": "shk-h21-kamenolomni-mira-100",
+    "agentId": "olesya-semutenko",
+    "price": 9000000,
+    "sourceMessageId": "1a1f370b13dfa769",
+    "from": "\"олеся левковец\" <o-lesye@mail.ru>",
+    "date": "Thu, 19 Nov 2026 13:53:24 +0300",
+    "photos": [
+      {
+        "originalName": "IMG_20261117_113544_018.jpg",
+        "sourceSha256": "6e9cdc116702cf61716ee59217d5ecbce7d6212286f7d8080fa36080d26f3778",
+        "publishedName": "hero.webp"
+      },
+      {
+        "originalName": "IMG_20261117_113549_393.jpg",
+        "sourceSha256": "ecaa2068cbc2e47d690a0a2f2996a953625dc8a4509eba05dd6926155b29960a",
+        "publishedName": "01.webp"
+      },
+      {
+        "originalName": "IMG_20261117_113549_421.jpg",
+        "sourceSha256": "80f18b448fb8614a514cb69d04a32cfbcffc88dec762157120aef43e39788c2d",
+        "publishedName": "02.webp"
+      },
+      {
+        "originalName": "IMG_20261117_113543_758.jpg",
+        "sourceSha256": "1cbbbdb48851850ce9d5ca87d3f27099fcdfe93adce3066dc023160b6476d997",
+        "publishedName": "03.webp"
+      },
+      {
+        "originalName": "IMG_20261117_113549_429.jpg",
+        "sourceSha256": "48835a4ffa424de37ee36ceea931d4b36d4d2987a49c81f0726ba9038adef4ea",
+        "publishedName": "04.webp"
+      },
+      {
+        "originalName": "IMG_20261117_113543_799.jpg",
+        "sourceSha256": "742f63dd8fc3f020d2b3bbdd87120932e25311aec9b7a7a4a437245bc84c9ec9",
+        "publishedName": "05.webp"
+      },
+      {
+        "originalName": "IMG_20261117_113543_910.jpg",
+        "sourceSha256": "0abfb4956b9e50218224ad214fe4265ef22a816e621b3c14f913fbf42578fd8a",
+        "publishedName": "06.webp"
+      },
+      {
+        "originalName": "IMG_20261117_113543_963.jpg",
+        "sourceSha256": "40e82c07512798d7023799ef2f73791a1b498adb6b83dc4b168dcfae666a9244",
+        "publishedName": "07.webp"
+      },
+      {
+        "originalName": "IMG_20261117_113544_033.jpg",
+        "sourceSha256": "727c80045d525b46bca53cd5bfda768ce2980153039b6d45189c3a8ebd6462fa",
+        "publishedName": "08.webp"
+      },
+      {
+        "originalName": "IMG_20261117_113544_041.jpg",
+        "sourceSha256": "b71f48f1e74a027c9f7866ef01775bfd64a92e9c0152dad992821a4d07a9d7f1",
+        "publishedName": "09.webp"
+      },
+      {
+        "originalName": "IMG_20261117_113543_896.jpg",
+        "sourceSha256": "6602fbce8cfd339b7aacbc2fc6b12310bbef6c1b993005df7a4c3561cbd1cd2b",
+        "publishedName": "10.webp"
+      },
+      {
+        "originalName": "IMG_20261117_113543_766.jpg",
+        "sourceSha256": "5979c47c8e79fef7d2723adcf2a7647cebafde09cde8144908b35e6ce5694f45",
+        "publishedName": "11.webp"
+      }
+    ]
+  }
+]
