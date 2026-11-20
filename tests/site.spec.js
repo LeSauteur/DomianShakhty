@@ -315,7 +315,7 @@ test("team cards and agent portraits fit desktop and mobile without overflow", a
     await page.setViewportSize(viewport);
     await page.goto("team/index.html");
     const cards = page.locator(".team-card");
-    await expect(cards).toHaveCount(14);
+    await expect(cards).toHaveCount(15);
     await expect(cards.nth(0)).toHaveAttribute("data-team-member", "maria-voronina");
     await expect(cards.nth(1)).toHaveAttribute("data-team-member", "olga-chernenko");
     await expect(cards.nth(2)).toHaveAttribute("data-team-member", "maria-smolina");
