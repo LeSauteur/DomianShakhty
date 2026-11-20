@@ -1,0 +1,8 @@
+{
+  candidates: 91,
+  confirmed: 91,
+  remaining: 0,
+  errors: 0,
+  uniquePages: 86,
+  failures: []
+}

@@ -1,0 +1,51 @@
+forms 25
+forms 50
+forms 75
+forms 100
+forms 125
+forms 150
+forms 175
+{
+  forms: 180,
+  formExceptions: 23,
+  filters: 89,
+  filterExceptions: 4,
+  mortgage: [
+    {
+      values: [Object],
+      expected: 28657,
+      actual: '28 657 ₽ / мес.',
+      difference: 0
+    },
+    {
+      values: [Object],
+      expected: 16667,
+      actual: 'Введите ставку',
+      difference: -16667
+    },
+    {
+      values: [Object],
+      expected: 'Проверить параметры',
+      actual: 'Проверьте параметры',
+      difference: null
+    },
+    {
+      values: [Object],
+      expected: 'Проверить параметры',
+      actual: 'Введите ставку',
+      difference: null
+    },
+    {
+      values: [Object],
+      expected: 'Отказ с понятным ограничением',
+      actual: 'не число ₽ / мес.',
+      difference: null
+    },
+    {
+      values: [Object],
+      expected: 120567,
+      actual: '120 567 ₽ / мес.',
+      difference: 0
+    }
+  ]
+}

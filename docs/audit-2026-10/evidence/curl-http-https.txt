@@ -1,0 +1,55 @@
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+
+  0      0   0      0   0      0      0      0                              0
+  0    162   0      0   0      0      0      0                              0
+  0    162   0      0   0      0      0      0                              0
+
+  0      0   0      0   0      0      0      0                              0
+  0  74988   0      0   0      0      0      0                              0
+  0  74988   0      0   0      0      0      0                              0
+  0  74988   0      0   0      0      0      0                              0
+HTTP/1.1 301 Moved Permanently
+Connection: keep-alive
+Content-Length: 162
+Server: GitHub.com
+Content-Type: text/html
+Location: https://xn--80aakqtid1b0a2a0b.xn--p1ai/
+X-GitHub-Request-Id: 7F42:3CA547:6F6A05C:707B90C:6AD5C261
+x-github-edge-region: fra
+Accept-Ranges: bytes
+Age: 0
+Date: Mon, 19 Oct 2026 07:10:25 GMT
+Via: 1.1 varnish
+X-Served-By: cache-fra-eddf8230089-FRA
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792393826.654769,VS0,VE105
+Vary: Accept-Encoding
+X-Fastly-Request-ID: 07f4e7a50075d54c4610bfd4ed4ab97bbfd317cc
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 74988
+Server: GitHub.com
+Content-Type: text/html; charset=utf-8
+x-origin-cache: HIT
+Last-Modified: Thu, 15 Oct 2026 15:06:10 GMT
+Access-Control-Allow-Origin: *
+ETag: "6ad0ebe2-124ec"
+expires: Mon, 19 Oct 2026 07:20:26 GMT
+Cache-Control: max-age=600
+x-proxy-cache: MISS
+X-GitHub-Request-Id: A85C:1FBA5A:6D24869:6E35CAB:6AD5C262
+x-github-edge-region: fra
+Accept-Ranges: bytes
+Age: 0
+Date: Mon, 19 Oct 2026 07:10:26 GMT
+Via: 1.1 varnish
+X-Served-By: cache-fra-eddf8230218-FRA
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792393826.092309,VS0,VE170
+Vary: Accept-Encoding
+X-Fastly-Request-ID: d58f1a8db871cf193f68f10631da7bd227b6a6d6
+

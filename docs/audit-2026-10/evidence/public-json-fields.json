@@ -1,0 +1,128 @@
+[
+  {
+    "file": "dist/assets/data/builders.json",
+    "bytes": 3,
+    "keys": [],
+    "suspiciousKeys": []
+  },
+  {
+    "file": "dist/assets/data/listings.json",
+    "bytes": 74877,
+    "keys": [
+      "id",
+      "type",
+      "format",
+      "verified",
+      "title",
+      "location",
+      "address",
+      "price",
+      "status",
+      "description",
+      "features",
+      "updatedAt",
+      "image",
+      "src",
+      "alt",
+      "width",
+      "height",
+      "gallery",
+      "provenance",
+      "verifiedAt",
+      "verifiedBy",
+      "area",
+      "rooms",
+      "floors",
+      "material",
+      "builder",
+      "landArea"
+    ],
+    "suspiciousKeys": [
+      "provenance",
+      "verifiedBy"
+    ]
+  },
+  {
+    "file": "dist/assets/data/locations.json",
+    "bytes": 12448,
+    "keys": [
+      "slug",
+      "name",
+      "namePrepositional",
+      "nameGenitive",
+      "neighbors",
+      "administrativeName",
+      "kicker",
+      "title",
+      "intro",
+      "context",
+      "houseScenario",
+      "idealFor",
+      "checks",
+      "types",
+      "relatedGuide"
+    ],
+    "suspiciousKeys": []
+  },
+  {
+    "file": "dist/assets/data/projects.json",
+    "bytes": 3,
+    "keys": [],
+    "suspiciousKeys": []
+  },
+  {
+    "file": "dist/assets/data/showcase.json",
+    "bytes": 4656,
+    "keys": [
+      "id",
+      "category",
+      "categoryLabel",
+      "title",
+      "text",
+      "image",
+      "imageAlt"
+    ],
+    "suspiciousKeys": []
+  },
+  {
+    "file": "dist/assets/data/team.json",
+    "bytes": 8645,
+    "keys": [
+      "id",
+      "slug",
+      "name",
+      "role",
+      "initials",
+      "phone",
+      "phoneHref",
+      "email",
+      "office",
+      "city",
+      "verified",
+      "image",
+      "alt",
+      "original",
+      "fallback",
+      "width",
+      "height",
+      "srcset",
+      "src",
+      "shortName",
+      "firstName",
+      "nameDative",
+      "nameInstrumental",
+      "nameGenitive",
+      "maxPhone",
+      "directions",
+      "serviceAreas",
+      "skills",
+      "heroFacts",
+      "secondaryPhone",
+      "secondaryPhoneHref",
+      "lead"
+    ],
+    "suspiciousKeys": [
+      "original"
+    ]
+  }
+]
