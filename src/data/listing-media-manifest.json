@@ -843,5 +843,40 @@
       "10.webp",
       "11.webp"
     ]
+  },
+  {
+    "id": "shk-a27-mayakovskogo-54",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp"
+    ]
+  },
+  {
+    "id": "shk-a28-mayakovskogo-59",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp",
+      "07.webp",
+      "08.webp",
+      "09.webp"
+    ]
+  },
+  {
+    "id": "shk-l16-volokolamskiy-3",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp"
+    ]
   }
 ]
