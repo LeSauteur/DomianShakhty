@@ -1,3 +1,4 @@
+import { assertSitemapIntegrity } from './helpers/catalog-integrity.mjs';
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -84,7 +85,7 @@ test("only confirmed office details and prices are published", () => {
   assert.match(html("services.html"), /20\s000 ₽/u);
   assert.match(site.web3formsAccessKey, /^[a-f0-9-]{36}$/u);
   assert.match(home, /data-lead-form/u);
-  assert.equal((html("sitemap.xml").match(/<loc>/gu) || []).length, 235);
+  assertSitemapIntegrity();
 });
 
 test('missing form key retains a working direct-contact fallback', () => {

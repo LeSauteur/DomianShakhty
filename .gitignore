@@ -9,3 +9,6 @@ artifacts/
 Thumbs.db
 
 .promo-cache/
+.intake.lock
+.intake-transaction.json
+*.intake-tmp

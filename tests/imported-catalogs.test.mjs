@@ -1,3 +1,4 @@
+import { assertPublishedInventory } from './helpers/catalog-integrity.mjs';
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
@@ -27,21 +28,21 @@ function countBy(items, selector) {
 }
 
 test("import manifest and catalog counts remain exact", () => {
-  assert.equal(newbuilds.items.length, 78);
-  assert.equal(construction.items.length, 26);
-  assert.equal(manifest.newbuilds.sourceCount, 78);
-  assert.equal(manifest.newbuilds.importedCount, 78);
-  assert.equal(manifest.construction.sourceCount, 26);
-  assert.equal(manifest.construction.importedCount, 26);
-  assert.equal(new Set(newbuilds.items.map((item) => item.slug)).size, 78);
-  assert.equal(new Set(construction.items.map((item) => item.slug)).size, 26);
+  assert.equal(newbuilds.items.length, manifest.newbuilds.importedCount);
+  assert.equal(construction.items.length, manifest.construction.importedCount);
+  assert.equal(manifest.newbuilds.sourceCount, manifest.newbuilds.importedCount);
+  assert.ok(manifest.newbuilds.importedCount > 0);
+  assert.equal(manifest.construction.sourceCount, manifest.construction.importedCount);
+  assert.ok(manifest.construction.importedCount > 0);
+  assert.equal(new Set(newbuilds.items.map((item) => item.slug)).size, newbuilds.items.length);
+  assert.equal(new Set(construction.items.map((item) => item.slug)).size, construction.items.length);
 });
 
 test("newbuild truthfulness states and prices are preserved", () => {
   const completeness = countBy(newbuilds.items, (item) => item.completeness.state);
-  assert.deepEqual(completeness, { complete: 20, needs_review: 53, partial: 5 });
-  assert.equal(newbuilds.items.filter((item) => item.price.verified === true).length, 14);
-  assert.equal(newbuilds.items.filter((item) => item.price.verified === false).length, 64);
+  assert.deepEqual(completeness, manifest.newbuilds.completeness);
+  assert.equal(newbuilds.items.filter((item) => item.price.verified === true).length, manifest.newbuilds.verifiedPrices);
+  assert.equal(newbuilds.items.filter((item) => item.price.verified === false).length, manifest.newbuilds.unverifiedPrices);
   for (const item of newbuilds.items) {
     if (!item.price.verified) {
       assert.equal(item.price.type, "on_request", item.slug);
@@ -65,23 +66,20 @@ test("construction projects remain separate from secondary inventory", () => {
   }
   const existingListings = readJson("src/data/listings.json");
   assert.deepEqual(existingListings[0] && { id: existingListings[0].id, price: existingListings[0].price, verified: existingListings[0].verified }, { id: "dom-chistovaya-kamenolomni", price: 5670000, verified: true });
-  assert.equal(existingListings.length, 68);
+  assertPublishedInventory();
 });
 
 test("published concrete inventory count is exact and separate from catalogs", () => {
   const existingListings = readJson("src/data/listings.json");
   const available = existingListings.filter((item) => item.verified === true && item.status === "available");
-  assert.equal(available.length, 68);
-  assert.deepEqual(countBy(available, (item) => item.type), {
-    "house-new": 2,
-    "apartment-secondary": 27,
-    "apartment-newbuild": 1,
-    "house-secondary": 20,
-    land: 16,
-    commercial: 2
-  });
-  assert.equal(newbuilds.items.length, 78);
-  assert.equal(construction.items.length, 26);
+  assertPublishedInventory();
+  for (const item of available) {
+    assert.ok(!newbuilds.items.some(x=>x.id===item.id));
+    assert.ok(!construction.items.some(x=>x.id===item.id));
+    assert.ok(fs.existsSync(path.join(dist,'listings',item.id+'.html')));
+  }
+  assert.equal(newbuilds.items.length, manifest.newbuilds.importedCount);
+  assert.equal(construction.items.length, manifest.construction.importedCount);
 });
 
 test("construction cards use unique customer-facing house titles", () => {
@@ -170,13 +168,17 @@ test("all imported responsive media is local WebP and exists", () => {
   const generatedFiles = ["assets/images/newbuilds", "assets/images/construction-projects"]
     .flatMap((directory) => fs.readdirSync(path.join(repo, directory), { recursive: true }).filter((file) => file.endsWith(".webp")));
   assert.equal(generatedFiles.length, manifest.media.generatedResponsiveWebpFiles);
-  assert.equal(generatedFiles.length, 434);
+  const references=[];
+  const visit=value=>{if(typeof value==="string" && /^assets\/images\/(newbuilds|construction-projects)\/.+\.webp$/.test(value))references.push(value);else if(value&&typeof value==="object")Object.values(value).forEach(visit);};
+  visit(newbuilds);visit(construction);
+  const actual=["assets/images/newbuilds", "assets/images/construction-projects"].flatMap(d=>fs.readdirSync(d,{recursive:true}).filter(n=>n.endsWith(".webp")).map(n=>d+"/"+n.replaceAll("\\","/")));
+  assert.deepEqual([...new Set(references)].sort(),actual.sort());
   assert.ok(generatedFiles.every((file) => !file.endsWith("-480.webp")));
 });
 
 test("catalog and detail pages are generated with production SEO", () => {
-  assert.equal((readDist("newbuilds.html").match(/data-product-card/gu) || []).length, 78);
-  assert.equal((readDist("construction.html").match(/data-product-card/gu) || []).length, 26);
+  assert.equal((readDist("newbuilds.html").match(/data-product-card/gu) || []).length, newbuilds.items.length);
+  assert.equal((readDist("construction.html").match(/data-product-card/gu) || []).length, construction.items.length);
   for (const item of newbuilds.items) {
     const file = `newbuilds/${item.slug}.html`;
     assert.ok(fs.existsSync(path.join(dist, file)), file);

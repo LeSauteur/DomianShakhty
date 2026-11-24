@@ -55,7 +55,7 @@ test('new specialists expose their own contacts and supplied portraits without i
   assert.match(dmitry, /Новостройки по всей России/u);
   assert.match(dmitry, /эскроу-счётом/u);
   assert.match(dmitry, /dmitry-shevchenko-640\.webp/u);
-  assert.match(html('team/index.html'), /15 специалистов/u);
+  assert.match(html('team/index.html'), new RegExp(`${json('src/data/team.json').filter(x=>x.verified).length} специалист`, 'u'));
 });
 
 

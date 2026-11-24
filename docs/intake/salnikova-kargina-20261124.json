@@ -1,0 +1,648 @@
+{
+  "version": 1,
+  "batchId": "salnikova-kargina-20261124",
+  "approval": {
+    "confirmed": true,
+    "date": "2026-11-24",
+    "note": "Пользователь поручил опубликовать сегодняшние объекты Елены и Евгении с имеющимися данными; отсутствующие цены оставить по запросу, адреса не выдумывать."
+  },
+  "sources": [
+    {
+      "fingerprint": "еленасальниковаsalnikova80listru|1a20ccead30f31ad",
+      "listingId": "shk-h22-poselok-mashzavod-tochnyy-adres-utochnyaetsya",
+      "assignedAgentId": "elena-salnikova",
+      "agentAssignmentNote": null,
+      "from": "\"Елена Сальникова\" salnikova.80@list.ru",
+      "id": "1a20ccead30f31ad",
+      "photos": [
+        {
+          "name": "phpk7uup4.jpeg",
+          "outputPath": "assets/images/listings/shk-h22-poselok-mashzavod-tochnyy-adres-utochnyaetsya/hero.webp",
+          "sourceSha256": "96d4caeb9ab654f6b4654ace54e846ba1275b9bb0ee4af849ed9779c8c7c04a3",
+          "outputSha256": "cf507065a9446b0e59fc7681ae0f31047ab493b019d453198d19ba7421638bdd"
+        },
+        {
+          "name": "phpeO3tZB.jpeg",
+          "outputPath": "assets/images/listings/shk-h22-poselok-mashzavod-tochnyy-adres-utochnyaetsya/01.webp",
+          "sourceSha256": "7ccd193d990c34e6b5ebf9b1919efa76db836093ea9ddcca7cd7e6b4475c4650",
+          "outputSha256": "d499d6fa501508447935a9eb883a31b8b0e547df2b25bbab58b1bb627951fa00"
+        }
+      ]
+    },
+    {
+      "fingerprint": "еленасальниковаsalnikova80listru|1a20cc9f5b00d00d",
+      "listingId": "shk-l17-tsentralnaya-chast-goroda-naselennyy-punkt-i-adres-utochnyayutsya",
+      "assignedAgentId": "elena-salnikova",
+      "agentAssignmentNote": null,
+      "from": "\"Елена Сальникова\" salnikova.80@list.ru",
+      "id": "1a20cc9f5b00d00d",
+      "photos": [
+        {
+          "name": "24.jpg",
+          "outputPath": "assets/images/listings/shk-l17-tsentralnaya-chast-goroda-naselennyy-punkt-i-adres-utochnyayutsya/hero.webp",
+          "sourceSha256": "0109671250e46df9fb5bf07d5e38d4ba2847db01063a45f382f8bd8b757ddf63",
+          "outputSha256": "8209213378bfac0d0c4884bc19f4da9d9086529346cb82caeb8378f5141fac41"
+        }
+      ]
+    },
+    {
+      "fingerprint": "еленасальниковаsalnikova80listru|1a20cc8ad4198786",
+      "listingId": "shk-l18-ul-krivoshlykova-66-naselennyy-punkt-utochnyaetsya",
+      "assignedAgentId": "elena-salnikova",
+      "agentAssignmentNote": null,
+      "from": "\"Елена Сальникова\" salnikova.80@list.ru",
+      "id": "1a20cc8ad4198786",
+      "photos": [
+        {
+          "name": "20.jpg",
+          "outputPath": "assets/images/listings/shk-l18-ul-krivoshlykova-66-naselennyy-punkt-utochnyaetsya/hero.webp",
+          "sourceSha256": "959cd06cf9add3fcca763e454bf352ed50eef203ea06d16be88ccb981765df4a",
+          "outputSha256": "79449671115a9ff6e23397ae43387d537255857fe914cdccdc3f27cc6cf745e2"
+        }
+      ]
+    },
+    {
+      "fingerprint": "еленасальниковаsalnikova80listru|1a20cc3456832380",
+      "listingId": "shk-l19-orientir-vid-na-reku-don-naselennyy-punkt-i-adres-utochnyayutsya",
+      "assignedAgentId": "elena-salnikova",
+      "agentAssignmentNote": null,
+      "from": "\"Елена Сальникова\" salnikova.80@list.ru",
+      "id": "1a20cc3456832380",
+      "photos": [
+        {
+          "name": "2.jpeg",
+          "outputPath": "assets/images/listings/shk-l19-orientir-vid-na-reku-don-naselennyy-punkt-i-adres-utochnyayutsya/hero.webp",
+          "sourceSha256": "a62ebc4653d34102f9fff370f9a29a9a1c5d27360c7cbe654032187a0a8616a0",
+          "outputSha256": "3f1fb7656278c363d7923982a27fd26bc72c92b081f5944783956d2825538763"
+        }
+      ]
+    },
+    {
+      "fingerprint": "еленасальниковаsalnikova80listru|1a20cba37295cdc2",
+      "listingId": "shk-l20-naselennyy-punkt-i-adres-utochnyayutsya",
+      "assignedAgentId": "elena-salnikova",
+      "agentAssignmentNote": null,
+      "from": "\"Елена Сальникова\" salnikova.80@list.ru",
+      "id": "1a20cba37295cdc2",
+      "photos": [
+        {
+          "name": "15.jpeg",
+          "outputPath": "assets/images/listings/shk-l20-naselennyy-punkt-i-adres-utochnyayutsya/hero.webp",
+          "sourceSha256": "394fdaac3380db1966b10569704eaa9be4bf85d6b860d15a396feb6aee27e276",
+          "outputSha256": "4dc59a29516420901b95da8eab91e8f344ba70484152418083327d857dbb2847"
+        }
+      ]
+    },
+    {
+      "fingerprint": "еленасальниковаsalnikova80listru|1a20cb6b5096efe0",
+      "listingId": "shk-h23-poselok-atyukhta-ulitsa-i-nomer-doma-utochnyayutsya",
+      "assignedAgentId": "elena-salnikova",
+      "agentAssignmentNote": null,
+      "from": "\"Елена Сальникова\" salnikova.80@list.ru",
+      "id": "1a20cb6b5096efe0",
+      "photos": [
+        {
+          "name": "i (2).webp",
+          "outputPath": "assets/images/listings/shk-h23-poselok-atyukhta-ulitsa-i-nomer-doma-utochnyayutsya/hero.webp",
+          "sourceSha256": "0c6a6c2ba3ea25ea01e4380b4030c5438e33bd9491c49b6e0e14090075716a60",
+          "outputSha256": "8b0f0a21e2ace82ea414aa4b759d17fd71c0c1fabcd10eef230660848a7f9608"
+        },
+        {
+          "name": "i (3).webp",
+          "outputPath": "assets/images/listings/shk-h23-poselok-atyukhta-ulitsa-i-nomer-doma-utochnyayutsya/01.webp",
+          "sourceSha256": "d981f40bc2a533eaef9ca680e34cebd0606d390969bdef653ca9b82b2ec5823f",
+          "outputSha256": "764ae082e499699db3bbc8f390f3b6288c55907f551b93bcce245d7ce13c0478"
+        },
+        {
+          "name": "1.jpeg",
+          "outputPath": "assets/images/listings/shk-h23-poselok-atyukhta-ulitsa-i-nomer-doma-utochnyayutsya/02.webp",
+          "sourceSha256": "9ce04cc98e7f8534128953f39554180bfc40069017d674a1d132ae7b7af84b04",
+          "outputSha256": "f2b155859253f6daba4315469bdb58c6b0a5990fde16695dccecd4d988135cd3"
+        }
+      ]
+    },
+    {
+      "fingerprint": "еленасальниковаsalnikova80listru|1a20ca9a3f5be5eb",
+      "listingId": "shk-h24-naselennyy-punkt-i-adres-utochnyayutsya",
+      "assignedAgentId": "elena-salnikova",
+      "agentAssignmentNote": null,
+      "from": "\"Елена Сальникова\" salnikova.80@list.ru",
+      "id": "1a20ca9a3f5be5eb",
+      "photos": [
+        {
+          "name": "i (1) — копия.webp",
+          "outputPath": "assets/images/listings/shk-h24-naselennyy-punkt-i-adres-utochnyayutsya/hero.webp",
+          "sourceSha256": "af53c53ff1f6da941c3a07bc9352df922fcc1b1699773f3addbcba9b2f6bbee1",
+          "outputSha256": "30fbd8c615c04a4c5fe13e99546a6e9a774341018db9f9e8e41211dbc2b6512a"
+        },
+        {
+          "name": "i (14).webp",
+          "outputPath": "assets/images/listings/shk-h24-naselennyy-punkt-i-adres-utochnyayutsya/01.webp",
+          "sourceSha256": "a7d08b00e9060c4334b893a30f452c083bb4a109748da780f9da23ee1129612b",
+          "outputSha256": "b06a5d02b8236d26655b921b3fddd9527d6cd0ba748d87e986714c1b354457ac"
+        },
+        {
+          "name": "i (6).webp",
+          "outputPath": "assets/images/listings/shk-h24-naselennyy-punkt-i-adres-utochnyayutsya/02.webp",
+          "sourceSha256": "63f3330ad61fe532f252157220bc9e6ac2c365d3e58e071b0282bc0d8e291c48",
+          "outputSha256": "0bcb8c093aa3abbdc488edfcfb636553ee5bb5754e73e270b306db289686fd83"
+        }
+      ]
+    },
+    {
+      "fingerprint": "еленасальниковаsalnikova80listru|1a20ca84fac037ea",
+      "listingId": "shk-h25-naselennyy-punkt-i-adres-utochnyayutsya",
+      "assignedAgentId": "elena-salnikova",
+      "agentAssignmentNote": null,
+      "from": "\"Елена Сальникова\" salnikova.80@list.ru",
+      "id": "1a20ca84fac037ea",
+      "photos": [
+        {
+          "name": "i (11).webp",
+          "outputPath": "assets/images/listings/shk-h25-naselennyy-punkt-i-adres-utochnyayutsya/hero.webp",
+          "sourceSha256": "8cadf7798e2036754446fd2bee884486f5dc3a1e382c14c35801482f68e39c16",
+          "outputSha256": "c3a495874a27f2a70af33c24141eaf68a3e93025b8c27c381fb808a6c82aef48"
+        },
+        {
+          "name": "i (5).webp",
+          "outputPath": "assets/images/listings/shk-h25-naselennyy-punkt-i-adres-utochnyayutsya/01.webp",
+          "sourceSha256": "f854e9ee56ac8f1152732707dd781b574838a85a0001767fd0342e75b5a81d95",
+          "outputSha256": "2f306af167ae293a88c8e98f8a303bb14135ca625ecbd0aeba7579ae30ffac2a"
+        },
+        {
+          "name": "i (4).webp",
+          "outputPath": "assets/images/listings/shk-h25-naselennyy-punkt-i-adres-utochnyayutsya/02.webp",
+          "sourceSha256": "0f7eb6088323e3f2aefbe728843cf36e3c281e5818cf092e0affd5b1290e0fc8",
+          "outputSha256": "e99cd9029449b1e1437c4bbf02be71e1d309ba1b0f3039fe0b0213f7cbd3cf09"
+        }
+      ]
+    },
+    {
+      "fingerprint": "еленасальниковаsalnikova80listru|1a20ca69fab85b22",
+      "listingId": "shk-h26-poselok-rabochiy-artem-tochnyy-adres-utochnyaetsya",
+      "assignedAgentId": "elena-salnikova",
+      "agentAssignmentNote": null,
+      "from": "\"Елена Сальникова\" salnikova.80@list.ru",
+      "id": "1a20ca69fab85b22",
+      "photos": [
+        {
+          "name": "12.jpeg",
+          "outputPath": "assets/images/listings/shk-h26-poselok-rabochiy-artem-tochnyy-adres-utochnyaetsya/hero.webp",
+          "sourceSha256": "ed0b43a931fa8e28d5ef80aec310e3a988eba1e0f80a284acf70b138833c772a",
+          "outputSha256": "b134bab28a53bacae47b3f7319767c0aced0d39ff5e860a36d66437aa1b14dfc"
+        },
+        {
+          "name": "i (7).webp",
+          "outputPath": "assets/images/listings/shk-h26-poselok-rabochiy-artem-tochnyy-adres-utochnyaetsya/01.webp",
+          "sourceSha256": "88237d19ce126ee75183b9c68cfe35b97eb6a290435e6eade86c8cce77e0030f",
+          "outputSha256": "8a52aa95e80beae9c687ceb102760e83a4f442b0a3b3b17fbd8c43aa9c1f8d1a"
+        },
+        {
+          "name": "21.jpeg",
+          "outputPath": "assets/images/listings/shk-h26-poselok-rabochiy-artem-tochnyy-adres-utochnyaetsya/02.webp",
+          "sourceSha256": "89e814fa77aec56e8537d7d97c19e3dacfd0dd3d0cd2d631aacbabb57aadff99",
+          "outputSha256": "0703f74ee84d6c140cd8d29a1f80c12e4670369a2b61b580ba69298a3cd24ccd"
+        }
+      ]
+    },
+    {
+      "fingerprint": "еленасальниковаsalnikova80listru|1a20ca4b7378dc1e",
+      "listingId": "shk-h27-naselennyy-punkt-i-adres-utochnyayutsya",
+      "assignedAgentId": "elena-salnikova",
+      "agentAssignmentNote": null,
+      "from": "\"Елена Сальникова\" salnikova.80@list.ru",
+      "id": "1a20ca4b7378dc1e",
+      "photos": [
+        {
+          "name": "6.jpeg",
+          "outputPath": "assets/images/listings/shk-h27-naselennyy-punkt-i-adres-utochnyayutsya/hero.webp",
+          "sourceSha256": "3efe7837c43e92bab344279be540eb15400fe22858090d441b9b3dec3c559291",
+          "outputSha256": "244cc61e990caf828c0bb34407a85c263921b1243a3604fad1475b3ed95c8ed8"
+        },
+        {
+          "name": "25.jpeg",
+          "outputPath": "assets/images/listings/shk-h27-naselennyy-punkt-i-adres-utochnyayutsya/01.webp",
+          "sourceSha256": "78939ff7562dd9aa09e8255f66e39bc15bf9582bb7c5a6aaec2a44feb83b7445",
+          "outputSha256": "c2bc23974ac9f90fd1f94084f61e30344e33335119e4322fbdde25dc546dd859"
+        },
+        {
+          "name": "16.jpeg",
+          "outputPath": "assets/images/listings/shk-h27-naselennyy-punkt-i-adres-utochnyayutsya/02.webp",
+          "sourceSha256": "b741877123dff499808285d51359760616bf224c9da4fc2567a18c5ead9c7650",
+          "outputSha256": "289577534a946a8822a306d1437ea05ec7eba2077ad804cd19f731f6d2d003c7"
+        }
+      ]
+    },
+    {
+      "fingerprint": "евгениякkes0700mailru|1a20c8e49a285b4d",
+      "listingId": "shk-a29-shakhty-ul-ordzhonikidze-72",
+      "assignedAgentId": "evgeniya-kargina",
+      "agentAssignmentNote": null,
+      "from": "\"Евгения К\" kes0700@mail.ru",
+      "id": "1a20c8e49a285b4d",
+      "photos": [
+        {
+          "name": "IMG_0026.jpg",
+          "outputPath": "assets/images/listings/shk-a29-shakhty-ul-ordzhonikidze-72/hero.webp",
+          "sourceSha256": "07efbb4196b84e5db282910053ed0075666b68b3f493cd9dcf24a027f00164cd",
+          "outputSha256": "c5a3865bb4bb0b1b106c7581b60bd45100987266e9c08abd8f172954fd53a727"
+        },
+        {
+          "name": "IMG_0036.jpg",
+          "outputPath": "assets/images/listings/shk-a29-shakhty-ul-ordzhonikidze-72/01.webp",
+          "sourceSha256": "3602e4951984d8a2a8d0f9429557268d4262f5311ff1f87750fd64ca7788c77e",
+          "outputSha256": "3798e41d01b03512cb5b58dbd7f8ea818424a865fafc3c699900cdaaf30a4088"
+        },
+        {
+          "name": "IMG_0035.jpg",
+          "outputPath": "assets/images/listings/shk-a29-shakhty-ul-ordzhonikidze-72/02.webp",
+          "sourceSha256": "5be3eb9a471ee303812751bb096e8e18473e474a27d2e6f140ac552eb19e6036",
+          "outputSha256": "f79866dc6b2e6e4e03664f9cdb740aff276a45be0b02c8acb4d5bf90ec1280ab"
+        },
+        {
+          "name": "IMG_0034.jpg",
+          "outputPath": "assets/images/listings/shk-a29-shakhty-ul-ordzhonikidze-72/03.webp",
+          "sourceSha256": "14f6dd8cf2ac826df3ab893ac7f0ca1643820951e3ca0627ad25718929cef681",
+          "outputSha256": "9a0153e0d33938bc1b24ef993c3509e7e53aac595606477d7282c0002ddbcfd9"
+        },
+        {
+          "name": "IMG_0033.jpg",
+          "outputPath": "assets/images/listings/shk-a29-shakhty-ul-ordzhonikidze-72/04.webp",
+          "sourceSha256": "c5da303ceca0d888f2fc82841b29d565be2b674a609ef862070dd8e1de10f255",
+          "outputSha256": "e45f3a77684e0c8c749f90fd970ff5873e5a4e46a4c4a3b331df847f4039549c"
+        },
+        {
+          "name": "IMG_0032.jpg",
+          "outputPath": "assets/images/listings/shk-a29-shakhty-ul-ordzhonikidze-72/05.webp",
+          "sourceSha256": "9788d8f4b8029fda900b0b2927c6e61565d75ecd2a4a82bf6967e690aeeeeac1",
+          "outputSha256": "f7fb6c2d89ac39e75482f79ebf70ede6bdcb1bba570ab69b488832aa9b010f55"
+        },
+        {
+          "name": "IMG_0031.jpg",
+          "outputPath": "assets/images/listings/shk-a29-shakhty-ul-ordzhonikidze-72/06.webp",
+          "sourceSha256": "6458368c478080f1382b78c641964bb87108eaea01e02c07224a0d83f221b652",
+          "outputSha256": "e5990ced16c25f647375b2c266614d296c680fab51788618f2fc02b5c3f7e242"
+        },
+        {
+          "name": "IMG_0030.jpg",
+          "outputPath": "assets/images/listings/shk-a29-shakhty-ul-ordzhonikidze-72/07.webp",
+          "sourceSha256": "b2a6a6119fd3733e27175d4b295509c8471ea86c9f68c91e731067b10893cbaa",
+          "outputSha256": "627aeee60e300b17dc4b1ae1fa0ab21946530b8b55c5b4de7c4e056e7afbb1ea"
+        },
+        {
+          "name": "IMG_0029.jpg",
+          "outputPath": "assets/images/listings/shk-a29-shakhty-ul-ordzhonikidze-72/08.webp",
+          "sourceSha256": "3c7d72030d1677a79ee168d4761e8ae76ab22690f2d254704aeb5d63c84fad2b",
+          "outputSha256": "b8ca25942e6e02fe813e7ac96d268b74028ce6ac4c28d458112231846ef2a6d9"
+        },
+        {
+          "name": "IMG_0028.jpg",
+          "outputPath": "assets/images/listings/shk-a29-shakhty-ul-ordzhonikidze-72/09.webp",
+          "sourceSha256": "3ad04e05083941edf66f72ef429585e257224f13f51d4427aae04f2765e3f067",
+          "outputSha256": "932e4b79d1218af326f4cf390e575d10fe93deddcad2805a1461dcf28d88423b"
+        },
+        {
+          "name": "IMG_0027.jpg",
+          "outputPath": "assets/images/listings/shk-a29-shakhty-ul-ordzhonikidze-72/10.webp",
+          "sourceSha256": "961698e9562145d2d493ed6f9cfe148f33f8332ce1e899ff0368ba3705472c4a",
+          "outputSha256": "87e52b3a7fd9c96e6ad2ea633b079d40d2110f033fd12256afdffc6fa0947369"
+        }
+      ]
+    },
+    {
+      "fingerprint": "евгениякkes0700mailru|1a20c896c3fd36f5",
+      "listingId": "shk-h28-shakhty-per-1-y-militsionnyy-175",
+      "assignedAgentId": "evgeniya-kargina",
+      "agentAssignmentNote": null,
+      "from": "\"Евгения К\" kes0700@mail.ru",
+      "id": "1a20c896c3fd36f5",
+      "photos": [
+        {
+          "name": "image-26-10-26-06-58.jpeg",
+          "outputPath": "assets/images/listings/shk-h28-shakhty-per-1-y-militsionnyy-175/hero.webp",
+          "sourceSha256": "547da1e1ad063b74919d8224d2756dcfde9be7ba98e39cb1e8524f7b287c83b5",
+          "outputSha256": "aea817319d2c5fcefc25110b2c6f76364b313e847e2bf17e5f8c080c38d7f486"
+        },
+        {
+          "name": "image-26-10-26-07-00-1.jpeg",
+          "outputPath": "assets/images/listings/shk-h28-shakhty-per-1-y-militsionnyy-175/01.webp",
+          "sourceSha256": "ec424a01226ee76cd229bdc57495ee39a732c427acf61838888a458682a14c47",
+          "outputSha256": "1710689128c3b0ba58fe281d04feea164bee2c0ddbe8a6f0dab9b54d16586f76"
+        },
+        {
+          "name": "image-26-10-26-07-00.jpeg",
+          "outputPath": "assets/images/listings/shk-h28-shakhty-per-1-y-militsionnyy-175/02.webp",
+          "sourceSha256": "da225e3ead36ad15955ce7d392ce45d0850dcce73ea6d72184a8f055e4e7589b",
+          "outputSha256": "7765373fa2e7965056eb8e4efb66bca5aa0e0435c780dfdc7505951ae49e8434"
+        },
+        {
+          "name": "image-26-10-26-06-59-7.jpeg",
+          "outputPath": "assets/images/listings/shk-h28-shakhty-per-1-y-militsionnyy-175/03.webp",
+          "sourceSha256": "56da4cd1e7934f7ae202d3afad225e946e9af6dc0e826e833f48f25322879287",
+          "outputSha256": "5b4606198a9910b3202e5b23f9998b798ceef519f8db2c5194ac716a841d41aa"
+        },
+        {
+          "name": "image-26-10-26-06-59-6.jpeg",
+          "outputPath": "assets/images/listings/shk-h28-shakhty-per-1-y-militsionnyy-175/04.webp",
+          "sourceSha256": "6b757fa279628894c437c046ab7c3e45b08217de3bc29d5c6a281454d0e70862",
+          "outputSha256": "4151d8ff4994ad4b6a6b59fa51f8e9219cc3e45d942aceaf677635da3ef6bb98"
+        },
+        {
+          "name": "image-26-10-26-06-59-5.jpeg",
+          "outputPath": "assets/images/listings/shk-h28-shakhty-per-1-y-militsionnyy-175/05.webp",
+          "sourceSha256": "ca611321a6013c01c4e8fc85e24012ddb6bbc6b5974da0b60d6ca47872139542",
+          "outputSha256": "60ff19fc3c9cc0c08e68ae7fb18c28e8af43f90917ca9fd2a02e83023bb88c0d"
+        },
+        {
+          "name": "image-26-10-26-06-59-4.jpeg",
+          "outputPath": "assets/images/listings/shk-h28-shakhty-per-1-y-militsionnyy-175/06.webp",
+          "sourceSha256": "3d306040eb4717bdd9e589bde50d4d1a94e0cebe43b30b5faed55efd3976835f",
+          "outputSha256": "810d0070b02fc0351c63e0bd310fb4f923189735130bd565439520175e451cf0"
+        },
+        {
+          "name": "image-26-10-26-06-59-3.jpeg",
+          "outputPath": "assets/images/listings/shk-h28-shakhty-per-1-y-militsionnyy-175/07.webp",
+          "sourceSha256": "66e5513b6675717dc95d8ab7631019f6454588bbfa94e88e489cc8886859b933",
+          "outputSha256": "473f674c583b9c815dd5aec32b74661651e7d47b8b56cceb4c7a976a36f64cb7"
+        },
+        {
+          "name": "image-26-10-26-06-59-2.jpeg",
+          "outputPath": "assets/images/listings/shk-h28-shakhty-per-1-y-militsionnyy-175/08.webp",
+          "sourceSha256": "eab000ef7afd43e9ee5df18a0766bf074f39082d0634832fdf7bd61d59790801",
+          "outputSha256": "dd2192a855b174cd32054d7e0870e8ad78ddee05057166c8f4a11122c7872a1e"
+        },
+        {
+          "name": "image-26-10-26-06-59-1.jpeg",
+          "outputPath": "assets/images/listings/shk-h28-shakhty-per-1-y-militsionnyy-175/09.webp",
+          "sourceSha256": "53a1f9ea6c4233fa0a54f4f0be2695e8b0fcb8a41bbfca0e3eb7d44b0d0c4816",
+          "outputSha256": "51464105ce0fe4a8d6d889554ae335dd5f4b2226727051903c9548f11c860699"
+        },
+        {
+          "name": "image-26-10-26-06-59.jpeg",
+          "outputPath": "assets/images/listings/shk-h28-shakhty-per-1-y-militsionnyy-175/10.webp",
+          "sourceSha256": "e64b681571f9b1caddf76d3b76c9594dd739f60c93ea0917d43fb5cdafe651c1",
+          "outputSha256": "af165e1b6e368f5057d07c9e58972b26752f75d610db1e5f21abbd32f3859683"
+        },
+        {
+          "name": "image-26-10-26-06-58-5.jpeg",
+          "outputPath": "assets/images/listings/shk-h28-shakhty-per-1-y-militsionnyy-175/11.webp",
+          "sourceSha256": "e337dd49b33ebd114b44e4eea6b400eb9f12ffa3e5472cdcc0765624080521b3",
+          "outputSha256": "6a510054e4d65f67d981ca0155826d1bb9aa7b449941aa6394fcd13d1da052f7"
+        },
+        {
+          "name": "image-26-10-26-06-58-4.jpeg",
+          "outputPath": "assets/images/listings/shk-h28-shakhty-per-1-y-militsionnyy-175/12.webp",
+          "sourceSha256": "283a80b8e345953e90cf0f715694f647696b4da42c78de520627d5c9e01d5d59",
+          "outputSha256": "afd1eb279b8a0bb3efb095af25c84dab2ceeb1edb800ebdfe55097acbb54c09c"
+        },
+        {
+          "name": "image-26-10-26-06-58-3.jpeg",
+          "outputPath": "assets/images/listings/shk-h28-shakhty-per-1-y-militsionnyy-175/13.webp",
+          "sourceSha256": "4ecd135b340745274a2847fa9c4936a70ebc89393014f5229d5a6ff87d76e9c5",
+          "outputSha256": "036e98d90091c9351b3594614684fd0782a9416e3a662aa2b73d5f53abcdd1b4"
+        },
+        {
+          "name": "image-26-10-26-06-58-2.jpeg",
+          "outputPath": "assets/images/listings/shk-h28-shakhty-per-1-y-militsionnyy-175/14.webp",
+          "sourceSha256": "a85a6139af39d6ce7f9b2baabff0abcee1cc9a69a3aef5e723980ea922a35e14",
+          "outputSha256": "c4a9e46a0c0e4cab270902da92b57a164ad96d45eeb9b9208e06684be926043c"
+        },
+        {
+          "name": "image-26-10-26-06-58-1.jpeg",
+          "outputPath": "assets/images/listings/shk-h28-shakhty-per-1-y-militsionnyy-175/15.webp",
+          "sourceSha256": "f834a077ea888de2a7968a89c6307613192e9ee2ca4b9528c533499ed1731b69",
+          "outputSha256": "8c4204c5bb775858f713257902f87c8581baf28aeb9735b3c087ba6f15ad78ac"
+        }
+      ]
+    },
+    {
+      "fingerprint": "евгениякkes0700mailru|1a20c85eeeadeb46",
+      "listingId": "shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala",
+      "assignedAgentId": "evgeniya-kargina",
+      "agentAssignmentNote": null,
+      "from": "\"Евгения К\" kes0700@mail.ru",
+      "id": "1a20c85eeeadeb46",
+      "photos": [
+        {
+          "name": "image-01-11-26-02-14.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/hero.webp",
+          "sourceSha256": "543a697072c5ee5a25c489866622f38967afd74e9108e469b8ce14f739686906",
+          "outputSha256": "51f9812ccce4079e20149477a210f95bcef19eb5cb2dd68b8808acbe6c17c395"
+        },
+        {
+          "name": "image-01-11-26-02-17.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/01.webp",
+          "sourceSha256": "bf0f780cd557c82495b5e7b03c7a2076719c4bcb9d26bdeb6a4d7480298cef9b",
+          "outputSha256": "f820364509b74581f2f93a81b37c50eeaa4a0e8331f556745a83523df67debe4"
+        },
+        {
+          "name": "image-01-11-26-02-16-7.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/02.webp",
+          "sourceSha256": "8cf0ef124cbfc08d2ba5c432153a0e2e687229511bf22af547fdd6b44701d0c3",
+          "outputSha256": "10d95c38365905da490f37b141c1592a78429ab43240801a3ee6b87bbc17c7e8"
+        },
+        {
+          "name": "image-01-11-26-02-16-6.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/03.webp",
+          "sourceSha256": "a7f0e5900cb64c73912ca11bda70ce9779e793b1329092332ab3a77fd72c024b",
+          "outputSha256": "b65dd7ca9f86f554df370cc650c9be311fb7317445ffd954d9856fa97cc4e29a"
+        },
+        {
+          "name": "image-01-11-26-02-16-5.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/04.webp",
+          "sourceSha256": "00677aab564cea0b8f810a4e504796000fe49b29821ef36060d968d878d23384",
+          "outputSha256": "a5baa27dec4a36712ae57ea529f4a15db39c4c5e15637bbdc2279ec9d446a2c5"
+        },
+        {
+          "name": "image-01-11-26-02-16-4.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/05.webp",
+          "sourceSha256": "88b95ea3e239db2a32351552bb4a29ff944e3ed5d1440376932b7dea77be16f1",
+          "outputSha256": "a8f87453736236fbec17593782ac8cb3a8c8d1c1421a07ef0b73fcf5813fc740"
+        },
+        {
+          "name": "image-01-11-26-02-16-3.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/06.webp",
+          "sourceSha256": "ca1fa6ba1129ddbf6fa8e7d4fe91a268df7f0c331ac33378a70fae971b27e9a5",
+          "outputSha256": "c5b53e8329189960c43180822cdcc8ffc0b79f787d4c2553e9c8f03224268f9f"
+        },
+        {
+          "name": "image-01-11-26-02-16-2.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/07.webp",
+          "sourceSha256": "abd793a8011d42ebbed86dc3b3102fd4aad1c0b2ac4009206b95ca971d595054",
+          "outputSha256": "ff9e5e7fc0881dd2800046d6fec0422a777205dc2decf5abbd490acbe5efe475"
+        },
+        {
+          "name": "image-01-11-26-02-16-1.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/08.webp",
+          "sourceSha256": "39a8f3bf4ac93ff6d79216f35c48dab7f66aa487ec9ec8eea2b874306f17f6e4",
+          "outputSha256": "3a3af97f7a111a73822e5e37636c5171b64a447730d76f719b24c9505d22081a"
+        },
+        {
+          "name": "image-01-11-26-02-16.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/09.webp",
+          "sourceSha256": "424d08ce3cb94417d6fe19788436e8fbd038669c8f24b77a27cac28635074899",
+          "outputSha256": "8c38b4eb038686056aeb14547043b5cb5b369b4238828141b8dde2414455d90b"
+        },
+        {
+          "name": "image-01-11-26-02-15-5.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/10.webp",
+          "sourceSha256": "9c9fdd7da710dc668800f12cee1729a3d34adebbf1a2856f2533391506b0e86c",
+          "outputSha256": "1d6b0ba2ff0bea47b804fa9684876545e0440392dd3856e6690fe95fcb9bf2a0"
+        },
+        {
+          "name": "image-01-11-26-02-15-4.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/11.webp",
+          "sourceSha256": "e9e562cc9e85c6e7053d4a6fe877df2e3254cad293b8e5cd599eb79636804a34",
+          "outputSha256": "63c99e1a0d0defcbd6262ec35c1d269bf3e32c2d690d08d4b32c263949b17564"
+        },
+        {
+          "name": "image-01-11-26-02-15-3.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/12.webp",
+          "sourceSha256": "5845119391f55808ac81d30dbcfa6e209ced2c75947e5d056b40c1e7d1eea089",
+          "outputSha256": "cee12363c7b76b1f6cc7f4b6f2acec2e77dd01ae568b3b43204579b71eb0fd84"
+        },
+        {
+          "name": "image-01-11-26-02-15-2.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/13.webp",
+          "sourceSha256": "a0a16396fe6d0f31fab50b8e9f3753c62fbc8c00d8978760293e393464541a63",
+          "outputSha256": "9f26dcdec1962556584b991d69d65839f6798f5532d59a8cfe2ddd1762d8a626"
+        },
+        {
+          "name": "image-01-11-26-02-15-1.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/14.webp",
+          "sourceSha256": "ca6b0b584eafce4179a524e26edf122cff6582ee4b53846a31624aea89fa3235",
+          "outputSha256": "54b4bc15ab4f7386659560fd6f918fc38140adb41f729c8df1ebe4c84f76c6e8"
+        },
+        {
+          "name": "image-01-11-26-02-15.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/15.webp",
+          "sourceSha256": "675167a2dd1bdc2f6303a760a14511f36ad8374313e32788e45b04b0d06fd17c",
+          "outputSha256": "2fc2be074b001be9461f5148355a1269defd4329372eb5877bff358ab6e9858b"
+        },
+        {
+          "name": "image-01-11-26-02-14-4.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/16.webp",
+          "sourceSha256": "c23a9a62014cecb2c419a0a1f7f80d6dec2e92087a0931ab95d2393cb85964f5",
+          "outputSha256": "c3697eebc854139daedc61435004f97705992ca5a366b5ed0255cede5f921199"
+        },
+        {
+          "name": "image-01-11-26-02-14-3.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/17.webp",
+          "sourceSha256": "b0c4a5dfb286f60570f88bead93e921001bddda59d5debeb3a33cb16d5be46d0",
+          "outputSha256": "9c816e77b937fe3d786fe73d8d30c33d3ec5e91c18dfe277bff003bc284e5b06"
+        },
+        {
+          "name": "image-01-11-26-02-14-2.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/18.webp",
+          "sourceSha256": "92d2291c60e8afbd6b5ee18572df29b276da807ffaa889518d8bd145041c8235",
+          "outputSha256": "f7fb1c668a14facebe94ec93f8272a8d379d10f38a35ac9dccc210644589b889"
+        },
+        {
+          "name": "image-01-11-26-02-14-1.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/19.webp",
+          "sourceSha256": "d7db297b7b94dd63e5f546a512fd615a22e0d1e25c8ff9e4d6997243e9219dcd",
+          "outputSha256": "182b2db87d513fc503db8dcaef33747f13090892744b8469506ab1a219aa7d9d"
+        },
+        {
+          "name": "image-01-11-26-02-13.jpeg",
+          "outputPath": "assets/images/listings/shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala/20.webp",
+          "sourceSha256": "8d7c0461193d2c882472c01c3671261f393767239917361b135168c2d45b4375",
+          "outputSha256": "7bdb80a26dd8eaa870537a931f790f474411958c9347b67dc03df7dcb853f864"
+        }
+      ]
+    }
+  ],
+  "added": [
+    {
+      "kind": "listing",
+      "id": "shk-h22-poselok-mashzavod-tochnyy-adres-utochnyaetsya",
+      "agentId": "elena-salnikova",
+      "price": 2800000,
+      "photoCount": 2
+    },
+    {
+      "kind": "listing",
+      "id": "shk-l17-tsentralnaya-chast-goroda-naselennyy-punkt-i-adres-utochnyayutsya",
+      "agentId": "elena-salnikova",
+      "price": 1900000,
+      "photoCount": 1
+    },
+    {
+      "kind": "listing",
+      "id": "shk-l18-ul-krivoshlykova-66-naselennyy-punkt-utochnyaetsya",
+      "agentId": "elena-salnikova",
+      "price": 800000,
+      "photoCount": 1
+    },
+    {
+      "kind": "listing",
+      "id": "shk-l19-orientir-vid-na-reku-don-naselennyy-punkt-i-adres-utochnyayutsya",
+      "agentId": "elena-salnikova",
+      "price": 900000,
+      "photoCount": 1
+    },
+    {
+      "kind": "listing",
+      "id": "shk-l20-naselennyy-punkt-i-adres-utochnyayutsya",
+      "agentId": "elena-salnikova",
+      "price": 400000,
+      "photoCount": 1
+    },
+    {
+      "kind": "listing",
+      "id": "shk-h23-poselok-atyukhta-ulitsa-i-nomer-doma-utochnyayutsya",
+      "agentId": "elena-salnikova",
+      "price": 650000,
+      "photoCount": 3
+    },
+    {
+      "kind": "listing",
+      "id": "shk-h24-naselennyy-punkt-i-adres-utochnyayutsya",
+      "agentId": "elena-salnikova",
+      "price": null,
+      "photoCount": 3
+    },
+    {
+      "kind": "listing",
+      "id": "shk-h25-naselennyy-punkt-i-adres-utochnyayutsya",
+      "agentId": "elena-salnikova",
+      "price": 1600000,
+      "photoCount": 3
+    },
+    {
+      "kind": "listing",
+      "id": "shk-h26-poselok-rabochiy-artem-tochnyy-adres-utochnyaetsya",
+      "agentId": "elena-salnikova",
+      "price": 3800000,
+      "photoCount": 3
+    },
+    {
+      "kind": "listing",
+      "id": "shk-h27-naselennyy-punkt-i-adres-utochnyayutsya",
+      "agentId": "elena-salnikova",
+      "price": 3500000,
+      "photoCount": 3
+    },
+    {
+      "kind": "listing",
+      "id": "shk-a29-shakhty-ul-ordzhonikidze-72",
+      "agentId": "evgeniya-kargina",
+      "price": 5650000,
+      "photoCount": 11
+    },
+    {
+      "kind": "listing",
+      "id": "shk-h28-shakhty-per-1-y-militsionnyy-175",
+      "agentId": "evgeniya-kargina",
+      "price": 4900000,
+      "photoCount": 16
+    },
+    {
+      "kind": "listing",
+      "id": "shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala",
+      "agentId": "evgeniya-kargina",
+      "price": null,
+      "photoCount": 21
+    }
+  ]
+}

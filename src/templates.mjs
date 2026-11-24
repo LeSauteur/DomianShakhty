@@ -20,7 +20,7 @@ import {
   searchLocationInventory
 } from "./listing-search.mjs";
 
-const catalogLocationName = (ctx, slug) => ctx.locations.find(location => location.slug === slug)?.name || ({razdorskaya: 'Раздорская', internatsionalny: 'Интернациональный', melikhovskaya: 'Мелиховская'})[slug] || slug;
+const catalogLocationName = (ctx, slug) => ctx.locations.find(location => location.slug === slug)?.name || ({razdorskaya: 'Раздорская', internatsionalny: 'Интернациональный', melikhovskaya: 'Мелиховская', unspecified: 'Местоположение уточняется', atyukhta: 'Атюхта'})[slug] || slug;
 
 const esc = (value = "") => publicCopy(value)
   .replaceAll("&", "&amp;")
@@ -710,7 +710,7 @@ function schemaFor(ctx, page, breadcrumbsItems) {
     nodes.push(article);
   } else if (page.pageType === "listing" && page.listing?.verifiedAt && page.listing?.verifiedBy) {
     const listingType = page.listing.type.startsWith("apartment") || page.listing.type === "apartment" ? "Apartment" : ["land", "commercial"].includes(page.listing.type) ? "Place" : "House";
-    const locality=catalogLocationName(ctx, page.listing.location);
+    const locality=page.listing.location === "unspecified" ? "" : catalogLocationName(ctx, page.listing.location);
     const property={ "@type": listingType, '@id':ctx.absolute(page.path)+'#property', name: page.listing.title, description: page.listing.description, address: { "@type": "PostalAddress", ...(page.listing.address?{streetAddress:page.listing.address}:{}), ...(locality?{addressLocality:locality}:{}), addressRegion: "Ростовская область", addressCountry: "RU" }, image: [page.listing.image, ...(page.listing.gallery || [])].filter((image) => image?.src).map((image) => ctx.absolute(image.src)) };
     if(Number.isFinite(page.listing.area)&&listingType!=='Place')property.floorSize={'@type':'QuantitativeValue',value:page.listing.area,unitCode:'MTK'};
     if(Number.isInteger(page.listing.rooms)&&listingType!=='Place')property.numberOfRooms=page.listing.rooms;
