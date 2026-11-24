@@ -1,3 +1,4 @@
+import { available, expectListingIds } from './helpers/browser-inventory.mjs';
 import { test, expect } from "@playwright/test";
 
 test.beforeEach(async ({ page }) => {
@@ -8,18 +9,20 @@ test("inventory filters combine district, territory and rooms and reset cleanly"
   await page.goto("apartments.html");
   const catalog = page.locator('[data-product-catalog="inventory"]');
   const cards = catalog.locator("[data-product-card]");
-  await expect(cards).toHaveCount(28);
+  await expectListingIds(expect,cards,available('apartments'));
   await catalog.locator('[name="rooms"]').selectOption("2");
   for (const card of await catalog.locator("[data-product-card]:visible").all()) await expect(card).toHaveAttribute("data-rooms", "2");
   await catalog.locator('[name="query"]').fill("неизвестный район без объектов");
   await expect(catalog.locator("[data-product-count]")).toHaveText("0");
   await expect(catalog.locator("[data-product-empty]")).toBeVisible();
   await catalog.getByRole("button", { name: "Сбросить" }).click();
-  await expect(catalog.locator("[data-product-count]")).toHaveText("28");
+  await expect(catalog.locator("[data-product-count]")).toHaveText(String(available('apartments').length));
+  await expectListingIds(expect,cards,available('apartments'));
   await page.goto("houses.html");
   const houses = page.locator('[data-product-catalog="inventory"]');
   await houses.locator('[name="city"]').selectOption("kamenolomni");
-  await expect(houses.locator("[data-product-count]")).toHaveText("4");
+  await expectListingIds(expect,houses.locator('[data-product-card]:visible'),available('houses','kamenolomni'));
+  await expect(houses.locator("[data-product-count]")).toHaveText(String(available('houses','kamenolomni').length));
   for (const card of await houses.locator("[data-product-card]:visible").all()) await expect(card).toHaveAttribute("data-city", "kamenolomni");
 });
 

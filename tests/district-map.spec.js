@@ -1,3 +1,5 @@
+import { districtInventory } from '../src/district-map.mjs';
+import { listings } from './helpers/browser-inventory.mjs';
 import { test, expect } from "@playwright/test";
 
 test("district picker works with mouse, keyboard and mobile chips without remote map requests", async ({ page }) => {
@@ -8,7 +10,7 @@ test("district picker works with mouse, keyboard and mobile chips without remote
   await page.goto("");
   await page.locator('.district-map__pin[data-district="hbk"]').click();
   await expect(page.locator("[data-district-name]")).toHaveText("ХБК");
-  await expect(page.locator("[data-district-count]")).toHaveText("4 объекта в каталоге");
+  await expect(page.locator("[data-district-count]")).toHaveText(new RegExp('^'+districtInventory(listings).find(d=>d.key==='hbk').count+' '));
   const kamen = page.locator('.district-map__pin[data-district="kamen"]');
   await kamen.focus();
   await page.keyboard.press("Enter");
@@ -19,8 +21,9 @@ test("district picker works with mouse, keyboard and mobile chips without remote
   const ayuta = page.locator('.district-map__chip[data-district="ayuta"]');
   await ayuta.scrollIntoViewIfNeeded();
   await ayuta.click();
-  await expect(page.locator("[data-district-count]")).toHaveText("Под запрос");
-  await expect(page.locator("[data-district-cta]")).toHaveText("Оставить запрос");
+  const ayutaCount=districtInventory(listings).find(d=>d.key==="ayuta").count;
+  await expect(page.locator("[data-district-count]")).toHaveText(ayutaCount?new RegExp("^"+ayutaCount+" "):"Под запрос");
+  await expect(page.locator("[data-district-cta]")).toHaveText(ayutaCount?"Подобрать в этом районе":"Оставить запрос");
   await page.locator(".district-map__canvas").evaluate(node => node.scrollIntoView({ block: "center", behavior: "instant" }));
   for (const pin of await page.locator(".district-map__pin").all()) {
     const box = await pin.boundingBox();

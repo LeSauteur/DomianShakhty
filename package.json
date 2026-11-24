@@ -11,11 +11,19 @@
     "seo:audit": "node _tools/seo-audit.mjs",
     "donor:audit": "node _tools/donor-leak-audit.mjs",
     "qa": "npm test && npm run seo:audit && npm run donor:audit && npm run test:browser",
-    "lighthouse": "node _tools/lighthouse.mjs"
+    "lighthouse": "node _tools/lighthouse.mjs",
+    "intake": "node scripts/intake.mjs",
+    "intake:test": "node --test tests/intake.test.mjs",
+    "intake:replay": "node scripts/intake/replay-pr67.mjs",
+    "wait:checks": "node scripts/wait-github.mjs checks",
+    "wait:deploy": "node scripts/wait-github.mjs deploy"
   },
   "devDependencies": {
     "@playwright/test": "1.62.1",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
     "chrome-launcher": "1.2.1",
+    "fflate": "0.8.3",
     "jsqr": "1.4.0",
     "lighthouse": "13.4.1",
     "qrcode-generator": "2.0.4",

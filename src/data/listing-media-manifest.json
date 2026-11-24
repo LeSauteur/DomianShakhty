@@ -878,5 +878,152 @@
       "hero.webp",
       "01.webp"
     ]
+  },
+  {
+    "id": "shk-h22-poselok-mashzavod-tochnyy-adres-utochnyaetsya",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp"
+    ]
+  },
+  {
+    "id": "shk-l17-tsentralnaya-chast-goroda-naselennyy-punkt-i-adres-utochnyayutsya",
+    "status": "done",
+    "files": [
+      "hero.webp"
+    ]
+  },
+  {
+    "id": "shk-l18-ul-krivoshlykova-66-naselennyy-punkt-utochnyaetsya",
+    "status": "done",
+    "files": [
+      "hero.webp"
+    ]
+  },
+  {
+    "id": "shk-l19-orientir-vid-na-reku-don-naselennyy-punkt-i-adres-utochnyayutsya",
+    "status": "done",
+    "files": [
+      "hero.webp"
+    ]
+  },
+  {
+    "id": "shk-l20-naselennyy-punkt-i-adres-utochnyayutsya",
+    "status": "done",
+    "files": [
+      "hero.webp"
+    ]
+  },
+  {
+    "id": "shk-h23-poselok-atyukhta-ulitsa-i-nomer-doma-utochnyayutsya",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp"
+    ]
+  },
+  {
+    "id": "shk-h24-naselennyy-punkt-i-adres-utochnyayutsya",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp"
+    ]
+  },
+  {
+    "id": "shk-h25-naselennyy-punkt-i-adres-utochnyayutsya",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp"
+    ]
+  },
+  {
+    "id": "shk-h26-poselok-rabochiy-artem-tochnyy-adres-utochnyaetsya",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp"
+    ]
+  },
+  {
+    "id": "shk-h27-naselennyy-punkt-i-adres-utochnyayutsya",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp"
+    ]
+  },
+  {
+    "id": "shk-a29-shakhty-ul-ordzhonikidze-72",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp",
+      "07.webp",
+      "08.webp",
+      "09.webp",
+      "10.webp"
+    ]
+  },
+  {
+    "id": "shk-h28-shakhty-per-1-y-militsionnyy-175",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp",
+      "07.webp",
+      "08.webp",
+      "09.webp",
+      "10.webp",
+      "11.webp",
+      "12.webp",
+      "13.webp",
+      "14.webp",
+      "15.webp"
+    ]
+  },
+  {
+    "id": "shk-h29-shakhty-ul-dachnaya-72-rayon-avtovokzala",
+    "status": "done",
+    "files": [
+      "hero.webp",
+      "01.webp",
+      "02.webp",
+      "03.webp",
+      "04.webp",
+      "05.webp",
+      "06.webp",
+      "07.webp",
+      "08.webp",
+      "09.webp",
+      "10.webp",
+      "11.webp",
+      "12.webp",
+      "13.webp",
+      "14.webp",
+      "15.webp",
+      "16.webp",
+      "17.webp",
+      "18.webp",
+      "19.webp",
+      "20.webp"
+    ]
   }
 ]

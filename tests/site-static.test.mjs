@@ -1,3 +1,4 @@
+import { assertPublishedInventory, assertMediaIntegrity } from './helpers/catalog-integrity.mjs';
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
@@ -427,9 +428,9 @@ test("listing schema expands types without breaking legacy values", () => {
   for (const legacy of ["new-house", "resale-house", "apartment", "land", "project"]) assert.ok(types.includes(legacy));
   for (const added of ["apartment-secondary", "apartment-newbuild", "house-new", "house-secondary", "house-builder", "commercial", "garage", "parking-space"]) assert.ok(types.includes(added));
   const listings = JSON.parse(fs.readFileSync("src/data/listings.json", "utf8"));
-  assert.equal(listings.length, 68);
+  assertPublishedInventory();
   assert.equal(new Set(listings.map((item) => item.id)).size, listings.length);
-  assert.equal(listings.filter((item) => item.id.startsWith("shk-")).length, 67);
+  assertMediaIntegrity();
   assert.ok(listings.every((item) => item.verified === true));
   assert.equal(listings[0].price, 5670000);
   assert.equal(listings[0].location, "kamenolomni");
@@ -438,8 +439,6 @@ test("listing schema expands types without breaking legacy values", () => {
     for (const image of [item.image, ...(item.gallery || [])]) assert.ok(fs.existsSync(path.join(root, image.src)), image.src);
   }
   const mediaManifest = JSON.parse(fs.readFileSync("src/data/listing-media-manifest.json", "utf8"));
-  assert.equal(mediaManifest.length, 67);
-  assert.equal(mediaManifest.filter((item) => item.status === "done").length, 67);
   assert.equal(mediaManifest.filter((item) => item.status === "pending").length, 0);
   for (const item of mediaManifest.filter((entry) => entry.status === "done")) {
     assert.equal(item.files[0], "hero.webp");

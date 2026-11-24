@@ -15,7 +15,7 @@ test('district card leads to the same four HBK objects in catalog',async({page})
  await page.goto('/#district=hbk');
  await page.locator('[data-district-links]').getByRole('link',{name:'Все объекты в районе'}).click();
  await expect(page).toHaveURL(/catalog\.html\?district=hbk/u);
- await expect(page.locator('[data-product-card]:visible')).toHaveCount(4);
+ await expect(page.locator('[data-product-card]:visible')).toHaveCount(filterCatalog(listings,{district:'hbk'}).length);
  const ids=await page.locator('[data-product-card]:visible').evaluateAll(ns=>ns.map(n=>n.dataset.listingId));
  expect(ids.sort()).toEqual(filterCatalog(listings,{district:'hbk'}).map(i=>i.id).sort());
 });
@@ -44,9 +44,13 @@ test('empty catalog offers notification; criteria and manual comment reach mocke
 test('all district counters agree with visible catalog results including newly added objects',async({page})=>{
  await page.goto('');
  const districts=await page.locator('[data-district-data]').evaluate(node=>JSON.parse(node.textContent));
- expect(districts.artem.count).toBe(4);expect(districts.yuzh.count).toBe(2);
+ // Compare the complete live inventory; district populations can grow daily.
  for(const [key,district] of Object.entries(districts)){
   await page.goto('catalog.html?district='+key);
-  await expect(page.locator('[data-product-card]:visible')).toHaveCount(district.count);
+  const expected=filterCatalog(listings,{district:key});
+  expect(district.count).toBe(expected.length);
+  const visible=page.locator('[data-product-card]:visible');
+  await expect(visible).toHaveCount(expected.length);
+  expect((await visible.evaluateAll(nodes=>nodes.map(n=>n.dataset.listingId))).sort()).toEqual(expected.map(x=>x.id).sort());
  }
 });

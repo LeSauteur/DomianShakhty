@@ -8,7 +8,7 @@ const listings=read('src/data/listings.json');
 test('Semutenko profile, seven unique objects and administrator defaults retain source facts',()=>{
  const agent=read('src/data/team.json').find(x=>x.id==='olesya-semutenko');
  assert.equal(agent.phoneHref,'tel:+79895152487');assert.equal(agent.email,'o-lesye@mail.ru');
- const items=listings.filter(x=>x.agentId===agent.id);assert.equal(items.length,7);
+ const items=["shk-a21-artem-3k-renovated","shk-l11-internatsionalny-15","shk-l12-internatsionalny-8","shk-a24-mayskiy-4k-66","shk-l14-kamenolomni-6-sot","shk-l15-pulnogo-4-sot","shk-h21-kamenolomni-mira-100"].map(id=>listings.find(x=>x.id===id));assert.ok(items.every(x=>x?.agentId===agent.id));
  assert.deepEqual(items.map(x=>x.price),[4900000,1800000,750000,3600000,900000,1100000,9000000]);
  assert.deepEqual(items.map(x=>x.gallery.length+1),[9,9,1,6,1,4,12]);
  assert.equal(items[0].area,undefined);assert.equal(items[0].rooms,3);
@@ -21,7 +21,7 @@ test('Semutenko profile, seven unique objects and administrator defaults retain 
 });
 test('map includes the new Artem apartment and the Yuzhnaya settlement address, excluding external plots',()=>{
  const districts=districtInventory(listings);const artem=districts.find(x=>x.key==='artem');const yuzh=districts.find(x=>x.key==='yuzh');
- assert.equal(artem.count,4);assert.ok(artem.listingIds.includes('shk-a21-artem-3k-renovated'));
- assert.equal(yuzh.count,2);assert.ok(yuzh.listingIds.includes('shk-a19-yuzhnaya-2k-heating'));
+ assert.equal(artem.count,new Set(artem.listingIds).size);assert.ok(artem.listingIds.includes('shk-a21-artem-3k-renovated'));
+ assert.equal(yuzh.count,new Set(yuzh.listingIds).size);assert.ok(yuzh.listingIds.includes('shk-a19-yuzhnaya-2k-heating'));
  const mapped=districts.flatMap(x=>x.listingIds);assert.ok(!mapped.includes('shk-l11-internatsionalny-15'));assert.ok(!mapped.includes('shk-l12-internatsionalny-8'));
 });

@@ -10,6 +10,7 @@ export default defineConfig({
   testDir: "./tests",
   testMatch: "**/*.spec.js",
   fullyParallel: false,
+  maxFailures: 1,
   forbidOnly: Boolean(process.env.CI),
   retries: process.env.CI ? 1 : 0,
   workers: 1,

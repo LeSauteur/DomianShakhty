@@ -1,3 +1,4 @@
+import { available, expectListingIds, publishedTeam, constructionProjects, newbuildProjects } from './helpers/browser-inventory.mjs';
 import { expect, test } from "@playwright/test";
 
 const localOrigin = `http://127.0.0.1:${process.env.PLAYWRIGHT_PORT || 43173}`;
@@ -151,18 +152,18 @@ test("desktop navigation menu exposes aria state, closes with Escape and restore
 test("location search persists filters, restores history and carries territory into the form", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("locations/kamenolomni.html");
-  await expect(page.locator("[data-local-count]")).toHaveText("5");
+  await expect(page.locator("[data-local-count]")).toHaveText(String(available(null,"kamenolomni").length));
   const localCards = page.locator('[data-search-scope="local"]');
-  await expect(localCards).toHaveCount(5);
+  await expectListingIds(expect,localCards,available(null,"kamenolomni"));
   await expect(localCards.first()).toBeVisible();
   await page.locator('[data-location-type="apartments"]').click();
   await expect(page).toHaveURL(/type=apartments/u);
-  await expect(page.locator("[data-local-count]")).toHaveText("0");
+  await expect(page.locator("[data-local-count]")).toHaveText(String(available("apartments","kamenolomni").length));
   await page.locator('[data-location-type="houses"]').click();
   await expect(page).toHaveURL(/type=houses/u);
-  await expect(page.locator("[data-local-count]")).toHaveText("4");
+  await expect(page.locator("[data-local-count]")).toHaveText(String(available("houses","kamenolomni").length));
   await page.goBack();
-  await expect(page.locator("[data-local-count]")).toHaveText("0");
+  await expect(page.locator("[data-local-count]")).toHaveText(String(available("apartments","kamenolomni").length));
   await expect(page.locator('select[name="type"]')).toHaveValue("apartments");
   await page.locator('input[name="priceMin"]').fill("7000000");
   await page.locator('input[name="priceMax"]').fill("5000000");
@@ -315,7 +316,8 @@ test("team cards and agent portraits fit desktop and mobile without overflow", a
     await page.setViewportSize(viewport);
     await page.goto("team/index.html");
     const cards = page.locator(".team-card");
-    await expect(cards).toHaveCount(15);
+    await expect(cards).toHaveCount(publishedTeam.length);
+    expect((await cards.evaluateAll(nodes=>nodes.map(x=>x.dataset.teamMember))).sort()).toEqual(publishedTeam.map(x=>x.id).sort());
     await expect(cards.nth(0)).toHaveAttribute("data-team-member", "maria-voronina");
     await expect(cards.nth(1)).toHaveAttribute("data-team-member", "olga-chernenko");
     await expect(cards.nth(2)).toHaveAttribute("data-team-member", "maria-smolina");
@@ -741,8 +743,8 @@ test("territories keep the approved order and short Ayuta label", async ({ page 
 
 test("construction catalog exposes only build-to-order projects", async ({ page }) => {
   await page.goto("construction.html");
-  await expect(page.locator("[data-product-count]")).toHaveText("26");
-  await expect(page.locator("[data-product-card]")).toHaveCount(26);
+  await expect(page.locator("[data-product-count]")).toHaveText(String(constructionProjects.length));
+  await expect(page.locator("[data-product-card]")).toHaveCount(constructionProjects.length);
   await expect(page.locator("[data-product-card]").first()).toContainText("Дом под ключ 80 м² с тремя спальнями");
   await expect(page.locator("main")).not.toContainText("Дом под чистовую отделку в центре Каменоломней");
   await expect(page.locator('select[name="builder"]')).toHaveCount(0);
@@ -756,7 +758,7 @@ test("construction catalog exposes only build-to-order projects", async ({ page 
   expect(media.currentSrc).toMatch(/-(?:640|960|1440)\.webp$/u);
 
   const projectCards = page.locator(".construction-product-card");
-  await expect(projectCards).toHaveCount(26);
+  await expect(projectCards).toHaveCount(constructionProjects.length);
   for (const image of await projectCards.locator("img").all()) {
     await image.scrollIntoViewIfNeeded();
     const state = await image.evaluate((node) => ({ complete: node.complete, naturalWidth: node.naturalWidth, currentSrc: node.currentSrc }));
@@ -839,9 +841,9 @@ test("core direction pages have no horizontal overflow or overlapping headings",
 
 test("newbuild and construction filters update the catalog without hiding missing-data truth", async ({ page }) => {
   await page.goto("newbuilds.html");
-  await expect(page.locator("[data-product-count]")).toHaveText("78");
+  await expect(page.locator("[data-product-count]")).toHaveText(String(newbuildProjects.length));
   await page.locator('select[name="city"]').selectOption({ label: "Аксай" });
-  await expect(page.locator("[data-product-count]")).toHaveText("4");
+  await expect(page.locator("[data-product-count]")).toHaveText(String(newbuildProjects.filter(x=>x.city==="Аксай").length));
   await page.locator('select[name="completeness"]').selectOption("needs_review");
   const remaining = Number(await page.locator("[data-product-count]").textContent());
   expect(remaining).toBeGreaterThanOrEqual(0);
@@ -849,7 +851,7 @@ test("newbuild and construction filters update the catalog without hiding missin
     await expect(card).toContainText("Актуализируется");
   }
   await page.locator('button[type="reset"]').click();
-  await expect(page.locator("[data-product-count]")).toHaveText("78");
+  await expect(page.locator("[data-product-count]")).toHaveText(String(newbuildProjects.length));
 
   await page.goto("construction.html");
   await expect(page.locator('select[name="builder"]')).toHaveCount(0);
