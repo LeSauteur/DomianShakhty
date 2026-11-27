@@ -180,7 +180,9 @@ write(".nojekyll", "");
   const urls = outputs
     .filter((file) => !["404.html", "thanks.html"].includes(file))
     .map((file) => file === "index.html" ? `${origin}/` : (file.endsWith("/index.html") ? `${origin}/${file.slice(0, -"index.html".length)}` : `${origin}/${file}`));
-  write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((url) => `  <url><loc>${url}</loc><lastmod>${site.contentUpdatedAt || site.updatedAt}</lastmod></url>`).join("\n")}\n</urlset>\n`);
+  // Omit optional lastmod until reliable per-page modification dates are available.
+  // The site-wide editorial date can predate newly published or updated pages.
+  write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((url) => `  <url><loc>${url}</loc></url>`).join("\n")}\n</urlset>\n`);
   write("robots.txt", `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
   for (const provider of ["google", "yandex"]) {
     const verification = site[`${provider}Verification`];
