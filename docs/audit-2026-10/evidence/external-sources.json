@@ -1,0 +1,472 @@
+[
+  {
+    "url": "https://rialt-info.ru/pokupka-doma/",
+    "checked": "2026-10-19T07:27:56.056Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://rialt-info.ru/pokupka-doma/",
+    "structureFlags": {
+      "faq": false,
+      "calculator": false,
+      "price": true,
+      "stages": true,
+      "districts": true,
+      "documents": true,
+      "reviews": true,
+      "cases": false,
+      "filters": false
+    },
+    "capturedHeadingCount": 18,
+    "capturedControlLabelCount": 4
+  },
+  {
+    "url": "https://rialt-info.ru/uslugi/",
+    "checked": "2026-10-19T07:27:56.105Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://rialt-info.ru/uslugi/",
+    "structureFlags": {
+      "faq": false,
+      "calculator": false,
+      "price": true,
+      "stages": true,
+      "districts": true,
+      "documents": true,
+      "reviews": true,
+      "cases": false,
+      "filters": false
+    },
+    "capturedHeadingCount": 18,
+    "capturedControlLabelCount": 4
+  },
+  {
+    "url": "https://rialt-info.ru/pokupka-kvartiry/",
+    "checked": "2026-10-19T07:27:56.102Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://rialt-info.ru/pokupka-kvartiry/",
+    "structureFlags": {
+      "faq": false,
+      "calculator": false,
+      "price": true,
+      "stages": true,
+      "districts": true,
+      "documents": true,
+      "reviews": true,
+      "cases": false,
+      "filters": false
+    },
+    "capturedHeadingCount": 18,
+    "capturedControlLabelCount": 4
+  },
+  {
+    "url": "https://shahty.jilfond.ru/base/prodaja/land/object-dom",
+    "checked": "2026-10-19T07:27:56.109Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://shahty.jilfond.ru/base/prodaja/land/object-dom",
+    "structureFlags": {
+      "faq": false,
+      "calculator": true,
+      "price": true,
+      "stages": false,
+      "districts": true,
+      "documents": true,
+      "reviews": true,
+      "cases": false,
+      "filters": true
+    },
+    "capturedHeadingCount": 5,
+    "capturedControlLabelCount": 12
+  },
+  {
+    "url": "https://shahty.jilfond.ru/stoimost-uslug",
+    "checked": "2026-10-19T07:27:58.037Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://shahty.jilfond.ru/stoimost-uslug",
+    "structureFlags": {
+      "faq": false,
+      "calculator": true,
+      "price": true,
+      "stages": false,
+      "districts": false,
+      "documents": true,
+      "reviews": true,
+      "cases": false,
+      "filters": false
+    },
+    "capturedHeadingCount": 1,
+    "capturedControlLabelCount": 1
+  },
+  {
+    "url": "https://shahty.jilfond.ru/base/prodaja/two",
+    "checked": "2026-10-19T07:27:57.896Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://shahty.jilfond.ru/base/prodaja/two",
+    "structureFlags": {
+      "faq": false,
+      "calculator": true,
+      "price": true,
+      "stages": false,
+      "districts": true,
+      "documents": true,
+      "reviews": true,
+      "cases": false,
+      "filters": true
+    },
+    "capturedHeadingCount": 7,
+    "capturedControlLabelCount": 12
+  },
+  {
+    "url": "https://shahty.jilfond.ru/base/prodaja/land/object-uchastok",
+    "checked": "2026-10-19T07:27:57.986Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://shahty.jilfond.ru/base/prodaja/land/object-uchastok",
+    "structureFlags": {
+      "faq": false,
+      "calculator": true,
+      "price": true,
+      "stages": false,
+      "districts": true,
+      "documents": true,
+      "reviews": true,
+      "cases": false,
+      "filters": true
+    },
+    "capturedHeadingCount": 5,
+    "capturedControlLabelCount": 12
+  },
+  {
+    "url": "https://chernika.io/objects?category=3&RealtyType%5B%5D=Дом",
+    "checked": "2026-10-19T07:27:58.508Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://chernika.io/objects?category=3&RealtyType%5B%5D=%D0%94%D0%BE%D0%BC",
+    "structureFlags": {
+      "faq": false,
+      "calculator": false,
+      "price": false,
+      "stages": true,
+      "districts": true,
+      "documents": true,
+      "reviews": false,
+      "cases": false,
+      "filters": true
+    },
+    "capturedHeadingCount": 0,
+    "capturedControlLabelCount": 12
+  },
+  {
+    "url": "https://chernika.io/objects?category=1",
+    "checked": "2026-10-19T07:27:59.410Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://chernika.io/objects?category=1",
+    "structureFlags": {
+      "faq": false,
+      "calculator": false,
+      "price": false,
+      "stages": true,
+      "districts": true,
+      "documents": true,
+      "reviews": false,
+      "cases": false,
+      "filters": true
+    },
+    "capturedHeadingCount": 0,
+    "capturedControlLabelCount": 12
+  },
+  {
+    "url": "https://bkidon.ru/",
+    "checked": "2026-10-19T07:28:00.663Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://bkidon.ru/",
+    "structureFlags": {
+      "faq": false,
+      "calculator": false,
+      "price": true,
+      "stages": false,
+      "districts": false,
+      "documents": true,
+      "reviews": false,
+      "cases": true,
+      "filters": false
+    },
+    "capturedHeadingCount": 5,
+    "capturedControlLabelCount": 0
+  },
+  {
+    "url": "https://chernika.io/object/8088",
+    "checked": "2026-10-19T07:27:59.953Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://chernika.io/object/8088",
+    "structureFlags": {
+      "faq": false,
+      "calculator": true,
+      "price": false,
+      "stages": false,
+      "districts": true,
+      "documents": true,
+      "reviews": false,
+      "cases": false,
+      "filters": false
+    },
+    "capturedHeadingCount": 0,
+    "capturedControlLabelCount": 12
+  },
+  {
+    "url": "https://bkidon.ru/prajs-list",
+    "checked": "2026-10-19T07:28:01.344Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://bkidon.ru/prajs-list",
+    "structureFlags": {
+      "faq": false,
+      "calculator": false,
+      "price": false,
+      "stages": false,
+      "districts": false,
+      "documents": true,
+      "reviews": false,
+      "cases": true,
+      "filters": false
+    },
+    "capturedHeadingCount": 3,
+    "capturedControlLabelCount": 0
+  },
+  {
+    "url": "https://chernika.io/objects?category=3&RealtyType%5B%5D=Участок",
+    "checked": "2026-10-19T07:27:59.486Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://chernika.io/objects?category=3&RealtyType%5B%5D=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BE%D0%BA",
+    "structureFlags": {
+      "faq": false,
+      "calculator": false,
+      "price": false,
+      "stages": true,
+      "districts": true,
+      "documents": true,
+      "reviews": false,
+      "cases": false,
+      "filters": true
+    },
+    "capturedHeadingCount": 1,
+    "capturedControlLabelCount": 12
+  },
+  {
+    "url": "https://bkidon.ru/mezhevoj-plan-na-utochnenie-sushchestvuyushchego-zemelnogo-uchastka",
+    "checked": "2026-10-19T07:28:02.090Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://bkidon.ru/mezhevoj-plan-na-utochnenie-sushchestvuyushchego-zemelnogo-uchastka",
+    "structureFlags": {
+      "faq": false,
+      "calculator": false,
+      "price": false,
+      "stages": false,
+      "districts": true,
+      "documents": true,
+      "reviews": false,
+      "cases": true,
+      "filters": false
+    },
+    "capturedHeadingCount": 5,
+    "capturedControlLabelCount": 4
+  },
+  {
+    "url": "https://bkidon.ru/tekhnicheskij-plan-zdaniya-podgotovka-plana",
+    "checked": "2026-10-19T07:28:02.168Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://bkidon.ru/tekhnicheskij-plan-zdaniya-podgotovka-plana",
+    "structureFlags": {
+      "faq": false,
+      "calculator": false,
+      "price": false,
+      "stages": false,
+      "districts": false,
+      "documents": true,
+      "reviews": false,
+      "cases": true,
+      "filters": false
+    },
+    "capturedHeadingCount": 4,
+    "capturedControlLabelCount": 4
+  },
+  {
+    "url": "https://rusrealtys.ru/kadastrovye-uslugi-v-gorodah/80-shahty.html",
+    "checked": "2026-10-19T07:28:02.307Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://rusrealtys.ru/kadastrovye-uslugi-v-gorodah/80-shahty.html",
+    "structureFlags": {
+      "faq": false,
+      "calculator": false,
+      "price": false,
+      "stages": false,
+      "districts": false,
+      "documents": false,
+      "reviews": false,
+      "cases": false,
+      "filters": false
+    },
+    "capturedHeadingCount": 3,
+    "capturedControlLabelCount": 1
+  },
+  {
+    "url": "https://www.remospro.ru/catalog/prodazha_domov_rabochiy_pos_kamenolomni_rostovskaya_oblast.html",
+    "checked": "2026-10-19T07:28:02.213Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://www.remospro.ru/catalog/prodazha_domov_rabochiy_pos_kamenolomni_rostovskaya_oblast.html",
+    "structureFlags": {
+      "faq": false,
+      "calculator": false,
+      "price": true,
+      "stages": false,
+      "districts": true,
+      "documents": true,
+      "reviews": false,
+      "cases": false,
+      "filters": true
+    },
+    "capturedHeadingCount": 3,
+    "capturedControlLabelCount": 12
+  },
+  {
+    "url": "https://postroim-dom-rostov.ru/",
+    "checked": "2026-10-19T07:28:03.015Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://postroim-dom-rostov.ru/",
+    "structureFlags": {
+      "faq": false,
+      "calculator": false,
+      "price": false,
+      "stages": true,
+      "districts": false,
+      "documents": true,
+      "reviews": false,
+      "cases": false,
+      "filters": false
+    },
+    "capturedHeadingCount": 0,
+    "capturedControlLabelCount": 12
+  },
+  {
+    "url": "https://alexandrovskii-park.ru/",
+    "checked": "2026-10-19T07:28:02.462Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://alexandrovskii-park.ru/",
+    "structureFlags": {
+      "faq": false,
+      "calculator": false,
+      "price": false,
+      "stages": false,
+      "districts": false,
+      "documents": false,
+      "reviews": false,
+      "cases": false,
+      "filters": false
+    },
+    "capturedHeadingCount": 0,
+    "capturedControlLabelCount": 0
+  },
+  {
+    "url": "https://2gis.ru/shakhty/firm/70000001105836319",
+    "checked": "2026-10-19T07:28:03.121Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://2gis.ru/shakhty/firm/70000001105836319",
+    "structureFlags": {
+      "faq": false,
+      "calculator": false,
+      "price": false,
+      "stages": false,
+      "districts": false,
+      "documents": false,
+      "reviews": true,
+      "cases": false,
+      "filters": false
+    },
+    "napFragments": [
+      " рекламаООО «Хэдхантер».Смотреть ↗Улица Маяковского, 18аШахты, Ростовская область, 346504Показать на картеОткры",
+      "тоСегодня c 09:00 до 18:00+7‒918‒507... Показать телефонСмотреть подработку н",
+      "а hh.ru — рекламаВКонтактеКомпания давно не обновляла данныеНашли ошибку в данных?​Это моя компания​Реклама в 2ГИ"
+    ],
+    "capturedHeadingCount": 1,
+    "capturedControlLabelCount": 0
+  },
+  {
+    "url": "https://domrfbank.ru/mortgage/programs/family-mortgage/",
+    "checked": "2026-10-19T07:28:04.229Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "error": "TypeError: fetch failed",
+    "status": "UNK",
+    "capturedHeadingCount": 0,
+    "capturedControlLabelCount": 0
+  },
+  {
+    "url": "https://жильё-просто.рф/",
+    "checked": "2026-10-19T07:28:04.055Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "error": "TypeError: fetch failed",
+    "status": "UNK",
+    "capturedHeadingCount": 0,
+    "capturedControlLabelCount": 0
+  },
+  {
+    "url": "https://sfr.gov.ru/grazhdanam/semyam_s_detmi/materinskij_kapital/zhile/",
+    "checked": "2026-10-19T07:28:04.278Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://sfr.gov.ru/grazhdanam/semyam_s_detmi/materinskij_kapital/zhile/",
+    "structureFlags": {
+      "faq": false,
+      "calculator": false,
+      "price": false,
+      "stages": false,
+      "districts": false,
+      "documents": true,
+      "reviews": true,
+      "cases": false,
+      "filters": false
+    },
+    "capturedHeadingCount": 3,
+    "capturedControlLabelCount": 0
+  },
+  {
+    "url": "https://agencies.domclick.ru/agency/353404",
+    "checked": "2026-10-19T07:28:03.946Z",
+    "method": "read-only GET, no forms/cookies/login",
+    "status": 200,
+    "finalUrl": "https://agencies.domclick.ru/agency/353404",
+    "structureFlags": {
+      "faq": false,
+      "calculator": true,
+      "price": false,
+      "stages": false,
+      "districts": true,
+      "documents": false,
+      "reviews": true,
+      "cases": false,
+      "filters": false
+    },
+    "napFragments": [
+      "ать приложениеСкачатьАН Домиан Шахты на Маяковского5ИНН 262810552536, ИП Воронина Мария Петровна, Ростовская об",
+      "л, г Новочеркасск1 год 10 мес.на Домклик24 сделкиза 12 месяцев560 объявленийа",
+      "ений8 объявлений121 офисДомиан Шахты на МаяковскогоРостовская обл, г Шахты, ул Маяковского, д 18аОбъявления аге",
+      "ЕЛЬАН ЭтоПоказать ещёАН Домиан Шахты на МаяковскогоИНН 262810552536, ИП Воронина Мария Петровна, Ростовская обл",
+      ", г Новочеркасск51 год 10 мес.на Домклик24 сделкиза 12 месяцев560 объявлений"
+    ],
+    "capturedHeadingCount": 5,
+    "capturedControlLabelCount": 1
+  }
+]
